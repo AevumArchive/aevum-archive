@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>World Events - Aevum Archive</title>
+  <meta name="description" content="A living Aevum wiki for characters, playthroughs, lore, events and traveler downloads.">
+  <link rel="stylesheet" href="/aevum-archive/assets/styles.css">
+</head>
+<body>
+  <main class="page">
+<header class="site-header">
+  <a class="brand" href="/aevum-archive/">
+    <span class="brand-mark">&#10022;</span>
+    <span><span class="brand-title">Aevum Archive</span><span class="brand-subtitle">world wiki and living archive</span></span>
+  </a>
+  <nav class="nav" aria-label="Archive navigation">
+    <a href="/aevum-archive/playthroughs/">Playthroughs</a>
+    <a href="/aevum-archive/characters/">Characters</a>
+    <a href="/aevum-archive/world-events/">World Events</a>
+    <a href="/aevum-archive/world-items/">Relics</a>
+    <a href="/aevum-archive/downloads/texture-pack.html">Downloads</a>
+    <a href="/aevum-archive/lore/">Lore</a>
+    <a href="/aevum-archive/events/">Events</a>
+  </nav>
+</header>
+<section class="hero compact-hero"><div><p class="eyebrow">World event</p><h1>World Anchor Part I.</h1><p class="lede">A large event shelf for world-scale arcs, anchors, faults and consequences that shape more than one character.</p><div class="hero-actions"><a class="button primary" href="#world-anchor">Open event</a><a class="button" href="/aevum-archive/events/">Other events</a></div></div><aside class="archive-card anchor-card"><span class="sigil">&#x1F70F;</span><p class="eyebrow">Time remaining</p><h2 id="world-anchor-countdown">Loading...</h2><p class="lede" id="world-anchor-detail">The anchor continues to turn.</p></aside></section>
+<section class="section" id="world-anchor"><article class="card event-card"><p class="eyebrow">Active world event</p><h2>World Anchor Part I</h2><p>The first known World Anchor event remains active. Its full shape is still unfolding, and its consequences are not yet fully written.</p><dl class="mini-ledger"><dt>Status</dt><dd>ACTIVE</dd><dt>Scale</dt><dd>World Event</dd><dt>Known thread</dt><dd>Silent Fault / World Anchor</dd><dt>Timer target</dt><dd>2026-10-31 08:41:24 realm time</dd></dl></article></section>
+<script>
+(function() {
+  var target = new Date('2026-10-31T06:41:24Z').getTime();
+  var main = document.getElementById('world-anchor-countdown');
+  var detail = document.getElementById('world-anchor-detail');
+  function tick() {
+    var now = Date.now();
+    var diff = Math.max(0, target - now);
+    var totalSeconds = Math.floor(diff / 1000);
+    var days = Math.floor(totalSeconds / 86400);
+    var hours = Math.floor((totalSeconds % 86400) / 3600);
+    var minutes = Math.floor((totalSeconds % 3600) / 60);
+    var seconds = totalSeconds % 60;
+    main.textContent = days + 'd ' + hours + 'h ' + minutes + 'm ' + seconds + 's';
+    detail.textContent = diff > 0 ? 'The World Anchor is still counting down.' : 'The World Anchor has reached its marked hour.';
+  }
+  tick(); setInterval(tick, 1000);
+})();
+</script>
+<footer class="footer">
+  <span>&#10022; Aevum Archive &mdash; witnessed knowledge only.</span>
+  <span>Unwritten pages remain sealed until discovered.</span>
+</footer>
+  </main>
+</body>
+</html>
