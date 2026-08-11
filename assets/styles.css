@@ -155,7 +155,17 @@ h3 { font-size: 1.35rem; }
 .quiet-card { opacity: 0.88; }
 @media (max-width: 980px) { .home-grid .featured-card { grid-column: span 2; } }
 @media (max-width: 640px) { .home-grid .featured-card { grid-column: span 1; } .portal-actions .big-button { width: 100%; justify-content: center; } }
-.full-art-card .full-artwork-slot { min-height: 650px; background: radial-gradient(circle at 50% 28%, var(--glow, rgba(139,92,246,0.4)), transparent 14rem), rgba(0,0,0,0.24); }
-.full-art-card .full-artwork-slot img { object-fit: contain; padding: 10px; }
+.mystic-record-card { overflow: hidden; }
+.sigil-stage { position: relative; min-height: 330px; display: grid; place-items: center; overflow: hidden; background: radial-gradient(circle at 50% 38%, rgba(192,132,252,0.32), transparent 9rem), radial-gradient(circle at 22% 72%, rgba(244,114,182,0.16), transparent 9rem), linear-gradient(145deg, rgba(35,27,54,0.96), rgba(9,8,15,0.96)); }
+.sigil-stage::before { content: ''; position: absolute; inset: 22px; border: 1px solid rgba(192,132,252,0.22); border-radius: 28px; box-shadow: inset 0 0 70px rgba(139,92,246,0.11), 0 0 40px rgba(244,114,182,0.08); }
+.sigil-stage::after { content: ''; position: absolute; width: 270px; height: 270px; border: 1px solid rgba(244,114,182,0.18); border-radius: 50%; background: repeating-conic-gradient(from 18deg, rgba(192,132,252,0.14) 0 8deg, transparent 8deg 18deg); mask-image: radial-gradient(circle, transparent 0 42%, black 43% 56%, transparent 57%); }
+.moon-sigil { position: absolute; top: 28px; right: 32px; color: rgba(244,114,182,0.52); font-size: 4.8rem; }
+.faceless-rune { position: relative; z-index: 1; width: 136px; height: 136px; display: grid; place-items: center; border: 1px solid rgba(244,114,182,0.28); border-radius: 38px; color: #e9d5ff; background: rgba(0,0,0,0.28); font-size: 4.6rem; box-shadow: 0 0 60px rgba(192,132,252,0.24), inset 0 0 46px rgba(244,114,182,0.08); }
+.small-rune { position: absolute; z-index: 1; color: rgba(192,132,252,0.75); font-size: 1.9rem; }
+.small-rune.left { left: 42px; bottom: 44px; }
+.small-rune.right { right: 52px; bottom: 78px; }
+.portrait-card { padding: 28px; }
+.portrait-card h2 { text-align: center; }
 .inline-artwork { margin-top: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); border-radius: 18px; background: rgba(0,0,0,0.25); }
 .inline-artwork img { display: block; width: 100%; height: auto; }
+.portrait-wide { max-width: 820px; margin-left: auto; margin-right: auto; }
