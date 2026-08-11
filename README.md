@@ -13,6 +13,8 @@ This repository is intentionally only for public-facing archive pages:
 
 - Home: `index.html`
 - Characters: `characters/index.html`
+- All character records: `characters/all.html`
+- Playthroughs: `playthroughs/index.html`
 - Downloads: `downloads/texture-pack.html`
 - Lore: `lore/index.html`
 - Events: `events/index.html`
