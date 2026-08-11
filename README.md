@@ -1,11 +1,13 @@
 # Aevum Archive
 
-Public archive website for the Aevum Minecraft roleplay server.
+Public archive website for witnessed Aevum records, portraits, lore and traveler downloads.
 
-This repository is intentionally separate from `AevumCore`:
+This repository is intentionally only for public-facing archive pages:
 
-- `AevumCore` = plugin code
-- `aevum-archive` = public website, character art, texture-pack links and player-safe lore
+- public character records
+- public lore pages
+- traveler downloads
+- event chronicles fit for public reading
 
 ## First pages
 
@@ -56,6 +58,6 @@ Recommended clean flow:
 
 1. Upload ZIPs to GitHub Releases for stable downloads.
 2. Link the newest ZIP from `downloads/texture-pack.html`.
-3. Send players the page link in Minecraft chat.
+3. Share the public page link with players when the record is ready.
 
-Do not store GM-only secrets or hidden quest outcomes in this public repository.
+Do not store sealed truths, hidden quest outcomes or private future plans in this public repository.
