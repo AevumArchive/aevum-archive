@@ -146,3 +146,16 @@ h3 { font-size: 1.35rem; }
 .duality-art span { color: var(--accent, var(--pink)); font-size: 5rem; opacity: 0.82; }
 .duality-card.luminous { --duality-glow: rgba(192,132,252,0.34); --accent: #e9d5ff; }
 .duality-card.dark { --duality-glow: rgba(244,114,182,0.28); --accent: #f472b6; }
+
+.portal-actions { align-items: center; }
+.portal-actions .big-button { padding: 17px 24px; font-size: 1.05rem; box-shadow: 0 12px 34px rgba(244, 114, 182, 0.28); }
+.portal-actions .compact-button { padding: 10px 14px; font-size: 0.86rem; color: var(--muted); }
+.home-grid .featured-card { grid-column: span 2; border-color: rgba(244, 114, 182, 0.42); background: radial-gradient(circle at 92% 10%, rgba(244,114,182,0.2), transparent 10rem), linear-gradient(180deg, rgba(139,92,246,0.11), rgba(255,255,255,0.02)), var(--panel); }
+.home-grid .featured-card h3 { font-size: clamp(1.8rem, 3vw, 2.6rem); }
+.quiet-card { opacity: 0.88; }
+@media (max-width: 980px) { .home-grid .featured-card { grid-column: span 2; } }
+@media (max-width: 640px) { .home-grid .featured-card { grid-column: span 1; } .portal-actions .big-button { width: 100%; justify-content: center; } }
+.full-art-card .full-artwork-slot { min-height: 650px; background: radial-gradient(circle at 50% 28%, var(--glow, rgba(139,92,246,0.4)), transparent 14rem), rgba(0,0,0,0.24); }
+.full-art-card .full-artwork-slot img { object-fit: contain; padding: 10px; }
+.inline-artwork { margin-top: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); border-radius: 18px; background: rgba(0,0,0,0.25); }
+.inline-artwork img { display: block; width: 100%; height: auto; }
