@@ -463,3 +463,45 @@ h3 { font-size: 1.35rem; }
 .nocturne-card::before { color: rgba(192, 132, 252, 0.38); }
 .nocturne-card .relic-rune,
 .nocturne-card .realm-symbol { color: #d9c6ff; }
+
+
+/* Relic chains, sealed shelves and noble house ledgers. */
+.chain-grid { counter-reset: relic-step; }
+.chain-card { min-height: 260px; }
+.chain-card::after {
+  counter-increment: relic-step;
+  content: counter(relic-step, decimal-leading-zero);
+  position: absolute;
+  right: 20px;
+  bottom: 16px;
+  color: rgba(255,255,255,0.07);
+  font: 900 3.8rem Georgia, 'Times New Roman', serif;
+  letter-spacing: -0.08em;
+}
+.lost-relic-card {
+  border-color: rgba(255, 107, 122, 0.30);
+  background:
+    radial-gradient(circle at 88% 12%, rgba(255,107,122,0.16), transparent 10rem),
+    radial-gradient(circle at 12% 88%, rgba(192,132,252,0.11), transparent 12rem),
+    var(--panel);
+}
+.lost-relic-card::before { color: rgba(255,107,122,0.34); }
+.sealed-record-card {
+  border-style: dashed;
+  border-color: rgba(192, 132, 252, 0.28);
+  background:
+    radial-gradient(circle at 88% 12%, rgba(192,132,252,0.17), transparent 10rem),
+    linear-gradient(180deg, rgba(255,255,255,0.025), transparent),
+    var(--panel);
+}
+.house-ledger { grid-template-columns: repeat(2, 1fr); }
+.house-ledger .wide { grid-column: 1 / -1; }
+.house-field { display: grid; gap: 8px; }
+.house-field strong {
+  color: var(--text);
+  font: 800 0.78rem Verdana, Geneva, sans-serif;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+.house-field span { color: var(--muted); line-height: 1.65; }
+@media (max-width: 760px) { .house-ledger { grid-template-columns: 1fr; } }
