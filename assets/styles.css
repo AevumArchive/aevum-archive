@@ -505,3 +505,113 @@ h3 { font-size: 1.35rem; }
 }
 .house-field span { color: var(--muted); line-height: 1.65; }
 @media (max-width: 760px) { .house-ledger { grid-template-columns: 1fr; } }
+
+/* 2026-08-12: mythic achievement treatment for ultra-rare marks. */
+.overlord-grace-card {
+  min-height: 380px;
+  overflow: hidden;
+  border-color: rgba(244, 184, 74, 0.54);
+  background:
+    radial-gradient(circle at 50% -8%, rgba(244, 184, 74, 0.28), transparent 12rem),
+    radial-gradient(circle at 88% 16%, rgba(244, 114, 182, 0.20), transparent 11rem),
+    radial-gradient(circle at 12% 92%, rgba(139, 92, 246, 0.24), transparent 14rem),
+    linear-gradient(145deg, rgba(58, 34, 10, 0.92), rgba(24, 14, 31, 0.94) 48%, rgba(7, 6, 12, 0.96));
+  box-shadow:
+    0 24px 90px rgba(0, 0, 0, 0.38),
+    0 0 62px rgba(244, 184, 74, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.10);
+}
+.overlord-grace-card::before {
+  content: 'VIII';
+  top: 18px;
+  right: 22px;
+  color: rgba(244, 184, 74, 0.22);
+  font-size: 5.2rem;
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -0.08em;
+}
+.overlord-grace-card::after {
+  content: '';
+  position: absolute;
+  inset: 16px;
+  pointer-events: none;
+  border: 1px solid rgba(244, 184, 74, 0.18);
+  border-radius: 18px;
+  box-shadow: inset 0 0 54px rgba(244, 184, 74, 0.06);
+}
+.grace-sigil {
+  position: relative;
+  z-index: 1;
+  width: 108px;
+  height: 108px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 20px;
+  border: 1px solid rgba(244, 184, 74, 0.42);
+  border-radius: 34px;
+  color: #ffe7a8;
+  background:
+    radial-gradient(circle, rgba(244, 184, 74, 0.22), transparent 64%),
+    rgba(0, 0, 0, 0.28);
+  font-size: 3.5rem;
+  text-shadow: 0 0 28px rgba(244, 184, 74, 0.66);
+  box-shadow: 0 0 48px rgba(244, 184, 74, 0.20), inset 0 0 46px rgba(255, 255, 255, 0.05);
+}
+.overlord-grace-card h2,
+.overlord-grace-card p,
+.overlord-grace-card .meta-row {
+  position: relative;
+  z-index: 1;
+}
+.overlord-grace-card h2 {
+  color: #fff3d0;
+  text-shadow: 0 0 34px rgba(244, 184, 74, 0.18);
+}
+.grace-rarity {
+  margin: 12px 0 10px;
+  color: #f4b84a !important;
+  font: 800 0.78rem Verdana, Geneva, sans-serif;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.grace-count {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(244, 184, 74, 0.22);
+}
+.grace-count strong {
+  color: #ffe7a8;
+  font-size: 2.8rem;
+  line-height: 1;
+  letter-spacing: -0.08em;
+}
+.grace-count span {
+  color: var(--muted);
+  font: 800 0.78rem Verdana, Geneva, sans-serif;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.overlord-grace-card .pill,
+.overlord-trophy .pill {
+  color: #ffe2a1;
+  border-color: rgba(244, 184, 74, 0.32);
+  background: rgba(244, 184, 74, 0.08);
+}
+.overlord-trophy {
+  border-color: rgba(244, 184, 74, 0.46);
+  background:
+    radial-gradient(circle at 10% 50%, rgba(244, 184, 74, 0.18), transparent 8rem),
+    radial-gradient(circle at 90% 12%, rgba(168, 85, 247, 0.18), transparent 12rem),
+    var(--panel);
+}
+.overlord-trophy .trophy-seal {
+  color: #ffe7a8;
+  border-color: rgba(244, 184, 74, 0.34);
+  box-shadow: 0 0 42px rgba(244, 184, 74, 0.20), inset 0 0 44px rgba(244, 184, 74, 0.05);
+}
