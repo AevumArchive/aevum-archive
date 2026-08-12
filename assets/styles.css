@@ -267,3 +267,69 @@ h3 { font-size: 1.35rem; }
 .artwork-slot img {
   filter: saturate(1.04) contrast(1.03);
 }
+
+
+/* Character mini cards are symbolic. Full artwork belongs in portrait sections. */
+.record-hero > .character-card .portrait-slot,
+.grid.characters .character-card .portrait-slot {
+  min-height: 220px;
+}
+.portrait-slot img { display: none; }
+.inline-artwork img {
+  width: 100%;
+  max-height: 86vh;
+  object-fit: contain;
+  background: rgba(0,0,0,0.22);
+}
+.duality-art {
+  min-height: 0;
+  aspect-ratio: 3 / 4;
+}
+.duality-art img {
+  position: static;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 1;
+  background: rgba(0,0,0,0.22);
+}
+.duality-art span { position: absolute; z-index: 0; }
+.achievements-grid { grid-template-columns: repeat(4, 1fr); }
+.achievement-lock {
+  min-height: 150px;
+  padding: 18px;
+  border: 1px solid rgba(244,114,182,0.18);
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.025), transparent), rgba(20,17,30,0.72);
+}
+.achievement-lock span { color: var(--soft); font: 700 0.74rem Verdana, Geneva, sans-serif; letter-spacing: 0.12em; }
+.achievement-lock h3 { margin-top: 18px; color: #d7c7ff; }
+.achievement-lock p { margin-bottom: 0; color: var(--soft); }
+.top-list { grid-template-columns: 1fr; }
+.top-character-card {
+  display: grid;
+  grid-template-columns: 70px 96px 1fr;
+  gap: 18px;
+  align-items: center;
+  padding: 18px;
+  border: 1px solid rgba(244,114,182,0.22);
+  border-radius: 22px;
+  background: radial-gradient(circle at 92% 20%, rgba(139,92,246,0.12), transparent 12rem), var(--panel);
+}
+.top-character-card .rank { color: var(--gold); font-size: 1.6rem; font-weight: 900; }
+.top-portrait {
+  width: 84px;
+  height: 84px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 26px;
+  color: var(--pink);
+  background: rgba(0,0,0,0.2);
+  font-size: 2rem;
+}
+.top-character-card h3 { margin-bottom: 6px; }
+.top-character-card p { margin: 0; color: var(--muted); }
+.top-character-card small { color: var(--soft); }
+@media (max-width: 980px) { .achievements-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .achievements-grid { grid-template-columns: 1fr; } .top-character-card { grid-template-columns: 1fr; } }
