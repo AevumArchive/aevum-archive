@@ -384,3 +384,21 @@ h3 { font-size: 1.35rem; }
 .mote-left { left: 48px; bottom: 52px; }
 .mote-right { right: 56px; top: 68px; }
 @media (max-width: 640px) { .landing-feature .small-button { align-self: stretch; justify-content: center; } }
+
+
+/* 2026-08-12 playthrough, warfront, heraldry and bond shelves */
+.age-card { border-color: rgba(192,132,252,0.34); }
+.current-road-card { margin-bottom: 18px; }
+.road-grid { margin-top: 16px; }
+.ended-road-card, .warfront-card, .heraldry-card, .bond-card { text-decoration: none; color: var(--text); }
+.ended-road-card { --accent:#f472b6; border-color: rgba(244,114,182,0.34); background: radial-gradient(circle at 90% 12%, rgba(244,114,182,0.15), transparent 12rem), var(--panel); }
+.sealed-road-card { border-color: rgba(244,114,182,0.32); }
+.warfront-card { --accent:#ff8f9c; border-color: rgba(255,107,122,0.30); background: radial-gradient(circle at 90% 12%, rgba(255,107,122,0.14), transparent 12rem), radial-gradient(circle at 18% 80%, rgba(244,184,74,0.10), transparent 12rem), var(--panel); }
+.heraldry-card, .heraldry-feature { --accent:#d8b4fe; border-color: rgba(216,180,254,0.32); background: radial-gradient(circle at 90% 12%, rgba(168,85,247,0.18), transparent 12rem), var(--panel); }
+.heraldic-mark { display: inline-grid; place-items: center; width: 82px; height: 82px; margin-bottom: 18px; border: 1px solid rgba(216,180,254,0.28); border-radius: 26px; color: #d8b4fe; background: rgba(0,0,0,0.22); font-size: 3rem; text-shadow: 0 0 28px rgba(216,180,254,0.52); box-shadow: 0 0 54px rgba(124,58,237,0.20), inset 0 0 42px rgba(255,255,255,0.04); }
+.bonds-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.bond-card { min-height: 220px; }
+.bond-line { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 16px; font-size: clamp(1.35rem, 2.5vw, 2rem); font-weight: 900; letter-spacing: -0.03em; }
+.bond-line a { color: var(--text); text-decoration: none; border-bottom: 1px solid rgba(244,114,182,0.38); }
+.bond-line span { color: var(--pink); }
+@media (max-width: 760px) { .bonds-grid { grid-template-columns: 1fr; } }
