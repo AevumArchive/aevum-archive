@@ -654,3 +654,22 @@ h3 { font-size: 1.35rem; }
   border-color: rgba(244, 184, 74, 0.34);
   box-shadow: 0 0 42px rgba(244, 184, 74, 0.20), inset 0 0 44px rgba(244, 184, 74, 0.05);
 }
+/* 2026-08-12: character sigil refinements. */
+.alchemy-rune {
+  color: #b4ffc8;
+  font-size: 4.2rem;
+  text-shadow: 0 0 28px rgba(99, 217, 130, 0.48);
+}
+.tactical-slot {
+  background:
+    radial-gradient(circle at 50% 35%, rgba(116, 214, 255, 0.25), transparent 8rem),
+    radial-gradient(circle at 80% 70%, rgba(156, 163, 175, 0.10), transparent 10rem),
+    linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.012));
+}
+.tactical-rune {
+  color: #c9f2ff;
+  text-shadow: 0 0 26px rgba(116, 214, 255, 0.46);
+}
+.blue-status { --status-glow: rgba(116, 214, 255, 0.22); }
+.blue-status .status-badge { color: #c9f2ff; }
+.raven-record-card { border-color: rgba(116, 214, 255, 0.28); }
