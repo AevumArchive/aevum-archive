@@ -365,3 +365,22 @@ h3 { font-size: 1.35rem; }
 .top-character-card strong { color: var(--gold); }
 @media (max-width: 980px) { .landing-layout { grid-template-columns: 1fr; } .soft-gates { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 640px) { .welcome-gate { min-height: 64vh; } .soft-gates { grid-template-columns: 1fr; } .trophy-card { grid-template-columns: 1fr; } }
+
+
+/* 2026-08-12 lore polish */
+.landing-feature .small-button { align-self: flex-start; margin-top: 18px; }
+.landing-feature .meta-row { margin-bottom: 0; }
+.sealed-location-card { --accent:#74d6ff; border-style: dashed; opacity: 0.92; background: radial-gradient(circle at 90% 12%, rgba(116,214,255,0.13), transparent 12rem), linear-gradient(180deg, rgba(255,255,255,0.025), transparent), var(--panel); }
+.sealed-location-card .realm-symbol { color: #a5f3fc; }
+.astera-record-card { border-color: rgba(167,139,250,0.34); }
+.astera-sigil-stage { position: relative; min-height: 330px; display: grid; place-items: center; overflow: hidden; border-bottom: 1px solid rgba(255,255,255,0.06); background: radial-gradient(circle at 50% 38%, rgba(167,139,250,0.38), transparent 8.5rem), radial-gradient(circle at 35% 72%, rgba(244,114,182,0.16), transparent 12rem), linear-gradient(145deg, rgba(32,24,52,0.96), rgba(9,7,16,0.96)); }
+.astera-sigil-stage::before { content: ''; position: absolute; inset: 26px; border: 1px solid rgba(167,139,250,0.24); border-radius: 32px; box-shadow: inset 0 0 70px rgba(124,58,237,0.13), 0 0 46px rgba(244,114,182,0.10); }
+.astera-sigil-stage::after { content: ''; position: absolute; width: 240px; height: 240px; border-radius: 50%; border: 1px solid rgba(216,180,254,0.18); background: repeating-conic-gradient(from 8deg, rgba(167,139,250,0.16) 0 7deg, transparent 7deg 17deg); mask-image: radial-gradient(circle, transparent 0 39%, black 40% 55%, transparent 56%); }
+.astera-star { position: relative; z-index: 2; width: 118px; height: 118px; display: grid; place-items: center; border: 1px solid rgba(216,180,254,0.35); border-radius: 36px; color: #d8b4fe; background: rgba(0,0,0,0.26); font-size: 4rem; text-shadow: 0 0 28px rgba(216,180,254,0.62); box-shadow: 0 0 66px rgba(124,58,237,0.28), inset 0 0 46px rgba(244,114,182,0.08); }
+.astera-orbit { position: absolute; z-index: 1; border: 1px solid rgba(216,180,254,0.22); border-radius: 50%; transform: rotate(-18deg); }
+.astera-orbit.orbit-one { width: 190px; height: 92px; }
+.astera-orbit.orbit-two { width: 250px; height: 122px; transform: rotate(24deg); opacity: 0.55; }
+.astera-mote { position: absolute; z-index: 2; color: rgba(216,180,254,0.82); font-size: 1.8rem; }
+.mote-left { left: 48px; bottom: 52px; }
+.mote-right { right: 56px; top: 68px; }
+@media (max-width: 640px) { .landing-feature .small-button { align-self: stretch; justify-content: center; } }
