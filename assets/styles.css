@@ -523,15 +523,16 @@ h3 { font-size: 1.35rem; }
     inset 0 1px 0 rgba(255, 255, 255, 0.13);
 }
 .overlord-grace-card::before {
-  content: '';
+  content: 'VIII';
   position: absolute;
-  inset: -34% -22% auto auto;
-  width: 260px;
-  height: 260px;
-  border-radius: 999px;
-  background: conic-gradient(from 25deg, transparent, rgba(255, 214, 102, 0.28), rgba(244, 114, 182, 0.20), transparent 72%);
-  filter: blur(1px);
-  opacity: 0.92;
+  top: 20px;
+  right: 24px;
+  color: rgba(244, 184, 74, 0.24);
+  font-size: 5.4rem;
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -0.08em;
+  text-shadow: 0 0 34px rgba(244, 184, 74, 0.18);
 }
 .overlord-grace-card::after {
   content: '';
@@ -597,6 +598,38 @@ h3 { font-size: 1.35rem; }
 .overlord-grace-card > p:not(.eyebrow) {
   max-width: 31rem;
   color: #d9ccdf;
+}
+.grace-rarity {
+  position: relative;
+  z-index: 1;
+  margin: 12px 0 10px;
+  color: #f4b84a !important;
+  font: 800 0.78rem Verdana, Geneva, sans-serif;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.grace-count {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(244, 184, 74, 0.22);
+}
+.grace-count strong {
+  color: #ffe7a8;
+  font-size: 2.8rem;
+  line-height: 1;
+  letter-spacing: -0.08em;
+  text-shadow: 0 0 24px rgba(244, 184, 74, 0.38);
+}
+.grace-count span {
+  color: var(--muted);
+  font: 800 0.78rem Verdana, Geneva, sans-serif;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 .overlord-grace-card .meta-row {
   margin-top: 22px;
