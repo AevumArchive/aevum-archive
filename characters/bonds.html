@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Character Bonds - Aevum Archive</title>
   <meta name="description" content="Aevum character bond map and relationship ledger.">
-  <link rel="stylesheet" href="/aevum-archive/assets/styles.css">
+  <link rel="stylesheet" href="/aevum-archive/assets/styles.css?v=20260813-bonds2">
 </head>
 <body>
   <main class="page">
@@ -27,38 +27,133 @@
     <a href="/aevum-archive/downloads/texture-pack.html">Downloads</a>
   </nav>
 </header>
+
 <section class="hero compact-hero bonds-hero">
   <div>
     <p class="eyebrow">Bond ledger</p>
     <h1>Constellations of loyalty, debt and blood.</h1>
-    <p class="lede">Bonds are kept as linked constellations instead of endless loose cards, so one character can be read through the people, places and oaths that shaped them.</p>
-    <div class="hero-actions"><a class="button primary" href="#faaram-web">Faaram's web</a><a class="button" href="#current-bonds">Current bonds</a><a class="button" href="/aevum-archive/npcs/">NPCs</a></div>
+    <p class="lede">Important names are kept as linked constellations, so each character can be read through the people, places and oaths that shaped them.</p>
+    <div class="hero-actions">
+      <a class="button primary" href="#faaram-web">Faaram's web</a>
+      <a class="button" href="#current-bonds">Current bonds</a>
+      <a class="button" href="/aevum-archive/npcs/">NPCs</a>
+    </div>
   </div>
-  <aside class="archive-card"><span class="sigil">&#9671;</span><p class="eyebrow">Opened links</p><h2>Known bonds</h2><p class="lede">Only connections already visible to the archive are shown.</p></aside>
+  <aside class="archive-card bond-oracle-card">
+    <span class="sigil">◇</span>
+    <p class="eyebrow">Opened links</p>
+    <h2>Known bonds</h2>
+    <p class="lede">Only connections that have surfaced in play are placed here.</p>
+  </aside>
 </section>
-<section class="section bond-network" id="faaram-web">
-  <div class="section-head"><div><p class="eyebrow">Servant web</p><h2>Faaram.</h2></div><p>The Faceless is best read through the servants, shadows and lost pillars once tied to his authority.</p></div>
-  <article class="network-card faaram-web-card">
-    <a class="network-core" href="/aevum-archive/characters/faaram.html"><span>◇</span><strong>Faaram</strong><small>The Faceless</small></a>
-    <div class="network-orbits">
-      <a class="orbit-link revived-link" href="/aevum-archive/npcs/jiro.html"><b>Jiro</b><small>Right hand · fallen after return</small></a>
-      <a class="orbit-link curse-link" href="/aevum-archive/npcs/keanu.html"><b>Keanu</b><small>Shadow · lost beyond recovery</small></a>
-      <span class="orbit-link sealed-link"><b>Poison</b><small>Sealed servant record</small></span>
-      <span class="orbit-link sealed-link"><b>Nyx</b><small>Strategist · sealed details</small></span>
-      <span class="orbit-link sealed-link"><b>Nox</b><small>Opened name only</small></span>
-      <span class="orbit-link sealed-link"><b>Rapax</b><small>Opened name only</small></span>
+
+<section class="section" id="faaram-web">
+  <div class="section-head clean-head">
+    <div>
+      <p class="eyebrow">Servant web</p>
+      <h2>Faaram.</h2>
+    </div>
+    <p>The Faceless is best understood through the servants, shadows and lost pillars once tied to his authority.</p>
+  </div>
+
+  <article class="card bond-tree faaram-tree">
+    <a class="tree-core" href="/aevum-archive/characters/faaram.html">
+      <span class="core-sigil">◇</span>
+      <span>
+        <strong>Faaram</strong>
+        <small>The Faceless</small>
+      </span>
+    </a>
+
+    <div class="tree-list servant-list">
+      <a class="tree-node node-revived" href="/aevum-archive/npcs/jiro.html">
+        <strong>Jiro</strong>
+        <small>Right hand · fallen after return</small>
+      </a>
+      <a class="tree-node node-curse" href="/aevum-archive/npcs/keanu.html">
+        <strong>Keanu</strong>
+        <small>Shadow · lost beyond recovery</small>
+      </a>
+      <span class="tree-node node-sealed">
+        <strong>Poison</strong>
+        <small>Sealed servant record</small>
+      </span>
+      <span class="tree-node node-sealed">
+        <strong>Nyx</strong>
+        <small>Strategist · sealed details</small>
+      </span>
+      <span class="tree-node node-muted">
+        <strong>Nox</strong>
+        <small>Opened name only</small>
+      </span>
+      <span class="tree-node node-muted">
+        <strong>Rapax</strong>
+        <small>Opened name only</small>
+      </span>
     </div>
   </article>
 </section>
-<section class="section bond-network" id="current-bonds">
-  <div class="section-head"><div><p class="eyebrow">Current shelf</p><h2>Active constellations.</h2></div><p>Current bonds stay compact until the playthrough opens more relationships.</p></div>
-  <div class="grid two">
-    <article class="network-card small-network"><a class="network-core" href="/aevum-archive/characters/astera-zenith.html"><span>✦</span><strong>Astera Zenith</strong><small>Star-blood heir</small></a><div class="network-orbits"><a class="orbit-link" href="/aevum-archive/characters/jango.html"><b>Jango</b><small>Companion and blade</small></a><a class="orbit-link" href="/aevum-archive/lore/noble-houses/house-zenith.html"><b>House Zenith</b><small>Bloodline and estate</small></a><span class="orbit-link"><b>Thalanil</b><small>Bloodline warnings</small></span><span class="orbit-link"><b>Rhys</b><small>Veiled resident</small></span></div></article>
-    <article class="network-card small-network gold-network"><a class="network-core" href="/aevum-archive/characters/obama.html"><span>⚜</span><strong>OBAMA</strong><small>The New Order</small></a><div class="network-orbits"><span class="orbit-link"><b>Peter</b><small>Alive · Mandate bond</small></span><a class="orbit-link" href="/aevum-archive/world-items/"><b>Red Orb</b><small>Bound within him</small></a><span class="orbit-link"><b>Death</b><small>Former master</small></span></div></article>
-    <article class="network-card small-network tavern-network"><a class="network-core" href="/aevum-archive/characters/william-carter.html"><span>☗</span><strong>William Carter</strong><small>Tavern keeper</small></a><div class="network-orbits"><a class="orbit-link" href="/aevum-archive/lore/settlements/neris.html"><b>Neris</b><small>Home settlement</small></a><span class="orbit-link"><b>Carter Hearth</b><small>Inherited tavern</small></span><span class="orbit-link"><b>Uncle Elias</b><small>Brewing legacy</small></span></div></article>
-    <article class="network-card small-network"><a class="network-core" href="/aevum-archive/characters/tony.html"><span>⚙</span><strong>Tony</strong><small>Vault 8 Engineer</small></a><div class="network-orbits"><span class="orbit-link"><b>J.A.R.V.I.S.</b><small>Buddy and AI</small></span><span class="orbit-link"><b>Vault 8</b><small>Authority and infrastructure</small></span></div></article>
+
+<section class="section" id="current-bonds">
+  <div class="section-head clean-head">
+    <div>
+      <p class="eyebrow">Current shelf</p>
+      <h2>Active constellations.</h2>
+    </div>
+    <p>Compact links for the current Fantasy Medieval playthrough. More bonds can open as the story reveals them.</p>
+  </div>
+
+  <div class="bond-grid">
+    <article class="card constellation-card astera-bonds">
+      <a class="tree-core small-core" href="/aevum-archive/characters/astera-zenith.html">
+        <span class="core-sigil">✦</span>
+        <span><strong>Astera Zenith</strong><small>Star-blood heir</small></span>
+      </a>
+      <div class="tree-list compact-list">
+        <a class="tree-node" href="/aevum-archive/characters/jango.html"><strong>Jango</strong><small>Companion and blade</small></a>
+        <a class="tree-node" href="/aevum-archive/lore/noble-houses/house-zenith.html"><strong>House Zenith</strong><small>Bloodline and estate</small></a>
+        <span class="tree-node"><strong>Thalanil</strong><small>Bloodline warnings</small></span>
+        <span class="tree-node"><strong>Rhys</strong><small>Veiled resident</small></span>
+      </div>
+    </article>
+
+    <article class="card constellation-card obama-bonds">
+      <a class="tree-core small-core" href="/aevum-archive/characters/obama.html">
+        <span class="core-sigil">⚜</span>
+        <span><strong>OBAMA</strong><small>The New Order</small></span>
+      </a>
+      <div class="tree-list compact-list">
+        <span class="tree-node"><strong>Peter</strong><small>Alive · Mandate bond</small></span>
+        <a class="tree-node" href="/aevum-archive/world-items/"><strong>Red Orb</strong><small>Carried within him</small></a>
+        <span class="tree-node"><strong>Death</strong><small>Former master</small></span>
+      </div>
+    </article>
+
+    <article class="card constellation-card william-bonds">
+      <a class="tree-core small-core" href="/aevum-archive/characters/william-carter.html">
+        <span class="core-sigil">☗</span>
+        <span><strong>William Carter</strong><small>Tavern keeper</small></span>
+      </a>
+      <div class="tree-list compact-list">
+        <a class="tree-node" href="/aevum-archive/lore/settlements/neris.html"><strong>Neris</strong><small>Home settlement</small></a>
+        <span class="tree-node"><strong>Carter Hearth</strong><small>Inherited tavern</small></span>
+        <span class="tree-node"><strong>Uncle Elias</strong><small>Brewing legacy</small></span>
+      </div>
+    </article>
+
+    <article class="card constellation-card tony-bonds">
+      <a class="tree-core small-core" href="/aevum-archive/characters/tony.html">
+        <span class="core-sigil">⚙</span>
+        <span><strong>Tony</strong><small>Vault 8 Engineer</small></span>
+      </a>
+      <div class="tree-list compact-list">
+        <span class="tree-node"><strong>J.A.R.V.I.S.</strong><small>Buddy and AI</small></span>
+        <span class="tree-node"><strong>Vault 8</strong><small>Authority and infrastructure</small></span>
+      </div>
+    </article>
   </div>
 </section>
+
 <footer class="footer">
   <span>&#10022; Aevum Archive &mdash; witnessed knowledge only.</span>
   <span>Unwritten pages remain sealed until discovered.</span>
@@ -66,4 +161,3 @@
   </main>
 </body>
 </html>
-
