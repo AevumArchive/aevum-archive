@@ -843,3 +843,28 @@ h3 { font-size: 1.35rem; }
 .william-bonds { border-color: rgba(190, 128, 62, .34); background: radial-gradient(circle at 72% 12%, rgba(201, 119, 52, .16), transparent 34%), rgba(22, 14, 10, .92); }
 .tony-bonds { border-color: rgba(153, 174, 196, .26); background: radial-gradient(circle at 72% 12%, rgba(112, 146, 179, .14), transparent 34%), rgba(13, 15, 20, .92); }
 @media (max-width: 860px) { .tree-list, .compact-list, .bond-grid { grid-template-columns: 1fr; } .clean-head { align-items: start; } }
+
+/* Waiting leaderboard state. */
+.leaderboard-wait-hero .archive-card { border-color: rgba(255, 202, 103, .36); }
+.sync-wait-card { background: radial-gradient(circle at 72% 18%, rgba(255, 191, 73, .22), transparent 36%), linear-gradient(145deg, rgba(54, 38, 16, .92), rgba(12, 10, 14, .96)); }
+.waiting-ledger-card { border-color: rgba(255, 202, 103, .26); background: radial-gradient(circle at 80% 0%, rgba(255, 188, 86, .12), transparent 38%), rgba(16, 13, 21, .94); }
+.waiting-slots { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; margin-top: 22px; }
+.waiting-slots span { display: grid; place-items: center; min-height: 72px; border-radius: 16px; border: 1px dashed rgba(255, 231, 185, .24); color: var(--muted); background: rgba(255,255,255,.025); letter-spacing: .12em; text-transform: uppercase; font-size: .72rem; }
+.node-gold { border-color: rgba(255, 202, 103, .35); background: linear-gradient(145deg, rgba(255, 202, 103, .09), rgba(38, 23, 10, .42)); }
+@media (max-width: 760px) { .waiting-slots { grid-template-columns: 1fr; } }
+/* Legendary portrait aura frames. */
+.epic-portrait-card { position: relative; overflow: hidden; }
+.epic-portrait-card::before { content: ""; position: absolute; inset: 18px; border-radius: 28px; pointer-events: none; opacity: .75; filter: blur(34px); }
+.epic-portrait-card h2 { position: relative; z-index: 2; }
+.epic-portrait-frame.inline-artwork { position: relative; overflow: visible; padding: 10px; border: 0; background: transparent; isolation: isolate; }
+.epic-portrait-frame::before { content: ""; position: absolute; inset: -5px; z-index: 0; border-radius: 24px; opacity: .95; animation: auraSpin 18s linear infinite; }
+.epic-portrait-frame::after { content: ""; position: absolute; inset: 5px; z-index: 1; border-radius: 20px; pointer-events: none; box-shadow: inset 0 0 60px rgba(0,0,0,.58), 0 0 58px rgba(0,0,0,.48); }
+.epic-portrait-frame img { position: relative; z-index: 2; border-radius: 16px; box-shadow: 0 28px 90px rgba(0,0,0,.58); }
+.faaram-portrait-card::before { background: radial-gradient(circle at 50% 22%, rgba(152, 91, 255, .42), transparent 52%), radial-gradient(circle at 18% 70%, rgba(91, 52, 255, .34), transparent 42%); }
+.faaram-aura::before { background: conic-gradient(from 0deg, rgba(90, 52, 255, .18), rgba(191, 119, 255, .72), rgba(64, 35, 145, .2), rgba(221, 177, 255, .56), rgba(90, 52, 255, .18)); box-shadow: 0 0 44px rgba(153, 92, 255, .42); }
+.faaram-aura::after { border: 1px solid rgba(196, 167, 255, .24); box-shadow: inset 0 0 70px rgba(49, 27, 102, .55), 0 0 68px rgba(137, 85, 255, .35); }
+.obama-portrait-card::before { background: radial-gradient(circle at 50% 16%, rgba(255, 188, 77, .38), transparent 48%), radial-gradient(circle at 78% 68%, rgba(190, 45, 32, .28), transparent 46%); }
+.obama-aura::before { background: conic-gradient(from 0deg, rgba(255, 186, 73, .2), rgba(255, 216, 116, .78), rgba(120, 34, 28, .24), rgba(255, 82, 59, .45), rgba(255, 186, 73, .2)); box-shadow: 0 0 48px rgba(255, 178, 66, .38); }
+.obama-aura::after { border: 1px solid rgba(255, 213, 125, .26); box-shadow: inset 0 0 70px rgba(77, 32, 20, .52), 0 0 72px rgba(255, 179, 57, .28); }
+@keyframes auraSpin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .epic-portrait-frame::before { animation: none; } }
