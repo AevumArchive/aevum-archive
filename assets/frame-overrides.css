@@ -436,24 +436,33 @@
 }
 
 .leaderboard-board::after {
-  content: "✦" !important;
+  content: "" !important;
   position: absolute !important;
-  inset: auto 22px 18px auto !important;
+  inset: auto 24px 20px auto !important;
   z-index: 1 !important;
-  width: auto !important;
-  height: auto !important;
+  width: 42px !important;
+  height: 42px !important;
   border: 0 !important;
   border-radius: 0 !important;
-  color: rgba(255, 214, 128, 0.36) !important;
-  background: none !important;
-  font-size: 2.2rem !important;
-  line-height: 1 !important;
-  opacity: 1 !important;
+  background: url("/aevum-archive/assets/ui/ornaments/21_gem_marker_gold_center.png") center / contain no-repeat !important;
+  filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.20));
+  opacity: 0.44 !important;
 }
 
 .leaderboard-board > * {
   position: relative !important;
   z-index: 2 !important;
+}
+
+.leaderboard-divider {
+  display: block;
+  width: min(650px, 84%);
+  height: auto;
+  margin: -10px auto 2px;
+  opacity: 0.52;
+  filter: drop-shadow(0 0 12px rgba(245, 158, 11, 0.14));
+  pointer-events: none;
+  user-select: none;
 }
 
 .leaderboard-crown span {
@@ -464,6 +473,11 @@
   box-shadow:
     0 0 28px rgba(245, 158, 11, 0.22),
     inset 0 0 38px rgba(255,255,255,0.055) !important;
+}
+
+.leaderboard-crown small {
+  color: rgba(255, 232, 186, 0.72) !important;
+  letter-spacing: 0.16em;
 }
 
 .leaderboard-slots {
@@ -487,11 +501,25 @@
 
 .leaderboard-slots b {
   color: #ffe6a8 !important;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.35rem !important;
+  font-weight: 600;
+  letter-spacing: 0.08em !important;
   text-shadow: 0 0 18px rgba(245, 158, 11, 0.20);
+}
+
+.leaderboard-slots i {
+  display: block;
+  width: 34px;
+  height: 1px;
+  margin-top: 8px;
+  background: linear-gradient(90deg, transparent, rgba(255, 214, 128, 0.50), transparent);
+  box-shadow: 0 0 8px rgba(245, 158, 11, 0.16);
 }
 
 @media (max-width: 760px) {
   .leaderboard-slots { grid-template-columns: 1fr 1fr !important; }
+  .leaderboard-divider { width: 100%; margin-top: -4px; }
   .achievement-lock::before { opacity: 0.22 !important; }
   .achievement-lock::after { opacity: 0.22 !important; }
 }
