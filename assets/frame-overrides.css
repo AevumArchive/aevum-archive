@@ -1104,3 +1104,81 @@
   .theme-sealed .section .sealed-record-card::before,
   .theme-playthroughs .section .sealed-record-card::before { width: 40px; height: 40px; opacity: 0.48; }
 }
+
+/* 2026-08-15: collision cleanup for dense archive indexes.
+   Long automatic dividers were crossing Lore/NPC content, and broad child
+   positioning moved the World Anchor sigil into its label. */
+.archive-page.theme-lore .section + .section::before,
+.archive-page.theme-npcs .section + .section::before,
+.archive-page.theme-events .section + .section::before {
+  content: none;
+  display: none;
+}
+
+.archive-page.theme-lore .hero + .section::before,
+.archive-page.theme-npcs .hero + .section::before,
+.archive-page.theme-events .hero + .section::before {
+  width: min(360px, 48%);
+  height: 34px;
+  top: -40px;
+  background: var(--ornament-micro) center / contain no-repeat;
+  opacity: 0.52;
+  filter: brightness(1.12) drop-shadow(0 0 9px rgba(139, 92, 246, 0.14));
+}
+
+/* Dense pages already have strong card silhouettes. Detached outer rails made
+   them look clipped, so those three indexes keep their decoration in-flow. */
+@media (min-width: 1320px) {
+  .archive-page.theme-lore main.page::before,
+  .archive-page.theme-lore main.page::after,
+  .archive-page.theme-npcs main.page::before,
+  .archive-page.theme-npcs main.page::after,
+  .archive-page.theme-events main.page::before,
+  .archive-page.theme-events main.page::after {
+    content: none;
+    display: none;
+  }
+}
+
+/* The supplied lore corner is visually wider than its nominal square canvas.
+   Repeating it on every realm card caused cropped horizontal fragments. */
+.theme-lore .realm-card::after {
+  content: none;
+  display: none;
+}
+
+/* Hero ornaments must never change the positioning contract of the native
+   top-right sigil. Keep text layered, but leave the sigil absolute. */
+.theme-characters.page-index .hero .archive-card > .sigil,
+.route-characters-all .hero .archive-card > .sigil,
+.route-characters-bonds .bond-oracle-card > .sigil,
+.theme-playthroughs .hero .archive-card > .sigil,
+.theme-events .hero .archive-card > .sigil,
+.page-error .hero .archive-card > .sigil {
+  position: absolute;
+  z-index: 2;
+}
+
+/* The World Anchor already owns a distinctive sigil and countdown card. A
+   second flame/ring in the same space made the status look accidental. */
+.theme-events .hero .archive-card::before,
+.route-world-events .anchor-card::before {
+  content: none;
+  display: none;
+}
+
+/* The NPC hero also already has a clear diamond sigil. Remove the overlapping
+   medallion while retaining the smaller record-panel and footer accents. */
+.theme-npcs.page-index .hero .archive-card::before {
+  content: none;
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .archive-page.theme-lore .hero + .section::before,
+  .archive-page.theme-npcs .hero + .section::before,
+  .archive-page.theme-events .hero + .section::before {
+    width: 64%;
+    opacity: 0.42;
+  }
+}
