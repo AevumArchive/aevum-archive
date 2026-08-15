@@ -1,0 +1,81 @@
+{
+  "version": 2,
+  "measuredAt": "2026-08-15",
+  "sourceCommit": "c427318",
+  "measurementBasis": "effective CSS at 100% zoom plus DOM inventory of all 46 HTML files",
+  "constraints": {
+    "noCharacterPortraitReplacement": true,
+    "profileIconsRemainHtmlCss": true,
+    "transparentPng": true,
+    "oneOrnamentPerFile": true,
+    "fullPageFramesAllowed": false,
+    "preferredFluidFrameMethod": "segmented corners and edge tiles / 9-slice"
+  },
+  "shell": {
+    "pageWidthFormulaDesktop": "min(1180px, viewport - 32px)",
+    "pageWidthFormulaMobile": "viewport - 22px at <=640px",
+    "viewports": [
+      {"viewport":1440,"page":1180,"gutter":130},
+      {"viewport":1280,"page":1180,"gutter":50},
+      {"viewport":1024,"page":992,"gutter":16},
+      {"viewport":980,"page":948,"gutter":16},
+      {"viewport":768,"page":736,"gutter":16},
+      {"viewport":640,"page":618,"gutter":11},
+      {"viewport":390,"page":368,"gutter":11},
+      {"viewport":360,"page":338,"gutter":11}
+    ],
+    "spacing": {"heroPaddingDesktop":34,"heroPaddingMobile":22,"heroGap":28,"sectionMarginTop":46,"gridGap":16,"cardPadding":22,"recordPanelPadding":26},
+    "radii": {"heroDesktop":32,"heroMobile":24,"heroInner":24,"card":24}
+  },
+  "componentSlots": [
+    {"id":"status-card","desktop":{"width":382.7,"minHeight":180},"tablet980":{"width":466,"minHeight":180},"tablet768":{"width":360,"minHeight":180},"mobile390":{"width":368,"minHeight":180},"safeInset":22,"method":"segmented"},
+    {"id":"npc-card","desktop":{"width":382.7,"minHeight":245},"tablet980":{"width":466,"minHeight":245},"tablet768":{"width":360,"minHeight":245},"mobile390":{"width":368,"minHeight":245},"safeInset":22,"method":"corner-marker-only"},
+    {"id":"realm-card","desktop":{"width":382.7,"minHeight":210},"tablet980":{"width":466,"minHeight":210},"tablet768":{"width":360,"minHeight":210},"mobile390":{"width":368,"minHeight":210},"safeInset":22,"method":"category-marker-only"},
+    {"id":"achievement-lock","desktop":{"width":274.5,"minHeight":150},"tablet980":{"width":455,"minHeight":150},"tablet768":{"width":349,"minHeight":150},"mobile390":{"width":364,"minHeight":150},"safeInset":20,"method":"segmented"},
+    {"id":"leaderboard-rank-slot","desktop":{"width":212,"minHeight":112},"tablet980":{"width":438,"minHeight":112},"tablet768":{"width":332,"minHeight":112},"mobile390":{"width":312,"minHeight":112},"method":"corner-marker-only"},
+    {"id":"compact-hero-aside","desktop":{"width":476,"minHeight":300},"tablet980":{"width":878,"minHeight":300},"mobile390":{"width":322,"minHeight":300},"method":"single-seal-only"},
+    {"id":"record-hero","desktop":{"leftTrack":520.2,"gap":24,"rightTrack":635.8},"tablet":"stacked","mobile":"stacked","method":"micro-divider-outside-portrait"},
+    {"id":"character-icon-slot","desktopIndexCardWidth":223.2,"portraitSlotMinHeight":220,"mobilePortraitSlotMinHeight":180,"icon":{"width":112,"height":112},"spriteAllowed":false}
+  ],
+  "masterPresets": [
+    {"id":"seal","canvas":[512,512],"renderRange":[80,104],"safeMargin":48},
+    {"id":"marker","canvas":[256,256],"renderRange":[24,40],"safeMargin":32},
+    {"id":"hero-corner","canvas":[512,512],"renderRange":[64,96],"safeMargin":48},
+    {"id":"micro-divider","canvas":[1080,108],"render":[360,36],"safeMarginY":36},
+    {"id":"major-divider","canvas":[1800,180],"maxRender":[600,60],"safeMarginY":54},
+    {"id":"frame-corner","canvas":[256,256],"renderRange":[32,40],"safeMargin":24},
+    {"id":"horizontal-edge","canvas":[768,72],"render":[256,24],"stretchCenterPercent":50},
+    {"id":"vertical-edge","canvas":[72,576],"render":[24,192],"stretchCenterPercent":50},
+    {"id":"state-seal","canvas":[320,320],"renderRange":[36,44],"safeMargin":32}
+  ],
+  "suppliedAssets": [
+    {"file":"ui_characters_card_frame_sealed_horizontal.png","canvas":[2057,764],"alphaBounds":[10,0,2048,764],"centerOccupancyPercent":6.3,"decision":"slice or regenerate as segmented frame; never stretch"},
+    {"file":"ui_characters_card_frame_dead_fallen_horizontal.png","canvas":[2057,764],"alphaBounds":[0,0,2057,764],"centerOccupancyPercent":8.6,"decision":"slice or regenerate as segmented frame; never stretch"},
+    {"file":"ui_achievements_overlay_locked_cross_chains_horizontal.png","canvas":[2057,764],"alphaBounds":[0,0,2057,764],"centerOccupancyPercent":58.4,"centerMeanAlpha":130.4,"decision":"reject as foreground overlay; regenerate edge-only chains and separate lock"}
+  ],
+  "spriteQueue": [
+    {"set":"characters-sealed","files":["ui_characters_state_sealed_corner_tl.png","ui_characters_state_sealed_corner_tr.png","ui_characters_state_sealed_corner_bl.png","ui_characters_state_sealed_corner_br.png","ui_characters_state_sealed_edge_horizontal.png","ui_characters_state_sealed_edge_vertical.png","ui_characters_state_sealed_lock_seal.png"]},
+    {"set":"characters-fallen","files":["ui_characters_state_fallen_corner_tl.png","ui_characters_state_fallen_corner_tr.png","ui_characters_state_fallen_corner_bl.png","ui_characters_state_fallen_corner_br.png","ui_characters_state_fallen_edge_horizontal.png","ui_characters_state_fallen_edge_vertical.png","ui_characters_state_fallen_extinguished_flame.png"]},
+    {"set":"characters-retired","files":["ui_characters_state_retired_corner_tl.png","ui_characters_state_retired_corner_tr.png","ui_characters_state_retired_corner_bl.png","ui_characters_state_retired_corner_br.png","ui_characters_state_retired_edge_horizontal.png","ui_characters_state_retired_edge_vertical.png","ui_characters_state_retired_scroll_seal.png"]},
+    {"set":"achievements-locked","files":["ui_achievements_locked_chain_corner_tl.png","ui_achievements_locked_chain_corner_tr.png","ui_achievements_locked_chain_corner_bl.png","ui_achievements_locked_chain_corner_br.png","ui_achievements_locked_chain_edge_horizontal.png","ui_achievements_locked_chain_edge_vertical.png","ui_achievements_locked_lock_seal_center.png"]},
+    {"set":"global","files":["ui_global_navigation_archive_crest_compact.png","ui_global_section_divider_violet_micro.png","ui_global_section_divider_gold_micro.png","ui_global_section_divider_crimson_micro.png","ui_global_footer_archive_chain_micro.png","ui_global_empty_state_archive_lock.png","ui_global_card_corner_violet.png","ui_global_card_corner_gold.png"]},
+    {"set":"achievements-leaderboard","files":["ui_achievements_hero_trophy_seal_gold.png","ui_achievements_trophy_shelf_divider_gold.png","ui_leaderboard_hero_crown_ledger_seal.png","ui_leaderboard_header_crown_divider_gold.png","ui_leaderboard_rank_slot_corner_gold.png","ui_leaderboard_sync_marker_gold.png"]},
+    {"set":"lore-npcs-events","files":["ui_lore_atlas_hero_seal.png","ui_lore_category_kingdom_crown.png","ui_lore_category_settlement_lantern.png","ui_lore_category_house_banner.png","ui_lore_category_warfront_blades.png","ui_lore_category_rumor_moon.png","ui_npcs_ledger_hero_medallion.png","ui_npcs_record_footer_violet.png","ui_events_chronicle_hero_flame_seal.png","ui_world_events_anchor_ring.png","ui_events_fallen_corner_crimson.png"]},
+    {"set":"playthroughs-relics-downloads-sealed","files":["ui_playthroughs_timeline_spine_violet.png","ui_playthroughs_timeline_node_active.png","ui_playthroughs_timeline_node_ended.png","ui_playthroughs_ended_thread_seal.png","ui_relics_vault_hero_orb.png","ui_relics_item_corner_gold.png","ui_relics_item_marker_lost.png","ui_downloads_bundle_scroll_corner.png","ui_downloads_archive_wax_seal.png","ui_sealed_records_lock_chain_corner.png","ui_404_broken_archive_sigil.png"]}
+  ],
+  "routes": {
+    "home":["/index.html"],
+    "achievements":["/achievements/index.html"],
+    "leaderboard":["/leaderboard/index.html","/top-characters/index.html"],
+    "characterIndexes":["/characters/index.html","/characters/all.html","/characters/bonds.html"],
+    "characterDetails":["/characters/astera-zenith.html","/characters/faaram.html","/characters/guts.html","/characters/jango.html","/characters/jawohl.html","/characters/khealdur.html","/characters/lythariel.html","/characters/mortis.html","/characters/obama.html","/characters/raven.html","/characters/tony.html","/characters/william-carter.html"],
+    "lore":["/lore/index.html","/lore/kingdoms/index.html","/lore/kingdoms/avalon.html","/lore/kingdoms/unnamed-crown.html","/lore/locations/index.html","/lore/locations/crownbridge-front.html","/lore/locations/sunken-bell-tower.html","/lore/noble-houses/index.html","/lore/noble-houses/heraldry.html","/lore/noble-houses/house-zenith.html","/lore/settlements/index.html","/lore/settlements/neris.html"],
+    "npcs":["/npcs/index.html","/npcs/ichiro.html","/npcs/jiro.html","/npcs/keanu.html","/npcs/nox.html","/npcs/nyx.html","/npcs/rapax.html"],
+    "events":["/events/index.html","/world-events/index.html"],
+    "playthroughs":["/playthroughs/index.html","/playthroughs/aizen-ended-road.html"],
+    "relics":["/world-items/index.html"],
+    "downloads":["/downloads/texture-pack.html"],
+    "sealed":["/sealed-records/index.html"],
+    "error":["/404.html"]
+  }
+}
