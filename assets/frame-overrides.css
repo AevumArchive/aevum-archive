@@ -444,7 +444,7 @@
   height: 42px !important;
   border: 0 !important;
   border-radius: 0 !important;
-  background: url("/aevum-archive/assets/ui/ornaments/21_gem_marker_gold_center.png") center / contain no-repeat !important;
+  background: url("/aevum-archive/assets/ui/ornaments/05_Global_Status_Indicators/ui_global_gem_marker_gold_center.png") center / contain no-repeat !important;
   filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.20));
   opacity: 0.44 !important;
 }
@@ -522,4 +522,216 @@
   .leaderboard-divider { width: 100%; margin-top: -4px; }
   .achievement-lock::before { opacity: 0.22 !important; }
   .achievement-lock::after { opacity: 0.22 !important; }
+}
+
+/* Leaderboard hero: keep long synchronization copy inside its card and use the
+   supplied transparent ornaments as restrained, visible accents. */
+.leaderboard-hero {
+  grid-template-columns: minmax(0, 1.3fr) minmax(320px, 0.7fr);
+}
+
+.leaderboard-hero > * {
+  min-width: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.leaderboard-hero::after {
+  content: "";
+  position: absolute;
+  width: min(720px, 68%);
+  height: 216px;
+  left: 50%;
+  right: auto;
+  top: -82px;
+  z-index: 0;
+  border-radius: 0;
+  background: url("/aevum-archive/assets/ui/ornaments/01_Global_Header_Hero/ui_global_header_hero_archive_flourish.png") center / contain no-repeat;
+  opacity: 0.28;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.leaderboard-seal {
+  min-width: 0;
+  overflow: hidden;
+  padding-right: 54px;
+}
+
+.leaderboard-seal::before {
+  content: "";
+  position: absolute;
+  top: 72px;
+  right: 9px;
+  bottom: 18px;
+  width: 34px;
+  z-index: 0;
+  background: url("/aevum-archive/assets/ui/ornaments/02_Global_Edge_Ornaments/ui_global_edge_ornament_vertical_gold.png") center / contain no-repeat;
+  opacity: 0.34;
+  pointer-events: none;
+}
+
+.leaderboard-seal > * {
+  position: relative;
+  z-index: 1;
+}
+
+.leaderboard-seal .sigil {
+  right: 24px;
+  font-size: 4rem;
+}
+
+.leaderboard-seal h2 {
+  max-width: 100%;
+  font-size: clamp(1.9rem, 2.7vw, 2.7rem);
+  line-height: 1.05;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 980px) {
+  .leaderboard-hero { grid-template-columns: 1fr; }
+  .leaderboard-seal { min-height: 300px; }
+  .leaderboard-hero::after { width: 88%; top: -64px; opacity: 0.22; }
+}
+
+/* Named ornament pack: page-specific accents only. Character cards and profile
+   runes intentionally remain untouched. */
+.welcome-gate::after {
+  content: "";
+  position: absolute;
+  width: min(920px, 86%);
+  height: 276px;
+  left: 50%;
+  top: -72px;
+  z-index: 0;
+  background: url("/aevum-archive/assets/ui/ornaments/01_Global_Header_Hero/ui_global_header_hero_archive_flourish.png") center / contain no-repeat;
+  opacity: 0.34;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.welcome-gate > :not(.gate-glow) {
+  position: relative;
+  z-index: 1;
+}
+
+.campaign-block {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.campaign-block::after {
+  content: "";
+  position: absolute;
+  width: 210px;
+  height: 70px;
+  top: 10px;
+  right: 18px;
+  z-index: 0;
+  background: url("/aevum-archive/assets/ui/ornaments/03_Global_Dividers/ui_global_divider_magic_wisp.png") center / contain no-repeat;
+  opacity: 0.20;
+  pointer-events: none;
+}
+
+.campaign-block > * {
+  position: relative;
+  z-index: 1;
+}
+
+.lore-hero .archive-card {
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.lore-hero .archive-card::before {
+  content: "";
+  position: absolute;
+  width: 176px;
+  height: 176px;
+  top: 22px;
+  left: 50%;
+  z-index: 0;
+  background: url("/aevum-archive/assets/ui/ornaments/07_Lore_Archive_Sealed_Records/ui_lore_archive_moon_seal.png") center / contain no-repeat;
+  opacity: 0.22;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.achievement-card {
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.achievement-card::before {
+  content: "";
+  position: absolute;
+  width: 112px;
+  height: 112px;
+  top: 3px;
+  right: 5px;
+  z-index: 0;
+  background: url("/aevum-archive/assets/ui/ornaments/05_Global_Status_Indicators/ui_global_status_ring_gold.png") center / contain no-repeat;
+  opacity: 0.58;
+  pointer-events: none;
+}
+
+.event-card,
+.feature-panel,
+.ritual-panel {
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.event-card::after {
+  content: "";
+  position: absolute;
+  width: 132px;
+  height: 132px;
+  right: -10px;
+  bottom: -10px;
+  z-index: 0;
+  background: url("/aevum-archive/assets/ui/ornaments/08_Events_Fallen_and_Danger/ui_events_fallen_corner_ornament_crimson.png") center / contain no-repeat;
+  opacity: 0.30;
+  pointer-events: none;
+}
+
+.feature-panel::after {
+  content: "";
+  position: absolute;
+  width: 82px;
+  height: 82px;
+  right: 14px;
+  bottom: 12px;
+  z-index: 0;
+  background: url("/aevum-archive/assets/ui/ornaments/09_Downloads_Seals_and_Misc/ui_downloads_archive_wax_seal.png") center / contain no-repeat;
+  opacity: 0.46;
+  pointer-events: none;
+}
+
+.ritual-panel::after {
+  content: "";
+  position: absolute;
+  width: 124px;
+  height: 124px;
+  right: 6px;
+  bottom: 0;
+  z-index: 0;
+  background: url("/aevum-archive/assets/ui/ornaments/09_Downloads_Seals_and_Misc/ui_downloads_sealed_scroll.png") center / contain no-repeat;
+  opacity: 0.20;
+  pointer-events: none;
+}
+
+.event-card > *,
+.feature-panel > *,
+.ritual-panel > * {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 640px) {
+  .welcome-gate::after { width: 112%; top: -48px; opacity: 0.24; }
+  .campaign-block::after { width: 150px; right: -12px; opacity: 0.14; }
+  .feature-panel::after,
+  .ritual-panel::after { opacity: 0.16; }
 }

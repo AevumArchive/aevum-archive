@@ -1,0 +1,167 @@
+[
+  {
+    "source_file": "01_archive_hero_flourish.png",
+    "new_file": "01_Global_Header_Hero/ui_global_header_hero_archive_flourish.png",
+    "suggested_use": "Homepage hero header, archive landing banners, top section hero decoration."
+  },
+  {
+    "source_file": "02_vertical_ornament_violet.png",
+    "new_file": "02_Global_Edge_Ornaments/ui_global_edge_ornament_vertical_violet.png",
+    "suggested_use": "Left/right page edge decoration, long archive side rails, desktop-only page trim."
+  },
+  {
+    "source_file": "03_vertical_ornament_gold.png",
+    "new_file": "02_Global_Edge_Ornaments/ui_global_edge_ornament_vertical_gold.png",
+    "suggested_use": "Left/right page edge decoration, premium archive side rails, desktop-only page trim."
+  },
+  {
+    "source_file": "04_micro_divider_violet.png",
+    "new_file": "03_Global_Dividers/ui_global_divider_micro_violet.png",
+    "suggested_use": "Small section divider for cards, mini headings, short info clusters."
+  },
+  {
+    "source_file": "05_micro_divider_gold.png",
+    "new_file": "03_Global_Dividers/ui_global_divider_micro_gold.png",
+    "suggested_use": "Small premium divider for achievements, downloads, featured callouts."
+  },
+  {
+    "source_file": "25_long_divider_gold.png",
+    "new_file": "03_Global_Dividers/ui_global_divider_long_gold.png",
+    "suggested_use": "Main section divider for homepage, lore, achievements, downloads."
+  },
+  {
+    "source_file": "26_long_divider_violet.png",
+    "new_file": "03_Global_Dividers/ui_global_divider_long_violet.png",
+    "suggested_use": "Main mystical section divider for lore, archive, sealed records."
+  },
+  {
+    "source_file": "27_long_divider_dark.png",
+    "new_file": "03_Global_Dividers/ui_global_divider_long_dark.png",
+    "suggested_use": "Low-contrast divider for dark panels, subtle separation inside dense pages."
+  },
+  {
+    "source_file": "23_magic_wisp_divider.png",
+    "new_file": "03_Global_Dividers/ui_global_divider_magic_wisp.png",
+    "suggested_use": "Special magical transition divider for playthroughs, lore sections, world event continuity."
+  },
+  {
+    "source_file": "06_progress_bar_violet.png",
+    "new_file": "04_Global_Progress_and_Loading/ui_global_progress_bar_violet.png",
+    "suggested_use": "Progress/loading bar for archive sync, reveal progress, sealed record unlock state."
+  },
+  {
+    "source_file": "07_progress_bar_gold.png",
+    "new_file": "04_Global_Progress_and_Loading/ui_global_progress_bar_gold.png",
+    "suggested_use": "Progress/loading bar for premium, featured, legendary or highlighted progress states."
+  },
+  {
+    "source_file": "08_progress_bar_arcane.png",
+    "new_file": "04_Global_Progress_and_Loading/ui_global_progress_bar_arcane.png",
+    "suggested_use": "Arcane progress/loading bar for ritual, lore reveal, magical loading states."
+  },
+  {
+    "source_file": "13_status_ring_violet.png",
+    "new_file": "05_Global_Status_Indicators/ui_global_status_ring_violet.png",
+    "suggested_use": "Generic archive status ring, used for filters, badges, markers, subtle indicators."
+  },
+  {
+    "source_file": "14_status_ring_purple.png",
+    "new_file": "05_Global_Status_Indicators/ui_global_status_ring_purple.png",
+    "suggested_use": "Mystic status ring, suited for archive, lore, sealed, magic-related badges."
+  },
+  {
+    "source_file": "15_status_ring_gold.png",
+    "new_file": "05_Global_Status_Indicators/ui_global_status_ring_gold.png",
+    "suggested_use": "Prestige/featured/legendary status ring."
+  },
+  {
+    "source_file": "16_arcane_ring_large.png",
+    "new_file": "05_Global_Status_Indicators/ui_global_status_ring_arcane_large.png",
+    "suggested_use": "Large magical ring for featured cards, special archive widgets, focal status decoration."
+  },
+  {
+    "source_file": "17_archive_orb_seal.png",
+    "new_file": "05_Global_Status_Indicators/ui_global_archive_orb_seal.png",
+    "suggested_use": "Archive seal/orb ornament for featured widgets, special cards, top-level archive signals."
+  },
+  {
+    "source_file": "18_gem_marker_violet_left.png",
+    "new_file": "05_Global_Status_Indicators/ui_global_gem_marker_violet_left.png",
+    "suggested_use": "Small gem marker for inline stat rows, tabs, badges, micro UI accents."
+  },
+  {
+    "source_file": "19_gem_marker_violet_right.png",
+    "new_file": "05_Global_Status_Indicators/ui_global_gem_marker_violet_right.png",
+    "suggested_use": "Small gem marker for inline stat rows, tabs, badges, micro UI accents."
+  },
+  {
+    "source_file": "20_gem_marker_gold_left.png",
+    "new_file": "05_Global_Status_Indicators/ui_global_gem_marker_gold_left.png",
+    "suggested_use": "Small premium gem marker for featured or rare UI accents."
+  },
+  {
+    "source_file": "21_gem_marker_gold_center.png",
+    "new_file": "05_Global_Status_Indicators/ui_global_gem_marker_gold_center.png",
+    "suggested_use": "Centered premium gem marker for featured or rare UI accents."
+  },
+  {
+    "source_file": "22_gem_marker_gold_right.png",
+    "new_file": "05_Global_Status_Indicators/ui_global_gem_marker_gold_right.png",
+    "suggested_use": "Small premium gem marker for featured or rare UI accents."
+  },
+  {
+    "source_file": "09_arcane_flame_violet.png",
+    "new_file": "06_Global_Magic_Effects/ui_global_magic_effect_flame_violet.png",
+    "suggested_use": "Violet magical flame accent for archive, lore, mystical feature highlights."
+  },
+  {
+    "source_file": "10_arcane_flame_gold.png",
+    "new_file": "06_Global_Magic_Effects/ui_global_magic_effect_flame_gold.png",
+    "suggested_use": "Golden magical flame accent for highlights, rewards, premium archive elements."
+  },
+  {
+    "source_file": "11_arcane_flame_crimson.png",
+    "new_file": "06_Global_Magic_Effects/ui_global_magic_effect_flame_crimson.png",
+    "suggested_use": "Crimson magical flame accent for danger, conflict, fallen or corrupted states."
+  },
+  {
+    "source_file": "12_moon_archive_seal.png",
+    "new_file": "07_Lore_Archive_Sealed_Records/ui_lore_archive_moon_seal.png",
+    "suggested_use": "Lore pages, archive seals, sealed-record headers, record metadata decoration."
+  },
+  {
+    "source_file": "24_crescent_archive_medallion.png",
+    "new_file": "07_Lore_Archive_Sealed_Records/ui_lore_archive_crescent_medallion.png",
+    "suggested_use": "Lore, sealed records, archive cards, mystical record headers."
+  },
+  {
+    "source_file": "28_corner_ornament_violet.png",
+    "new_file": "07_Lore_Archive_Sealed_Records/ui_lore_archive_corner_ornament_violet.png",
+    "suggested_use": "Top or bottom card corner for lore cards, sealed records, archive notes."
+  },
+  {
+    "source_file": "29_hanging_archive_tassel.png",
+    "new_file": "07_Lore_Archive_Sealed_Records/ui_lore_archive_hanging_tassel.png",
+    "suggested_use": "Hanging side ornament for archive notes, lore cards, scroll-like panels."
+  },
+  {
+    "source_file": "30_corner_ornament_crimson.png",
+    "new_file": "08_Events_Fallen_and_Danger/ui_events_fallen_corner_ornament_crimson.png",
+    "suggested_use": "Corner ornament for events, fallen records, danger callouts, warfront-style panels."
+  },
+  {
+    "source_file": "31_candle_cluster.png",
+    "new_file": "08_Events_Fallen_and_Danger/ui_events_lore_candle_cluster.png",
+    "suggested_use": "Atmospheric candle decoration for lore, events, world-events, notices."
+  },
+  {
+    "source_file": "32_sealed_scroll.png",
+    "new_file": "09_Downloads_Seals_and_Misc/ui_downloads_sealed_scroll.png",
+    "suggested_use": "Downloads page, texture-pack notice blocks, archive release notes, sealed callout cards."
+  },
+  {
+    "source_file": "33_wax_seal.png",
+    "new_file": "09_Downloads_Seals_and_Misc/ui_downloads_archive_wax_seal.png",
+    "suggested_use": "Seal accent for downloads, archive documents, release cards, attached notices."
+  }
+]
