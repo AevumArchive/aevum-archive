@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "basePath": "/aevum-archive/assets/ui/ornaments/future/",
+  "policy": {
+    "format": "transparent PNG, sRGB",
+    "naming": "ui_[scope]_[area]_[object]_[variant].png",
+    "opacity": "export opaque/full-strength artwork; CSS controls visual opacity",
+    "portraitRule": "never replace profile icons and never place portraits outside portrait slots"
+  },
+  "slots": [
+    {"id":"global-navigation-crest","file":"ui_global_navigation_archive_crest_compact.png","routes":["all"],"placement":"navigation brand accent"},
+    {"id":"global-footer-divider","file":"ui_global_footer_archive_chain_divider.png","routes":["all except /"],"placement":"above footer"},
+    {"id":"global-empty-lock","file":"ui_global_empty_state_archive_lock.png","routes":["/leaderboard/","/sealed-records/"],"placement":"empty-state focal seal"},
+    {"id":"status-active","file":"ui_global_status_active_marker.png","routes":["/characters/","/characters/all.html"],"placement":"compact status marker"},
+    {"id":"status-sealed","file":"ui_global_status_sealed_marker.png","routes":["/characters/","/sealed-records/"],"placement":"compact status marker"},
+    {"id":"status-fallen","file":"ui_global_status_fallen_marker.png","routes":["/characters/","/characters/all.html"],"placement":"compact status marker"},
+    {"id":"status-retired","file":"ui_global_status_retired_marker.png","routes":["/characters/","/characters/all.html"],"placement":"compact status marker"},
+    {"id":"not-found","file":"ui_404_broken_archive_sigil.png","routes":["/404.html"],"placement":"hero aside"},
+    {"id":"achievements-shelf","file":"ui_achievements_trophy_shelf_gold.png","routes":["/achievements/"],"placement":"achievement grid heading"},
+    {"id":"character-roster","file":"ui_characters_roster_header_divider.png","routes":["/characters/","/characters/all.html"],"placement":"roster section heading"},
+    {"id":"character-bonds","file":"ui_characters_bonds_knot_divider.png","routes":["/characters/bonds.html"],"placement":"bond section transitions"},
+    {"id":"character-record-footer","file":"ui_characters_record_footer_violet.png","routes":["/characters/astera-zenith.html","/characters/faaram.html","/characters/guts.html","/characters/jango.html","/characters/jawohl.html","/characters/khealdur.html","/characters/lythariel.html","/characters/mortis.html","/characters/obama.html","/characters/raven.html","/characters/tony.html","/characters/william-carter.html"],"placement":"below record text, outside portrait slot"},
+    {"id":"downloads-scroll","file":"ui_downloads_bundle_scroll_frame.png","routes":["/downloads/texture-pack.html"],"placement":"download metadata panel"},
+    {"id":"events-edge","file":"ui_events_chronicle_edge_crimson.png","routes":["/events/","/world-events/"],"placement":"outer chronicle rail"},
+    {"id":"leaderboard-header","file":"ui_leaderboard_crown_header_gold.png","routes":["/leaderboard/","/top-characters/"],"placement":"low hero divider"},
+    {"id":"leaderboard-slot","file":"ui_leaderboard_rank_slot_corner_gold.png","routes":["/leaderboard/"],"placement":"ten empty Roman-numeral slots"},
+    {"id":"lore-atlas","file":"ui_lore_atlas_header_compass.png","routes":["/lore/"],"placement":"hero aside"},
+    {"id":"lore-kingdoms","file":"ui_lore_kingdom_crown_divider.png","routes":["/lore/kingdoms/","/lore/kingdoms/avalon.html","/lore/kingdoms/unnamed-crown.html"],"placement":"section divider"},
+    {"id":"lore-locations","file":"ui_lore_location_compass_seal.png","routes":["/lore/locations/","/lore/locations/crownbridge-front.html","/lore/locations/sunken-bell-tower.html"],"placement":"location header seal"},
+    {"id":"lore-houses","file":"ui_lore_noble_house_banner_divider.png","routes":["/lore/noble-houses/","/lore/noble-houses/heraldry.html","/lore/noble-houses/house-zenith.html"],"placement":"heraldic divider"},
+    {"id":"lore-settlements","file":"ui_lore_settlement_marker.png","routes":["/lore/settlements/","/lore/settlements/neris.html"],"placement":"settlement header seal"},
+    {"id":"npc-ledger","file":"ui_npcs_ledger_header_seal.png","routes":["/npcs/"],"placement":"index hero aside"},
+    {"id":"npc-record-footer","file":"ui_npcs_record_footer_violet.png","routes":["/npcs/ichiro.html","/npcs/jiro.html","/npcs/keanu.html","/npcs/nox.html","/npcs/nyx.html","/npcs/rapax.html"],"placement":"below record text, outside portrait slot"},
+    {"id":"playthrough-timeline","file":"ui_playthroughs_timeline_spine_violet.png","routes":["/playthroughs/"],"placement":"timeline edge"},
+    {"id":"playthrough-ended","file":"ui_playthroughs_ended_thread_marker.png","routes":["/playthroughs/aizen-ended-road.html"],"placement":"ended-state seal"},
+    {"id":"relic-vault","file":"ui_relics_vault_header_orb.png","routes":["/world-items/"],"placement":"hero focal seal"},
+    {"id":"relic-separator","file":"ui_relics_item_separator_gold.png","routes":["/world-items/"],"placement":"relic cards"},
+    {"id":"sealed-lock","file":"ui_sealed_records_lock_chain_corner.png","routes":["/sealed-records/"],"placement":"sealed archive panel corner"},
+    {"id":"world-event-anchor","file":"ui_world_events_anchor_ring.png","routes":["/world-events/"],"placement":"world-event hero focal seal"},
+    {"id":"home-corner-left","file":"ui_home_portal_corner_left.png","routes":["/"],"placement":"optional future portal exterior"},
+    {"id":"home-corner-right","file":"ui_home_portal_corner_right.png","routes":["/"],"placement":"optional future portal exterior"}
+  ]
+}

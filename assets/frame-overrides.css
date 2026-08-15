@@ -735,3 +735,372 @@
   .feature-panel::after,
   .ritual-panel::after { opacity: 0.16; }
 }
+
+/* 2026-08-15: sitewide ornament framework.
+   Body theme classes select shared edge rails, shelf dividers and focal seals.
+   Character portrait/profile slots are deliberately excluded. */
+.archive-page {
+  --ornament-edge: url("/aevum-archive/assets/ui/ornaments/02_Global_Edge_Ornaments/ui_global_edge_ornament_vertical_violet.png");
+  --ornament-divider: url("/aevum-archive/assets/ui/ornaments/03_Global_Dividers/ui_global_divider_long_dark.png");
+  --ornament-micro: url("/aevum-archive/assets/ui/ornaments/03_Global_Dividers/ui_global_divider_micro_violet.png");
+  --ornament-edge-opacity: 0.68;
+  --ornament-divider-opacity: 0.58;
+}
+
+.theme-achievements,
+.theme-downloads,
+.theme-leaderboard,
+.theme-relics {
+  --ornament-edge: url("/aevum-archive/assets/ui/ornaments/02_Global_Edge_Ornaments/ui_global_edge_ornament_vertical_gold.png");
+  --ornament-divider: url("/aevum-archive/assets/ui/ornaments/03_Global_Dividers/ui_global_divider_long_gold.png");
+  --ornament-micro: url("/aevum-archive/assets/ui/ornaments/03_Global_Dividers/ui_global_divider_micro_gold.png");
+  --ornament-edge-opacity: 0.78;
+  --ornament-divider-opacity: 0.70;
+}
+
+.theme-lore,
+.theme-npcs,
+.theme-sealed {
+  --ornament-divider: url("/aevum-archive/assets/ui/ornaments/03_Global_Dividers/ui_global_divider_long_violet.png");
+  --ornament-divider-opacity: 0.67;
+}
+
+.theme-playthroughs {
+  --ornament-divider: url("/aevum-archive/assets/ui/ornaments/03_Global_Dividers/ui_global_divider_magic_wisp.png");
+  --ornament-divider-opacity: 0.62;
+}
+
+.archive-page main.page {
+  position: relative;
+  isolation: isolate;
+}
+
+.archive-page main.page > * {
+  position: relative;
+  z-index: 1;
+}
+
+@media (min-width: 1320px) {
+  .archive-page:not(.theme-home) main.page::before,
+  .archive-page:not(.theme-home) main.page::after {
+    content: "";
+    position: absolute;
+    width: 54px;
+    height: min(720px, 72vh);
+    top: 156px;
+    z-index: 0;
+    background: var(--ornament-edge) center top / contain no-repeat;
+    opacity: var(--ornament-edge-opacity);
+    filter: brightness(1.18) saturate(1.08) drop-shadow(0 0 16px rgba(139, 92, 246, 0.20));
+    pointer-events: none;
+  }
+
+  .archive-page:not(.theme-home) main.page::before { left: -72px; }
+  .archive-page:not(.theme-home) main.page::after { right: -72px; transform: scaleX(-1); }
+}
+
+.archive-page:not(.theme-home) .hero + .section,
+.archive-page:not(.theme-home) .record-hero + .section,
+.archive-page:not(.theme-home) .section + .section {
+  position: relative;
+}
+
+.archive-page:not(.theme-home) .hero + .section::before,
+.archive-page:not(.theme-home) .record-hero + .section::before,
+.archive-page:not(.theme-home) .section + .section::before {
+  content: "";
+  position: absolute;
+  width: min(620px, 72%);
+  height: 72px;
+  left: 50%;
+  top: -58px;
+  z-index: 0;
+  background: var(--ornament-divider) center / contain no-repeat;
+  opacity: var(--ornament-divider-opacity);
+  filter: brightness(1.16) saturate(1.08) drop-shadow(0 0 12px rgba(139, 92, 246, 0.16));
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.archive-page:not(.theme-home) .footer {
+  position: relative;
+  margin-top: 74px;
+}
+
+.archive-page:not(.theme-home) .footer::before {
+  content: "";
+  position: absolute;
+  width: min(420px, 66%);
+  height: 54px;
+  left: 50%;
+  top: -50px;
+  background: var(--ornament-micro) center / contain no-repeat;
+  opacity: 0.66;
+  filter: brightness(1.12) drop-shadow(0 0 10px rgba(139, 92, 246, 0.14));
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+/* The homepage layout stays intact; the previous castle-like flourish competed
+   with the archive-door copy and is intentionally removed. */
+.theme-home .welcome-gate::after { display: none; }
+
+/* Leaderboard: one primary message, one compact sync state and clearer assets. */
+.theme-leaderboard .leaderboard-hero {
+  grid-template-columns: minmax(0, 1.38fr) minmax(300px, 0.62fr);
+}
+
+.theme-leaderboard .leaderboard-hero::after { display: none; }
+
+.leaderboard-hero-divider {
+  display: block;
+  width: min(430px, 72%);
+  height: auto;
+  margin: -10px 0 10px;
+  opacity: 0.82;
+  filter: brightness(1.18) drop-shadow(0 0 12px rgba(245, 158, 11, 0.22));
+}
+
+.theme-leaderboard .leaderboard-hero > div h1 {
+  max-width: 650px;
+  font-size: clamp(3.2rem, 5.7vw, 4.9rem);
+}
+
+.theme-leaderboard .leaderboard-seal {
+  padding-right: 26px;
+}
+
+.theme-leaderboard .leaderboard-seal::before {
+  width: 104px;
+  height: 104px;
+  top: 5px;
+  right: 5px;
+  bottom: auto;
+  background: url("/aevum-archive/assets/ui/ornaments/05_Global_Status_Indicators/ui_global_status_ring_gold.png") center / contain no-repeat;
+  opacity: 0.78;
+  filter: brightness(1.18) drop-shadow(0 0 14px rgba(245, 158, 11, 0.20));
+}
+
+.theme-leaderboard .leaderboard-seal h2 {
+  max-width: 100%;
+  font-size: clamp(1.72rem, 2.1vw, 2.08rem);
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+}
+
+/* Relics receive a real vault identity: orb focal seal plus gold card markers. */
+.theme-relics .hero .archive-card {
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.theme-relics .hero .archive-card::before {
+  content: "";
+  position: absolute;
+  width: 176px;
+  height: 176px;
+  top: 18px;
+  left: 50%;
+  background: url("/aevum-archive/assets/ui/ornaments/05_Global_Status_Indicators/ui_global_archive_orb_seal.png") center / contain no-repeat;
+  opacity: 0.72;
+  filter: brightness(1.16) drop-shadow(0 0 18px rgba(245, 158, 11, 0.20));
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.theme-relics .relic-card {
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.theme-relics .relic-card::after {
+  content: "";
+  position: absolute;
+  width: 54px;
+  height: 54px;
+  right: 10px;
+  bottom: 8px;
+  z-index: 0;
+  background: url("/aevum-archive/assets/ui/ornaments/05_Global_Status_Indicators/ui_global_gem_marker_gold_center.png") center / contain no-repeat;
+  opacity: 0.70;
+  filter: brightness(1.14) drop-shadow(0 0 10px rgba(245, 158, 11, 0.18));
+  pointer-events: none;
+}
+
+.theme-relics .relic-card > * { position: relative; z-index: 1; }
+
+/* Existing themed accents become deliberate foreground ornaments instead of
+   near-invisible ghosts. */
+.lore-hero .archive-card::before { opacity: 0.56; filter: brightness(1.14) drop-shadow(0 0 14px rgba(139, 92, 246, 0.18)); }
+.achievement-card::before { opacity: 0.78; filter: brightness(1.16) drop-shadow(0 0 14px rgba(245, 158, 11, 0.20)); }
+.event-card::after { opacity: 0.58; filter: brightness(1.12) drop-shadow(0 0 12px rgba(239, 68, 68, 0.18)); }
+.feature-panel::after { opacity: 0.72; filter: brightness(1.14) drop-shadow(0 0 12px rgba(245, 158, 11, 0.18)); }
+.ritual-panel::after { opacity: 0.48; filter: brightness(1.10) drop-shadow(0 0 10px rgba(139, 92, 246, 0.14)); }
+
+/* Character/NPC record text panels get only a small marker. Portrait and
+   profile-icon areas remain untouched. */
+.theme-characters .record-panel::after,
+.theme-npcs .record-panel::after {
+  content: "";
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  right: 12px;
+  bottom: 10px;
+  background: url("/aevum-archive/assets/ui/ornaments/05_Global_Status_Indicators/ui_global_gem_marker_violet_right.png") center / contain no-repeat;
+  opacity: 0.62;
+  filter: brightness(1.12) drop-shadow(0 0 10px rgba(139, 92, 246, 0.16));
+  pointer-events: none;
+}
+
+/* Sealed and NPC index heroes get a proper archive seal without covering text. */
+.theme-sealed .hero .archive-card::before,
+.theme-npcs.page-index .hero .archive-card::before {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  top: 22px;
+  left: 50%;
+  background: url("/aevum-archive/assets/ui/ornaments/07_Lore_Archive_Sealed_Records/ui_lore_archive_crescent_medallion.png") center / contain no-repeat;
+  opacity: 0.58;
+  filter: brightness(1.12) drop-shadow(0 0 14px rgba(139, 92, 246, 0.18));
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+@media (max-width: 980px) {
+  .theme-leaderboard .leaderboard-hero { grid-template-columns: 1fr; }
+  .archive-page:not(.theme-home) .hero + .section::before,
+  .archive-page:not(.theme-home) .record-hero + .section::before,
+  .archive-page:not(.theme-home) .section + .section::before { width: 86%; opacity: 0.48; }
+}
+
+@media (max-width: 640px) {
+  .leaderboard-hero-divider { width: 92%; }
+  .theme-leaderboard .leaderboard-hero > div h1 { font-size: clamp(2.8rem, 15vw, 4.2rem); }
+  .archive-page:not(.theme-home) .footer { margin-top: 62px; }
+  .archive-page:not(.theme-home) .footer::before { width: 82%; opacity: 0.48; }
+}
+
+/* Route focal ornaments. These deliberately reuse the supplied semantic pack
+   while keeping all artwork outside profile icons and portrait slots. */
+.theme-characters.page-index .hero .archive-card,
+.route-characters-all .hero .archive-card,
+.route-characters-bonds .bond-oracle-card,
+.theme-playthroughs .hero .archive-card,
+.theme-events .hero .archive-card,
+.page-error .hero .archive-card {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.theme-characters.page-index .hero .archive-card::before,
+.route-characters-all .hero .archive-card::before,
+.route-characters-bonds .bond-oracle-card::before,
+.theme-playthroughs .hero .archive-card::before,
+.theme-events .hero .archive-card::before,
+.page-error .hero .archive-card::before {
+  content: "";
+  position: absolute;
+  width: 152px;
+  height: 152px;
+  top: 18px;
+  left: 50%;
+  z-index: 0;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.64;
+  filter: brightness(1.16) saturate(1.08) drop-shadow(0 0 16px rgba(139, 92, 246, 0.20));
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.theme-characters.page-index .hero .archive-card::before,
+.route-characters-all .hero .archive-card::before {
+  background-image: url("/aevum-archive/assets/ui/ornaments/05_Global_Status_Indicators/ui_global_status_ring_violet.png");
+}
+
+.route-characters-bonds .bond-oracle-card::before {
+  width: 176px;
+  height: 176px;
+  background-image: url("/aevum-archive/assets/ui/ornaments/05_Global_Status_Indicators/ui_global_status_ring_arcane_large.png");
+}
+
+.theme-playthroughs .hero .archive-card::before {
+  background-image: url("/aevum-archive/assets/ui/ornaments/06_Global_Magic_Effects/ui_global_magic_effect_flame_violet.png");
+}
+
+.theme-events .hero .archive-card::before {
+  background-image: url("/aevum-archive/assets/ui/ornaments/06_Global_Magic_Effects/ui_global_magic_effect_flame_crimson.png");
+  filter: brightness(1.14) drop-shadow(0 0 16px rgba(239, 68, 68, 0.20));
+}
+
+.route-world-events .anchor-card::before {
+  width: 182px;
+  height: 182px;
+  background-image: url("/aevum-archive/assets/ui/ornaments/05_Global_Status_Indicators/ui_global_status_ring_arcane_large.png");
+  filter: brightness(1.14) drop-shadow(0 0 18px rgba(139, 92, 246, 0.22));
+}
+
+.page-error .hero .archive-card::before {
+  background-image: url("/aevum-archive/assets/ui/ornaments/07_Lore_Archive_Sealed_Records/ui_lore_archive_moon_seal.png");
+}
+
+.theme-characters.page-index .hero .archive-card > *,
+.route-characters-all .hero .archive-card > *,
+.route-characters-bonds .bond-oracle-card > *,
+.theme-playthroughs .hero .archive-card > *,
+.theme-events .hero .archive-card > *,
+.page-error .hero .archive-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Lore receives readable card corners; sealed entries get a compact medallion.
+   Both are small enough to remain accents instead of becoming card frames. */
+.theme-lore .realm-card {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.theme-lore .realm-card::after {
+  content: "";
+  position: absolute;
+  width: 78px;
+  height: 78px;
+  right: -4px;
+  bottom: -4px;
+  z-index: 0;
+  background: url("/aevum-archive/assets/ui/ornaments/07_Lore_Archive_Sealed_Records/ui_lore_archive_corner_ornament_violet.png") center / contain no-repeat;
+  opacity: 0.60;
+  filter: brightness(1.14) drop-shadow(0 0 10px rgba(139, 92, 246, 0.16));
+  pointer-events: none;
+}
+
+.theme-lore .realm-card > * { position: relative; z-index: 1; }
+
+.theme-sealed .section .sealed-record-card::before,
+.theme-playthroughs .section .sealed-record-card::before {
+  content: "";
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  top: 10px;
+  right: 10px;
+  z-index: 0;
+  background: url("/aevum-archive/assets/ui/ornaments/07_Lore_Archive_Sealed_Records/ui_lore_archive_moon_seal.png") center / contain no-repeat;
+  opacity: 0.60;
+  filter: brightness(1.12) drop-shadow(0 0 9px rgba(139, 92, 246, 0.16));
+  pointer-events: none;
+}
+
+@media (max-width: 640px) {
+  .theme-lore .realm-card::after { width: 62px; height: 62px; opacity: 0.46; }
+  .theme-sealed .section .sealed-record-card::before,
+  .theme-playthroughs .section .sealed-record-card::before { width: 40px; height: 40px; opacity: 0.48; }
+}
