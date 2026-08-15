@@ -267,3 +267,123 @@
   background:
     linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.08) 48%, transparent 60%);
 }
+
+/* Compact status polish: chains for locked, small seals for sealed/dead. */
+
+/* LOCKED — crossed chain strips, not a full frame */
+.achievement-lock::before,
+.achievement-lock::after {
+  content: "" !important;
+  position: absolute;
+  left: -18%;
+  right: -18%;
+  height: 18px;
+  z-index: 6;
+  pointer-events: none;
+  border: 1px solid rgba(216, 180, 254, 0.18) !important;
+  border-radius: 999px;
+  opacity: 0.34;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      rgba(216, 180, 254, 0.78) 0 7px,
+      rgba(76, 29, 149, 0.18) 7px 13px,
+      transparent 13px 20px
+    );
+  box-shadow:
+    0 0 12px rgba(168, 85, 247, 0.16),
+    inset 0 0 8px rgba(255, 255, 255, 0.08);
+}
+
+.achievement-lock::before {
+  top: 34%;
+  transform: rotate(-13deg);
+}
+
+.achievement-lock::after {
+  top: 56%;
+  transform: rotate(13deg);
+}
+
+.achievement-lock {
+  background:
+    radial-gradient(circle at 50% 20%, rgba(168, 85, 247, 0.13), transparent 42%),
+    linear-gradient(145deg, rgba(17, 12, 24, 0.96), rgba(10, 8, 14, 0.98)) !important;
+  border: 1px solid rgba(216, 180, 254, 0.22) !important;
+}
+
+/* keep locked text readable above card, but visually under the chains */
+.achievement-lock > * {
+  position: relative;
+  z-index: 5;
+}
+
+/* SEALED — subtle mystic corner mark */
+.status-card.sealed::before {
+  content: "✦" !important;
+  display: grid !important;
+  place-items: center;
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  width: 34px;
+  height: 34px;
+  z-index: 2;
+  border-radius: 999px;
+  color: rgba(216, 180, 254, 0.78);
+  background:
+    radial-gradient(circle, rgba(168, 85, 247, 0.22), rgba(17, 12, 24, 0.08) 62%, transparent);
+  border: 1px solid rgba(216, 180, 254, 0.16) !important;
+  box-shadow: 0 0 18px rgba(168, 85, 247, 0.16);
+  opacity: 0.9;
+}
+
+.status-card.sealed::after {
+  content: "" !important;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.32;
+  background:
+    linear-gradient(135deg, transparent 0 58%, rgba(168, 85, 247, 0.11) 59%, transparent 70%),
+    radial-gradient(circle at 100% 0%, rgba(216, 180, 254, 0.12), transparent 38%);
+}
+
+.status-card.sealed {
+  border-color: rgba(216, 180, 254, 0.26) !important;
+}
+
+/* DEAD — small fracture / fallen mark */
+.status-card.dead::before {
+  content: "✕" !important;
+  display: grid !important;
+  place-items: center;
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  width: 34px;
+  height: 34px;
+  z-index: 2;
+  border-radius: 999px;
+  color: rgba(252, 165, 165, 0.82);
+  background:
+    radial-gradient(circle, rgba(127, 29, 29, 0.32), rgba(17, 8, 10, 0.08) 62%, transparent);
+  border: 1px solid rgba(248, 113, 113, 0.18) !important;
+  box-shadow: 0 0 18px rgba(248, 64, 86, 0.14);
+  opacity: 0.88;
+}
+
+.status-card.dead::after {
+  content: "" !important;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.28;
+  background:
+    linear-gradient(128deg, transparent 0 52%, rgba(248, 64, 86, 0.12) 53%, transparent 66%),
+    radial-gradient(circle at 100% 0%, rgba(248, 64, 86, 0.10), transparent 38%);
+}
+
+.status-card.dead {
+  border-color: rgba(248, 113, 113, 0.26) !important;
+}
