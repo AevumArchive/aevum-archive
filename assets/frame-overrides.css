@@ -1,5 +1,4 @@
-﻿/* Aevum Archive frame overlay layer.
-   Reversible: remove this file or the extra stylesheet link to disable it. */
+﻿/* Aevum Archive frame overlay layer — tuned version */
 
 :root {
   --frame-purple-glow: rgba(168, 85, 247, 0.24);
@@ -7,23 +6,22 @@
   --frame-red-glow: rgba(248, 64, 86, 0.22);
 }
 
-.achievement-lock,
-.status-card,
-.sealed-record-card,
-.leaderboard-board,
-.epic-portrait-card,
-.portrait-card,
-.relic-card,
-.overlord-grace-card {
-  isolation: isolate;
+/* Important: frames should never animate or drift. */
+.epic-portrait-frame::before,
+.faaram-aura::before,
+.obama-aura::before,
+.astral-portrait-frame::before,
+.new-order-portrait-frame::before {
+  animation: none !important;
+  transform: none !important;
 }
 
-.achievement-lock,
-.status-card.sealed,
-.status-card.dead,
-.sealed-record-card,
-.leaderboard-board {
+/* Locked achievements: chains around the card, not inside the icon. */
+.achievement-lock {
+  position: relative;
   overflow: visible !important;
+  isolation: isolate;
+  background: linear-gradient(145deg, rgba(17, 12, 24, 0.96), rgba(28, 18, 34, 0.92)) !important;
 }
 
 .achievement-lock::before {
@@ -35,7 +33,7 @@
   border: 0 !important;
   border-radius: 26px;
   background: url("ui/frames/sealed-locked-wide.png") center / 100% 100% no-repeat !important;
-  opacity: 0.74;
+  opacity: 0.8;
   filter: drop-shadow(0 0 18px var(--frame-purple-glow));
 }
 
@@ -44,25 +42,28 @@
   z-index: 5;
 }
 
+/* Sealed / dead cards */
+.status-card,
+.sealed-record-card,
+.dead-record-card,
+.fallen-record-card {
+  position: relative;
+  isolation: isolate;
+  overflow: visible !important;
+}
+
 .status-card.sealed::before,
 .sealed-record-card::before {
   content: "" !important;
   position: absolute;
-  inset: -16px -18px;
+  inset: -14px -16px;
   z-index: 2;
   pointer-events: none;
   border: 0 !important;
   border-radius: 26px;
   background: url("ui/frames/sealed-mystic-wide.png") center / 100% 100% no-repeat !important;
-  opacity: 0.54;
-  mix-blend-mode: screen;
+  opacity: 0.58;
   filter: drop-shadow(0 0 16px var(--frame-purple-glow));
-}
-
-.status-card.sealed > *,
-.sealed-record-card > * {
-  position: relative;
-  z-index: 3;
 }
 
 .status-card.dead::before,
@@ -70,40 +71,49 @@
 .fallen-record-card::before {
   content: "" !important;
   position: absolute;
-  inset: -16px -18px;
+  inset: -14px -16px;
   z-index: 2;
   pointer-events: none;
   border: 0 !important;
   border-radius: 26px;
   background: url("ui/frames/dead-fallen-wide.png") center / 100% 100% no-repeat !important;
-  opacity: 0.56;
-  mix-blend-mode: screen;
+  opacity: 0.62;
   filter: drop-shadow(0 0 18px var(--frame-red-glow));
 }
 
-.status-card.dead > *,
+.status-card > *,
+.sealed-record-card > *,
 .dead-record-card > *,
 .fallen-record-card > * {
   position: relative;
   z-index: 3;
 }
 
+/* Leaderboard: solid vault plate under the transparent ornamental frame. */
 .leaderboard-board {
   position: relative;
-  border-color: rgba(216, 180, 254, 0.28) !important;
-  box-shadow: 0 0 36px rgba(76, 29, 149, 0.18), inset 0 0 46px rgba(17, 9, 31, 0.72);
+  isolation: isolate;
+  overflow: visible !important;
+  padding: clamp(2.25rem, 4vw, 3.5rem) !important;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(109, 40, 217, 0.22), transparent 45%),
+    linear-gradient(145deg, rgba(10, 8, 14, 0.98), rgba(18, 12, 25, 0.97)) !important;
+  border-color: rgba(216, 180, 254, 0.25) !important;
+  box-shadow:
+    0 0 46px rgba(76, 29, 149, 0.22),
+    inset 0 0 64px rgba(0, 0, 0, 0.58) !important;
 }
 
 .leaderboard-board::before {
   content: "" !important;
   position: absolute;
-  inset: -22px -24px;
+  inset: -24px -28px;
   z-index: 1;
   pointer-events: none;
-  border-radius: 30px;
+  border-radius: 32px;
   background: url("ui/frames/sealed-locked-wide.png") center / 100% 100% no-repeat !important;
-  opacity: 0.42;
-  filter: drop-shadow(0 0 24px var(--frame-purple-glow));
+  opacity: 0.88;
+  filter: drop-shadow(0 0 22px var(--frame-purple-glow));
 }
 
 .leaderboard-board > * {
@@ -111,69 +121,89 @@
   z-index: 2;
 }
 
+/* Portrait frames: container gets padding, frame sits on the outside, image stays clean. */
+.epic-portrait-card,
+.portrait-card {
+  overflow: visible !important;
+  isolation: isolate;
+}
+
 .epic-portrait-frame,
 .inline-artwork.portrait-wide.epic-portrait-frame {
   position: relative;
   overflow: visible !important;
-  z-index: 0;
+  padding: clamp(2.1rem, 4.5vw, 4.4rem) clamp(2.2rem, 5vw, 4.8rem);
+  border: 0 !important;
+  background:
+    radial-gradient(circle at 50% 8%, rgba(124, 58, 237, 0.14), transparent 52%),
+    rgba(7, 5, 11, 0.88) !important;
+  box-shadow: none !important;
 }
 
 .epic-portrait-frame::before,
 .inline-artwork.portrait-wide.epic-portrait-frame::before {
   content: "" !important;
   position: absolute;
-  inset: -42px -54px;
+  inset: 0;
   z-index: 4;
   pointer-events: none;
   border: 0 !important;
-  background: url("ui/frames/astral-portrait-frame.png") center / 100% 100% no-repeat;
-  opacity: 0.76;
-  filter: drop-shadow(0 0 28px rgba(168, 85, 247, 0.24));
+  background: url("ui/frames/astral-portrait-frame.png") center / 100% 100% no-repeat !important;
+  opacity: 0.92;
+  filter: drop-shadow(0 0 28px rgba(168, 85, 247, 0.25));
+}
+
+.obama-aura,
+.new-order-portrait-frame {
+  background:
+    radial-gradient(circle at 50% 8%, rgba(245, 158, 11, 0.14), transparent 52%),
+    rgba(8, 6, 4, 0.9) !important;
 }
 
 .obama-aura::before,
 .new-order-portrait-frame::before {
   background-image: url("ui/frames/new-order-portrait-frame.png") !important;
-  opacity: 0.78;
+  opacity: 0.94;
   filter: drop-shadow(0 0 30px var(--frame-gold-glow));
-}
-
-.faaram-aura::before,
-.astral-portrait-frame::before {
-  background-image: url("ui/frames/astral-portrait-frame.png") !important;
 }
 
 .epic-portrait-frame img,
 .inline-artwork.portrait-wide.epic-portrait-frame img {
   position: relative;
   z-index: 2;
-  border-radius: 18px;
+  display: block;
+  width: 100%;
+  border-radius: 14px;
 }
 
+/* Ichiro: less black overlay, more visible soul plate. */
 .ichiro-portrait .sealed-portrait-frame,
 .ichiro-soul-panel,
 .soul-record-panel {
   position: relative;
   overflow: hidden;
   background-image:
-    linear-gradient(180deg, rgba(18, 6, 18, 0.72), rgba(6, 3, 8, 0.92)),
+    linear-gradient(180deg, rgba(12, 4, 10, 0.28), rgba(6, 3, 8, 0.48)),
     url("ui/frames/ichiro-soul-wide.png") !important;
   background-position: center;
   background-size: cover;
-  border-color: rgba(248, 113, 113, 0.28) !important;
-  box-shadow: inset 0 0 52px rgba(127, 29, 29, 0.25), 0 0 28px rgba(248, 64, 86, 0.12);
+  border-color: rgba(248, 113, 113, 0.34) !important;
+  box-shadow:
+    inset 0 0 42px rgba(127, 29, 29, 0.18),
+    0 0 30px rgba(248, 64, 86, 0.16) !important;
 }
 
+.ichiro-portrait .sealed-portrait-frame::before,
+.ichiro-soul-panel::before,
+.soul-record-panel::before {
+  opacity: 0.18 !important;
+}
+
+/* Relic cards stay cleaner. */
 .item-art-card .relic-image,
 .relic-image.compact {
   border: 1px solid rgba(125, 211, 252, 0.18);
   box-shadow: inset 0 0 34px rgba(8, 47, 73, 0.26), 0 0 20px rgba(34, 211, 238, 0.08);
-}
-
-.site-header .nav,
-.nav {
-  row-gap: 0.65rem;
-  justify-content: flex-end;
 }
 
 @media (max-width: 760px) {
@@ -183,12 +213,16 @@
   .sealed-record-card::before,
   .leaderboard-board::before {
     inset: -10px -12px;
-    opacity: 0.38;
+    opacity: 0.45;
+  }
+
+  .epic-portrait-frame,
+  .inline-artwork.portrait-wide.epic-portrait-frame {
+    padding: 1.25rem;
   }
 
   .epic-portrait-frame::before,
   .inline-artwork.portrait-wide.epic-portrait-frame::before {
-    inset: -18px -22px;
-    opacity: 0.42;
+    opacity: 0.55;
   }
 }
