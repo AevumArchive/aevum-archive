@@ -892,3 +892,164 @@ h3 { font-size: 1.35rem; }
 .ichiro-portrait .sealed-portrait-frame span { color: #ffd0dc; text-shadow: 0 0 54px rgba(255,77,125,.82); }
 .ichiro-notes { border-color: rgba(255,77,125,.35); background: radial-gradient(circle at 90% 0%, rgba(255,77,125,.14), transparent 16rem), rgba(18, 8, 18, .94); }
 @media (max-width: 760px) { .ten-slots { grid-template-columns: 1fr; } .relic-image { height: 180px; } }
+/* 2026-08-15: sprite-ready outer frame system.
+   These layers sit around cards, not inside icons/profile runes.
+   Future transparent PNG/WebP frame assets can replace the pure-CSS borders here. */
+.achievement-lock,
+.status-card.sealed,
+.status-card.dead,
+.status-card.retired {
+  isolation: isolate;
+}
+
+.achievements-grid {
+  gap: 22px;
+  padding: 10px 8px 4px;
+}
+
+.achievement-lock {
+  position: relative;
+  overflow: visible;
+  border-color: rgba(255, 213, 128, 0.24);
+  background:
+    radial-gradient(circle at 88% 18%, rgba(139, 92, 246, 0.12), transparent 8rem),
+    linear-gradient(180deg, rgba(255,255,255,0.035), transparent),
+    rgba(18, 15, 26, 0.86);
+  box-shadow:
+    0 16px 46px rgba(0,0,0,0.28),
+    inset 0 1px 0 rgba(255,255,255,0.06);
+}
+
+.achievement-lock > * {
+  position: relative;
+  z-index: 2;
+}
+
+.achievement-lock::before {
+  content: '';
+  position: absolute;
+  inset: -9px;
+  z-index: 1;
+  pointer-events: none;
+  border-radius: 26px;
+  opacity: 0.82;
+  background:
+    radial-gradient(ellipse 9px 5px at 12px 50%, transparent 38%, rgba(255, 221, 154, 0.34) 42% 58%, transparent 62%) top left / 28px 11px repeat-x,
+    radial-gradient(ellipse 9px 5px at 12px 50%, transparent 38%, rgba(192, 132, 252, 0.28) 42% 58%, transparent 62%) bottom left / 28px 11px repeat-x,
+    radial-gradient(ellipse 5px 9px at 50% 12px, transparent 38%, rgba(255, 221, 154, 0.30) 42% 58%, transparent 62%) left top / 11px 28px repeat-y,
+    radial-gradient(ellipse 5px 9px at 50% 12px, transparent 38%, rgba(192, 132, 252, 0.26) 42% 58%, transparent 62%) right top / 11px 28px repeat-y;
+  filter: drop-shadow(0 0 9px rgba(192,132,252,0.20));
+}
+
+.achievement-lock::after {
+  content: '';
+  position: absolute;
+  inset: -13px;
+  z-index: 0;
+  pointer-events: none;
+  border-radius: 31px;
+  border: 1px solid rgba(255, 216, 145, 0.18);
+  background:
+    radial-gradient(circle at 16% 18%, rgba(255, 218, 146, 0.10), transparent 6rem),
+    radial-gradient(circle at 86% 82%, rgba(139, 92, 246, 0.13), transparent 7rem);
+}
+
+.achievement-lock span {
+  color: #cbb6ff;
+}
+
+.achievement-lock h3 {
+  color: #f0e6ff;
+  text-shadow: 0 0 22px rgba(192,132,252,0.15);
+}
+
+/* Sealed/fallen/retired records get external seals; content and profile icons stay untouched. */
+.status-card.sealed,
+.status-card.dead,
+.status-card.retired {
+  overflow: visible;
+}
+
+.status-card.sealed::before,
+.status-card.dead::before,
+.status-card.retired::before {
+  content: '';
+  position: absolute;
+  inset: -7px;
+  z-index: 1;
+  pointer-events: none;
+  border-radius: 28px;
+  opacity: 0.72;
+  background:
+    linear-gradient(90deg, transparent 0 18px, rgba(192,132,252,0.34) 18px 20px, transparent 20px 38px) top left / 38px 2px repeat-x,
+    linear-gradient(90deg, transparent 0 18px, rgba(192,132,252,0.22) 18px 20px, transparent 20px 38px) bottom left / 38px 2px repeat-x,
+    linear-gradient(0deg, transparent 0 18px, rgba(192,132,252,0.30) 18px 20px, transparent 20px 38px) left top / 2px 38px repeat-y,
+    linear-gradient(0deg, transparent 0 18px, rgba(192,132,252,0.22) 18px 20px, transparent 20px 38px) right top / 2px 38px repeat-y;
+}
+
+.status-card.dead::before {
+  background:
+    linear-gradient(90deg, transparent 0 18px, rgba(255,107,122,0.36) 18px 20px, transparent 20px 38px) top left / 38px 2px repeat-x,
+    linear-gradient(90deg, transparent 0 18px, rgba(255,107,122,0.22) 18px 20px, transparent 20px 38px) bottom left / 38px 2px repeat-x,
+    linear-gradient(0deg, transparent 0 18px, rgba(255,107,122,0.32) 18px 20px, transparent 20px 38px) left top / 2px 38px repeat-y,
+    linear-gradient(0deg, transparent 0 18px, rgba(255,107,122,0.22) 18px 20px, transparent 20px 38px) right top / 2px 38px repeat-y;
+}
+
+.status-card.retired::before {
+  background:
+    linear-gradient(90deg, transparent 0 18px, rgba(244,184,74,0.34) 18px 20px, transparent 20px 38px) top left / 38px 2px repeat-x,
+    linear-gradient(90deg, transparent 0 18px, rgba(244,184,74,0.22) 18px 20px, transparent 20px 38px) bottom left / 38px 2px repeat-x,
+    linear-gradient(0deg, transparent 0 18px, rgba(244,184,74,0.30) 18px 20px, transparent 20px 38px) left top / 2px 38px repeat-y,
+    linear-gradient(0deg, transparent 0 18px, rgba(244,184,74,0.22) 18px 20px, transparent 20px 38px) right top / 2px 38px repeat-y;
+}
+
+.status-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+.sealed-record-card {
+  position: relative;
+  overflow: visible;
+}
+
+.sealed-record-card::after {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  z-index: 0;
+  pointer-events: none;
+  border-radius: 30px;
+  border: 1px dashed rgba(192,132,252,0.18);
+  box-shadow: 0 0 34px rgba(139,92,246,0.07);
+}
+
+.sealed-record-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Future asset hooks: add these classes only after a real transparent frame asset exists. */
+.frame-asset-ready {
+  position: relative;
+  isolation: isolate;
+  overflow: visible;
+}
+
+.frame-asset-ready::after {
+  content: '';
+  position: absolute;
+  inset: var(--frame-inset, -12px);
+  z-index: var(--frame-z, 3);
+  pointer-events: none;
+  border-radius: var(--frame-radius, 30px);
+  background-image: var(--frame-image, none);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 640px) {
+  .achievements-grid { gap: 18px; padding-inline: 2px; }
+  .achievement-lock::before { inset: -6px; }
+  .achievement-lock::after { inset: -9px; }
+}
