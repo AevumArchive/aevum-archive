@@ -1,119 +1,177 @@
-﻿/* Aevum Archive frame overlay layer — tuned version */
+/* Aevum Archive frame overlay layer — calm final pass.
+   Purpose: subtle archive polish, not giant frames on every small card. */
 
 :root {
-  --frame-purple-glow: rgba(168, 85, 247, 0.24);
-  --frame-gold-glow: rgba(245, 158, 11, 0.22);
-  --frame-red-glow: rgba(248, 64, 86, 0.22);
+  --aevum-purple-glow: rgba(168, 85, 247, 0.18);
+  --aevum-gold-glow: rgba(245, 158, 11, 0.18);
+  --aevum-red-glow: rgba(248, 64, 86, 0.16);
+  --aevum-ink: rgba(8, 6, 12, 0.96);
 }
 
-/* Important: frames should never animate or drift. */
+/* Safety: decorative layers must not drift or animate. */
 .epic-portrait-frame::before,
 .faaram-aura::before,
 .obama-aura::before,
 .astral-portrait-frame::before,
-.new-order-portrait-frame::before {
+.new-order-portrait-frame::before,
+.achievement-lock::before,
+.achievement-lock::after,
+.status-card::before,
+.status-card::after,
+.leaderboard-board::before,
+.leaderboard-board::after {
   animation: none !important;
-  transform: none !important;
 }
 
-/* Locked achievements: chains around the card, not inside the icon. */
-.achievement-lock {
-  position: relative;
-  overflow: visible !important;
-  isolation: isolate;
-  background: linear-gradient(145deg, rgba(17, 12, 24, 0.96), rgba(28, 18, 34, 0.92)) !important;
-}
-
-.achievement-lock::before {
-  content: "" !important;
-  position: absolute;
-  inset: -18px -20px -16px;
-  z-index: 4;
-  pointer-events: none;
-  border: 0 !important;
-  border-radius: 26px;
-  background: url("ui/frames/sealed-locked-wide.png") center / 100% 100% no-repeat !important;
-  opacity: 0.8;
-  filter: drop-shadow(0 0 18px var(--frame-purple-glow));
-}
-
-.achievement-lock > * {
-  position: relative;
-  z-index: 5;
-}
-
-/* Sealed / dead cards */
+/* Small status cards stay compact. No large PNG frames here. */
 .status-card,
-.sealed-record-card,
-.dead-record-card,
-.fallen-record-card {
+.status-card.sealed,
+.status-card.dead {
   position: relative;
   isolation: isolate;
-  overflow: visible !important;
+  overflow: hidden !important;
+  border-radius: 22px !important;
 }
 
-.status-card.sealed::before,
-.sealed-record-card::before {
+.status-card.sealed {
+  background:
+    radial-gradient(circle at 92% 12%, rgba(168, 85, 247, 0.18), transparent 30%),
+    linear-gradient(145deg, rgba(24, 18, 34, 0.92), rgba(12, 9, 18, 0.97)) !important;
+  border: 1px solid rgba(216, 180, 254, 0.24) !important;
+  box-shadow: inset 0 0 24px rgba(76, 29, 149, 0.12), 0 0 14px rgba(76, 29, 149, 0.08) !important;
+}
+
+.status-card.dead {
+  background:
+    radial-gradient(circle at 92% 12%, rgba(248, 64, 86, 0.15), transparent 30%),
+    linear-gradient(145deg, rgba(31, 13, 18, 0.92), rgba(12, 7, 10, 0.97)) !important;
+  border: 1px solid rgba(248, 113, 113, 0.24) !important;
+  box-shadow: inset 0 0 24px rgba(127, 29, 29, 0.12), 0 0 14px rgba(127, 29, 29, 0.08) !important;
+}
+
+/* Sealed: small seal mark only. */
+.status-card.sealed::before {
+  content: "✦" !important;
+  position: absolute;
+  top: 13px;
+  right: 15px;
+  z-index: 2;
+  display: grid !important;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  color: rgba(216, 180, 254, 0.78);
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.18), transparent 68%);
+  border: 1px solid rgba(216, 180, 254, 0.14) !important;
+  box-shadow: 0 0 12px rgba(168, 85, 247, 0.12);
+}
+
+/* Dead: small fracture mark only. */
+.status-card.dead::before {
+  content: "✕" !important;
+  position: absolute;
+  top: 13px;
+  right: 15px;
+  z-index: 2;
+  display: grid !important;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  color: rgba(252, 165, 165, 0.78);
+  background: radial-gradient(circle, rgba(127, 29, 29, 0.22), transparent 68%);
+  border: 1px solid rgba(248, 113, 113, 0.14) !important;
+  box-shadow: 0 0 12px rgba(248, 64, 86, 0.10);
+}
+
+.status-card.sealed::after,
+.status-card.dead::after {
   content: "" !important;
   position: absolute;
-  inset: -14px -16px;
-  z-index: 2;
+  inset: 0;
+  z-index: 1;
   pointer-events: none;
-  border: 0 !important;
-  border-radius: 26px;
-  background: url("ui/frames/sealed-mystic-wide.png") center / 100% 100% no-repeat !important;
-  opacity: 0.58;
-  filter: drop-shadow(0 0 16px var(--frame-purple-glow));
+  opacity: 0.22;
+  background: linear-gradient(125deg, transparent 0 58%, rgba(255, 255, 255, 0.06) 59%, transparent 68%);
 }
 
-.status-card.dead::before,
-.dead-record-card::before,
-.fallen-record-card::before {
-  content: "" !important;
-  position: absolute;
-  inset: -14px -16px;
-  z-index: 2;
-  pointer-events: none;
-  border: 0 !important;
-  border-radius: 26px;
-  background: url("ui/frames/dead-fallen-wide.png") center / 100% 100% no-repeat !important;
-  opacity: 0.62;
-  filter: drop-shadow(0 0 18px var(--frame-red-glow));
-}
-
-.status-card > *,
-.sealed-record-card > *,
-.dead-record-card > *,
-.fallen-record-card > * {
+.status-card > * {
   position: relative;
   z-index: 3;
 }
 
-/* Leaderboard: solid vault plate under the transparent ornamental frame. */
+/* Locked achievements: crossed chains, but no massive card frame. */
+.achievement-lock {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden !important;
+  background:
+    radial-gradient(circle at 50% 20%, rgba(168, 85, 247, 0.10), transparent 42%),
+    linear-gradient(145deg, rgba(17, 12, 24, 0.96), rgba(10, 8, 14, 0.98)) !important;
+  border: 1px solid rgba(216, 180, 254, 0.20) !important;
+}
+
+.achievement-lock::before,
+.achievement-lock::after {
+  content: "" !important;
+  position: absolute;
+  left: -14%;
+  right: -14%;
+  height: 13px;
+  z-index: 5;
+  pointer-events: none;
+  border-radius: 999px;
+  opacity: 0.24;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      rgba(216, 180, 254, 0.72) 0 6px,
+      rgba(76, 29, 149, 0.20) 6px 12px,
+      transparent 12px 19px
+    );
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.12);
+}
+
+.achievement-lock::before {
+  top: 35%;
+  transform: rotate(-11deg) !important;
+}
+
+.achievement-lock::after {
+  top: 57%;
+  transform: rotate(11deg) !important;
+}
+
+.achievement-lock > * {
+  position: relative;
+  z-index: 4;
+}
+
+/* Leaderboard: important, but not swallowed by a giant transparent frame. */
 .leaderboard-board {
   position: relative;
   isolation: isolate;
-  overflow: visible !important;
-  padding: clamp(2.25rem, 4vw, 3.5rem) !important;
+  overflow: hidden !important;
   background:
-    radial-gradient(circle at 50% 0%, rgba(109, 40, 217, 0.22), transparent 45%),
+    radial-gradient(circle at 50% 0%, rgba(245, 158, 11, 0.10), transparent 38%),
+    radial-gradient(circle at 50% 100%, rgba(168, 85, 247, 0.10), transparent 40%),
     linear-gradient(145deg, rgba(10, 8, 14, 0.98), rgba(18, 12, 25, 0.97)) !important;
-  border-color: rgba(216, 180, 254, 0.25) !important;
+  border: 1px solid rgba(245, 158, 11, 0.22) !important;
   box-shadow:
-    0 0 46px rgba(76, 29, 149, 0.22),
-    inset 0 0 64px rgba(0, 0, 0, 0.58) !important;
+    0 0 34px rgba(76, 29, 149, 0.14),
+    inset 0 0 54px rgba(0, 0, 0, 0.50) !important;
 }
 
 .leaderboard-board::before {
   content: "" !important;
   position: absolute;
-  inset: -24px -28px;
+  inset: 14px;
   z-index: 1;
   pointer-events: none;
-  border-radius: 32px;
-  background: url("ui/frames/sealed-locked-wide.png") center / 100% 100% no-repeat !important;
-  opacity: 0.88;
-  filter: drop-shadow(0 0 22px var(--frame-purple-glow));
+  border-radius: 22px;
+  border: 1px solid rgba(216, 180, 254, 0.12);
+  background: linear-gradient(90deg, transparent, rgba(216, 180, 254, 0.035), transparent);
 }
 
 .leaderboard-board > * {
@@ -121,7 +179,7 @@
   z-index: 2;
 }
 
-/* Portrait frames: container gets padding, frame sits on the outside, image stays clean. */
+/* Portrait frames: only large portrait slots. Kept outside via padding and static. */
 .epic-portrait-card,
 .portrait-card {
   overflow: visible !important;
@@ -132,10 +190,10 @@
 .inline-artwork.portrait-wide.epic-portrait-frame {
   position: relative;
   overflow: visible !important;
-  padding: clamp(2.1rem, 4.5vw, 4.4rem) clamp(2.2rem, 5vw, 4.8rem);
+  padding: clamp(1.4rem, 3.2vw, 3rem) clamp(1.5rem, 3.6vw, 3.4rem);
   border: 0 !important;
   background:
-    radial-gradient(circle at 50% 8%, rgba(124, 58, 237, 0.14), transparent 52%),
+    radial-gradient(circle at 50% 8%, rgba(124, 58, 237, 0.10), transparent 52%),
     rgba(7, 5, 11, 0.88) !important;
   box-shadow: none !important;
 }
@@ -149,22 +207,22 @@
   pointer-events: none;
   border: 0 !important;
   background: url("ui/frames/astral-portrait-frame.png") center / 100% 100% no-repeat !important;
-  opacity: 0.92;
-  filter: drop-shadow(0 0 28px rgba(168, 85, 247, 0.25));
+  opacity: 0.58;
+  filter: drop-shadow(0 0 18px rgba(168, 85, 247, 0.14));
 }
 
 .obama-aura,
 .new-order-portrait-frame {
   background:
-    radial-gradient(circle at 50% 8%, rgba(245, 158, 11, 0.14), transparent 52%),
-    rgba(8, 6, 4, 0.9) !important;
+    radial-gradient(circle at 50% 8%, rgba(245, 158, 11, 0.10), transparent 52%),
+    rgba(8, 6, 4, 0.90) !important;
 }
 
 .obama-aura::before,
 .new-order-portrait-frame::before {
   background-image: url("ui/frames/new-order-portrait-frame.png") !important;
-  opacity: 0.94;
-  filter: drop-shadow(0 0 30px var(--frame-gold-glow));
+  opacity: 0.60;
+  filter: drop-shadow(0 0 18px var(--aevum-gold-glow));
 }
 
 .epic-portrait-frame img,
@@ -176,214 +234,264 @@
   border-radius: 14px;
 }
 
-/* Ichiro: less black overlay, more visible soul plate. */
+/* Ichiro soul slot: reveal the art, do not bury it under black. */
 .ichiro-portrait .sealed-portrait-frame,
 .ichiro-soul-panel,
 .soul-record-panel {
   position: relative;
   overflow: hidden;
   background-image:
-    linear-gradient(180deg, rgba(12, 4, 10, 0.28), rgba(6, 3, 8, 0.48)),
+    linear-gradient(180deg, rgba(12, 4, 10, 0.18), rgba(6, 3, 8, 0.34)),
     url("ui/frames/ichiro-soul-wide.png") !important;
   background-position: center;
   background-size: cover;
-  border-color: rgba(248, 113, 113, 0.34) !important;
+  border-color: rgba(248, 113, 113, 0.30) !important;
   box-shadow:
-    inset 0 0 42px rgba(127, 29, 29, 0.18),
-    0 0 30px rgba(248, 64, 86, 0.16) !important;
+    inset 0 0 32px rgba(127, 29, 29, 0.12),
+    0 0 22px rgba(248, 64, 86, 0.10) !important;
 }
 
 .ichiro-portrait .sealed-portrait-frame::before,
 .ichiro-soul-panel::before,
 .soul-record-panel::before {
-  opacity: 0.18 !important;
+  opacity: 0.08 !important;
 }
 
-/* Relic cards stay cleaner. */
+/* Relic images: light containment only. */
 .item-art-card .relic-image,
 .relic-image.compact {
-  border: 1px solid rgba(125, 211, 252, 0.18);
-  box-shadow: inset 0 0 34px rgba(8, 47, 73, 0.26), 0 0 20px rgba(34, 211, 238, 0.08);
+  border: 1px solid rgba(125, 211, 252, 0.16);
+  box-shadow: inset 0 0 26px rgba(8, 47, 73, 0.20), 0 0 14px rgba(34, 211, 238, 0.06);
 }
 
 @media (max-width: 760px) {
   .achievement-lock::before,
-  .status-card.sealed::before,
-  .status-card.dead::before,
-  .sealed-record-card::before,
-  .leaderboard-board::before {
-    inset: -10px -12px;
-    opacity: 0.45;
+  .achievement-lock::after {
+    height: 10px;
+    opacity: 0.18;
   }
 
   .epic-portrait-frame,
   .inline-artwork.portrait-wide.epic-portrait-frame {
-    padding: 1.25rem;
+    padding: 1rem;
   }
 
   .epic-portrait-frame::before,
   .inline-artwork.portrait-wide.epic-portrait-frame::before {
-    opacity: 0.55;
+    opacity: 0.32;
   }
 }
 
-/* Calm pass: small status cards should not use full ornate frames. */
-.status-card.sealed::before,
-.status-card.dead::before {
-  content: none !important;
-  display: none !important;
-  background: none !important;
+/* 2026-08-15: final calm-down patch after UI frame asset test.
+   Locked/Sealed/Dead effects must decorate the card, not cover readable text. */
+
+/* Locked achievements: no crossing barricade bars. Keep the chain as faint edge detail. */
+.achievements-grid {
+  gap: 22px !important;
 }
 
+.achievement-lock {
+  position: relative !important;
+  isolation: isolate !important;
+  overflow: hidden !important;
+  min-height: 118px;
+  border-radius: 20px !important;
+  border: 1px solid rgba(214, 184, 255, 0.20) !important;
+  background:
+    radial-gradient(circle at 88% 15%, rgba(168, 85, 247, 0.12), transparent 7rem),
+    linear-gradient(145deg, rgba(20, 15, 29, 0.94), rgba(8, 7, 13, 0.98)) !important;
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.025),
+    inset 0 0 28px rgba(76, 29, 149, 0.10),
+    0 18px 42px rgba(0,0,0,0.22) !important;
+}
+
+.achievement-lock::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 9px 12px auto 12px !important;
+  height: 4px !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+  border-radius: 999px !important;
+  opacity: 0.32 !important;
+  transform: none !important;
+  background:
+    repeating-linear-gradient(90deg,
+      rgba(230, 213, 255, 0.00) 0 4px,
+      rgba(214, 184, 255, 0.52) 4px 9px,
+      rgba(245, 158, 11, 0.28) 9px 12px,
+      rgba(230, 213, 255, 0.00) 12px 19px
+    ) !important;
+  box-shadow: 0 0 12px rgba(168, 85, 247, 0.12) !important;
+}
+
+.achievement-lock::after {
+  content: "⛓" !important;
+  position: absolute !important;
+  top: 13px !important;
+  right: 15px !important;
+  left: auto !important;
+  bottom: auto !important;
+  width: auto !important;
+  height: auto !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+  opacity: 0.30 !important;
+  transform: rotate(-10deg) !important;
+  color: rgba(231, 214, 255, 0.72) !important;
+  background: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  font-size: 1.35rem !important;
+  line-height: 1 !important;
+}
+
+.achievement-lock > * {
+  position: relative !important;
+  z-index: 3 !important;
+}
+
+.achievement-lock span {
+  color: #d8c4ff !important;
+  text-shadow: 0 0 14px rgba(168, 85, 247, 0.20);
+}
+
+.achievement-lock h3 {
+  color: #efe7ff !important;
+  text-shadow: none !important;
+}
+
+/* Sealed/dead cards: compact premium state, no oversized external frame. */
 .status-card.sealed,
-.status-card.dead {
+.status-card.dead,
+.status-card.retired {
   overflow: hidden !important;
   border-radius: 22px !important;
 }
 
-.status-card.sealed {
-  background:
-    radial-gradient(circle at 88% 18%, rgba(168, 85, 247, 0.18), transparent 34%),
-    linear-gradient(145deg, rgba(24, 18, 34, 0.92), rgba(12, 9, 18, 0.96)) !important;
-  border: 1px solid rgba(192, 132, 252, 0.24) !important;
-  box-shadow: inset 0 0 28px rgba(76, 29, 149, 0.14), 0 0 18px rgba(76, 29, 149, 0.08) !important;
+.status-card.sealed::before,
+.status-card.dead::before,
+.status-card.retired::before {
+  inset: auto !important;
+  top: 14px !important;
+  right: 16px !important;
+  width: 28px !important;
+  height: 28px !important;
+  border-radius: 999px !important;
+  z-index: 1 !important;
+  background: radial-gradient(circle, rgba(255,255,255,0.10), transparent 70%) !important;
+  border: 1px solid rgba(255,255,255,0.10) !important;
+  filter: none !important;
 }
 
-.status-card.dead {
-  background:
-    radial-gradient(circle at 88% 18%, rgba(248, 64, 86, 0.16), transparent 34%),
-    linear-gradient(145deg, rgba(31, 13, 18, 0.92), rgba(12, 7, 10, 0.96)) !important;
-  border: 1px solid rgba(248, 113, 113, 0.24) !important;
-  box-shadow: inset 0 0 28px rgba(127, 29, 29, 0.14), 0 0 18px rgba(127, 29, 29, 0.08) !important;
-}
+.status-card.sealed::before { content: "✦" !important; color: rgba(216, 180, 254, 0.80) !important; }
+.status-card.dead::before { content: "✕" !important; color: rgba(252, 165, 165, 0.78) !important; }
+.status-card.retired::before { content: "◇" !important; color: rgba(253, 230, 138, 0.78) !important; }
 
 .status-card.sealed::after,
-.status-card.dead::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.22;
-  background:
-    linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.08) 48%, transparent 60%);
+.status-card.dead::after,
+.status-card.retired::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+  opacity: 0.18 !important;
+  border: 0 !important;
+  background: linear-gradient(125deg, transparent 0 64%, rgba(255,255,255,0.06) 65%, transparent 75%) !important;
 }
 
-/* Compact status polish: chains for locked, small seals for sealed/dead. */
-
-/* LOCKED — crossed chain strips, not a full frame */
-.achievement-lock::before,
-.achievement-lock::after {
-  content: "" !important;
-  position: absolute;
-  left: -18%;
-  right: -18%;
-  height: 18px;
-  z-index: 6;
-  pointer-events: none;
-  border: 1px solid rgba(216, 180, 254, 0.18) !important;
-  border-radius: 999px;
-  opacity: 0.34;
+/* Leaderboard: more like a golden top-ten hall, less transparent purple picture frame. */
+.leaderboard-board {
+  position: relative !important;
+  isolation: isolate !important;
+  overflow: hidden !important;
+  padding: clamp(24px, 4vw, 46px) !important;
+  border-radius: 28px !important;
+  border: 1px solid rgba(245, 180, 72, 0.38) !important;
   background:
-    repeating-linear-gradient(
-      90deg,
-      rgba(216, 180, 254, 0.78) 0 7px,
-      rgba(76, 29, 149, 0.18) 7px 13px,
-      transparent 13px 20px
-    );
+    radial-gradient(circle at 50% 0%, rgba(255, 214, 128, 0.20), transparent 20rem),
+    radial-gradient(circle at 14% 94%, rgba(245, 158, 11, 0.13), transparent 15rem),
+    radial-gradient(circle at 86% 90%, rgba(168, 85, 247, 0.10), transparent 14rem),
+    linear-gradient(145deg, rgba(19, 13, 12, 0.98), rgba(8, 7, 11, 0.99)) !important;
   box-shadow:
-    0 0 12px rgba(168, 85, 247, 0.16),
-    inset 0 0 8px rgba(255, 255, 255, 0.08);
+    inset 0 0 0 1px rgba(255, 232, 186, 0.055),
+    inset 0 0 70px rgba(0,0,0,0.58),
+    0 0 38px rgba(245, 158, 11, 0.10),
+    0 26px 80px rgba(0,0,0,0.36) !important;
 }
 
-.achievement-lock::before {
-  top: 34%;
-  transform: rotate(-13deg);
-}
-
-.achievement-lock::after {
-  top: 56%;
-  transform: rotate(13deg);
-}
-
-.achievement-lock {
+.leaderboard-board::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 15px !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+  border-radius: 22px !important;
+  border: 1px solid rgba(255, 214, 128, 0.20) !important;
   background:
-    radial-gradient(circle at 50% 20%, rgba(168, 85, 247, 0.13), transparent 42%),
-    linear-gradient(145deg, rgba(17, 12, 24, 0.96), rgba(10, 8, 14, 0.98)) !important;
-  border: 1px solid rgba(216, 180, 254, 0.22) !important;
+    linear-gradient(90deg, transparent, rgba(255, 214, 128, 0.045), transparent),
+    linear-gradient(180deg, rgba(255, 214, 128, 0.035), transparent 35%) !important;
 }
 
-/* keep locked text readable above card, but visually under the chains */
-.achievement-lock > * {
-  position: relative;
-  z-index: 5;
-}
-
-/* SEALED — subtle mystic corner mark */
-.status-card.sealed::before {
+.leaderboard-board::after {
   content: "✦" !important;
-  display: grid !important;
-  place-items: center;
-  position: absolute;
-  top: 14px;
-  right: 16px;
-  width: 34px;
-  height: 34px;
-  z-index: 2;
-  border-radius: 999px;
-  color: rgba(216, 180, 254, 0.78);
+  position: absolute !important;
+  inset: auto 22px 18px auto !important;
+  z-index: 1 !important;
+  width: auto !important;
+  height: auto !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  color: rgba(255, 214, 128, 0.36) !important;
+  background: none !important;
+  font-size: 2.2rem !important;
+  line-height: 1 !important;
+  opacity: 1 !important;
+}
+
+.leaderboard-board > * {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.leaderboard-crown span {
+  border-color: rgba(255, 214, 128, 0.50) !important;
+  color: #ffe6a8 !important;
   background:
-    radial-gradient(circle, rgba(168, 85, 247, 0.22), rgba(17, 12, 24, 0.08) 62%, transparent);
-  border: 1px solid rgba(216, 180, 254, 0.16) !important;
-  box-shadow: 0 0 18px rgba(168, 85, 247, 0.16);
-  opacity: 0.9;
+    radial-gradient(circle, rgba(255, 214, 128, 0.28), rgba(95, 56, 12, 0.20) 62%, rgba(0,0,0,0.20)) !important;
+  box-shadow:
+    0 0 28px rgba(245, 158, 11, 0.22),
+    inset 0 0 38px rgba(255,255,255,0.055) !important;
 }
 
-.status-card.sealed::after {
-  content: "" !important;
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.32;
+.leaderboard-slots {
+  gap: 16px !important;
+}
+
+.leaderboard-slots span {
+  border-color: rgba(245, 180, 72, 0.28) !important;
   background:
-    linear-gradient(135deg, transparent 0 58%, rgba(168, 85, 247, 0.11) 59%, transparent 70%),
-    radial-gradient(circle at 100% 0%, rgba(216, 180, 254, 0.12), transparent 38%);
+    radial-gradient(circle at 50% 0%, rgba(255, 214, 128, 0.08), transparent 72%),
+    linear-gradient(180deg, rgba(255,255,255,0.035), transparent),
+    rgba(10, 8, 12, 0.82) !important;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 232, 186, 0.035),
+    0 14px 34px rgba(0,0,0,0.22) !important;
 }
 
-.status-card.sealed {
-  border-color: rgba(216, 180, 254, 0.26) !important;
+.leaderboard-slots span:nth-child(1) { border-color: rgba(255, 214, 128, 0.52) !important; box-shadow: 0 0 24px rgba(245, 158, 11, 0.12), inset 0 0 0 1px rgba(255, 232, 186, 0.05) !important; }
+.leaderboard-slots span:nth-child(2),
+.leaderboard-slots span:nth-child(3) { border-color: rgba(255, 214, 128, 0.40) !important; }
+
+.leaderboard-slots b {
+  color: #ffe6a8 !important;
+  text-shadow: 0 0 18px rgba(245, 158, 11, 0.20);
 }
 
-/* DEAD — small fracture / fallen mark */
-.status-card.dead::before {
-  content: "✕" !important;
-  display: grid !important;
-  place-items: center;
-  position: absolute;
-  top: 14px;
-  right: 16px;
-  width: 34px;
-  height: 34px;
-  z-index: 2;
-  border-radius: 999px;
-  color: rgba(252, 165, 165, 0.82);
-  background:
-    radial-gradient(circle, rgba(127, 29, 29, 0.32), rgba(17, 8, 10, 0.08) 62%, transparent);
-  border: 1px solid rgba(248, 113, 113, 0.18) !important;
-  box-shadow: 0 0 18px rgba(248, 64, 86, 0.14);
-  opacity: 0.88;
-}
-
-.status-card.dead::after {
-  content: "" !important;
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.28;
-  background:
-    linear-gradient(128deg, transparent 0 52%, rgba(248, 64, 86, 0.12) 53%, transparent 66%),
-    radial-gradient(circle at 100% 0%, rgba(248, 64, 86, 0.10), transparent 38%);
-}
-
-.status-card.dead {
-  border-color: rgba(248, 113, 113, 0.26) !important;
+@media (max-width: 760px) {
+  .leaderboard-slots { grid-template-columns: 1fr 1fr !important; }
+  .achievement-lock::before { opacity: 0.22 !important; }
+  .achievement-lock::after { opacity: 0.22 !important; }
 }
