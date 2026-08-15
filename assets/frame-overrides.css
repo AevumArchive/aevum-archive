@@ -226,3 +226,44 @@
     opacity: 0.55;
   }
 }
+
+/* Calm pass: small status cards should not use full ornate frames. */
+.status-card.sealed::before,
+.status-card.dead::before {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+}
+
+.status-card.sealed,
+.status-card.dead {
+  overflow: hidden !important;
+  border-radius: 22px !important;
+}
+
+.status-card.sealed {
+  background:
+    radial-gradient(circle at 88% 18%, rgba(168, 85, 247, 0.18), transparent 34%),
+    linear-gradient(145deg, rgba(24, 18, 34, 0.92), rgba(12, 9, 18, 0.96)) !important;
+  border: 1px solid rgba(192, 132, 252, 0.24) !important;
+  box-shadow: inset 0 0 28px rgba(76, 29, 149, 0.14), 0 0 18px rgba(76, 29, 149, 0.08) !important;
+}
+
+.status-card.dead {
+  background:
+    radial-gradient(circle at 88% 18%, rgba(248, 64, 86, 0.16), transparent 34%),
+    linear-gradient(145deg, rgba(31, 13, 18, 0.92), rgba(12, 7, 10, 0.96)) !important;
+  border: 1px solid rgba(248, 113, 113, 0.24) !important;
+  box-shadow: inset 0 0 28px rgba(127, 29, 29, 0.14), 0 0 18px rgba(127, 29, 29, 0.08) !important;
+}
+
+.status-card.sealed::after,
+.status-card.dead::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.22;
+  background:
+    linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.08) 48%, transparent 60%);
+}
