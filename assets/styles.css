@@ -892,3 +892,290 @@ h3 { font-size: 1.35rem; }
 .ichiro-portrait .sealed-portrait-frame span { color: #ffd0dc; text-shadow: 0 0 54px rgba(255,77,125,.82); }
 .ichiro-notes { border-color: rgba(255,77,125,.35); background: radial-gradient(circle at 90% 0%, rgba(255,77,125,.14), transparent 16rem), rgba(18, 8, 18, .94); }
 @media (max-width: 760px) { .ten-slots { grid-template-columns: 1fr; } .relic-image { height: 180px; } }
+/* 2026-08-15 sprite proof layer: targeted archive ornaments only. */
+:root {
+  --sprite-locked-chain: url('/aevum-archive/assets/sprites/archive-core/01_locked_achievement_chains_overlay.png');
+  --sprite-heavy-chain: url('/aevum-archive/assets/sprites/archive-core/02_locked_achievement_heavy_chain_frame.png');
+  --sprite-mythic-cage: url('/aevum-archive/assets/sprites/archive-core/03_mythic_locked_achievement_cage.png');
+  --sprite-seal-wax: url('/aevum-archive/assets/sprites/archive-core/04_sealed_record_wax_seal.png');
+  --sprite-seal-circle: url('/aevum-archive/assets/sprites/archive-core/05_sealed_record_arcane_binding_circle.png');
+  --sprite-veiled-crest: url('/aevum-archive/assets/sprites/archive-core/06_sealed_character_veiled_crest.png');
+  --sprite-fallen-soul: url('/aevum-archive/assets/sprites/archive-core/07_fallen_character_broken_soul_mark.png');
+  --sprite-retired-sigil: url('/aevum-archive/assets/sprites/archive-core/08_retired_character_closed_path_sigil.png');
+  --sprite-hidden-sigil: url('/aevum-archive/assets/sprites/archive-core/09_unknown_hidden_achievement_sigil.png');
+  --sprite-world-frame: url('/aevum-archive/assets/sprites/archive-core/10_world_item_frame.png');
+  --sprite-lost-world: url('/aevum-archive/assets/sprites/archive-core/11_lost_world_item_mark.png');
+  --sprite-nocturne: url('/aevum-archive/assets/sprites/archive-core/12_nocturne_relic_sigil.png');
+  --sprite-runic-piercer: url('/aevum-archive/assets/sprites/archive-core/13_runic_piercer_relic_sigil.png');
+  --sprite-mythic-mark: url('/aevum-archive/assets/sprites/archive-core/14_mythic_achievement_mark.png');
+  --sprite-overlord-grace: url('/aevum-archive/assets/sprites/archive-core/15_overlords_grace_style_achievement_ornament.png');
+  --sprite-obama: url('/aevum-archive/assets/sprites/archive-core/16_new_order_mandate_sovereign_icon.png');
+  --sprite-faaram: url('/aevum-archive/assets/sprites/archive-core/17_the_faceless_icon.png');
+  --sprite-astera: url('/aevum-archive/assets/sprites/archive-core/18_astera_duality_sigil.png');
+  --sprite-lythariel: url('/aevum-archive/assets/sprites/archive-core/19_lythariel_alchemy_sigil.png');
+  --sprite-ichiro: url('/aevum-archive/assets/sprites/archive-core/20_ichiro_soul_threat_icon.png');
+  --sprite-bond: url('/aevum-archive/assets/sprites/archive-core/21_npc_bond_icon.png');
+  --sprite-heraldry: url('/aevum-archive/assets/sprites/archive-core/22_noble_house_heraldry_icon.png');
+  --sprite-warfront: url('/aevum-archive/assets/sprites/archive-core/23_warfront_ledger_icon.png');
+  --sprite-tavern: url('/aevum-archive/assets/sprites/archive-core/24_tavern_record_icon.png');
+  --sprite-alchemy-lock: url('/aevum-archive/assets/sprites/archive-core/25_alchemy_recipe_lock_icon.png');
+}
+
+.sprite-sigil,
+.portrait-rune,
+.realm-symbol,
+.trophy-seal,
+.faceless-rune,
+.core-sigil {
+  position: relative;
+  isolation: isolate;
+}
+
+.portrait-rune::before,
+.realm-symbol::before,
+.trophy-seal::before,
+.faceless-rune::before,
+.core-sigil::before {
+  content: '';
+  position: absolute;
+  inset: 8px;
+  z-index: 0;
+  background-image: var(--sprite-icon, none);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: var(--sprite-opacity, 0);
+  filter: drop-shadow(0 0 18px var(--sprite-glow, rgba(244,114,182,.28)));
+  pointer-events: none;
+}
+
+.mystic-record-card .faceless-rune,
+.characters .character-card[href$='faaram.html'] .portrait-rune,
+.faaram-npc .realm-symbol,
+.faaram-tree .core-sigil {
+  --sprite-icon: var(--sprite-faaram);
+  --sprite-opacity: .72;
+  --sprite-glow: rgba(173, 112, 255, .44);
+  color: rgba(236, 222, 255, .86);
+}
+
+.order-record-card .faceless-rune,
+.characters .character-card[href$='obama.html'] .portrait-rune,
+.obama-bonds .core-sigil,
+.gold-card .realm-symbol {
+  --sprite-icon: var(--sprite-obama);
+  --sprite-opacity: .82;
+  --sprite-glow: rgba(255, 192, 79, .45);
+  color: rgba(255, 230, 170, .9);
+}
+
+.astera-record-card .portrait-rune,
+.characters .character-card[href$='astera-zenith.html'] .portrait-rune,
+.astera-bonds .core-sigil {
+  --sprite-icon: var(--sprite-astera);
+  --sprite-opacity: .86;
+  --sprite-glow: rgba(179, 129, 255, .48);
+  color: rgba(228, 210, 255, .88);
+}
+
+.alchemy-rune,
+.characters .character-card[href$='lythariel.html'] .portrait-rune,
+.character-card[href$='lythariel.html'] .portrait-rune {
+  --sprite-icon: var(--sprite-lythariel);
+  --sprite-opacity: .84;
+  --sprite-glow: rgba(91, 220, 132, .42);
+  color: rgba(205, 255, 218, .88);
+}
+
+.ichiro-card .realm-symbol,
+.ichiro-card .portrait-rune,
+.soul-rune,
+.ichiro-portrait .sealed-portrait-frame span {
+  --sprite-icon: var(--sprite-ichiro);
+  --sprite-opacity: .72;
+  --sprite-glow: rgba(255, 74, 125, .55);
+}
+
+.tavern-network .core-sigil,
+.character-card[href$='william-carter.html'] .portrait-rune,
+.characters .character-card[href$='william-carter.html'] .portrait-rune {
+  --sprite-icon: var(--sprite-tavern);
+  --sprite-opacity: .72;
+  --sprite-glow: rgba(244, 184, 74, .38);
+}
+
+.heraldry-card .realm-symbol,
+.zenith-card .realm-symbol {
+  --sprite-icon: var(--sprite-heraldry);
+  --sprite-opacity: .64;
+  --sprite-glow: rgba(216, 180, 254, .42);
+}
+
+.warfront-card .realm-symbol {
+  --sprite-icon: var(--sprite-warfront);
+  --sprite-opacity: .68;
+  --sprite-glow: rgba(255, 107, 122, .42);
+}
+
+.nocturne-card::after,
+.lost-relic-card::after,
+.relic-card::after,
+.sealed-record-card::after,
+.achievement-lock::after,
+.status-card::before {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.relic-card,
+.sealed-record-card,
+.achievement-lock,
+.status-card,
+.trophy-card,
+.overlord-grace-card {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.relic-card::after {
+  width: 132px;
+  height: 132px;
+  right: 14px;
+  top: 12px;
+  opacity: .15;
+  background-image: var(--sprite-world-frame);
+  filter: drop-shadow(0 0 22px rgba(116, 214, 255, .22));
+}
+
+.nocturne-card::after {
+  background-image: var(--sprite-nocturne);
+  opacity: .2;
+  filter: drop-shadow(0 0 22px rgba(116, 214, 255, .34));
+}
+
+.lost-relic-card::after {
+  background-image: var(--sprite-runic-piercer), var(--sprite-lost-world);
+  opacity: .22;
+  filter: drop-shadow(0 0 22px rgba(255, 107, 122, .26));
+}
+
+.sealed-record-card::after {
+  width: 150px;
+  height: 150px;
+  right: -20px;
+  bottom: -26px;
+  opacity: .14;
+  background-image: var(--sprite-seal-wax);
+  filter: drop-shadow(0 0 24px rgba(244, 114, 182, .26));
+}
+
+.status-card.sealed::before,
+.status-card.dead::before,
+.status-card.retired::before {
+  width: 128px;
+  height: 128px;
+  right: -28px;
+  bottom: -22px;
+  opacity: .16;
+  background-size: contain;
+}
+.status-card.sealed::before { background-image: var(--sprite-veiled-crest); filter: drop-shadow(0 0 22px rgba(192,132,252,.28)); }
+.status-card.dead::before { background-image: var(--sprite-fallen-soul); filter: drop-shadow(0 0 22px rgba(255,107,122,.28)); }
+.status-card.retired::before { background-image: var(--sprite-retired-sigil); filter: drop-shadow(0 0 22px rgba(244,184,74,.24)); }
+
+.achievement-lock {
+  border-color: rgba(255, 202, 103, .2);
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255, 202, 103, .08), transparent 64%),
+    linear-gradient(180deg, rgba(255,255,255,0.03), transparent),
+    rgba(17, 14, 24, .84);
+}
+.achievement-lock::before {
+  content: '';
+  position: absolute;
+  inset: 8px;
+  z-index: -1;
+  opacity: .22;
+  background-image: var(--sprite-heavy-chain);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  filter: drop-shadow(0 0 18px rgba(255,202,103,.18));
+}
+.achievement-lock::after {
+  width: 78px;
+  height: 78px;
+  right: 8px;
+  bottom: 8px;
+  opacity: .35;
+  background-image: var(--sprite-hidden-sigil);
+  filter: drop-shadow(0 0 22px rgba(244,114,182,.3));
+}
+.achievement-lock h3,
+.achievement-lock span,
+.achievement-lock p { position: relative; z-index: 1; }
+
+.overlord-trophy {
+  border-color: rgba(255, 202, 103, .38);
+  background:
+    radial-gradient(circle at 82% 12%, rgba(255, 202, 103, .18), transparent 13rem),
+    radial-gradient(circle at 12% 88%, rgba(137, 73, 255, .16), transparent 13rem),
+    var(--panel);
+}
+.overlord-trophy .trophy-seal,
+.overlord-grace-card .grace-crest {
+  --sprite-icon: var(--sprite-overlord-grace);
+  --sprite-opacity: .92;
+  --sprite-glow: rgba(255, 214, 126, .62);
+}
+.overlord-trophy .trophy-seal::before {
+  inset: -8px;
+  opacity: .85;
+}
+.overlord-grace-card::before {
+  background-image: var(--sprite-mythic-mark), var(--sprite-overlord-grace);
+  background-repeat: no-repeat;
+  background-position: right 6% top 5%, left 8% bottom 10%;
+  background-size: 44%, 36%;
+  opacity: .24;
+}
+
+.sealed-portrait-frame::before {
+  background-image: var(--sprite-seal-circle);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: min(74%, 520px);
+  border-radius: 32px;
+  opacity: .2;
+}
+.ichiro-portrait .sealed-portrait-frame::before { background-image: var(--sprite-ichiro), var(--sprite-seal-circle); opacity: .2; }
+.skybreaker-portrait .sealed-portrait-frame::before { background-image: var(--sprite-fallen-soul), var(--sprite-seal-circle); opacity: .18; }
+.curse-portrait .sealed-portrait-frame::before { background-image: var(--sprite-veiled-crest), var(--sprite-seal-circle); opacity: .18; }
+
+.bond-tree::after,
+.constellation-card::after {
+  content: '';
+  position: absolute;
+  right: -34px;
+  bottom: -34px;
+  width: 170px;
+  height: 170px;
+  background: var(--sprite-bond) center / contain no-repeat;
+  opacity: .12;
+  filter: drop-shadow(0 0 26px rgba(244,114,182,.26));
+  pointer-events: none;
+}
+
+@media (max-width: 760px) {
+  .achievement-lock::after,
+  .relic-card::after,
+  .sealed-record-card::after,
+  .status-card.sealed::before,
+  .status-card.dead::before,
+  .status-card.retired::before { opacity: .10; }
+}
