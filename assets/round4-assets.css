@@ -444,3 +444,178 @@
   .row-arrow,
   .row-seal { display: none; }
 }
+
+
+/* Historical archive, sealed NPC slots and compact relic shelves */
+.route-npcs .npc-sealed-label { margin-top: 34px; }
+.route-npcs .npc-lock-card {
+  min-height: 190px;
+  border-style: dashed;
+  border-color: rgba(168, 137, 197, .28);
+  background:
+    linear-gradient(145deg, rgba(41, 27, 52, .66), rgba(11, 10, 18, .9)),
+    var(--panel);
+  opacity: .84;
+}
+.route-npcs .npc-lock-card .realm-symbol { color: #aa8ec0; }
+.route-npcs .npc-lock-card h3 { color: #c9bad5; }
+.route-npcs .npc-lock-card .pill { margin-top: 10px; }
+
+.playthrough-state.legacy {
+  color: #d4b1ff;
+  border-color: rgba(184, 127, 242, .42);
+}
+.playthrough-date {
+  min-width: 76px;
+  color: #d7b4ee;
+  font: 700 .69rem/1.35 Verdana, Geneva, sans-serif;
+  letter-spacing: .12em;
+  text-align: center;
+  text-transform: uppercase;
+}
+.playthrough-row[href] .playthrough-date {
+  padding: 8px 10px;
+  border: 1px solid rgba(214, 121, 197, .24);
+  border-radius: 12px;
+  background: rgba(53, 31, 66, .48);
+}
+
+.route-world-items .relic-shelf-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+.route-world-items .relic-entry {
+  display: grid;
+  grid-template-columns: minmax(180px, .82fr) minmax(0, 1.18fr);
+  min-height: 0;
+  padding: 0 !important;
+  overflow: hidden;
+  align-items: stretch;
+}
+.route-world-items .relic-entry-wide {
+  grid-template-columns: minmax(260px, .72fr) minmax(0, 1.28fr);
+}
+.route-world-items .relic-art-stage {
+  min-height: 268px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-right: 1px solid rgba(255,255,255,.08);
+  background:
+    radial-gradient(circle at 50% 48%, rgba(78, 181, 232, .12), transparent 45%),
+    linear-gradient(145deg, #050812, #010205);
+}
+.route-world-items .relic-art-stage img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 18px;
+  object-fit: contain !important;
+  filter: saturate(1.12) contrast(1.05) drop-shadow(0 0 18px rgba(96, 207, 255, .16));
+}
+.route-world-items .relic-copy {
+  display: flex;
+  min-width: 0;
+  padding: 24px 26px 26px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.route-world-items .relic-copy h2 {
+  margin-bottom: 10px;
+  font-size: clamp(2rem, 3.5vw, 3.25rem);
+}
+.route-world-items .relic-copy > p:not(.eyebrow) {
+  margin-bottom: 16px;
+  line-height: 1.55;
+}
+.route-world-items .relic-ledger {
+  width: 100%;
+  margin: 0 0 18px;
+  grid-template-columns: minmax(94px, auto) 1fr;
+  gap: 8px 14px;
+}
+.route-world-items .relic-copy .small-button { margin-top: auto; }
+.route-world-items .orb-stage {
+  background:
+    radial-gradient(circle at 50% 50%, rgba(239, 68, 68, .22), transparent 34%),
+    radial-gradient(circle at 50% 50%, rgba(245, 158, 11, .10), transparent 58%),
+    linear-gradient(145deg, #13070b, #030204);
+}
+.route-world-items .red-orb-visual {
+  width: 112px;
+  aspect-ratio: 1;
+  border: 1px solid rgba(255, 186, 93, .64);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 36% 30%, rgba(255, 240, 210, .9), transparent 6%),
+    radial-gradient(circle at 45% 42%, #ff6b58 0 11%, #b3122f 34%, #3a0712 72%);
+  box-shadow:
+    0 0 22px rgba(255, 74, 72, .58),
+    0 0 68px rgba(164, 22, 52, .46),
+    inset -14px -16px 26px rgba(20, 0, 5, .72);
+}
+.route-world-items .relic-sealed-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.route-world-items .relic-sealed-strip h2 { margin-bottom: 6px; }
+
+@media (max-width: 980px) {
+  .route-world-items .relic-shelf-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 700px) {
+  .route-world-items .relic-entry,
+  .route-world-items .relic-entry-wide { grid-template-columns: 1fr; }
+  .route-world-items .relic-art-stage {
+    min-height: 230px;
+    border-right: 0;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+  }
+  .route-world-items .relic-sealed-strip { align-items: flex-start; flex-direction: column; }
+  .playthrough-date { text-align: left; }
+}
+
+
+/* Selected READY_WIP beefed-up route ornaments */
+.beefed-route-crest {
+  grid-column: 1 / -1;
+  width: 100%;
+  height: clamp(78px, 8vw, 112px);
+  margin: -20px 0 -10px;
+  position: relative;
+  z-index: 2;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: min(90%, 760px) auto;
+  pointer-events: none;
+}
+.npc-ledger-crest { background-image: url("/aevum-archive/assets/ui/beefed/npcs/ui_npcs_ledger_crest_720x160.png"); }
+.playthrough-archive-crest { background-image: url("/aevum-archive/assets/ui/beefed/playthroughs/ui_playthroughs_archive_crest_720x160.png"); }
+.beefed-section-divider {
+  width: min(72%, 700px);
+  height: 64px;
+  margin: 10px auto -4px;
+  background: url("/aevum-archive/assets/ui/beefed/global/ui_global_section_divider_center_640x072.png") center / contain no-repeat;
+  opacity: .7;
+  filter: drop-shadow(0 0 14px rgba(132, 81, 190, .18));
+  pointer-events: none;
+}
+.route-npcs .npc-lock-card .locked-record-seal {
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 1;
+  background: url("/aevum-archive/assets/ui/beefed/global/ui_global_empty_state_seal_128.png") center / contain no-repeat;
+  opacity: .42;
+  filter: saturate(.82) drop-shadow(0 0 10px rgba(145, 100, 191, .2));
+  pointer-events: none;
+}
+@media (max-width: 640px) {
+  .beefed-route-crest { height: 72px; margin: -14px 0 -8px; background-size: 104% auto; }
+  .beefed-section-divider { width: 92%; height: 52px; }
+}
