@@ -1,38 +1,40 @@
 # Round 4 UI asset integration
 
-Source: C:/Users/Yonk/Desktop/aevum_archive_ui_assets_round_4_full.zip
+Source: `C:/Users/Yonk/Desktop/aevum_archive_ui_assets_round_4_full.zip`
+
 Integrated: 2026-08-17
 
-## Summary
+Rebalanced after live visual review: 2026-08-17
 
-- 40 transparent PNG assets imported.
-- 34 assets are referenced by the live Round 4 CSS or leaderboard markup.
-- 6 generic or redundant variants are retained for later placement.
-- No portraits or profile icons were replaced.
-- No player-facing text or admin/GM guidance was added.
-- Raster assets preserve their source aspect ratios. Detailed jewels, circles and corner geometry are not stretched.
+## Direction
 
-## Live groups
+- 40 transparent PNG assets are imported and ready.
+- 17 assets currently have deliberate live placements; the remaining 23 are staged for later route-specific slots.
+- A page region receives at most one focal ornament. Generic cards, links and section boundaries do not repeat detailed raster art.
+- Character profile icons remain the existing symbols. No portrait or portrait-like backplate replaces them.
+- Sealed and Fallen state cards use segmented edges, knots and corners at their natural aspect ratios.
+- Locked achievements use the established quiet edge-chain treatment. The large Round 4 chain sprites are reserved for a future dedicated lock panel because crossing them through every card reduced readability.
+- Player-facing text contains no admin or Gamemaster guidance.
 
-- Global: brand medallion, navigation endcaps, section dividers, footer rule and empty-state seal.
-- Home: archive-door crest, portal halo, gate corners, shelf pins and soft-gate keyline.
-- 404: lost-page sigil and return thread.
-- Characters: roster crest, profile-card corners, profile-slot backplate, Active/Sealed/Fallen/Retired status corners, state edges and state knots.
-- Bonds: oracle crest.
-- Achievements: two crossed chain strips, keyhole clasp and wax seal above locked-card surfaces while HTML text remains above them.
-- Leaderboard: crown, divider and compact empty-state seal.
+## Live placements
 
-## Reserved for later
+- Global: compact header brand medallion.
+- Home: one restrained archive-door crest with protected spacing above the hero copy.
+- 404: one lost-page sigil.
+- Character status shelf: Active, Sealed, Fallen and Retired corners; Sealed/Fallen edge segments and state knots.
+- Leaderboard: crown in the dedicated board slot and the gold board divider.
 
-- ui_corner_compass_violet_gothic.png
-- ui_divider_moonhalo_amethyst.png
-- ui_emblem_last_ember_ruby_core.png
-- ui_global_page_corner_whisper_160.png
-- ui_locked_chain_endcap_violet.png
-- ui_oracle_crest_amethyst_moon.png
+## Reserved groups
 
-These are intentionally not forced into unsuitable slots. They can be assigned when the later asset rounds complete the remaining route families.
+- Navigation endcaps and page-corner whispers.
+- Roster, profile-card and profile-slot ornaments.
+- Bond-oracle crests.
+- Full chain tiles, endcaps, crossing clasp and wax seal.
+- Additional home pins, halos, card corners and keylines.
+- Generic footer, mobile and section dividers.
+
+These files are intentionally kept out of unsuitable or repeated slots. They can be assigned when later asset rounds supply complete route families.
 
 ## Technical note
 
-Several filenames describe intended production slots, but the delivered canvases use generator sizes such as 1254 x 1254, 2172 x 724 and 724 x 2172. CSS therefore renders each file proportionally with contain-style sizing. Flexible frame geometry remains CSS/segmented; no full raster frame is stretched over a variable card.
+Several filenames describe intended production slots, while the delivered canvases use generator dimensions such as `1254 x 1254`, `2172 x 724` and `724 x 2172`. CSS therefore preserves source ratios with contain-style sizing. Flexible frame geometry remains CSS/segmented; no complete raster frame is stretched over a variable card.
