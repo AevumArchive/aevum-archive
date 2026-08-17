@@ -139,11 +139,18 @@ Current live v3 geometry:
 - Corner markers: centered 13 from each edge.
 - Layer order: text 3, frame 2, panel 1.
 
+
+Round 4 live-fit audit:
+- The delivered `*_edge_h_1536x096` and `*_edge_v_096x768` images behave as centered decorative flourishes, not seamless rail tiles. Repeating or scaling them produces doubled lines and warped curls.
+- Keep those delivered images as optional center accents only.
+- Still required for both Moonveil and Last Ember: `ui_characters_state_[state]_rail_h_tile_512x032.png` and `ui_characters_state_[state]_rail_v_tile_032x512.png`.
+- Rail masters must be genuinely seamless on their opposing tile edges, contain no gem/circle/knot, and keep identical 1-2 px rendered line weight at every card width.
+- Until these four rail tiles exist, production CSS uses a clean one-pixel state line plus fixed corners and transparent center knots.
 State palettes:
 - Sealed: amethyst, smoked silver, restrained magenta, tiny antique gold.
 - Fallen: blackened iron, oxblood, ruby ember, restrained bronze; memorial, not gore.
 - Retired: aged brass, smoke-gray parchment, quiet amber.
-- Locked: violet wax and muted chain steel; chains visibly cross the card surface below live HTML text.
+- Locked: violet wax and muted chain steel; one chain visibly overhangs the outside top edge and never crosses live HTML text.
 - Active: archive green, pale silver, minimal life rune.
 
 ### 6.1 Premium Sealed set - Moonveil Covenant
@@ -178,32 +185,33 @@ Layer order and safe zones are identical to Moonveil. No skulls, bones, gore, ro
 Last Ember prompt:
 Create one isolated responsive Aevum Archive FALLEN memorial ornament named [FILENAME], exact size [SIZE], genuine transparent PNG. Crisp blackened iron, deep oxblood enamel, one restrained ruby ember and subtle antique-bronze engraving. Somber, dignified and expensive. No complete card frame, no gore, skulls, bones, roses, text, portrait, checkerboard, opaque background, blurry glow or decoration in the central text-safe zone.
 
-### 6.3 Locked achievements - crossed chain overlay
+### 6.3 Locked achievements - outside top-edge chain
 
-Locked achievement cards are 283 px wide on the 1180 px desktop shell, 236 px at a 1024 px viewport, 466 px at 980 px, 360 px at 768 px, 618 px at 640 px, 368 px at 390 px and 338 px at 360 px. Minimum card height is 150 px and content padding is 18 px.
+Locked achievement cards are 283 px wide on the 1180 px desktop shell, 236 px at a 1024 px viewport, 466 px at 980 px, 360 px at 768 px, 618 px at 640 px, 368 px at 390 px and 338 px at 360 px. Card content must remain fully readable.
 
-The chains must visibly lie over the card surface. Use seamless chain modules instead of stretching a complete chain image:
+The chain must look physically laid over the card from outside, not printed inside the panel and not crossed through the text. Use one horizontal overhang along the top edge:
 
-- ui_achievements_locked_chain_tile_256x096: one seamless run of 2-3 muted steel links; repeat along both diagonal strips; render each tile about 96 x 36 px.
-- ui_achievements_locked_chain_endcap_192: one ornate archive anchor that can be mirrored at strip ends; render 38-46 px.
-- ui_achievements_locked_chain_crossing_clasp_192: central violet-metal clasp at the chain crossing; render 34-42 px.
-- ui_achievements_locked_wax_seal_192: violet wax archive seal attached near the crossing; render 42-52 px.
-- ui_achievements_locked_corner_384: restrained locked-card corner, render 38-48 px.
-- ui_achievements_locked_chain_shadow_512x128: soft contact shadow below a chain strip, runtime opacity 0.16-0.24.
+- `ui_achievements_locked_chain_overhang_h_1536x096`: preferred finished horizontal chain with 24 px transparent bleed; seamless central 70%; render 24-30 px high.
+- `ui_achievements_locked_chain_tile_256x096`: seamless fallback with 2-3 muted steel links; repeat horizontally at about 86 x 28 CSS px.
+- `ui_achievements_locked_chain_endcap_192`: optional left/right archive anchor; render 28-36 px.
+- `ui_achievements_locked_chain_edge_clasp_192`: compact violet-metal keyhole clasp for the upper-right outer edge; render 30-36 px.
+- `ui_achievements_locked_wax_seal_192`: optional special-card variant only; do not repeat it on all 24 cards.
+- `ui_achievements_locked_chain_shadow_512x128`: contact shadow below the top chain, runtime opacity 0.14-0.20.
 
 Placement:
-- Chain A crosses from x=-24, y=38 to x=card width+24, y=112; rotate approximately +9 degrees.
-- Chain B crosses from x=-24, y=112 to x=card width+24, y=38; rotate approximately -9 degrees.
-- Each strip is 36-42 px high and extends 24 px beyond both card sides.
-- Render chains above the card panel at layer 2 and live HTML text at layer 3. The chains are visibly on top of the card but cannot make the title unreadable.
-- Put the clasp close to 50%/50%. Keep the wax seal 14-24 px away from the exact text center.
-- At mobile widths reduce chain-strip height to 32-36 px and the clasp to 32-36 px. Never scale link circles non-uniformly.
-- Normal opacity: 0.58-0.72. Hover opacity: maximum 0.82. Contact shadows remain below 0.24.
+- Chain starts at x=-10 and ends at x=card width+10.
+- Chain top is y=-19 desktop and y=-16 mobile; roughly 60-70% of the links remain outside the card.
+- No rotation on the normal locked shelf. The straight run makes the 24-card grid feel intentional.
+- The clasp sits at right=-9, top=-20 and may rotate up to 5 degrees.
+- Increase top padding to 28 so `#001` and all other HTML begin below the chain intrusion.
+- Chain layer is 4, clasp layer 5, live HTML layer 3. The higher chain layer is safe because it occupies only the protected top-edge strip.
+- Normal chain opacity 0.52-0.62; hover maximum 0.74. Clasp may reach 0.84 on hover.
+- Never place a second diagonal chain through the title or body.
 
 Locked-chain prompt:
-Create one isolated Aevum Archive LOCKED ACHIEVEMENT chain module named [FILENAME], exact size [SIZE], genuine transparent PNG. Heavy but refined medieval archive chain in muted gunmetal steel with tiny violet enamel accents, crisp individual links, believable overlap and restrained wear. The module must tile seamlessly where requested and look like it lies physically over a dark violet card. No card background, no text, no padlock emoji, no checkerboard, no opaque rectangle, no giant glow, no rust-orange color and no blurry links.
+Create one isolated Aevum Archive LOCKED ACHIEVEMENT top-edge chain module named [FILENAME], exact size [SIZE], genuine transparent PNG. Refined medieval archive chain in muted gunmetal steel with tiny violet enamel accents, crisp individual links and a believable contact edge. It must look laid over the outside top rim of a dark violet card and tile seamlessly where requested. Keep 24 px transparent bleed and a clean text-safe lower half. No card background, text, diagonal cross, padlock emoji, checkerboard, opaque rectangle, giant glow, rust-orange color or blurry links.
 
-## 6.4 OBAMA portrait border - New Order Mandate
+### 6.4 OBAMA portrait border - New Order Mandate
 
 This border is only for the explicit portrait slot on characters/obama.html. It must never replace or cover a profile icon.
 
@@ -296,6 +304,10 @@ Characters and bonds:
 - ui_characters_state_fallen_last_ember_knot_192
 - ui_characters_state_fallen_last_ember_badge_halo_288x144
 - ui_characters_state_fallen_last_ember_ash_thread_768x064
+- ui_characters_state_sealed_moonveil_rail_h_tile_512x032
+- ui_characters_state_sealed_moonveil_rail_v_tile_032x512
+- ui_characters_state_fallen_last_ember_rail_h_tile_512x032
+- ui_characters_state_fallen_last_ember_rail_v_tile_032x512
 - ui_characters_bonds_constellation_node_096
 - ui_characters_bonds_constellation_thread_768x064
 - ui_characters_bonds_oracle_crest_256
@@ -309,11 +321,11 @@ Achievements and leaderboard:
 - ui_achievements_hero_trophy_256
 - ui_achievements_trophy_card_corner_192
 - ui_achievements_locked_corner_384
-- ui_achievements_locked_chain_h_1536x096
+- ui_achievements_locked_chain_overhang_h_1536x096
 - ui_achievements_locked_wax_seal_192
 - ui_achievements_locked_chain_tile_256x096
 - ui_achievements_locked_chain_endcap_192
-- ui_achievements_locked_chain_crossing_clasp_192
+- ui_achievements_locked_chain_edge_clasp_192
 - ui_achievements_locked_chain_shadow_512x128
 - ui_achievements_earned_medal_backplate_256
 - ui_leaderboard_hero_crown_256

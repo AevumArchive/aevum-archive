@@ -217,3 +217,125 @@
     background-size: 132px 44px,132px 44px,44px 132px,44px 132px !important;
   }
 }
+
+/* 2026-08-17 visual correction: outside chains and true segmented-state fallback. */
+.theme-leaderboard .leaderboard-seal::before,
+.theme-achievements .achievement-card::before {
+  content: none !important;
+  display: none !important;
+}
+.theme-leaderboard .leaderboard-seal .sigil {
+  top: 18px !important;
+  right: 18px !important;
+  width: 68px;
+  height: 68px;
+  color: transparent !important;
+  font-size: 0 !important;
+  background: url("/aevum-archive/assets/ui/round4/ui_leaderboard_hero_crown_256.png") center/contain no-repeat;
+  filter: drop-shadow(0 0 10px rgba(244,184,74,.14));
+}
+.theme-achievements .achievement-card .sigil {
+  top: 20px;
+  right: 20px;
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(192,132,252,.24);
+  border-radius: 18px;
+  background: linear-gradient(145deg,rgba(76,29,149,.20),rgba(10,8,16,.58));
+  box-shadow: inset 0 0 22px rgba(139,92,246,.10);
+  font-size: 2rem;
+}
+
+.route-characters-all .status-card > .status-card-frame {
+  inset: -4px !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: initial !important;
+  border: 1px solid currentColor !important;
+  border-radius: 22px !important;
+  background: none !important;
+  box-shadow: 0 0 14px color-mix(in srgb,currentColor 12%,transparent) !important;
+  filter: none !important;
+  opacity: .74 !important;
+}
+.route-characters-all .status-card > .status-card-frame::before,
+.route-characters-all .status-card > .status-card-frame::after {
+  width: 26px !important;
+  height: 26px !important;
+  border: 0 !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+.route-characters-all .status-card > .status-card-frame::before { top: -13px !important; }
+.route-characters-all .status-card > .status-card-frame::after { bottom: -13px !important; }
+.route-characters-all .status-card.active > .status-card-frame::before,
+.route-characters-all .status-card.active > .status-card-frame::after,
+.route-characters-all .status-card.retired > .status-card-frame::before,
+.route-characters-all .status-card.retired > .status-card-frame::after,
+.status-card.active .frame-corner,
+.status-card.retired .frame-corner {
+  content: none !important;
+  display: none !important;
+  background-image: none !important;
+}
+.status-card.sealed .frame-corner,
+.status-card.dead .frame-corner {
+  width: 44px;
+  height: 44px;
+  opacity: .62;
+}
+
+.achievements-grid {
+  gap: 30px 22px !important;
+  padding-top: 10px;
+}
+.achievement-lock {
+  overflow: visible !important;
+  padding-top: 28px !important;
+}
+.achievement-lock::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: auto !important;
+  left: -10px !important;
+  top: -19px !important;
+  width: calc(100% + 20px) !important;
+  height: 30px !important;
+  z-index: 4 !important;
+  pointer-events: none !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: url("/aevum-archive/assets/ui/round4/ui_locked_chain_tile_amethyst_steel.png") center/75px 28px repeat-x !important;
+  box-shadow: none !important;
+  filter: drop-shadow(0 4px 4px rgba(0,0,0,.50)) drop-shadow(0 0 5px rgba(139,92,246,.12)) !important;
+  opacity: .58 !important;
+  transform: none !important;
+}
+.achievement-lock::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: auto !important;
+  top: -20px !important;
+  right: -9px !important;
+  width: 34px !important;
+  height: 34px !important;
+  z-index: 5 !important;
+  pointer-events: none !important;
+  border: 0 !important;
+  background: url("/aevum-archive/assets/ui/round4/ui_locked_crossing_clasp_keyhole.png") center/contain no-repeat !important;
+  box-shadow: none !important;
+  filter: drop-shadow(0 4px 5px rgba(0,0,0,.48)) !important;
+  opacity: .70 !important;
+  transform: rotate(5deg) !important;
+}
+.achievement-lock:hover::before { opacity: .72 !important; }
+.achievement-lock:hover::after { opacity: .84 !important; }
+
+@media (max-width:760px) {
+  .route-characters-all .status-card > .status-card-frame { inset: -4px !important; }
+  .achievements-grid { gap: 28px !important; }
+  .achievement-lock::before { top: -16px !important; height: 26px !important; background-size: 67px 25px !important; }
+  .achievement-lock::after { top: -17px !important; width: 30px !important; height: 30px !important; }
+}

@@ -9,11 +9,11 @@ Rebalanced after live visual review: 2026-08-17
 ## Direction
 
 - 40 transparent PNG assets are imported and ready.
-- 17 assets currently have deliberate live placements; the remaining 23 are staged for later route-specific slots.
+- 11 assets currently have deliberate live placements; the remaining 29 are staged for later route-specific slots.
 - A page region receives at most one focal ornament. Generic cards, links and section boundaries do not repeat detailed raster art.
 - Character profile icons remain the existing symbols. No portrait or portrait-like backplate replaces them.
 - Sealed and Fallen state cards use segmented edges, knots and corners at their natural aspect ratios.
-- Locked achievements use the established quiet edge-chain treatment. The large Round 4 chain sprites are reserved for a future dedicated lock panel because crossing them through every card reduced readability.
+- Locked achievements use a real chain tile along the outside top edge. It extends into the grid gap without crossing the number, title or body copy.
 - Player-facing text contains no admin or Gamemaster guidance.
 
 ## Live placements
@@ -21,15 +21,17 @@ Rebalanced after live visual review: 2026-08-17
 - Global: compact header brand medallion.
 - Home: one restrained archive-door crest with protected spacing above the hero copy.
 - 404: one lost-page sigil.
-- Character status shelf: Active, Sealed, Fallen and Retired corners; Sealed/Fallen edge segments and state knots.
-- Leaderboard: crown in the dedicated board slot and the gold board divider.
+- Character status shelf: restrained CSS state lines for Active/Retired; fixed corner and transparent knot accents for Sealed/Fallen.
+- Achievements: outside top-edge chain and compact keyhole clasp.
+- Leaderboard: clean crown mark and the gold board divider.
 
 ## Reserved groups
 
 - Navigation endcaps and page-corner whispers.
 - Roster, profile-card and profile-slot ornaments.
 - Bond-oracle crests.
-- Full chain tiles, endcaps, crossing clasp and wax seal.
+- Chain endcap and wax-seal variants not needed by the compact outside-chain treatment.
+- Delivered Sealed/Fallen center-edge flourishes; true seamless rail tiles are still required.
 - Additional home pins, halos, card corners and keylines.
 - Generic footer, mobile and section dividers.
 
