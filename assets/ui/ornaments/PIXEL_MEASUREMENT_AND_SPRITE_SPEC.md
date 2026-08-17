@@ -1,8 +1,10 @@
 # Aevum Archive — Pixel Measurement & Sprite Production Spec
 
-Version: 2026-08-15  
-Measured source: commit `c427318` plus the current CSS state  
+Version: 2026-08-17 (v3 companion added)
+Measured source: current effective CSS/DOM state across all 46 routes
 Coverage: all 46 HTML files
+Detailed v3 production brief: `CHATTI_ORNAMENT_PRODUCTION_BRIEF_V3.md`
+Machine-readable v3 slots: `sprite_slot_manifest.v3.json`
 
 ## 1. Non-negotiable art rules
 

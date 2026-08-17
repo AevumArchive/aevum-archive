@@ -1,0 +1,56 @@
+{
+  "version": 3,
+  "measuredAt": "2026-08-17",
+  "routesMeasured": 46,
+  "basis": "effective CSS and DOM inventory at 100% zoom",
+  "constraints": {
+    "profileIconsRemainHtmlCss": true,
+    "portraitsOnlyInPortraitSlots": true,
+    "playerPagesContainNoAdminGuidance": true,
+    "realAlphaRequired": true,
+    "fullFlexibleRasterFramesForbidden": true,
+    "fluidFrames": "fixed corners plus tileable straight edges or true nine-slice",
+    "desktopOnlyFitRejected": true
+  },
+  "shell": {
+    "desktop": "min(1180px, viewport - 32px)",
+    "mobile": "viewport - 22px at <=640px",
+    "viewports": [
+      {"viewport":1440,"page":1180,"gutter":130},
+      {"viewport":1280,"page":1180,"gutter":50},
+      {"viewport":1024,"page":992,"gutter":16},
+      {"viewport":980,"page":948,"gutter":16},
+      {"viewport":768,"page":736,"gutter":16},
+      {"viewport":640,"page":618,"gutter":11},
+      {"viewport":390,"page":368,"gutter":11},
+      {"viewport":360,"page":338,"gutter":11}
+    ]
+  },
+  "spacing": {
+    "pageTopDesktop":28,"pageTopMobile":12,"pageBottom":56,
+    "heroPaddingDesktop":34,"heroPaddingMobile":22,"heroGap":28,
+    "sectionTop":46,"sectionHeadBottom":18,"gridGap":16,
+    "cardPadding":22,"recordPanelPadding":26,"characterBodyPadding":18,
+    "footerTopMargin":56,"footerTopPadding":24
+  },
+  "statusFrame": {
+    "rejectedSource":{"pixels":"2057x764","aspect":2.692,"reason":"live cards range from 2.04:1 to 2.59:1"},
+    "liveWidths":[382.67,480,466,360,301,368,338],
+    "minHeight":180,
+    "corner":{"master":"384x384","render":"42-56","bleed":24},
+    "edgeH":{"master":"1536x96","renderHeight":32,"tileableCenterPercent":80},
+    "edgeV":{"master":"96x768","renderWidth":32,"tileableCenterPercent":80},
+    "medallion":{"master":"192x192","render":"14-20"},
+    "maxTextIntrusion":18
+  },
+  "assetFamilies": {
+    "global": ["ui_global_header_brand_medallion_048","ui_global_nav_endcap_left_032","ui_global_nav_endcap_right_032","ui_global_section_divider_center_640x072","ui_global_section_knot_064","ui_global_footer_rule_1180x048","ui_global_mobile_divider_338x048","ui_global_page_corner_whisper_160","ui_global_empty_state_seal_128"],
+    "home": ["ui_home_archive_door_crest_720x180","ui_home_gate_card_corner_192","ui_home_primary_portal_halo_480x160","ui_home_shelf_link_pin_064","ui_home_soft_gate_keyline_582x178","ui_404_lost_page_sigil_256","ui_404_return_thread_480x064"],
+    "characters": ["ui_characters_roster_crest_720x160","ui_characters_profile_card_corner_192","ui_characters_profile_slot_backplate_336","ui_characters_state_sealed_corner_384","ui_characters_state_sealed_edge_h_1536x096","ui_characters_state_sealed_edge_v_096x768","ui_characters_state_sealed_medallion_192","ui_characters_state_fallen_corner_384","ui_characters_state_fallen_edge_h_1536x096","ui_characters_state_fallen_edge_v_096x768","ui_characters_state_fallen_medallion_192","ui_characters_state_retired_corner_384","ui_characters_state_active_corner_384","ui_characters_bonds_constellation_node_096","ui_characters_bonds_constellation_thread_768x064","ui_characters_bonds_oracle_crest_256","ui_characters_record_hero_corner_256","ui_characters_record_panel_bookmark_096","ui_characters_portrait_slot_frame_768x768","ui_characters_reward_frame_reserved_768"],
+    "achievementsLeaderboard": ["ui_achievements_hero_trophy_256","ui_achievements_trophy_card_corner_192","ui_achievements_locked_corner_384","ui_achievements_locked_chain_h_1536x096","ui_achievements_locked_wax_seal_192","ui_achievements_earned_medal_backplate_256","ui_leaderboard_hero_crown_256","ui_leaderboard_gold_divider_768x096","ui_leaderboard_board_corner_384","ui_leaderboard_slot_first_384x192","ui_leaderboard_slot_standard_384x192","ui_leaderboard_sync_seal_192","ui_leaderboard_empty_champion_mark_096","ui_leaderboard_rank_flourish_128"],
+    "lore": ["ui_lore_archive_crest_720x160","ui_lore_kingdom_crown_corner_192","ui_lore_settlement_belltower_corner_192","ui_lore_house_heraldry_corner_192","ui_lore_warfront_spear_corner_192","ui_lore_location_compass_corner_192","ui_lore_sealed_crown_wax_192","ui_lore_avalon_gate_divider_640x072","ui_lore_neris_village_divider_640x072","ui_lore_house_zenith_star_divider_640x072","ui_lore_crownbridge_thread_768x064","ui_lore_sunken_bell_wave_768x064","ui_lore_record_page_bookmark_096","ui_lore_unknown_record_veil_512x256"],
+    "npcs": ["ui_npcs_ledger_crest_720x160","ui_npcs_current_card_corner_192","ui_npcs_older_card_corner_192","ui_npcs_sealed_portrait_corner_384","ui_npcs_bond_marker_096","ui_npcs_instructor_marker_096","ui_npcs_enemy_marker_096","ui_npcs_world_figure_marker_096","ui_npcs_record_hero_corner_256","ui_npcs_record_panel_bookmark_096","ui_npcs_ichiro_memorial_seal_192","ui_npcs_empty_portrait_backplate_512"],
+    "playthroughsEventsRecords": ["ui_playthroughs_archive_crest_720x160","ui_playthroughs_road_thread_1024x064","ui_playthroughs_campaign_corner_256","ui_playthroughs_sealed_road_wax_192","ui_playthroughs_old_name_marker_096","ui_events_chronicle_crest_720x160","ui_events_chronicle_card_corner_192","ui_world_event_anchor_crest_256","ui_world_event_timer_bracket_512x192","ui_world_event_active_corner_256","ui_world_event_fault_thread_768x064","ui_sealed_records_vault_crest_720x160","ui_sealed_records_card_corner_256","ui_sealed_records_wax_medallion_192","ui_sealed_records_empty_shelf_512x192"],
+    "relicsDownloads": ["ui_relics_vault_crest_720x160","ui_relics_card_corner_192","ui_relics_chain_corner_192","ui_relics_legendary_corner_256","ui_relics_image_vignette_768x256","ui_relics_unknown_item_veil_512x256","ui_downloads_archive_crest_720x160","ui_downloads_entering_divider_640x072","ui_downloads_package_corner_256","ui_downloads_feature_marker_096","ui_downloads_install_seal_192","ui_downloads_checksum_thread_768x064"]
+  }
+}
