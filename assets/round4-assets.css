@@ -1,0 +1,380 @@
+/* Aevum Archive UI assets - Round 4 integration.
+   All raster ornaments preserve their source aspect ratio; no jewels or circles are stretched. */
+:root {
+  --r4-root: "/aevum-archive/assets/ui/round4";
+}
+
+.archive-page {
+  --ornament-divider: url("/aevum-archive/assets/ui/round4/ui_global_section_divider_center_640x072.png");
+  --ornament-micro: url("/aevum-archive/assets/ui/round4/ui_global_mobile_divider_338x048.png");
+}
+
+.brand-mark {
+  position: relative;
+  color: transparent !important;
+  border-color: transparent !important;
+  background: transparent !important;
+  overflow: visible !important;
+  box-shadow: none !important;
+}
+.brand-mark::before {
+  content: "";
+  position: absolute;
+  inset: -7px;
+  background: url("/aevum-archive/assets/ui/round4/ui_global_header_brand_medallion_048.png") center/contain no-repeat;
+  filter: drop-shadow(0 0 10px rgba(168,85,247,.18));
+}
+.nav { position: relative; }
+.nav::before,
+.nav::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 30px;
+  height: 30px;
+  pointer-events: none;
+  opacity: .64;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.nav::before {
+  left: -28px;
+  transform: translateY(-50%);
+  background-image: url("/aevum-archive/assets/ui/round4/ui_global_nav_endcap_left_032.png");
+}
+.nav::after {
+  right: -28px;
+  transform: translateY(-50%);
+  background-image: url("/aevum-archive/assets/ui/round4/ui_global_nav_endcap_right_032.png");
+}
+
+.archive-page:not(.theme-home) .footer::before {
+  width: min(420px,66%) !important;
+  height: 70px !important;
+  top: -62px !important;
+  background: url("/aevum-archive/assets/ui/round4/ui_global_footer_rule_1180x048.png") center/210px 70px no-repeat !important;
+  opacity: .58 !important;
+}
+
+/* Home */
+.theme-home .welcome-gate::after {
+  display: block !important;
+  width: min(720px,78%) !important;
+  height: auto !important;
+  aspect-ratio: 3 / 1;
+  left: 50% !important;
+  right: auto !important;
+  top: -58px !important;
+  transform: translateX(-50%) !important;
+  border-radius: 0 !important;
+  background: url("/aevum-archive/assets/ui/round4/ui_home_archive_door_crest_720x180.png") center/contain no-repeat !important;
+  opacity: .56 !important;
+  z-index: 0;
+}
+.theme-home .gate-glow {
+  position: absolute;
+  left: 50%;
+  bottom: 72px;
+  width: min(420px,56%);
+  aspect-ratio: 3 / 1;
+  transform: translateX(-50%);
+  background: url("/aevum-archive/assets/ui/round4/ui_home_primary_portal_halo_480x160.png") center/contain no-repeat;
+  opacity: .18;
+  pointer-events: none;
+}
+.theme-home .gate-card::after {
+  content: "" !important;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 62px;
+  height: 62px;
+  border: 0;
+  border-radius: 0;
+  background: url("/aevum-archive/assets/ui/round4/ui_home_gate_card_corner_192.png") center/contain no-repeat !important;
+  opacity: .38;
+  pointer-events: none;
+}
+.theme-home .gate-card:hover::after { opacity: .62; }
+.theme-home .shelf-link { position: relative; padding-right: 44px; }
+.theme-home .shelf-link::after {
+  content: "";
+  position: absolute;
+  right: 11px;
+  top: 50%;
+  width: 28px;
+  height: 28px;
+  transform: translateY(-50%);
+  border: 0;
+  background: url("/aevum-archive/assets/ui/round4/ui_home_shelf_link_pin_064.png") center/contain no-repeat;
+  opacity: .56;
+}
+.theme-home .soft-gates {
+  position: relative;
+  padding-top: 18px;
+}
+.theme-home .soft-gates::before {
+  content: "";
+  position: absolute;
+  width: min(360px,58%);
+  aspect-ratio: 3 / 1;
+  left: 50%;
+  top: -62px;
+  transform: translateX(-50%);
+  background: url("/aevum-archive/assets/ui/round4/ui_home_soft_gate_keyline_582x178.png") center/contain no-repeat;
+  opacity: .34;
+  pointer-events: none;
+}
+
+/* 404 */
+.page-error .hero .archive-card::after {
+  content: "";
+  position: absolute;
+  width: 158px;
+  height: 158px;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: url("/aevum-archive/assets/ui/round4/ui_404_lost_page_sigil_256.png") center/contain no-repeat;
+  opacity: .72;
+  pointer-events: none;
+}
+.page-error .hero::after {
+  width: 300px !important;
+  height: 100px !important;
+  right: 24px !important;
+  top: auto !important;
+  bottom: 18px !important;
+  border-radius: 0 !important;
+  background: url("/aevum-archive/assets/ui/round4/ui_404_return_thread_480x064.png") center/contain no-repeat !important;
+  opacity: .32;
+}
+
+/* Character roster and bonds. Profile symbols stay HTML/CSS. */
+.theme-characters.page-index .hero .archive-card::after {
+  content: "";
+  position: absolute;
+  width: min(420px,82%);
+  aspect-ratio: 3 / 1;
+  left: 50%;
+  top: -26px;
+  transform: translateX(-50%);
+  background: url("/aevum-archive/assets/ui/round4/ui_characters_roster_crest_720x160.png") center/contain no-repeat !important;
+  opacity: .50 !important;
+  pointer-events: none;
+}
+.theme-characters.page-index .character-card::before {
+  content: "";
+  position: absolute;
+  z-index: 3;
+  top: 4px;
+  right: 4px;
+  width: 64px;
+  height: 64px;
+  background: url("/aevum-archive/assets/ui/round4/ui_characters_profile_card_corner_192.png") center/contain no-repeat;
+  opacity: .34;
+  pointer-events: none;
+}
+.theme-characters.page-index .portrait-slot::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  width: 158px;
+  height: 158px;
+  background: url("/aevum-archive/assets/ui/round4/ui_characters_profile_slot_backplate_336.png") center/contain no-repeat;
+  opacity: .25;
+  pointer-events: none;
+}
+.theme-characters.page-index .portrait-rune { position: relative; z-index: 2; }
+.route-characters-bonds .bond-oracle-card::after {
+  content: "";
+  position: absolute;
+  width: 164px;
+  height: 164px;
+  left: 50%;
+  top: 18px;
+  transform: translateX(-50%);
+  background: url("/aevum-archive/assets/ui/round4/ui_characters_bonds_oracle_crest_256.png") center/contain no-repeat !important;
+  opacity: .54 !important;
+  pointer-events: none;
+}
+
+/* Responsive status frames. Fixed corner art is mirrored; center ornaments keep natural 3:1/1:3 ratios. */
+.route-characters-all .status-card.active,
+.route-characters-all .status-card.retired {
+  position: relative;
+  isolation: isolate;
+  overflow: visible !important;
+}
+.route-characters-all .status-card > .status-card-frame {
+  inset: -7px -5px !important;
+  border-radius: 26px !important;
+  opacity: .88 !important;
+  color: rgba(192,132,252,.52);
+  background: none !important;
+}
+.route-characters-all .status-card.sealed > .status-card-frame {
+  background:
+    url("/aevum-archive/assets/ui/round4/ui_characters_state_sealed_moonveil_edge_h_1536x096.png") top center/156px 52px no-repeat,
+    url("/aevum-archive/assets/ui/round4/ui_characters_state_sealed_moonveil_edge_h_1536x096.png") bottom center/156px 52px no-repeat,
+    url("/aevum-archive/assets/ui/round4/ui_characters_state_sealed_moonveil_edge_v_096x768.png") left center/52px 156px no-repeat,
+    url("/aevum-archive/assets/ui/round4/ui_characters_state_sealed_moonveil_edge_v_096x768.png") right center/52px 156px no-repeat !important;
+}
+.route-characters-all .status-card.dead > .status-card-frame {
+  color: rgba(248,113,113,.52);
+  background:
+    url("/aevum-archive/assets/ui/round4/ui_characters_state_fallen_last_ember_edge_h_1536x096.png") top center/156px 52px no-repeat,
+    url("/aevum-archive/assets/ui/round4/ui_characters_state_fallen_last_ember_edge_h_1536x096.png") bottom center/156px 52px no-repeat,
+    url("/aevum-archive/assets/ui/round4/ui_characters_state_fallen_last_ember_edge_v_096x768.png") left center/52px 156px no-repeat,
+    url("/aevum-archive/assets/ui/round4/ui_characters_state_fallen_last_ember_edge_v_096x768.png") right center/52px 156px no-repeat !important;
+}
+.route-characters-all .status-card.active > .status-card-frame { color: rgba(99,217,130,.44); }
+.route-characters-all .status-card.retired > .status-card-frame { color: rgba(244,184,74,.46); }
+.route-characters-all .status-card > .status-card-frame::before,
+.route-characters-all .status-card > .status-card-frame::after {
+  width: 34px;
+  height: 34px;
+  left: 50%;
+  border: 0;
+  box-shadow: none;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.route-characters-all .status-card.sealed > .status-card-frame::before,
+.route-characters-all .status-card.sealed > .status-card-frame::after {
+  background-image: url("/aevum-archive/assets/ui/round4/ui_characters_state_sealed_moonveil_knot_192.png");
+}
+.route-characters-all .status-card.dead > .status-card-frame::before,
+.route-characters-all .status-card.dead > .status-card-frame::after {
+  background-image: url("/aevum-archive/assets/ui/round4/ui_characters_state_fallen_last_ember_knot_192.png");
+}
+.route-characters-all .status-card.active > .status-card-frame::before,
+.route-characters-all .status-card.active > .status-card-frame::after {
+  background-image: url("/aevum-archive/assets/ui/round4/ui_global_section_knot_064.png");
+}
+.route-characters-all .status-card.retired > .status-card-frame::before,
+.route-characters-all .status-card.retired > .status-card-frame::after {
+  background-image: url("/aevum-archive/assets/ui/round4/ui_global_empty_state_seal_128.png");
+}
+.route-characters-all .status-card > .status-card-frame::before { top: -17px; transform: translateX(-50%); }
+.route-characters-all .status-card > .status-card-frame::after { bottom: -17px; transform: translateX(-50%); }
+.status-card-frame .frame-corner {
+  position: absolute;
+  width: 54px;
+  height: 54px;
+  display: block;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: .78;
+}
+.status-card.sealed .frame-corner { background-image: url("/aevum-archive/assets/ui/round4/ui_corner_moonveil_purple_silver.png"); }
+.status-card.dead .frame-corner { background-image: url("/aevum-archive/assets/ui/round4/ui_corner_last_ember_ruby.png"); }
+.status-card.active .frame-corner { background-image: url("/aevum-archive/assets/ui/round4/ui_characters_state_active_corner_384.png"); }
+.status-card.retired .frame-corner { background-image: url("/aevum-archive/assets/ui/round4/ui_characters_state_retired_corner_384.png"); }
+.frame-corner.tl { top: -3px; left: -3px; }
+.frame-corner.tr { top: -3px; right: -3px; transform: scaleX(-1); }
+.frame-corner.bl { bottom: -3px; left: -3px; transform: scaleY(-1); }
+.frame-corner.br { bottom: -3px; right: -3px; transform: scale(-1); }
+.route-characters-all .status-card > :not(.status-card-frame) { position: relative; z-index: 3; }
+
+/* Locked achievements: real chains over the card surface, readable HTML above. */
+.achievement-lock {
+  isolation: isolate !important;
+  overflow: hidden !important;
+}
+.achievement-lock::before,
+.achievement-lock::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: auto !important;
+  left: -24px !important;
+  top: 50% !important;
+  width: calc(100% + 48px) !important;
+  height: 42px !important;
+  z-index: 2 !important;
+  pointer-events: none !important;
+  opacity: .66 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
+  background-repeat: no-repeat, repeat-x !important;
+  background-position: center, center !important;
+  background-size: 42px 42px, 96px 36px !important;
+  filter: drop-shadow(0 5px 5px rgba(0,0,0,.48)) drop-shadow(0 0 6px rgba(139,92,246,.14)) !important;
+}
+.achievement-lock::before {
+  background-image:
+    url("/aevum-archive/assets/ui/round4/ui_locked_crossing_clasp_keyhole.png"),
+    url("/aevum-archive/assets/ui/round4/ui_locked_chain_tile_amethyst_steel.png") !important;
+  transform: translateY(-50%) rotate(9deg) !important;
+}
+.achievement-lock::after {
+  background-image:
+    url("/aevum-archive/assets/ui/round4/ui_locked_wax_seal_purple_gold.png"),
+    url("/aevum-archive/assets/ui/round4/ui_locked_chain_tile_amethyst_steel.png") !important;
+  transform: translateY(-50%) rotate(-9deg) !important;
+}
+.achievement-lock > * { position: relative !important; z-index: 3 !important; text-shadow: 0 2px 8px rgba(7,6,12,.95); }
+.achievement-lock:hover::before,
+.achievement-lock:hover::after { opacity: .80 !important; }
+
+/* Leaderboard */
+.theme-leaderboard .leaderboard-seal .sigil,
+.theme-leaderboard .leaderboard-crown span {
+  color: transparent !important;
+  border-color: transparent !important;
+  background-color: transparent !important;
+  background-image: url("/aevum-archive/assets/ui/round4/ui_leaderboard_hero_crown_256.png") !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  box-shadow: none !important;
+}
+.theme-leaderboard .leaderboard-seal .sigil { width: 78px; height: 78px; top: 18px; right: 18px; }
+.theme-leaderboard .leaderboard-crown span { width: 96px !important; height: 96px !important; }
+.theme-leaderboard .leaderboard-divider {
+  width: min(480px,72%) !important;
+  height: 120px !important;
+  margin: -10px auto 18px !important;
+  object-fit: contain;
+  opacity: .72 !important;
+  filter: drop-shadow(0 0 12px rgba(245,158,11,.16));
+}
+.theme-leaderboard .leaderboard-board::after {
+  content: "" !important;
+  position: absolute !important;
+  width: 58px !important;
+  height: 58px !important;
+  right: 22px !important;
+  bottom: 18px !important;
+  left: auto !important;
+  top: auto !important;
+  inset: auto 22px 18px auto !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: url("/aevum-archive/assets/ui/round4/ui_global_empty_state_seal_128.png") center/contain no-repeat !important;
+  opacity: .34 !important;
+}
+
+@media (max-width: 760px) {
+  .nav::before,.nav::after { display: none; }
+  .theme-home .welcome-gate::after { width: 108% !important; top: -34px !important; opacity: .38 !important; }
+  .theme-home .gate-glow { width: 84%; bottom: 94px; opacity: .14; }
+  .theme-home .soft-gates::before { width: 82%; top: -48px; opacity: .24; }
+  .route-characters-all .status-card > .status-card-frame { inset: -6px -4px !important; }
+  .status-card-frame .frame-corner { width: 48px; height: 48px; }
+  .route-characters-all .status-card.sealed > .status-card-frame,
+  .route-characters-all .status-card.dead > .status-card-frame {
+    background-size: 132px 44px,132px 44px,44px 132px,44px 132px !important;
+  }
+  .achievement-lock::before,.achievement-lock::after {
+    height: 36px !important;
+    background-size: 36px 36px,88px 33px !important;
+    opacity: .58 !important;
+  }
+  .theme-leaderboard .leaderboard-divider { width: 88% !important; height: 96px !important; }
+}
