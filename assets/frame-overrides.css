@@ -1314,10 +1314,10 @@
 
 .route-characters-all .status-card > .status-card-frame {
   position: absolute !important;
-  top: 0 !important;
+  top: -10px !important;
   left: 0 !important;
   width: 100% !important;
-  height: 100% !important;
+  height: calc(100% + 20px) !important;
   max-width: none !important;
   display: block !important;
   object-fit: fill;
@@ -1355,9 +1355,9 @@
 
 @media (max-width: 640px) {
   .route-characters-all .status-card > .status-card-frame {
-    top: 0 !important;
+    top: -10px !important;
     left: 0 !important;
     width: 100% !important;
-    height: 100% !important;
+    height: calc(100% + 20px) !important;
   }
 }
