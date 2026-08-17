@@ -1266,3 +1266,61 @@
     opacity: 0.88;
   }
 }
+
+/* 2026-08-17: render the supplied state artwork as direct image overlays.
+   The source files are complete horizontal compositions, not nine-slice skins. */
+.route-characters-all .status-card.sealed::before,
+.route-characters-all .status-card.dead::before {
+  content: none !important;
+  display: none !important;
+}
+
+.route-characters-all .status-card > .status-card-frame {
+  position: absolute !important;
+  top: -9px !important;
+  left: -9px !important;
+  width: calc(100% + 18px) !important;
+  height: calc(100% + 18px) !important;
+  max-width: none !important;
+  display: block !important;
+  object-fit: fill;
+  z-index: 2 !important;
+  pointer-events: none;
+  opacity: 0.96;
+  filter: brightness(1.12) saturate(1.08) drop-shadow(0 0 11px rgba(139, 92, 246, 0.18));
+  transition: opacity 180ms ease, filter 180ms ease;
+}
+
+.route-characters-all .status-card.dead > .status-card-frame {
+  filter: brightness(1.10) saturate(1.08) drop-shadow(0 0 11px rgba(239, 68, 68, 0.17));
+}
+
+.route-characters-all .status-card:hover > .status-card-frame {
+  opacity: 1;
+  filter: brightness(1.18) saturate(1.12) drop-shadow(0 0 14px rgba(192, 132, 252, 0.22));
+}
+
+.route-characters-all .status-card.dead:hover > .status-card-frame {
+  filter: brightness(1.16) saturate(1.12) drop-shadow(0 0 14px rgba(248, 64, 86, 0.21));
+}
+
+.route-characters-all .status-card > :not(.status-card-frame) {
+  position: relative;
+  z-index: 3;
+}
+
+/* The repeated micro-divider was visually noisy and visibly soft at this size. */
+.route-characters-all .hero + .status-board::before,
+.route-characters-all .status-board + .status-board::before {
+  content: none !important;
+  display: none !important;
+}
+
+@media (max-width: 640px) {
+  .route-characters-all .status-card > .status-card-frame {
+    top: -7px !important;
+    left: -7px !important;
+    width: calc(100% + 14px) !important;
+    height: calc(100% + 14px) !important;
+  }
+}
