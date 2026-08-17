@@ -1283,10 +1283,10 @@
 
 .route-characters-all .status-card > .status-card-frame {
   position: absolute !important;
-  top: -9px !important;
+  top: -12% !important;
   left: -9px !important;
   width: calc(100% + 18px) !important;
-  height: calc(100% + 18px) !important;
+  height: 132% !important;
   max-width: none !important;
   display: block !important;
   object-fit: fill;
@@ -1324,9 +1324,9 @@
 
 @media (max-width: 640px) {
   .route-characters-all .status-card > .status-card-frame {
-    top: -7px !important;
+    top: -12% !important;
     left: -7px !important;
     width: calc(100% + 14px) !important;
-    height: calc(100% + 14px) !important;
+    height: 132% !important;
   }
 }
