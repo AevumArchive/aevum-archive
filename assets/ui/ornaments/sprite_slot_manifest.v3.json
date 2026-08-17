@@ -43,6 +43,65 @@
     "medallion":{"master":"192x192","render":"14-20"},
     "maxTextIntrusion":18
   },
+  "obamaPortraitBorder": {
+    "asset": "ui_characters_obama_portrait_border_new_order_1380x2000",
+    "portraitSource": "1024x1536",
+    "portraitAspect": "2:3",
+    "replacesFrame": "1600x2100",
+    "master": "1380x2000",
+    "masterAspect": 0.69,
+    "heightCap": "86vh",
+    "actualOuterHeightFormula": "min(1.5 * innerWidth, 0.86 * viewportHeight) + 2 * verticalPadding",
+    "responsiveMethodRequired": "true nine-slice or segmented modules",
+    "transparentOpening": {"x1":88,"y1":97,"x2":1292,"y2":1903,"width":1204,"height":1806,"aspect":"2:3"},
+    "transparentBleed": 24,
+    "nineSliceGuides": {"left":160,"right":1220,"top":190,"bottom":1810},
+    "liveSlots": [
+      {"viewport":1440,"outer":"820x1166.6","innerWidth":716.3},
+      {"viewport":1280,"outer":"820x1173.7","innerWidth":727.8},
+      {"viewport":1024,"outer":"820x1184.9","innerWidth":746.3},
+      {"viewport":980,"outer":"820x1186.9","innerWidth":749.4},
+      {"viewport":768,"outer":"680x986.2","innerWidth":624.7},
+      {"viewport":640,"outer":"562x827","innerWidth":530},
+      {"viewport":390,"outer":"312x452","innerWidth":280},
+      {"viewport":360,"outer":"282x407","innerWidth":250}
+    ],
+    "layerOrder": {"wrapper":1,"portrait":2,"border":3,"crest":4}
+  },
+  "premiumStateSets": {
+    "sealedMoonveil": {
+      "assets": ["ui_characters_state_sealed_moonveil_corner_384","ui_characters_state_sealed_moonveil_edge_h_1536x096","ui_characters_state_sealed_moonveil_edge_v_096x768","ui_characters_state_sealed_moonveil_knot_192","ui_characters_state_sealed_moonveil_badge_halo_288x144","ui_characters_state_sealed_moonveil_veil_512x192"],
+      "cornerRender": "42-56",
+      "edgeRender": "24-32",
+      "knotRender": "16-20",
+      "badgeHaloRender": "72x36",
+      "maxTextIntrusion": 16,
+      "layerOrder": {"panel":1,"ornament":2,"htmlText":3}
+    },
+    "fallenLastEmber": {
+      "assets": ["ui_characters_state_fallen_last_ember_corner_384","ui_characters_state_fallen_last_ember_edge_h_1536x096","ui_characters_state_fallen_last_ember_edge_v_096x768","ui_characters_state_fallen_last_ember_knot_192","ui_characters_state_fallen_last_ember_badge_halo_288x144","ui_characters_state_fallen_last_ember_ash_thread_768x064"],
+      "cornerRender": "42-56",
+      "edgeRender": "24-32",
+      "knotRender": "16-20",
+      "badgeHaloRender": "72x36",
+      "maxTextIntrusion": 16,
+      "layerOrder": {"panel":1,"ornament":2,"htmlText":3}
+    },
+    "lockedAchievements": {
+      "assets": ["ui_achievements_locked_chain_tile_256x096","ui_achievements_locked_chain_endcap_192","ui_achievements_locked_chain_crossing_clasp_192","ui_achievements_locked_wax_seal_192","ui_achievements_locked_corner_384","ui_achievements_locked_chain_shadow_512x128"],
+      "cardWidths": [283,236,466,360,618,368,338],
+      "cardMinHeight": 150,
+      "cardPadding": 18,
+      "chainTileRender": "96x36",
+      "stripHeightDesktop": "36-42",
+      "stripHeightMobile": "32-36",
+      "stripOverflowX": 24,
+      "angles": [9,-9],
+      "opacityNormal": "0.58-0.72",
+      "opacityHoverMax": 0.82,
+      "layerOrder": {"panel":1,"chains":2,"htmlText":3}
+    }
+  },
   "assetFamilies": {
     "global": ["ui_global_header_brand_medallion_048","ui_global_nav_endcap_left_032","ui_global_nav_endcap_right_032","ui_global_section_divider_center_640x072","ui_global_section_knot_064","ui_global_footer_rule_1180x048","ui_global_mobile_divider_338x048","ui_global_page_corner_whisper_160","ui_global_empty_state_seal_128"],
     "home": ["ui_home_archive_door_crest_720x180","ui_home_gate_card_corner_192","ui_home_primary_portal_halo_480x160","ui_home_shelf_link_pin_064","ui_home_soft_gate_keyline_582x178","ui_404_lost_page_sigil_256","ui_404_return_thread_480x064"],
