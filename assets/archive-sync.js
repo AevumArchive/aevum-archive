@@ -24,6 +24,24 @@
   };
 
   const applyLeaderboard = (entries) => {
+    const byId = new Map(entries.map((entry) => [normalize(entry.characterId), entry]));
+    const maximumPower = Math.max(1, ...entries.map((entry) => Math.max(0, Number(entry.powerLevel) || 0)));
+    document.querySelectorAll('.power-ledger-row[data-archive-character-id]').forEach((row) => {
+      const entry = byId.get(normalize(row.dataset.archiveCharacterId));
+      if (!entry) return;
+      const power = Math.max(0, Number(entry.powerLevel) || 0);
+      row.style.setProperty('--relative', (power * 100 / maximumPower).toFixed(1) + '%');
+      const output = row.querySelector('[data-archive-field="powerLevel"]');
+      if (output) output.textContent = number.format(power);
+    });
+    document.querySelectorAll('[data-archive-gap-from][data-archive-gap-to]').forEach((gapRecord) => {
+      const from = byId.get(normalize(gapRecord.dataset.archiveGapFrom));
+      const to = byId.get(normalize(gapRecord.dataset.archiveGapTo));
+      const output = gapRecord.querySelector('small');
+      if (!from || !to || !output) return;
+      const gap = Math.max(0, Number(from.powerLevel) - Number(to.powerLevel));
+      output.textContent = output.textContent.replace(/^[\d,]+/, number.format(gap));
+    });
     document.querySelectorAll('[data-archive-leaderboard-list]').forEach((list) => {
       list.replaceChildren();
       if (!entries.length) {
