@@ -93,7 +93,9 @@
 .codex-lock i::before { content:"";position:absolute;left:28px;top:18px;width:22px;height:25px;border:2px solid rgba(203,165,231,.46);border-bottom:0;border-radius:20px 20px 0 0; }
 .codex-no-results { padding:18px;border:1px solid rgba(244,184,74,.2);border-radius:16px;color:#d9c5e1;text-align:center;background:rgba(20,13,27,.8); }
 .codex-sealed-intro { padding-top:30px; }
-.codex-grid-divider { grid-column:1/-1;display:flex;align-items:end;justify-content:space-between;gap:24px;margin:32px 0 2px;padding:28px 4px 18px;border-bottom:1px solid rgba(244,184,74,.22); }`n.codex-grid-divider h2 { margin:5px 0 0; }`n.codex-grid-divider > p { max-width:520px;color:#aa9caf;text-align:right; }
+.codex-grid-divider { grid-column:1/-1;display:flex;align-items:end;justify-content:space-between;gap:24px;margin:32px 0 2px;padding:28px 4px 18px;border-bottom:1px solid rgba(244,184,74,.22); }
+.codex-grid-divider h2 { margin:5px 0 0; }
+.codex-grid-divider > p { max-width:520px;color:#aa9caf;text-align:right; }
 .codex-trait-categories { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px; }
 .codex-trait-category { position:relative;min-height:215px;padding:24px;border:1px solid rgba(156,117,188,.25);border-radius:21px;background:linear-gradient(145deg,rgba(34,23,45,.96),rgba(7,6,10,.98)); }
 .codex-trait-category > span { position:absolute;top:18px;right:20px;color:rgba(244,184,74,.26);font-size:1.7rem; }
@@ -114,3 +116,23 @@
 
 /* Large sealed shelves: let the browser skip off-screen paint work. */
 .codex-entry.is-sealed{content-visibility:auto;contain-intrinsic-size:280px}
+
+/* Trait browser and compact signature polish — 2026-08-20. */
+.codex-classification-cloud{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}
+.codex-classification-cloud span{padding:9px 12px;border:1px solid rgba(180,139,214,.2);border-radius:999px;color:#cdbed5;background:rgba(139,92,246,.055);font:700 .67rem/1 Verdana,sans-serif;letter-spacing:.06em;text-transform:uppercase}
+.trait-record-count{margin:-17px 0 24px;color:#a99ab2;font:700 .67rem/1 Verdana,sans-serif;letter-spacing:.08em;text-transform:uppercase}
+.codex-trait-record.is-unlocked{min-height:335px;display:flex;flex-direction:column;padding:22px;border-color:rgba(244,184,74,.38);background:radial-gradient(circle at 50% -10%,rgba(244,184,74,.17),transparent 13rem),linear-gradient(150deg,rgba(39,23,48,.98),rgba(8,7,12,.99))}
+.codex-trait-record.is-unlocked::after{content:"UNIQUE";position:absolute;right:20px;bottom:17px;color:rgba(244,184,74,.12);font:900 2.4rem/1 Georgia,serif;letter-spacing:.05em}
+.codex-trait-record.is-unlocked .codex-entry-sigil{width:90px;height:90px;margin:22px auto 17px}
+.codex-trait-record.is-unlocked .codex-entry-sigil i{font-size:2.1rem}
+.codex-trait-record.is-unlocked .codex-entry-copy>strong{font-size:1.7rem}
+.codex-trait-record.is-unlocked .codex-entry-copy>span{min-height:0;font-size:.94rem}
+.codex-trait-record .codex-build-tags{position:relative;z-index:2;padding-top:14px}
+.codex-trait-holder{position:relative;z-index:2;margin-top:auto;padding-top:16px;color:#e2c77f;font:800 .65rem/1.25 Verdana,sans-serif;letter-spacing:.1em;text-transform:uppercase}
+.codex-trait-record.is-known-sealed{min-height:280px;border-style:solid;border-color:rgba(190,143,224,.38);background:radial-gradient(circle at 78% 18%,rgba(139,92,246,.17),transparent 11rem),linear-gradient(145deg,#201329,#07060a)}
+.codex-trait-record.is-known-sealed h3{color:#f0e4f3}
+.route-codex-traits .codex-toolbar{grid-template-columns:minmax(210px,1.45fr) repeat(4,minmax(128px,1fr)) auto}
+.route-codex-traits .codex-entry.is-sealed{min-height:230px}
+.route-codex-traits .codex-entry.is-sealed .codex-lock{top:64px}
+@media(max-width:1180px){.route-codex-traits .codex-toolbar{grid-template-columns:repeat(3,minmax(0,1fr))}.route-codex-traits .codex-toolbar .codex-search{grid-column:1/-1}.route-codex-traits .codex-toolbar .button{align-self:stretch}}
+@media(max-width:640px){.route-codex-traits .codex-toolbar{grid-template-columns:1fr}.route-codex-traits .codex-toolbar>*{grid-column:1}}

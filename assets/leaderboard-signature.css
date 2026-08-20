@@ -19,3 +19,60 @@
 @keyframes crownAscension{0%,100%{transform:translateY(3px) scale(.96);filter:brightness(.95)}50%{transform:translateY(-6px) scale(1.04);filter:brightness(1.16)}}@keyframes throneCrown{0%,100%{transform:translateY(2px) scale(.98)}45%{transform:translateY(-5px) scale(1.04)}55%{transform:translateY(-3px) scale(1.02)}}@keyframes ruleBows{0%,100%{transform:rotate(45deg) scale(1)}50%{transform:rotate(135deg) scale(.9)}}@keyframes pageBeyond{0%,100%{transform:perspective(240px) rotateY(0)}50%{transform:perspective(240px) rotateY(-19deg) translateX(4px)}}@keyframes borderHolds{0%,100%{transform:scaleX(.86);opacity:.65}50%{transform:scaleX(1);opacity:1}}@keyframes eighthDirection{to{transform:rotate(405deg)}}
 @media(max-width:900px){.route-leaderboard .thren-achievements{grid-template-columns:1fr 1fr}}@media(max-width:700px){.route-leaderboard .thren-achievements{grid-template-columns:1fr}.route-leaderboard .thren-achievements .signature-prestige{grid-column:1}}
 @media(prefers-reduced-motion:reduce){.route-leaderboard .epic-prestige *{animation:none!important}}
+
+/* Compact prestige pass: signature records stay dominant without turning each profile into a full page. */
+@media(min-width:701px){
+.route-leaderboard .signature-prestige{min-height:410px}
+.route-leaderboard .signature-prestige summary{min-height:408px;grid-template-columns:minmax(150px,205px) minmax(0,1fr);gap:clamp(24px,4vw,48px);padding:clamp(24px,3.5vw,38px)}
+.route-leaderboard .signature-prestige::before{top:31px;right:38px;font-size:6.7rem}
+.route-leaderboard .signature-prestige::after{inset:13px}
+.route-leaderboard .signature-prestige .prestige-emblem{width:clamp(150px,18vw,195px);height:clamp(150px,18vw,195px)}
+.route-leaderboard .signature-prestige .prestige-emblem i.crown-glyph{font-size:clamp(4.7rem,8vw,6.4rem)}
+.route-leaderboard .signature-prestige .prestige-copy{min-height:235px}
+.route-leaderboard .signature-prestige .prestige-copy>strong{margin-top:15px;font-size:clamp(2.35rem,4.7vw,4.2rem);line-height:.94}
+.route-leaderboard .signature-prestige .completion-rank{margin-top:28px;padding-top:15px}
+.route-leaderboard .signature-prestige .completion-rank b{font-size:2.65rem}
+.route-leaderboard .signature-prestige .achievement-reveal{padding:0 clamp(24px,3.5vw,38px) 28px}
+.route-leaderboard .epic-prestige{min-height:320px}
+.route-leaderboard .epic-prestige summary{min-height:318px;padding:22px}
+.route-leaderboard .epic-prestige .prestige-emblem{width:96px;height:96px;margin:10px 0 18px}
+.route-leaderboard .epic-prestige .prestige-emblem i{transform:scale(.78)}
+.route-leaderboard .epic-prestige .prestige-copy>strong{font-size:clamp(1.55rem,2.5vw,2.2rem);line-height:.96}
+.route-leaderboard .epic-prestige .completion-rank{margin-top:24px;padding-top:14px}
+}
+@media(max-width:700px){
+.route-leaderboard .signature-prestige{min-height:0}
+.route-leaderboard .signature-prestige summary{min-height:0;padding:28px 22px}
+.route-leaderboard .signature-prestige .prestige-emblem{width:155px;height:155px}
+.route-leaderboard .signature-prestige .prestige-copy{min-height:210px}
+.route-leaderboard .signature-prestige .completion-rank{margin-top:25px}
+.route-leaderboard .epic-prestige,.route-leaderboard .epic-prestige summary{min-height:300px}
+}
+
+/* Signed public server snapshot: deliberately compact beside the lore ranking. */
+.archive-live-ledger { display:grid; grid-template-columns:minmax(170px,.7fr) minmax(220px,1fr) minmax(280px,1.6fr); gap:18px; align-items:center; margin:18px 0 34px; padding:18px 22px; border:1px solid rgba(217,177,92,.24); border-radius:18px; background:linear-gradient(135deg,rgba(42,28,17,.72),rgba(18,14,25,.9)); }
+.archive-live-ledger h2 { margin:2px 0 0; font-size:clamp(1.35rem,2vw,2rem); }
+.archive-live-status { display:grid; gap:4px; color:var(--muted); }
+.archive-live-status strong { color:#f4d88e; font-size:.84rem; letter-spacing:.05em; }
+.archive-live-status small { line-height:1.4; }
+.archive-live-ledger ol { display:grid; gap:6px; margin:0; padding:0; list-style:none; }
+.archive-live-ledger li { display:grid; grid-template-columns:34px 1fr auto; gap:10px; align-items:center; padding:7px 10px; border:1px solid rgba(217,177,92,.14); border-radius:10px; background:rgba(10,8,14,.42); }
+.archive-live-ledger li span { color:#d6b765; font:700 .72rem/1 ui-monospace,monospace; }
+.archive-live-ledger li em { color:#efd994; font-style:normal; font-size:.78rem; }
+.archive-live-ledger .archive-live-empty { display:block; color:var(--muted); }
+@media (max-width:800px) { .archive-live-ledger { grid-template-columns:1fr; } }
+/* Compact prestige pass v2: preserves spectacle while keeping the dossier scannable. */
+@media(min-width:701px){
+.route-leaderboard .signature-prestige{min-height:350px}
+.route-leaderboard .signature-prestige summary{min-height:348px;grid-template-columns:minmax(132px,170px) minmax(0,1fr);gap:clamp(20px,3vw,38px);padding:25px 30px}
+.route-leaderboard .signature-prestige::before{top:25px;right:31px;font-size:5.7rem}
+.route-leaderboard .signature-prestige .prestige-emblem{width:145px;height:145px}
+.route-leaderboard .signature-prestige .prestige-emblem i.crown-glyph{font-size:4.75rem}
+.route-leaderboard .signature-prestige .prestige-copy{min-height:195px}
+.route-leaderboard .signature-prestige .prestige-copy>strong{font-size:clamp(2.05rem,4vw,3.45rem)}
+.route-leaderboard .signature-prestige .completion-rank{margin-top:22px;padding-top:13px}
+.route-leaderboard .signature-prestige .completion-rank b{font-size:2.25rem}
+.route-leaderboard .epic-prestige{min-height:285px}
+.route-leaderboard .epic-prestige summary{min-height:283px;padding:19px}
+.route-leaderboard .epic-prestige .prestige-emblem{width:82px;height:82px;margin:7px 0 14px}
+}
