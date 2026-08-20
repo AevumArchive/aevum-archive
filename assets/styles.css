@@ -1400,3 +1400,12 @@ html { scroll-behavior: smooth; }
   .old-names-grid,
   .leaderboard-slots { grid-template-columns: 1fr; }
 }
+
+/* Archive-wide census badge. */
+.realm-census { width:max-content;max-width:100%;display:flex;align-items:center;gap:13px;margin:24px auto 0;padding:10px 18px 10px 11px;border:1px solid rgba(244,184,74,.3);border-radius:999px;color:#e9d9ec;background:linear-gradient(135deg,rgba(90,50,118,.35),rgba(16,10,21,.82));box-shadow:0 0 30px rgba(139,92,246,.11),inset 0 1px rgba(255,255,255,.05); }
+.realm-census-sigil { width:42px;height:42px;display:grid;place-items:center;border:1px solid rgba(244,184,74,.42);border-radius:50%;color:#f2c765;background:rgba(0,0,0,.28);box-shadow:0 0 18px rgba(244,184,74,.13); }
+.realm-census > span:last-child { display:grid;grid-template-columns:auto 1fr;align-items:baseline;column-gap:9px;text-align:left; }
+.realm-census small { grid-column:1/-1;color:#bda9c5;font:800 .58rem/1 Verdana,sans-serif;letter-spacing:.15em;text-transform:uppercase; }
+.realm-census strong { color:#ffe29a;font:900 1.7rem/1 Georgia,serif; }
+.realm-census em { color:#c7b7ce;font-size:.8rem;font-style:normal; }
+@media(max-width:480px){.realm-census{border-radius:18px}.realm-census em{font-size:.72rem}}
