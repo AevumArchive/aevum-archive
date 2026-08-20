@@ -41,8 +41,8 @@
     article.dataset.category = 'unknown';
     article.dataset.rarity = 'unknown';
     article.dataset.record = number;
-    article.dataset.search = 'record ' + number;
-    article.innerHTML = '<span class="codex-entry-top"><span class="status-badge">Sealed</span><span class="codex-classification">Unknown</span></span><span class="codex-lock" aria-hidden="true"><i></i></span><p class="eyebrow">Trait Record ' + number + '</p><h3>Unknown Trait</h3><p>Discovery required.</p>';
+    article.dataset.search = 'sealed trait record';
+    article.innerHTML = '<span class="codex-entry-top"><span class="status-badge">Sealed</span><span class="codex-classification">Unknown</span></span><span class="codex-lock" aria-hidden="true"><i></i></span><p class="eyebrow">Sealed Trait Record</p><h3>Unknown Trait</h3><p>Discovery required.</p>';
     return article;
   }
 
@@ -84,7 +84,7 @@
       });
       records.sort(comparators[sort.value] || comparators.archive).forEach((record) => grid.append(record));
       empty.hidden = visible !== 0;
-      count.textContent = visible + ' public and sealed records shown';
+      count.textContent = visible === 0 ? 'No matching records' : 'Witnessed and sealed records';
     }
 
     form.addEventListener('input', applyFilters);

@@ -76,8 +76,11 @@
 .route-leaderboard .epic-prestige summary{min-height:283px;padding:19px}
 .route-leaderboard .epic-prestige .prestige-emblem{width:82px;height:82px;margin:7px 0 14px}
 }
-/* Closed epic records should hug their visible summary; the reveal expands only after activation. */
-.route-leaderboard details.epic-prestige:not([open]),
-.route-leaderboard details.epic-prestige:not([open]) summary {
+/* Closed secondary records collapse fully instead of stretching to the tallest grid sibling. */
+.route-leaderboard details.prestige-achievement:not(.signature-prestige):not([open]) {
+  min-height: 0;
+  align-self: start;
+}
+.route-leaderboard details.prestige-achievement:not(.signature-prestige):not([open]) summary {
   min-height: 0;
 }
