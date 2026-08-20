@@ -111,3 +111,6 @@
 @media (max-width:980px){.codex-hero{grid-template-columns:1fr;min-height:0}.codex-vault-count{min-height:390px}.codex-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.codex-toolbar{grid-template-columns:repeat(2,minmax(0,1fr))}.codex-search{grid-column:1/-1}.codex-gateways{grid-template-columns:1fr}.codex-trait-categories{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:640px){.codex-hero{padding:24px}.codex-vault-count{padding:24px}.codex-grid,.codex-trait-categories{grid-template-columns:1fr}.codex-toolbar{grid-template-columns:1fr}.codex-toolbar>*{grid-column:1}.codex-entry summary{min-height:380px}.codex-entry-details{grid-template-columns:1fr}.codex-entry-details>*{grid-column:1}.codex-record-meta div{grid-template-columns:1fr}.codex-gateway{min-height:340px;padding:28px}.codex-compass{transform:translateX(-50%) scale(.82);transform-origin:top center}.codex-tabs{overflow-x:auto}.codex-tab{min-width:110px;justify-content:center}}
 @media (prefers-reduced-motion:reduce){.codex-compass::before{animation:none}.codex-gateway,.codex-entry.is-unlocked{transition:none}}
+
+/* Large sealed shelves: let the browser skip off-screen paint work. */
+.codex-entry.is-sealed{content-visibility:auto;contain-intrinsic-size:280px}
