@@ -1,0 +1,381 @@
+/* Leaderboard-only prestige system. Loaded after the shared archive styles. */
+.route-leaderboard {
+  --ledger-gold: 244 190 92;
+  --ledger-ivory: 244 235 214;
+}
+.route-leaderboard .power-ledger { padding-top: 56px; }
+.route-leaderboard .power-ledger-table {
+  position: relative;
+  display: grid;
+  gap: 8px;
+  padding: clamp(18px, 2.6vw, 30px);
+  overflow: hidden;
+  border: 1px solid rgba(244,190,92,.24);
+  border-radius: 26px;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(125,76,163,.16), transparent 24rem),
+    repeating-linear-gradient(90deg, transparent 0 72px, rgba(244,190,92,.018) 73px 74px),
+    linear-gradient(145deg, rgba(23,18,27,.97), rgba(7,6,10,.98));
+  box-shadow: 0 26px 70px rgba(0,0,0,.34), inset 0 1px 0 rgba(255,255,255,.045);
+}
+.route-leaderboard .power-ledger-table::before {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  pointer-events: none;
+  border: 1px solid rgba(244,190,92,.08);
+  border-radius: 18px;
+}
+.route-leaderboard .power-ledger-row {
+  --bar-color: 225 183 98;
+  position: relative;
+  z-index: 1;
+  min-height: 42px;
+  display: grid;
+  grid-template-columns: 48px minmax(140px, 205px) minmax(100px, 1fr) 92px;
+  align-items: center;
+  gap: 12px;
+  padding: 7px 10px;
+  border-radius: 11px;
+  color: #eaddf0;
+  text-decoration: none;
+  transition: background .2s ease, transform .2s ease;
+}
+.route-leaderboard .power-ledger-row:hover,
+.route-leaderboard .power-ledger-row:focus-visible { background: rgba(255,255,255,.035); transform: translateX(3px); outline: none; }
+.route-leaderboard .power-ledger-row > span { color: #e8cc8f; font: 900 .78rem/1 Georgia,serif; text-align: center; }
+.route-leaderboard .power-ledger-row > strong { font-size: .91rem; }
+.route-leaderboard .power-ledger-row > i {
+  height: 7px;
+  overflow: hidden;
+  border: 1px solid rgba(238,210,156,.12);
+  border-radius: 999px;
+  background: rgba(0,0,0,.38);
+  box-shadow: inset 0 0 8px rgba(0,0,0,.55);
+}
+.route-leaderboard .power-ledger-row > i > b {
+  display: block;
+  width: var(--relative);
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, rgba(143,91,46,.92), rgb(var(--bar-color)), rgba(255,235,174,.92));
+  box-shadow: 0 0 13px rgba(244,190,92,.24);
+}
+.route-leaderboard .power-ledger-row > em { color: #f4e5c4; font: 800 .8rem/1 Verdana,sans-serif; text-align: right; font-style: normal; }
+.route-leaderboard .power-cliff {
+  position: relative;
+  z-index: 1;
+  margin: 3px 0 6px 72px;
+  padding: 9px 14px;
+  border-left: 2px solid rgba(255,211,121,.72);
+  background: linear-gradient(90deg, rgba(244,190,92,.11), transparent 70%);
+}
+.route-leaderboard .power-cliff span { display:block; color:#f2d18d; font:800 .68rem/1 Verdana,sans-serif; letter-spacing:.12em; text-transform:uppercase; }
+.route-leaderboard .power-cliff small { display:block; margin-top:5px; color:#ad9eb6; }
+.route-leaderboard .power-cliff.secondary { border-color:rgba(161,130,232,.68); background:linear-gradient(90deg,rgba(130,101,205,.1),transparent 70%); }
+.route-leaderboard .power-cliff.secondary span { color:#c9b8f0; }
+
+/* The portrait and dossier occupy the first tier; achievements receive the full card width. */
+.route-leaderboard .global-rank-card { isolation:isolate; overflow:clip; scroll-margin-top:20px; }
+.route-leaderboard .global-rank-card::after {
+  content:"";
+  position:absolute;
+  z-index:0;
+  inset:0;
+  pointer-events:none;
+  opacity:.5;
+}
+.route-leaderboard .global-rank-card.rank-1 { background:radial-gradient(circle at 15% 12%,rgba(255,207,111,.18),transparent 20rem),repeating-radial-gradient(circle at 15% 35%,transparent 0 48px,rgba(255,207,111,.024) 49px 50px),linear-gradient(145deg,#1d171d,#07070a 70%); box-shadow:0 30px 90px rgba(0,0,0,.44),0 0 54px rgba(255,207,111,.08),inset 0 1px rgba(255,255,255,.06); }
+.route-leaderboard .global-rank-card.rank-2 { background:linear-gradient(90deg,transparent 49.8%,rgba(218,226,238,.045) 50%,transparent 50.2%),radial-gradient(circle at 50% 0%,rgba(218,226,238,.13),transparent 20rem),linear-gradient(145deg,#1b1c22,#08090d); }
+.route-leaderboard .global-rank-card.rank-3 { background:radial-gradient(circle at 8% 0%,rgba(218,112,53,.22),transparent 19rem),repeating-linear-gradient(135deg,transparent 0 24px,rgba(208,128,72,.025) 25px 26px),linear-gradient(145deg,#251813,#09080a 68%); }
+.route-leaderboard .global-rank-card.rank-4 { background:radial-gradient(circle at 14% 3%,rgba(157,130,232,.2),transparent 19rem),repeating-radial-gradient(ellipse at 10% 20%,transparent 0 52px,rgba(157,130,232,.025) 53px 54px),linear-gradient(145deg,#181526,#08070c 72%); }
+.route-leaderboard .global-rank-card.rank-5 { --rank-accent:193 174 128; background:radial-gradient(circle at 12% 12%,rgba(196,180,142,.12),transparent 15rem),repeating-radial-gradient(circle at 85% 26%,transparent 0 34px,rgba(181,159,109,.035) 35px 36px),linear-gradient(145deg,#131414,#030405 74%); }
+.route-leaderboard .global-rank-card.rank-6 { background:radial-gradient(circle at 12% 0%,rgba(245,238,214,.18),transparent 18rem),linear-gradient(145deg,#20201e,#09090a 70%); }
+.route-leaderboard .global-rank-card.rank-7 { background:repeating-linear-gradient(168deg,transparent 0 48px,rgba(181,75,70,.04) 49px 50px),radial-gradient(circle at 10% 0%,rgba(161,65,61,.18),transparent 18rem),linear-gradient(145deg,#201515,#080809); }
+.route-leaderboard .global-rank-card.rank-8 { background:repeating-linear-gradient(0deg,transparent 0 25px,rgba(128,171,216,.025) 26px 27px),radial-gradient(circle at 9% 0%,rgba(126,169,214,.18),transparent 18rem),linear-gradient(145deg,#151a21,#07080b); }
+.route-leaderboard .global-rank-card.rank-9 { background:linear-gradient(115deg,transparent 0 46%,rgba(141,202,174,.025) 46.2% 46.5%,transparent 46.7%),radial-gradient(circle at 8% 0%,rgba(137,199,172,.17),transparent 18rem),linear-gradient(145deg,#141d1a,#07090a); }
+.route-leaderboard .global-rank-card.rank-10 { --rank-accent:177 132 76; background:repeating-linear-gradient(90deg,transparent 0 55px,rgba(177,132,76,.025) 56px 57px),repeating-linear-gradient(0deg,transparent 0 55px,rgba(177,132,76,.025) 56px 57px),radial-gradient(circle at 8% 0%,rgba(177,132,76,.16),transparent 18rem),linear-gradient(145deg,#1c1712,#080808); }
+.route-leaderboard .global-rank-card.rank-5::after { background:conic-gradient(from 14deg at 84% 18%,transparent 0 16%,rgba(220,204,164,.07) 16.2% 16.5%,transparent 16.7% 44%,rgba(220,204,164,.05) 44.2% 44.5%,transparent 44.7%); animation:watchingRing 19s steps(2,end) infinite; }
+.route-leaderboard .global-rank-card.rank-10::after { background:repeating-radial-gradient(circle at 82% 18%,transparent 0 30px,rgba(184,139,78,.04) 31px 32px); opacity:.24; }
+.route-leaderboard .global-rank-body { grid-template-columns:minmax(210px,270px) minmax(0,1fr); align-items:start; }
+.route-leaderboard .global-rank-dossier { display:contents; }
+.route-leaderboard .global-rank-portrait { grid-column:1; grid-row:1 / span 3; min-height:390px; }
+.route-leaderboard .global-rank-portrait.vael-portrait > img { object-position:center 28%; }
+.route-leaderboard .global-rank-facts,
+.route-leaderboard .global-public-row,
+.route-leaderboard .character-archive-note,
+.route-leaderboard .pilgrim-gap { grid-column:2; }
+.route-leaderboard .character-archive-note {
+  margin:0;
+  padding:0 3px;
+  color:#bbaec4;
+  font-size:.92rem;
+  line-height:1.65;
+}
+.route-leaderboard .pilgrim-gap {
+  padding:12px 15px;
+  border-left:2px solid rgb(var(--rank-accent) / .72);
+  color:#d8c7aa;
+  background:linear-gradient(90deg,rgb(var(--rank-accent) / .09),transparent);
+}
+.route-leaderboard .global-public-row.three { grid-template-columns:repeat(3,minmax(0,1fr)); }
+.route-leaderboard .global-achievements {
+  grid-column:1 / -1;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:18px;
+  margin-top:10px;
+  counter-reset:prestige-record;
+}
+
+/* Large Faaram-quality achievement dossiers. */
+.route-leaderboard .prestige-achievement {
+  --achievement-accent: var(--rank-accent);
+  --achievement-shadow: rgb(var(--achievement-accent) / .18);
+  counter-increment:prestige-record;
+  position:relative;
+  display:block;
+  grid-template-columns:none;
+  gap:0;
+  align-items:initial;
+  min-width:0;
+  padding:0;
+  background-position:center;
+  min-height:410px;
+  overflow:hidden;
+  border:1px solid rgb(var(--achievement-accent) / .42);
+  border-radius:24px;
+  color:#eee7f2;
+  background:
+    linear-gradient(135deg,rgb(var(--achievement-accent) / .16),transparent 23% 73%,rgb(var(--achievement-accent) / .08)),
+    radial-gradient(circle at 50% -10%,rgb(var(--achievement-accent) / .28),transparent 11rem),
+    linear-gradient(150deg,rgba(28,20,34,.98),rgba(7,6,10,.99));
+  box-shadow:0 22px 55px rgba(0,0,0,.32),0 0 40px var(--achievement-shadow),inset 0 1px rgba(255,255,255,.08);
+  transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease;
+}
+.route-leaderboard .prestige-achievement::before {
+  content:counter(prestige-record,upper-roman);
+  position:absolute;
+  top:22px;
+  right:20px;
+  color:rgb(var(--achievement-accent) / .18);
+  font:900 4.8rem/.8 Georgia,serif;
+  letter-spacing:-.08em;
+  pointer-events:none;
+  text-shadow:0 0 28px rgb(var(--achievement-accent) / .12);
+}
+.route-leaderboard .prestige-achievement::after {
+  content:"";
+  position:absolute;
+  inset:12px;
+  pointer-events:none;
+  border:1px solid rgb(var(--achievement-accent) / .15);
+  border-radius:17px;
+  box-shadow:inset 0 0 58px rgb(var(--achievement-accent) / .05);
+}
+.route-leaderboard .prestige-achievement:hover,
+.route-leaderboard .prestige-achievement:focus-within {
+  transform:translateY(-4px);
+  border-color:rgb(var(--achievement-accent) / .72);
+  background-position:center;
+  box-shadow:0 28px 70px rgba(0,0,0,.42),0 0 55px rgb(var(--achievement-accent) / .23),inset 0 1px rgba(255,255,255,.11);
+}
+.route-leaderboard .prestige-achievement[open] { min-height:0; }
+.route-leaderboard .prestige-achievement summary {
+  position:relative;
+  z-index:2;
+  min-height:408px;
+  display:flex;
+  flex-direction:column;
+  padding:22px;
+  cursor:pointer;
+  list-style:none;
+  outline:none;
+}
+.route-leaderboard .prestige-achievement summary::-webkit-details-marker { display:none; }
+.route-leaderboard .prestige-achievement summary::after {
+  content:"+";
+  position:absolute;
+  right:24px;
+  bottom:21px;
+  width:24px;
+  height:24px;
+  display:grid;
+  place-items:center;
+  color:rgb(var(--achievement-accent));
+  border:1px solid rgb(var(--achievement-accent) / .28);
+  border-radius:50%;
+  font:500 1rem/1 Georgia,serif;
+  transition:transform .3s ease,background .3s ease;
+}
+.route-leaderboard .prestige-achievement[open] summary::after { transform:rotate(45deg); background:rgb(var(--achievement-accent) / .1); }
+.route-leaderboard .prestige-achievement summary:focus-visible::before { content:""; position:absolute; inset:7px; border:2px solid rgb(var(--achievement-accent) / .72); border-radius:19px; }
+.route-leaderboard .prestige-emblem {
+  position:relative;
+  width:124px;
+  height:124px;
+  display:grid;
+  place-items:center;
+  margin-bottom:30px;
+  border:1px solid rgb(var(--achievement-accent) / .45);
+  border-radius:34px;
+  background:radial-gradient(circle,rgb(var(--achievement-accent) / .2),transparent 62%),rgba(0,0,0,.28);
+  box-shadow:0 0 48px rgb(var(--achievement-accent) / .18),inset 0 0 36px rgba(255,255,255,.035);
+}
+.route-leaderboard .prestige-emblem::before,
+.route-leaderboard .prestige-emblem::after {
+  content:"";
+  position:absolute;
+  inset:20px;
+  border:1px solid rgb(var(--achievement-accent) / .3);
+  border-radius:50%;
+  transform:rotate(-23deg) scaleX(1.4);
+}
+.route-leaderboard .prestige-emblem::after { inset:29px; opacity:.6; transform:rotate(31deg) scaleX(1.65); }
+.route-leaderboard .prestige-emblem i { position:relative; z-index:2; display:block; width:46px; height:46px; color:rgb(var(--achievement-accent)); filter:drop-shadow(0 0 9px rgb(var(--achievement-accent) / .65)); }
+.route-leaderboard .prestige-copy { display:flex; flex:1; flex-direction:column; min-width:0; }
+.route-leaderboard .prestige-copy > small { color:rgb(var(--achievement-accent)); font:800 .66rem/1.35 Verdana,sans-serif; letter-spacing:.15em; text-transform:uppercase; }
+.route-leaderboard .prestige-copy > strong { margin-top:12px; color:#fff4e8; font:800 clamp(1.45rem,2.1vw,2.05rem)/1.06 Georgia,serif; text-wrap:balance; text-shadow:0 0 26px rgb(var(--achievement-accent) / .14); }
+.route-leaderboard .completion-rank {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-top:auto;
+  padding:18px 40px 0 0;
+  border-top:1px solid rgb(var(--achievement-accent) / .2);
+  color:#bcaec5;
+  font:800 .66rem/1 Verdana,sans-serif;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+.route-leaderboard .completion-rank b { color:rgb(var(--achievement-accent)); font:900 2.2rem/1 Georgia,serif; letter-spacing:-.06em; text-shadow:0 0 19px rgb(var(--achievement-accent) / .34); }
+.route-leaderboard .medieval-classification {
+  align-self:flex-start;
+  padding:7px 9px;
+  border:1px solid rgba(206,166,96,.36);
+  color:#e4c380 !important;
+  background:linear-gradient(135deg,rgba(120,75,32,.3),rgba(41,25,15,.5));
+  box-shadow:inset 0 0 12px rgba(225,184,103,.08);
+}
+.route-leaderboard .achievement-reveal {
+  position:relative;
+  z-index:3;
+  padding:0 22px 24px;
+  border-top:1px solid rgb(var(--achievement-accent) / .16);
+  animation:revealRecord .32s ease both;
+}
+.route-leaderboard .achievement-reveal p { margin:18px 0 0; color:#d7cadc; line-height:1.62; }
+.route-leaderboard .achievement-reveal .archive-state { color:rgb(var(--achievement-accent)); font:700 .72rem/1.55 Verdana,sans-serif; letter-spacing:.06em; text-transform:uppercase; }
+
+/* Thirty motif identities: the symbols are constructed with CSS, not swapped Unicode. */
+.route-leaderboard .motif-overlord { --achievement-accent:246 198 104; background:linear-gradient(135deg,rgba(246,198,104,.2),transparent 25% 66%,rgba(129,73,189,.18)),radial-gradient(circle at 50% -5%,rgba(246,198,104,.38),transparent 12rem),linear-gradient(145deg,#3b2515,#1d1026 45%,#07060b); }
+.route-leaderboard .motif-overlord .prestige-emblem i { clip-path:polygon(5% 26%,24% 50%,39% 18%,53% 50%,73% 13%,95% 28%,84% 78%,18% 78%); background:linear-gradient(#fff0b7,#c58a30); animation:royalGlow 5.8s ease-in-out infinite; }
+.route-leaderboard .motif-horizon { --achievement-accent:233 210 151; background:radial-gradient(ellipse at 50% 32%,rgba(241,218,160,.15),transparent 9rem),linear-gradient(#07080a 0 46%,#201913 46.5% 47%,#050506 47.5%); }
+.route-leaderboard .motif-horizon .prestige-emblem i { height:2px; width:68px; background:#f1d18c; box-shadow:0 0 14px #f1d18c; animation:horizonDepth 7s ease-in-out infinite; }
+.route-leaderboard .motif-remembered .prestige-emblem i { width:35px;height:35px;border:2px solid currentColor;border-radius:50%;box-shadow:-13px 0 0 -4px transparent,-13px 0 0 -2px currentColor,13px 0 0 -4px transparent,13px 0 0 -2px currentColor;animation:echoMark 6.5s ease-in-out infinite; }
+.route-leaderboard .motif-throne { --achievement-accent:210 177 111; background:linear-gradient(155deg,rgba(107,66,28,.34),transparent 46%),radial-gradient(circle at 80% 10%,rgba(180,55,49,.13),transparent 10rem),linear-gradient(145deg,#251d17,#080708); }
+.route-leaderboard .motif-throne .prestige-emblem i { clip-path:polygon(8% 24%,27% 50%,43% 14%,54% 49%,78% 18%,93% 32%,79% 77%,18% 77%);background:linear-gradient(#e5c382,#6d4a27);transform:rotate(-7deg);animation:brokenCrown 7s ease-in-out infinite; }
+.route-leaderboard .motif-banners .prestige-emblem i { width:13px;height:52px;border-left:3px solid currentColor;box-shadow:26px 8px 0 -5px transparent; }
+.route-leaderboard .motif-banners .prestige-emblem i::before,.route-leaderboard .motif-banners .prestige-emblem i::after{content:"";position:absolute;width:25px;height:29px;background:currentColor;clip-path:polygon(0 0,100% 8%,77% 100%,0 79%);transform-origin:0 0;animation:bannerFall 8s ease-in-out infinite;}
+.route-leaderboard .motif-banners .prestige-emblem i::after{left:28px;top:8px;animation-delay:-3s;}
+.route-leaderboard .motif-rivals .prestige-emblem i { width:15px;height:15px;border:2px solid currentColor;transform:rotate(45deg);box-shadow:-25px 25px 0 -2px #776b75,25px -25px 0 -2px #776b75;animation:rivalsDim 7.4s steps(3,end) infinite; }
+.route-leaderboard .motif-nine-breath .prestige-emblem i { width:64px;height:64px;border-radius:50%;background:repeating-conic-gradient(from 0deg,currentColor 0 9deg,transparent 10deg 40deg);mask:radial-gradient(circle,transparent 0 45%,#000 47%);animation:ninefold 12s steps(9,end) infinite; }
+.route-leaderboard .motif-skybreaker .prestige-emblem i { width:54px;height:68px;background:currentColor;clip-path:polygon(55% 0,22% 48%,48% 47%,25% 100%,83% 37%,57% 39%);animation:skyStrike 6s ease-in-out infinite; }
+.route-leaderboard .motif-older-blood .prestige-emblem i { width:66px;height:38px;border:2px solid currentColor;border-radius:70% 10%;transform:rotate(45deg);animation:ancientEye 9s ease-in-out infinite; }
+.route-leaderboard .motif-older-blood .prestige-emblem i::after { content:"";position:absolute;inset:9px;border-radius:50%;background:currentColor;box-shadow:0 0 16px currentColor; }
+.route-leaderboard .motif-endless-hour .prestige-emblem i { border:26px solid transparent;border-top:34px solid currentColor;border-bottom:34px solid currentColor;filter:drop-shadow(0 0 7px currentColor);animation:reverseGlass 8s ease-in-out infinite; }
+.route-leaderboard .motif-not-yet .prestige-emblem i { width:58px;height:58px;border:3px double currentColor;border-radius:50%; }
+.route-leaderboard .motif-not-yet .prestige-emblem i::after { content:"";position:absolute;width:3px;height:68px;left:28px;top:-5px;background:currentColor;transform:rotate(45deg);animation:undoSeal 7s ease-in-out infinite; }
+.route-leaderboard .motif-one-second .prestige-emblem i { width:58px;height:58px;border:2px solid currentColor;border-radius:50%;background:conic-gradient(from -2deg,currentColor 0 3deg,transparent 3deg);animation:oneTick 6s cubic-bezier(.8,0,.2,1) infinite; }
+.route-leaderboard .motif-many-corners { --achievement-accent:207 189 144; background:linear-gradient(127deg,transparent 0 42%,rgba(206,188,143,.08) 42.3% 42.7%,transparent 43%),radial-gradient(circle at 80% 10%,rgba(198,179,132,.13),transparent 10rem),#050606; }
+.route-leaderboard .motif-many-corners .prestige-emblem i { width:62px;height:62px;border:2px solid currentColor;clip-path:polygon(0 10%,61% 0,100% 36%,83% 100%,23% 82%);animation:wrongCorner 11s steps(2,end) infinite; }
+.route-leaderboard .motif-looked-back .prestige-emblem i,.route-leaderboard .motif-veil-blink .prestige-emblem i { width:68px;height:42px;border:2px solid currentColor;border-radius:80% 8%;transform:rotate(45deg); }
+.route-leaderboard .motif-looked-back .prestige-emblem i::after,.route-leaderboard .motif-veil-blink .prestige-emblem i::after { content:"";position:absolute;inset:10px;border-radius:50%;background:currentColor;transform:scale(.45); }
+.route-leaderboard .motif-looked-back .prestige-emblem i { animation:looksBack 13s steps(2,end) infinite; }
+.route-leaderboard .motif-veil-blink .prestige-emblem i { animation:veilBlink 10s ease-in-out infinite; }
+.route-leaderboard .motif-sun-out .prestige-emblem i { width:55px;height:55px;border-radius:50%;background:currentColor;box-shadow:0 0 25px currentColor;animation:sunExtinguish 9s ease-in-out infinite; }
+.route-leaderboard .motif-ashes-rise .prestige-emblem i { width:7px;height:7px;border-radius:50%;background:currentColor;box-shadow:18px 17px currentColor,-16px 25px currentColor,8px -17px currentColor,-23px -8px currentColor;animation:ashRise 6.8s ease-in-out infinite; }
+.route-leaderboard .motif-last-light .prestige-emblem i { width:13px;height:13px;border-radius:50%;background:currentColor;box-shadow:0 0 9px currentColor,0 0 26px currentColor;animation:lastLight 8s ease-in-out infinite; }
+.route-leaderboard .motif-just-man .prestige-emblem i { width:50px;height:58px;border:5px solid currentColor;background:linear-gradient(135deg,transparent,rgba(255,255,255,.1));box-shadow:0 0 0 3px rgba(0,0,0,.5);animation:ironStands 7s ease-in-out infinite; }
+.route-leaderboard .motif-no-divine .prestige-emblem i { width:62px;height:62px;background:conic-gradient(from 10deg,currentColor 0 8deg,transparent 9deg 50deg,currentColor 51deg 57deg,transparent 58deg 100deg,currentColor 101deg 108deg,transparent 109deg);mask:radial-gradient(circle,transparent 0 38%,#000 40%);animation:authorityBreak 7s steps(4,end) infinite; }
+.route-leaderboard .motif-bleed .prestige-emblem i { width:58px;height:58px;border:2px solid currentColor;border-radius:50%; }
+.route-leaderboard .motif-bleed .prestige-emblem i::after { content:"";position:absolute;width:2px;height:38px;left:31px;top:12px;background:#d04a49;transform:rotate(27deg) scaleY(.15);transform-origin:top;animation:firstCrack 8s ease-in-out infinite; }
+.route-leaderboard .motif-lost-name .prestige-emblem i { width:66px;height:5px;background:currentColor;box-shadow:0 14px currentColor,0 28px currentColor;animation:nameReturns 8s steps(3,end) infinite; }
+.route-leaderboard .motif-language .prestige-emblem i::before { content:"AΩ";font:800 2rem/1 Georgia,serif;letter-spacing:.12em;animation:glyphOrder 9s ease-in-out infinite;display:block; }
+.route-leaderboard .motif-not-supposed .prestige-emblem i { width:68px;height:8px;background:currentColor;box-shadow:0 16px currentColor,0 32px currentColor;animation:redactionScan 8s ease-in-out infinite; }
+.route-leaderboard .motif-nowhere-run .prestige-emblem i { width:58px;height:58px;border:2px solid currentColor;border-radius:50%;box-shadow:-18px 0 0 -6px transparent,-18px 0 0 -4px currentColor,18px 0 0 -6px transparent,18px 0 0 -4px currentColor;animation:portalTrack 7s ease-in-out infinite; }
+.route-leaderboard .motif-quarry .prestige-emblem i { width:60px;height:60px;border:2px solid currentColor;border-radius:50%;background:radial-gradient(circle,currentColor 0 7%,transparent 8% 30%,currentColor 31% 34%,transparent 35%);animation:huntLock 6s ease-in-out infinite; }
+.route-leaderboard .motif-one-arrow .prestige-emblem i { width:70px;height:3px;background:currentColor;transform:rotate(-18deg);animation:finalArrow 7s ease-in-out infinite; }
+.route-leaderboard .motif-one-arrow .prestige-emblem i::after { content:"";position:absolute;right:-2px;top:-7px;border-left:14px solid currentColor;border-top:8px solid transparent;border-bottom:8px solid transparent; }
+.route-leaderboard .motif-map-lied .prestige-emblem i,.route-leaderboard .motif-hundred-doors .prestige-emblem i,.route-leaderboard .motif-no-exit .prestige-emblem i { width:64px;height:64px;border:3px solid currentColor;background:repeating-linear-gradient(90deg,transparent 0 12px,currentColor 13px 15px,transparent 16px 24px),repeating-linear-gradient(0deg,transparent 0 12px,currentColor 13px 15px,transparent 16px 24px); }
+.route-leaderboard .motif-map-lied .prestige-emblem i { animation:mapRedraw 10s steps(3,end) infinite; }
+.route-leaderboard .motif-hundred-doors .prestige-emblem i { border-radius:50%;animation:doorsReturn 9s ease-in-out infinite; }
+.route-leaderboard .motif-no-exit .prestige-emblem i { border-radius:50%;clip-path:circle(50%);animation:centerBreak 8s ease-in-out infinite; }
+
+/* Elegant, low-frequency movement. */
+@keyframes revealRecord{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+@keyframes watchingRing{0%,82%,100%{transform:rotate(0)}86%,94%{transform:rotate(-5deg)}}
+@keyframes royalGlow{0%,100%{filter:drop-shadow(0 0 8px currentColor)}50%{filter:drop-shadow(0 0 17px currentColor)}}
+@keyframes horizonDepth{0%,100%{transform:scaleX(.72);opacity:.55}50%{transform:scaleX(1);opacity:1}}
+@keyframes echoMark{0%,100%{opacity:.55;transform:scale(.94)}45%,60%{opacity:1;transform:scale(1.04)}}
+@keyframes brokenCrown{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(-9deg) translateY(2px)}}
+@keyframes bannerFall{0%,65%,100%{transform:rotate(0)}76%,92%{transform:rotate(28deg);opacity:.45}}
+@keyframes rivalsDim{0%,100%{opacity:1}45%{opacity:.38}70%{opacity:.72}}
+@keyframes ninefold{to{transform:rotate(360deg)}}
+@keyframes skyStrike{0%,72%,100%{transform:translateY(-5px);opacity:.65}77%{transform:translateY(5px);opacity:1}}
+@keyframes ancientEye{0%,86%,100%{transform:rotate(45deg) scaleY(1)}90%,94%{transform:rotate(45deg) scaleY(.12)}}
+@keyframes reverseGlass{0%,100%{transform:rotate(0)}42%{transform:rotate(0)}58%,92%{transform:rotate(180deg)}}
+@keyframes undoSeal{0%,55%,100%{transform:rotate(45deg) scaleY(1)}68%,86%{transform:rotate(-135deg) scaleY(.35)}}
+@keyframes oneTick{0%,70%,100%{transform:rotate(0)}78%{transform:rotate(360deg)}}
+@keyframes wrongCorner{0%,78%,100%{clip-path:polygon(0 10%,61% 0,100% 36%,83% 100%,23% 82%)}84%,94%{clip-path:polygon(0 10%,40% 0,62% 15%,100% 36%,83% 100%,23% 82%)}}
+@keyframes looksBack{0%,78%,100%{filter:brightness(.7)}84%,94%{filter:brightness(1.35)}}
+@keyframes veilBlink{0%,70%,100%{transform:rotate(45deg) scaleY(1)}78%,82%{transform:rotate(45deg) scaleY(.04)}}
+@keyframes sunExtinguish{0%,45%,100%{opacity:1;transform:scale(1)}58%{opacity:.08;transform:scale(.4)}72%{opacity:.7;transform:scale(.62)}}
+@keyframes ashRise{0%,100%{transform:translateY(13px);opacity:.35}50%{transform:translateY(-14px);opacity:1}}
+@keyframes lastLight{0%,35%{opacity:.08;transform:scale(.4)}65%,100%{opacity:1;transform:scale(1)}}
+@keyframes ironStands{0%,100%{transform:none}45%{transform:translateX(-2px)}50%{transform:translateX(2px)}55%{transform:none}}
+@keyframes authorityBreak{0%,65%,100%{transform:rotate(0)}76%,90%{transform:rotate(17deg);opacity:.5}}
+@keyframes firstCrack{0%,62%,100%{transform:rotate(27deg) scaleY(.15)}76%,91%{transform:rotate(27deg) scaleY(1)}}
+@keyframes nameReturns{0%,100%{opacity:.22}45%,72%{opacity:1}}
+@keyframes glyphOrder{0%,100%{letter-spacing:.45em;opacity:.5}50%{letter-spacing:.12em;opacity:1}}
+@keyframes redactionScan{0%,100%{transform:translateX(-5px);opacity:.45}50%{transform:translateX(5px);opacity:1}}
+@keyframes portalTrack{0%,100%{transform:translateX(-5px)}50%{transform:translateX(5px)}}
+@keyframes huntLock{0%,100%{transform:scale(.9);opacity:.6}55%{transform:scale(1);opacity:1}}
+@keyframes finalArrow{0%,65%,100%{transform:translateX(-10px) rotate(-18deg)}76%,88%{transform:translateX(12px) rotate(-18deg)}}
+@keyframes mapRedraw{0%,100%{background-position:0 0}50%{background-position:12px 0,0 12px}}
+@keyframes doorsReturn{0%,100%{transform:rotate(0)}55%{transform:rotate(90deg)}}
+@keyframes centerBreak{0%,65%,100%{box-shadow:inset 0 0 0 transparent}78%,90%{box-shadow:inset 0 0 20px currentColor;transform:scale(.94)}}
+
+@media (max-width:1050px){
+  .route-leaderboard .global-achievements{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .route-leaderboard .global-public-row.three{grid-template-columns:1fr}
+}
+@media (max-width:900px){
+  .route-leaderboard .global-rank-body{grid-template-columns:1fr}
+  .route-leaderboard .global-rank-portrait{grid-column:1;grid-row:auto;min-height:500px}
+  .route-leaderboard .global-rank-facts,.route-leaderboard .global-public-row,.route-leaderboard .character-archive-note,.route-leaderboard .pilgrim-gap,.route-leaderboard .global-achievements{grid-column:1}
+}
+@media (max-width:700px){
+  .route-leaderboard .power-ledger-row{grid-template-columns:38px minmax(0,1fr) 82px;gap:8px}
+  .route-leaderboard .power-ledger-row>i{grid-column:2 / -1;grid-row:2}
+  .route-leaderboard .power-cliff{margin-left:48px}
+  .route-leaderboard .global-achievements{grid-template-columns:1fr}
+  .route-leaderboard .prestige-achievement,.route-leaderboard .prestige-achievement summary{min-height:370px}
+}
+@media (max-width:480px){
+  .route-leaderboard .global-rank-portrait{min-height:410px}
+  .route-leaderboard .prestige-achievement summary{padding:18px}
+  .route-leaderboard .prestige-emblem{width:108px;height:108px}
+  .route-leaderboard .prestige-copy>strong{font-size:1.55rem}
+  .route-leaderboard .power-ledger-table{padding:14px 10px}
+  .route-leaderboard .power-ledger-row{grid-template-columns:32px minmax(0,1fr) 76px;padding-inline:5px}
+  .route-leaderboard .power-cliff{margin-left:38px}
+}
+@media (prefers-reduced-motion:reduce){
+  .route-leaderboard .global-rank-card::after,
+  .route-leaderboard .prestige-achievement *,
+  .route-leaderboard .prestige-achievement *::before,
+  .route-leaderboard .prestige-achievement *::after{animation:none!important;transition:none!important}
+  .route-leaderboard .prestige-achievement:hover{transform:none}
+  .route-leaderboard .power-ledger-row:hover{transform:none}
+}
