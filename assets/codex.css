@@ -136,3 +136,163 @@
 .route-codex-traits .codex-entry.is-sealed .codex-lock{top:64px}
 @media(max-width:1180px){.route-codex-traits .codex-toolbar{grid-template-columns:repeat(3,minmax(0,1fr))}.route-codex-traits .codex-toolbar .codex-search{grid-column:1/-1}.route-codex-traits .codex-toolbar .button{align-self:stretch}}
 @media(max-width:640px){.route-codex-traits .codex-toolbar{grid-template-columns:1fr}.route-codex-traits .codex-toolbar>*{grid-column:1}}
+
+/* Open Unique Traits share the animated prestige language used by the
+   leaderboard, while remaining compact enough for the complete archive. */
+.route-codex-traits .codex-trait-record.is-unlocked {
+  --trait-rgb: 194 122 255;
+  --trait-alt-rgb: 255 194 102;
+  isolation: isolate;
+  border-color: rgb(var(--trait-rgb) / .54);
+  background:
+    radial-gradient(circle at 86% 4%, rgb(var(--trait-rgb) / .28), transparent 10rem),
+    radial-gradient(circle at 12% 88%, rgb(var(--trait-alt-rgb) / .13), transparent 12rem),
+    linear-gradient(145deg, rgb(var(--trait-rgb) / .08), transparent 42%),
+    rgba(9, 7, 14, .97);
+  box-shadow:
+    0 18px 52px rgb(0 0 0 / .34),
+    0 0 34px rgb(var(--trait-rgb) / .14),
+    inset 0 1px rgb(255 255 255 / .09);
+  animation: codexUniqueBreath 7s ease-in-out infinite;
+}
+
+.route-codex-traits .codex-trait-record.is-unlocked::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: -92px;
+  right: -56px;
+  width: 190px;
+  height: 190px;
+  border: 1px solid rgb(var(--trait-rgb) / .46);
+  border-radius: 43% 57% 48% 52%;
+  background: repeating-conic-gradient(from 11deg, rgb(var(--trait-rgb) / .16) 0 4deg, transparent 4deg 21deg);
+  box-shadow: 0 0 42px rgb(var(--trait-rgb) / .21), inset 0 0 34px rgb(var(--trait-alt-rgb) / .1);
+  animation: codexUniqueOrbit 16s linear infinite;
+  pointer-events: none;
+}
+
+.route-codex-traits .codex-trait-record.is-unlocked::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: -72% 66% -72% -38%;
+  transform: rotate(16deg);
+  color: transparent;
+  background: linear-gradient(90deg, transparent, rgb(var(--trait-alt-rgb) / .2), transparent);
+  animation: codexUniqueSweep 8.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.route-codex-traits .codex-trait-record.is-unlocked > * {
+  position: relative;
+  z-index: 2;
+}
+
+.route-codex-traits .codex-trait-record.is-unlocked .status-badge {
+  color: rgb(var(--trait-alt-rgb));
+  border-color: rgb(var(--trait-rgb) / .58);
+  background: rgb(var(--trait-rgb) / .11);
+  box-shadow: 0 0 18px rgb(var(--trait-rgb) / .16), inset 0 0 12px rgb(var(--trait-alt-rgb) / .05);
+}
+
+.route-codex-traits .codex-trait-record.is-unlocked .codex-classification,
+.route-codex-traits .codex-trait-record.is-unlocked .codex-trait-holder {
+  color: rgb(var(--trait-alt-rgb));
+  text-shadow: 0 0 14px rgb(var(--trait-rgb) / .44);
+}
+
+.route-codex-traits .codex-trait-record.is-unlocked .codex-entry-sigil {
+  border-color: rgb(var(--trait-rgb) / .62);
+  background:
+    radial-gradient(circle, rgb(var(--trait-alt-rgb) / .22), transparent 58%),
+    rgb(5 4 9 / .72);
+  box-shadow:
+    0 0 38px rgb(var(--trait-rgb) / .32),
+    inset 0 0 30px rgb(var(--trait-alt-rgb) / .1);
+  animation: codexUniqueSigilPulse 4.8s ease-in-out infinite;
+}
+
+.route-codex-traits .codex-trait-record.is-unlocked .codex-entry-sigil::before {
+  border-color: rgb(var(--trait-rgb) / .46);
+  animation: codexUniqueSigilOrbit 12s linear infinite;
+}
+
+.route-codex-traits .codex-trait-record.is-unlocked .codex-entry-sigil::after {
+  border-color: rgb(var(--trait-alt-rgb) / .4);
+  animation: codexUniqueSigilOrbitReverse 8s linear infinite;
+}
+
+.route-codex-traits .codex-trait-record.is-unlocked .codex-entry-sigil i,
+.route-codex-traits .codex-trait-record.is-unlocked .codex-entry-copy > strong {
+  color: #fff5dc;
+  text-shadow:
+    0 0 13px rgb(var(--trait-rgb) / .65),
+    0 0 28px rgb(var(--trait-alt-rgb) / .22);
+}
+
+.route-codex-traits .codex-trait-record.is-unlocked .codex-build-tags .tag {
+  border-color: rgb(var(--trait-rgb) / .48);
+  color: rgb(var(--trait-rgb));
+  background: rgb(var(--trait-rgb) / .1);
+  box-shadow: 0 0 14px rgb(var(--trait-rgb) / .12);
+}
+
+.route-codex-traits .codex-trait-record.is-unlocked .codex-build-tags .tag:last-child {
+  border-color: rgb(var(--trait-alt-rgb) / .48);
+  color: rgb(var(--trait-alt-rgb));
+  background: rgb(var(--trait-alt-rgb) / .08);
+}
+
+.route-codex-traits .codex-trait-record.is-unlocked:hover,
+.route-codex-traits .codex-trait-record.is-unlocked:focus-within {
+  border-color: rgb(var(--trait-alt-rgb) / .76);
+  box-shadow:
+    0 25px 62px rgb(0 0 0 / .4),
+    0 0 48px rgb(var(--trait-rgb) / .25),
+    inset 0 1px rgb(255 255 255 / .12);
+}
+
+.route-codex-traits #continuity { --trait-rgb: 202 126 255; --trait-alt-rgb: 255 212 104; animation-name: codexContinuityFracture; }
+.route-codex-traits #sovereign-host { --trait-rgb: 255 188 92; --trait-alt-rgb: 236 224 190; }
+.route-codex-traits #primordial-ascendancy { --trait-rgb: 255 113 68; --trait-alt-rgb: 255 207 102; }
+.route-codex-traits #unspent-second { --trait-rgb: 160 137 255; --trait-alt-rgb: 113 221 255; }
+.route-codex-traits #the-unblinking-choir { --trait-rgb: 205 192 146; --trait-alt-rgb: 176 111 255; }
+.route-codex-traits #white-cinder { --trait-rgb: 255 245 204; --trait-alt-rgb: 255 190 104; }
+.route-codex-traits #blasphemous-adaptation { --trait-rgb: 255 100 105; --trait-alt-rgb: 218 205 181; }
+.route-codex-traits #mnemonic-lattice { --trait-rgb: 123 199 255; --trait-alt-rgb: 208 178 255; }
+.route-codex-traits #mark-the-impossible { --trait-rgb: 105 232 176; --trait-alt-rgb: 231 202 132; }
+.route-codex-traits #no-straight-road { --trait-rgb: 224 164 88; --trait-alt-rgb: 176 111 255; }
+.route-codex-traits #reinforced-soul { --trait-rgb: 132 224 255; --trait-alt-rgb: 238 238 255; }
+
+@keyframes codexUniqueOrbit { to { transform: rotate(360deg); } }
+@keyframes codexUniqueSweep {
+  0%, 24% { transform: translateX(-18%) rotate(16deg); opacity: 0; }
+  46%, 62% { opacity: 1; }
+  84%, 100% { transform: translateX(350%) rotate(16deg); opacity: 0; }
+}
+@keyframes codexUniqueSigilOrbit { to { transform: rotate(395deg); } }
+@keyframes codexUniqueSigilOrbitReverse { to { transform: rotate(-388deg); } }
+@keyframes codexUniqueSigilPulse {
+  0%, 100% { transform: scale(.98); filter: saturate(.94); }
+  50% { transform: scale(1.035); filter: saturate(1.18); }
+}
+@keyframes codexUniqueBreath {
+  0%, 100% { box-shadow: 0 18px 52px rgb(0 0 0 / .34), 0 0 30px rgb(var(--trait-rgb) / .12), inset 0 1px rgb(255 255 255 / .08); }
+  50% { box-shadow: 0 21px 58px rgb(0 0 0 / .38), 0 0 44px rgb(var(--trait-rgb) / .22), inset 0 1px rgb(255 255 255 / .11); }
+}
+@keyframes codexContinuityFracture {
+  0%, 100% { box-shadow: 0 18px 52px rgb(0 0 0 / .34), 0 0 34px rgb(202 126 255 / .15), inset 0 1px rgb(255 255 255 / .08); }
+  47% { box-shadow: 0 22px 62px rgb(0 0 0 / .4), 0 0 58px rgb(202 126 255 / .31), 0 0 24px rgb(255 212 104 / .16), inset 0 1px rgb(255 255 255 / .12); }
+  50% { box-shadow: 0 22px 62px rgb(0 0 0 / .4), 0 0 24px rgb(202 126 255 / .16), inset 0 1px rgb(255 255 255 / .1); }
+  53% { box-shadow: 0 22px 62px rgb(0 0 0 / .4), 0 0 62px rgb(202 126 255 / .33), 0 0 28px rgb(255 212 104 / .18), inset 0 1px rgb(255 255 255 / .12); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .route-codex-traits .codex-trait-record.is-unlocked,
+  .route-codex-traits .codex-trait-record.is-unlocked::before,
+  .route-codex-traits .codex-trait-record.is-unlocked::after,
+  .route-codex-traits .codex-trait-record.is-unlocked .codex-entry-sigil,
+  .route-codex-traits .codex-trait-record.is-unlocked .codex-entry-sigil::before,
+  .route-codex-traits .codex-trait-record.is-unlocked .codex-entry-sigil::after { animation: none !important; }
+}
