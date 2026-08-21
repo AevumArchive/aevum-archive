@@ -1,0 +1,101 @@
+round,file,size,transparent,single_asset_only,use
+01,001_Global_Header_Frame.png,1400x460,True,,
+01,002_Global_Section_Divider.png,1600x260,True,,
+01,003_Global_Navbar_Backplate.png,1600x420,True,,
+01,004_Global_Nav_Active_Gem.png,512x512,True,,
+01,005_Global_Corner_TopLeft.png,1024x1024,True,,
+01,006_Global_Corner_TopRight.png,1024x1024,True,,
+01,007_Global_Corner_BottomLeft.png,1024x1024,True,,
+01,008_Global_Corner_BottomRight.png,1024x1024,True,,
+01,009_Global_Content_Card_Frame.png,1400x560,True,,
+01,010_Global_Alt_Card_Frame.png,1400x560,True,,
+02,011_Characters_Record_Info_Card.png,1024x1024,True,True,
+02,012_Characters_Active_Record_Frame.png,1024x1024,True,True,
+02,013_Characters_Sealed_Moonveil_Overlay.png,1024x1024,True,True,
+02,014_Characters_Fallen_Record_Frame.png,1024x1024,True,True,
+02,015_Characters_Retired_Record_Frame.png,1024x1024,True,True,
+02,016_Characters_Section_Header_Banner.png,1024x1024,True,True,
+02,017_Characters_Locked_Record_Badge.png,1024x1024,True,True,
+02,018_Characters_Fallen_Status_Badge.png,1024x1024,True,True,
+02,019_Characters_Retired_Status_Badge.png,1024x1024,True,True,
+02,020_Characters_Bonds_Moon_Divider.png,1024x1024,True,True,
+03,021_NPC_Dialogue_Panel.png,,True,True,
+03,022_NPC_Faction_Alliance_Badge.png,,True,True,
+03,023_NPC_Section_Divider.png,,True,True,
+03,024_NPC_Record_Portrait_Frame.png,,True,True,
+03,025_Bonds_Linked_Souls_Emblem.png,,True,True,
+03,026_NPC_Archive_Record_Seal.png,,True,True,
+03,027_Bonds_Broken_Pact_Emblem.png,,True,True,
+03,028_Bonds_Hostile_Rivalry_Emblem.png,,True,True,
+03,029_Bonds_Trusted_Alliance_Emblem.png,,True,True,
+03,030_NPC_Arcane_Affiliation_Emblem.png,,True,True,
+04,031_Lore_Cosmology_Realm_Sigil.png,1024x1024,True,True,
+04,032_Lore_Kingdom_Heraldry_Banner.png,1024x1024,True,True,
+04,033_Lore_Atlas_Navigation_Compass.png,1024x1024,True,True,
+04,034_Lore_Chronicle_Record_Scroll.png,1024x1024,True,True,
+04,035_Lore_Magical_Anomaly_Crystal.png,1024x1024,True,True,
+04,036_Lore_Atlas_Entry_Frame.png,1024x1024,True,True,
+04,037_Lore_Section_Title_Plate.png,1024x1024,True,True,
+04,038_Lore_Rumor_Important_Marker.png,1024x1024,True,True,
+04,039_Lore_Sealed_Archive_Grimoire.png,1024x1024,True,True,
+04,040_Lore_Legendary_Record_Emblem.png,1024x1024,True,True,
+05,041_Playthroughs_Header_Ornament.png,1024x1024,True,,Wide header ornament for the playthrough archive.
+05,042_Playthroughs_Record_Card_Frame.png,1024x1024,True,,Main playthrough record frame/card.
+05,043_Playthroughs_Progress_Bar_Frame.png,1024x1024,True,,Progress bar frame for arc/chapter advancement.
+05,044_Playthroughs_Chapter_Medallion.png,1024x1024,True,,Empty chapter/era medallion.
+05,045_Playthroughs_Timeline_Step_Connector.png,1024x1024,True,,Connector ornament for timeline steps.
+05,046_Playthroughs_Milestone_Emblem.png,1024x1024,True,,Prestige milestone emblem.
+05,047_Playthroughs_Current_Era_Seal.png,1024x1024,True,,Active/current era seal.
+05,048_Playthroughs_Completed_Era_Seal.png,1024x1024,True,,Completed era seal.
+05,049_Playthroughs_Archive_Summary_Panel.png,1024x1024,True,,Summary panel for overview text or notes.
+05,050_Playthroughs_Timeline_Divider.png,1024x1024,True,,Thin divider for chronology sections.
+06,051_Events_Header_Banner.png,1024x1024,True,True,Header/banner ornament for /events/ and world-event sections.
+06,052_Events_World_Event_Record_Frame.png,1024x1024,True,True,Featured world-event record/card frame.
+06,053_Events_Countdown_Hourglass.png,1024x1024,True,True,Countdown / time-until-event ornament.
+06,054_Events_World_Anchor_Emblem.png,1024x1024,True,True,World Anchor / world-state emblem.
+06,055_Events_Active_Rift_Portal.png,1024x1024,True,True,Active event / unstable portal visual.
+06,056_Events_Chronicle_Scroll.png,1024x1024,True,True,Event briefing / chronicle / clue panel ornament.
+06,057_Events_World_Map_Seal.png,1024x1024,True,True,World-event location / affected-region map emblem.
+06,058_Events_Event_Route_Connector.png,1024x1024,True,True,Route / sequence connector between event stages.
+06,059_Events_Phase_Timeline.png,1024x1024,True,True,Multi-stage event progression / phase timeline.
+06,060_Events_Unstable_Rift_Seal.png,1024x1024,True,True,Compact unstable-rift / anomaly seal.
+07,061_Achievements_Header_Ornament.png,1024x1024,True,True,Main achievements page header ornament.
+07,062_Achievements_Standard_Frame.png,1024x1024,True,True,Standard earned achievement frame.
+07,063_Achievements_Locked_Overlay.png,1024x1024,True,True,Locked achievement overlay with crossed chains and lock.
+07,064_Achievements_Ranked_Emblem.png,1024x1024,True,True,Ranked / world-placement achievement emblem.
+07,065_Achievements_Prestige_Crest.png,1024x1024,True,True,Prestige / high-tier achievement crest.
+07,066_Achievements_World_Class_Emblem.png,1024x1024,True,True,World-class achievement emblem.
+07,067_Achievements_Mythic_Frame.png,1024x1024,True,True,Mythic / animated-style achievement frame.
+07,068_Achievements_Medieval_Badge.png,1024x1024,True,True,Medieval achievement badge.
+07,069_Achievements_Completion_Seal.png,1024x1024,True,True,Completed/earned achievement seal.
+07,070_Achievements_Featured_Panel.png,1024x1024,True,True,Featured achievement information panel.
+08,071_Leaderboard_Header_Ornament.png,1024x1024,True,True,Main Global Top 10 / leaderboard section header.
+08,072_Leaderboard_Rank_01_Crown_Crest.png,1024x1024,True,True,Primary Rank #1 crest; strongest prestige treatment.
+08,073_Leaderboard_Champion_Trophy_Emblem.png,1024x1024,True,True,Champion / podium / top-ranked achievement emblem.
+08,074_Leaderboard_Global_Rank_Compass.png,1024x1024,True,True,World-rank / global-placement compass seal.
+08,075_Leaderboard_World_Scope_Emblem.png,1024x1024,True,True,Global scope / worldwide ranking emblem.
+08,076_Leaderboard_Player_Record_Grimoire.png,1024x1024,True,True,Player-entry details / record / stats emblem.
+08,077_Leaderboard_Ascension_Portal.png,1024x1024,True,True,Rank advancement / ascension / movement indicator.
+08,078_Leaderboard_Global_Map_Seal.png,1024x1024,True,True,Worldwide placement / region / global coverage seal.
+08,079_Leaderboard_Rank_Banner.png,1024x1024,True,True,Rank tier banner / leaderboard subsection ornament.
+08,080_Leaderboard_Player_Row_Frame.png,1024x1024,True,True,Horizontal leaderboard row / player-info backplate.
+09,081_Relics_World_Item_Celestial_Orb.png,1024x1024,True,True,Celestial World Item / relic orb emblem.
+09,082_Relics_World_Item_Spectral_Blade.png,1024x1024,True,True,World Item / legendary blade presentation asset.
+09,083_Relics_Forbidden_Grimoire.png,1024x1024,True,True,Forbidden relic grimoire / item-history record visual.
+09,084_Relics_Fractured_Core.png,1024x1024,True,True,Damaged / unstable / fractured relic core.
+09,085_Relics_Bound_Canister.png,1024x1024,True,True,Bound or sealed relic-container visual.
+09,086_Relics_Vault_Display.png,1024x1024,True,True,Vault / relic showcase / protected display frame.
+09,087_Relics_Vault_Lock_Seal.png,1024x1024,True,True,Locked vault / restricted artifact seal.
+09,088_Relics_Lost_Item_Emblem.png,1024x1024,True,True,Lost / destroyed / fragmented relic emblem.
+09,089_Relics_Bound_Record_Scroll.png,1024x1024,True,True,Bound relic record / pact / ownership scroll.
+09,090_Relics_Unknown_Origin_Astrolabe.png,1024x1024,True,True,Unknown-origin / cosmic provenance / world-item astrolabe.
+10,091_Downloads_Archive_Emblem.png,1024x1024,True,True,Primary downloads/archive emblem for the texture-pack and download section.
+10,092_Downloads_Texture_Pack_Record.png,1024x1024,True,True,Decorative parchment/record visual for the texture-pack download page.
+10,093_Downloads_Download_Action_Emblem.png,1024x1024,True,True,Large download-action emblem for primary download CTA areas.
+10,094_Global_Search_Field_Frame.png,1024x1024,True,True,Global search/input field frame.
+10,095_Global_Pagination_Control.png,1024x1024,True,True,Pagination control / page-number row.
+10,096_Global_Tooltip_Info_Frame.png,1024x1024,True,True,Tooltip / information callout frame.
+10,097_Global_Loading_Ring.png,1024x1024,True,True,Loading / processing / async-state ring.
+10,098_Global_Final_Section_Divider.png,1024x1024,True,True,Final decorative divider for sections and long pages.
+10,099_Global_Scrollbar_Progress_Track.png,1024x1024,True,True,Scrollbar / progress track / compact status bar.
+10,100_Global_Alert_Status_Frame.png,1024x1024,True,True,Alert / dangerous-status / important notification frame.

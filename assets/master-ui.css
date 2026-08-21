@@ -1,0 +1,284 @@
+:root {
+  --master-gold: #d8ad59;
+  --master-violet: #9a54dc;
+}
+
+.master-ui-host {
+  position: relative;
+  isolation: isolate;
+}
+
+.master-ui-host > :not(.master-ui-art) {
+  position: relative;
+  z-index: 1;
+}
+
+.master-ui-art {
+  display: block;
+  position: absolute !important;
+  z-index: 0 !important;
+  max-width: none !important;
+  pointer-events: none;
+  user-select: none;
+  object-fit: contain;
+}
+
+.nav a.master-nav-current {
+  position: relative;
+  border-color: rgba(216, 173, 89, .52);
+  color: #fff3cf;
+  box-shadow: 0 0 18px rgba(154, 84, 220, .12), inset 0 0 14px rgba(216, 173, 89, .05);
+}
+
+.nav a.master-nav-current::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -13px;
+  width: 20px;
+  height: 20px;
+  transform: translateX(-50%);
+  background: url("ui/master-pack/Round_01/004_Global_Nav_Active_Gem.png") center / contain no-repeat;
+  filter: drop-shadow(0 0 7px rgba(176, 91, 255, .54));
+  pointer-events: none;
+}
+
+.master-hero-art {
+  top: -58px;
+  left: 50%;
+  width: clamp(175px, 19vw, 270px);
+  height: clamp(175px, 19vw, 270px);
+  transform: translateX(-50%);
+  opacity: .74;
+  filter: drop-shadow(0 7px 16px rgba(0, 0, 0, .48));
+}
+
+.master-hero-art-npc {
+  width: clamp(190px, 22vw, 300px);
+  height: clamp(190px, 22vw, 300px);
+  top: -82px;
+}
+
+.master-aside-emblem {
+  top: -32px;
+  right: -29px;
+  width: 150px;
+  height: 150px;
+  opacity: .62;
+  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, .58));
+}
+
+.master-section-emblem {
+  top: 50%;
+  right: 0;
+  width: 88px;
+  height: 88px;
+  transform: translateY(-50%);
+  opacity: .58;
+  filter: drop-shadow(0 6px 13px rgba(0, 0, 0, .5));
+}
+
+.section-head.master-ui-host {
+  padding-right: 82px;
+}
+
+.master-card-badge,
+.master-relic-mark,
+.master-download-mark {
+  top: -20px;
+  right: -19px;
+  width: 92px;
+  height: 92px;
+  opacity: .66;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, .54));
+}
+
+.master-hostile-badge,
+.master-lost-mark {
+  filter: drop-shadow(0 0 13px rgba(185, 37, 62, .22)) drop-shadow(0 6px 14px rgba(0, 0, 0, .54));
+}
+
+.master-card-strip {
+  top: -61px;
+  right: -34px;
+  width: 190px;
+  height: 190px;
+  opacity: .72;
+  filter: drop-shadow(0 5px 13px rgba(0, 0, 0, .52));
+}
+
+.master-sealed-strip {
+  filter: drop-shadow(0 0 12px rgba(138, 78, 209, .22)) drop-shadow(0 5px 13px rgba(0, 0, 0, .52));
+}
+
+.master-fallen-strip {
+  filter: drop-shadow(0 0 12px rgba(187, 38, 49, .18)) drop-shadow(0 5px 13px rgba(0, 0, 0, .52));
+}
+
+.master-retired-strip {
+  filter: drop-shadow(0 0 10px rgba(213, 178, 112, .15)) drop-shadow(0 5px 13px rgba(0, 0, 0, .52));
+}
+
+.master-card-divider {
+  left: 50%;
+  top: -85px;
+  width: 230px;
+  height: 230px;
+  transform: translateX(-50%);
+  opacity: .52;
+}
+
+.master-section-divider {
+  top: -78px;
+  left: 50%;
+  width: 220px;
+  height: 220px;
+  transform: translateX(-50%);
+  opacity: .58;
+}
+
+.master-trophy-halo {
+  top: -52px;
+  left: -45px;
+  width: 175px;
+  height: 175px;
+  opacity: .68;
+  filter: drop-shadow(0 0 18px rgba(165, 77, 255, .25));
+  animation: masterHaloPulse 4.8s ease-in-out infinite;
+}
+
+.master-event-anchor {
+  width: 110px;
+  height: 110px;
+}
+
+.master-rank-crest {
+  top: -39px;
+  left: -34px;
+  width: 125px;
+  height: 125px;
+  opacity: .7;
+  filter: drop-shadow(0 0 15px rgba(217, 171, 75, .25));
+}
+
+.global-rank-card.rank-1 .global-rank-head.master-ui-host {
+  padding-left: 72px;
+}
+
+.master-rank-banner {
+  top: -28px;
+  left: -33px;
+  width: 100px;
+  height: 100px;
+  opacity: .46;
+}
+
+.master-relic-mark {
+  top: -8px;
+  right: -12px;
+  width: 105px;
+  height: 105px;
+  opacity: .5;
+}
+
+.master-vault-mark {
+  top: -26px;
+  right: 8px;
+  width: 115px;
+  height: 115px;
+}
+
+.master-download-mark {
+  top: -13px;
+  right: -10px;
+  width: 128px;
+  height: 128px;
+  opacity: .55;
+}
+
+.master-record-mark {
+  opacity: .44;
+}
+
+.master-search-frame {
+  inset: 50% auto auto 50%;
+  width: calc(100% + 42px);
+  height: 150px;
+  transform: translate(-50%, -50%);
+  opacity: .42;
+}
+
+.master-final-divider {
+  top: -78px;
+  left: 50%;
+  width: min(300px, 48vw);
+  height: 150px;
+  transform: translateX(-50%);
+  opacity: .46;
+}
+
+.footer.master-ui-host {
+  margin-top: clamp(82px, 9vw, 122px);
+}
+
+@keyframes masterHaloPulse {
+  0%, 100% { opacity: .56; transform: scale(.98); }
+  50% { opacity: .78; transform: scale(1.025); }
+}
+
+@media (max-width: 760px) {
+  .master-hero-art {
+    top: -42px;
+    width: 165px;
+    height: 165px;
+    opacity: .58;
+  }
+
+  .master-aside-emblem {
+    width: 112px;
+    height: 112px;
+    right: -20px;
+    top: -24px;
+  }
+
+  .master-section-emblem {
+    width: 64px;
+    height: 64px;
+    top: 9px;
+    transform: none;
+  }
+
+  .section-head.master-ui-host {
+    padding-right: 56px;
+  }
+
+  .master-card-strip {
+    width: 150px;
+    height: 150px;
+    top: -49px;
+    right: 0;
+  }
+
+  .master-aside-emblem,
+  .master-card-badge,
+  .master-relic-mark,
+  .master-download-mark {
+    right: 0;
+  }
+
+  .global-rank-card.rank-1 .global-rank-head.master-ui-host {
+    padding-left: 0;
+    padding-top: 55px;
+  }
+
+  .master-rank-crest {
+    width: 92px;
+    height: 92px;
+    top: -28px;
+    left: -22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .master-trophy-halo { animation: none; }
+}

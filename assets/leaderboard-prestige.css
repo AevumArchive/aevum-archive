@@ -428,18 +428,6 @@
   letter-spacing: .17em;
   text-shadow: 0 0 15px rgb(var(--trait-rgb) / .48);
 }
-.route-leaderboard .global-public-row > .global-public-record:first-child small::after {
-  content: "RARITY - MYTHIC";
-  padding: 5px 8px;
-  border: 1px solid rgb(var(--trait-alt-rgb) / .48);
-  border-radius: 999px;
-  color: rgb(var(--trait-alt-rgb));
-  background: linear-gradient(110deg, rgb(var(--trait-alt-rgb) / .16), rgb(var(--trait-rgb) / .11));
-  box-shadow: 0 0 17px rgb(var(--trait-rgb) / .18), inset 0 0 10px rgb(var(--trait-alt-rgb) / .06);
-  font: 800 .56rem/1 Verdana, sans-serif;
-  letter-spacing: .12em;
-  text-shadow: 0 0 10px rgb(var(--trait-alt-rgb) / .45);
-}
 .route-leaderboard .global-public-row > .global-public-record:first-child strong {
   position: relative;
   color: #fff4d2;
@@ -453,25 +441,15 @@
   box-shadow: 0 8px 30px rgb(0 0 0 / .25), 0 0 43px rgb(var(--trait-rgb) / .22), inset 0 1px rgb(255 255 255 / .11);
 }
 .route-leaderboard .rank-1 .global-public-row > .global-public-record:first-child { --trait-rgb: 202 126 255; --trait-alt-rgb: 255 212 104; animation: continuityFracture 5.8s ease-in-out infinite; }
-.route-leaderboard .rank-1 .global-public-row > .global-public-record:first-child small::after { content: "RARITY - AXIOM-BREAKER"; }
 .route-leaderboard .rank-2 .global-public-row > .global-public-record:first-child { --trait-rgb: 255 188 92; --trait-alt-rgb: 236 224 190; }
-.route-leaderboard .rank-2 .global-public-row > .global-public-record:first-child small::after { content: "RARITY - IMPERIAL MYTHIC"; }
 .route-leaderboard .rank-3 .global-public-row > .global-public-record:first-child { --trait-rgb: 255 113 68; --trait-alt-rgb: 255 207 102; }
-.route-leaderboard .rank-3 .global-public-row > .global-public-record:first-child small::after { content: "RARITY - PRIMORDIAL"; }
 .route-leaderboard .rank-4 .global-public-row > .global-public-record:first-child { --trait-rgb: 160 137 255; --trait-alt-rgb: 113 221 255; }
-.route-leaderboard .rank-4 .global-public-row > .global-public-record:first-child small::after { content: "RARITY - TEMPORAL"; }
 .route-leaderboard .rank-5 .global-public-row > .global-public-record:first-child { --trait-rgb: 205 192 146; --trait-alt-rgb: 176 111 255; }
-.route-leaderboard .rank-5 .global-public-row > .global-public-record:first-child small::after { content: "RARITY - ABERRANT"; }
 .route-leaderboard .rank-6 .global-public-row > .global-public-record:first-child { --trait-rgb: 255 245 204; --trait-alt-rgb: 255 190 104; }
-.route-leaderboard .rank-6 .global-public-row > .global-public-record:first-child small::after { content: "RARITY - CELESTIAL"; }
 .route-leaderboard .rank-7 .global-public-row > .global-public-record:first-child { --trait-rgb: 255 100 105; --trait-alt-rgb: 218 205 181; }
-.route-leaderboard .rank-7 .global-public-row > .global-public-record:first-child small::after { content: "RARITY - APEX ANOMALY"; }
 .route-leaderboard .rank-8 .global-public-row > .global-public-record:first-child { --trait-rgb: 123 199 255; --trait-alt-rgb: 208 178 255; }
-.route-leaderboard .rank-8 .global-public-row > .global-public-record:first-child small::after { content: "RARITY - ARCHIVE-BOUND"; }
 .route-leaderboard .rank-9 .global-public-row > .global-public-record:first-child { --trait-rgb: 105 232 176; --trait-alt-rgb: 231 202 132; }
-.route-leaderboard .rank-9 .global-public-row > .global-public-record:first-child small::after { content: "RARITY - LEGENDARY HUNT"; }
 .route-leaderboard .rank-10 .global-public-row > .global-public-record:first-child { --trait-rgb: 224 164 88; --trait-alt-rgb: 176 111 255; }
-.route-leaderboard .rank-10 .global-public-row > .global-public-record:first-child small::after { content: "RARITY - LABYRINTHINE"; }
 @keyframes uniqueTraitOrbit { to { transform: rotate(360deg); } }
 @keyframes uniqueTraitSweep { 0%, 22% { transform: translateX(-18%) rotate(16deg); opacity: 0; } 45%, 62% { opacity: 1; } 82%, 100% { transform: translateX(330%) rotate(16deg); opacity: 0; } }
 @keyframes continuityFracture { 0%, 100% { box-shadow: 0 0 34px rgb(202 126 255 / .14), inset 0 1px rgb(255 255 255 / .08); } 50% { box-shadow: 0 0 54px rgb(202 126 255 / .27), 0 0 22px rgb(255 212 104 / .13), inset 0 1px rgb(255 255 255 / .12); } }
