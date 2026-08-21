@@ -1,0 +1,186 @@
+/* Focused polish for the two archive entry points. No additional raster ornaments. */
+
+.route-home .welcome-gate {
+  isolation: isolate;
+  border-color: rgba(220, 122, 191, .32);
+  background:
+    radial-gradient(ellipse at 50% -8%, rgba(255, 202, 105, .12), transparent 34%),
+    radial-gradient(circle at 50% 19%, rgba(244, 114, 182, .2), transparent 18rem),
+    radial-gradient(circle at 18% 80%, rgba(139, 92, 246, .16), transparent 25rem),
+    radial-gradient(circle at 84% 82%, rgba(217, 83, 164, .1), transparent 21rem),
+    linear-gradient(145deg, rgba(25, 20, 39, .98), rgba(7, 6, 12, .97));
+  box-shadow:
+    0 34px 90px rgba(0, 0, 0, .5),
+    0 0 70px rgba(139, 92, 246, .08),
+    inset 0 1px 0 rgba(255, 255, 255, .09);
+}
+
+.route-home .welcome-gate::before {
+  inset: 15px;
+  border-color: rgba(244, 189, 220, .09);
+  box-shadow: inset 0 0 55px rgba(139, 92, 246, .035);
+}
+
+.route-home .welcome-gate h1 {
+  letter-spacing: -.045em;
+  text-shadow: 0 26px 95px rgba(0, 0, 0, .55), 0 0 44px rgba(244, 114, 182, .11);
+}
+
+.route-home .realm-census {
+  position: relative;
+  overflow: hidden;
+  border-color: rgba(244, 196, 99, .42);
+  background: linear-gradient(135deg, rgba(92, 48, 120, .52), rgba(14, 10, 20, .9));
+  box-shadow: 0 12px 38px rgba(0, 0, 0, .28), 0 0 36px rgba(139, 92, 246, .13), inset 0 1px rgba(255, 255, 255, .07);
+}
+
+.route-home .realm-census-sigil {
+  box-shadow: 0 0 22px rgba(244, 184, 74, .2), inset 0 0 15px rgba(244, 184, 74, .07);
+}
+
+.route-home .landing-feature,
+.route-home .quick-panel {
+  border-color: rgba(223, 108, 190, .28);
+  box-shadow: 0 24px 65px rgba(0, 0, 0, .28), inset 0 1px rgba(255, 255, 255, .045);
+}
+
+.route-home .landing-feature {
+  background:
+    radial-gradient(circle at 88% 10%, rgba(244, 184, 74, .1), transparent 12rem),
+    radial-gradient(circle at 12% 92%, rgba(139, 92, 246, .2), transparent 16rem),
+    linear-gradient(145deg, rgba(36, 25, 48, .96), rgba(15, 12, 23, .94));
+}
+
+.route-home .landing-feature h2 {
+  max-width: 12ch;
+  font-size: clamp(2.35rem, 4vw, 4.2rem);
+  line-height: .98;
+}
+
+.route-home .quick-panel {
+  background: radial-gradient(circle at 96% 4%, rgba(139, 92, 246, .18), transparent 15rem), rgba(17, 14, 25, .9);
+}
+
+.route-home .shelf-link {
+  border-color: rgba(255, 255, 255, .1);
+  background: linear-gradient(105deg, rgba(255, 255, 255, .04), rgba(255, 255, 255, .018));
+  box-shadow: inset 3px 0 rgba(244, 114, 182, .08);
+}
+
+.route-home .shelf-link:hover {
+  border-color: rgba(244, 114, 182, .42);
+  background: linear-gradient(105deg, rgba(139, 92, 246, .12), rgba(244, 114, 182, .055));
+  box-shadow: inset 3px 0 rgba(244, 114, 182, .48), 0 10px 26px rgba(0, 0, 0, .2);
+}
+
+.route-home .gate-card {
+  border-color: rgba(223, 108, 190, .2);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, .22), inset 0 1px rgba(255, 255, 255, .035);
+}
+
+.route-home .gate-card:nth-child(3n + 1) { background: radial-gradient(circle at 88% 8%, rgba(139, 92, 246, .16), transparent 11rem), rgba(19, 16, 29, .88); }
+.route-home .gate-card:nth-child(3n + 2) { background: radial-gradient(circle at 88% 8%, rgba(244, 184, 74, .12), transparent 11rem), rgba(19, 16, 29, .88); }
+.route-home .gate-card:nth-child(3n) { background: radial-gradient(circle at 88% 8%, rgba(244, 114, 182, .14), transparent 11rem), rgba(19, 16, 29, .88); }
+
+.route-home .gate-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 26px 58px rgba(0, 0, 0, .32), 0 0 28px rgba(139, 92, 246, .07);
+}
+
+.route-playthroughs .playthrough-hero {
+  overflow: hidden;
+  border-color: rgba(223, 108, 190, .31);
+  background:
+    radial-gradient(circle at 86% 12%, rgba(139, 92, 246, .22), transparent 19rem),
+    radial-gradient(circle at 8% 100%, rgba(244, 114, 182, .08), transparent 21rem),
+    linear-gradient(145deg, rgba(28, 22, 41, .98), rgba(10, 8, 16, .97));
+  box-shadow: 0 30px 80px rgba(0, 0, 0, .42), inset 0 1px rgba(255, 255, 255, .06);
+}
+
+.route-playthroughs .playthrough-hero .age-card {
+  border-color: rgba(168, 116, 224, .38);
+  background: radial-gradient(circle at 65% 5%, rgba(139, 92, 246, .18), transparent 13rem), linear-gradient(160deg, rgba(48, 33, 66, .94), rgba(12, 10, 20, .97));
+  box-shadow: 0 24px 60px rgba(0, 0, 0, .34), inset 0 1px rgba(255, 255, 255, .06);
+}
+
+.route-playthroughs .playthrough-jump {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 16px 38px rgba(0, 0, 0, .22), inset 0 1px rgba(255, 255, 255, .035);
+}
+
+.route-playthroughs .playthrough-jump.active {
+  border-color: rgba(82, 224, 125, .3);
+  background: radial-gradient(circle at 92% 0, rgba(82, 224, 125, .13), transparent 10rem), linear-gradient(145deg, rgba(31, 39, 43, .95), rgba(13, 15, 23, .97));
+}
+
+.route-playthroughs .playthrough-jump.ended {
+  border-color: rgba(219, 166, 72, .28);
+  background: radial-gradient(circle at 92% 0, rgba(219, 166, 72, .12), transparent 10rem), linear-gradient(145deg, rgba(42, 32, 39, .95), rgba(14, 13, 22, .97));
+}
+
+.route-playthroughs .playthrough-jump.reserved {
+  background: radial-gradient(circle at 92% 0, rgba(160, 139, 181, .1), transparent 10rem), linear-gradient(145deg, rgba(32, 27, 43, .94), rgba(13, 12, 21, .97));
+}
+
+.route-playthroughs .playthrough-jump:hover { box-shadow: 0 24px 50px rgba(0, 0, 0, .3); }
+
+.route-playthroughs .playthrough-primary {
+  border-color: rgba(82, 224, 125, .25);
+  background:
+    radial-gradient(circle at 94% 2%, rgba(82, 224, 125, .11), transparent 14rem),
+    radial-gradient(circle at 8% 105%, rgba(139, 92, 246, .16), transparent 18rem),
+    linear-gradient(145deg, rgba(27, 22, 39, .98), rgba(12, 11, 19, .97));
+  box-shadow: 0 28px 70px rgba(0, 0, 0, .34), inset 4px 0 rgba(82, 224, 125, .18), inset 0 1px rgba(255, 255, 255, .045);
+}
+
+.route-playthroughs .playthrough-link {
+  border-color: rgba(223, 108, 190, .24);
+  background: linear-gradient(145deg, rgba(27, 21, 38, .82), rgba(11, 10, 17, .88));
+}
+
+.route-playthroughs .playthrough-link:hover {
+  background: linear-gradient(145deg, rgba(55, 31, 66, .88), rgba(15, 12, 23, .94));
+  box-shadow: 0 14px 30px rgba(0, 0, 0, .24);
+}
+
+.route-playthroughs .playthrough-ledger {
+  padding-left: 16px;
+  border-left: 1px solid rgba(244, 114, 182, .2);
+}
+
+.route-playthroughs .playthrough-row {
+  border-color: rgba(223, 108, 190, .24);
+  box-shadow: 0 13px 34px rgba(0, 0, 0, .2), inset 0 1px rgba(255, 255, 255, .025);
+}
+
+.route-playthroughs .playthrough-row[href]:hover {
+  background: linear-gradient(110deg, rgba(47, 28, 57, .96), rgba(14, 12, 21, .98));
+  box-shadow: 0 20px 44px rgba(0, 0, 0, .28);
+}
+
+.route-playthroughs .playthrough-date {
+  min-width: 62px;
+  padding: 9px 8px;
+  border: 1px solid rgba(244, 114, 182, .28);
+  border-radius: 12px;
+  color: #f1c2e2;
+  background: rgba(139, 92, 246, .08);
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: .08em;
+}
+
+@media (max-width: 760px) {
+  .route-home .welcome-gate::before { inset: 10px; }
+  .route-playthroughs .playthrough-ledger { padding-left: 0; border-left: 0; }
+  .route-playthroughs .playthrough-date { min-width: 54px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .route-home .gate-card,
+  .route-home .shelf-link,
+  .route-playthroughs .playthrough-jump,
+  .route-playthroughs .playthrough-link,
+  .route-playthroughs .playthrough-row { transition: none; }
+}
