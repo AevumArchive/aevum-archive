@@ -184,3 +184,66 @@
   .route-playthroughs .playthrough-link,
   .route-playthroughs .playthrough-row { transition: none; }
 }
+
+/* 2026-08-27: subtle extra depth for the opening shelves. */
+.route-home .welcome-gate::after,
+.route-playthroughs .playthrough-hero::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: clamp(18px, 4vw, 46px);
+  width: min(560px, 58vw);
+  height: 120px;
+  transform: translateX(-50%);
+  pointer-events: none;
+  opacity: .34;
+  background:
+    radial-gradient(ellipse at 50% 100%, rgba(244,184,74,.24), transparent 58%),
+    linear-gradient(90deg, transparent, rgba(244,114,182,.18), rgba(139,92,246,.18), transparent);
+  filter: blur(18px);
+  z-index: -1;
+}
+.route-home .realm-census {
+  box-shadow: 0 20px 54px rgba(0,0,0,.32), 0 0 42px rgba(244,184,74,.11), inset 0 1px rgba(255,255,255,.08);
+}
+.route-home .quick-panel .shelf-link,
+.route-playthroughs .playthrough-row,
+.route-playthroughs .playthrough-primary {
+  box-shadow: inset 0 1px rgba(255,255,255,.055), 0 18px 40px rgba(0,0,0,.18);
+}
+.route-home .gate-card::after,
+.route-playthroughs .playthrough-jump::after,
+.route-playthroughs .playthrough-row[href]::after {
+  content: "";
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(244,184,74,.55);
+  box-shadow: 0 0 18px rgba(244,184,74,.36);
+  opacity: .55;
+}
+.route-playthroughs .playthrough-primary {
+  background:
+    radial-gradient(circle at 96% 8%, rgba(82,224,125,.14), transparent 13rem),
+    radial-gradient(circle at 12% 110%, rgba(139,92,246,.14), transparent 18rem),
+    linear-gradient(145deg, rgba(21,18,30,.96), rgba(12,11,19,.98));
+}
+.route-playthroughs .playthrough-row[href]:hover .row-arrow {
+  transform: translateX(4px);
+  color: #ffe0a3;
+}
+
+/* Anchor the 2026-08-27 decorative glints to their own cards. */
+.route-home .welcome-gate,
+.route-playthroughs .playthrough-hero,
+.route-home .gate-card,
+.route-playthroughs .playthrough-row {
+  position: relative;
+}
+.route-home .gate-card,
+.route-playthroughs .playthrough-row {
+  overflow: hidden;
+}
