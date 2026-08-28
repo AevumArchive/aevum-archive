@@ -93,6 +93,40 @@
     applyFilters();
   }
 
+
+  function initClassArchive() {
+    const form = document.querySelector('#class-filters');
+    const grid = document.querySelector('#class-record-grid');
+    if (!form || !grid) return;
+    const search = document.querySelector('#class-search');
+    const era = document.querySelector('#class-era');
+    const role = document.querySelector('#class-role');
+    const state = document.querySelector('#class-state');
+    const empty = document.querySelector('#class-no-results');
+    const records = [...grid.querySelectorAll('.class-record-card')];
+
+    function applyFilters() {
+      const query = search.value.trim().toLowerCase();
+      let visible = 0;
+      records.forEach((record) => {
+        const eraMatch = era.value === 'all' || record.dataset.era === era.value;
+        const roleMatch = role.value === 'all' || (record.dataset.role || '').split(' ').includes(role.value);
+        const stateMatch = state.value === 'all' || record.dataset.state === state.value;
+        const queryMatch = !query || (record.dataset.search || '').includes(query);
+        const show = eraMatch && roleMatch && stateMatch && queryMatch;
+        record.hidden = !show;
+        if (show) visible += 1;
+      });
+      empty.hidden = visible !== 0;
+    }
+
+    form.addEventListener('input', applyFilters);
+    form.addEventListener('change', applyFilters);
+    form.addEventListener('reset', () => requestAnimationFrame(applyFilters));
+    applyFilters();
+  }
+
   initRaceArchive();
   initTraitArchive();
+  initClassArchive();
 })();

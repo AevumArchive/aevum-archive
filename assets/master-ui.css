@@ -445,3 +445,36 @@
 .power-meter{display:grid;gap:10px;margin-top:18px}.power-meter div{display:grid;grid-template-columns:150px minmax(0,1fr) 90px;gap:14px;align-items:center}.power-meter span:nth-child(2){height:7px;border-radius:999px;background:linear-gradient(90deg,#ffdc7a,rgba(244,114,182,.55));box-shadow:0 0 16px rgba(244,184,74,.22)}.power-meter small{color:#ffe7a8;text-align:right;font-weight:900}
 @media(max-width:980px){.archive-branch-grid,.codex-branch-grid,.faction-member-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.rule-grid{grid-template-columns:1fr}}
 @media(max-width:680px){.archive-branch-grid,.codex-branch-grid,.faction-member-grid{grid-template-columns:1fr}.archive-record-row{grid-template-columns:1fr}.timeline-era{grid-template-columns:52px minmax(0,1fr)}.archive-page .lore-timeline::before{left:25px}.silent-fault-list{columns:1}.power-meter div{grid-template-columns:1fr}.power-meter small{text-align:left}}
+
+/* Codex immersion polish 2026-08-28 ------------------------------- */
+.codex-arranged .section-head h2,
+.lore-current-section .section-head h2 { text-shadow: 0 0 26px rgba(244, 184, 74, .10); }
+.codex-priority-grid .codex-feature-card { min-height: 275px; border-color: rgba(244, 184, 74, .22); }
+.codex-priority-grid .codex-feature-card:nth-child(2) { background: radial-gradient(circle at 92% 12%, rgba(96, 165, 250, .12), transparent 8rem), linear-gradient(145deg, rgba(31, 24, 46, .80), rgba(10, 9, 15, .94)); }
+.codex-priority-grid .codex-feature-card:nth-child(3) { background: radial-gradient(circle at 92% 12%, rgba(244, 184, 74, .16), transparent 8rem), linear-gradient(145deg, rgba(52, 35, 20, .72), rgba(12, 10, 16, .94)); }
+.codex-seal-note { margin-top: clamp(14px, 2vw, 22px); }
+.class-record-grid,
+.ability-record-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(14px, 2vw, 22px); }
+.class-record-card,
+.ability-record-card { position: relative; overflow: hidden; min-height: 230px; padding: clamp(20px, 3vw, 28px); border: 1px solid rgba(244, 114, 182, .18); border-radius: 24px; background: radial-gradient(circle at 92% 14%, rgba(244, 114, 182, .11), transparent 8rem), linear-gradient(145deg, rgba(28, 21, 42, .84), rgba(9, 8, 14, .95)); box-shadow: inset 0 0 0 1px rgba(255,255,255,.025), 0 18px 48px rgba(0,0,0,.25); }
+.class-record-card::before,
+.ability-record-card::before { content: ""; position: absolute; inset: 0; background: linear-gradient(120deg, transparent 0 42%, rgba(255,255,255,.035) 50%, transparent 58%); opacity: .55; pointer-events: none; }
+.class-record-card h3,
+.ability-record-card h3 { position: relative; margin: 8px 0 10px; font-size: clamp(1.45rem, 2.6vw, 2.2rem); }
+.class-record-card p,
+.ability-record-card p { position: relative; color: var(--muted); }
+.class-record-card .codex-build-tags,
+.ability-record-card .codex-build-tags { position: relative; }
+.class-mark { position: absolute; right: 18px; top: 14px; color: rgba(255,255,255,.11); font: 900 clamp(2.4rem, 5vw, 4.4rem)/1 Georgia, "Times New Roman", serif; }
+.class-record-card.current { border-color: rgba(124, 255, 160, .22); background: radial-gradient(circle at 86% 10%, rgba(124, 255, 160, .13), transparent 8rem), linear-gradient(145deg, rgba(20, 42, 34, .70), rgba(10, 9, 15, .95)); }
+.class-record-card.gold,
+.ability-record-card.gold { border-color: rgba(244, 184, 74, .34); background: radial-gradient(circle at 82% 10%, rgba(244, 184, 74, .17), transparent 9rem), linear-gradient(145deg, rgba(53, 35, 19, .74), rgba(10, 9, 15, .95)); }
+.class-record-card.is-sealed,
+.ability-record-card.sealed { border-style: dashed; border-color: rgba(209, 173, 255, .28); opacity: .82; }
+.ability-record-card .realm-symbol { color: #ffd66f; font-size: 1.35rem; }
+.codex-build-tags .tag.green { border-color: rgba(124, 255, 160, .35); color: #baffd0; }
+.codex-build-tags .tag.blue { border-color: rgba(96, 202, 255, .35); color: #bdeeff; }
+.codex-build-tags .tag.red { border-color: rgba(255, 98, 118, .35); color: #ffb3bf; }
+.lore-current-grid .archive-branch-card { min-height: 190px; }
+@media (max-width: 980px) { .class-record-grid, .ability-record-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 680px) { .class-record-grid, .ability-record-grid { grid-template-columns: 1fr; } }
