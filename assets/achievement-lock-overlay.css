@@ -1,0 +1,44 @@
+/* One full-card chain overlay per locked achievement. */
+.theme-achievements .achievements-grid {
+  gap: 22px !important;
+  padding: 0 !important;
+}
+
+.theme-achievements .locked-achievement-card {
+  position: relative !important;
+  min-height: 142px !important;
+  overflow: hidden !important;
+  isolation: isolate !important;
+  padding: 26px 24px !important;
+}
+
+.theme-achievements .locked-achievement-card::before,
+.theme-achievements .locked-achievement-card::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+}
+
+.theme-achievements .locked-achievement-card > :not(.locked-achievement-chain-overlay) {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.theme-achievements .locked-achievement-chain-overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  object-fit: fill !important;
+  pointer-events: none !important;
+  user-select: none !important;
+  z-index: 5 !important;
+  opacity: 1 !important;
+  filter: drop-shadow(0 5px 7px rgba(0, 0, 0, .42));
+}
+
+@media (max-width: 640px) {
+  .theme-achievements .achievements-grid { gap: 18px !important; }
+}
