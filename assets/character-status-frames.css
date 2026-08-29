@@ -41,7 +41,7 @@ body.route-characters-all .status-card.character-card::before {
 }
 
 body.route-characters-all .status-card.character-card.is-sealed::before {
-  background-image: url("/aevum-archive/assets/ui/characters/sealed-frame.png") !important;
+  background-image: url("/aevum-archive/assets/ui/characters/sealed-frame.png?v=20260829-v2") !important;
 }
 
 body.route-characters-all .status-card.character-card.is-dead::before,
