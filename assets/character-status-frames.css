@@ -1,0 +1,72 @@
+/* Full-card state frames for the complete character shelf. */
+body.route-characters-all .status-card.character-card {
+  position: relative !important;
+  isolation: isolate;
+  overflow: hidden !important;
+  min-height: 180px;
+  padding: 30px 32px 32px !important;
+  border: none !important;
+  border-radius: 22px;
+  box-shadow: none !important;
+}
+
+body.route-characters-all .status-card.character-card.is-sealed {
+  background: linear-gradient(145deg, rgba(28, 19, 42, 0.98), rgba(10, 8, 17, 0.99)) !important;
+}
+
+body.route-characters-all .status-card.character-card.is-dead,
+body.route-characters-all .status-card.character-card.is-fallen {
+  background: linear-gradient(145deg, rgba(48, 12, 20, 0.97), rgba(13, 7, 11, 0.99)) !important;
+}
+
+body.route-characters-all .status-card.character-card::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  pointer-events: none !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background-color: transparent !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 100% 100% !important;
+  box-shadow: none !important;
+  filter: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+body.route-characters-all .status-card.character-card.is-sealed::before {
+  background-image: url("/aevum-archive/assets/ui/characters/sealed-frame.png") !important;
+}
+
+body.route-characters-all .status-card.character-card.is-dead::before,
+body.route-characters-all .status-card.character-card.is-fallen::before {
+  background-image: url("/aevum-archive/assets/ui/characters/dead-frame.png") !important;
+}
+
+body.route-characters-all .status-card.character-card::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+}
+
+body.route-characters-all .status-card.character-card > * {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+body.route-characters-all .status-card.character-card > .status-card-frame {
+  display: none !important;
+}
+
+@media (max-width: 720px) {
+  body.route-characters-all .status-card.character-card {
+    min-height: 168px;
+    padding: 28px 28px 30px !important;
+  }
+}
