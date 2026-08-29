@@ -246,6 +246,12 @@
     radial-gradient(circle at 80% 15%, rgba(255, 92, 118, .15), transparent 11rem),
     linear-gradient(145deg, rgba(50, 15, 24, .92), rgba(9, 8, 14, .98));
 }
+.lore-road-front h3 {
+  max-width: 100%;
+  font-size: clamp(2.45rem, 3.8vw, 3.75rem);
+  line-height: .94;
+  letter-spacing: -.05em;
+}
 .lore-card-index {
   color: var(--lore-gold);
   font: 800 .67rem/1 Verdana, Geneva, sans-serif;
