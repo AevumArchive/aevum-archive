@@ -7,16 +7,9 @@ body.route-characters-all .status-card.character-card {
   padding: 30px 32px 32px !important;
   border: none !important;
   border-radius: 22px;
+  outline: none !important;
+  background: transparent !important;
   box-shadow: none !important;
-}
-
-body.route-characters-all .status-card.character-card.is-sealed {
-  background: linear-gradient(145deg, rgba(28, 19, 42, 0.98), rgba(10, 8, 17, 0.99)) !important;
-}
-
-body.route-characters-all .status-card.character-card.is-dead,
-body.route-characters-all .status-card.character-card.is-fallen {
-  background: linear-gradient(145deg, rgba(48, 12, 20, 0.97), rgba(13, 7, 11, 0.99)) !important;
 }
 
 body.route-characters-all .status-card.character-card::before {
@@ -50,9 +43,24 @@ body.route-characters-all .status-card.character-card.is-fallen::before {
 }
 
 body.route-characters-all .status-card.character-card::after {
-  content: none !important;
-  display: none !important;
-  background: none !important;
+  content: "" !important;
+  position: absolute !important;
+  inset: 8px 10px 9px !important;
+  z-index: 0 !important;
+  display: block !important;
+  pointer-events: none !important;
+  border: 0 !important;
+  border-radius: 15px !important;
+  box-shadow: none !important;
+}
+
+body.route-characters-all .status-card.character-card.is-sealed::after {
+  background: linear-gradient(145deg, rgba(28, 19, 42, 0.98), rgba(10, 8, 17, 0.99)) !important;
+}
+
+body.route-characters-all .status-card.character-card.is-dead::after,
+body.route-characters-all .status-card.character-card.is-fallen::after {
+  background: linear-gradient(145deg, rgba(48, 12, 20, 0.97), rgba(13, 7, 11, 0.99)) !important;
 }
 
 body.route-characters-all .status-card.character-card > * {
