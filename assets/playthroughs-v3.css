@@ -44,45 +44,6 @@ body.route-playthroughs::after {
   padding: 16px 0 24px;
 }
 
-.route-playthroughs .site-header {
-  min-height: 74px;
-  align-items: flex-start;
-  padding: 0 0 16px;
-  background: transparent !important;
-  border: 0 !important;
-  box-shadow: none !important;
-}
-
-.route-playthroughs .site-header::before,
-.route-playthroughs .site-header::after {
-  content: none !important;
-  display: none !important;
-}
-
-.route-playthroughs .brand { gap: 11px; padding-top: 2px; }
-.route-playthroughs .brand-mark {
-  width: 46px;
-  height: 46px;
-  flex: 0 0 46px;
-  border: 0;
-  border-radius: 0;
-  color: transparent;
-  background: url("ui/round4/ui_global_header_brand_medallion_048.png") center / contain no-repeat;
-  box-shadow: none;
-  font-size: 0;
-}
-.route-playthroughs .brand-title { font-size: 1.15rem; letter-spacing: .1em; }
-.route-playthroughs .brand-subtitle { font-size: .75rem; }
-.route-playthroughs .nav { max-width: 785px; gap: 7px 8px; }
-.route-playthroughs .nav a {
-  padding: 7px 12px;
-  border-color: rgba(190, 137, 221, .18);
-  background: rgba(8, 6, 13, .52);
-  font-size: .78rem;
-  line-height: 1;
-  backdrop-filter: blur(8px);
-}
-
 .route-playthroughs .playthrough-hero,
 .route-playthroughs .playthrough-overview,
 .route-playthroughs #current,
@@ -421,7 +382,6 @@ body.route-playthroughs::after {
   .route-playthroughs .beefed-section-divider,
   .route-playthroughs #history,
   .route-playthroughs .footer { width: 100%; }
-  .route-playthroughs .nav { max-width: 710px; }
 }
 
 @media (max-width: 860px) {
@@ -430,7 +390,6 @@ body.route-playthroughs::after {
       linear-gradient(180deg, rgba(4, 3, 8, .18), rgba(4, 3, 8, .9)),
       url("playthroughs-v3/playthroughs-background-tall.webp");
   }
-  .route-playthroughs .site-header { align-items: flex-start; }
   .route-playthroughs .playthrough-hero { height: auto; grid-template-columns: 1fr; }
   .route-playthroughs .playthrough-hero > div { min-height: 340px; }
   .route-playthroughs .playthrough-hero .age-card { min-height: 250px; border-left: 0; border-top: 1px solid rgba(213, 162, 93, .21); }
