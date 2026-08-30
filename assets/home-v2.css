@@ -10,6 +10,7 @@
   background:
     radial-gradient(circle at 50% 0%, rgba(72,38,87,.18), transparent 34rem),
     linear-gradient(180deg,#050408 0%,#09070d 56%,#050407 100%);
+  overflow-x:clip;
 }
 
 .route-home::before {
@@ -18,7 +19,7 @@
 }
 
 .route-home .page {
-  width: min(1500px, calc(100% - 24px));
+  width:min(2400px,calc(100% - clamp(24px,2vw,56px)));
   padding: 10px 0 42px;
 }
 
@@ -478,6 +479,101 @@
 @keyframes homeSigilBreath {
   0%,100% { opacity:.34; transform:scale(.98); }
   50% { opacity:.52; transform:scale(1.02); }
+}
+
+/* Desktop outer frame -------------------------------------------------- */
+@media (min-width:1450px) {
+  .route-home::before {
+    opacity:.72;
+    background:
+      url("/aevum-archive/assets/ui/ornaments/02_Global_Edge_Ornaments/ui_global_edge_ornament_vertical_violet.png") left clamp(-18px,.7vw,14px) center / clamp(68px,5.2vw,102px) min(91vh,1400px) no-repeat,
+      url("/aevum-archive/assets/ui/ornaments/02_Global_Edge_Ornaments/ui_global_edge_ornament_vertical_gold.png") right clamp(-18px,.7vw,14px) center / clamp(68px,5.2vw,102px) min(91vh,1400px) no-repeat,
+      linear-gradient(90deg,rgba(55,24,72,.32) 0%,rgba(41,19,57,.14) 8%,transparent 21%,transparent 79%,rgba(48,21,61,.14) 92%,rgba(55,24,72,.32) 100%),
+      linear-gradient(rgba(226,182,111,.035) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(202,127,194,.032) 1px,transparent 1px);
+    background-size:
+      clamp(68px,5.2vw,102px) min(91vh,1400px),
+      clamp(68px,5.2vw,102px) min(91vh,1400px),
+      100% 100%,
+      58px 58px,
+      58px 58px;
+    mask-image:none;
+  }
+
+  .route-home::after {
+    opacity:.34;
+    mix-blend-mode:screen;
+    background:
+      linear-gradient(90deg,transparent 0 4.2%,rgba(226,181,105,.14) 4.28%,transparent 4.36% 95.64%,rgba(226,181,105,.14) 95.72%,transparent 95.8%),
+      radial-gradient(ellipse at 0% 24%,rgba(137,67,166,.3),transparent 30%),
+      radial-gradient(ellipse at 100% 36%,rgba(180,67,138,.22),transparent 31%),
+      url("/aevum-archive/assets/home-v2/home-hero-archive-realm.webp") center top / cover no-repeat;
+    mask-image:linear-gradient(90deg,#000 0%,#000 10%,transparent 25%,transparent 75%,#000 90%,#000 100%);
+  }
+
+  .route-home .site-header {
+    padding-inline:clamp(14px,1.2vw,28px);
+  }
+
+  .route-home .nav { max-width:1120px; }
+
+  .route-home .welcome-gate.home-v2-hero {
+    min-height:clamp(555px,32vw,650px);
+    padding-top:clamp(70px,5vw,108px);
+    border-radius:18px;
+    border-color:rgba(220,166,93,.25);
+    box-shadow:
+      0 38px 120px rgba(0,0,0,.68),
+      -34px 0 96px rgba(98,46,122,.13),
+      34px 0 96px rgba(128,49,99,.1),
+      inset 0 1px rgba(255,255,255,.07);
+  }
+
+  .route-home .welcome-gate.home-v2-hero::before {
+    inset:8px;
+    border-radius:12px;
+  }
+
+  .route-home .welcome-gate.home-v2-hero h1 {
+    font-size:clamp(6.6rem,6.4vw,9.2rem);
+  }
+
+  .route-home .welcome-gate.home-v2-hero .lede {
+    max-width:760px;
+  }
+
+  .route-home .home-v2-dashboard {
+    grid-template-columns:minmax(0,1.25fr) minmax(270px,.52fr) minmax(620px,1.25fr);
+    gap:clamp(14px,1vw,22px);
+    min-height:470px;
+    margin-top:clamp(14px,1vw,22px);
+  }
+
+  .route-home .home-v2-playthrough,
+  .route-home .home-v2-shelves { min-height:470px; }
+
+  .route-home .home-v2-playthrough-copy {
+    width:min(62%,650px);
+    min-height:470px;
+  }
+
+  .route-home .home-v2-playthrough h2 {
+    font-size:clamp(3.4rem,3vw,4.65rem);
+  }
+
+  .route-home .home-v2-feature-copy { padding:18px 16px 16px; }
+  .route-home .home-v2-feature-card h3 { font-size:clamp(1.18rem,1.15vw,1.58rem); }
+  .route-home .home-v2-feature-card p { max-width:32ch; font-size:.69rem; }
+}
+
+@media (min-width:2200px) {
+  .route-home .page { padding-top:14px; }
+  .route-home .site-header { min-height:78px; }
+  .route-home .welcome-gate.home-v2-hero { min-height:680px; }
+  .route-home .home-v2-dashboard,
+  .route-home .home-v2-playthrough,
+  .route-home .home-v2-playthrough-copy,
+  .route-home .home-v2-shelves { min-height:500px; }
 }
 
 @media (max-width:1120px) {
