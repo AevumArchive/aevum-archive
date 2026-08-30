@@ -5,18 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Start - Aevum Archive</title>
   <meta name="description" content="A living Aevum wiki for characters, playthroughs, lore, events and traveler downloads.">
+  <link rel="preload" as="image" href="/aevum-archive/assets/home-v2/home-hero-archive-realm.webp" fetchpriority="high">
   <link rel="stylesheet" href="/aevum-archive/assets/styles.css?v=20260815-sitefocus2">
   <link rel="stylesheet" href="/aevum-archive/assets/frame-overrides.css?v=20260817-cardstates7">
   <link rel="stylesheet" href="/aevum-archive/assets/ornament-v3.css?v=20260817-1">
   <link rel="stylesheet" href="/aevum-archive/assets/round4-assets.css?v=20260817-3">
   <link rel="stylesheet" href="/aevum-archive/assets/master-ui.css?v=20260821-2">
   <link rel="stylesheet" href="/aevum-archive/assets/landing-polish.css?v=20260827-1">
+  <link rel="stylesheet" href="/aevum-archive/assets/home-v2.css?v=20260830-homev2-2">
 </head>
 <body class="archive-page theme-home page-index route-home">
   <main class="page">
 <header class="site-header">
   <a class="brand" href="/aevum-archive/">
-    <span class="brand-mark">&#10022;</span>
+    <img class="brand-mark home-brand-crest" src="/aevum-archive/assets/home-v2/home-archive-sigil.webp" alt="" width="1254" height="1254">
     <span><span class="brand-title">Aevum Archive</span><span class="brand-subtitle">world wiki and living archive</span></span>
   </a>
   <nav class="nav" aria-label="Archive navigation">
@@ -32,7 +34,7 @@
     <a href="/aevum-archive/downloads/texture-pack.html">Downloads</a>
   </nav>
 </header>
-<section class="welcome-gate">
+<section class="welcome-gate home-v2-hero">
   <div class="gate-glow"></div>
   <p class="eyebrow">The archive doors are open</p>
   <h1>Aevum Archive</h1>
@@ -44,28 +46,52 @@
     <a class="button compact-button" href="/aevum-archive/downloads/texture-pack.html">Downloads</a>
   </div>
 </section>
-<section class="section landing-layout">
-  <article class="card landing-feature">
-    <p class="eyebrow">Current Playthrough</p>
-    <h2>Fantasy Medieval Playthrough</h2>
-    <p>The Age of First Roads has begun. Avalon holds the current stage, Neris is rising from village toward city, and the first character records are now taking shape.</p>
-    <div class="meta-row"><span class="pill">Age of First Roads</span><span class="pill">Avalon</span><span class="pill">Neris</span></div>
-    <a class="small-button" href="/aevum-archive/playthroughs/#current">Enter Playthrough</a>
+<section class="section home-v2-dashboard" aria-label="Archive entry shelves">
+  <article class="card landing-feature home-v2-playthrough">
+    <img class="home-v2-playthrough-art" src="/aevum-archive/assets/home-v2/home-current-playthrough.webp" alt="" width="1448" height="1086" decoding="async">
+    <div class="home-v2-playthrough-copy">
+      <p class="eyebrow">Current Playthrough</p>
+      <h2>Fantasy Medieval Playthrough</h2>
+      <p>The Age of First Roads has begun. Avalon holds the current stage, Neris is rising from village toward city, and the first character records are now taking shape.</p>
+      <div class="meta-row"><span class="pill">Age of First Roads</span><span class="pill">Avalon</span><span class="pill">Neris</span></div>
+      <a class="small-button" href="/aevum-archive/playthroughs/#current">Enter Playthrough <span aria-hidden="true">→</span></a>
+    </div>
   </article>
-  <article class="card quiet-card quick-panel">
+  <article class="card quiet-card quick-panel home-v2-shelves">
     <p class="eyebrow">Quick shelves</p>
-    <a class="shelf-link" href="/aevum-archive/characters/all.html"><span>Characters</span><small>Active, sealed, fallen and retired</small></a><a class="shelf-link" href="/aevum-archive/codex/"><span>Character Codex</span><small>Races, bloodlines and traits discovered by the realm.</small></a><a class="shelf-link" href="/aevum-archive/npcs/"><span>NPCs</span><small>Servants, instructors and world figures</small></a>
-    <a class="shelf-link" href="/aevum-archive/achievements/"><span>Achievements</span><small>Trophy wall and locked deeds</small></a>
-    <a class="shelf-link" href="/aevum-archive/lore/"><span>Lore Atlas</span><small>Kingdoms, settlements and noble houses</small></a>
-    <a class="shelf-link" href="/aevum-archive/leaderboard/"><span>Leaderboard</span><small>Awaiting player synchronization</small></a>
+    <a class="shelf-link" data-shelf-icon="✦" href="/aevum-archive/characters/all.html"><span>Characters</span><small>Active, sealed, fallen and retired</small></a>
+    <a class="shelf-link" data-shelf-icon="◇" href="/aevum-archive/codex/"><span>Character Codex</span><small>Races, bloodlines and traits discovered by the realm.</small></a>
+    <a class="shelf-link" data-shelf-icon="☽" href="/aevum-archive/npcs/"><span>NPCs</span><small>Servants, instructors and world figures</small></a>
+    <a class="shelf-link" data-shelf-icon="♕" href="/aevum-archive/achievements/"><span>Achievements</span><small>Trophy wall and locked deeds</small></a>
+    <a class="shelf-link" data-shelf-icon="⌖" href="/aevum-archive/lore/"><span>Lore Atlas</span><small>Kingdoms, settlements and noble houses</small></a>
+    <a class="shelf-link" data-shelf-icon="Ⅰ" href="/aevum-archive/leaderboard/"><span>Leaderboard</span><small>Awaiting player synchronization</small></a>
   </article>
-</section>
-<section class="section grid four soft-gates">
-  <a class="card gate-card" href="/aevum-archive/world-events/"><h3>World Events</h3><p>Realm-scale turns such as World Anchor Part I.</p></a>
-  <a class="card gate-card" href="/aevum-archive/world-items/"><h3>Relics</h3><p>World Items, sealed relics and bound artifacts.</p></a>
-  <a class="card gate-card" href="/aevum-archive/npcs/"><h3>NPC Ledger</h3><p>Known figures, servants and instructors.</p></a><a class="card gate-card" href="/aevum-archive/sealed-records/"><h3>Sealed Records</h3><p>Locked names, hidden banners and unopened truths.</p></a>
-  <a class="card gate-card" href="/aevum-archive/downloads/texture-pack.html"><h3>Downloads</h3><p>Resource packs and traveler bundles.</p></a>
-  <a class="card gate-card" href="/aevum-archive/events/"><h3>Events</h3><p>Smaller records and scenes already safe to read.</p></a>
+  <div class="home-v2-features">
+    <a class="home-v2-feature-card feature-world-events" href="/aevum-archive/world-events/">
+      <img src="/aevum-archive/assets/home-v2/home-card-world-events.webp" alt="" width="1122" height="1402" loading="lazy" decoding="async">
+      <span class="home-v2-feature-copy"><h3>World Events</h3><p>Realm-scale turns such as World Anchor Part I.</p></span>
+    </a>
+    <a class="home-v2-feature-card feature-relics" href="/aevum-archive/world-items/">
+      <img src="/aevum-archive/assets/home-v2/home-card-relics.webp" alt="" width="1122" height="1402" loading="lazy" decoding="async">
+      <span class="home-v2-feature-copy"><h3>Relics</h3><p>World Items, sealed relics and bound artifacts.</p></span>
+    </a>
+    <a class="home-v2-feature-card feature-npcs" href="/aevum-archive/npcs/">
+      <img src="/aevum-archive/assets/home-v2/home-card-npc-ledger.webp" alt="" width="1122" height="1402" loading="lazy" decoding="async">
+      <span class="home-v2-feature-copy"><h3>NPC Ledger</h3><p>Known figures, servants and instructors.</p></span>
+    </a>
+    <a class="home-v2-feature-card feature-sealed" href="/aevum-archive/sealed-records/">
+      <img src="/aevum-archive/assets/home-v2/home-card-sealed-records.webp" alt="" width="1122" height="1402" loading="lazy" decoding="async">
+      <span class="home-v2-feature-copy"><h3>Sealed Records</h3><p>Locked names, hidden banners and unopened truths.</p></span>
+    </a>
+    <a class="home-v2-feature-card feature-downloads" href="/aevum-archive/downloads/texture-pack.html">
+      <img src="/aevum-archive/assets/home-v2/home-card-downloads.webp" alt="" width="1122" height="1402" loading="lazy" decoding="async">
+      <span class="home-v2-feature-copy"><h3>Downloads</h3><p>Resource packs and traveler bundles.</p></span>
+    </a>
+    <a class="home-v2-feature-card feature-events" href="/aevum-archive/events/">
+      <img src="/aevum-archive/assets/home-v2/home-card-events.webp" alt="" width="1122" height="1402" loading="lazy" decoding="async">
+      <span class="home-v2-feature-copy"><h3>Events</h3><p>Smaller records and scenes already safe to read.</p></span>
+    </a>
+  </div>
 </section>
 <footer class="footer">
   <span>&#10022; Aevum Archive &mdash; witnessed knowledge only.</span>
