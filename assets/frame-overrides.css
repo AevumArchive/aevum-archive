@@ -234,6 +234,33 @@
   border-radius: 14px;
 }
 
+/* Character-specific portrait fitting: the PNG is the outer frame, not an inset panel. */
+.route-characters-faaram .faaram-aura,
+.route-characters-obama .obama-aura {
+  padding: clamp(8px, 1vw, 16px) !important;
+}
+
+.route-characters-faaram .faaram-aura::before {
+  inset: -2.4% -2.1% !important;
+  background: url("ui/frames/astral-portrait-frame.png") center / 100% 100% no-repeat !important;
+  opacity: .84 !important;
+  filter: drop-shadow(0 0 24px rgba(168, 85, 247, .24)) !important;
+}
+
+.route-characters-obama .obama-aura::before {
+  inset: -2% -1.8% !important;
+  background: url("ui/frames/new-order-portrait-frame.png") center / 100% 100% no-repeat !important;
+  opacity: .88 !important;
+  filter: drop-shadow(0 0 24px rgba(245, 158, 11, .22)) !important;
+}
+
+.route-characters-faaram .faaram-aura::after,
+.route-characters-obama .obama-aura::after {
+  inset: 0 !important;
+  border: 0 !important;
+  border-radius: 14px !important;
+}
+
 /* Ichiro soul slot: reveal the art, do not bury it under black. */
 .ichiro-portrait .sealed-portrait-frame,
 .ichiro-soul-panel,
