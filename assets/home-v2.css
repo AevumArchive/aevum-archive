@@ -8,7 +8,9 @@
   --home-pink: 222 94 173;
   --home-gold: 218 172 92;
   background:
-    radial-gradient(circle at 50% 0%, rgba(72,38,87,.18), transparent 34rem),
+    radial-gradient(ellipse at 12% 52%,rgba(77,35,95,.2),transparent 34rem),
+    radial-gradient(ellipse at 88% 68%,rgba(103,34,78,.14),transparent 38rem),
+    radial-gradient(circle at 50% 0%,rgba(72,38,87,.2),transparent 34rem),
     linear-gradient(180deg,#050408 0%,#09070d 56%,#050407 100%);
   overflow-x:clip;
 }
@@ -21,6 +23,43 @@
 .route-home .page {
   width:min(2400px,calc(100% - clamp(24px,2vw,56px)));
   padding: 10px 0 42px;
+  isolation:isolate;
+}
+
+.route-home .page::before {
+  content:"";
+  position:absolute;
+  z-index:-3;
+  top:clamp(450px,34vw,620px);
+  right:clamp(-90px,-3vw,-28px);
+  bottom:-30px;
+  left:clamp(-90px,-3vw,-28px);
+  opacity:.72;
+  pointer-events:none;
+  background:
+    linear-gradient(180deg,rgba(5,4,8,.02) 0%,rgba(7,5,11,.28) 24%,rgba(7,5,10,.7) 70%,rgba(5,4,7,.94) 100%),
+    linear-gradient(90deg,rgba(5,4,8,.88) 0%,rgba(7,5,10,.3) 18%,rgba(7,5,10,.2) 50%,rgba(7,5,10,.3) 82%,rgba(5,4,8,.88) 100%),
+    url("/aevum-archive/assets/home-v2/home-current-playthrough.webp") center 42% / max(1200px,78vw) auto no-repeat;
+  filter:saturate(.52) contrast(1.1) brightness(.7);
+  mask-image:linear-gradient(180deg,transparent 0%,#000 13%,#000 84%,transparent 100%);
+}
+
+.route-home .page::after {
+  content:"";
+  position:absolute;
+  z-index:-2;
+  top:clamp(500px,37vw,680px);
+  right:clamp(-72px,-2vw,-20px);
+  bottom:18px;
+  left:clamp(-72px,-2vw,-20px);
+  pointer-events:none;
+  opacity:.62;
+  background:
+    linear-gradient(90deg,transparent 0 5.8%,rgba(215,160,99,.09) 5.86%,transparent 5.94% 94.06%,rgba(215,160,99,.09) 94.14%,transparent 94.2%),
+    linear-gradient(180deg,transparent 0 9%,rgba(205,121,184,.08) 9.08%,transparent 9.16% 84%,rgba(205,121,184,.055) 84.08%,transparent 84.16%),
+    radial-gradient(ellipse at 50% 3%,rgba(151,82,175,.32),transparent 31%),
+    radial-gradient(ellipse at 50% 74%,rgba(93,45,115,.18),transparent 52%);
+  mask-image:linear-gradient(180deg,transparent,#000 12%,#000 94%,transparent);
 }
 
 .route-home .site-header {
@@ -80,7 +119,7 @@
     url("/aevum-archive/assets/home-v2/home-hero-archive-realm.webp");
   background-position:center,center,center center;
   background-size:cover,cover,cover;
-  box-shadow:0 30px 90px rgba(0,0,0,.58),0 0 54px rgba(128,63,158,.1),inset 0 1px rgba(255,255,255,.07);
+  box-shadow:0 30px 90px rgba(0,0,0,.54),0 38px 110px rgba(104,51,129,.14),0 0 54px rgba(128,63,158,.1),inset 0 1px rgba(255,255,255,.07);
 }
 .route-home .welcome-gate.home-v2-hero::before {
   inset:10px;
@@ -215,12 +254,28 @@
 /* Integrated dashboard ------------------------------------------------- */
 .route-home .home-v2-dashboard {
   position:relative;
+  z-index:0;
+  isolation:isolate;
   display:grid;
   grid-template-columns:minmax(0,1.2fr) minmax(245px,.65fr) minmax(0,1fr);
   gap:12px;
   min-height:430px;
   margin-top:12px;
   padding:0;
+}
+.route-home .home-v2-dashboard::before {
+  content:"";
+  position:absolute;
+  z-index:-1;
+  inset:-150px clamp(-70px,-2.4vw,-24px) -46px;
+  pointer-events:none;
+  opacity:.82;
+  background:
+    radial-gradient(ellipse at 50% 5%,rgba(128,64,154,.28),transparent 33%),
+    radial-gradient(ellipse at 18% 48%,rgba(71,34,88,.2),transparent 38%),
+    radial-gradient(ellipse at 84% 58%,rgba(98,36,75,.16),transparent 36%),
+    linear-gradient(180deg,transparent 0%,rgba(7,5,10,.22) 18%,rgba(7,5,10,.46) 100%);
+  mask-image:linear-gradient(180deg,transparent 0%,#000 18%,#000 92%,transparent 100%);
 }
 .route-home .home-v2-dashboard::after {
   content:"";
@@ -524,6 +579,7 @@
     border-color:rgba(220,166,93,.25);
     box-shadow:
       0 38px 120px rgba(0,0,0,.68),
+      0 72px 150px rgba(87,39,109,.16),
       -34px 0 96px rgba(98,46,122,.13),
       34px 0 96px rgba(128,49,99,.1),
       inset 0 1px rgba(255,255,255,.07);
@@ -564,6 +620,19 @@
   .route-home .home-v2-feature-copy { padding:18px 16px 16px; }
   .route-home .home-v2-feature-card h3 { font-size:clamp(1.18rem,1.15vw,1.58rem); }
   .route-home .home-v2-feature-card p { max-width:32ch; font-size:.69rem; }
+}
+
+@media (max-width:760px) {
+  .route-home .page::before {
+    top:520px;
+    right:-18px;
+    left:-18px;
+    opacity:.46;
+    background-size:auto,auto,auto 72%;
+    background-position:center,center,62% 28%;
+  }
+  .route-home .page::after { opacity:.38; }
+  .route-home .home-v2-dashboard::before { inset:-110px -16px -30px; opacity:.62; }
 }
 
 @media (min-width:2200px) {
