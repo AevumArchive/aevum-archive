@@ -21,7 +21,7 @@
 }
 
 .route-home .page {
-  width:min(2400px,calc(100% - clamp(24px,2vw,56px)));
+  width:min(2100px,calc(100% - clamp(32px,3.2vw,88px)));
   padding: 10px 0 42px;
   isolation:isolate;
 }
@@ -573,7 +573,7 @@
   .route-home .nav { max-width:1120px; }
 
   .route-home .welcome-gate.home-v2-hero {
-    min-height:clamp(555px,32vw,650px);
+    min-height:clamp(600px,33vw,700px);
     padding-top:clamp(70px,5vw,108px);
     border-radius:18px;
     border-color:rgba(220,166,93,.25);
@@ -591,7 +591,7 @@
   }
 
   .route-home .welcome-gate.home-v2-hero h1 {
-    font-size:clamp(6.6rem,6.4vw,9.2rem);
+    font-size:clamp(6rem,5.2vw,7.8rem);
   }
 
   .route-home .welcome-gate.home-v2-hero .lede {
@@ -599,26 +599,28 @@
   }
 
   .route-home .home-v2-dashboard {
-    grid-template-columns:minmax(0,1.25fr) minmax(270px,.52fr) minmax(620px,1.25fr);
-    gap:clamp(14px,1vw,22px);
-    min-height:470px;
-    margin-top:clamp(14px,1vw,22px);
+    width:min(100%,1820px);
+    grid-template-columns:minmax(0,1.12fr) minmax(280px,.6fr) minmax(0,1.08fr);
+    gap:clamp(12px,.75vw,16px);
+    min-height:450px;
+    margin-inline:auto;
+    margin-top:clamp(12px,.8vw,17px);
   }
 
   .route-home .home-v2-playthrough,
-  .route-home .home-v2-shelves { min-height:470px; }
+  .route-home .home-v2-shelves { min-height:450px; }
 
   .route-home .home-v2-playthrough-copy {
-    width:min(62%,650px);
-    min-height:470px;
+    width:min(63%,590px);
+    min-height:450px;
   }
 
   .route-home .home-v2-playthrough h2 {
-    font-size:clamp(3.4rem,3vw,4.65rem);
+    font-size:clamp(3.1rem,2.6vw,4.15rem);
   }
 
-  .route-home .home-v2-feature-copy { padding:18px 16px 16px; }
-  .route-home .home-v2-feature-card h3 { font-size:clamp(1.18rem,1.15vw,1.58rem); }
+  .route-home .home-v2-feature-copy { padding:16px 14px 14px; }
+  .route-home .home-v2-feature-card h3 { font-size:clamp(1.12rem,1.02vw,1.42rem); }
   .route-home .home-v2-feature-card p { max-width:32ch; font-size:.69rem; }
 }
 
@@ -638,11 +640,11 @@
 @media (min-width:2200px) {
   .route-home .page { padding-top:14px; }
   .route-home .site-header { min-height:78px; }
-  .route-home .welcome-gate.home-v2-hero { min-height:680px; }
+  .route-home .welcome-gate.home-v2-hero { min-height:710px; }
   .route-home .home-v2-dashboard,
   .route-home .home-v2-playthrough,
   .route-home .home-v2-playthrough-copy,
-  .route-home .home-v2-shelves { min-height:500px; }
+  .route-home .home-v2-shelves { min-height:470px; }
 }
 
 @media (max-width:1120px) {
