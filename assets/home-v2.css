@@ -66,9 +66,13 @@
   min-height: 70px;
   gap: 28px;
   padding: 8px 12px 10px;
-  border-bottom: 1px solid rgba(218,172,92,.13);
-  background: linear-gradient(180deg,rgba(8,6,11,.92),rgba(8,6,11,.72));
+  border-bottom:0;
+  background:transparent;
+  backdrop-filter:none;
+  box-shadow:none;
 }
+
+.route-home .site-header::after { display:none; }
 
 .route-home .brand { flex: 0 0 auto; gap: 10px; }
 .route-home .brand-mark.home-brand-crest {
