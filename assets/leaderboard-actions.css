@@ -1,0 +1,183 @@
+/* Interactive challenge writs and Rokuen's public Rankbreaker record. */
+.route-leaderboard .global-power {
+  display: grid;
+  justify-items: end;
+}
+
+.route-leaderboard .leaderboard-challenge {
+  position: relative;
+  z-index: 3;
+  min-width: 150px;
+  margin-top: 14px;
+  padding: 10px 16px;
+  border: 1px solid rgb(var(--rank-accent) / .62);
+  border-radius: 999px;
+  color: #fff1cf;
+  background:
+    linear-gradient(110deg, rgb(var(--rank-accent) / .18), transparent 58%),
+    rgba(8, 6, 11, .82);
+  box-shadow: inset 0 1px rgba(255,255,255,.08), 0 0 24px rgb(var(--rank-accent) / .1);
+  font: 800 .68rem/1 Verdana, Geneva, sans-serif;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease, color .2s ease;
+}
+
+.route-leaderboard .leaderboard-challenge::before { content: "⚔"; margin-right: 9px; color: rgb(var(--rank-accent)); }
+.route-leaderboard .leaderboard-challenge:hover,
+.route-leaderboard .leaderboard-challenge:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgb(var(--rank-accent));
+  color: #fff8e7;
+  box-shadow: 0 10px 28px rgba(0,0,0,.28), 0 0 28px rgb(var(--rank-accent) / .23);
+  outline: none;
+}
+
+.route-leaderboard .power-cliff.near-rivals {
+  margin-top: 0;
+  margin-bottom: 0;
+  border-left-color: rgba(255,118,63,.9);
+  background: linear-gradient(90deg, rgba(255,94,45,.13), rgba(255,190,89,.035) 55%, transparent);
+}
+.route-leaderboard .power-cliff.near-rivals span { color: #ffb16d; }
+.route-leaderboard .power-ledger-row.near-rival { background: linear-gradient(90deg, rgba(255,125,66,.025), transparent 65%); }
+
+.route-leaderboard .global-rank-card.rank-10 {
+  --rank-accent: 255 105 55;
+  background:
+    radial-gradient(circle at 12% 3%, rgba(255,92,38,.26), transparent 22rem),
+    radial-gradient(circle at 86% 72%, rgba(255,174,63,.08), transparent 26rem),
+    repeating-linear-gradient(116deg, transparent 0 48px, rgba(255,112,47,.025) 49px 50px),
+    linear-gradient(145deg,#26110c,#080707 72%);
+}
+.route-leaderboard .global-rank-card.rank-10::after {
+  background: radial-gradient(circle at 82% 18%, rgba(255,106,45,.09), transparent 2px 12px, rgba(255,171,75,.035) 13px 14px, transparent 15px 38px);
+  background-size: 76px 76px;
+  opacity: .38;
+}
+.route-leaderboard .global-rank-portrait.rokuen-portrait > img { object-position: center 28%; }
+
+.route-leaderboard .rokuen-combat-dossier {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 3px;
+}
+.route-leaderboard .rokuen-combat-dossier article {
+  min-width: 0;
+  padding: 16px 17px;
+  border: 1px solid rgba(255,111,55,.24);
+  border-radius: 15px;
+  background: linear-gradient(145deg, rgba(69,21,12,.5), rgba(8,7,9,.78));
+}
+.route-leaderboard .rokuen-combat-dossier small {
+  display: block;
+  color: #e98f68;
+  font: 800 .59rem/1.2 Verdana, Geneva, sans-serif;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+.route-leaderboard .rokuen-combat-dossier strong { display: block; margin-top: 8px; color: #fff0d8; font-size: .92rem; }
+
+.route-leaderboard .rankbreaker-distinction {
+  grid-column: 1 / -1;
+  position: relative;
+  overflow: hidden;
+  margin: 8px 0 2px;
+  border: 1px solid rgba(255,89,49,.5);
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at 8% 50%, rgba(255,76,30,.22), transparent 13rem),
+    linear-gradient(120deg, rgba(78,18,12,.72), rgba(10,7,9,.96) 60%);
+  box-shadow: 0 18px 44px rgba(0,0,0,.3), inset 0 1px rgba(255,208,143,.08);
+}
+.route-leaderboard .rankbreaker-distinction::after {
+  content: "☠";
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  translate: 0 -50%;
+  color: rgba(255,104,54,.09);
+  font-size: 9rem;
+  pointer-events: none;
+}
+.route-leaderboard .rankbreaker-distinction summary {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 58px minmax(0,1fr) auto;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 24px;
+  cursor: pointer;
+  list-style: none;
+}
+.route-leaderboard .rankbreaker-distinction summary::-webkit-details-marker { display: none; }
+.route-leaderboard .rankbreaker-skull {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255,130,71,.58);
+  border-radius: 50%;
+  color: #ff9b64;
+  background: rgba(44,9,7,.78);
+  box-shadow: 0 0 24px rgba(255,75,28,.18);
+  font-size: 1.5rem;
+}
+.route-leaderboard .rankbreaker-copy small { display:block; color:#ef8a65; font:800 .61rem/1 Verdana,sans-serif; letter-spacing:.18em; text-transform:uppercase; }
+.route-leaderboard .rankbreaker-copy strong { display:block; margin-top:7px; color:#fff0d1; font:900 clamp(1.25rem,2.3vw,1.85rem)/1 Georgia,serif; }
+.route-leaderboard .rankbreaker-toggle { color:#ffae6d; font-size:1.3rem; transition:transform .2s ease; }
+.route-leaderboard .rankbreaker-distinction[open] .rankbreaker-toggle { transform:rotate(45deg); }
+.route-leaderboard .rankbreaker-victims {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 12px;
+  padding: 0 24px 22px 98px;
+}
+.route-leaderboard .rankbreaker-victim { padding:14px 16px; border-left:2px solid #e95238; background:rgba(4,3,5,.55); }
+.route-leaderboard .rankbreaker-victim strong { display:block; color:#fff0e1; letter-spacing:.05em; }
+.route-leaderboard .rankbreaker-victim span { display:block; margin-top:6px; color:#d38a80; font:800 .65rem/1.4 Verdana,sans-serif; letter-spacing:.12em; text-transform:uppercase; }
+.route-leaderboard .rankbreaker-record-note { grid-column:1/-1; margin:2px 0 0; color:#bda9ad; font-size:.84rem; line-height:1.55; }
+
+.leaderboard-challenge-dialog {
+  width: min(610px, calc(100vw - 40px));
+  padding: 0;
+  border: 1px solid rgba(246,190,91,.48);
+  border-radius: 26px;
+  color: #eee4f2;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(146,75,196,.25), transparent 19rem),
+    radial-gradient(circle at 0% 100%, rgba(231,164,71,.14), transparent 17rem),
+    linear-gradient(145deg,#1a121e,#070609 72%);
+  box-shadow: 0 38px 120px rgba(0,0,0,.76), inset 0 1px rgba(255,255,255,.08);
+}
+.leaderboard-challenge-dialog::backdrop { background: rgba(3,2,6,.78); backdrop-filter: blur(8px); }
+.challenge-writ { position:relative; padding:34px; }
+.challenge-writ::before { content:"⚔"; position:absolute; right:32px; top:24px; color:rgba(245,190,94,.14); font-size:5rem; }
+.challenge-writ .eyebrow { color:#dfb55f; }
+.challenge-writ h2 { position:relative; margin:8px 0 8px; color:#fff3dc; font-size:clamp(2.1rem,5vw,3.4rem); }
+.challenge-writ-target { margin:0; color:#c7b6cf; font-size:1rem; }
+.challenge-writ-facts { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin:24px 0 18px; }
+.challenge-writ-facts div { padding:13px 14px; border:1px solid rgba(240,191,102,.16); border-radius:13px; background:rgba(4,3,7,.48); }
+.challenge-writ-facts span { display:block; color:#96899f; font:700 .58rem/1 Verdana,sans-serif; letter-spacing:.13em; text-transform:uppercase; }
+.challenge-writ-facts strong { display:block; margin-top:7px; color:#f3e2c0; }
+.challenge-writ-note { color:#ad9fb5; line-height:1.55; }
+.challenge-writ-actions { display:flex; justify-content:flex-end; gap:10px; margin-top:25px; }
+.challenge-writ-actions button { padding:11px 16px; border:1px solid rgba(242,191,97,.3); border-radius:999px; color:#e9ddeb; background:rgba(18,12,22,.9); font-weight:800; cursor:pointer; }
+.challenge-writ-actions .copy-challenge-writ { color:#1a1013; border-color:#f0c36d; background:linear-gradient(135deg,#ffd88d,#d99d43); }
+.challenge-writ-actions button:focus-visible { outline:2px solid #f0c36d; outline-offset:3px; }
+
+@media (max-width:760px) {
+  .route-leaderboard .global-power { grid-column:1/-1; justify-items:start; padding-left:68px; }
+  .route-leaderboard .rokuen-combat-dossier { grid-template-columns:1fr; }
+  .route-leaderboard .rankbreaker-victims { grid-template-columns:1fr; padding-left:24px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .route-leaderboard .leaderboard-challenge,
+  .route-leaderboard .rankbreaker-toggle { transition:none; }
+}
