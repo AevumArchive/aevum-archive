@@ -40,7 +40,7 @@ body.route-playthroughs::after {
 
 .route-playthroughs .page {
   z-index: 1;
-  width: min(1150px, calc(100% - 40px));
+  width: min(1640px, 84vw);
   padding: 16px 0 24px;
 }
 
@@ -50,7 +50,7 @@ body.route-playthroughs::after {
 .route-playthroughs .beefed-section-divider,
 .route-playthroughs #history,
 .route-playthroughs .footer {
-  width: calc(100% - 72px);
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
