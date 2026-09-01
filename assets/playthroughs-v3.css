@@ -74,7 +74,7 @@ body.route-playthroughs::after {
   content: "";
   display: block;
   inset: 7px;
-  z-index: 3;
+  z-index: 1;
   border: 1px solid rgba(210, 157, 85, .17);
   border-radius: 1px;
   background: none;
@@ -109,7 +109,12 @@ body.route-playthroughs::after {
   font-size: .91rem;
   line-height: 1.55;
 }
-.route-playthroughs .playthrough-hero .hero-actions { gap: 10px; margin-top: 16px; }
+.route-playthroughs .playthrough-hero .hero-actions {
+  position: relative;
+  z-index: 2;
+  gap: 10px;
+  margin: 16px 0 14px;
+}
 .route-playthroughs .playthrough-hero .button {
   min-height: 34px;
   justify-content: center;
@@ -178,6 +183,11 @@ body.route-playthroughs::after {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 8px;
   margin-top: 16px;
+}
+.archive-page.route-playthroughs .playthrough-hero + .playthrough-overview.section::before,
+.archive-page.route-playthroughs .playthrough-overview.section + #current.section::before {
+  content: none !important;
+  display: none !important;
 }
 .route-playthroughs .playthrough-jump {
   position: relative;
@@ -310,11 +320,11 @@ body.route-playthroughs::after {
 .route-playthroughs .playthrough-link small { grid-column: 2; grid-row: 2; font-size: .65rem; line-height: 1.25; }
 
 .route-playthroughs .beefed-section-divider {
-  height: 34px;
-  margin-top: 0;
-  margin-bottom: 0;
-  opacity: .86;
-  background: url("playthroughs-v3/playthroughs-section-divider.webp") center / 100% 100% no-repeat !important;
+  width: min(760px, 60%);
+  height: 72px;
+  margin: 4px auto;
+  opacity: .78;
+  background: url("playthroughs-v3/playthroughs-section-divider.webp") center / contain no-repeat !important;
 }
 .route-playthroughs .beefed-section-divider::before,
 .route-playthroughs .beefed-section-divider::after { content: none !important; display: none !important; }
