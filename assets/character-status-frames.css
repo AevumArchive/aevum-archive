@@ -1,4 +1,89 @@
-/* Full-card state frames for the complete character shelf. */
+/* Hall of Names environment and status overlays.
+   The existing card geometry and content remain the source of truth. */
+body.route-characters-all {
+  background-color: #07050b !important;
+  background-image:
+    linear-gradient(180deg, rgba(5, 4, 9, 0.30), rgba(6, 4, 10, 0.68) 48%, rgba(5, 3, 8, 0.82)),
+    url("/aevum-archive/assets/hall-of-names/characters-bg-hall-main.png") !important;
+  background-position: center top !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-attachment: fixed !important;
+}
+
+body.route-characters-all .site-header,
+body.route-characters-all main.page {
+  position: relative;
+  z-index: 1;
+}
+
+body.route-characters-all main.page {
+  overflow: visible;
+}
+
+body.route-characters-all .hall-tapestry {
+  position: absolute !important;
+  top: 118px;
+  right: clamp(-178px, -11vw, -116px);
+  z-index: 0 !important;
+  display: block;
+  width: clamp(112px, 10vw, 168px);
+  height: auto;
+  opacity: 0.24;
+  filter: brightness(0.76) saturate(0.92) drop-shadow(0 0 22px rgba(102, 49, 160, 0.18));
+  pointer-events: none;
+  user-select: none;
+}
+
+body.route-characters-all .hall-divider {
+  display: block;
+  width: min(720px, 72vw);
+  height: auto;
+  margin: -74px auto -92px;
+  opacity: 0.82;
+  filter: brightness(1.04) drop-shadow(0 0 14px rgba(125, 68, 180, 0.18));
+  pointer-events: none;
+  user-select: none;
+}
+
+@media (min-width: 1200px) {
+  body.route-characters-all::before,
+  body.route-characters-all::after {
+    content: "";
+    position: fixed;
+    top: 70px;
+    bottom: 0;
+    z-index: 0;
+    display: block !important;
+    width: min(34vw, 560px);
+    height: auto;
+    opacity: 0.58;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    pointer-events: none;
+    mix-blend-mode: normal;
+    -webkit-mask-image: linear-gradient(90deg, #000 0 54%, rgba(0,0,0,.76) 72%, transparent 100%);
+    mask-image: linear-gradient(90deg, #000 0 54%, rgba(0,0,0,.76) 72%, transparent 100%);
+  }
+
+  body.route-characters-all::before {
+    right: auto;
+    left: 0;
+    background-image: url("/aevum-archive/assets/hall-of-names/characters-bg-side-left.png");
+    background-position: left top;
+  }
+
+  body.route-characters-all::after {
+    right: 0;
+    left: auto;
+    background-image: url("/aevum-archive/assets/hall-of-names/characters-bg-side-right.png");
+    background-position: right top;
+    transform: none;
+    -webkit-mask-image: linear-gradient(270deg, #000 0 54%, rgba(0,0,0,.76) 72%, transparent 100%);
+    mask-image: linear-gradient(270deg, #000 0 54%, rgba(0,0,0,.76) 72%, transparent 100%);
+  }
+}
+
 body.route-characters-all .status-card.character-card {
   position: relative !important;
   isolation: isolate;
@@ -16,7 +101,7 @@ body.route-characters-all .status-card.character-card::before {
   content: "" !important;
   position: absolute !important;
   inset: 0 !important;
-  z-index: 1 !important;
+  z-index: 3 !important;
   display: block !important;
   width: 100% !important;
   height: 100% !important;
@@ -35,20 +120,35 @@ body.route-characters-all .status-card.character-card::before {
 }
 
 body.route-characters-all .status-card.character-card.is-sealed::before {
-  background-image: url("/aevum-archive/assets/ui/characters/sealed-frame.png?v=20260829-v2") !important;
+  background-image:
+    url("/aevum-archive/assets/hall-of-names/status-sealed-sigil.png"),
+    url("/aevum-archive/assets/hall-of-names/status-sealed-chains.png"),
+    url("/aevum-archive/assets/hall-of-names/status-sealed-corner-locks.png"),
+    url("/aevum-archive/assets/hall-of-names/status-sealed-overlay.png") !important;
+  background-position: center, center, center, center !important;
+  background-size: clamp(78px, 30%, 112px) auto, 100% 100%, 100% 100%, 100% 100% !important;
 }
 
 body.route-characters-all .status-card.character-card.is-active::before {
-  background-image: url("/aevum-archive/assets/ui/characters/active-frame.png?v=20260829-v1") !important;
+  content: none !important;
+  display: none !important;
+  background-image: none !important;
 }
 
 body.route-characters-all .status-card.character-card.is-dead::before,
 body.route-characters-all .status-card.character-card.is-fallen::before {
-  background-image: url("/aevum-archive/assets/ui/characters/dead-frame.png") !important;
+  background-image:
+    url("/aevum-archive/assets/hall-of-names/status-fallen-broken-seal.png"),
+    url("/aevum-archive/assets/hall-of-names/status-fallen-chains.png"),
+    url("/aevum-archive/assets/hall-of-names/status-fallen-overlay.png") !important;
+  background-position: center, center, center !important;
+  background-size: clamp(72px, 28%, 104px) auto, 100% 100%, 100% 100% !important;
 }
 
 body.route-characters-all .status-card.character-card.is-retired::before {
-  background-image: url("/aevum-archive/assets/ui/characters/retired-frame.png?v=20260829-v1") !important;
+  background-image: url("/aevum-archive/assets/hall-of-names/status-retired-drapery.png") !important;
+  background-position: center !important;
+  background-size: 100% 100% !important;
 }
 
 body.route-characters-all .status-card.character-card::after {
@@ -84,7 +184,7 @@ body.route-characters-all .status-card.character-card.is-retired::after {
 
 body.route-characters-all .status-card.character-card > * {
   position: relative !important;
-  z-index: 2 !important;
+  z-index: 4 !important;
 }
 
 body.route-characters-all .status-card.character-card > .status-card-frame {
@@ -175,8 +275,8 @@ body.route-characters-all .status-board-retired .status-card:nth-child(1) {
 }
 
 @media (hover: hover) {
-  body.route-characters-all .status-card.character-card.is-active:hover::before {
-    filter: drop-shadow(0 0 6px rgba(78, 255, 142, 0.42)) drop-shadow(0 0 14px rgba(27, 145, 78, 0.24)) !important;
+  body.route-characters-all .status-card.character-card.is-active:hover {
+    box-shadow: 0 0 0 1px rgba(78, 255, 142, 0.24), 0 0 26px rgba(27, 145, 78, 0.20) !important;
   }
 
   body.route-characters-all .status-card.character-card.is-sealed:hover::before {
@@ -193,7 +293,15 @@ body.route-characters-all .status-board-retired .status-card:nth-child(1) {
   }
 }
 
+@media (max-width: 1199px) {
+  body.route-characters-all .hall-tapestry {
+    display: none;
+  }
+
+}
+
 @media (max-width: 1000px) {
+
   body.route-characters-all .status-board-active .status-grid,
   body.route-characters-all .status-board-sealed .status-grid,
   body.route-characters-all .status-board-fallen .status-grid,
@@ -214,6 +322,18 @@ body.route-characters-all .status-board-retired .status-card:nth-child(1) {
 }
 
 @media (max-width: 720px) {
+  body.route-characters-all {
+    background-attachment: scroll !important;
+    background-position: center top !important;
+    background-size: auto 100vh !important;
+  }
+
+  body.route-characters-all .hall-divider {
+    width: min(92vw, 520px);
+    margin: -28px auto -36px;
+    opacity: 0.68;
+  }
+
   body.route-characters-all .status-card.character-card {
     min-height: 168px;
     padding: 28px 28px 30px !important;
