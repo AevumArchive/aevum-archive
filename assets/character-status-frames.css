@@ -441,10 +441,12 @@ body.route-characters-all .hall-card.character-card.status-card::after {
 body.route-characters-all .hall-card[hidden] { display: none !important; }
 
 body.route-characters-all .hall-card-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 3;
-  display: block;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 3 !important;
+  display: block !important;
+  width: auto !important;
+  height: auto !important;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%;
@@ -453,7 +455,7 @@ body.route-characters-all .hall-card-overlay {
 }
 
 body.route-characters-all .hall-card.is-active .hall-card-overlay {
-  display: none;
+  display: none !important;
 }
 
 body.route-characters-all .hall-card.is-sealed .hall-card-overlay {
@@ -464,7 +466,7 @@ body.route-characters-all .hall-card.is-sealed .hall-card-overlay {
     url("/aevum-archive/assets/hall-of-names/status-sealed-overlay.png");
   background-size: 42% auto, 112% 78%, 100% 100%, 100% 100%;
   background-position: center 40%, center 38%, center, center;
-  opacity: .82;
+  opacity: .96;
 }
 
 body.route-characters-all .hall-card.is-fallen .hall-card-overlay,
@@ -475,7 +477,7 @@ body.route-characters-all .hall-card.is-dead .hall-card-overlay {
     url("/aevum-archive/assets/hall-of-names/status-fallen-overlay.png");
   background-size: 42% auto, 112% 78%, 100% 100%;
   background-position: center 40%, center 38%, center;
-  opacity: .84;
+  opacity: .96;
 }
 
 body.route-characters-all .hall-card.is-retired .hall-card-overlay {
@@ -485,8 +487,8 @@ body.route-characters-all .hall-card.is-retired .hall-card-overlay {
 }
 
 body.route-characters-all .hall-card-media {
-  position: relative;
-  z-index: 2;
+  position: relative !important;
+  z-index: 2 !important;
   flex: 1 1 auto;
   min-height: 178px;
   display: grid;
