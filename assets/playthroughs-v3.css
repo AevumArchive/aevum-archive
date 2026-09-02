@@ -47,7 +47,6 @@ body.route-playthroughs::after {
 .route-playthroughs .playthrough-hero,
 .route-playthroughs .playthrough-overview,
 .route-playthroughs #current,
-.route-playthroughs .beefed-section-divider,
 .route-playthroughs #history,
 .route-playthroughs .footer {
   width: 100%;
@@ -83,9 +82,13 @@ body.route-playthroughs::after {
 
 .route-playthroughs .playthrough-hero::after { content: none; display: none; }
 
-.route-playthroughs .playthrough-hero > div {
+.route-playthroughs .playthrough-hero > div,
+.route-playthroughs .playthrough-hero .age-card {
   position: relative;
   z-index: 2;
+}
+
+.route-playthroughs .playthrough-hero > div {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -184,8 +187,8 @@ body.route-playthroughs::after {
   gap: 8px;
   margin-top: 16px;
 }
-.archive-page.route-playthroughs .playthrough-hero + .playthrough-overview.section::before,
-.archive-page.route-playthroughs .playthrough-overview.section + #current.section::before {
+.archive-page.route-playthroughs .hero + .section::before,
+.archive-page.route-playthroughs .section + .section::before {
   content: none !important;
   display: none !important;
 }
@@ -319,22 +322,12 @@ body.route-playthroughs::after {
 .route-playthroughs .playthrough-link strong { grid-column: 2; grid-row: 1; font-size: .87rem; }
 .route-playthroughs .playthrough-link small { grid-column: 2; grid-row: 2; font-size: .65rem; line-height: 1.25; }
 
-.route-playthroughs .beefed-section-divider {
-  width: min(760px, 60%);
-  height: 72px;
-  margin: 4px auto;
-  opacity: .78;
-  background: url("playthroughs-v3/playthroughs-section-divider.webp") center / contain no-repeat !important;
-}
-.route-playthroughs .beefed-section-divider::before,
-.route-playthroughs .beefed-section-divider::after { content: none !important; display: none !important; }
-
 .route-playthroughs #history {
   display: grid;
   grid-template-columns: 278px minmax(0, 1fr);
   gap: 18px;
   align-items: start;
-  margin-top: 2px;
+  margin-top: 28px;
 }
 .route-playthroughs #history .section-head {
   display: block;
@@ -389,7 +382,6 @@ body.route-playthroughs::after {
   .route-playthroughs .playthrough-hero,
   .route-playthroughs .playthrough-overview,
   .route-playthroughs #current,
-  .route-playthroughs .beefed-section-divider,
   .route-playthroughs #history,
   .route-playthroughs .footer { width: 100%; }
 }
