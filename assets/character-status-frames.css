@@ -126,7 +126,8 @@ body.route-characters-all .status-card.character-card.is-sealed::before {
     url("/aevum-archive/assets/hall-of-names/status-sealed-corner-locks.png"),
     url("/aevum-archive/assets/hall-of-names/status-sealed-overlay.png") !important;
   background-position: center, center, center, center !important;
-  background-size: clamp(78px, 30%, 112px) auto, 100% 100%, 100% 100%, 100% 100% !important;
+  background-size: clamp(62px, 20%, 78px) auto, 94% 90%, 98% 96%, 100% 100% !important;
+  opacity: 0.62 !important;
 }
 
 body.route-characters-all .status-card.character-card.is-active::before {
@@ -142,13 +143,15 @@ body.route-characters-all .status-card.character-card.is-fallen::before {
     url("/aevum-archive/assets/hall-of-names/status-fallen-chains.png"),
     url("/aevum-archive/assets/hall-of-names/status-fallen-overlay.png") !important;
   background-position: center, center, center !important;
-  background-size: clamp(72px, 28%, 104px) auto, 100% 100%, 100% 100% !important;
+  background-size: clamp(60px, 20%, 76px) auto, 94% 90%, 100% 100% !important;
+  opacity: 0.68 !important;
 }
 
 body.route-characters-all .status-card.character-card.is-retired::before {
   background-image: url("/aevum-archive/assets/hall-of-names/status-retired-drapery.png") !important;
   background-position: center !important;
   background-size: 100% 100% !important;
+  opacity: 0.90 !important;
 }
 
 body.route-characters-all .status-card.character-card::after {
@@ -280,15 +283,18 @@ body.route-characters-all .status-board-retired .status-card:nth-child(1) {
   }
 
   body.route-characters-all .status-card.character-card.is-sealed:hover::before {
+    opacity: 0.72 !important;
     filter: drop-shadow(0 0 6px rgba(154, 78, 255, 0.42)) drop-shadow(0 0 14px rgba(92, 38, 168, 0.24)) !important;
   }
 
   body.route-characters-all .status-card.character-card.is-dead:hover::before,
   body.route-characters-all .status-card.character-card.is-fallen:hover::before {
+    opacity: 0.78 !important;
     filter: drop-shadow(0 0 6px rgba(255, 60, 73, 0.38)) drop-shadow(0 0 14px rgba(138, 18, 27, 0.22)) !important;
   }
 
   body.route-characters-all .status-card.character-card.is-retired:hover::before {
+    opacity: 0.98 !important;
     filter: drop-shadow(0 0 6px rgba(211, 163, 92, 0.38)) drop-shadow(0 0 14px rgba(111, 75, 38, 0.22)) !important;
   }
 }
