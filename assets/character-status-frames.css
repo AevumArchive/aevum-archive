@@ -420,15 +420,12 @@ body.route-characters-all .hall-card.character-card.status-card::after {
 }
 
 body.route-characters-all .hall-card.character-card.status-card::before {
-  inset: 7px !important;
+  inset: -2px !important;
   width: auto !important;
   height: auto !important;
-  background:
-    linear-gradient(90deg, var(--hall-gold-soft), transparent 22%, transparent 78%, var(--hall-gold-soft)) top / 100% 1px no-repeat,
-    linear-gradient(90deg, var(--hall-gold-soft), transparent 22%, transparent 78%, var(--hall-gold-soft)) bottom / 100% 1px no-repeat,
-    linear-gradient(180deg, var(--hall-gold-soft), transparent 22%, transparent 78%, var(--hall-gold-soft)) left / 1px 100% no-repeat,
-    linear-gradient(180deg, var(--hall-gold-soft), transparent 22%, transparent 78%, var(--hall-gold-soft)) right / 1px 100% no-repeat !important;
-  opacity: .74 !important;
+  z-index: 2 !important;
+  background: url("/aevum-archive/assets/ui/master-pack/Round_02/012_Characters_Active_Record_Frame.png") center / 100% 100% no-repeat !important;
+  opacity: .9 !important;
 }
 
 body.route-characters-all .hall-card.character-card.status-card::after {
@@ -488,7 +485,7 @@ body.route-characters-all .hall-card.is-retired .hall-card-overlay {
 
 body.route-characters-all .hall-card-media {
   position: relative !important;
-  z-index: 2 !important;
+  z-index: 1 !important;
   flex: 1 1 auto;
   min-height: 178px;
   display: grid;
