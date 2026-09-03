@@ -420,19 +420,15 @@ body.route-characters-all .hall-card.character-card.status-card::after {
 }
 
 body.route-characters-all .hall-card.character-card.status-card::before {
-  inset: -2px !important;
-  width: auto !important;
-  height: auto !important;
-  z-index: 2 !important;
-  background: url("/aevum-archive/assets/ui/master-pack/Round_02/012_Characters_Active_Record_Frame.png") center / 100% 100% no-repeat !important;
-  opacity: .9 !important;
+  content: none !important;
+  display: none !important;
 }
 
 body.route-characters-all .hall-card.character-card.status-card::after {
   inset: auto 0 0 !important;
   width: 100% !important;
-  height: 40% !important;
-  background: linear-gradient(180deg, transparent, rgba(5,5,10,.96) 28%, rgba(5,5,10,.99)) !important;
+  height: 48% !important;
+  background: linear-gradient(180deg, transparent, rgba(5,5,10,.82) 34%, rgba(5,5,10,.98)) !important;
 }
 
 body.route-characters-all .hall-card[hidden] { display: none !important; }
@@ -491,7 +487,7 @@ body.route-characters-all .hall-card-media {
   display: grid;
   place-items: center;
   padding: 18px;
-  border-bottom: 1px solid rgba(198, 141, 66, .22);
+  border-bottom: 0;
   background:
     radial-gradient(circle at 50% 44%, rgba(141, 88, 170, .14), transparent 43%),
     linear-gradient(180deg, rgba(255,255,255,.02), rgba(0,0,0,.08));
@@ -533,7 +529,7 @@ body.route-characters-all .hall-card-copy {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  background: linear-gradient(180deg, rgba(7,7,12,.8), rgba(5,5,9,.98));
+  background: transparent;
 }
 
 body.route-characters-all .hall-card-copy strong {
