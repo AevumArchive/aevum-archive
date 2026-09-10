@@ -234,14 +234,26 @@
   border-radius: 14px;
 }
 
-/* Character-specific portrait frames use explicit image overlays.
-   This prevents the generic astral pseudo-frame from leaking onto OBAMA. */
+/* Character-specific portrait frames share the exact aspect ratio of their
+   overlay assets. The artwork fills that stage without stretching the frame. */
 .route-characters-faaram .faaram-aura,
 .route-characters-obama .obama-aura {
+  position: relative;
+  margin-inline: auto;
   padding: 0 !important;
   overflow: hidden !important;
   border-radius: 14px !important;
   background: transparent !important;
+}
+
+.route-characters-faaram .faaram-aura {
+  width: min(100%, 620px);
+  aspect-ratio: 2 / 3;
+}
+
+.route-characters-obama .obama-aura {
+  width: min(100%, 680px);
+  aspect-ratio: 16 / 21;
 }
 
 .route-characters-faaram .faaram-aura::before,
@@ -254,14 +266,29 @@
   box-shadow: none !important;
 }
 
+.route-characters-faaram .portrait-artwork,
+.route-characters-obama .portrait-artwork {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  max-height: none !important;
+  border-radius: 14px !important;
+  object-fit: cover !important;
+  object-position: center;
+}
+
 .route-characters-faaram .portrait-frame-overlay,
 .route-characters-obama .portrait-frame-overlay {
   position: absolute !important;
   inset: 0 !important;
   z-index: 4 !important;
+  display: block !important;
   width: 100% !important;
   height: 100% !important;
-  object-fit: fill !important;
+  max-height: none !important;
+  object-fit: contain !important;
   border: 0 !important;
   border-radius: 0 !important;
   box-shadow: none !important;
