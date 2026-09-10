@@ -1,0 +1,340 @@
+/* World Atlas and Avalon regional maps.
+   The supplied PNGs stay decorative; lore, headings and navigation remain HTML. */
+
+.route-lore-maps {
+  --atlas-gold: #d0a15a;
+  --atlas-gold-soft: rgba(208, 161, 90, .34);
+  --atlas-violet: rgba(129, 70, 165, .22);
+}
+
+.route-lore-maps main.page {
+  width: min(1500px, calc(100% - 40px));
+}
+
+.atlas-hero {
+  position: relative;
+  min-height: 270px;
+  display: grid;
+  place-items: center;
+  margin: 12px 0 8px;
+  overflow: hidden;
+  border: 1px solid rgba(208, 161, 90, .18);
+  background:
+    radial-gradient(circle at 50% 28%, rgba(109, 56, 141, .18), transparent 30rem),
+    linear-gradient(180deg, rgba(8, 7, 14, .72), rgba(6, 6, 11, .28));
+}
+
+.atlas-title-lockup {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 620px);
+  min-height: 250px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.atlas-title-ornament {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  width: min(100%, 540px);
+  max-width: 100%;
+  height: auto;
+  transform: translate(-50%, -50%);
+  opacity: .82;
+  pointer-events: none;
+  user-select: none;
+}
+
+.atlas-title-copy {
+  position: relative;
+  z-index: 1;
+  max-width: 360px;
+  padding: 28px 32px;
+}
+
+.atlas-title-copy .eyebrow {
+  margin-bottom: 8px;
+}
+
+.atlas-title-copy h1 {
+  max-width: none;
+  margin: 0;
+  color: #f0d29d;
+  font-size: clamp(2.6rem, 5vw, 4.5rem);
+  font-weight: 500;
+  line-height: .96;
+  letter-spacing: .04em;
+  text-shadow: 0 5px 24px rgba(0, 0, 0, .92);
+}
+
+.atlas-title-copy p:last-child {
+  margin: 10px 0 0;
+  color: #cbbbc6;
+  font-size: .82rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.atlas-compass {
+  position: absolute;
+  top: 24px;
+  right: clamp(20px, 7vw, 108px);
+  z-index: 1;
+  width: clamp(120px, 15vw, 210px);
+  max-width: 22%;
+  height: auto;
+  opacity: .5;
+  filter: drop-shadow(0 0 18px rgba(144, 77, 184, .22));
+  pointer-events: none;
+  user-select: none;
+}
+
+.atlas-framed-copy {
+  position: relative;
+  width: min(100%, 640px);
+  min-height: 280px;
+  display: grid;
+  place-items: center;
+  margin: 18px auto 4px;
+  isolation: isolate;
+}
+
+.atlas-section-frame {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  z-index: -1;
+  width: min(100%, 540px);
+  max-width: 100%;
+  height: auto;
+  transform: translate(-50%, -50%);
+  opacity: .78;
+  pointer-events: none;
+  user-select: none;
+}
+
+.atlas-framed-copy-content {
+  width: min(78%, 410px);
+  padding: 34px 20px;
+  text-align: center;
+}
+
+.atlas-framed-copy-content h2 {
+  margin: 4px 0 10px;
+  font-size: clamp(1.75rem, 3vw, 2.45rem);
+}
+
+.atlas-framed-copy-content p:last-child {
+  margin: 0;
+  color: var(--muted);
+  font-size: .98rem;
+  line-height: 1.6;
+}
+
+.atlas-divider {
+  display: block;
+  width: min(330px, 46%);
+  max-width: 100%;
+  height: auto;
+  margin: 2px auto 18px;
+  opacity: .72;
+  pointer-events: none;
+  user-select: none;
+}
+
+.atlas-map-section {
+  position: relative;
+  margin-top: 8px;
+}
+
+.atlas-map-stage {
+  position: relative;
+  padding-inline: clamp(0px, 5.5vw, 86px);
+}
+
+.atlas-map-figure {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+}
+
+.atlas-map-image {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border: 1px solid rgba(208, 161, 90, .42);
+  background: #05060c;
+  box-shadow:
+    0 24px 70px rgba(0, 0, 0, .5),
+    0 0 0 5px rgba(8, 7, 13, .72),
+    0 0 0 6px rgba(208, 161, 90, .12);
+}
+
+.atlas-map-figure figcaption {
+  max-width: 920px;
+  margin: 16px auto 0;
+  color: #9d909b;
+  font-size: .88rem;
+  line-height: 1.55;
+  text-align: center;
+}
+
+.atlas-side-banner {
+  position: absolute;
+  top: 17%;
+  z-index: 1;
+  width: clamp(44px, 4.6vw, 68px);
+  max-width: 5%;
+  height: auto;
+  opacity: .28;
+  filter: brightness(.88) saturate(.9);
+  pointer-events: none;
+  user-select: none;
+}
+
+.atlas-side-banner.left {
+  left: 7px;
+}
+
+.atlas-side-banner.right {
+  right: 7px;
+}
+
+.atlas-record-note {
+  max-width: 940px;
+  margin: 28px auto 0;
+  padding: 20px 24px;
+  border: 1px solid rgba(208, 161, 90, .22);
+  background:
+    radial-gradient(circle at 8% 50%, rgba(129, 70, 165, .12), transparent 16rem),
+    rgba(8, 7, 13, .82);
+  text-align: center;
+}
+
+.atlas-record-note h2 {
+  margin: 3px 0 8px;
+}
+
+.atlas-record-note p:last-child {
+  margin: 0;
+  color: var(--muted);
+  font-size: .98rem;
+  line-height: 1.6;
+}
+
+.atlas-known-links {
+  margin-top: 26px;
+}
+
+.atlas-known-links .section-head {
+  margin-bottom: 12px;
+}
+
+.avalon-map-section {
+  overflow: hidden;
+}
+
+.avalon-map-section .atlas-framed-copy {
+  margin-top: 0;
+}
+
+.avalon-map-stage {
+  width: min(100%, 1080px);
+  margin: 0 auto;
+}
+
+.avalon-map-stage .atlas-map-image {
+  border-color: rgba(208, 161, 90, .38);
+}
+
+@media (max-width: 1199px) {
+  .atlas-map-stage {
+    padding-inline: 0;
+  }
+
+  .atlas-side-banner {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .route-lore-maps main.page {
+    width: calc(100% - 20px);
+  }
+
+  .atlas-hero {
+    min-height: 220px;
+    margin-top: 6px;
+  }
+
+  .atlas-title-lockup {
+    min-height: 210px;
+  }
+
+  .atlas-title-ornament {
+    width: min(118%, 480px);
+    opacity: .68;
+  }
+
+  .atlas-title-copy {
+    max-width: 300px;
+    padding: 28px 20px;
+  }
+
+  .atlas-title-copy h1 {
+    font-size: clamp(2.6rem, 13vw, 4rem);
+  }
+
+  .atlas-title-copy p:last-child {
+    font-size: .75rem;
+    letter-spacing: .14em;
+  }
+
+  .atlas-compass {
+    top: 10px;
+    right: 8px;
+    width: 92px;
+    max-width: 28%;
+    opacity: .22;
+  }
+
+  .atlas-framed-copy {
+    min-height: 0;
+    margin: 16px auto 14px;
+    padding: 20px 18px;
+    border: 1px solid rgba(208, 161, 90, .25);
+    background: rgba(8, 7, 13, .82);
+  }
+
+  .atlas-section-frame {
+    display: none;
+  }
+
+  .atlas-framed-copy-content {
+    width: 100%;
+    padding: 0;
+  }
+
+  .atlas-divider {
+    width: min(250px, 68%);
+    margin-bottom: 13px;
+  }
+
+  .atlas-map-image {
+    box-shadow:
+      0 16px 38px rgba(0, 0, 0, .46),
+      0 0 0 3px rgba(8, 7, 13, .72);
+  }
+
+  .atlas-map-figure figcaption {
+    font-size: .8rem;
+    text-align: left;
+  }
+
+  .atlas-record-note {
+    margin-top: 22px;
+    padding: 18px;
+    text-align: left;
+  }
+}
