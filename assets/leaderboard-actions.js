@@ -1,4 +1,63 @@
 (() => {
+  const number = new Intl.NumberFormat('en-US');
+  const roman = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X'];
+  const parsePower = (node) => Number((node?.textContent || '0').replace(/[^\d]/g, '')) || 0;
+  const cardList = document.querySelector('.route-leaderboard .global-ranking');
+  const powerLedger = document.querySelector('.route-leaderboard .power-ledger-table');
+  const rankedCards = [...document.querySelectorAll('.route-leaderboard .global-rank-card')]
+    .map((card) => ({
+      card,
+      id: card.dataset.archiveCharacterId,
+      powerLevel: parsePower(card.querySelector('.global-power [data-archive-field="powerLevel"]'))
+    }))
+    .sort((left, right) => right.powerLevel - left.powerLevel);
+
+  rankedCards.forEach(({ card, id, powerLevel }, index) => {
+    const rank = index + 1;
+    [...card.classList].filter((name) => /^rank-\d+$/.test(name)).forEach((name) => card.classList.remove(name));
+    card.classList.add('rank-' + rank);
+    card.id = 'rank-' + rank;
+    const rankNumber = card.querySelector('.global-rank-number');
+    const rankLabel = card.querySelector('.global-rank-head .eyebrow');
+    if (rankNumber) rankNumber.textContent = roman[index];
+    if (rankLabel) rankLabel.textContent = 'Global #' + rank;
+    if (cardList) cardList.append(card);
+
+    const row = document.querySelector('.power-ledger-row[data-archive-character-id="' + id + '"]');
+    if (row) {
+      row.href = '#rank-' + rank;
+      row.classList.remove('near-rival');
+      row.style.setProperty('--relative', (powerLevel / Math.max(1, rankedCards[0].powerLevel) * 100).toFixed(1) + '%');
+      const ledgerRank = row.querySelector('span');
+      if (ledgerRank) ledgerRank.textContent = roman[index];
+    }
+  });
+
+  if (powerLedger) {
+    const rows = new Map([...powerLedger.querySelectorAll('.power-ledger-row')]
+      .map((row) => [row.dataset.archiveCharacterId, row]));
+    const primaryCliff = powerLedger.querySelector('.power-cliff:not(.secondary):not(.near-rivals)');
+    const secondaryCliff = powerLedger.querySelector('.power-cliff.secondary');
+    const nearCliff = powerLedger.querySelector('.power-cliff.near-rivals');
+    const bottomGap = rankedCards.length > 9 ? rankedCards[8].powerLevel - rankedCards[9].powerLevel : Infinity;
+    const ordered = [];
+
+    rankedCards.forEach(({ id }, index) => {
+      const rank = index + 1;
+      const row = rows.get(id);
+      if (row) ordered.push(row);
+      if (rank === 2 && primaryCliff) ordered.push(primaryCliff);
+      if (rank === 4 && secondaryCliff) ordered.push(secondaryCliff);
+      if (rank === 9 && nearCliff && bottomGap <= 1000) {
+        const output = nearCliff.querySelector('small');
+        if (output) output.textContent = 'Only ' + number.format(bottomGap) + ' Power Level separates Global IX and X';
+        ordered.push(nearCliff);
+      }
+    });
+
+    powerLedger.replaceChildren(...ordered);
+  }
+
   const cards = [...document.querySelectorAll('.route-leaderboard .global-rank-card')];
   if (!cards.length || !('HTMLDialogElement' in window)) return;
 

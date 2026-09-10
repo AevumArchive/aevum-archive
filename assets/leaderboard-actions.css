@@ -43,7 +43,7 @@
 .route-leaderboard .power-cliff.near-rivals span { color: #ffb16d; }
 .route-leaderboard .power-ledger-row.near-rival { background: linear-gradient(90deg, rgba(255,125,66,.025), transparent 65%); }
 
-.route-leaderboard .global-rank-card.rank-10 {
+.route-leaderboard .global-rank-card[data-archive-character-id="rokuen"] {
   --rank-accent: 255 105 55;
   background:
     radial-gradient(circle at 12% 3%, rgba(255,92,38,.26), transparent 22rem),
@@ -51,7 +51,7 @@
     repeating-linear-gradient(116deg, transparent 0 48px, rgba(255,112,47,.025) 49px 50px),
     linear-gradient(145deg,#26110c,#080707 72%);
 }
-.route-leaderboard .global-rank-card.rank-10::after {
+.route-leaderboard .global-rank-card[data-archive-character-id="rokuen"]::after {
   background: radial-gradient(circle at 82% 18%, rgba(255,106,45,.09), transparent 2px 12px, rgba(255,171,75,.035) 13px 14px, transparent 15px 38px);
   background-size: 76px 76px;
   opacity: .38;

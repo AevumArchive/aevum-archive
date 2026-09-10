@@ -377,6 +377,83 @@ body.route-playthroughs::after {
   font-size: .7rem;
 }
 
+/* Preserve the reference composition on wide desktop screens instead of
+   stretching a 1400px layout horizontally while leaving its height frozen. */
+@media (min-width: 1500px) {
+  .route-playthroughs .page {
+    width: min(1800px, calc(100vw - 96px));
+    padding-top: 20px;
+  }
+
+  .route-playthroughs .playthrough-hero {
+    height: clamp(350px, 19vw, 410px);
+    grid-template-columns: minmax(0, 1.52fr) minmax(430px, 1fr);
+  }
+
+  .route-playthroughs .playthrough-hero > div {
+    padding: 34px clamp(42px, 3vw, 58px) 30px;
+  }
+
+  .route-playthroughs .playthrough-hero h1 {
+    width: 430px;
+    font-size: clamp(3.7rem, 3.25vw, 4.35rem);
+  }
+
+  .route-playthroughs .playthrough-hero > div > .lede {
+    max-width: 540px;
+    font-size: .98rem;
+  }
+
+  .route-playthroughs .playthrough-hero .age-card {
+    padding: 112px clamp(38px, 2.7vw, 52px) 34px;
+  }
+
+  .route-playthroughs .playthrough-hero .age-card::before {
+    top: 22px;
+    width: 138px;
+    height: 104px;
+  }
+
+  .route-playthroughs .playthrough-hero .age-card h2 { font-size: 2rem; }
+  .route-playthroughs .playthrough-hero .age-card .lede { font-size: .92rem; }
+
+  .route-playthroughs .playthrough-overview.section {
+    gap: 12px;
+    margin-top: 18px;
+  }
+
+  .route-playthroughs .playthrough-jump {
+    min-height: 82px;
+    padding: 14px 18px;
+  }
+
+  .route-playthroughs #current { margin-top: 12px; }
+  .route-playthroughs #current .section-head { min-height: 74px; padding: 8px 14px 10px; }
+  .route-playthroughs #current .section-head h2 { font-size: 2.05rem; }
+
+  .route-playthroughs .playthrough-primary {
+    min-height: 238px;
+    padding: 26px 58px 16px;
+  }
+
+  .route-playthroughs .playthrough-primary-head h2 { font-size: 1.95rem; }
+  .route-playthroughs .playthrough-primary > p { max-width: 640px; font-size: .84rem; }
+  .route-playthroughs .playthrough-link { min-height: 55px; padding: 9px 14px; }
+
+  .route-playthroughs #history {
+    grid-template-columns: 320px minmax(0, 1fr);
+    gap: 28px;
+    margin-top: 34px;
+  }
+
+  .route-playthroughs #history .section-head h2 { max-width: 300px; font-size: 2.45rem; }
+  .route-playthroughs #history .section-head > p { font-size: .78rem; }
+  .route-playthroughs .playthrough-ledger { gap: 7px; }
+  .route-playthroughs .playthrough-row { min-height: 56px; padding: 8px 14px; }
+  .route-playthroughs .playthrough-row-copy strong { font-size: 1rem; }
+  .route-playthroughs .playthrough-row-copy small { font-size: .69rem; }
+  .route-playthroughs .footer { margin-top: 18px; }
+}
 @media (max-width: 1100px) {
   .route-playthroughs .page { width: calc(100% - 28px); }
   .route-playthroughs .playthrough-hero,
