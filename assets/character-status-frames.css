@@ -603,6 +603,11 @@ body.route-characters-all .hall-card:focus-visible {
   outline-color: rgba(249, 218, 158, .16) !important;
 }
 
+body.route-characters-all .hall-card.character-card.status-card.is-sealed,
+body.route-characters-all .hall-card.character-card.status-card.is-retired {
+  border-color: transparent !important;
+}
+
 body.route-characters-all .hall-card:focus-visible {
   outline: 2px solid rgba(234, 181, 100, .68) !important;
   outline-offset: 3px;
