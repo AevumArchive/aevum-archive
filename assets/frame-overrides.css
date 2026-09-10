@@ -234,8 +234,8 @@
   border-radius: 14px;
 }
 
-/* Character-specific portrait frames share the exact aspect ratio of their
-   overlay assets. The artwork fills that stage without stretching the frame. */
+/* Character-specific portrait frames use a larger outer stage so the ornate
+   overlay surrounds the artwork instead of covering its outer edges. */
 .route-characters-faaram .faaram-aura,
 .route-characters-obama .obama-aura {
   position: relative;
@@ -247,12 +247,12 @@
 }
 
 .route-characters-faaram .faaram-aura {
-  width: min(100%, 420px);
+  width: min(100%, 806px);
   aspect-ratio: 2 / 3;
 }
 
 .route-characters-obama .obama-aura {
-  width: min(100%, 420px);
+  width: min(100%, 884px);
   aspect-ratio: 16 / 21;
 }
 
@@ -268,12 +268,15 @@
 
 .route-characters-faaram .portrait-artwork,
 .route-characters-obama .portrait-artwork {
-  position: relative;
+  position: absolute;
+  left: 50%;
+  top: 50%;
   z-index: 2;
   display: block;
-  width: 100% !important;
-  height: 100% !important;
+  width: 76.923% !important;
+  height: 76.923% !important;
   max-height: none !important;
+  transform: translate(-50%, -50%);
   border-radius: 14px !important;
   object-fit: cover !important;
   object-position: center;
