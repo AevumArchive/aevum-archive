@@ -92,8 +92,8 @@
 
 .atlas-framed-copy {
   position: relative;
-  width: min(100%, 640px);
-  min-height: 280px;
+  width: min(100%, 760px);
+  min-height: 350px;
   display: grid;
   place-items: center;
   margin: 18px auto 4px;
@@ -104,7 +104,7 @@
   position: absolute;
   inset: 50% auto auto 50%;
   z-index: -1;
-  width: min(100%, 540px);
+  width: min(100%, 700px);
   max-width: 100%;
   height: auto;
   transform: translate(-50%, -50%);
@@ -114,21 +114,22 @@
 }
 
 .atlas-framed-copy-content {
-  width: min(78%, 410px);
-  padding: 34px 20px;
+  width: min(76%, 520px);
+  padding: 46px 24px;
   text-align: center;
 }
 
 .atlas-framed-copy-content h2 {
   margin: 4px 0 10px;
-  font-size: clamp(1.75rem, 3vw, 2.45rem);
+  font-size: clamp(1.65rem, 2.6vw, 2.25rem);
+  line-height: 1.08;
 }
 
 .atlas-framed-copy-content p:last-child {
   margin: 0;
   color: var(--muted);
-  font-size: .98rem;
-  line-height: 1.6;
+  font-size: .94rem;
+  line-height: 1.48;
 }
 
 .atlas-divider {
