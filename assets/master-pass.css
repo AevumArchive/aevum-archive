@@ -69,6 +69,18 @@
 .ichiro-likeness-card figcaption { margin: 14px auto 2px; color: var(--muted); text-align: center; }
 .route-npcs-ichiro .sealed-portrait-frame > span { display: none !important; }
 
+.convergence-likeness-note {
+  max-width: 720px;
+  margin: 14px auto 0;
+  padding-top: 12px;
+  border-top: 1px solid rgba(194, 114, 224, .18);
+  color: var(--muted);
+  font-size: .86rem;
+  font-style: italic;
+  text-align: center;
+}
+.convergence-likeness-note::before { content: "✦"; margin-right: 8px; color: #d79be8; font-style: normal; }
+
 .event-stage-list { counter-reset: stage; display: grid; gap: 12px; padding: 0; list-style: none; }
 .event-stage-list li { position: relative; padding: 18px 18px 18px 66px; border: 1px solid rgba(188, 116, 224, .2); border-radius: 16px; background: rgba(20, 13, 27, .74); }
 .event-stage-list li::before { counter-increment: stage; content: counter(stage, decimal-leading-zero); position: absolute; left: 18px; top: 18px; color: #e5b766; font: 800 1rem/1 Georgia, serif; }
