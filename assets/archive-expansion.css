@@ -446,3 +446,42 @@
   .prestige-achievement { transition: none; }
   .prestige-achievement:hover { transform: none; }
 }
+
+/* Distinguished NPC records -------------------------------------------- */
+.route-npcs .npc-compact-grid .npc-feature {
+  min-height: 196px;
+  align-content: center;
+  padding-right: 34%;
+  overflow: hidden;
+  border-color: rgba(222, 161, 255, .34);
+  box-shadow: inset 0 0 42px rgba(81, 39, 113, .18), 0 14px 38px rgba(0, 0, 0, .22);
+}
+.route-npcs .npc-compact-grid .npc-feature-veyr {
+  background:
+    linear-gradient(90deg, rgba(12, 10, 20, .98) 0 52%, rgba(12, 10, 20, .84) 70%, rgba(12, 10, 20, .18)),
+    url("/aevum-archive/assets/images/veyr.png") 88% 22% / 54% auto no-repeat;
+}
+.route-npcs .npc-compact-grid .npc-feature-lilith {
+  border-color: rgba(211, 72, 113, .38);
+  background:
+    linear-gradient(90deg, rgba(18, 7, 17, .98) 0 52%, rgba(18, 7, 17, .84) 70%, rgba(18, 7, 17, .18)),
+    url("/aevum-archive/assets/images/lilith.png") 88% 18% / 52% auto no-repeat;
+}
+.route-npcs .npc-compact-grid .npc-feature-veyr .realm-symbol {
+  color: #8ce4e5;
+  border-color: rgba(117, 215, 220, .38);
+  box-shadow: 0 0 22px rgba(117, 215, 220, .12);
+}
+.route-npcs .npc-compact-grid .npc-feature-lilith .realm-symbol {
+  color: #ff9dbb;
+  border-color: rgba(220, 78, 120, .4);
+  box-shadow: 0 0 22px rgba(220, 78, 120, .16);
+}
+.route-npcs .npc-compact-grid .npc-feature h3 { font-size: clamp(1.25rem, 2vw, 1.65rem); }
+
+@media (max-width: 760px) {
+  .route-npcs .npc-compact-grid .npc-feature {
+    min-height: 180px;
+    padding-right: 28%;
+  }
+}
