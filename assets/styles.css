@@ -864,6 +864,7 @@ h3 { font-size: 1.35rem; }
 .faaram-aura::before { background: conic-gradient(from 0deg, rgba(90, 52, 255, .18), rgba(191, 119, 255, .72), rgba(64, 35, 145, .2), rgba(221, 177, 255, .56), rgba(90, 52, 255, .18)); box-shadow: 0 0 44px rgba(153, 92, 255, .42); }
 .faaram-aura::after { border: 1px solid rgba(196, 167, 255, .24); box-shadow: inset 0 0 70px rgba(49, 27, 102, .55), 0 0 68px rgba(137, 85, 255, .35); }
 .obama-portrait-card::before { background: radial-gradient(circle at 50% 16%, rgba(255, 188, 77, .38), transparent 48%), radial-gradient(circle at 78% 68%, rgba(190, 45, 32, .28), transparent 46%); }
+.route-characters-obama .obama-portrait-card .inline-artwork img { max-height: none; }
 .obama-aura::before { background: conic-gradient(from 0deg, rgba(255, 186, 73, .2), rgba(255, 216, 116, .78), rgba(120, 34, 28, .24), rgba(255, 82, 59, .45), rgba(255, 186, 73, .2)); box-shadow: 0 0 48px rgba(255, 178, 66, .38); }
 .obama-aura::after { border: 1px solid rgba(255, 213, 125, .26); box-shadow: inset 0 0 70px rgba(77, 32, 20, .52), 0 0 72px rgba(255, 179, 57, .28); }
 @keyframes auraSpin { to { transform: rotate(360deg); } }
