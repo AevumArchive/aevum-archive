@@ -14,22 +14,18 @@
   const TARGET = `${ROOT}/npcs/willy.html`;
 
   const FOUND_KEY = 'aevum_willy_found';
-  const TAB_KEY = `aevum_willy_shown_${location.pathname}`;
-  const discovered = localStorage.getItem(FOUND_KEY) === '1';
+  const TAB_KEY = `aevum_willy_first_visit_v2_${location.pathname}`;
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // One appearance max per page per tab. A reload may roll again.
+  // Guaranteed once per character page and tab. No random success roll.
   if (sessionStorage.getItem(TAB_KEY) === '1') return;
-
-  const settings = discovered
-    ? { chance: 0.42, attempts: 5, first: [55, 145], retry: [80, 180] }
-    : { chance: 0.28, attempts: 4, first: [70, 190], retry: [95, 220] };
+  const APPEAR_AFTER = [30, 60];
 
   const placements = [
-    { top: '17%', right: '-1.5%', width: '15vw', opacity: 0.072, flip: false },
-    { top: '48%', left: '-2.8%', width: '13vw', opacity: 0.062, flip: true },
-    { bottom: '3%', right: '5%', width: '12vw', opacity: 0.052, flip: false },
-    { top: '31%', right: '0.5%', width: '10vw', opacity: 0.058, flip: false }
+    { top: '17%', right: '-1.5%', width: '17vw', opacity: 0.14, flip: false },
+    { top: '48%', left: '-2.8%', width: '15vw', opacity: 0.12, flip: true },
+    { bottom: '3%', right: '5%', width: '14vw', opacity: 0.11, flip: false },
+    { top: '31%', right: '0.5%', width: '13vw', opacity: 0.12, flip: false }
   ];
 
   const random = (min, max) => min + Math.random() * (max - min);
@@ -79,7 +75,7 @@
     if (p.bottom) el.style.setProperty('--willy-bottom', p.bottom);
     el.style.setProperty('--willy-width', p.width);
     el.style.setProperty('--willy-opacity', String(p.opacity));
-    el.style.setProperty('--willy-fade', `${random(9, 14).toFixed(1)}s`);
+    el.style.setProperty('--willy-fade', `${random(4, 7).toFixed(1)}s`);
     el.style.transform = p.flip ? 'scaleX(-1)' : 'none';
   }
 
@@ -102,7 +98,7 @@
       }, random(8000, 17000));
     }
 
-    const visibleFor = random(22000, 42000);
+    const visibleFor = random(30000, 45000);
     setTimeout(() => {
       watcher.classList.add('is-leaving');
       watcher.classList.remove('is-visible');
@@ -110,19 +106,8 @@
     }, visibleFor);
   }
 
-  let attempt = 0;
-  function roll() {
-    attempt += 1;
-    if (Math.random() < settings.chance) {
-      show();
-      return;
-    }
-    if (attempt >= settings.attempts) return;
-    setTimeout(roll, seconds(settings.retry));
-  }
-
   // Do not start the clock until the page is actually visible.
-  const start = () => setTimeout(roll, seconds(settings.first));
+  const start = () => setTimeout(show, seconds(APPEAR_AFTER));
   if (document.visibilityState === 'visible') start();
   else document.addEventListener('visibilitychange', function onVisible() {
     if (document.visibilityState !== 'visible') return;

@@ -31,12 +31,11 @@
   function scheduleReveal(el) {
     const wait = 5000 + Math.random() * 12000;
     setTimeout(() => {
-      // Most checks do nothing. The page should remain hard to read.
-      if (Math.random() < .22) {
+      if (Math.random() < .38) {
         const current = el.textContent;
         el.textContent = el.dataset.reveal;
         el.classList.add('is-revealed');
-        const duration = 260 + Math.random() * 520;
+        const duration = 420 + Math.random() * 680;
         setTimeout(() => {
           el.classList.remove('is-revealed');
           el.textContent = current;
@@ -50,7 +49,7 @@
 
   // Rarely corrupt the browser tab title for a moment.
   const originalTitle = document.title;
-  const titlePool = ['WILLY', '██████', 'DO NOT STAY', 'Aevum Archive', 'HE IS STILL HERE'];
+  const titlePool = ['WILLY', '██████', 'FAARAM I SEE YOU', 'OBAMA I SEE YOU TOO', 'DO NOT TURN AROUND', 'HE IS STILL HERE'];
   function titleEvent() {
     setTimeout(() => {
       if (Math.random() < .18) {
