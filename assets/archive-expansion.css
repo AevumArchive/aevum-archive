@@ -459,13 +459,13 @@
 .route-npcs .npc-compact-grid .npc-feature-veyr {
   background:
     linear-gradient(90deg, rgba(12, 10, 20, .98) 0 52%, rgba(12, 10, 20, .84) 70%, rgba(12, 10, 20, .18)),
-    url("/aevum-archive/assets/images/veyr.png") 88% 22% / 54% auto no-repeat;
+    url("/aevum-archive/assets/images/veyr.png") 100% 22% / 54% auto no-repeat;
 }
 .route-npcs .npc-compact-grid .npc-feature-lilith {
   border-color: rgba(211, 72, 113, .38);
   background:
     linear-gradient(90deg, rgba(18, 7, 17, .98) 0 52%, rgba(18, 7, 17, .84) 70%, rgba(18, 7, 17, .18)),
-    url("/aevum-archive/assets/images/lilith.png") 88% 18% / 52% auto no-repeat;
+    url("/aevum-archive/assets/images/lilith.png") 100% 18% / 52% auto no-repeat;
 }
 .route-npcs .npc-compact-grid .npc-feature-veyr .realm-symbol {
   color: #8ce4e5;
