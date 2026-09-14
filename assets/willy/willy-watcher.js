@@ -11,7 +11,8 @@
   const ROOT = '/aevum-archive';
   const ASSET = `${ROOT}/assets/willy/willy-watcher-fade.png`;
   const EYES = `${ROOT}/assets/willy/willy-eyes.png`;
-  const TARGET = `${ROOT}/npcs/willy.html`;
+  const source = body.classList.contains('route-characters-faaram') ? 'faaram' : 'obama';
+  const TARGET = `${ROOT}/npcs/willy.html?from=${source}`;
 
   const FOUND_KEY = 'aevum_willy_found';
   const TAB_KEY = `aevum_willy_first_visit_v2_${location.pathname}`;

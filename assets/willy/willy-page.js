@@ -3,6 +3,15 @@
 
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const pool = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#?%&§∆ΩΞЖ░▒▓';
+  const requestedSource = new URLSearchParams(location.search).get('from');
+  const source = requestedSource === 'faaram' || requestedSource === 'obama'
+    ? requestedSource
+    : 'direct';
+
+  document.body.dataset.willySource = source;
+  document.querySelectorAll('[data-willy-source]').forEach(message => {
+    message.hidden = message.dataset.willySource !== source;
+  });
 
   function scrambleText(el) {
     const source = el.dataset.text || el.textContent || '';
