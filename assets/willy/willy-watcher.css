@@ -1,0 +1,79 @@
+/* Aevum Archive — Willy watcher easter egg
+   Intended for characters/faaram.html and characters/obama.html only.
+*/
+
+.willy-watcher {
+  --willy-opacity: 0.075;
+  position: fixed;
+  top: var(--willy-top, 22%);
+  left: var(--willy-left, auto);
+  right: var(--willy-right, 1.5%);
+  bottom: var(--willy-bottom, auto);
+  width: clamp(130px, var(--willy-width, 14vw), 270px);
+  aspect-ratio: 1 / 1;
+  z-index: 4;
+  opacity: 0;
+  pointer-events: none;
+  cursor: default;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: opacity var(--willy-fade, 11s) ease;
+  filter: saturate(.72) brightness(.72) contrast(1.06);
+  mix-blend-mode: normal;
+  isolation: isolate;
+}
+
+.willy-watcher.is-visible {
+  opacity: var(--willy-opacity);
+  pointer-events: auto;
+}
+
+.willy-watcher.is-leaving {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.willy-watcher img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  pointer-events: none;
+}
+
+.willy-watcher__eyes {
+  opacity: 0;
+  transition: opacity 220ms linear;
+  filter: brightness(1.4) saturate(1.25);
+}
+
+.willy-watcher.is-looking .willy-watcher__eyes {
+  opacity: .72;
+}
+
+/* Keep the easter egg from looking like an ordinary link. */
+.willy-watcher,
+.willy-watcher:hover,
+.willy-watcher:focus,
+.willy-watcher:active {
+  text-decoration: none;
+  outline: none;
+}
+
+@media (max-width: 760px) {
+  .willy-watcher {
+    width: clamp(110px, 30vw, 190px);
+    --willy-opacity: 0.065;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .willy-watcher {
+    transition-duration: 1.2s;
+  }
+  .willy-watcher__eyes {
+    display: none;
+  }
+}

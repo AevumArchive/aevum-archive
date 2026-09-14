@@ -11,7 +11,7 @@
   const summary = document.querySelector('#hall-results-summary');
   const empty = document.querySelector('#hall-empty');
   const pageSize = 10;
-  const statusOrder = { active: 0, sealed: 1, fallen: 2, retired: 3 };
+  const statusOrder = { active: 0, sealed: 1, lost: 2, fallen: 3, retired: 4 };
 
   let activeFilter = 'all';
   let activePage = 1;

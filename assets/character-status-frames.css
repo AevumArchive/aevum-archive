@@ -14,6 +14,7 @@ body.route-characters-all {
   background-repeat: no-repeat !important;
   background-size: cover !important;
   background-attachment: fixed !important;
+  overflow-x: hidden;
 }
 
 body.route-characters-all::before,
@@ -345,6 +346,7 @@ body.route-characters-all .hall-view.is-active {
 }
 
 body.route-characters-all .hall-filter[data-filter="active"].is-active { color: #91e5a4; border-color: rgba(95,205,125,.5); }
+body.route-characters-all .hall-filter[data-filter="lost"].is-active { color: #9de7ee; border-color: rgba(101,196,211,.56); }
 body.route-characters-all .hall-filter[data-filter="fallen"].is-active { color: #ff8a91; border-color: rgba(224,61,70,.55); }
 body.route-characters-all .hall-filter[data-filter="retired"].is-active { color: #e9bd72; border-color: rgba(210,157,71,.5); }
 
@@ -491,6 +493,19 @@ body.route-characters-all .hall-card.is-retired .hall-card-overlay::after {
   background-image: none;
 }
 
+body.route-characters-all .hall-card.is-lost .hall-card-overlay::before {
+  inset: 5px;
+  border: 1px solid rgba(103, 204, 216, .58);
+  background:
+    linear-gradient(115deg, transparent 0 24%, rgba(134, 86, 186, .18) 24.4% 25.2%, transparent 25.6% 63%, rgba(97, 211, 221, .16) 63.4% 64%, transparent 64.4%),
+    radial-gradient(circle at 50% 42%, transparent 0 25%, rgba(105, 201, 215, .16) 25.5% 26%, transparent 26.5%);
+  box-shadow: inset 0 0 26px rgba(79, 169, 186, .12), 0 0 16px rgba(103, 96, 188, .12);
+}
+
+body.route-characters-all .hall-card.is-lost .hall-card-overlay::after {
+  background: linear-gradient(180deg, rgba(105,203,215,.16), transparent 1.2%, transparent 49%, rgba(155,93,196,.2) 50%, transparent 51%, transparent 98.8%, rgba(105,203,215,.16));
+}
+
 body.route-characters-all .hall-card-media {
   position: relative !important;
   z-index: 1 !important;
@@ -531,6 +546,12 @@ body.route-characters-all .hall-card.is-active .hall-card-media {
 body.route-characters-all .hall-card.is-active .hall-card-rune {
   color: rgba(119, 202, 136, .74);
   border-color: rgba(105, 194, 124, .32);
+}
+
+body.route-characters-all .hall-card.is-lost .hall-card-rune {
+  color: rgba(136, 221, 229, .78);
+  border-color: rgba(104, 202, 215, .44);
+  box-shadow: 0 0 0 10px rgba(104,202,215,.025), 0 0 34px rgba(112,73,178,.2);
 }
 
 body.route-characters-all .hall-card-copy {
@@ -592,6 +613,11 @@ body.route-characters-all .hall-card.is-dead .status-badge {
 body.route-characters-all .hall-card.is-retired .status-badge {
   color: #e1b765;
   background: rgba(52, 37, 10, .8);
+}
+
+body.route-characters-all .hall-card.is-lost .status-badge {
+  color: #a7edf2;
+  background: rgba(12, 43, 52, .82);
 }
 
 body.route-characters-all .hall-card:hover,
