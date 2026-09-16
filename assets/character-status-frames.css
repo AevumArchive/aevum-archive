@@ -281,10 +281,9 @@ body.route-characters-all .hall-card.character-card.status-card {
   padding: 0 !important;
   display: flex;
   flex-direction: column;
-  border: 1px solid rgba(202, 149, 75, .5) !important;
+  border: 1px solid transparent !important;
   border-radius: 2px !important;
-  outline: 1px solid rgba(255, 220, 151, .06) !important;
-  outline-offset: -5px;
+  outline: 0 !important;
   color: #f2e9e6 !important;
   background:
     linear-gradient(180deg, rgba(27, 23, 31, .62), rgba(7, 7, 12, .96)),
@@ -344,6 +343,20 @@ body.route-characters-all .hall-card-overlay::after {
   background-position: center;
   background-size: 100% 100%;
   pointer-events: none;
+}
+
+/* The dedicated frame files are the physical card borders. Extend them over
+   the transparent CSS edge so the artwork, not a generic line, defines the card. */
+body.route-characters-all .hall-card-overlay::before {
+  inset: -1px;
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+}
+
+body.route-characters-all .hall-card-overlay::after {
+  inset: 0;
+  width: 100%;
+  height: 100%;
 }
 
 body.route-characters-all .hall-card.is-active .hall-card-overlay {
@@ -517,28 +530,28 @@ body.route-characters-all .hall-card:focus-visible {
 }
 
 body.route-characters-all .hall-card.character-card.status-card.is-active {
-  border-color: rgba(87, 176, 110, .58) !important;
+  border-color: transparent !important;
   background: radial-gradient(circle at 50% 28%, rgba(45, 105, 68, .16), transparent 42%), linear-gradient(180deg, rgba(23, 28, 28, .78), rgba(6, 9, 9, .98)) !important;
 }
 
 body.route-characters-all .hall-card.character-card.status-card.is-sealed {
-  border-color: rgba(166, 106, 205, .58) !important;
+  border-color: transparent !important;
   background: radial-gradient(circle at 50% 26%, rgba(116, 66, 150, .2), transparent 43%), linear-gradient(180deg, rgba(28, 19, 35, .82), rgba(8, 6, 12, .98)) !important;
 }
 
 body.route-characters-all .hall-card.character-card.status-card.is-fallen,
 body.route-characters-all .hall-card.character-card.status-card.is-dead {
-  border-color: rgba(200, 65, 73, .62) !important;
+  border-color: transparent !important;
   background: radial-gradient(circle at 50% 25%, rgba(134, 30, 39, .2), transparent 44%), linear-gradient(180deg, rgba(33, 16, 19, .84), rgba(10, 5, 7, .99)) !important;
 }
 
 body.route-characters-all .hall-card.character-card.status-card.is-retired {
-  border-color: rgba(193, 145, 67, .58) !important;
+  border-color: transparent !important;
   background: radial-gradient(circle at 50% 24%, rgba(141, 96, 39, .18), transparent 43%), linear-gradient(180deg, rgba(31, 25, 20, .82), rgba(9, 7, 6, .98)) !important;
 }
 
 body.route-characters-all .hall-card.character-card.status-card.is-lost {
-  border-color: rgba(91, 188, 201, .62) !important;
+  border-color: transparent !important;
   background: radial-gradient(circle at 50% 26%, rgba(75, 91, 150, .22), transparent 44%), linear-gradient(145deg, rgba(15, 24, 31, .88), rgba(13, 8, 23, .98)) !important;
 }
 
