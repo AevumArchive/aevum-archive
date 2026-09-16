@@ -160,13 +160,8 @@ body.route-npcs-uwu[data-uwu-state="controlled"] .uwu-hero::after {
 .uwu-state-card img {
   display: block;
   width: 100%;
-  height: clamp(620px, 68vw, 820px);
-  object-fit: cover;
-  object-position: center 18%;
-}
-
-.uwu-state-card[data-state="controlled"] img {
-  object-position: center 13%;
+  height: auto;
+  object-fit: contain;
 }
 
 .uwu-state-card::after {
@@ -539,10 +534,6 @@ body.route-npcs-timeo {
 
   .uwu-hero {
     padding: 24px 16px;
-  }
-
-  .uwu-state-card img {
-    height: min(132vw, 620px);
   }
 
   .uwu-state-controls {
