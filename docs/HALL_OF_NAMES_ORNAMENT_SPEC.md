@@ -7,7 +7,7 @@ This document is the technical contract for the next Hall of Names status orname
 - Card aspect ratio: **4:5** at every grid breakpoint.
 - Production canvas for every ornament: **1200 x 1500 px**.
 - Format: transparent **RGBA PNG**.
-- The production canvas is exactly four times the largest normal CSS card target of roughly 300 x 375 px.
+- The production canvas provides at least 3.39x source resolution for the largest measured CSS card target of 354 x 442.5 px.
 - Do not crop a layer to its visible pixels. Every frame and motif file must keep the complete 1200 x 1500 transparent canvas so both layers align automatically.
 - Do not include portraits, character names, status words, generated labels, lore text, checkerboards or opaque card backgrounds.
 
@@ -15,9 +15,9 @@ Measured rendered card sizes after the 2026-09-16 layout pass:
 
 | Viewport | Columns | Rendered card |
 | --- | ---: | ---: |
-| 2536 px | 4 | 294.50 x 368.13 px |
-| 1440 px | 4 | 260.69 x 325.86 px |
-| 1200 px | 4 | 219.39 x 274.23 px |
+| 2536 px | 4 | 354.00 x 442.50 px |
+| 1440 px | 4 | 320.19 x 400.23 px |
+| 1200 px | 4 | 271.39 x 339.23 px |
 | 1024 px | 3 | 315.00 x 393.75 px |
 | 768 px | 3 | 229.66 x 287.06 px |
 | 390 px | 1 | 320.00 x 400.00 px |
