@@ -297,6 +297,31 @@ body.route-npcs .npc-compact-grid .pill {
   background: rgba(255, 255, 255, .025);
 }
 
+body.route-npcs .npc-compact-grid .npc-feature-peter {
+  border-color: rgba(222, 183, 128, .3);
+  background:
+    linear-gradient(90deg, rgba(10, 8, 9, .98) 0 54%, rgba(10, 8, 9, .72) 72%, rgba(10, 8, 9, .22)),
+    url("/aevum-archive/assets/images/npcs/peter/peter.png") 100% 25% / 48% auto no-repeat;
+  box-shadow: inset 0 0 42px rgba(255, 255, 255, .025);
+}
+
+body.route-npcs .npc-compact-grid .npc-feature-peter::before {
+  background: linear-gradient(180deg, transparent, rgba(255, 255, 255, .78), rgba(151, 35, 47, .65), transparent);
+}
+
+body.route-npcs .npc-compact-grid .npc-feature-peter .realm-symbol {
+  border-color: rgba(236, 218, 196, .35);
+  color: #f6eee6;
+  background: rgba(255, 255, 255, .055);
+  box-shadow: 0 0 24px rgba(255, 255, 255, .07);
+}
+
+body.route-npcs .npc-compact-grid .npc-feature-peter h3,
+body.route-npcs .npc-compact-grid .npc-feature-peter > p,
+body.route-npcs .npc-compact-grid .npc-feature-peter .meta-row {
+  max-width: 70%;
+}
+
 /* Current path: opened records read as a clean three-card row. */
 body.route-npcs #current-npcs .npc-ledger-group:first-of-type {
   border-color: rgba(103, 198, 146, .16);
