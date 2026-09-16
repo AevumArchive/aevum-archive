@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="/aevum-archive/assets/master-ui.css?v=20260821-2">
   <link rel="stylesheet" href="/aevum-archive/assets/global-header.css?v=20260902-header4">
   <link rel="stylesheet" href="/aevum-archive/assets/npc-effects.css?v=20260916-2">
+  <link rel="stylesheet" href="/aevum-archive/assets/npc-index.css?v=20260916-1">
 </head>
 <body class="archive-page theme-npcs page-index route-npcs">
   <header class="site-header">
@@ -22,9 +23,20 @@
 </header>
 <main class="page">
 <section class="hero compact-hero npc-hero">
-  <div><p class="eyebrow">NPC ledger</p><h1>Names that shaped the players.</h1><p class="lede">Current figures, sovereign powers, bonded entities and recovered names are kept in distinct ledgers so every record has a clear place.</p><div class="hero-actions"><a class="button primary" href="#current-npcs">Current playthrough</a><a class="button" href="#sovereigns">Sovereigns</a><a class="button" href="#servants">Bonds</a></div></div>
-  <aside class="archive-card"><span class="sigil">◇</span><p class="eyebrow">Opened ledger</p><h2>24 known names</h2><p class="lede">Thin records remain visibly partial instead of being filled with invented lore.</p></aside>
+  <div class="npc-hero-copy"><p class="eyebrow">NPC registry · witnessed records</p><h1>Names beyond the party.</h1><p class="lede">Sovereigns, servants, allies and anomalies—ordered by the place they hold in the living archive.</p><div class="hero-actions"><a class="button primary" href="#current-npcs">Current path</a><a class="button" href="#sovereigns">Major presences</a><a class="button" href="#servants">Bonded records</a></div></div>
+  <aside class="archive-card npc-ledger-seal" aria-label="NPC registry summary">
+    <span class="npc-seal-orbit" aria-hidden="true"><i></i><b>◇</b></span>
+    <div class="npc-ledger-summary"><p class="eyebrow">Opened ledger</p><h2><span>24</span> known names</h2><p>Five ordered shelves. No invented history beyond what the Archive has witnessed.</p></div>
+  </aside>
 </section>
+
+<nav class="npc-ledger-nav" aria-label="NPC ledger sections">
+  <a href="#current-npcs"><span>01</span><strong>Current Path</strong><small>3 opened · 3 sealed</small></a>
+  <a href="#sovereigns"><span>02</span><strong>Major Presences</strong><small>2 exceptional records</small></a>
+  <a href="#servants"><span>03</span><strong>Bonded</strong><small>11 servant records</small></a>
+  <a href="#known-figures"><span>04</span><strong>Independent</strong><small>6 recovered records</small></a>
+  <a href="#contained-records"><span>05</span><strong>Restricted</strong><small>2 contained records</small></a>
+</nav>
 
 <section class="section" id="current-npcs">
   <div class="section-head"><div><p class="eyebrow">Current playthrough</p><h2>Figures on the road.</h2></div><p>Opened names from the active fantasy-medieval shelf.</p></div>

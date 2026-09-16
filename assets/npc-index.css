@@ -1,0 +1,413 @@
+/* NPC registry — desktop-first archive layout. */
+
+body.route-npcs {
+  --npc-index-ink: #09070d;
+  --npc-index-panel: rgba(15, 11, 22, .9);
+  --npc-index-line: rgba(211, 159, 239, .2);
+  --npc-index-pink: #ed82bd;
+  --npc-index-violet: #b487ee;
+  background-image:
+    radial-gradient(circle at 50% 0, rgba(117, 55, 145, .13), transparent 31rem),
+    linear-gradient(180deg, rgba(5, 4, 8, .18), rgba(5, 4, 8, .72));
+  background-color: #07050b !important;
+}
+
+body.route-npcs main.page {
+  max-width: 1500px;
+}
+
+/* Hero */
+body.route-npcs .npc-hero {
+  position: relative;
+  grid-template-columns: minmax(0, 1.25fr) minmax(390px, .75fr);
+  min-height: 430px;
+  padding: clamp(40px, 5vw, 72px);
+  overflow: hidden;
+  border: 1px solid rgba(229, 156, 224, .24);
+  border-radius: 32px;
+  background:
+    linear-gradient(106deg, rgba(19, 14, 27, .98) 0 57%, rgba(26, 15, 36, .88) 74%, rgba(11, 8, 17, .96)),
+    radial-gradient(circle at 82% 45%, rgba(202, 105, 187, .18), transparent 24rem);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, .34), inset 0 0 80px rgba(166, 92, 196, .045);
+}
+
+body.route-npcs .npc-hero::before,
+body.route-npcs .npc-hero::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+body.route-npcs .npc-hero::before {
+  inset: 14px;
+  border: 1px solid rgba(232, 180, 229, .09);
+  border-radius: 23px;
+}
+
+body.route-npcs .npc-hero::after {
+  width: 560px;
+  aspect-ratio: 1;
+  right: -105px;
+  top: -85px;
+  border: 1px solid rgba(215, 137, 220, .09);
+  border-radius: 50%;
+  box-shadow: 0 0 0 42px rgba(215, 137, 220, .025), 0 0 0 88px rgba(215, 137, 220, .02);
+}
+
+body.route-npcs .npc-hero-copy,
+body.route-npcs .npc-ledger-seal {
+  position: relative;
+  z-index: 1;
+}
+
+body.route-npcs .npc-hero h1 {
+  max-width: 12ch;
+  margin: 12px 0 18px;
+  font-size: clamp(4rem, 6.4vw, 7rem);
+  line-height: .88;
+  letter-spacing: -.045em;
+}
+
+body.route-npcs .npc-hero .lede {
+  max-width: 650px;
+  font-size: clamp(1rem, 1.35vw, 1.2rem);
+  line-height: 1.65;
+}
+
+body.route-npcs .npc-hero .hero-actions {
+  margin-top: 28px;
+}
+
+body.route-npcs .npc-ledger-seal {
+  min-height: 310px;
+  align-self: stretch;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  padding: 32px;
+  border-color: rgba(226, 158, 225, .24);
+  background:
+    radial-gradient(circle at 50% 24%, rgba(171, 85, 196, .2), transparent 10rem),
+    linear-gradient(160deg, rgba(39, 23, 51, .82), rgba(8, 7, 13, .96) 72%);
+}
+
+.npc-seal-orbit {
+  width: 142px;
+  height: 142px;
+  position: relative;
+  align-self: center;
+  justify-self: center;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(236, 175, 231, .24);
+  border-radius: 50%;
+  color: #f2b1d6;
+  box-shadow: 0 0 45px rgba(194, 98, 196, .12), inset 0 0 35px rgba(194, 98, 196, .08);
+}
+
+.npc-seal-orbit::before,
+.npc-seal-orbit::after,
+.npc-seal-orbit i {
+  content: "";
+  position: absolute;
+  border: 1px solid rgba(219, 154, 229, .15);
+  border-radius: 50%;
+}
+
+.npc-seal-orbit::before { inset: 13px; }
+.npc-seal-orbit::after { inset: 31px; border-style: dashed; }
+.npc-seal-orbit i { inset: -14px; border-color: rgba(219, 154, 229, .07); }
+.npc-seal-orbit b { font: 400 3rem/1 Georgia, serif; text-shadow: 0 0 24px rgba(246, 142, 211, .58); }
+
+.npc-ledger-summary {
+  padding-top: 22px;
+  border-top: 1px solid rgba(236, 169, 224, .15);
+}
+
+body.route-npcs .npc-ledger-summary h2 {
+  margin: 4px 0 8px;
+  font-size: clamp(1.65rem, 2.8vw, 2.55rem);
+}
+
+body.route-npcs .npc-ledger-summary h2 span { color: #f2b6d8; }
+body.route-npcs .npc-ledger-summary p:last-child { max-width: 38ch; margin: 0; color: var(--muted); line-height: 1.55; }
+
+/* Registry navigation */
+.npc-ledger-nav {
+  position: relative;
+  z-index: 4;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  margin: 22px 0 66px;
+  border: 1px solid rgba(216, 165, 236, .16);
+  border-radius: 18px;
+  background: rgba(10, 8, 15, .86);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, .2);
+  overflow: hidden;
+}
+
+.npc-ledger-nav a {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-areas: "number title" "number note";
+  column-gap: 13px;
+  padding: 19px 20px;
+  color: var(--text);
+  text-decoration: none;
+  border-right: 1px solid rgba(216, 165, 236, .12);
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+.npc-ledger-nav a:last-child { border-right: 0; }
+.npc-ledger-nav a:hover { background: rgba(161, 86, 185, .1); }
+.npc-ledger-nav span { grid-area: number; align-self: center; color: #d785ba; font: 700 .66rem/1 Verdana, sans-serif; letter-spacing: .12em; }
+.npc-ledger-nav strong { grid-area: title; font: 700 1rem/1.2 Georgia, serif; }
+.npc-ledger-nav small { grid-area: note; margin-top: 4px; overflow: hidden; color: #8f829c; font-size: .64rem; letter-spacing: .04em; text-overflow: ellipsis; white-space: nowrap; }
+
+/* Ledger chapters */
+body.route-npcs main.page > .section {
+  position: relative;
+  margin-top: 74px;
+  padding-top: 34px;
+  scroll-margin-top: 78px;
+}
+
+body.route-npcs main.page > .section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(240, 128, 191, .55), rgba(164, 118, 225, .18) 48%, transparent 86%);
+}
+
+body.route-npcs .section-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(280px, .65fr);
+  gap: 42px;
+  align-items: end;
+  margin-bottom: 25px;
+}
+
+body.route-npcs .section-head h2 {
+  max-width: 16ch;
+  margin: 5px 0 0;
+  font-size: clamp(2.4rem, 4vw, 4.5rem);
+  line-height: .98;
+}
+
+body.route-npcs .section-head > p {
+  max-width: 50ch;
+  margin: 0 0 5px;
+  color: #aa9bb8;
+  line-height: 1.65;
+}
+
+body.route-npcs .npc-ledger-group {
+  position: relative;
+  margin-top: 16px;
+  padding: clamp(24px, 2.3vw, 34px);
+  border-color: rgba(213, 163, 234, .15);
+  border-radius: 22px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, .018), transparent 45%),
+    rgba(11, 9, 16, .72);
+  box-shadow: 0 22px 60px rgba(0, 0, 0, .16), inset 0 1px rgba(255, 255, 255, .025);
+  animation: none !important;
+}
+
+body.route-npcs .npc-group-head {
+  display: grid;
+  grid-template-columns: minmax(250px, .8fr) minmax(300px, 1fr);
+  align-items: end;
+  margin-bottom: 23px;
+  padding-bottom: 18px;
+}
+
+body.route-npcs .npc-group-head h3 {
+  font-size: clamp(1.45rem, 2.1vw, 2rem);
+}
+
+body.route-npcs .npc-group-head p {
+  justify-self: end;
+  text-align: right;
+  line-height: 1.55;
+}
+
+body.route-npcs .npc-compact-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+body.route-npcs .npc-compact-grid .npc-card {
+  min-height: 178px;
+  grid-template-columns: 46px minmax(0, 1fr);
+  grid-template-rows: auto 1fr auto;
+  align-content: stretch;
+  gap: 8px 14px;
+  padding: 21px;
+  border-color: rgba(219, 171, 238, .16);
+  border-radius: 17px;
+  background:
+    linear-gradient(150deg, rgba(43, 28, 54, .38), rgba(10, 9, 14, .9) 68%),
+    var(--panel);
+}
+
+body.route-npcs .npc-compact-grid .npc-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 2px;
+  background: linear-gradient(180deg, transparent, rgba(222, 126, 196, .55), transparent);
+  opacity: .5;
+}
+
+body.route-npcs .npc-compact-grid .npc-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(235, 172, 241, .36);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, .27), inset 0 0 34px rgba(156, 83, 188, .07);
+}
+
+body.route-npcs .npc-compact-grid .realm-symbol {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
+
+body.route-npcs .npc-compact-grid h3 {
+  align-self: center;
+  font-size: clamp(1.15rem, 1.55vw, 1.42rem);
+}
+
+body.route-npcs .npc-compact-grid .npc-card > p:not(.eyebrow) {
+  align-self: start;
+  font-size: .84rem;
+  line-height: 1.55;
+}
+
+body.route-npcs .npc-compact-grid .meta-row {
+  align-self: end;
+  gap: 6px;
+}
+
+body.route-npcs .npc-compact-grid .pill {
+  padding: 5px 9px;
+  border-color: rgba(218, 178, 235, .16);
+  background: rgba(255, 255, 255, .025);
+}
+
+/* Current path: opened records read as a clean three-card row. */
+body.route-npcs #current-npcs .npc-ledger-group:first-of-type {
+  border-color: rgba(103, 198, 146, .16);
+}
+
+body.route-npcs #current-npcs .current-npc::before {
+  background: linear-gradient(180deg, transparent, rgba(105, 220, 150, .62), transparent);
+}
+
+body.route-npcs .npc-lock-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+body.route-npcs .npc-lock-grid .npc-card {
+  min-height: 132px;
+  grid-template-columns: 38px minmax(0, 1fr);
+  padding: 19px;
+  background: rgba(12, 10, 17, .55);
+}
+
+/* Major records retain their own imagery and occupy the full stage. */
+body.route-npcs #sovereigns .npc-feature-ledger {
+  padding: 16px;
+  background: rgba(8, 7, 12, .72);
+}
+
+body.route-npcs #sovereigns .npc-group-head {
+  padding: 10px 14px 18px;
+}
+
+body.route-npcs #sovereigns .npc-compact-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+body.route-npcs #sovereigns .npc-compact-grid .npc-feature {
+  min-height: 290px;
+  align-content: end;
+  padding: 34px 40% 32px 30px;
+  border-radius: 19px;
+}
+
+body.route-npcs #sovereigns .npc-feature h3 {
+  font-size: clamp(1.55rem, 2.5vw, 2.35rem);
+}
+
+body.route-npcs #sovereigns .npc-feature-veyr {
+  background:
+    linear-gradient(90deg, rgba(10, 8, 17, .98) 0 46%, rgba(10, 8, 17, .72) 65%, rgba(10, 8, 17, .14)),
+    url("/aevum-archive/assets/images/veyr.png") 100% 25% / 62% auto no-repeat;
+}
+
+body.route-npcs #sovereigns .npc-feature-lilith {
+  background:
+    linear-gradient(90deg, rgba(18, 6, 15, .98) 0 46%, rgba(18, 6, 15, .72) 65%, rgba(18, 6, 15, .14)),
+    url("/aevum-archive/assets/images/lilith.png") 100% 20% / 61% auto no-repeat;
+}
+
+body.route-npcs #sovereigns .npc-feature::after {
+  content: "OPEN RECORD  →";
+  position: absolute;
+  right: 22px;
+  bottom: 18px;
+  color: rgba(243, 207, 239, .62);
+  font: 700 .58rem/1 Verdana, sans-serif;
+  letter-spacing: .14em;
+}
+
+/* Smaller final ledger keeps the page from ending in another full card wall. */
+body.route-npcs #contained-records .npc-compact-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+body.route-npcs #contained-records .npc-card {
+  min-height: 154px;
+}
+
+body.route-npcs .footer {
+  margin-top: 74px;
+}
+
+@media (max-width: 1120px) {
+  body.route-npcs .npc-hero { grid-template-columns: 1fr minmax(320px, .7fr); }
+  .npc-ledger-nav { grid-template-columns: repeat(3, 1fr); }
+  .npc-ledger-nav a:nth-child(3) { border-right: 0; }
+  .npc-ledger-nav a:nth-child(n+4) { border-top: 1px solid rgba(216, 165, 236, .12); }
+  body.route-npcs .npc-compact-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 760px) {
+  body.route-npcs .npc-hero {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    padding: 30px 24px;
+  }
+  body.route-npcs .npc-hero h1 { font-size: clamp(3.2rem, 15vw, 5rem); }
+  body.route-npcs .npc-ledger-seal { min-height: 280px; }
+  .npc-ledger-nav { grid-template-columns: 1fr; margin-bottom: 44px; }
+  .npc-ledger-nav a,
+  .npc-ledger-nav a:nth-child(3) { border-right: 0; border-top: 1px solid rgba(216, 165, 236, .12); }
+  .npc-ledger-nav a:first-child { border-top: 0; }
+  body.route-npcs .section-head,
+  body.route-npcs .npc-group-head { grid-template-columns: 1fr; gap: 14px; }
+  body.route-npcs .npc-group-head p { justify-self: start; text-align: left; }
+  body.route-npcs .npc-compact-grid,
+  body.route-npcs .npc-lock-grid,
+  body.route-npcs #sovereigns .npc-compact-grid,
+  body.route-npcs #contained-records .npc-compact-grid { grid-template-columns: 1fr; }
+  body.route-npcs #sovereigns .npc-compact-grid .npc-feature { min-height: 260px; padding-right: 34%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.route-npcs .npc-card,
+  .npc-ledger-nav a { transition: none !important; }
+}
