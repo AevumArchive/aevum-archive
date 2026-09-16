@@ -112,12 +112,14 @@ body.route-npcs-peter {
 .peter-mandate-card > strong { margin-top: 24px; padding-top: 20px; border-top: 1px solid rgba(220, 169, 101, .14); color: #d4b184; font: italic 600 1.08rem/1.55 Georgia, serif; }
 
 .peter-power-grid { display: grid; grid-template-columns: 1.15fr .95fr .7fr; gap: 15px; }
-.peter-power-scale { min-height: 370px; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 24px; border-color: rgba(229, 176, 105, .26) !important; background: radial-gradient(circle at 28% 50%, rgba(189, 135, 64, .16), transparent 13rem), rgba(10, 8, 9, .96) !important; }
+.peter-power-grid > article { min-width: 0; }
+.peter-power-scale { min-height: 370px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .75fr); grid-template-areas: "floor ceiling" "range range"; align-content: center; gap: 34px 28px; border-color: rgba(229, 176, 105, .26) !important; background: radial-gradient(circle at 28% 50%, rgba(189, 135, 64, .16), transparent 13rem), rgba(10, 8, 9, .96) !important; }
+.peter-power-value { grid-area: floor; min-width: 0; }
 .peter-power-value small { display: block; margin-bottom: 8px; color: #796d67; font: 700 .56rem/1.3 Verdana, sans-serif; letter-spacing: .1em; text-transform: uppercase; }
-.peter-power-value strong { color: #e6b978; font-size: clamp(3.5rem, 5vw, 6rem); line-height: .8; }
-.peter-power-unknown { text-align: right; }
+.peter-power-value strong { color: #e6b978; font-size: clamp(3.3rem, 4.25vw, 5.35rem); line-height: .8; white-space: nowrap; }
+.peter-power-unknown { grid-area: ceiling; text-align: right; }
 .peter-power-unknown strong { color: #fff; letter-spacing: .05em; text-shadow: 0 0 25px rgba(255, 255, 255, .12); }
-.peter-power-line { position: relative; height: 1px; background: linear-gradient(90deg, #b77635, rgba(255, 255, 255, .28)); }
+.peter-power-line { grid-area: range; position: relative; width: 100%; height: 1px; background: linear-gradient(90deg, #b77635, rgba(255, 255, 255, .28)); }
 .peter-power-line::after { content: ""; position: absolute; right: -2px; top: -4px; width: 8px; height: 8px; border-top: 1px solid #fff; border-right: 1px solid #fff; transform: rotate(45deg); }
 .peter-power-line i { position: absolute; left: 0; top: -5px; width: 11px; height: 11px; border-radius: 50%; background: #dd9c50; box-shadow: 0 0 18px rgba(219, 151, 73, .58); }
 .peter-power-line span { position: absolute; left: 34%; top: -3px; width: 6px; height: 6px; border-radius: 50%; background: rgba(255, 255, 255, .5); animation: peter-range 3.4s ease-in-out infinite; }
@@ -192,7 +194,7 @@ body.route-npcs-peter {
   .peter-record-strip > div:nth-child(3) { border-right: 1px solid rgba(205, 155, 88, .11); }
   .peter-record-strip > div:nth-child(n+3) { border-top: 1px solid rgba(205, 155, 88, .11); }
   .peter-page > .section { margin-top: 68px; }
-  .peter-power-scale { grid-template-columns: 1fr; text-align: center; }
+  .peter-power-scale { grid-template-columns: 1fr; grid-template-areas: "floor" "range" "ceiling"; text-align: center; }
   .peter-power-line { width: 100%; }
   .peter-power-unknown { text-align: center; }
 }
