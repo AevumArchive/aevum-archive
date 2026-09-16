@@ -4,37 +4,38 @@ This document is the technical contract for the next Hall of Names status orname
 
 ## Final card geometry
 
-- Card aspect ratio: **4:5** at every grid breakpoint.
-- Production canvas for every ornament: **1200 x 1500 px**.
+- Card aspect ratio: **2:3** at every grid breakpoint.
+- Production canvas for every ornament: **1200 x 1800 px**.
 - Format: transparent **RGBA PNG**.
-- The production canvas provides at least 3.39x source resolution for the largest measured CSS card target of 354 x 442.5 px.
-- Do not crop a layer to its visible pixels. Every frame and motif file must keep the complete 1200 x 1500 transparent canvas so both layers align automatically.
+- The production canvas is exactly four times the largest normal CSS card target of 300 x 450 px.
+- Do not crop a layer to its visible pixels. Every frame and motif file must keep the complete 1200 x 1800 transparent canvas so both layers align automatically.
 - Do not include portraits, character names, status words, generated labels, lore text, checkerboards or opaque card backgrounds.
 
 Measured rendered card sizes after the 2026-09-16 layout pass:
 
 | Viewport | Columns | Rendered card |
 | --- | ---: | ---: |
-| 2536 px | 4 | 354.00 x 442.50 px |
-| 1440 px | 4 | 320.19 x 400.23 px |
-| 1200 px | 4 | 271.39 x 339.23 px |
-| 1024 px | 3 | 315.00 x 393.75 px |
-| 768 px | 3 | 229.66 x 287.06 px |
-| 390 px | 1 | 320.00 x 400.00 px |
+| 2536 px | 4 | 260.00 x 390.00 px |
+| 2378 px | 4 | 260.00 x 390.00 px |
+| 1440 px | 4 | 260.00 x 390.00 px |
+| 1200 px | 4 | 260.00 x 390.00 px |
+| 1024 px | 4 | 228.75 x 343.13 px |
+| 768 px | 3 | 225.66 x 338.48 px |
+| 390 px | 1 | 300.00 x 450.00 px |
 
-The browser scales the 1200 x 1500 master uniformly to these sizes. No status asset may require a different card ratio.
+The browser scales the 1200 x 1800 master uniformly to these sizes. No status asset may require a different card ratio.
 
-## Protected zones on the 1200 x 1500 canvas
+## Protected zones on the 1200 x 1800 canvas
 
-- Outer frame zone: `x 0-1199`, `y 0-1499`.
+- Outer frame zone: `x 0-1199`, `y 0-1799`.
 - Recommended straight-edge thickness: **56-76 px**.
 - Maximum corner ornament reach: **96 px** from either outer edge.
-- Minimum clear inner opening: `x 84-1116`, `y 92-1408`.
-- Media focal-safe zone: `x 180-1020`, `y 170-900`.
-- Text-safe zone: `x 120-1080`, `y 940-1415`.
+- Minimum clear inner opening: `x 84-1116`, `y 110-1690`.
+- Media focal-safe zone: `x 180-1020`, `y 200-1120`.
+- Text-safe zone: `x 120-1080`, `y 1250-1700`.
 - The text-safe zone must remain readable. Do not run chains, drapery, seals, cracks, weapons, sigils or other high-contrast shapes through it.
 - Motifs may touch the outer 84 px of the text-safe zone at low opacity, but must not cross its center.
-- Keep the lower status-badge area `x 390-810`, `y 1360-1450` clear.
+- Keep the lower status-badge area `x 390-810`, `y 1630-1750` clear.
 
 ## Required filenames and automatic placement
 
@@ -42,11 +43,11 @@ All files go in `assets/hall-of-names/v4/`.
 
 | Status | Frame layer (`::before`) | Motif layer (`::after`) |
 | --- | --- | --- |
-| Active | `hall-card-active-frame-1200x1500.png` | `hall-card-active-motif-aether-1200x1500.png` |
-| Sealed | `hall-card-sealed-frame-1200x1500.png` | `hall-card-sealed-motif-chains-1200x1500.png` |
-| Fallen | `hall-card-fallen-frame-1200x1500.png` | `hall-card-fallen-motif-broken-chains-1200x1500.png` |
-| Retired | `hall-card-retired-frame-1200x1500.png` | `hall-card-retired-motif-drapery-1200x1500.png` |
-| Lost / Unknown | `hall-card-lost-frame-1200x1500.png` | `hall-card-lost-motif-fracture-1200x1500.png` |
+| Active | `hall-card-active-frame-1200x1800.png` | `hall-card-active-motif-aether-1200x1800.png` |
+| Sealed | `hall-card-sealed-frame-1200x1800.png` | `hall-card-sealed-motif-chains-1200x1800.png` |
+| Fallen | `hall-card-fallen-frame-1200x1800.png` | `hall-card-fallen-motif-broken-chains-1200x1800.png` |
+| Retired | `hall-card-retired-frame-1200x1800.png` | `hall-card-retired-motif-drapery-1200x1800.png` |
+| Lost / Unknown | `hall-card-lost-frame-1200x1800.png` | `hall-card-lost-motif-fracture-1200x1800.png` |
 
 The filename is the routing contract. Do not rename `lost` to `unknown`, `dead` or `missing`; the site status key is `lost`. Fallen uses the existing `fallen`/`dead` compatibility selectors internally, but the supplied asset name is always `fallen`.
 
@@ -62,7 +63,7 @@ The filename is the routing contract. Do not rename `lost` to `unknown`, `dead` 
 ### Motif layer
 
 - Secondary status storytelling only: restrained aether for Active, locks/chains for Sealed, broken chains for Fallen, drapery for Retired, dimensional fracture for Lost.
-- Must use the same 1200 x 1500 canvas and align without offsets.
+- Must use the same 1200 x 1800 canvas and align without offsets.
 - Prefer edge-bound decoration. Never place a large motif across the character name, description or status badge.
 - No baked glow outside the canvas. Soft internal glow is allowed.
 
@@ -77,7 +78,7 @@ The filename is the routing contract. Do not rename `lost` to `unknown`, `dead` 
 ## Delivery checklist
 
 - Ten PNG files total: two for each of five statuses.
-- Every PNG is exactly 1200 x 1500 px.
+- Every PNG is exactly 1200 x 1800 px.
 - Every PNG has genuine transparency.
 - Frame and motif layers align when stacked at `(0, 0)`.
 - No content in the protected text and badge zones.
