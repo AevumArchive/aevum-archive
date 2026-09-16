@@ -3,30 +3,83 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Poison - Aevum Archive</title>
-  <meta name="description" content="Poison, Faaram's fallen dual-aspect mimic servant.">
+  <title>Poison — The Mirrored Edge - Aevum Archive</title>
+  <meta name="description" content="Poison, Faaram's former servant: an adaptive observer with female and male manifestations and two Azure weapons.">
   <link rel="stylesheet" href="/aevum-archive/assets/styles.css?v=20260815-sitefocus2">
-  <link rel="stylesheet" href="/aevum-archive/assets/frame-overrides.css?v=20260817-cardstates7">
+  <link rel="stylesheet" href="/aevum-archive/assets/frame-overrides.css?v=20260910-portraits12">
   <link rel="stylesheet" href="/aevum-archive/assets/ornament-v3.css?v=20260817-1">
-  <link rel="stylesheet" href="/aevum-archive/assets/round4-assets.css?v=20260817-4">
-  <link rel="stylesheet" href="/aevum-archive/assets/master-ui.css?v=20260821-2">
+  <link rel="stylesheet" href="/aevum-archive/assets/round4-assets.css?v=20260817-6">
+  <link rel="stylesheet" href="/aevum-archive/assets/master-ui.css?v=20260828-lorecodex1">
+  <link rel="stylesheet" href="/aevum-archive/assets/master-pass.css?v=20260912-2">
   <link rel="stylesheet" href="/aevum-archive/assets/global-header.css?v=20260902-header4">
   <link rel="stylesheet" href="/aevum-archive/assets/npc-effects.css?v=20260916-2">
+  <link rel="stylesheet" href="/aevum-archive/assets/poison-page.css?v=20260916-1">
 </head>
-<body class="archive-page theme-npcs page-detail route-npcs-poison">
+<body class="archive-page theme-npcs page-detail route-npcs-poison" data-poison-form="female">
   <header class="site-header">
-  <a class="brand" href="/aevum-archive/"><img class="brand-mark home-brand-crest" src="/aevum-archive/assets/home-v2/home-archive-sigil.webp" alt="" width="1254" height="1254"><span><span class="brand-title">Aevum Archive</span><span class="brand-subtitle">world wiki and living archive</span></span></a>
-  <nav class="nav" aria-label="Archive navigation"><a href="/aevum-archive/">Start</a><a href="/aevum-archive/playthroughs/">Playthroughs</a><a href="/aevum-archive/characters/">Characters</a><a href="/aevum-archive/codex/">Codex</a><a href="/aevum-archive/npcs/">NPCs</a><a href="/aevum-archive/lore/">Lore</a><a href="/aevum-archive/events/">Events</a><a href="/aevum-archive/achievements/">Achievements</a><a href="/aevum-archive/leaderboard/">Leaderboard</a><a href="/aevum-archive/world-items/">Relics</a><a href="/aevum-archive/downloads/texture-pack.html">Downloads</a></nav>
-</header>
-<main class="page">
-<section class="record-hero">
-  <div class="character-card npc-profile-card faaram-npc" style="--accent:#d46cff;--glow:rgba(168,85,247,0.36)"><div class="portrait-slot"><div class="portrait-rune">&#8644;</div></div><div class="character-body"><h3>Poison</h3><p>The Mirrored Edge</p><div class="tag-row"><span class="tag purple">Servant</span><span class="tag red">Fallen</span><span class="tag gold">Faaram</span></div></div></div>
-  <article class="record-panel"><p class="eyebrow">NPC record</p><h1>Poison</h1><p class="lede">A powerful servant of Faaram whose two embodied aspects could change both personality and weapon without diminishing the danger she carried.</p><dl><dt>Status</dt><dd>FALLEN</dd><dt>Master</dt><dd>Faaram, The Faceless</dd><dt>Nature</dt><dd>Female origin / switchable male aspect</dd><dt>Weapons</dt><dd>Scythe / Saber</dd><dt>Core Power</dt><dd>Observed power replication</dd><dt>Final Battle</dt><dd>Fallen to Satoru Gojo's Domain</dd></dl></article>
-</section>
-<section class="section"><article class="card lore-notes"><h2>Notes</h2><ul><li>Poison's original form is female, but she can deliberately shift into a male counterpart with a distinct personality.</li><li>Her female aspect fights with a scythe. Her male aspect carries a saber.</li><li>Seeing a person or NPC once is enough for Poison to reproduce that being's power and meet the strength she observed.</li><li>The copied strength made her one of Faaram's most dangerous servants and allowed her to help him through threats ordinary summoned hands could not answer.</li><li>Poison died in battle against Satoru Gojo when his Domain overcame her.</li><li>Her death occurred before the Abyssal Rift Incident.</li></ul></article></section>
-<section class="section grid three"><article class="card"><h2>Mirrored selves</h2><p>Her transformation changes personality and weapon: scythe in the female aspect, saber in the male aspect.</p></article><article class="card"><h2>Observed power</h2><p>One clear sight of another being is enough for Poison to copy its power and rise to the same strength.</p></article><article class="card"><h2>Last record</h2><p>Her path ended inside Satoru Gojo's Domain, before the Abyssal Rift Incident claimed another servant.</p></article></section>
-<footer class="footer"><span>&#10022; Aevum Archive &mdash; witnessed knowledge only.</span><span>Unwritten pages remain sealed until discovered.</span></footer>
+    <a class="brand" href="/aevum-archive/"><img class="brand-mark home-brand-crest" src="/aevum-archive/assets/home-v2/home-archive-sigil.webp" alt="" width="1254" height="1254"><span><span class="brand-title">Aevum Archive</span><span class="brand-subtitle">world wiki and living archive</span></span></a>
+    <nav class="nav" aria-label="Archive navigation"><a href="/aevum-archive/">Start</a><a href="/aevum-archive/playthroughs/">Playthroughs</a><a href="/aevum-archive/characters/">Characters</a><a href="/aevum-archive/codex/">Codex</a><a href="/aevum-archive/npcs/">NPCs</a><a href="/aevum-archive/lore/">Lore</a><a href="/aevum-archive/events/">Events</a><a href="/aevum-archive/achievements/">Achievements</a><a href="/aevum-archive/leaderboard/">Leaderboard</a><a href="/aevum-archive/world-items/">Relics</a><a href="/aevum-archive/downloads/texture-pack.html">Downloads</a></nav>
+  </header>
+
+  <main class="page poison-page">
+    <section class="poison-hero" aria-labelledby="poison-title">
+      <div class="poison-hero-copy">
+        <p class="eyebrow">NPC record · former servant</p>
+        <h1 id="poison-title">Poison</h1>
+        <p class="poison-title">The Mirrored Edge</p>
+        <p class="lede">A cold observer whose greatest danger was never force alone. Poison watched, adapted and returned what she learned in a form made to answer it.</p>
+        <div class="poison-status-row" aria-label="Poison record status"><span>Afterlife</span><span>Primary Form · Female</span><span>Full Power · Unknown</span></div>
+        <div class="poison-form-controls" aria-label="Choose Poison's recorded form">
+          <button type="button" data-poison-control="female" aria-pressed="true"><small>Primary manifestation</small>Female Form</button>
+          <button type="button" data-poison-control="male" aria-pressed="false"><small>Alternative manifestation</small>Male Form</button>
+        </div>
+        <blockquote>Watching. Learning. Waiting.</blockquote>
+      </div>
+
+      <div class="poison-form-stage" aria-live="polite">
+        <figure class="poison-form-card" data-form="female">
+          <img src="/aevum-archive/assets/images/npcs/poison/poison-female.png" alt="Poison in her female form carrying the Azure Scythe" width="1024" height="1536">
+          <figcaption><span>Primary Form</span><strong>Azure Scythe</strong></figcaption>
+        </figure>
+        <figure class="poison-form-card" data-form="male" hidden>
+          <img src="/aevum-archive/assets/images/npcs/poison/poison-male.png" alt="Poison in her male form carrying the Azure Sabre" width="1150" height="1368">
+          <figcaption><span>Alternative Form</span><strong>Azure Sabre</strong></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="poison-record-strip" aria-label="Poison record details">
+      <div><span>Known affiliation</span><strong>Faaram</strong></div><div><span>Role</span><strong>Former Servant</strong></div><div><span>Known ability</span><strong>Adaptive Copy</strong></div><div><span>Current state</span><strong>Afterlife</strong></div><div><span>Primary weapon</span><strong>Azure Scythe</strong></div><div><span>Secondary weapon</span><strong>Azure Sabre</strong></div>
+    </section>
+
+    <section class="section poison-intro" aria-labelledby="poison-summary-title">
+      <div class="poison-section-heading"><p class="eyebrow">01 · Archive summary</p><h2 id="poison-summary-title">Danger through understanding.</h2></div>
+      <div class="poison-summary-grid">
+        <article class="poison-prose-card"><p>Poison is a former servant of <a href="/aevum-archive/characters/faaram.html">Faaram</a> and one of the more unusual entities to have served under the Faceless. Unlike many of his servants, she was not defined purely by overwhelming force.</p><p>Her threat lay in the ability to observe a situation, adapt to it and seemingly replicate what she learned. The longer an encounter continued, the more dangerous the encounter could become.</p></article>
+        <article class="poison-ability-card"><span class="poison-ability-mark" aria-hidden="true">⇄</span><p class="eyebrow">Known ability</p><h3>Adaptive Copy</h3><p>The Archive cannot yet determine whether Poison copies techniques, physical traits, supernatural abilities or something deeper. Its full limits remain unresolved.</p></article>
+      </div>
+    </section>
+
+    <section class="section poison-forms" aria-labelledby="poison-forms-title">
+      <div class="poison-section-heading"><p class="eyebrow">02 · Manifestations</p><h2 id="poison-forms-title">Two forms. One watcher.</h2><p>Both manifestations retain the black hair, white horns, dark clothing and stark white tie associated with Poison.</p></div>
+      <div class="poison-form-notes">
+        <article><span class="poison-form-number">I</span><p class="eyebrow">Primary manifestation</p><h3>Female Form</h3><p>This is the form most strongly associated with Poison and the one she appears most comfortable using. It is believed to carry greater overall combat potential, although the source and exact extent of that advantage remain unknown.</p><div class="poison-weapon"><span>Weapon</span><strong>Azure Scythe</strong><small>Blue, cyan and violet energy</small></div></article>
+        <article><span class="poison-form-number">II</span><p class="eyebrow">Alternative manifestation</p><h3>Male Form</h3><p>The male form presents a harsher demeanor—more visibly pessimistic, irritated and hostile. It remains extremely dangerous, but is currently believed to be somewhat more limited than the female manifestation.</p><div class="poison-weapon"><span>Weapon</span><strong>Azure Sabre</strong><small>Long-bladed Azure armament</small></div></article>
+      </div>
+    </section>
+
+    <section class="section poison-closing" aria-labelledby="poison-closing-title">
+      <div class="poison-section-heading"><p class="eyebrow">03 · Present record</p><h2 id="poison-closing-title">A quiet place after conflict.</h2></div>
+      <div class="poison-closing-grid">
+        <article><h3>Personality</h3><p>Cold, distant and difficult to read. Poison rarely needs dramatic aggression to appear threatening; the danger lies in the impression that she is always observing and waiting.</p></article>
+        <article><h3>Afterlife</h3><p>Poison is no longer an active servant fighting beside Faaram. Her current representation belongs to an unusually quiet and empty Afterlife rather than an active battlefield.</p></article>
+        <article><h3>Unresolved</h3><p>Her origins, the complete nature of Adaptive Copy, the true relationship between her forms and the height of her power all remain unwritten.</p></article>
+      </div>
+    </section>
+
+    <footer class="footer"><span>&#10022; Aevum Archive &mdash; witnessed knowledge only.</span><span>Unwritten pages remain sealed until discovered.</span></footer>
   </main>
-<script src="/aevum-archive/assets/master-ui.js?v=20260821-2" defer></script>
+  <script src="/aevum-archive/assets/master-ui.js?v=20260821-2" defer></script>
+  <script src="/aevum-archive/assets/poison-page.js?v=20260916-1" defer></script>
 </body>
 </html>
