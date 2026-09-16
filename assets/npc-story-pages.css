@@ -141,23 +141,8 @@ body.route-npcs-uwu[data-uwu-state="controlled"] .uwu-hero::after {
 
 .uwu-state-stage {
   position: relative;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: clamp(18px, 2.5vw, 32px);
-}
-
-.uwu-state-stage::after {
-  content: "";
-  position: absolute;
-  top: 4%;
-  bottom: 4%;
-  left: 50%;
-  z-index: 4;
-  width: 1px;
-  background: linear-gradient(transparent, rgba(213, 161, 86, .72) 24%, rgba(139, 41, 52, .82) 56%, transparent);
-  box-shadow: 0 0 20px rgba(179, 70, 63, .38);
-  transform: rotate(1.5deg);
-  pointer-events: none;
+  width: min(100%, 820px);
+  margin-inline: auto;
 }
 
 .uwu-state-card {
@@ -175,7 +160,7 @@ body.route-npcs-uwu[data-uwu-state="controlled"] .uwu-hero::after {
 .uwu-state-card img {
   display: block;
   width: 100%;
-  height: clamp(560px, 57vw, 720px);
+  height: clamp(620px, 68vw, 820px);
   object-fit: cover;
   object-position: center 18%;
 }
@@ -218,16 +203,9 @@ body.route-npcs-uwu[data-uwu-state="controlled"] .uwu-hero::after {
   text-transform: uppercase;
 }
 
-body.route-npcs-uwu[data-uwu-state="before"] .uwu-state-card[data-state="controlled"],
-body.route-npcs-uwu[data-uwu-state="controlled"] .uwu-state-card[data-state="before"] {
-  opacity: .62;
-  filter: saturate(.62) brightness(.72);
-}
-
 body.route-npcs-uwu[data-uwu-state="before"] .uwu-state-card[data-state="before"],
 body.route-npcs-uwu[data-uwu-state="controlled"] .uwu-state-card[data-state="controlled"] {
   border-color: rgba(226, 172, 92, .68);
-  transform: translateY(-3px);
 }
 
 body.route-npcs-uwu[data-uwu-state="controlled"] .uwu-state-card[data-state="controlled"] {
@@ -484,98 +462,8 @@ body.route-npcs-timeo {
     linear-gradient(180deg, #06070a, #07080a 56%, #030405) !important;
 }
 
-.timeo-hero {
-  position: relative;
-  min-height: 780px;
-  overflow: hidden;
-  border: 1px solid rgba(130, 62, 63, .32);
-  border-radius: 28px;
-  background: #07080a;
-  box-shadow: 0 30px 90px rgba(0, 0, 0, .58);
-}
-
-.timeo-hero::before,
-.timeo-hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-}
-
-.timeo-hero::before {
-  background: linear-gradient(90deg, rgba(4, 5, 7, .96) 0, rgba(4, 5, 7, .62) 37%, transparent 68%), linear-gradient(180deg, transparent 54%, rgba(3, 4, 5, .96));
-}
-
-.timeo-hero::after {
-  inset: auto 0 0;
-  height: 31%;
-  opacity: .5;
-  background: linear-gradient(180deg, transparent, rgba(25, 6, 8, .54)), repeating-linear-gradient(176deg, transparent 0 19px, rgba(139, 36, 43, .07) 20px 21px);
-}
-
-.timeo-hero img {
-  width: 100%;
-  height: 780px;
-  object-fit: cover;
-  object-position: center 14%;
-  filter: saturate(.74) contrast(1.07);
-}
-
-.timeo-hero-copy {
-  position: absolute;
-  top: 50%;
-  left: clamp(28px, 6vw, 76px);
-  z-index: 3;
-  width: min(530px, 48%);
-  transform: translateY(-50%);
-}
-
-.timeo-hero-copy h1 {
-  margin: .08em 0 0;
-  font-size: clamp(4.5rem, 9vw, 8rem);
-  line-height: .8;
-  letter-spacing: -.05em;
-}
-
-.timeo-form-title {
-  margin: 24px 0 10px;
-  color: #d07777;
-  font: italic 1.25rem/1.4 Georgia, serif;
-  letter-spacing: .12em;
-}
-
-.timeo-state-strip {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1px;
-  margin-top: 24px;
-  border: 1px solid rgba(132, 56, 59, .25);
-  background: rgba(115, 46, 50, .15);
-}
-
-.timeo-state-strip article {
-  min-height: 130px;
-  padding: 22px;
-  background: rgba(8, 9, 11, .95);
-}
-
-.timeo-state-strip span,
-.timeo-state-strip strong {
-  display: block;
-}
-
-.timeo-state-strip span {
-  color: #8f8385;
-  font: .62rem/1.3 Verdana, Geneva, sans-serif;
-  letter-spacing: .13em;
-  text-transform: uppercase;
-}
-
-.timeo-state-strip strong {
-  margin-top: 10px;
-  color: #ebdfe0;
-  font-size: 1.08rem;
+.timeo-profile {
+  border-color: rgba(155, 49, 54, .34);
 }
 
 .timeo-rampage-panel {
@@ -585,54 +473,22 @@ body.route-npcs-timeo {
     linear-gradient(155deg, rgba(36, 14, 17, .76), rgba(7, 8, 10, .98)) !important;
 }
 
-.timeo-plane {
-  position: relative;
-  overflow: hidden;
-  padding: clamp(36px, 6vw, 72px);
-  border-block: 1px solid rgba(124, 58, 61, .24);
-  background:
-    radial-gradient(ellipse at 50% 100%, rgba(125, 30, 37, .16), transparent 38%),
-    repeating-linear-gradient(167deg, transparent 0 70px, rgba(184, 179, 183, .035) 71px 72px, transparent 73px 132px),
-    rgba(6, 7, 9, .74);
+.timeo-portrait-note {
+  max-width: 650px;
+  margin: 0 auto 18px;
+  color: var(--muted);
   text-align: center;
 }
 
-.timeo-plane h2 {
-  margin: .15em auto;
-  max-width: 900px;
-  font-size: clamp(2.4rem, 5vw, 4.6rem);
-}
-
-.timeo-plane p:last-child {
-  max-width: 760px;
-  margin: 14px auto 0;
-}
-
-.timeo-forms {
-  display: grid;
-  grid-template-columns: 1.25fr .75fr;
-  gap: 20px;
-}
-
-.timeo-form-open,
-.timeo-form-sealed {
-  min-height: 270px;
-}
-
-.timeo-form-sealed {
-  opacity: .72;
-  border-style: dashed !important;
+.timeo-portrait-card {
+  border-color: rgba(155, 49, 54, .28);
 }
 
 /* Registry additions --------------------------------------------------- */
 
 .route-npcs .npc-compact-grid .npc-feature-uwu {
-  grid-column: 1 / -1;
-  min-height: 230px;
   border-color: rgba(187, 91, 76, .42);
-  background:
-    linear-gradient(90deg, rgba(19, 10, 14, .99) 0 45%, rgba(19, 10, 14, .84) 65%, rgba(19, 10, 14, .18)),
-    url("/aevum-archive/assets/images/npcs/uwu/uwu-controlled.jpg") 100% 18% / 58% auto no-repeat;
+  background: radial-gradient(circle at 90% 12%, rgba(146, 52, 49, .16), transparent 9rem), rgba(20, 12, 17, .88);
   box-shadow: inset 0 0 52px rgba(142, 52, 47, .16), 0 16px 42px rgba(0, 0, 0, .26);
 }
 
@@ -644,22 +500,17 @@ body.route-npcs-timeo {
 
 .route-npcs .npc-compact-grid .npc-threat-chax {
   border-color: rgba(140, 82, 62, .38);
-  background:
-    linear-gradient(90deg, rgba(13, 11, 13, .98) 0 54%, rgba(13, 11, 13, .72) 76%, rgba(13, 11, 13, .1)),
-    url("/aevum-archive/assets/images/npcs/chax/chax.jpg") 100% 15% / 51% auto no-repeat;
+  background: radial-gradient(circle at 90% 12%, rgba(113, 70, 48, .12), transparent 9rem), rgba(15, 13, 15, .9);
 }
 
 .route-npcs .npc-compact-grid .npc-rampage-timeo {
   border-color: rgba(157, 60, 64, .4);
-  background:
-    linear-gradient(90deg, rgba(17, 9, 12, .98) 0 54%, rgba(17, 9, 12, .76) 76%, rgba(17, 9, 12, .12)),
-    url("/aevum-archive/assets/images/npcs/timeo/timeo-rampage-form.jpg") 100% 18% / 52% auto no-repeat;
+  background: radial-gradient(circle at 90% 12%, rgba(139, 39, 45, .14), transparent 9rem), rgba(18, 11, 14, .9);
 }
 
 @media (max-width: 900px) {
   .uwu-summary-grid,
-  .chax-hero,
-  .timeo-forms {
+  .chax-hero {
     grid-template-columns: 1fr;
   }
 
@@ -677,9 +528,6 @@ body.route-npcs-timeo {
     min-height: 620px;
   }
 
-  .timeo-state-strip {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 }
 
 @media (max-width: 700px) {
@@ -693,19 +541,6 @@ body.route-npcs-timeo {
     padding: 24px 16px;
   }
 
-  .uwu-state-stage {
-    grid-template-columns: 1fr;
-  }
-
-  .uwu-state-stage::after {
-    top: 50%;
-    right: 8%;
-    bottom: auto;
-    left: 8%;
-    width: auto;
-    height: 1px;
-  }
-
   .uwu-state-card img {
     height: min(132vw, 620px);
   }
@@ -714,60 +549,12 @@ body.route-npcs-timeo {
     flex-wrap: wrap;
   }
 
-  body.route-npcs-uwu[data-uwu-state="before"] .uwu-state-card[data-state="controlled"],
-  body.route-npcs-uwu[data-uwu-state="controlled"] .uwu-state-card[data-state="before"] {
-    opacity: .8;
-  }
-
-  .timeo-hero {
-    display: flex;
-    min-height: 0;
-    flex-direction: column;
-  }
-
-  .timeo-hero::before {
-    background: linear-gradient(180deg, transparent 35%, #050608 75%);
-  }
-
-  .timeo-hero img {
-    height: 590px;
-  }
-
-  .timeo-hero-copy {
-    position: relative;
-    top: auto;
-    left: auto;
-    z-index: 3;
-    width: auto;
-    margin-top: -170px;
-    padding: 28px 22px 34px;
-    transform: none;
-  }
-
-  .route-npcs .npc-compact-grid .npc-feature-uwu {
-    min-height: 210px;
-    padding-right: 18%;
-    background-position: 120% 18%;
-    background-size: 68% auto;
-  }
 }
 
 @media (max-width: 480px) {
   .uwu-hero-heading h1,
-  .chax-hero h1,
-  .timeo-hero-copy h1 {
+  .chax-hero h1 {
     font-size: 4rem;
-  }
-
-  .timeo-state-strip {
-    grid-template-columns: 1fr;
-  }
-
-  .route-npcs .npc-compact-grid .npc-feature-uwu,
-  .route-npcs .npc-compact-grid .npc-threat-chax,
-  .route-npcs .npc-compact-grid .npc-rampage-timeo {
-    padding-right: 18px;
-    background-image: linear-gradient(90deg, rgba(14, 10, 14, .97), rgba(14, 10, 14, .84));
   }
 }
 
