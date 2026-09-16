@@ -325,7 +325,7 @@ body.route-characters-all .hall-card-overlay {
   position: absolute !important;
   inset: 0 !important;
   z-index: 3 !important;
-  display: none !important;
+  display: block !important;
   width: 100% !important;
   height: 100% !important;
   background: none !important;
@@ -347,46 +347,49 @@ body.route-characters-all .hall-card-overlay::after {
 }
 
 body.route-characters-all .hall-card.is-active .hall-card-overlay {
-  display: none !important;
+  display: block !important;
+}
+
+body.route-characters-all .hall-card.is-active .hall-card-overlay::before {
+  background-image: url("/aevum-archive/assets/hall-of-names/v4/hall-card-active-frame-1200x1800.png");
+}
+
+body.route-characters-all .hall-card.is-active .hall-card-overlay::after {
+  background-image: url("/aevum-archive/assets/hall-of-names/v4/hall-card-active-motif-aether-1200x1800.png");
 }
 
 body.route-characters-all .hall-card.is-sealed .hall-card-overlay::before {
-  background-image: url("/aevum-archive/assets/hall-of-names/hall-status-sealed-frame-portrait.png");
+  background-image: url("/aevum-archive/assets/hall-of-names/v4/hall-card-sealed-frame-1200x1800.png");
 }
 
 body.route-characters-all .hall-card.is-sealed .hall-card-overlay::after {
-  background-image: url("/aevum-archive/assets/hall-of-names/hall-status-sealed-chains-portrait.png");
+  background-image: url("/aevum-archive/assets/hall-of-names/v4/hall-card-sealed-motif-chains-1200x1800.png");
 }
 
 body.route-characters-all .hall-card.is-fallen .hall-card-overlay::before,
 body.route-characters-all .hall-card.is-dead .hall-card-overlay::before {
-  background-image: url("/aevum-archive/assets/hall-of-names/hall-status-fallen-frame-portrait.png");
+  background-image: url("/aevum-archive/assets/hall-of-names/v4/hall-card-fallen-frame-1200x1800.png");
 }
 
 body.route-characters-all .hall-card.is-fallen .hall-card-overlay::after,
 body.route-characters-all .hall-card.is-dead .hall-card-overlay::after {
-  background-image: url("/aevum-archive/assets/hall-of-names/hall-status-fallen-broken-chains-portrait.png");
+  background-image: url("/aevum-archive/assets/hall-of-names/v4/hall-card-fallen-motif-broken-chains-1200x1800.png");
 }
 
 body.route-characters-all .hall-card.is-retired .hall-card-overlay::before {
-  background-image: url("/aevum-archive/assets/hall-of-names/hall-status-retired-drapery-portrait.png");
+  background-image: url("/aevum-archive/assets/hall-of-names/v4/hall-card-retired-frame-1200x1800.png");
 }
 
 body.route-characters-all .hall-card.is-retired .hall-card-overlay::after {
-  background-image: none;
+  background-image: url("/aevum-archive/assets/hall-of-names/v4/hall-card-retired-motif-drapery-1200x1800.png");
 }
 
 body.route-characters-all .hall-card.is-lost .hall-card-overlay::before {
-  inset: 5px;
-  border: 1px solid rgba(103, 204, 216, .58);
-  background:
-    linear-gradient(115deg, transparent 0 24%, rgba(134, 86, 186, .18) 24.4% 25.2%, transparent 25.6% 63%, rgba(97, 211, 221, .16) 63.4% 64%, transparent 64.4%),
-    radial-gradient(circle at 50% 42%, transparent 0 25%, rgba(105, 201, 215, .16) 25.5% 26%, transparent 26.5%);
-  box-shadow: inset 0 0 26px rgba(79, 169, 186, .12), 0 0 16px rgba(103, 96, 188, .12);
+  background-image: url("/aevum-archive/assets/hall-of-names/v4/hall-card-lost-frame-1200x1800.png");
 }
 
 body.route-characters-all .hall-card.is-lost .hall-card-overlay::after {
-  background: linear-gradient(180deg, rgba(105,203,215,.16), transparent 1.2%, transparent 49%, rgba(155,93,196,.2) 50%, transparent 51%, transparent 98.8%, rgba(105,203,215,.16));
+  background-image: url("/aevum-archive/assets/hall-of-names/v4/hall-card-lost-motif-fracture-1200x1800.png");
 }
 
 body.route-characters-all .hall-card-media {
