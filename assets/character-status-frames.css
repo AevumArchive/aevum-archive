@@ -354,8 +354,9 @@ body.route-characters-all .hall-card-overlay::before {
 }
 
 body.route-characters-all .hall-card-overlay::after {
-  content: none;
-  display: none;
+  inset: 0;
+  width: 100%;
+  height: 100%;
 }
 
 body.route-characters-all .hall-card.is-active .hall-card-overlay {
@@ -366,8 +367,16 @@ body.route-characters-all .hall-card.is-active .hall-card-overlay::before {
   background-image: url("/aevum-archive/assets/hall-of-names/v4/hall-card-active-frame-1200x1800.png");
 }
 
+body.route-characters-all .hall-card.is-active .hall-card-overlay::after {
+  background-image: url("/aevum-archive/assets/hall-of-names/v4/hall-card-active-motif-aether-1200x1800.png");
+}
+
 body.route-characters-all .hall-card.is-sealed .hall-card-overlay::before {
   background-image: url("/aevum-archive/assets/hall-of-names/v4/hall-card-sealed-frame-1200x1800.png");
+}
+
+body.route-characters-all .hall-card.is-sealed .hall-card-overlay::after {
+  background-image: url("/aevum-archive/assets/hall-of-names/v4/hall-card-sealed-motif-chains-1200x1800.png");
 }
 
 body.route-characters-all .hall-card.is-fallen .hall-card-overlay::before,
@@ -375,12 +384,25 @@ body.route-characters-all .hall-card.is-dead .hall-card-overlay::before {
   background-image: url("/aevum-archive/assets/hall-of-names/v4/hall-card-fallen-frame-1200x1800.png");
 }
 
+body.route-characters-all .hall-card.is-fallen .hall-card-overlay::after,
+body.route-characters-all .hall-card.is-dead .hall-card-overlay::after {
+  background-image: url("/aevum-archive/assets/hall-of-names/v4/hall-card-fallen-motif-broken-chains-1200x1800.png");
+}
+
 body.route-characters-all .hall-card.is-retired .hall-card-overlay::before {
   background-image: url("/aevum-archive/assets/hall-of-names/v4/hall-card-retired-frame-1200x1800.png");
 }
 
+body.route-characters-all .hall-card.is-retired .hall-card-overlay::after {
+  background-image: url("/aevum-archive/assets/hall-of-names/v4/hall-card-retired-motif-drapery-1200x1800.png");
+}
+
 body.route-characters-all .hall-card.is-lost .hall-card-overlay::before {
   background-image: url("/aevum-archive/assets/hall-of-names/v4/hall-card-lost-frame-1200x1800.png");
+}
+
+body.route-characters-all .hall-card.is-lost .hall-card-overlay::after {
+  background-image: url("/aevum-archive/assets/hall-of-names/v4/hall-card-lost-motif-fracture-1200x1800.png");
 }
 
 
