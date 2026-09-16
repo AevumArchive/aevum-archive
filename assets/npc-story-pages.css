@@ -1,0 +1,779 @@
+/* Major NPC records: UWU, Chax and Timeo. Shared archive primitives stay in styles.css. */
+
+.npc-story-page {
+  max-width: 1280px;
+}
+
+.npc-story-page .story-label {
+  color: #bba8bf;
+  font: 700 .66rem/1.25 Verdana, Geneva, sans-serif;
+  letter-spacing: .17em;
+  text-transform: uppercase;
+}
+
+.npc-story-page .record-facts {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 10px 20px;
+  margin: 18px 0 0;
+}
+
+.npc-story-page .record-facts dt {
+  color: #918593;
+}
+
+.npc-story-page .record-facts dd {
+  margin: 0;
+  color: #f0e4e6;
+  text-align: right;
+}
+
+.npc-story-page .story-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.npc-story-page .story-card {
+  min-height: 230px;
+}
+
+/* UWU ------------------------------------------------------------------ */
+
+body.route-npcs-uwu {
+  --uwu-gold: #c69a57;
+  --uwu-red: #8f2632;
+  --uwu-ivory: #e7ddd4;
+  background-image:
+    radial-gradient(circle at 50% 8%, rgba(127, 38, 44, .2), transparent 30%),
+    radial-gradient(circle at 85% 54%, rgba(173, 126, 62, .08), transparent 30%),
+    linear-gradient(180deg, #090708, #090609 60%, #050507) !important;
+}
+
+.uwu-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: clamp(28px, 4vw, 54px);
+  border: 1px solid rgba(187, 128, 69, .34);
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at 50% 38%, rgba(111, 23, 31, .16), transparent 32%),
+    linear-gradient(145deg, rgba(21, 12, 14, .96), rgba(7, 7, 10, .98));
+  box-shadow: inset 0 0 100px rgba(143, 54, 50, .08), 0 30px 90px rgba(0, 0, 0, .48);
+}
+
+.uwu-hero::before {
+  content: "";
+  position: absolute;
+  inset: 15px;
+  z-index: -1;
+  border: 1px solid rgba(208, 160, 93, .11);
+  border-radius: 22px;
+  pointer-events: none;
+}
+
+.uwu-hero::after {
+  content: "";
+  position: absolute;
+  inset: -35%;
+  z-index: -2;
+  opacity: .45;
+  background:
+    repeating-radial-gradient(circle at 50% 54%, transparent 0 112px, rgba(185, 116, 74, .055) 113px 114px, transparent 115px 170px),
+    conic-gradient(from 12deg at 50% 54%, transparent 0 20%, rgba(129, 31, 39, .07) 22%, transparent 24% 55%, rgba(193, 146, 81, .055) 57%, transparent 60%);
+  transition: opacity 350ms ease, transform 700ms ease;
+  pointer-events: none;
+}
+
+body.route-npcs-uwu[data-uwu-state="controlled"] .uwu-hero::after {
+  opacity: .8;
+  transform: rotate(3deg) scale(1.03);
+}
+
+.uwu-hero-heading {
+  max-width: 930px;
+  margin: 0 auto 24px;
+  text-align: center;
+}
+
+.uwu-hero-heading h1 {
+  margin: .08em 0 0;
+  color: var(--uwu-ivory);
+  font-size: clamp(4.5rem, 9vw, 8.5rem);
+  line-height: .82;
+  letter-spacing: -.045em;
+  text-shadow: 0 0 42px rgba(173, 52, 58, .18);
+}
+
+.uwu-hero-heading .uwu-title {
+  margin: 22px 0 9px;
+  color: #d2ad72;
+  font: italic clamp(1rem, 2vw, 1.35rem)/1.4 Georgia, serif;
+  letter-spacing: .12em;
+}
+
+.uwu-state-controls {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 0 auto 20px;
+}
+
+.uwu-state-controls button {
+  padding: 9px 14px;
+  border: 1px solid rgba(192, 146, 78, .28);
+  border-radius: 999px;
+  color: #a99da0;
+  background: rgba(7, 6, 8, .72);
+  font: 700 .62rem/1 Verdana, Geneva, sans-serif;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.uwu-state-controls button[aria-pressed="true"] {
+  color: #f3dfba;
+  border-color: rgba(218, 166, 86, .62);
+  background: rgba(84, 42, 28, .62);
+  box-shadow: 0 0 24px rgba(154, 78, 52, .14);
+}
+
+.uwu-state-stage {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(18px, 2.5vw, 32px);
+}
+
+.uwu-state-stage::after {
+  content: "";
+  position: absolute;
+  top: 4%;
+  bottom: 4%;
+  left: 50%;
+  z-index: 4;
+  width: 1px;
+  background: linear-gradient(transparent, rgba(213, 161, 86, .72) 24%, rgba(139, 41, 52, .82) 56%, transparent);
+  box-shadow: 0 0 20px rgba(179, 70, 63, .38);
+  transform: rotate(1.5deg);
+  pointer-events: none;
+}
+
+.uwu-state-card {
+  position: relative;
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(184, 133, 68, .35);
+  border-radius: 22px;
+  background: #0b080a;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, .5);
+  transition: opacity 300ms ease, filter 300ms ease, border-color 300ms ease, transform 300ms ease;
+}
+
+.uwu-state-card img {
+  display: block;
+  width: 100%;
+  height: clamp(560px, 57vw, 720px);
+  object-fit: cover;
+  object-position: center 18%;
+}
+
+.uwu-state-card[data-state="controlled"] img {
+  object-position: center 13%;
+}
+
+.uwu-state-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 56%, rgba(7, 5, 8, .94));
+  pointer-events: none;
+}
+
+.uwu-state-card figcaption {
+  position: absolute;
+  right: 24px;
+  bottom: 22px;
+  left: 24px;
+  z-index: 2;
+}
+
+.uwu-state-card figcaption strong,
+.uwu-state-card figcaption span {
+  display: block;
+}
+
+.uwu-state-card figcaption strong {
+  color: #f3e4d4;
+  font-size: clamp(1.35rem, 2.5vw, 2.05rem);
+}
+
+.uwu-state-card figcaption span {
+  margin-top: 5px;
+  color: #b49d99;
+  font: .62rem/1.3 Verdana, Geneva, sans-serif;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+body.route-npcs-uwu[data-uwu-state="before"] .uwu-state-card[data-state="controlled"],
+body.route-npcs-uwu[data-uwu-state="controlled"] .uwu-state-card[data-state="before"] {
+  opacity: .62;
+  filter: saturate(.62) brightness(.72);
+}
+
+body.route-npcs-uwu[data-uwu-state="before"] .uwu-state-card[data-state="before"],
+body.route-npcs-uwu[data-uwu-state="controlled"] .uwu-state-card[data-state="controlled"] {
+  border-color: rgba(226, 172, 92, .68);
+  transform: translateY(-3px);
+}
+
+body.route-npcs-uwu[data-uwu-state="controlled"] .uwu-state-card[data-state="controlled"] {
+  border-color: rgba(168, 48, 58, .72);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, .58), 0 0 36px rgba(122, 26, 36, .12);
+}
+
+.uwu-summary-grid {
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 20px;
+}
+
+.uwu-summary-grid .card:first-child {
+  border-color: rgba(193, 143, 74, .3);
+  background: linear-gradient(145deg, rgba(50, 29, 23, .62), rgba(13, 10, 14, .94));
+}
+
+.uwu-record-card {
+  border-color: rgba(143, 40, 50, .36) !important;
+  background: linear-gradient(145deg, rgba(52, 17, 22, .56), rgba(10, 8, 12, .96)) !important;
+}
+
+.uwu-first-servant {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(34px, 5vw, 64px);
+  border-block: 1px solid rgba(197, 145, 74, .24);
+  background:
+    linear-gradient(90deg, rgba(115, 72, 35, .08), transparent 28% 72%, rgba(112, 28, 39, .08)),
+    rgba(9, 7, 10, .6);
+  text-align: center;
+}
+
+.uwu-first-servant::before {
+  content: "I";
+  position: absolute;
+  inset: 50% auto auto 50%;
+  color: rgba(210, 161, 87, .045);
+  font: 700 18rem/1 Georgia, serif;
+  transform: translate(-50%, -50%);
+}
+
+.uwu-first-servant > * {
+  position: relative;
+}
+
+.uwu-first-servant h2 {
+  margin: .18em 0;
+  font-size: clamp(2.5rem, 5vw, 4.8rem);
+}
+
+.uwu-first-servant p:last-child {
+  max-width: 760px;
+  margin: 12px auto 0;
+  color: #c8b9b5;
+  line-height: 1.75;
+}
+
+.uwu-control-card {
+  border-color: rgba(148, 39, 51, .4) !important;
+  background:
+    radial-gradient(circle at 88% 10%, rgba(145, 34, 47, .18), transparent 36%),
+    linear-gradient(155deg, rgba(44, 13, 20, .82), rgba(8, 7, 11, .96)) !important;
+}
+
+.uwu-temporal-card {
+  position: relative;
+  overflow: hidden;
+  border-color: rgba(196, 147, 78, .28) !important;
+}
+
+.uwu-temporal-card::after {
+  content: "";
+  position: absolute;
+  inset: -60%;
+  opacity: .28;
+  background: repeating-radial-gradient(circle, transparent 0 54px, rgba(215, 163, 91, .16) 55px 56px, transparent 57px 86px);
+  pointer-events: none;
+}
+
+.uwu-relations .card {
+  min-height: 220px;
+}
+
+/* Chax ----------------------------------------------------------------- */
+
+body.route-npcs-chax {
+  --chax-ember: #bd7b35;
+  --chax-red: #79303a;
+  background-image:
+    radial-gradient(circle at 70% 10%, rgba(126, 91, 50, .08), transparent 24%),
+    linear-gradient(180deg, #06070a, #08080b 58%, #030405) !important;
+}
+
+.chax-hero {
+  display: grid;
+  grid-template-columns: minmax(300px, .72fr) minmax(420px, 1.28fr);
+  min-height: 720px;
+  overflow: hidden;
+  border: 1px solid rgba(125, 88, 62, .32);
+  border-radius: 28px;
+  background: #07070a;
+  box-shadow: inset 0 0 100px rgba(81, 43, 33, .08), 0 30px 90px rgba(0, 0, 0, .58);
+}
+
+.chax-hero-copy {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(34px, 5vw, 68px);
+  background: linear-gradient(90deg, rgba(8, 8, 11, .99), rgba(8, 8, 11, .92) 82%, transparent);
+}
+
+.chax-hero h1 {
+  margin: .08em 0 0;
+  font-size: clamp(5rem, 10vw, 9rem);
+  line-height: .8;
+  letter-spacing: -.055em;
+}
+
+.chax-hero .chax-title {
+  margin: 24px 0 12px;
+  color: #c18d59;
+  font: italic 1.2rem/1.4 Georgia, serif;
+  letter-spacing: .12em;
+}
+
+.chax-portrait {
+  position: relative;
+  min-height: 720px;
+  margin: 0;
+  overflow: hidden;
+}
+
+.chax-portrait::before,
+.chax-portrait::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.chax-portrait::before {
+  background: linear-gradient(90deg, #08080b 0, transparent 24%), linear-gradient(180deg, transparent 62%, rgba(4, 4, 6, .88));
+}
+
+.chax-portrait::after {
+  inset: 18px;
+  border: 1px solid rgba(153, 105, 58, .13);
+  clip-path: polygon(0 0, 34% 0, 34% 1px, 100% 1px, 100% 62%, calc(100% - 1px) 62%, calc(100% - 1px) 100%, 58% 100%, 58% calc(100% - 1px), 0 calc(100% - 1px));
+}
+
+.chax-portrait img {
+  width: 100%;
+  height: 100%;
+  min-height: 720px;
+  object-fit: cover;
+  object-position: center 12%;
+  filter: saturate(.72) contrast(1.05);
+}
+
+.chax-threat-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 24px;
+  border: 1px solid rgba(143, 79, 61, .25);
+  background: rgba(120, 62, 46, .16);
+}
+
+.chax-threat-strip article {
+  min-height: 145px;
+  padding: 24px;
+  background: rgba(8, 8, 11, .94);
+}
+
+.chax-threat-strip strong,
+.chax-threat-strip span {
+  display: block;
+}
+
+.chax-threat-strip strong {
+  margin-top: 11px;
+  color: #e6d7ca;
+  font-size: 1.2rem;
+}
+
+.chax-threat-strip span {
+  color: #9c8982;
+  font: .63rem/1.35 Verdana, Geneva, sans-serif;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.chax-containment {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.chax-containment article {
+  position: relative;
+  min-height: 260px;
+  padding: 28px;
+  overflow: hidden;
+  border: 1px solid rgba(126, 86, 65, .24);
+  background: linear-gradient(155deg, rgba(28, 24, 24, .82), rgba(6, 7, 9, .97));
+}
+
+.chax-containment article::after {
+  content: attr(data-index);
+  position: absolute;
+  right: 12px;
+  bottom: -20px;
+  color: rgba(173, 116, 70, .055);
+  font: 700 8rem/1 Georgia, serif;
+}
+
+.chax-containment p,
+.chax-containment h3 {
+  position: relative;
+  z-index: 1;
+}
+
+.chax-warning {
+  padding: clamp(34px, 5vw, 62px);
+  border: 1px solid rgba(133, 43, 47, .4);
+  background: linear-gradient(145deg, rgba(50, 13, 17, .62), rgba(7, 7, 9, .98));
+  text-align: center;
+}
+
+.chax-warning h2 {
+  margin: .2em auto;
+  max-width: 820px;
+  color: #ead7cf;
+  font-size: clamp(2.2rem, 5vw, 4.5rem);
+}
+
+.chax-warning p:last-child {
+  max-width: 720px;
+  margin: 12px auto 0;
+}
+
+/* Timeo ---------------------------------------------------------------- */
+
+body.route-npcs-timeo {
+  --timeo-red: #9f3037;
+  background-image:
+    radial-gradient(circle at 50% 12%, rgba(114, 25, 31, .15), transparent 31%),
+    linear-gradient(180deg, #06070a, #07080a 56%, #030405) !important;
+}
+
+.timeo-hero {
+  position: relative;
+  min-height: 780px;
+  overflow: hidden;
+  border: 1px solid rgba(130, 62, 63, .32);
+  border-radius: 28px;
+  background: #07080a;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, .58);
+}
+
+.timeo-hero::before,
+.timeo-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.timeo-hero::before {
+  background: linear-gradient(90deg, rgba(4, 5, 7, .96) 0, rgba(4, 5, 7, .62) 37%, transparent 68%), linear-gradient(180deg, transparent 54%, rgba(3, 4, 5, .96));
+}
+
+.timeo-hero::after {
+  inset: auto 0 0;
+  height: 31%;
+  opacity: .5;
+  background: linear-gradient(180deg, transparent, rgba(25, 6, 8, .54)), repeating-linear-gradient(176deg, transparent 0 19px, rgba(139, 36, 43, .07) 20px 21px);
+}
+
+.timeo-hero img {
+  width: 100%;
+  height: 780px;
+  object-fit: cover;
+  object-position: center 14%;
+  filter: saturate(.74) contrast(1.07);
+}
+
+.timeo-hero-copy {
+  position: absolute;
+  top: 50%;
+  left: clamp(28px, 6vw, 76px);
+  z-index: 3;
+  width: min(530px, 48%);
+  transform: translateY(-50%);
+}
+
+.timeo-hero-copy h1 {
+  margin: .08em 0 0;
+  font-size: clamp(4.5rem, 9vw, 8rem);
+  line-height: .8;
+  letter-spacing: -.05em;
+}
+
+.timeo-form-title {
+  margin: 24px 0 10px;
+  color: #d07777;
+  font: italic 1.25rem/1.4 Georgia, serif;
+  letter-spacing: .12em;
+}
+
+.timeo-state-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 24px;
+  border: 1px solid rgba(132, 56, 59, .25);
+  background: rgba(115, 46, 50, .15);
+}
+
+.timeo-state-strip article {
+  min-height: 130px;
+  padding: 22px;
+  background: rgba(8, 9, 11, .95);
+}
+
+.timeo-state-strip span,
+.timeo-state-strip strong {
+  display: block;
+}
+
+.timeo-state-strip span {
+  color: #8f8385;
+  font: .62rem/1.3 Verdana, Geneva, sans-serif;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.timeo-state-strip strong {
+  margin-top: 10px;
+  color: #ebdfe0;
+  font-size: 1.08rem;
+}
+
+.timeo-rampage-panel {
+  border-color: rgba(155, 49, 54, .36) !important;
+  background:
+    radial-gradient(circle at 88% 12%, rgba(134, 30, 36, .16), transparent 34%),
+    linear-gradient(155deg, rgba(36, 14, 17, .76), rgba(7, 8, 10, .98)) !important;
+}
+
+.timeo-plane {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(36px, 6vw, 72px);
+  border-block: 1px solid rgba(124, 58, 61, .24);
+  background:
+    radial-gradient(ellipse at 50% 100%, rgba(125, 30, 37, .16), transparent 38%),
+    repeating-linear-gradient(167deg, transparent 0 70px, rgba(184, 179, 183, .035) 71px 72px, transparent 73px 132px),
+    rgba(6, 7, 9, .74);
+  text-align: center;
+}
+
+.timeo-plane h2 {
+  margin: .15em auto;
+  max-width: 900px;
+  font-size: clamp(2.4rem, 5vw, 4.6rem);
+}
+
+.timeo-plane p:last-child {
+  max-width: 760px;
+  margin: 14px auto 0;
+}
+
+.timeo-forms {
+  display: grid;
+  grid-template-columns: 1.25fr .75fr;
+  gap: 20px;
+}
+
+.timeo-form-open,
+.timeo-form-sealed {
+  min-height: 270px;
+}
+
+.timeo-form-sealed {
+  opacity: .72;
+  border-style: dashed !important;
+}
+
+/* Registry additions --------------------------------------------------- */
+
+.route-npcs .npc-compact-grid .npc-feature-uwu {
+  grid-column: 1 / -1;
+  min-height: 230px;
+  border-color: rgba(187, 91, 76, .42);
+  background:
+    linear-gradient(90deg, rgba(19, 10, 14, .99) 0 45%, rgba(19, 10, 14, .84) 65%, rgba(19, 10, 14, .18)),
+    url("/aevum-archive/assets/images/npcs/uwu/uwu-controlled.jpg") 100% 18% / 58% auto no-repeat;
+  box-shadow: inset 0 0 52px rgba(142, 52, 47, .16), 0 16px 42px rgba(0, 0, 0, .26);
+}
+
+.route-npcs .npc-compact-grid .npc-feature-uwu .realm-symbol {
+  color: #e3b56c;
+  border-color: rgba(207, 146, 74, .42);
+  box-shadow: 0 0 22px rgba(180, 78, 53, .16);
+}
+
+.route-npcs .npc-compact-grid .npc-threat-chax {
+  border-color: rgba(140, 82, 62, .38);
+  background:
+    linear-gradient(90deg, rgba(13, 11, 13, .98) 0 54%, rgba(13, 11, 13, .72) 76%, rgba(13, 11, 13, .1)),
+    url("/aevum-archive/assets/images/npcs/chax/chax.jpg") 100% 15% / 51% auto no-repeat;
+}
+
+.route-npcs .npc-compact-grid .npc-rampage-timeo {
+  border-color: rgba(157, 60, 64, .4);
+  background:
+    linear-gradient(90deg, rgba(17, 9, 12, .98) 0 54%, rgba(17, 9, 12, .76) 76%, rgba(17, 9, 12, .12)),
+    url("/aevum-archive/assets/images/npcs/timeo/timeo-rampage-form.jpg") 100% 18% / 52% auto no-repeat;
+}
+
+@media (max-width: 900px) {
+  .uwu-summary-grid,
+  .chax-hero,
+  .timeo-forms {
+    grid-template-columns: 1fr;
+  }
+
+  .chax-hero-copy {
+    order: 2;
+    background: rgba(8, 8, 11, .97);
+  }
+
+  .chax-portrait {
+    order: 1;
+    min-height: 620px;
+  }
+
+  .chax-portrait img {
+    min-height: 620px;
+  }
+
+  .timeo-state-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .npc-story-page .story-grid,
+  .chax-containment,
+  .chax-threat-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .uwu-hero {
+    padding: 24px 16px;
+  }
+
+  .uwu-state-stage {
+    grid-template-columns: 1fr;
+  }
+
+  .uwu-state-stage::after {
+    top: 50%;
+    right: 8%;
+    bottom: auto;
+    left: 8%;
+    width: auto;
+    height: 1px;
+  }
+
+  .uwu-state-card img {
+    height: min(132vw, 620px);
+  }
+
+  .uwu-state-controls {
+    flex-wrap: wrap;
+  }
+
+  body.route-npcs-uwu[data-uwu-state="before"] .uwu-state-card[data-state="controlled"],
+  body.route-npcs-uwu[data-uwu-state="controlled"] .uwu-state-card[data-state="before"] {
+    opacity: .8;
+  }
+
+  .timeo-hero {
+    display: flex;
+    min-height: 0;
+    flex-direction: column;
+  }
+
+  .timeo-hero::before {
+    background: linear-gradient(180deg, transparent 35%, #050608 75%);
+  }
+
+  .timeo-hero img {
+    height: 590px;
+  }
+
+  .timeo-hero-copy {
+    position: relative;
+    top: auto;
+    left: auto;
+    z-index: 3;
+    width: auto;
+    margin-top: -170px;
+    padding: 28px 22px 34px;
+    transform: none;
+  }
+
+  .route-npcs .npc-compact-grid .npc-feature-uwu {
+    min-height: 210px;
+    padding-right: 18%;
+    background-position: 120% 18%;
+    background-size: 68% auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .uwu-hero-heading h1,
+  .chax-hero h1,
+  .timeo-hero-copy h1 {
+    font-size: 4rem;
+  }
+
+  .timeo-state-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .route-npcs .npc-compact-grid .npc-feature-uwu,
+  .route-npcs .npc-compact-grid .npc-threat-chax,
+  .route-npcs .npc-compact-grid .npc-rampage-timeo {
+    padding-right: 18px;
+    background-image: linear-gradient(90deg, rgba(14, 10, 14, .97), rgba(14, 10, 14, .84));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .uwu-hero::after,
+  .uwu-state-card {
+    transition: none;
+  }
+}
