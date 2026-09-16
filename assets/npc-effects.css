@@ -5,14 +5,6 @@
   --npc-fx-warm: rgba(244, 114, 182, .18);
 }
 
-.theme-npcs.page-detail main.page > :first-child {
-  animation: npc-page-arrival 720ms cubic-bezier(.2, .78, .2, 1) both;
-}
-
-.theme-npcs.page-detail .record-hero > :nth-child(2) {
-  animation: npc-panel-arrival 820ms 90ms cubic-bezier(.2, .78, .2, 1) both;
-}
-
 .theme-npcs .portrait-rune,
 .route-npcs .npc-card .realm-symbol {
   animation: npc-rune-breathe 5.4s ease-in-out infinite;
@@ -84,16 +76,6 @@
   }
 }
 
-@keyframes npc-page-arrival {
-  from { opacity: 0; transform: translateY(22px) scale(.992); filter: blur(4px); }
-  to { opacity: 1; transform: none; filter: none; }
-}
-
-@keyframes npc-panel-arrival {
-  from { opacity: 0; transform: translateX(20px); }
-  to { opacity: 1; transform: none; }
-}
-
 @keyframes npc-rune-breathe {
   0%, 100% { filter: brightness(.92); text-shadow: 0 0 12px transparent; }
   50% { filter: brightness(1.18); text-shadow: 0 0 22px currentColor; }
@@ -110,8 +92,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .theme-npcs.page-detail main.page > :first-child,
-  .theme-npcs.page-detail .record-hero > :nth-child(2),
   .theme-npcs .portrait-rune,
   .route-npcs .npc-card .realm-symbol,
   .route-npcs .npc-ledger-group,
