@@ -1,4 +1,4 @@
-@import url("/aevum-archive/assets/npc-archive-refresh.css?v=20260918-1");
+@import url("/aevum-archive/assets/npc-archive-refresh.css?v=20260918-2");
 
 /* Shared NPC motion layer. Effects stay restrained and preserve each record's theme. */
 
@@ -113,4 +113,13 @@
   .route-npcs .npc-card {
     transition: none !important;
   }
+}
+
+/* Keep the shared Arisu-style fact strip anchored to the complete hero. */
+body:has(.record-hero) .record-panel,
+body:has(.record-hero) .record-panel:hover {
+  position: static;
+  transform: none !important;
+  filter: none !important;
+  backdrop-filter: none !important;
 }

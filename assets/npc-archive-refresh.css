@@ -332,3 +332,174 @@ body:has(.record-hero) .footer { margin-top: 80px; }
 @media (prefers-reduced-motion: reduce) {
   body:has(.record-hero) *, body:has(.record-hero) *::before, body:has(.record-hero) *::after { animation: none !important; transition: none !important; }
 }
+
+/*
+ * Shared dossier alignment.
+ * These are the records refreshed in 83c4797. Their older HTML remains intact,
+ * while the visible composition now follows the same hero → fact strip →
+ * archive sections rhythm used by Arisu and the modern Poison dossier.
+ */
+body:has(.record-hero) .record-hero {
+  min-height: 760px;
+  margin-bottom: 154px;
+  overflow: visible;
+  background: linear-gradient(118deg, rgba(8, 7, 10, .99), rgba(15, 11, 16, .91));
+}
+
+body:has(.record-hero) .record-hero:has(dt:nth-of-type(6)) { margin-bottom: 246px; }
+
+body:has(.record-hero) .record-hero > .character-card {
+  min-height: 760px;
+  border-radius: 0 29px 29px 0 !important;
+}
+
+body:has(.record-hero) .record-panel {
+  position: static;
+  min-height: 760px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+body:has(.record-hero) .record-panel h1 {
+  margin-bottom: 7px;
+  font-size: clamp(5.5rem, 9vw, 10rem);
+}
+
+body:has(.record-hero) .record-panel .lede {
+  margin-top: 22px;
+  margin-bottom: 0;
+}
+
+body:has(.record-hero) .record-panel dl {
+  position: absolute;
+  top: calc(100% + 18px);
+  left: 0;
+  z-index: 8;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-rows: auto auto;
+  width: 100%;
+  min-height: 118px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid rgba(var(--refresh-accent-rgb), .17);
+  border-radius: 18px;
+  background: rgba(9, 7, 11, .94);
+  box-shadow: 0 20px 58px rgba(0, 0, 0, .28);
+}
+
+body:has(.record-hero) .record-panel dl:has(dt:nth-of-type(6)) {
+  grid-template-rows: repeat(4, auto);
+  min-height: 210px;
+}
+
+body:has(.record-hero) .record-panel dt,
+body:has(.record-hero) .record-panel dd {
+  min-width: 0;
+  padding-inline: 18px;
+  border: 0;
+  border-right: 1px solid rgba(var(--refresh-accent-rgb), .11);
+  text-align: left;
+}
+
+body:has(.record-hero) .record-panel dt {
+  align-self: end;
+  padding-top: 18px;
+  padding-bottom: 5px;
+  color: #7e7481;
+}
+
+body:has(.record-hero) .record-panel dd {
+  align-self: start;
+  padding-top: 0;
+  padding-bottom: 18px;
+  color: #e5dbe6;
+  font-size: .9rem;
+}
+
+body:has(.record-hero) .record-panel dt:nth-of-type(1), body:has(.record-hero) .record-panel dd:nth-of-type(1) { grid-column: 1; }
+body:has(.record-hero) .record-panel dt:nth-of-type(2), body:has(.record-hero) .record-panel dd:nth-of-type(2) { grid-column: 2; }
+body:has(.record-hero) .record-panel dt:nth-of-type(3), body:has(.record-hero) .record-panel dd:nth-of-type(3) { grid-column: 3; }
+body:has(.record-hero) .record-panel dt:nth-of-type(4), body:has(.record-hero) .record-panel dd:nth-of-type(4) { grid-column: 4; }
+body:has(.record-hero) .record-panel dt:nth-of-type(5), body:has(.record-hero) .record-panel dd:nth-of-type(5) { grid-column: 5; border-right: 0; }
+body:has(.record-hero) .record-panel dt:nth-of-type(-n+5) { grid-row: 1; }
+body:has(.record-hero) .record-panel dd:nth-of-type(-n+5) { grid-row: 2; }
+
+body:has(.record-hero) .record-panel dt:nth-of-type(6), body:has(.record-hero) .record-panel dd:nth-of-type(6) { grid-column: 1; }
+body:has(.record-hero) .record-panel dt:nth-of-type(7), body:has(.record-hero) .record-panel dd:nth-of-type(7) { grid-column: 2; }
+body:has(.record-hero) .record-panel dt:nth-of-type(8), body:has(.record-hero) .record-panel dd:nth-of-type(8) { grid-column: 3; }
+body:has(.record-hero) .record-panel dt:nth-of-type(n+6) { grid-row: 3; border-top: 1px solid rgba(var(--refresh-accent-rgb), .11); }
+body:has(.record-hero) .record-panel dd:nth-of-type(n+6) { grid-row: 4; }
+
+body:has(.record-hero) .record-panel dl:has(dt:nth-of-type(6)):not(:has(dt:nth-of-type(7))) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+body:has(.record-hero) .record-panel dl:has(dt:nth-of-type(6)):not(:has(dt:nth-of-type(7))) dt:nth-of-type(-n+3) { grid-row: 1; }
+body:has(.record-hero) .record-panel dl:has(dt:nth-of-type(6)):not(:has(dt:nth-of-type(7))) dd:nth-of-type(-n+3) { grid-row: 2; }
+body:has(.record-hero) .record-panel dl:has(dt:nth-of-type(6)):not(:has(dt:nth-of-type(7))) dt:nth-of-type(n+4) { grid-row: 3; border-top: 1px solid rgba(var(--refresh-accent-rgb), .11); }
+body:has(.record-hero) .record-panel dl:has(dt:nth-of-type(6)):not(:has(dt:nth-of-type(7))) dd:nth-of-type(n+4) { grid-row: 4; }
+body:has(.record-hero) .record-panel dl:has(dt:nth-of-type(6)):not(:has(dt:nth-of-type(7))) dt:nth-of-type(4),
+body:has(.record-hero) .record-panel dl:has(dt:nth-of-type(6)):not(:has(dt:nth-of-type(7))) dd:nth-of-type(4) { grid-column: 1; }
+body:has(.record-hero) .record-panel dl:has(dt:nth-of-type(6)):not(:has(dt:nth-of-type(7))) dt:nth-of-type(5),
+body:has(.record-hero) .record-panel dl:has(dt:nth-of-type(6)):not(:has(dt:nth-of-type(7))) dd:nth-of-type(5) { grid-column: 2; }
+body:has(.record-hero) .record-panel dl:has(dt:nth-of-type(6)):not(:has(dt:nth-of-type(7))) dt:nth-of-type(6),
+body:has(.record-hero) .record-panel dl:has(dt:nth-of-type(6)):not(:has(dt:nth-of-type(7))) dd:nth-of-type(6) { grid-column: 3; border-right: 0; }
+
+body:has(.record-hero) .record-panel dl:has(dt:nth-of-type(7)) { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+body:has(.record-hero) .record-panel dl:has(dt:nth-of-type(7)) dt:nth-of-type(-n+4) { grid-row: 1; }
+body:has(.record-hero) .record-panel dl:has(dt:nth-of-type(7)) dd:nth-of-type(-n+4) { grid-row: 2; }
+body:has(.record-hero) .record-panel dl:has(dt:nth-of-type(7)) dt:nth-of-type(n+5) { grid-row: 3; border-top: 1px solid rgba(var(--refresh-accent-rgb), .11); }
+body:has(.record-hero) .record-panel dl:has(dt:nth-of-type(7)) dd:nth-of-type(n+5) { grid-row: 4; }
+body:has(.record-hero) .record-panel dl:has(dt:nth-of-type(7)) dt:nth-of-type(4),
+body:has(.record-hero) .record-panel dl:has(dt:nth-of-type(7)) dd:nth-of-type(4) { grid-column: 4; border-right: 0; }
+body:has(.record-hero) .record-panel dl:has(dt:nth-of-type(7)) dt:nth-of-type(5),
+body:has(.record-hero) .record-panel dl:has(dt:nth-of-type(7)) dd:nth-of-type(5) { grid-column: 1; }
+body:has(.record-hero) .record-panel dl:has(dt:nth-of-type(7)) dt:nth-of-type(6),
+body:has(.record-hero) .record-panel dl:has(dt:nth-of-type(7)) dd:nth-of-type(6) { grid-column: 2; }
+body:has(.record-hero) .record-panel dl:has(dt:nth-of-type(7)) dt:nth-of-type(7),
+body:has(.record-hero) .record-panel dl:has(dt:nth-of-type(7)) dd:nth-of-type(7) { grid-column: 3; }
+body:has(.record-hero) .record-panel dl:has(dt:nth-of-type(8)) dt:nth-of-type(8),
+body:has(.record-hero) .record-panel dl:has(dt:nth-of-type(8)) dd:nth-of-type(8) { grid-column: 4; border-right: 0; }
+
+body:has(.record-hero) .character-body {
+  position: absolute;
+  right: 30px;
+  bottom: 25px;
+  left: 30px;
+  padding: 58px 0 0;
+  background: linear-gradient(180deg, transparent, rgba(5, 4, 7, .84));
+}
+
+body:has(.record-hero) .character-body h3 { font-size: 1.05rem; }
+body:has(.record-hero) .character-body > p { color: #8f8490; font: 700 .57rem/1 Verdana, sans-serif; letter-spacing: .15em; text-transform: uppercase; }
+body:has(.record-hero) .character-body .tag-row { display: none; }
+
+body:has(.record-hero) main.page > .section { margin-top: 84px; }
+body:has(.record-hero) .lore-notes,
+body:has(.record-hero) main.page > .section.grid > .card {
+  background: linear-gradient(145deg, rgba(23, 17, 24, .9), rgba(7, 6, 9, .97));
+}
+
+@media (max-width: 1120px) {
+  body:has(.record-hero) .record-panel dl { grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: repeat(4, auto); min-height: 210px; }
+  body:has(.record-hero) .record-hero { margin-bottom: 246px; }
+  body:has(.record-hero) .record-panel dt:nth-of-type(-n+3) { grid-row: 1; }
+  body:has(.record-hero) .record-panel dd:nth-of-type(-n+3) { grid-row: 2; }
+  body:has(.record-hero) .record-panel dt:nth-of-type(n+4) { grid-row: 3; border-top: 1px solid rgba(var(--refresh-accent-rgb), .11); }
+  body:has(.record-hero) .record-panel dd:nth-of-type(n+4) { grid-row: 4; }
+  body:has(.record-hero) .record-panel dt:nth-of-type(4), body:has(.record-hero) .record-panel dd:nth-of-type(4) { grid-column: 1; }
+  body:has(.record-hero) .record-panel dt:nth-of-type(5), body:has(.record-hero) .record-panel dd:nth-of-type(5) { grid-column: 2; border-right: 1px solid rgba(var(--refresh-accent-rgb), .11); }
+  body:has(.record-hero) .record-panel dt:nth-of-type(6), body:has(.record-hero) .record-panel dd:nth-of-type(6) { grid-column: 3; border-right: 0; }
+}
+
+@media (max-width: 760px) {
+  body:has(.record-hero) .record-hero,
+  body:has(.record-hero) .record-hero:has(dt:nth-of-type(6)) { margin-bottom: 0; }
+  body:has(.record-hero) .record-panel { min-height: 0; }
+  body:has(.record-hero) .record-panel dl,
+  body:has(.record-hero) .record-panel dl:has(dt:nth-of-type(6)) { position: static; grid-template-columns: 1fr; grid-template-rows: none; min-height: 0; margin-top: 28px; }
+  body:has(.record-hero) .record-panel dt,
+  body:has(.record-hero) .record-panel dd { grid-column: 1 !important; grid-row: auto !important; border-right: 0; }
+  body:has(.record-hero) .record-panel dt { border-top: 1px solid rgba(var(--refresh-accent-rgb), .11); }
+  body:has(.record-hero) .record-hero > .character-card { border-radius: 0 0 29px 29px !important; }
+}
