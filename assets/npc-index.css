@@ -136,7 +136,7 @@ body.route-npcs .npc-ledger-summary p:last-child { max-width: 38ch; margin: 0; c
   position: relative;
   z-index: 4;
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   margin: 22px 0 66px;
   border: 1px solid rgba(216, 165, 236, .16);
   border-radius: 18px;
@@ -324,6 +324,68 @@ body.route-npcs .npc-compact-grid .npc-feature-peter .pill:first-child {
   color: #e5b875;
 }
 
+/* Divine alliance: intentionally image-less records with their own shelf. */
+body.route-npcs #divine-alliance .npc-divine-ledger {
+  padding: 18px;
+  border-color: rgba(196, 176, 103, .2);
+  background:
+    radial-gradient(circle at 50% 0, rgba(137, 179, 104, .08), transparent 30rem),
+    linear-gradient(135deg, rgba(16, 18, 14, .88), rgba(8, 7, 11, .96));
+}
+
+body.route-npcs #divine-alliance .npc-group-head {
+  padding: 10px 14px 18px;
+}
+
+body.route-npcs #divine-alliance .npc-compact-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+body.route-npcs #divine-alliance .npc-divine-card {
+  min-height: 270px;
+  align-content: end;
+  padding: 34px 31% 32px 30px;
+  border-radius: 19px;
+}
+
+body.route-npcs #divine-alliance .npc-divine-card h3 {
+  font-size: clamp(1.55rem, 2.5vw, 2.35rem);
+}
+
+body.route-npcs #divine-alliance .npc-divine-card::after {
+  content: "OPEN DIVINE RECORD  →";
+  position: absolute;
+  right: 22px;
+  bottom: 18px;
+  color: rgba(235, 226, 190, .62);
+  font: 700 .58rem/1 Verdana, sans-serif;
+  letter-spacing: .14em;
+}
+
+body.route-npcs #divine-alliance .npc-feature-izumi {
+  border-color: rgba(109, 222, 145, .25);
+  background:
+    radial-gradient(circle at 82% 36%, rgba(109, 222, 145, .18), transparent 15%),
+    radial-gradient(circle at 82% 36%, transparent 0 18%, rgba(109, 222, 145, .09) 18.3% 18.7%, transparent 19%),
+    linear-gradient(140deg, rgba(8, 19, 13, .97), rgba(5, 8, 7, .99));
+}
+
+body.route-npcs #divine-alliance .npc-feature-izumi::before {
+  background: linear-gradient(180deg, transparent, rgba(109, 222, 145, .7), transparent);
+}
+
+body.route-npcs #divine-alliance .npc-feature-bomir {
+  border-color: rgba(231, 189, 89, .28);
+  background:
+    radial-gradient(circle at 82% 36%, rgba(231, 189, 89, .2), transparent 15%),
+    radial-gradient(circle at 82% 36%, transparent 0 18%, rgba(231, 189, 89, .09) 18.3% 18.7%, transparent 19%),
+    linear-gradient(140deg, rgba(24, 19, 8, .97), rgba(8, 7, 5, .99));
+}
+
+body.route-npcs #divine-alliance .npc-feature-bomir::before {
+  background: linear-gradient(180deg, transparent, rgba(231, 189, 89, .76), transparent);
+}
+
 body.route-npcs .npc-compact-grid .npc-legacy-arisu::before {
   background: linear-gradient(180deg, transparent, rgba(239, 140, 186, .78), transparent);
 }
@@ -398,7 +460,7 @@ body.route-npcs #sovereigns .npc-group-head {
 }
 
 body.route-npcs #sovereigns .npc-compact-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 body.route-npcs #sovereigns .npc-compact-grid .npc-feature {
@@ -422,18 +484,6 @@ body.route-npcs #sovereigns .npc-feature-lilith {
   background:
     linear-gradient(90deg, rgba(18, 6, 15, .98) 0 46%, rgba(18, 6, 15, .72) 65%, rgba(18, 6, 15, .14)),
     url("/aevum-archive/assets/images/lilith.png") 100% 20% / 61% auto no-repeat;
-}
-
-body.route-npcs #sovereigns .npc-feature-izumi {
-  border-color: rgba(109, 222, 145, .25);
-  background:
-    radial-gradient(circle at 79% 28%, rgba(109, 222, 145, .18), transparent 17%),
-    radial-gradient(circle at 79% 28%, transparent 0 19%, rgba(109, 222, 145, .08) 19.3% 19.7%, transparent 20%),
-    linear-gradient(140deg, rgba(8, 19, 13, .97), rgba(5, 8, 7, .99));
-}
-
-body.route-npcs #sovereigns .npc-feature-izumi::before {
-  background: linear-gradient(180deg, transparent, rgba(109, 222, 145, .7), transparent);
 }
 
 body.route-npcs #sovereigns .npc-feature::after {
@@ -485,8 +535,10 @@ body.route-npcs .footer {
   body.route-npcs .npc-compact-grid,
   body.route-npcs .npc-lock-grid,
   body.route-npcs #sovereigns .npc-compact-grid,
+  body.route-npcs #divine-alliance .npc-compact-grid,
   body.route-npcs #contained-records .npc-compact-grid { grid-template-columns: 1fr; }
   body.route-npcs #sovereigns .npc-compact-grid .npc-feature { min-height: 260px; padding-right: 34%; }
+  body.route-npcs #divine-alliance .npc-divine-card { min-height: 250px; padding-right: 28%; }
 }
 
 @media (prefers-reduced-motion: reduce) {
