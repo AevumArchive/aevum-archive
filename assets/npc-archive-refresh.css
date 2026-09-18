@@ -1,0 +1,334 @@
+/* High-fidelity refresh for legacy NPC detail records. Desktop-first. */
+
+body:has(.record-hero) {
+  --refresh-accent: #b58ad8;
+  --refresh-accent-rgb: 181, 138, 216;
+  --refresh-ink: #f3ecf5;
+  background-color: #060508 !important;
+  background-image:
+    radial-gradient(circle at 82% 10%, rgba(var(--refresh-accent-rgb), .12), transparent 32rem),
+    radial-gradient(circle at 14% 58%, rgba(var(--refresh-accent-rgb), .06), transparent 34rem),
+    linear-gradient(180deg, #070609, #0a080d 52%, #040405) !important;
+}
+
+body.route-npcs-bomir { --refresh-accent: #dfbd72; --refresh-accent-rgb: 223, 189, 114; }
+body.route-npcs-deadshot { --refresh-accent: #ef7a84; --refresh-accent-rgb: 239, 122, 132; }
+body.route-npcs-ichiro { --refresh-accent: #ff557f; --refresh-accent-rgb: 255, 85, 127; }
+body.route-npcs-jarvis { --refresh-accent: #74d6ff; --refresh-accent-rgb: 116, 214, 255; }
+body.route-npcs-jiro { --refresh-accent: #b99cff; --refresh-accent-rgb: 185, 156, 255; }
+body.route-npcs-john { --refresh-accent: #e2b66b; --refresh-accent-rgb: 226, 182, 107; }
+body.route-npcs-keanu { --refresh-accent: #9b72ff; --refresh-accent-rgb: 155, 114, 255; }
+body.route-npcs-library-entity { --refresh-accent: #a8b4e8; --refresh-accent-rgb: 168, 180, 232; }
+body.route-npcs-nox { --refresh-accent: #ba8dff; --refresh-accent-rgb: 186, 141, 255; }
+body.route-npcs-nyx { --refresh-accent: #dc83f0; --refresh-accent-rgb: 220, 131, 240; }
+body.route-npcs-rapax { --refresh-accent: #7ed9e8; --refresh-accent-rgb: 126, 217, 232; }
+body.route-npcs-timeo { --refresh-accent: #d86269; --refresh-accent-rgb: 216, 98, 105; }
+body.route-npcs-uwubama { --refresh-accent: #e184ff; --refresh-accent-rgb: 225, 132, 255; }
+
+body:has(.record-hero) main.page { max-width: 1480px; }
+
+body:has(.record-hero) .record-hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(420px, .88fr) minmax(520px, 1.12fr);
+  min-height: 740px;
+  border: 1px solid rgba(var(--refresh-accent-rgb), .25);
+  border-radius: 30px;
+  background: linear-gradient(118deg, rgba(8, 7, 10, .99), rgba(16, 11, 18, .93));
+  box-shadow: 0 32px 100px rgba(0, 0, 0, .43), inset 0 0 80px rgba(var(--refresh-accent-rgb), .035);
+  overflow: hidden;
+}
+
+body:has(.record-hero) .record-hero::before {
+  content: "";
+  position: absolute;
+  z-index: 4;
+  inset: 16px;
+  border: 1px solid rgba(var(--refresh-accent-rgb), .075);
+  border-radius: 22px;
+  pointer-events: none;
+}
+
+body:has(.record-hero) .record-panel {
+  position: relative;
+  z-index: 3;
+  order: 1;
+  align-self: center;
+  min-width: 0;
+  padding: clamp(44px, 6vw, 84px);
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+}
+
+body:has(.record-hero) .record-panel .eyebrow { color: var(--refresh-accent); }
+
+body:has(.record-hero) .record-panel h1 {
+  margin: 12px 0 24px;
+  color: var(--refresh-ink);
+  font-size: clamp(4.8rem, 8vw, 9rem);
+  line-height: .82;
+  letter-spacing: -.055em;
+  text-wrap: balance;
+  text-shadow: 0 0 44px rgba(var(--refresh-accent-rgb), .12);
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+}
+
+body.route-npcs-jarvis .record-panel h1,
+body.route-npcs-library-entity .record-panel h1 { font-size: clamp(3.5rem, 5.4vw, 6.4rem); line-height: .88; }
+
+body:has(.record-hero) .record-panel .lede {
+  max-width: 610px;
+  margin-bottom: 28px;
+  color: #c8bdca;
+  font-size: clamp(1rem, 1.35vw, 1.18rem);
+  line-height: 1.72;
+}
+
+body:has(.record-hero) .record-panel dl {
+  display: grid;
+  grid-template-columns: minmax(120px, auto) minmax(0, 1fr);
+  gap: 0 22px;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid rgba(var(--refresh-accent-rgb), .17);
+}
+
+body:has(.record-hero) .record-panel dt,
+body:has(.record-hero) .record-panel dd {
+  margin: 0;
+  padding: 11px 0;
+  border-bottom: 1px solid rgba(var(--refresh-accent-rgb), .1);
+}
+
+body:has(.record-hero) .record-panel dt {
+  color: #766e79;
+  font: 700 .56rem/1.4 Verdana, sans-serif;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+}
+
+body:has(.record-hero) .record-panel dd {
+  color: #ddd4df;
+  font: 700 .84rem/1.4 Georgia, serif;
+  text-align: right;
+}
+
+body:has(.record-hero) .record-hero > .character-card {
+  position: relative;
+  z-index: 2;
+  order: 2;
+  align-self: stretch;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  min-width: 0;
+  min-height: 740px;
+  padding: 0;
+  border: 0 !important;
+  border-left: 1px solid rgba(var(--refresh-accent-rgb), .13) !important;
+  border-radius: 0 !important;
+  background:
+    radial-gradient(circle at 54% 42%, rgba(var(--refresh-accent-rgb), .2), transparent 15rem),
+    linear-gradient(155deg, rgba(var(--refresh-accent-rgb), .07), rgba(5, 4, 7, .98) 72%) !important;
+  box-shadow: none !important;
+  overflow: hidden;
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+}
+
+body:has(.record-hero) .record-hero > .character-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(7, 6, 9, .87), transparent 24%),
+    linear-gradient(180deg, transparent 57%, rgba(5, 4, 7, .94));
+}
+
+body:has(.record-hero) .portrait-slot {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  min-height: 550px;
+  padding: 55px;
+}
+
+body:has(.record-hero) .portrait-rune {
+  display: grid;
+  place-items: center;
+  width: 235px;
+  height: 235px;
+  border: 1px solid rgba(var(--refresh-accent-rgb), .32);
+  border-radius: 50%;
+  color: var(--refresh-accent);
+  background: rgba(4, 4, 6, .34);
+  box-shadow: 0 0 0 44px rgba(var(--refresh-accent-rgb), .025), 0 0 70px rgba(var(--refresh-accent-rgb), .12), inset 0 0 55px rgba(var(--refresh-accent-rgb), .06);
+  font: 400 5.4rem/1 Georgia, serif;
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+}
+
+body:has(.record-hero) .character-body {
+  position: relative;
+  z-index: 2;
+  align-self: end;
+  padding: 28px 34px 32px;
+  text-align: right;
+  background: linear-gradient(180deg, transparent, rgba(5, 4, 7, .72) 25%);
+}
+
+body:has(.record-hero) .character-body h3 {
+  margin: 0;
+  color: #eee5ef;
+  font-size: clamp(1.6rem, 2.3vw, 2.3rem);
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+}
+
+body:has(.record-hero) .character-body > p { margin: 5px 0 13px; color: var(--refresh-accent); font-style: italic; }
+body:has(.record-hero) .tag-row { justify-content: flex-end; opacity: 1 !important; transform: none !important; animation: none !important; }
+
+/* Existing portrait assets become the visual half of their hero. */
+body.route-npcs-bomir .record-hero > .character-card { background: linear-gradient(90deg, rgba(7, 6, 8, .7), transparent 25%), linear-gradient(180deg, transparent 55%, #050407 100%), url("/aevum-archive/assets/images/bomir.png") 50% 12% / cover no-repeat !important; }
+body.route-npcs-ichiro .record-hero > .character-card { background: linear-gradient(90deg, rgba(7, 6, 8, .72), transparent 25%), linear-gradient(180deg, transparent 55%, #050407 100%), url("/aevum-archive/assets/images/ichiro.png") 50% 15% / cover no-repeat !important; }
+body.route-npcs-jiro .record-hero > .character-card { background: linear-gradient(90deg, rgba(7, 6, 8, .7), transparent 25%), linear-gradient(180deg, transparent 55%, #050407 100%), url("/aevum-archive/assets/images/jiro.png") 50% 14% / cover no-repeat !important; }
+body.route-npcs-keanu .record-hero > .character-card { background: linear-gradient(90deg, rgba(7, 6, 8, .72), transparent 25%), linear-gradient(180deg, transparent 55%, #050407 100%), url("/aevum-archive/assets/images/keanu.png") 50% 12% / cover no-repeat !important; }
+
+body.route-npcs-bomir .record-hero .portrait-slot,
+body.route-npcs-ichiro .record-hero .portrait-slot,
+body.route-npcs-jiro .record-hero .portrait-slot,
+body.route-npcs-keanu .record-hero .portrait-slot { visibility: hidden; }
+
+body:has(.record-hero) main.page > .section { margin-top: 78px; }
+
+body:has(.record-hero) main.page > .section > .card,
+body:has(.record-hero) main.page > .section.grid > .card {
+  border: 1px solid rgba(var(--refresh-accent-rgb), .16);
+  border-radius: 21px;
+  background: linear-gradient(145deg, rgba(23, 17, 24, .9), rgba(7, 6, 9, .97));
+  box-shadow: 0 24px 64px rgba(0, 0, 0, .2);
+}
+
+body:has(.record-hero) .lore-notes { padding: clamp(30px, 4vw, 52px); }
+body:has(.record-hero) .lore-notes h2 { margin: 0 0 25px; color: var(--refresh-ink); font-size: clamp(2.4rem, 4.4vw, 4.8rem); line-height: .95; }
+body:has(.record-hero) .lore-notes ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 14px; margin: 0; padding: 0; list-style: none; }
+body:has(.record-hero) .lore-notes li { position: relative; padding: 15px 16px 15px 42px; border: 1px solid rgba(var(--refresh-accent-rgb), .1); border-radius: 13px; color: #b8aeba; background: rgba(var(--refresh-accent-rgb), .03); line-height: 1.58; }
+body:has(.record-hero) .lore-notes li::before { content: "◇"; position: absolute; left: 15px; top: 15px; color: var(--refresh-accent); }
+
+body:has(.record-hero) .section.grid { gap: 16px; }
+body:has(.record-hero) .section.grid > .card { min-height: 215px; padding: clamp(26px, 3vw, 40px); }
+body:has(.record-hero) .section.grid > .card h2 { color: #eee4ef; font-size: clamp(1.55rem, 2.4vw, 2.35rem); line-height: 1.05; }
+body:has(.record-hero) .section.grid > .card p { color: #b4aab5; line-height: 1.7; }
+body:has(.record-hero) .small-button { border-color: rgba(var(--refresh-accent-rgb), .3); color: var(--refresh-accent); }
+
+/* Timeo keeps the witnessed Rampage artwork and exposes the sealed normal state via a stable switcher. */
+body.route-npcs-timeo .timeo-form-section { margin-top: 78px; }
+body.route-npcs-timeo .timeo-portrait-card {
+  padding: clamp(26px, 4vw, 54px) !important;
+  border-color: rgba(216, 98, 105, .24) !important;
+  background:
+    radial-gradient(circle at 80% 18%, rgba(216, 98, 105, .11), transparent 31rem),
+    linear-gradient(145deg, rgba(21, 10, 13, .96), rgba(5, 5, 7, .99)) !important;
+}
+body.route-npcs-timeo .timeo-form-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(430px, .8fr);
+  gap: 34px;
+  align-items: end;
+  margin-bottom: 28px;
+}
+body.route-npcs-timeo .timeo-form-heading h2 {
+  margin: 0 0 10px;
+  color: #f4e8e9;
+  font-size: clamp(2.5rem, 4.5vw, 5rem);
+  line-height: .92;
+}
+body.route-npcs-timeo .timeo-portrait-note { max-width: 660px; margin: 0; color: #ad9da1; line-height: 1.65; }
+body.route-npcs-timeo .timeo-form-controls { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+body.route-npcs-timeo .timeo-form-controls button {
+  min-height: 70px;
+  padding: 12px 16px;
+  border: 1px solid rgba(216, 98, 105, .2);
+  border-radius: 14px;
+  color: #e9dfe1;
+  background: rgba(7, 5, 7, .78);
+  font: 700 1rem/1.2 Georgia, serif;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 180ms ease, background-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+body.route-npcs-timeo .timeo-form-controls button small { display: block; margin-bottom: 6px; color: #8d777b; font: 700 .56rem/1 Verdana, sans-serif; letter-spacing: .12em; text-transform: uppercase; }
+body.route-npcs-timeo .timeo-form-controls button[aria-pressed="true"] { border-color: rgba(234, 107, 115, .62); background: linear-gradient(135deg, rgba(132, 31, 39, .32), rgba(48, 12, 20, .22)); box-shadow: inset 0 0 28px rgba(216, 98, 105, .07), 0 0 24px rgba(176, 47, 56, .09); }
+body.route-npcs-timeo .timeo-form-controls button:hover { transform: translateY(-2px); border-color: rgba(234, 107, 115, .5); }
+body.route-npcs-timeo .timeo-form-stage { position: relative; width: min(100%, 820px); aspect-ratio: 2 / 3; margin-inline: auto; }
+body.route-npcs-timeo .timeo-form-card {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  border: 1px solid rgba(216, 98, 105, .38);
+  border-radius: 24px;
+  background: #030304;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, .56), 0 0 45px rgba(159, 48, 55, .08);
+  overflow: hidden;
+}
+body.route-npcs-timeo .timeo-form-card[hidden] { display: none; }
+body.route-npcs-timeo .timeo-form-card img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 18%; }
+body.route-npcs-timeo .timeo-form-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 63%, rgba(3, 3, 4, .16) 76%, rgba(3, 3, 4, .94)); pointer-events: none; }
+body.route-npcs-timeo .timeo-form-card figcaption { position: absolute; z-index: 3; left: 30px; right: 30px; bottom: 27px; display: flex; justify-content: space-between; align-items: end; gap: 22px; }
+body.route-npcs-timeo .timeo-form-card figcaption span { color: #9d898d; font: 700 .61rem/1 Verdana, sans-serif; letter-spacing: .14em; text-transform: uppercase; }
+body.route-npcs-timeo .timeo-form-card figcaption strong { color: #faecee; font: 700 clamp(1.35rem, 2.6vw, 2.2rem)/1 Georgia, serif; }
+body.route-npcs-timeo .timeo-form-sealed { display: grid; place-items: center; background: radial-gradient(circle, rgba(151, 39, 47, .16), transparent 24rem), repeating-radial-gradient(circle, transparent 0 58px, rgba(216, 98, 105, .055) 59px 60px), #050406; }
+body.route-npcs-timeo .timeo-form-sealed::before { content: "VISUAL RECORD SEALED"; position: absolute; top: 34px; color: rgba(213, 169, 173, .48); font: 700 .6rem/1 Verdana, sans-serif; letter-spacing: .22em; }
+body.route-npcs-timeo .timeo-unknown-sigil { position: relative; z-index: 2; display: grid; place-items: center; width: min(48vw, 360px); aspect-ratio: 1; border: 1px solid rgba(216, 98, 105, .34); border-radius: 50%; box-shadow: 0 0 0 36px rgba(216, 98, 105, .025), 0 0 90px rgba(174, 42, 52, .14), inset 0 0 75px rgba(216, 98, 105, .07); animation: timeo-sigil-breathe 4.8s ease-in-out infinite; }
+body.route-npcs-timeo .timeo-unknown-sigil::before,
+body.route-npcs-timeo .timeo-unknown-sigil::after { content: ""; position: absolute; inset: 17%; border: 1px solid rgba(216, 98, 105, .25); transform: rotate(45deg); animation: timeo-sigil-turn 18s linear infinite; }
+body.route-npcs-timeo .timeo-unknown-sigil::after { inset: 29%; transform: rotate(-45deg); animation-direction: reverse; animation-duration: 13s; }
+body.route-npcs-timeo .timeo-unknown-sigil i { position: absolute; inset: 8%; border: 1px solid rgba(216, 98, 105, .15); border-radius: 50%; }
+body.route-npcs-timeo .timeo-unknown-sigil i:last-of-type { inset: 34%; }
+body.route-npcs-timeo .timeo-unknown-sigil span { color: #d5656c; font: 700 clamp(5rem, 10vw, 8rem)/1 Georgia, serif; text-shadow: 0 0 38px rgba(216, 98, 105, .32); }
+
+@keyframes timeo-sigil-turn { to { transform: rotate(405deg); } }
+@keyframes timeo-sigil-breathe { 0%, 100% { filter: brightness(.82); transform: scale(.985); } 50% { filter: brightness(1.18); transform: scale(1.015); } }
+
+/* Portraits already used in the hero are not repeated below. Ichiro's sealed record remains. */
+body.route-npcs-bomir .npc-portrait-section,
+body.route-npcs-jiro .npc-portrait-section,
+body.route-npcs-keanu .npc-portrait-section,
+body.route-npcs-ichiro .npc-portrait-section { display: none; }
+
+body:has(.record-hero) .footer { margin-top: 80px; }
+
+@media (max-width: 1040px) {
+  body:has(.record-hero) .record-hero { grid-template-columns: minmax(360px, .82fr) minmax(440px, 1.18fr); }
+  body:has(.record-hero) .record-panel { padding: 42px; }
+}
+
+@media (max-width: 760px) {
+  body:has(.record-hero) .record-hero { grid-template-columns: 1fr; min-height: 0; }
+  body:has(.record-hero) .record-panel { padding: 42px 25px 32px; }
+  body:has(.record-hero) .record-panel h1 { font-size: clamp(4rem, 20vw, 6.5rem); }
+  body.route-npcs-jarvis .record-panel h1,
+  body.route-npcs-library-entity .record-panel h1 { font-size: clamp(3.1rem, 15vw, 5.2rem); }
+  body:has(.record-hero) .record-hero > .character-card { min-height: 620px; border-left: 0 !important; border-top: 1px solid rgba(var(--refresh-accent-rgb), .13) !important; }
+  body:has(.record-hero) .record-panel dl { grid-template-columns: 1fr; }
+  body:has(.record-hero) .record-panel dd { padding-top: 0; text-align: left; }
+  body:has(.record-hero) .record-panel dt { border-bottom: 0; }
+  body:has(.record-hero) .lore-notes ul { grid-template-columns: 1fr; }
+  body.route-npcs-timeo .timeo-form-heading { grid-template-columns: 1fr; }
+  body.route-npcs-timeo .timeo-form-controls { grid-template-columns: 1fr; }
+  body.route-npcs-timeo .timeo-form-card figcaption { align-items: start; flex-direction: column; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body:has(.record-hero) *, body:has(.record-hero) *::before, body:has(.record-hero) *::after { animation: none !important; transition: none !important; }
+}
