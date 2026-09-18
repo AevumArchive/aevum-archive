@@ -19,6 +19,11 @@ body.legacy-arisu { --legacy-accent: #ef8cba; --legacy-accent-rgb: 239, 140, 186
 body.legacy-yori { --legacy-accent: #aa7cff; --legacy-accent-rgb: 170, 124, 255; }
 body.legacy-unknown { --legacy-accent: #e2e6ef; --legacy-accent-rgb: 226, 230, 239; }
 body.legacy-bobby { --legacy-accent: #c7c9ce; --legacy-accent-rgb: 199, 201, 206; }
+body.legacy-jiro { --legacy-accent: #b79cff; --legacy-accent-rgb: 183, 156, 255; }
+body.legacy-keanu { --legacy-accent: #8f72d8; --legacy-accent-rgb: 143, 114, 216; }
+body.legacy-bomir { --legacy-accent: #d8b66f; --legacy-accent-rgb: 216, 182, 111; }
+body.legacy-ichiro { --legacy-accent: #e45f77; --legacy-accent-rgb: 228, 95, 119; }
+body.legacy-timeo { --legacy-accent: #dc737a; --legacy-accent-rgb: 220, 115, 122; }
 
 .legacy-page { max-width: 1480px; }
 
@@ -121,6 +126,24 @@ body.legacy-bobby { --legacy-accent: #c7c9ce; --legacy-accent-rgb: 199, 201, 206
 .legacy-boundary p { max-width: 860px; margin: auto; color: #aaa0ab; font-size: 1.04rem; line-height: 1.75; }
 .legacy-boundary .legacy-status { justify-content: center; }
 
+/* Older records moved onto the shared dossier shell keep their lore intact. */
+.legacy-converted .lore-notes,
+.legacy-converted .section.grid > .card {
+  border-color: rgba(var(--legacy-accent-rgb), .16);
+  border-radius: 21px;
+  background: linear-gradient(145deg, rgba(23, 17, 24, .9), rgba(7, 6, 9, .97));
+}
+.legacy-converted .lore-notes { padding: clamp(30px, 4vw, 52px); }
+.legacy-converted .lore-notes h2 { margin: 0 0 25px; color: var(--legacy-ink); font-size: clamp(2.4rem, 4.4vw, 4.8rem); line-height: .95; }
+.legacy-converted .lore-notes ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 14px; margin: 0; padding: 0; list-style: none; }
+.legacy-converted .lore-notes li { position: relative; padding: 15px 16px 15px 42px; border: 1px solid rgba(var(--legacy-accent-rgb), .1); border-radius: 13px; color: #b8aeba; background: rgba(var(--legacy-accent-rgb), .03); line-height: 1.58; }
+.legacy-converted .lore-notes li::before { content: "◇"; position: absolute; left: 15px; top: 15px; color: var(--legacy-accent); }
+.legacy-converted .section.grid { gap: 16px; }
+.legacy-converted .section.grid > .card { min-height: 215px; padding: clamp(26px, 3vw, 40px); }
+.legacy-converted .section.grid > .card h2 { color: #eee4ef; font-size: clamp(1.55rem, 2.4vw, 2.35rem); line-height: 1.05; }
+.legacy-converted .section.grid > .card p { color: #b4aab5; line-height: 1.7; }
+.legacy-converted .small-button { border-color: rgba(var(--legacy-accent-rgb), .3); color: var(--legacy-accent); }
+
 /* Izumi: two revealed forms, no portrait is used on the registry card. */
 .izumi-controls { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; margin-top: 29px; }
 .izumi-controls button { min-height: 68px; padding: 12px 15px; border: 1px solid rgba(var(--legacy-accent-rgb), .2); border-radius: 13px; color: #dce8df; background: rgba(5, 10, 7, .72); font: 700 .95rem/1.25 Georgia, serif; text-align: left; cursor: pointer; }
@@ -172,6 +195,7 @@ body.legacy-bobby { --legacy-accent: #c7c9ce; --legacy-accent-rgb: 199, 201, 206
   .legacy-record-strip > div:nth-child(n+3) { border-top: 1px solid rgba(var(--legacy-accent-rgb), .11); }
   .legacy-section-heading, .legacy-grid.two, .legacy-grid.three { grid-template-columns: 1fr; }
   .legacy-section-heading .eyebrow { margin-bottom: -20px; }
+  .legacy-converted .lore-notes ul { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) { .izumi-controls button { transition: none; } }
