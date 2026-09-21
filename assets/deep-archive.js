@@ -7,7 +7,7 @@
 
   // Canonical assembled cipher. Keep only its hash in the static client.
   const RECORDS_BY_HASH = new Map([
-    ["2b6630d837c6ccc9d1ecceb0441cd545559e87f7d7f4bdb266811f46b9d49182", `${SITE_ROOT}/deep-archive/entities/magnus-bane.html`]
+    ["2b6630d837c6ccc9d1ecceb0441cd545559e87f7d7f4bdb266811f46b9d49182", `${SITE_ROOT}/deep-archive/vault.html`]
   ]);
 
   const normalizeCode = (value) => value.trim().toUpperCase().replace(/[\s_]+/g, "-").replace(/-+/g, "-");
@@ -18,14 +18,14 @@
     return Array.from(new Uint8Array(result), (byte) => byte.toString(16).padStart(2, "0")).join("");
   };
 
-  const grant = (route) => {
-    sessionStorage.setItem(SESSION_KEY, JSON.stringify({ route, expiresAt: Date.now() + ACCESS_WINDOW_MS }));
+  const grant = () => {
+    sessionStorage.setItem(SESSION_KEY, JSON.stringify({ scope: "deep-archive", expiresAt: Date.now() + ACCESS_WINDOW_MS }));
   };
 
-  const hasAccess = (route) => {
+  const hasAccess = () => {
     try {
       const record = JSON.parse(sessionStorage.getItem(SESSION_KEY) || "null");
-      return Boolean(record && record.route === route && Number(record.expiresAt) > Date.now());
+      return Boolean(record && record.scope === "deep-archive" && Number(record.expiresAt) > Date.now());
     } catch (_error) {
       return false;
     }
@@ -33,8 +33,7 @@
 
   const protectedRecord = document.body.dataset.restrictedRecord;
   if (protectedRecord) {
-    const route = window.location.pathname;
-    if (!hasAccess(route)) {
+    if (!hasAccess()) {
       window.location.replace(`${SITE_ROOT}/deep-archive/?sealed=${encodeURIComponent(protectedRecord)}`);
       return;
     }
@@ -70,7 +69,7 @@
         input.select();
         return;
       }
-      grant(route);
+      grant();
       status.textContent = "Cipher accepted. Descending into the Archive…";
       form.dataset.state = "success";
       window.setTimeout(() => window.location.assign(route), 700);
