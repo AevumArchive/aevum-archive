@@ -10,7 +10,7 @@ Never place the signing secret in this repository or browser JavaScript. The plu
 Preferred server workflow:
 
 ```text
-/aevum character set thren-valis power-level 800000
+/aevum character set thren-valis power-level 900000
 /aevum archive publish
 ```
 
