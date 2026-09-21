@@ -23,6 +23,7 @@ INTENTIONAL_ENTRY_POINTS = {
     "deep-archive/vault.html",  # Session-gated index opened by deep-archive.js.
     "deep-archive/entities/magnus-bane.html",  # Restricted record linked from the session-gated index.
     "deep-archive/dev-npcs.html",  # Restricted collection linked from the session-gated index.
+    "deep-archive/immortals.html",  # Restricted cross-record register linked from the session-gated index.
     "top-characters/index.html",  # Legacy leaderboard redirect.
 }
 
