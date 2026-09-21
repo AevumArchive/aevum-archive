@@ -1,0 +1,106 @@
+/* Lords and Chapter Bosses — public progression record. */
+.route-chapter-bosses {
+  --chapter-gold: #dfa951;
+  --chapter-amber: #9b5a2c;
+  --chapter-violet: #8c5db5;
+  --chapter-ink: #07060a;
+  background:
+    radial-gradient(circle at 50% 8%, rgba(131, 72, 161, .17), transparent 34rem),
+    radial-gradient(circle at 85% 44%, rgba(159, 81, 31, .11), transparent 28rem),
+    linear-gradient(180deg, #07060a, #0d0910 46%, #050406) !important;
+}
+
+.chapter-page { width: min(94vw, 1440px); }
+
+.chapter-hero {
+  position: relative;
+  isolation: isolate;
+  min-height: 610px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(380px, .9fr);
+  gap: clamp(30px, 6vw, 90px);
+  align-items: center;
+  overflow: hidden;
+  padding: clamp(46px, 7vw, 94px);
+  border: 1px solid rgba(223, 169, 81, .32);
+  border-radius: 34px;
+  background:
+    linear-gradient(90deg, rgba(7, 6, 10, .98), rgba(10, 7, 13, .78) 54%, rgba(16, 10, 18, .92)),
+    repeating-linear-gradient(90deg, transparent 0 119px, rgba(223, 169, 81, .035) 120px 121px),
+    linear-gradient(145deg, #1b1219, #070609);
+  box-shadow: 0 38px 110px rgba(0, 0, 0, .56), inset 0 0 100px rgba(145, 80, 41, .07);
+}
+
+.chapter-hero::before { content: ""; position: absolute; z-index: -1; inset: 18px; border: 1px solid rgba(223, 169, 81, .09); border-radius: 25px; }
+.chapter-hero-copy { position: relative; z-index: 2; }
+.chapter-hero h1 { max-width: 760px; margin: 9px 0 22px; color: #f4e9e3; font-size: clamp(4rem, 8.3vw, 8.8rem); line-height: .82; letter-spacing: -.055em; }
+.chapter-hero .lede { max-width: 720px; color: #c5b7bf; font-size: clamp(1rem, 1.45vw, 1.22rem); line-height: 1.7; }
+.chapter-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+.chapter-tags span { padding: 9px 12px; border: 1px solid rgba(223, 169, 81, .24); border-radius: 999px; color: #d8c0aa; background: rgba(31, 20, 25, .72); font: 700 .6rem/1 Verdana, sans-serif; letter-spacing: .09em; text-transform: uppercase; }
+
+.chapter-sigil { position: relative; width: min(34vw, 450px); aspect-ratio: 1; margin-inline: auto; display: grid; place-items: center; border: 1px solid rgba(223, 169, 81, .25); border-radius: 50%; box-shadow: 0 0 0 24px rgba(223, 169, 81, .025), 0 0 85px rgba(125, 73, 157, .18), inset 0 0 60px rgba(223, 169, 81, .05); }
+.chapter-sigil::before,.chapter-sigil::after { content: ""; position: absolute; border: 1px solid rgba(223, 169, 81, .13); transform: rotate(45deg); }
+.chapter-sigil::before { width: 70%; height: 70%; }
+.chapter-sigil::after { width: 43%; height: 43%; }
+.chapter-sigil span { position: absolute; width: 70px; height: 70px; display: grid; place-items: center; border: 1px solid rgba(223, 169, 81, .38); border-radius: 50%; color: #f0c77c; background: #0d0910; box-shadow: 0 0 25px rgba(223, 169, 81, .13); font: 800 1.25rem/1 Georgia, serif; }
+.chapter-sigil span:nth-child(1) { top: -22px; }
+.chapter-sigil span:nth-child(2) { right: -22px; bottom: 16%; }
+.chapter-sigil span:nth-child(3) { left: -22px; bottom: 16%; color: #9c7bb8; border-color: rgba(140, 93, 181, .55); }
+.chapter-sigil i { width: 8px; height: 8px; background: var(--chapter-gold); transform: rotate(45deg); box-shadow: 0 0 28px 8px rgba(223, 169, 81, .18); }
+
+.chapter-distinction { display: grid; grid-template-columns: minmax(220px, .7fr) 1.3fr; gap: 28px; align-items: center; margin: 22px 0 0; padding: 24px 32px; border-left: 3px solid var(--chapter-gold); color: #b8aab3; background: linear-gradient(90deg, rgba(42, 27, 27, .8), rgba(11, 8, 13, .7)); }
+.chapter-distinction strong { color: #f0d9b3; font: 800 clamp(1.35rem, 2.2vw, 2rem)/1.1 Georgia, serif; }
+.chapter-distinction p { margin: 0; line-height: 1.65; }
+
+.chapter-heading { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(300px, .7fr); gap: 32px; align-items: end; margin-bottom: 28px; }
+.chapter-heading .eyebrow { grid-column: 1 / -1; margin-bottom: -20px; }
+.chapter-heading h2 { margin: 0; max-width: 850px; font-size: clamp(2.8rem, 5.5vw, 5.5rem); line-height: .92; }
+.chapter-heading > p:last-child { margin: 0; color: #a99ca4; line-height: 1.65; }
+
+.chapter-track { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.chapter-card { position: relative; overflow: hidden; min-height: 500px; padding: 34px; border: 1px solid rgba(223, 169, 81, .25); border-radius: 26px; background: radial-gradient(circle at 90% 8%, rgba(223, 169, 81, .12), transparent 13rem), linear-gradient(155deg, rgba(31, 21, 24, .95), rgba(8, 7, 10, .99)); box-shadow: 0 24px 65px rgba(0,0,0,.32); }
+.chapter-card::after { content: ""; position: absolute; inset: 14px; border: 1px solid rgba(223, 169, 81, .055); border-radius: 18px; pointer-events: none; }
+.chapter-roman { position: absolute; top: 4px; right: 24px; color: rgba(223, 169, 81, .075); font: 800 10rem/.9 Georgia, serif; }
+.chapter-card h3 { position: relative; margin: 10px 0 16px; font-size: clamp(2.4rem, 3.8vw, 4rem); line-height: .95; }
+.chapter-card > p:not(.eyebrow) { position: relative; color: #b5a7ae; line-height: 1.65; }
+.chapter-card ol { position: relative; display: grid; gap: 0; margin: 32px 0 0; padding: 0; list-style: none; counter-reset: steps; }
+.chapter-card li { counter-increment: steps; padding: 15px 0 15px 38px; border-top: 1px solid rgba(223, 169, 81, .12); color: #d8c8cc; }
+.chapter-card li::before { content: counter(steps, decimal-leading-zero); position: absolute; left: 0; color: #a77e42; font: 700 .62rem/1.5 Verdana, sans-serif; }
+.chapter-two { border-color: rgba(140, 93, 181, .34); background: radial-gradient(circle at 90% 8%, rgba(140, 93, 181, .17), transparent 13rem), linear-gradient(155deg, rgba(26, 19, 34, .96), rgba(8, 7, 11, .99)); }
+.chapter-three { border-style: dashed; }
+.chapter-three::before { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(135deg, transparent 0 15px, rgba(255,255,255,.012) 16px 17px); pointer-events: none; }
+.sealed-stamp { position: absolute; right: 28px; bottom: 24px; padding: 8px 11px; border: 1px solid rgba(155, 92, 143, .5); color: #cc91bd; background: rgba(20, 10, 22, .88); font: 700 .57rem/1 Verdana, sans-serif; letter-spacing: .15em; text-transform: uppercase; transform: rotate(-3deg); }
+
+.milestone-section { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: clamp(30px, 6vw, 80px); align-items: center; padding: clamp(40px, 7vw, 84px); border: 1px solid rgba(223, 169, 81, .2); border-radius: 28px; background: radial-gradient(circle at 11% 50%, rgba(223, 169, 81, .16), transparent 12rem), linear-gradient(120deg, rgba(27, 18, 20, .96), rgba(7, 6, 9, .98)); }
+.milestone-mark { width: 180px; aspect-ratio: 1; display: grid; place-items: center; border: 1px solid rgba(223, 169, 81, .44); border-radius: 50%; color: var(--chapter-gold); font-size: 4rem; box-shadow: 0 0 0 18px rgba(223,169,81,.025), inset 0 0 40px rgba(223,169,81,.08); }
+.milestone-section h2 { margin: 8px 0 15px; font-size: clamp(2.8rem, 5vw, 5.2rem); line-height: .92; }
+.milestone-section p:last-child { max-width: 880px; color: #b8aab2; font-size: 1.05rem; line-height: 1.75; }
+
+.cipher-tease { position: relative; overflow: hidden; display: grid; grid-template-columns: minmax(0, 1fr) minmax(360px, .75fr); gap: 50px; align-items: center; padding: clamp(40px, 7vw, 84px); border: 1px solid rgba(140, 93, 181, .3); border-radius: 28px; background: radial-gradient(circle at 85% 50%, rgba(124, 72, 155, .22), transparent 18rem), linear-gradient(130deg, rgba(20, 13, 27, .96), rgba(6, 5, 9, .99)); }
+.cipher-copy h2 { margin: 8px 0 14px; font-size: clamp(2.8rem, 5vw, 5rem); line-height: .94; }
+.cipher-copy > p:not(.eyebrow) { max-width: 700px; color: #b6a7b8; line-height: 1.7; }
+.cipher-copy .button { display: inline-flex; margin-top: 20px; }
+.cipher-fragments { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.cipher-fragments span { min-height: 190px; display: grid; place-items: center; align-content: center; gap: 18px; border: 1px solid rgba(140,93,181,.28); background: rgba(8,6,11,.66); clip-path: polygon(50% 0, 100% 14%, 90% 100%, 10% 100%, 0 14%); }
+.cipher-fragments b { color: #c5a6dd; font: 800 2.4rem/1 Georgia, serif; }
+.cipher-fragments small { color: #7f7087; font: 700 .52rem/1 Verdana,sans-serif; letter-spacing: .11em; text-transform: uppercase; }
+.chapter-boundary { margin-top: 30px; padding: 22px 26px; border-top: 1px solid rgba(223,169,81,.2); border-bottom: 1px solid rgba(140,93,181,.16); text-align: center; }
+.chapter-boundary span { color: #d8b26c; font: 700 .59rem/1 Verdana,sans-serif; letter-spacing: .14em; text-transform: uppercase; }
+.chapter-boundary p { max-width: 850px; margin: 8px auto 0; color: #93868f; }
+
+@media (max-width: 980px) {
+  .chapter-hero { grid-template-columns: 1fr; }
+  .chapter-sigil { width: min(70vw, 410px); }
+  .chapter-track { grid-template-columns: 1fr; }
+  .chapter-card { min-height: 0; }
+  .cipher-tease { grid-template-columns: 1fr; }
+}
+@media (max-width: 700px) {
+  .chapter-page { width: min(100% - 20px, 1440px); }
+  .chapter-hero { min-height: 0; padding: 34px 22px; border-radius: 24px; }
+  .chapter-hero h1 { font-size: clamp(3.6rem, 18vw, 6rem); }
+  .chapter-distinction,.chapter-heading,.milestone-section { grid-template-columns: 1fr; }
+  .milestone-mark { width: 120px; }
+  .cipher-fragments span { min-height: 130px; }
+}
+

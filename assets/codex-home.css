@@ -287,6 +287,7 @@
 .codex-reference-card.abilities { grid-row: 1 / 3; min-height: 438px; background: radial-gradient(circle at 83% 18%, rgba(150, 83, 181, .22), transparent 18rem), linear-gradient(145deg, rgba(36, 23, 48, .96), rgba(8, 7, 12, .99)); }
 .codex-reference-card.power { background: radial-gradient(circle at 88% 12%, rgba(226, 185, 101, .17), transparent 10rem), linear-gradient(145deg, rgba(40, 29, 20, .93), rgba(9, 7, 11, .99)); }
 .codex-reference-card.handbook { background: radial-gradient(circle at 88% 12%, rgba(189, 83, 129, .14), transparent 10rem), linear-gradient(145deg, rgba(38, 20, 34, .93), rgba(8, 7, 12, .99)); }
+.codex-reference-card.chapters { grid-column: 1 / -1; min-height: 250px; background: radial-gradient(circle at 88% 12%, rgba(210, 154, 75, .17), transparent 16rem), radial-gradient(circle at 12% 82%, rgba(115, 65, 151, .16), transparent 18rem), linear-gradient(145deg, rgba(34, 23, 24, .96), rgba(8, 7, 12, .99)); }
 .codex-reference-card.power h3,
 .codex-reference-card.handbook h3 { font-size: clamp(1.9rem, 3vw, 2.8rem); }
 

@@ -20,6 +20,7 @@ INTENTIONAL_ENTRY_POINTS = {
     "codex/magic.html",  # Legacy redirect retained for old bookmarks.
     "lore/locations/the-bridge.html",  # Legacy redirect after the dimension reorganization.
     "npcs/willy.html",  # Hidden encounter opened by willy-watcher.js rather than navigation.
+    "deep-archive/entities/magnus-bane.html",  # Session-gated entity record opened by deep-archive.js.
     "top-characters/index.html",  # Legacy leaderboard redirect.
 }
 
