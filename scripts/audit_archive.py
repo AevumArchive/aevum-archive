@@ -143,7 +143,9 @@ def audit_json() -> list[str]:
 
 def audit_absolute_runtime_paths() -> list[str]:
     issues: list[str] = []
-    absolute_pattern = re.compile(r"/aevum-archive/[A-Za-z0-9_./-]+")
+    # Match site-root paths, but not the same text when it is part of an
+    # external URL such as github.com/AevumArchive/aevum-archive/releases/.
+    absolute_pattern = re.compile(r"(?<![A-Za-z0-9])/aevum-archive/[A-Za-z0-9_./-]+")
     for relative in sorted(path for path in FILES if Path(path).suffix in TEXT_SUFFIXES):
         text = (ROOT / relative).read_text(encoding="utf-8")
         for reference in absolute_pattern.findall(text):
