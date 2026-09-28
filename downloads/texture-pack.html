@@ -33,11 +33,11 @@
 </header>
 <main class="page">
 <section class="hero compact-hero">
-  <div><p class="eyebrow">Downloads</p><h1>Traveler bundles.</h1><p class="lede">Prepared packs for the current age. Use the newest bundle before entering the realm, so signs, relics and custom marks appear as intended.</p><div class="hero-actions"><a class="button primary" href="https://github.com/AevumArchive/aevum-archive/releases/latest/download/Playthrough-Addon.zip">Download Playthrough Addon</a><a class="button" href="/aevum-archive/playthroughs/#current">Return to playthrough</a></div></div>
+  <div><p class="eyebrow">Downloads</p><h1>Traveler bundles.</h1><p class="lede">Prepared packs for the current age. Use the newest bundle before entering the realm, so signs, relics and custom marks appear as intended.</p><div class="hero-actions"><a class="button primary" data-latest-pack href="https://github.com/AevumArchive/aevum-archive/releases/latest">Download Playthrough Addon</a><a class="button" href="/aevum-archive/playthroughs/#current">Return to playthrough</a></div></div>
   <aside class="archive-card"><span class="sigil">&#11042;</span><p class="eyebrow">Current bundle</p><h2>Playthrough Addon</h2><p class="lede">The current traveler bundle is ready beneath the archive seal.</p><div class="meta-row"><span class="pill">Texture Pack</span><span class="pill">Current Road</span></div></aside>
 </section>
 <section class="section grid two" id="current-pack">
-  <article class="download-panel feature-panel"><h2>Playthrough Addon</h2><p class="notice">Current bundle: <strong>Playthrough-Addon.zip</strong></p><p>This bundle belongs to the current Fantasy Medieval road. The button always resolves to the newest published GitHub Release containing an asset with this exact filename.</p><a class="button primary" href="https://github.com/AevumArchive/aevum-archive/releases/latest/download/Playthrough-Addon.zip">Download latest pack</a></article>
+  <article class="download-panel feature-panel"><h2>Playthrough Addon</h2><p class="notice">Current bundle: <strong id="latest-pack-name">Loading latest release...</strong></p><p>This bundle belongs to the current Fantasy Medieval road. The Archive automatically finds the newest ZIP attached to the latest published GitHub Release, regardless of its filename.</p><a class="button primary" data-latest-pack href="https://github.com/AevumArchive/aevum-archive/releases/latest">Download latest pack</a></article>
   <article class="download-panel ritual-panel"><h2>Before entering</h2><p>Keep only the newest Aevum bundle active unless a scene asks for another one. Old marks, signs or relic textures may look wrong when an older bundle remains loaded.</p><ul class="relic-list"><li>Download the current bundle.</li><li>Place it in your Minecraft resource packs folder.</li><li>Move it above older Aevum packs if more than one is present.</li></ul></article>
 </section>
 <footer class="footer">
@@ -45,6 +45,35 @@
   <span>Unwritten pages remain sealed until discovered.</span>
 </footer>
   </main>
+<script>
+(function () {
+  var fallback = 'https://github.com/AevumArchive/aevum-archive/releases/latest';
+  var links = document.querySelectorAll('[data-latest-pack]');
+  var label = document.getElementById('latest-pack-name');
+
+  fetch('https://api.github.com/repos/AevumArchive/aevum-archive/releases/latest', {
+    headers: { Accept: 'application/vnd.github+json' }
+  })
+    .then(function (response) {
+      if (!response.ok) throw new Error('Latest release unavailable');
+      return response.json();
+    })
+    .then(function (release) {
+      var zipAssets = (release.assets || []).filter(function (asset) {
+        return /\.zip$/i.test(asset.name || '');
+      }).sort(function (left, right) {
+        return new Date(right.updated_at || 0) - new Date(left.updated_at || 0);
+      });
+      if (!zipAssets.length) throw new Error('No ZIP attached to latest release');
+      links.forEach(function (link) { link.href = zipAssets[0].browser_download_url; });
+      label.textContent = zipAssets[0].name;
+    })
+    .catch(function () {
+      links.forEach(function (link) { link.href = fallback; });
+      label.textContent = 'Open latest GitHub release';
+    });
+})();
+</script>
 <script src="/aevum-archive/assets/master-ui.js?v=20260821-2" defer></script>
 </body>
 </html>

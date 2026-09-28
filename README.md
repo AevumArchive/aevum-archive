@@ -56,20 +56,14 @@ Then update the matching character page to use the image instead of the current 
 
 ## Adding texture packs
 
-The public download buttons permanently use:
-
-```text
-https://github.com/AevumArchive/aevum-archive/releases/latest/download/Playthrough-Addon.zip
-```
-
 To update the pack without editing the website:
 
 1. Open the repository's `Releases` page on GitHub.
 2. Choose `Draft a new release`.
-3. Create a new unique tag, for example `texture-pack-2026-09-28`.
-4. Attach the new ZIP with the exact filename `Playthrough-Addon.zip`.
+3. Create any new unique tag and choose any release title.
+4. Attach the texture pack as a ZIP. Its filename can be anything.
 5. Publish it as a normal release, not as a draft or prerelease.
 
-The Downloads page will then automatically serve the ZIP from the newest published release. No HTML change or repository commit is required for later pack updates.
+The Downloads page queries the latest published release and automatically links its newest ZIP asset. If a release contains multiple ZIP files, the most recently updated ZIP is selected. No HTML change or repository commit is required for later pack updates.
 
 Do not store sealed truths, hidden quest outcomes or private future plans in this public repository.
