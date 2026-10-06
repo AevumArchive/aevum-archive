@@ -1,6 +1,7 @@
 """Focused regression checks for the character archive's public record state."""
 
 from pathlib import Path
+import re
 import unittest
 
 
@@ -48,6 +49,27 @@ class CharacterRecordsTest(unittest.TestCase):
         self.assertIn("background-size: cover, contain", styles)
         for name in ("guts", "jonathan", "obama"):
             self.assertIn(f"body.route-characters-{name} {{ --portrait-ratio:", styles)
+
+    def test_character_facts_are_readable_pairs(self) -> None:
+        styles = page("assets/archive-record-refresh.css")
+        self.assertIn(".record-panel .record-fact", styles)
+        self.assertIn("font-size: 1rem;", styles)
+        for name in (
+            "astera-zenith", "faaram", "guts", "jango", "jonathan",
+            "lythariel", "obama", "william-carter", "jawohl", "khealdur",
+            "mortis", "raven", "tony", "zeke",
+        ):
+            with self.subTest(character=name):
+                detail = page(f"characters/{name}.html")
+                facts = re.search(r'<article class="record-panel">.*?<dl>(.*?)</dl>', detail)
+                self.assertIsNotNone(facts)
+                pairs = re.findall(
+                    r'<div class="record-fact"><dt>.*?</dt><dd>.*?</dd></div>',
+                    facts.group(1),
+                )
+                self.assertGreater(len(pairs), 0)
+                self.assertEqual("".join(pairs), facts.group(1))
+                self.assertIn("archive-record-refresh.css?v=20261006-4", detail)
 
 
 if __name__ == "__main__":

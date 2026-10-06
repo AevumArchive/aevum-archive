@@ -91,27 +91,31 @@ body.theme-characters.page-detail .record-panel .lede {
 }
 body.theme-characters.page-detail .record-panel dl {
   display: grid;
-  grid-template-columns: minmax(100px, .36fr) minmax(0, 1fr) minmax(100px, .36fr) minmax(0, 1fr);
-  gap: 0 16px;
-  margin: clamp(30px, 4vw, 52px) 0 0;
-  padding-top: 7px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: clamp(30px, 4vw, 46px) 0 0;
+  padding-top: 16px;
   border-top: 1px solid rgb(var(--record-rgb) / .2);
 }
-body.theme-characters.page-detail .record-panel dt,
-body.theme-characters.page-detail .record-panel dd {
+body.theme-characters.page-detail .record-panel .record-fact {
   min-width: 0;
-  padding: 12px 0;
-  border-bottom: 1px solid rgb(255 255 255 / .065);
+  padding: 12px 14px 13px;
+  border: 1px solid rgb(var(--record-rgb) / .18);
+  border-radius: 10px;
+  background: rgb(var(--record-rgb) / .055);
 }
 body.theme-characters.page-detail .record-panel dt {
-  color: rgb(var(--record-rgb) / .92);
-  font: 700 .59rem/1.55 Verdana, sans-serif;
-  letter-spacing: .12em;
+  margin: 0 0 6px;
+  color: color-mix(in srgb, rgb(var(--record-rgb)) 78%, white);
+  font: 700 .72rem/1.35 Verdana, sans-serif;
+  letter-spacing: .1em;
+  text-transform: uppercase;
 }
 body.theme-characters.page-detail .record-panel dd {
-  color: #eee4ef;
-  font-size: .88rem;
-  line-height: 1.48;
+  margin: 0;
+  color: #f5eff6;
+  font-size: 1rem;
+  line-height: 1.5;
   overflow-wrap: anywhere;
 }
 body.theme-characters.page-detail .record-hero > .character-card {
@@ -378,7 +382,6 @@ body.theme-characters.page-detail .portrait-card:not(.epic-portrait-card) .inlin
 
 @media (max-width: 1150px) {
   body.theme-characters.page-detail .record-hero { grid-template-columns: minmax(0, 1fr); }
-  body.theme-characters.page-detail .record-panel dl { grid-template-columns: minmax(92px, .32fr) minmax(0, 1fr); }
   body.theme-characters.page-detail .record-hero > .character-card { width: 100%; border-left: 0; border-top: 1px solid rgb(var(--record-rgb) / .16); }
 }
 @media (max-width: 760px) {
@@ -397,7 +400,7 @@ body.theme-characters.page-detail .portrait-card:not(.epic-portrait-card) .inlin
   .gray-orb-owner-card .small-button { margin-top: 24px; }
 }
 @media (max-width: 480px) {
-  body.theme-characters.page-detail .record-panel dl { grid-template-columns: minmax(76px, .38fr) minmax(0, 1fr); }
+  body.theme-characters.page-detail .record-panel dl { grid-template-columns: minmax(0, 1fr); }
   body.theme-characters.page-detail .record-hero > .character-card { min-height: 440px; }
   .route-characters-obama .trait-insignia { width: 53px; top: 22px; right: 22px; font-size: 1.8rem; }
   .route-characters-obama .trait-future summary { display: block; }
