@@ -77,6 +77,9 @@ class CharacterRecordsTest(unittest.TestCase):
         styles = page("assets/archive-record-refresh.css")
         self.assertIn("aspect-ratio: var(--portrait-ratio, 2 / 3)", styles)
         self.assertIn("background-size: cover, contain", styles)
+        self.assertIn('images/astera-zenith-cosmic-ruins.png', styles)
+        self.assertNotIn('images/astera-zenith.png', styles)
+        self.assertTrue((ROOT / "assets/images/astera-zenith-cosmic-ruins.png").is_file())
         for name in ("guts", "jonathan", "obama"):
             self.assertIn(f"body.route-characters-{name} {{ --portrait-ratio:", styles)
 

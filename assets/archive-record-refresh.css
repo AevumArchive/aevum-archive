@@ -211,7 +211,7 @@ body.theme-characters.page-detail:is(
   .route-characters-obama, .route-characters-william-carter, .route-characters-zeke
 ) .record-hero .portrait-slot,
 body:is(.route-characters-faaram, .route-characters-obama) .record-hero .sigil-stage { display: none; }
-body.route-characters-astera-zenith .record-hero > .character-card { --record-art: url("/aevum-archive/assets/images/astera-zenith.png"); }
+body.route-characters-astera-zenith .record-hero > .character-card { --record-art: url("/aevum-archive/assets/images/astera-zenith-cosmic-ruins.png"); }
 body.route-characters-faaram .record-hero > .character-card { --record-art: url("/aevum-archive/assets/images/faaram.png"); }
 body.route-characters-guts .record-hero > .character-card { --record-art: url("/aevum-archive/assets/images/guts.png"); }
 body.route-characters-jango .record-hero > .character-card { --record-art: url("/aevum-archive/assets/images/jango.png"); }
