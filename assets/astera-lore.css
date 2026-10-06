@@ -100,6 +100,49 @@
 .ancient-trophy .trophy-seal { color: #d8b6ff; text-shadow: 0 0 30px rgba(151, 90, 209, .65); }
 .achievement-verse { color: #bfa9c8; font-style: italic; }
 
+/* A witnessed revelation, presented above the ordinary trophy grid. */
+.divine-trophy {
+  position: relative;
+  isolation: isolate;
+  grid-column: 1 / -1;
+  grid-template-columns: minmax(190px, .38fr) minmax(0, 1fr);
+  gap: clamp(24px, 4vw, 72px);
+  min-height: 420px;
+  padding: clamp(30px, 5vw, 70px);
+  overflow: hidden;
+  border: 1px solid rgba(244, 218, 162, .65);
+  border-radius: 30px;
+  background: radial-gradient(circle at 17% 43%, rgba(184, 146, 239, .23), transparent 23rem), radial-gradient(circle at 88% 8%, rgba(242, 207, 143, .14), transparent 26rem), linear-gradient(125deg, #171122, #0b101b 62%, #17121b);
+  box-shadow: 0 28px 80px rgba(0, 0, 0, .42), inset 0 0 90px rgba(181, 139, 230, .045);
+}
+.divine-trophy::before { content: ""; position: absolute; inset: 12px; z-index: -1; border: 1px solid rgba(238, 215, 175, .19); border-radius: 22px; pointer-events: none; }
+.divine-trophy::after { content: "DIVINE"; position: absolute; right: -12px; top: -20px; z-index: -1; color: rgba(242, 219, 177, .055); font: 800 clamp(6rem, 15vw, 15rem)/1 Georgia, serif; letter-spacing: -.08em; pointer-events: none; }
+.divine-trophy-emblem { position: relative; width: min(100%, 240px); aspect-ratio: 1; display: grid; place-items: center; justify-self: center; align-self: center; border: 1px solid rgba(245, 226, 181, .42); border-radius: 50%; background: radial-gradient(circle, rgba(229, 197, 241, .19), rgba(17, 14, 27, .85) 65%); box-shadow: 0 0 0 18px rgba(245, 225, 179, .035), 0 0 80px rgba(177, 129, 225, .18), inset 0 0 45px rgba(229, 192, 240, .13); }
+.divine-trophy-emblem::before { content: ""; position: absolute; inset: 17px; border: 1px dashed rgba(241, 215, 171, .48); border-radius: 50%; animation: divine-turn 45s linear infinite; }
+.divine-trophy-emblem::after { content: ""; position: absolute; inset: 35px; border: 1px solid rgba(201, 176, 242, .4); transform: rotate(45deg); }
+.divine-trophy-emblem span { position: relative; z-index: 1; color: #fff2d3; font: 400 clamp(5rem, 9vw, 8rem)/1 Georgia, serif; text-shadow: 0 0 26px rgba(251, 223, 160, .55), 0 0 70px rgba(182, 141, 251, .5); }
+.divine-trophy-copy { min-width: 0; align-self: center; }
+.divine-trophy-copy .eyebrow { margin: 0 0 17px; color: #f2dba8; letter-spacing: .2em; }
+.divine-trophy-copy h3 { max-width: 18ch; margin: 0; color: #fff8ef; font-size: clamp(2.4rem, 4.5vw, 5.1rem); line-height: .98; letter-spacing: -.035em; }
+.divine-trophy-copy h3 em { color: #edd9ff; font-style: normal; text-shadow: 0 0 34px rgba(202, 167, 255, .34); }
+.divine-trophy-verse { max-width: 58ch; margin: 21px 0 26px; color: #d0c4d7; font: italic clamp(1rem, 1.35vw, 1.22rem)/1.62 Georgia, serif; }
+.divine-trophy-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.divine-trophy-facts > div { min-width: 0; padding: 14px 0 0; border-top: 1px solid rgba(245, 220, 178, .32); }
+.divine-trophy-facts span { display: block; margin-bottom: 6px; color: #bba9bf; font: 700 .64rem/1.4 Verdana, sans-serif; letter-spacing: .13em; text-transform: uppercase; }
+.divine-trophy-facts strong, .divine-trophy-facts a { color: #f7ebf5; font-size: clamp(1rem, 1.4vw, 1.2rem); overflow-wrap: anywhere; }
+.divine-trophy-note { margin: 22px 0 0; color: #a99aaa; font-size: .87rem; }
+
+.route-characters-astera-zenith .divine-achievement-pill { border-color: rgba(244, 215, 163, .48); color: #ffe7ae; background: rgba(187, 142, 72, .13); box-shadow: 0 0 20px rgba(242, 198, 127, .1); }
+.divine-discovery-card { position: relative; isolation: isolate; display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: clamp(24px, 4vw, 60px); align-items: center; overflow: hidden; padding: clamp(30px, 4vw, 54px); border: 1px solid rgba(244, 218, 162, .42); border-radius: 23px; background: radial-gradient(circle at 11% 50%, rgba(176, 132, 240, .2), transparent 17rem), linear-gradient(120deg, #181023, #0b0a12 66%, #17131e); box-shadow: 0 24px 65px rgba(0, 0, 0, .3); }
+.divine-discovery-card::before { content: ""; position: absolute; inset: 10px; z-index: -1; border: 1px solid rgba(245, 221, 181, .14); border-radius: 16px; }
+.divine-discovery-mark { display: grid; place-items: center; width: 140px; aspect-ratio: 1; border: 1px solid rgba(246, 222, 174, .45); border-radius: 50%; color: #ffeed0; background: radial-gradient(circle, rgba(198, 156, 236, .3), transparent 70%); font: 400 6rem/1 Georgia, serif; text-shadow: 0 0 28px rgba(248, 225, 182, .54); box-shadow: 0 0 40px rgba(179, 131, 225, .17); }
+.divine-discovery-card .eyebrow { margin: 0 0 10px; color: #e9d1a7; letter-spacing: .16em; }
+.divine-discovery-card h2 { max-width: 24ch; margin: 0 0 14px; font-size: clamp(2.1rem, 3.5vw, 3.5rem); line-height: 1.02; }
+.divine-discovery-card p:not(.eyebrow) { max-width: 65ch; margin: 0; color: #c9bdcc; line-height: 1.65; }
+.divine-discovery-footer { display: flex; flex-wrap: wrap; gap: 18px; align-items: center; margin-top: 24px; }
+.divine-discovery-footer strong { color: #ffe8b9; font-size: 1.15rem; }
+@keyframes divine-turn { to { transform: rotate(360deg); } }
+
 @keyframes astera-mark-turn { to { transform: rotate(360deg); } }
 @keyframes astera-mark-turn-reverse { to { transform: rotate(-360deg); } }
 @keyframes astera-mark-breathe { 0%, 100% { opacity: .42; transform: scale(.975); } 50% { opacity: .8; transform: scale(1.025); } }
@@ -133,4 +176,13 @@
   .soul-mark-arc,
   .soul-mark-void,
   .soul-mark-fracture { animation: none !important; }
+  .divine-trophy-emblem::before { animation: none; }
+}
+
+@media (max-width: 760px) {
+  .divine-trophy { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .divine-trophy-emblem { width: 150px; justify-self: start; }
+  .divine-trophy-facts { grid-template-columns: minmax(0, 1fr); }
+  .divine-discovery-card { grid-template-columns: minmax(0, 1fr); }
+  .divine-discovery-mark { width: 100px; font-size: 4.5rem; }
 }
