@@ -17,6 +17,9 @@ body.route-characters-mortis { --record-rgb: 188 117 129; }
 body.route-characters-raven { --record-rgb: 117 187 235; }
 body.route-characters-tony { --record-rgb: 130 194 227; }
 body.route-characters-zeke { --record-rgb: 110 190 208; }
+body.route-characters-guts { --portrait-ratio: 1086 / 1448; }
+body.route-characters-jonathan { --portrait-ratio: 1312 / 1199; }
+body.route-characters-obama { --portrait-ratio: 1122 / 1402; }
 
 body.theme-characters.page-detail:has(.record-hero) main.page {
   width: min(100% - 58px, 1440px);
@@ -373,9 +376,10 @@ body.theme-characters.page-detail .portrait-card:not(.epic-portrait-card) .inlin
 .route-world-items .gray-orb-authority strong { color: #ead7ed; }
 .route-world-items .gray-orb-authority p { margin-bottom: 0; color: #bcb0c0; }
 
-@media (max-width: 1050px) {
-  body.theme-characters.page-detail .record-hero { grid-template-columns: minmax(0, 1fr) minmax(300px, .85fr); }
+@media (max-width: 1150px) {
+  body.theme-characters.page-detail .record-hero { grid-template-columns: minmax(0, 1fr); }
   body.theme-characters.page-detail .record-panel dl { grid-template-columns: minmax(92px, .32fr) minmax(0, 1fr); }
+  body.theme-characters.page-detail .record-hero > .character-card { width: 100%; border-left: 0; border-top: 1px solid rgb(var(--record-rgb) / .16); }
 }
 @media (max-width: 760px) {
   body.theme-characters.page-detail:has(.record-hero) main.page { width: min(100% - 22px, 1440px); }
@@ -412,10 +416,15 @@ body.theme-characters.page-detail .record-hero .sigil-stage,
 body.theme-characters.page-detail .record-hero .astera-sigil-stage { display: none; }
 body.theme-characters.page-detail .record-hero > .character-card {
   pointer-events: none;
+  width: 100%;
+  min-height: 0;
+  aspect-ratio: var(--portrait-ratio, 2 / 3);
   background-image:
     linear-gradient(180deg, rgb(4 3 8 / .02) 58%, rgb(4 3 8 / .2) 100%),
     var(--record-art) !important;
-  background-position: center, center 24%;
+  background-color: #0d0b12;
+  background-position: center, center;
+  background-size: cover, contain;
 }
 body.theme-characters.page-detail .record-hero > .character-card::after { border-color: rgb(var(--record-rgb) / .1); }
 body.theme-characters.page-detail .record-panel::before { display: none; }

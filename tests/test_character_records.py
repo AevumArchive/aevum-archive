@@ -42,6 +42,13 @@ class CharacterRecordsTest(unittest.TestCase):
         self.assertIn("Archive visualization · likeness unknown", detail)
         self.assertIn('/world-items/#gray-orb', detail)
 
+    def test_hero_art_uses_uncropped_source_ratio(self) -> None:
+        styles = page("assets/archive-record-refresh.css")
+        self.assertIn("aspect-ratio: var(--portrait-ratio, 2 / 3)", styles)
+        self.assertIn("background-size: cover, contain", styles)
+        for name in ("guts", "jonathan", "obama"):
+            self.assertIn(f"body.route-characters-{name} {{ --portrait-ratio:", styles)
+
 
 if __name__ == "__main__":
     unittest.main()
