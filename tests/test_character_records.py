@@ -21,7 +21,7 @@ class CharacterRecordsTest(unittest.TestCase):
         self.assertIn("<dt>Status</dt><dd>ACTIVE</dd>", detail)
         self.assertIn('data-status="active" data-name="OBAMA"', hall)
         self.assertIn("Active <span>5</span>", hall)
-        self.assertIn("Sealed <span>4</span>", hall)
+        self.assertIn("Sealed <span>3</span>", hall)
         self.assertIn("Five active names", shelf)
         self.assertIn('status-card active golden-status" href="/aevum-archive/characters/obama.html"', old_road)
 
@@ -37,6 +37,24 @@ class CharacterRecordsTest(unittest.TestCase):
         self.assertIn("Five active names", shelf)
         self.assertNotIn('href="/aevum-archive/characters/guts.html"', shelf)
         self.assertNotIn('href="/aevum-archive/characters/guts.html"', playthrough)
+
+    def test_astera_is_lost_and_faaram_is_active(self) -> None:
+        astera = page("characters/astera-zenith.html")
+        faaram = page("characters/faaram.html")
+        hall = page("characters/all.html")
+        shelf = page("characters/index.html")
+        old_road = page("playthroughs/aizen-ended-road.html")
+
+        self.assertIn('<dt>Status</dt><dd>LOST / UNKNOWN</dd>', astera)
+        self.assertIn('Her current whereabouts are unknown; no death is confirmed.', astera)
+        self.assertIn('<dt>Status</dt><dd>ACTIVE</dd>', faaram)
+        self.assertIn('data-status="lost" data-name="Astera Zenith"', hall)
+        self.assertIn('data-status="active" data-name="Faaram"', hall)
+        self.assertIn('Active <span>5</span>', hall)
+        self.assertIn('Sealed <span>3</span>', hall)
+        self.assertIn('Lost / Unknown <span>2</span>', hall)
+        self.assertIn('Faaram, Lythariel, William, Jango and OBAMA', shelf)
+        self.assertIn('status-card active" href="/aevum-archive/characters/faaram.html"', old_road)
 
     def test_portraits_are_not_repeated_below_the_hero(self) -> None:
         for name in (
