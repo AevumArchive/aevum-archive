@@ -1,0 +1,406 @@
+/* Shared character dossier refresh. Names and facts are visible immediately. */
+body.theme-characters.page-detail {
+  --record-rgb: 183 143 231;
+  --record-ink: #f5edf7;
+}
+body.route-characters-astera-zenith { --record-rgb: 173 139 255; }
+body.route-characters-faaram { --record-rgb: 176 126 238; }
+body.route-characters-obama { --record-rgb: 234 179 92; }
+body.route-characters-lythariel { --record-rgb: 118 215 152; }
+body.route-characters-jango { --record-rgb: 111 203 241; }
+body.route-characters-guts { --record-rgb: 221 141 107; }
+body.route-characters-william-carter { --record-rgb: 231 185 112; }
+body.route-characters-jawohl { --record-rgb: 224 180 104; }
+body.route-characters-jonathan { --record-rgb: 102 209 218; }
+body.route-characters-khealdur { --record-rgb: 221 167 105; }
+body.route-characters-mortis { --record-rgb: 188 117 129; }
+body.route-characters-raven { --record-rgb: 117 187 235; }
+body.route-characters-tony { --record-rgb: 130 194 227; }
+body.route-characters-zeke { --record-rgb: 110 190 208; }
+
+body.theme-characters.page-detail:has(.record-hero) main.page {
+  width: min(100% - 58px, 1440px);
+}
+body.theme-characters.page-detail .record-hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(360px, .92fr);
+  align-items: stretch;
+  gap: 0;
+  min-height: 650px;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid rgb(var(--record-rgb) / .27);
+  border-radius: 30px;
+  background: #08070d;
+  box-shadow: 0 34px 100px rgb(0 0 0 / .36), 0 0 0 1px rgb(255 255 255 / .025) inset;
+}
+body.theme-characters.page-detail .record-hero::before {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  z-index: 5;
+  border: 1px solid rgb(255 255 255 / .055);
+  border-radius: 22px;
+  pointer-events: none;
+}
+body.theme-characters.page-detail .record-hero > .record-panel {
+  order: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  padding: clamp(38px, 5.2vw, 82px);
+  border: 0;
+  border-radius: 0;
+  background:
+    radial-gradient(circle at 8% 10%, rgb(var(--record-rgb) / .11), transparent 38%),
+    linear-gradient(110deg, #0e0a12 0%, #09070d 78%, #0b0910 100%);
+  box-shadow: none;
+}
+body.theme-characters.page-detail .record-panel::before {
+  content: "✦";
+  top: 24px;
+  right: 26px;
+  color: rgb(var(--record-rgb) / .42);
+}
+body.theme-characters.page-detail .record-panel .eyebrow {
+  margin: 0 0 20px;
+  color: rgb(var(--record-rgb));
+  font-size: .74rem;
+  letter-spacing: .22em;
+}
+body.theme-characters.page-detail .record-panel h1 {
+  margin: 0;
+  color: var(--record-ink);
+  font-size: clamp(4.6rem, 8.5vw, 9rem);
+  line-height: .88;
+  letter-spacing: -.06em;
+  overflow-wrap: anywhere;
+  text-shadow: 0 10px 44px rgb(var(--record-rgb) / .16);
+}
+body.theme-characters.page-detail .record-panel .lede {
+  max-width: 54ch;
+  margin: 27px 0 0;
+  color: #c9bdcb;
+  font-size: clamp(1.08rem, 1.6vw, 1.27rem);
+  line-height: 1.72;
+}
+body.theme-characters.page-detail .record-panel dl {
+  display: grid;
+  grid-template-columns: minmax(78px, .38fr) minmax(0, 1fr) minmax(78px, .38fr) minmax(0, 1fr);
+  gap: 0 10px;
+  margin: clamp(30px, 4vw, 52px) 0 0;
+  padding-top: 7px;
+  border-top: 1px solid rgb(var(--record-rgb) / .2);
+}
+body.theme-characters.page-detail .record-panel dt,
+body.theme-characters.page-detail .record-panel dd {
+  min-width: 0;
+  padding: 12px 0;
+  border-bottom: 1px solid rgb(255 255 255 / .065);
+}
+body.theme-characters.page-detail .record-panel dt {
+  color: rgb(var(--record-rgb) / .92);
+  font: 700 .59rem/1.55 Verdana, sans-serif;
+  letter-spacing: .12em;
+}
+body.theme-characters.page-detail .record-panel dd {
+  color: #eee4ef;
+  font-size: .88rem;
+  line-height: 1.48;
+  overflow-wrap: anywhere;
+}
+body.theme-characters.page-detail .record-hero > .character-card {
+  order: 2;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-width: 0;
+  min-height: 650px;
+  overflow: hidden;
+  border: 0;
+  border-left: 1px solid rgb(var(--record-rgb) / .14);
+  border-radius: 0;
+  background-image:
+    linear-gradient(180deg, rgb(4 3 8 / .05) 35%, rgb(4 3 8 / .35) 62%, #050409 100%),
+    linear-gradient(90deg, rgb(6 5 11 / .18), transparent 38%),
+    var(--record-art, radial-gradient(circle at 50% 39%, rgb(var(--record-rgb) / .2), #0c0912 58%, #050409 100%)) !important;
+  background-position: center, center, center 16%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: none;
+}
+body.theme-characters.page-detail .record-hero > .character-card::after {
+  inset: 15px;
+  border: 1px solid rgb(var(--record-rgb) / .14);
+  border-radius: 16px;
+  box-shadow: none;
+}
+body.theme-characters.page-detail .record-hero .character-body {
+  position: relative;
+  z-index: 2;
+  padding: clamp(32px, 4vw, 58px);
+  text-shadow: 0 2px 14px #050409;
+}
+body.theme-characters.page-detail .record-hero .character-body h3 {
+  margin: 0;
+  color: #fff5f4;
+  font-size: clamp(2.25rem, 3.2vw, 4rem);
+  line-height: 1;
+}
+body.theme-characters.page-detail .record-hero .character-body > p {
+  margin: 10px 0 20px;
+  color: rgb(var(--record-rgb));
+  font-size: 1rem;
+  font-style: italic;
+}
+body.theme-characters.page-detail .record-hero .tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  justify-content: flex-start;
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+}
+body.theme-characters.page-detail .record-hero .tag {
+  background: rgb(9 7 14 / .8);
+  backdrop-filter: blur(8px);
+}
+body.theme-characters.page-detail .record-hero .portrait-slot {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  min-height: 0;
+  border: 0;
+  background: none;
+}
+body.theme-characters.page-detail .record-hero .portrait-slot::before {
+  width: min(52%, 250px);
+  height: auto;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  transform: rotate(45deg);
+}
+body.theme-characters.page-detail .record-hero .portrait-rune {
+  display: grid;
+  place-items: center;
+  width: min(38%, 180px);
+  height: auto;
+  aspect-ratio: 1;
+  border: 1px solid rgb(var(--record-rgb) / .44);
+  border-radius: 50%;
+  color: rgb(var(--record-rgb));
+  font-size: clamp(4rem, 8vw, 7rem);
+  background: rgb(8 6 13 / .28);
+  box-shadow: 0 0 56px rgb(var(--record-rgb) / .2), inset 0 0 36px rgb(var(--record-rgb) / .08);
+}
+body.theme-characters.page-detail .record-hero .sigil-stage {
+  position: absolute;
+  inset: 0;
+}
+body:is(
+  .route-characters-astera-zenith, .route-characters-faaram, .route-characters-guts,
+  .route-characters-jango, .route-characters-jonathan, .route-characters-lythariel,
+  .route-characters-obama, .route-characters-william-carter, .route-characters-zeke
+) .record-hero .portrait-slot,
+body:is(.route-characters-faaram, .route-characters-obama) .record-hero .sigil-stage { display: none; }
+body.route-characters-astera-zenith .record-hero > .character-card { --record-art: url("/aevum-archive/assets/images/astera-zenith.png"); }
+body.route-characters-faaram .record-hero > .character-card { --record-art: url("/aevum-archive/assets/images/faaram.png"); }
+body.route-characters-guts .record-hero > .character-card { --record-art: url("/aevum-archive/assets/images/guts.png"); }
+body.route-characters-jango .record-hero > .character-card { --record-art: url("/aevum-archive/assets/images/jango.png"); }
+body.route-characters-jonathan .record-hero > .character-card { --record-art: url("/aevum-archive/assets/images/jonathan.png"); }
+body.route-characters-lythariel .record-hero > .character-card { --record-art: url("/aevum-archive/assets/images/lythariel.png"); }
+body.route-characters-obama .record-hero > .character-card { --record-art: url("/aevum-archive/assets/images/obama.png?v=20260914-new-order2"); }
+body.route-characters-william-carter .record-hero > .character-card { --record-art: url("/aevum-archive/assets/images/william-carter.png"); }
+body.route-characters-zeke .record-hero > .character-card { --record-art: url("/aevum-archive/assets/images/zeke.png"); }
+body.theme-characters.page-detail main.page > .section { margin-top: clamp(48px, 6vw, 80px); }
+body.theme-characters.page-detail main.page > .section > .card,
+body.theme-characters.page-detail main.page > .section.grid > .card {
+  border-color: rgb(var(--record-rgb) / .16);
+  background: linear-gradient(145deg, rgb(var(--record-rgb) / .055), transparent 34%), #100d14;
+}
+body.theme-characters.page-detail .lore-notes h2,
+body.theme-characters.page-detail .section.grid .card h2 {
+  color: #f6ecf4;
+  letter-spacing: -.035em;
+}
+body.theme-characters.page-detail .lore-notes li::marker { color: rgb(var(--record-rgb)); }
+body.theme-characters.page-detail .portrait-card:not(.epic-portrait-card) .inline-artwork img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: min(950px, 90vh);
+  margin-inline: auto;
+  object-fit: contain;
+  background: transparent;
+}
+
+/* Prestige-grade Unique Trait presentation; only the current tier is active. */
+.route-characters-obama .unique-trait-card {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, .9fr);
+  gap: 28px 54px;
+  overflow: hidden;
+  padding: clamp(30px, 5vw, 66px);
+  border: 1px solid rgb(238 186 101 / .45);
+  border-radius: 25px;
+  background: radial-gradient(circle at 88% 8%, rgb(245 159 68 / .18), transparent 29%), linear-gradient(135deg, #211710, #0e0b0d 56%, #0a080d);
+  box-shadow: 0 20px 70px rgb(0 0 0 / .28), inset 0 1px rgb(255 255 255 / .08);
+}
+.route-characters-obama .unique-trait-card::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -116px;
+  right: -35px;
+  width: 330px;
+  aspect-ratio: 1;
+  border: 1px solid rgb(247 192 105 / .28);
+  border-radius: 43% 57% 48% 52%;
+  background: repeating-conic-gradient(from 11deg, rgb(247 192 105 / .07) 0 4deg, transparent 4deg 21deg);
+  animation: recordTraitOrbit 19s linear infinite;
+}
+.route-characters-obama .unique-trait-card::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -70% 72% -70% -30%;
+  transform: rotate(16deg);
+  background: linear-gradient(90deg, transparent, rgb(253 200 103 / .1), transparent);
+  animation: recordTraitSweep 10s ease-in-out infinite;
+}
+.route-characters-obama .trait-insignia {
+  position: absolute;
+  top: 30px;
+  right: 35px;
+  display: grid;
+  place-items: center;
+  width: 72px;
+  aspect-ratio: 1;
+  border: 1px solid rgb(248 201 129 / .35);
+  border-radius: 50%;
+  color: #f6d9a8;
+  font: 700 2.3rem/1 Georgia, serif;
+  background: rgb(12 9 12 / .52);
+  box-shadow: 0 0 35px rgb(243 174 86 / .14);
+}
+.route-characters-obama .trait-heading { padding-right: 55px; }
+.route-characters-obama .trait-heading .eyebrow,
+.route-characters-obama .trait-current .eyebrow { color: #efbd76; letter-spacing: .18em; }
+.route-characters-obama .trait-heading h2 {
+  margin: 18px 0 10px;
+  color: #fff1df;
+  font-size: clamp(3.2rem, 6vw, 6.7rem);
+  line-height: .9;
+  letter-spacing: -.055em;
+}
+.route-characters-obama .trait-level {
+  margin: 18px 0 0;
+  color: #f2ca91;
+  font: 700 1.1rem/1.4 Georgia, serif;
+}
+.route-characters-obama .trait-level span { margin-left: 10px; color: #e8dde0; }
+.route-characters-obama .trait-thesis {
+  margin: 26px 0 0;
+  padding-left: 17px;
+  border-left: 2px solid rgb(239 189 118 / .55);
+  color: #f1d5b7;
+  font-size: 1.08rem;
+  font-style: italic;
+  line-height: 1.6;
+}
+.route-characters-obama .trait-progress {
+  align-self: end;
+  padding: 23px;
+  border: 1px solid rgb(239 189 118 / .19);
+  border-radius: 16px;
+  background: rgb(10 8 12 / .55);
+}
+.route-characters-obama .trait-progress > div { display: flex; justify-content: space-between; gap: 12px; color: #cfb89e; font: 700 .75rem Verdana, sans-serif; letter-spacing: .12em; text-transform: uppercase; }
+.route-characters-obama .trait-progress strong { color: #f6d39d; }
+.route-characters-obama .trait-progress progress { display: block; width: 100%; height: 9px; margin: 17px 0 12px; overflow: hidden; border: 1px solid rgb(239 189 118 / .28); border-radius: 99px; background: #211814; }
+.route-characters-obama .trait-progress progress::-webkit-progress-bar { background: #211814; }
+.route-characters-obama .trait-progress progress::-webkit-progress-value { background: #efbd76; }
+.route-characters-obama .trait-progress progress::-moz-progress-bar { background: #efbd76; }
+.route-characters-obama .trait-progress small { color: #baa89d; }
+.route-characters-obama .trait-current { grid-column: 1 / -1; padding: clamp(24px, 3.4vw, 40px); border: 1px solid rgb(239 189 118 / .19); border-radius: 18px; background: rgb(7 6 10 / .5); }
+.route-characters-obama .trait-current h3 { margin: 10px 0; color: #fff1df; font-size: clamp(1.8rem, 3vw, 3rem); }
+.route-characters-obama .trait-current > p:not(.eyebrow) { max-width: 65ch; color: #d2c3bc; }
+.route-characters-obama .trait-current ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 11px; margin: 22px 0 0; padding: 0; list-style: none; }
+.route-characters-obama .trait-current li { padding: 15px 17px; border: 1px solid rgb(239 189 118 / .13); border-radius: 11px; color: #e5d5c7; background: rgb(239 189 118 / .045); }
+.route-characters-obama .trait-current li::before { content: "◇"; margin-right: 10px; color: #e7b56a; }
+.route-characters-obama .trait-future { grid-column: 1 / -1; padding-top: 20px; border-top: 1px solid rgb(239 189 118 / .17); color: #c0b0ac; }
+.route-characters-obama .trait-future summary { display: flex; justify-content: space-between; gap: 14px; cursor: pointer; color: #ead4b7; font: 700 .85rem/1.5 Verdana, sans-serif; letter-spacing: .08em; text-transform: uppercase; }
+.route-characters-obama .trait-future summary span { color: #a79692; }
+.route-characters-obama .trait-future ol { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px 28px; margin: 22px 0; padding-left: 24px; }
+.route-characters-obama .trait-future li { padding: 4px 4px 4px 0; color: #b7a9a8; }
+.route-characters-obama .trait-future > p { color: #a99b9c; font-size: .84rem; }
+@keyframes recordTraitOrbit { to { transform: rotate(360deg); } }
+@keyframes recordTraitSweep { 0%, 20% { transform: translateX(-20%) rotate(16deg); opacity: 0; } 48%, 62% { opacity: 1; } 85%, 100% { transform: translateX(360%) rotate(16deg); opacity: 0; } }
+
+/* Gray Orb details keep exact scaling separate from Faaram's hero. */
+.gray-orb-owner-card { display: flex; align-items: end; justify-content: space-between; gap: 30px; padding: clamp(28px, 4vw, 50px); }
+.gray-orb-owner-card > div { max-width: 72ch; }
+.gray-orb-owner-card h2 { margin: 8px 0 12px; font-size: clamp(2.5rem, 4vw, 4.5rem); }
+.gray-orb-owner-card .small-button { white-space: nowrap; }
+.route-world-items .unknown-art-stage { display: grid; place-items: center; min-height: 240px; padding: 22px; background: radial-gradient(circle at center, rgb(199 190 210 / .07), transparent 55%), #0c0a10; }
+.route-world-items .unknown-art-stage span { color: #a79da8; font: 700 .7rem/1.3 Verdana, sans-serif; letter-spacing: .16em; text-align: center; text-transform: uppercase; }
+.route-world-items .gray-orb-ledger { scroll-margin-top: 110px; }
+.route-world-items .gray-orb-mechanics { align-items: stretch; }
+.route-world-items .gray-orb-mechanics > .card { padding: clamp(22px, 3vw, 36px); }
+.route-world-items .gray-orb-mechanics h3,
+.route-world-items .gray-orb-authority h3 { margin: 6px 0 23px; color: #eee7ef; font-size: clamp(1.5rem, 2.8vw, 2.5rem); }
+.route-world-items .archive-table-scroll { overflow-x: auto; }
+.route-world-items .archive-scaling-table { width: 100%; border-collapse: collapse; color: #ded3de; font-size: .9rem; }
+.route-world-items .archive-scaling-table th,
+.route-world-items .archive-scaling-table td { padding: 10px 8px; border-bottom: 1px solid rgb(210 191 212 / .13); text-align: left; }
+.route-world-items .archive-scaling-table thead th { color: #c7a9ce; font: 700 .64rem/1.45 Verdana, sans-serif; letter-spacing: .12em; text-transform: uppercase; }
+.route-world-items .archive-scaling-table tbody td { color: #eee4f0; font-weight: 700; }
+.route-world-items .archive-mechanics-note { margin: 22px 0 0; color: #baafbc; line-height: 1.65; }
+.route-world-items .gray-orb-example { display: grid; gap: 8px; margin-top: 22px; padding: 19px; border: 1px solid rgb(217 189 221 / .2); border-radius: 13px; background: rgb(193 161 203 / .06); }
+.route-world-items .gray-orb-example strong { color: #f0e5f2; }
+.route-world-items .gray-orb-example span { color: #d8c8da; }
+.route-world-items .gray-orb-authority { margin-top: 16px; padding: clamp(24px, 3.5vw, 42px); }
+.route-world-items .gray-orb-authority .grid { margin: 0 0 28px; }
+.route-world-items .gray-orb-authority .grid > div { padding: 20px; border: 1px solid rgb(210 191 212 / .15); border-radius: 13px; background: rgb(255 255 255 / .025); }
+.route-world-items .gray-orb-authority strong { color: #ead7ed; }
+.route-world-items .gray-orb-authority p { margin-bottom: 0; color: #bcb0c0; }
+
+@media (max-width: 1050px) {
+  body.theme-characters.page-detail .record-hero { grid-template-columns: minmax(0, 1fr) minmax(300px, .85fr); }
+  body.theme-characters.page-detail .record-panel dl { grid-template-columns: minmax(80px, .32fr) minmax(0, 1fr); }
+}
+@media (max-width: 760px) {
+  body.theme-characters.page-detail:has(.record-hero) main.page { width: min(100% - 22px, 1440px); }
+  body.theme-characters.page-detail .record-hero { grid-template-columns: 1fr; }
+  body.theme-characters.page-detail .record-hero > .record-panel { padding: 34px 26px 40px; }
+  body.theme-characters.page-detail .record-panel h1 { font-size: clamp(3.5rem, 15vw, 6.3rem); }
+  body.theme-characters.page-detail .record-hero > .character-card { min-height: 540px; border-left: 0; border-top: 1px solid rgb(var(--record-rgb) / .16); }
+  body.theme-characters.page-detail .record-hero .character-body { padding: 34px; }
+  .route-characters-obama .unique-trait-card { grid-template-columns: 1fr; gap: 24px; }
+  .route-characters-obama .trait-heading { padding-right: 20px; }
+  .route-characters-obama .trait-progress { align-self: auto; }
+  .route-characters-obama .trait-current ul { grid-template-columns: 1fr; }
+  .route-characters-obama .trait-future ol { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .gray-orb-owner-card { display: block; }
+  .gray-orb-owner-card .small-button { margin-top: 24px; }
+}
+@media (max-width: 480px) {
+  body.theme-characters.page-detail .record-panel dl { grid-template-columns: minmax(76px, .38fr) minmax(0, 1fr); }
+  body.theme-characters.page-detail .record-hero > .character-card { min-height: 440px; }
+  .route-characters-obama .trait-insignia { width: 53px; top: 22px; right: 22px; font-size: 1.8rem; }
+  .route-characters-obama .trait-future summary { display: block; }
+  .route-characters-obama .trait-future summary span { display: block; margin-top: 6px; }
+  .route-characters-obama .trait-future ol { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .route-characters-obama .unique-trait-card::before,
+  .route-characters-obama .unique-trait-card::after { animation: none; }
+}
