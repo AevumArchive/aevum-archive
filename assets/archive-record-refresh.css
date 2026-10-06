@@ -88,8 +88,8 @@ body.theme-characters.page-detail .record-panel .lede {
 }
 body.theme-characters.page-detail .record-panel dl {
   display: grid;
-  grid-template-columns: minmax(78px, .38fr) minmax(0, 1fr) minmax(78px, .38fr) minmax(0, 1fr);
-  gap: 0 10px;
+  grid-template-columns: minmax(100px, .36fr) minmax(0, 1fr) minmax(100px, .36fr) minmax(0, 1fr);
+  gap: 0 16px;
   margin: clamp(30px, 4vw, 52px) 0 0;
   padding-top: 7px;
   border-top: 1px solid rgb(var(--record-rgb) / .2);
@@ -202,7 +202,7 @@ body.theme-characters.page-detail .record-hero .sigil-stage {
   position: absolute;
   inset: 0;
 }
-body:is(
+body.theme-characters.page-detail:is(
   .route-characters-astera-zenith, .route-characters-faaram, .route-characters-guts,
   .route-characters-jango, .route-characters-jonathan, .route-characters-lythariel,
   .route-characters-obama, .route-characters-william-carter, .route-characters-zeke
@@ -375,7 +375,7 @@ body.theme-characters.page-detail .portrait-card:not(.epic-portrait-card) .inlin
 
 @media (max-width: 1050px) {
   body.theme-characters.page-detail .record-hero { grid-template-columns: minmax(0, 1fr) minmax(300px, .85fr); }
-  body.theme-characters.page-detail .record-panel dl { grid-template-columns: minmax(80px, .32fr) minmax(0, 1fr); }
+  body.theme-characters.page-detail .record-panel dl { grid-template-columns: minmax(92px, .32fr) minmax(0, 1fr); }
 }
 @media (max-width: 760px) {
   body.theme-characters.page-detail:has(.record-hero) main.page { width: min(100% - 22px, 1440px); }
@@ -403,4 +403,88 @@ body.theme-characters.page-detail .portrait-card:not(.epic-portrait-card) .inlin
 @media (prefers-reduced-motion: reduce) {
   .route-characters-obama .unique-trait-card::before,
   .route-characters-obama .unique-trait-card::after { animation: none; }
+}
+
+/* One identity, one likeness: the dossier owns the name and facts, the art stays unobstructed. */
+body.theme-characters.page-detail .record-hero .character-body,
+body.theme-characters.page-detail .record-hero .portrait-slot,
+body.theme-characters.page-detail .record-hero .sigil-stage,
+body.theme-characters.page-detail .record-hero .astera-sigil-stage { display: none; }
+body.theme-characters.page-detail .record-hero > .character-card {
+  pointer-events: none;
+  background-image:
+    linear-gradient(180deg, rgb(4 3 8 / .02) 58%, rgb(4 3 8 / .2) 100%),
+    var(--record-art) !important;
+  background-position: center, center 24%;
+}
+body.theme-characters.page-detail .record-hero > .character-card::after { border-color: rgb(var(--record-rgb) / .1); }
+body.theme-characters.page-detail .record-panel::before { display: none; }
+body.theme-characters.page-detail .record-hero .record-panel::after { display: none; }
+body.theme-characters.page-detail .record-panel h1 { font-size: clamp(4rem, 7vw, 7.7rem); line-height: .95; }
+body.theme-characters.page-detail .record-panel .lede { margin-top: 24px; }
+
+/* Records without a confirmed portrait are text dossiers, not empty image slots. */
+body.theme-characters.page-detail:is(
+  .route-characters-jawohl, .route-characters-khealdur, .route-characters-mortis,
+  .route-characters-raven, .route-characters-tony
+) .record-hero { grid-template-columns: 1fr; min-height: 0; }
+body.theme-characters.page-detail:is(
+  .route-characters-jawohl, .route-characters-khealdur, .route-characters-mortis,
+  .route-characters-raven, .route-characters-tony
+) .record-hero > .character-card { display: none; }
+body.theme-characters.page-detail:is(
+  .route-characters-jawohl, .route-characters-khealdur, .route-characters-mortis,
+  .route-characters-raven, .route-characters-tony
+) .record-hero > .record-panel { min-height: 440px; padding: clamp(38px, 6vw, 82px); }
+body.theme-characters.page-detail:is(
+  .route-characters-jawohl, .route-characters-khealdur, .route-characters-mortis,
+  .route-characters-raven, .route-characters-tony
+) .record-panel .lede { max-width: 72ch; }
+body:is(
+  .route-characters-jawohl, .route-characters-khealdur, .route-characters-mortis,
+  .route-characters-raven, .route-characters-tony
+) .record-panel dl { max-width: 950px; }
+
+/* Archive diagram: relationships, not an invented likeness of the World Item. */
+.gray-orb-owner-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(210px, .46fr);
+  align-items: center;
+  min-height: 380px;
+  gap: clamp(28px, 5vw, 76px);
+  overflow: hidden;
+  border-color: rgb(206 185 230 / .3) !important;
+  background: radial-gradient(circle at 82% 46%, rgb(151 132 180 / .15), transparent 31%), linear-gradient(125deg, #17111d, #0b0a10 75%) !important;
+}
+.gray-orb-owner-card::before { content: none; }
+.gray-orb-owner-card .eyebrow { color: #cbb5dd; letter-spacing: .18em; }
+.gray-orb-owner-card h2 { color: #f5eff8; font-size: clamp(3.4rem, 6vw, 6.4rem); letter-spacing: -.065em; }
+.gray-orb-owner-card p:not(.eyebrow) { max-width: 58ch; color: #d5cbd9; font-size: 1.05rem; line-height: 1.75; }
+.gray-orb-owner-card .small-button { margin-top: 26px; border-color: rgb(218 193 233 / .4); color: #eee1f4; }
+.gray-orb-owner-card .orb-archive-diagram {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: min(100%, 310px);
+  aspect-ratio: 1;
+  justify-self: center;
+  border: 1px solid rgb(211 188 231 / .23);
+  border-radius: 50%;
+  background: repeating-radial-gradient(circle, transparent 0 37px, rgb(193 170 218 / .08) 38px 39px, transparent 40px 74px), radial-gradient(circle, rgb(144 121 170 / .16), transparent 64%);
+  box-shadow: 0 0 90px rgb(171 144 202 / .12), inset 0 0 60px rgb(171 144 202 / .06);
+}
+.orb-archive-diagram::before,
+.orb-archive-diagram::after { content: ""; position: absolute; inset: 11%; border: 1px solid rgb(214 190 230 / .19); border-radius: 50%; transform: rotate(-28deg) scaleY(.48); animation: orbNetworkTurn 32s linear infinite; }
+.orb-archive-diagram::after { transform: rotate(64deg) scaleY(.48); animation-direction: reverse; }
+.orb-archive-diagram .orb-core { z-index: 1; width: 27%; aspect-ratio: 1; border: 1px solid rgb(231 213 239 / .47); border-radius: 50%; background: radial-gradient(circle at 37% 30%, #b5a5c4, #51465f 55%, #1b1820 100%); box-shadow: 0 0 35px rgb(203 177 229 / .28), inset -12px -17px 22px rgb(8 7 11 / .58); }
+.orb-archive-diagram .orb-node { position: absolute; width: 9px; height: 9px; border-radius: 50%; background: #d9c5e7; box-shadow: 0 0 16px #c8a9e0; }
+.orb-node:nth-of-type(2) { top: 18%; left: 28%; }.orb-node:nth-of-type(3) { top: 27%; right: 17%; }.orb-node:nth-of-type(4) { bottom: 20%; right: 25%; }.orb-node:nth-of-type(5) { bottom: 27%; left: 17%; }
+.orb-archive-diagram small { position: absolute; bottom: -26px; color: #a69aae; font: 700 .59rem Verdana, sans-serif; letter-spacing: .1em; text-transform: uppercase; white-space: nowrap; }
+@keyframes orbNetworkTurn { to { transform: rotate(332deg) scaleY(.48); } }
+@media (max-width: 760px) {
+  .gray-orb-owner-card { grid-template-columns: 1fr; padding-bottom: 66px; }
+  .gray-orb-owner-card .orb-archive-diagram { width: min(70%, 260px); order: -1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .orb-archive-diagram::before, .orb-archive-diagram::after { animation: none; }
 }
