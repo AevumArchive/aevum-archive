@@ -628,3 +628,32 @@ body.route-characters-faaram .overlord-grace-card::after {
   .route-characters-faaram .grace-crest i,
   .route-characters-faaram .grace-crest b { animation: none; }
 }
+
+/* Jonathan's near-square artwork should meet the dossier edge without being cropped. */
+@media (min-width: 1151px) {
+  body.theme-characters.page-detail.route-characters-jonathan .record-hero {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    min-height: 0;
+  }
+  body.theme-characters.page-detail.route-characters-jonathan .record-hero > .record-panel {
+    padding: clamp(38px, 3.6vw, 54px);
+  }
+  body.theme-characters.page-detail.route-characters-jonathan .record-panel h1 {
+    font-size: clamp(5rem, 6.2vw, 6.8rem);
+  }
+  body.theme-characters.page-detail.route-characters-jonathan .record-panel .lede {
+    margin-top: 20px;
+    font-size: 1.08rem;
+    line-height: 1.6;
+  }
+  body.theme-characters.page-detail.route-characters-jonathan .record-panel dl { margin-top: 28px; }
+}
+body.theme-characters.page-detail.route-characters-jonathan .record-hero > .character-card {
+  background-image:
+    linear-gradient(180deg, rgb(10 8 13 / .4), transparent 20% 78%, rgb(10 8 13 / .5)),
+    var(--record-art),
+    radial-gradient(ellipse at 70% 55%, #38261e, #161016 72%) !important;
+  background-color: #161016;
+  background-position: center, center, center;
+  background-size: cover, contain, cover;
+}

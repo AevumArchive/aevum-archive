@@ -93,6 +93,13 @@ class CharacterRecordsTest(unittest.TestCase):
         for name in ("guts", "jonathan", "obama"):
             self.assertIn(f"body.route-characters-{name} {{ --portrait-ratio:", styles)
 
+    def test_jonathan_landscape_portrait_keeps_full_art_without_letterbox(self) -> None:
+        detail = page("characters/jonathan.html")
+        styles = page("assets/archive-record-refresh.css")
+        self.assertIn('archive-record-refresh.css?v=20261008-jonathan2', detail)
+        self.assertIn("route-characters-jonathan .record-hero {\n    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr)", styles)
+        self.assertIn("background-size: cover, contain, cover", styles)
+
 
 if __name__ == "__main__":
     unittest.main()
