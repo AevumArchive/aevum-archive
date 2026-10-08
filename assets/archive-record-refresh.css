@@ -115,6 +115,7 @@ body.theme-characters.page-detail .record-panel dd {
   line-height: 1.48;
   overflow-wrap: anywhere;
 }
+.route-characters-faaram .record-panel .quest-completion-note { display: block; margin-top: 4px; color: #b6a4bd; font: 700 .68rem/1.45 Verdana, sans-serif; letter-spacing: .02em; }
 body.theme-characters.page-detail .record-hero > .character-card {
   order: 2;
   position: relative;
