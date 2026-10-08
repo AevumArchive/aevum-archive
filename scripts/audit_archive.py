@@ -22,6 +22,7 @@ INTENTIONAL_ENTRY_POINTS = {
     "npcs/willy.html",  # Hidden encounter opened by willy-watcher.js rather than navigation.
     "deep-archive/vault.html",  # Session-gated index opened by deep-archive.js.
     "deep-archive/entities/magnus-bane.html",  # Restricted record linked from the session-gated index.
+    "deep-archive/entities/enski.html",  # Restricted record linked only from the session-gated index.
     "deep-archive/dev-npcs.html",  # Restricted collection linked from the session-gated index.
     "deep-archive/immortals.html",  # Restricted cross-record register linked from the session-gated index.
     "top-characters/index.html",  # Legacy leaderboard redirect.

@@ -58,7 +58,7 @@
 
   // Rarely corrupt the browser tab title for a moment.
   const originalTitle = document.title;
-  const titlePool = ['WILLY', '██████', 'FAARAM I SEE YOU', 'OBAMA I SEE YOU TOO', 'DO NOT TURN AROUND', 'HE IS STILL HERE'];
+  const titlePool = ['WILLY', '██████', 'Faaram I SEE YOU', 'OBAMA I SEE YOU TOO', 'DO NOT TURN AROUND', 'HE IS STILL HERE'];
   function titleEvent() {
     setTimeout(() => {
       if (Math.random() < .18) {

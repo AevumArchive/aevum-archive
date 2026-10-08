@@ -19,13 +19,7 @@ This repository is intentionally only for public-facing archive pages:
 - Lore: `lore/index.html`
 - Events: `events/index.html`
 
-Prepared character records:
-
-- Astera Zenith
-- Lythariel
-- William Carter
-- Jango
-- Guts
+The character roster is maintained in `characters/all.html`; avoid duplicating a static name list here. Codex records live under `codex/`, including separate Traits, Abilities and Bindings shelves. Restricted entity records use the client-side Deep Archive presentation; this is an immersive gate, not a security boundary for private future lore.
 
 ## GitHub Pages setup
 

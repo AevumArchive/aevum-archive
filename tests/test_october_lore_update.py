@@ -38,7 +38,7 @@ class OctoberLoreUpdateTest(unittest.TestCase):
         self.assertIn('A Name Unknown to the World...', trophies)
         self.assertIn('<strong>Tenrei</strong>', trophies)
         self.assertIn('+250,000 Points', trophies)
-        self.assertIn('5 trophies held', trophies)
+        self.assertIn('8 records held', trophies)
         self.assertIn('class="pill divine-achievement-pill"', astera)
         self.assertIn('class="divine-discovery-card"', astera)
         self.assertIn('.divine-trophy {', styles)

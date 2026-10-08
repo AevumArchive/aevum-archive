@@ -17,6 +17,7 @@ body.route-characters-mortis { --record-rgb: 188 117 129; }
 body.route-characters-raven { --record-rgb: 117 187 235; }
 body.route-characters-tony { --record-rgb: 130 194 227; }
 body.route-characters-zeke { --record-rgb: 110 190 208; }
+body.route-characters-beru { --record-rgb: 232 189 114; --portrait-ratio: 1024 / 1536; }
 body.route-characters-guts { --portrait-ratio: 1086 / 1448; }
 body.route-characters-jonathan { --portrait-ratio: 1312 / 1199; }
 body.route-characters-obama { --portrait-ratio: 1122 / 1402; }
@@ -220,6 +221,7 @@ body.route-characters-lythariel .record-hero > .character-card { --record-art: u
 body.route-characters-obama .record-hero > .character-card { --record-art: url("/aevum-archive/assets/images/obama.png?v=20260914-new-order2"); }
 body.route-characters-william-carter .record-hero > .character-card { --record-art: url("/aevum-archive/assets/images/william-carter.png"); }
 body.route-characters-zeke .record-hero > .character-card { --record-art: url("/aevum-archive/assets/images/zeke.png"); }
+body.route-characters-beru .record-hero > .character-card { --record-art: url("/aevum-archive/assets/images/beru.png"); }
 body.theme-characters.page-detail main.page > .section { margin-top: clamp(48px, 6vw, 80px); }
 body.theme-characters.page-detail main.page > .section > .card,
 body.theme-characters.page-detail main.page > .section.grid > .card {

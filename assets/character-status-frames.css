@@ -230,6 +230,7 @@ body.route-characters-all .hall-view.is-active {
 
 body.route-characters-all .hall-filter[data-filter="active"].is-active { color: #91e5a4; border-color: rgba(95,205,125,.5); }
 body.route-characters-all .hall-filter[data-filter="lost"].is-active { color: #9de7ee; border-color: rgba(101,196,211,.56); }
+body.route-characters-all .hall-filter[data-filter="unknown"].is-active { color: #e8c797; border-color: rgba(220,174,106,.56); }
 body.route-characters-all .hall-filter[data-filter="fallen"].is-active { color: #ff8a91; border-color: rgba(224,61,70,.55); }
 body.route-characters-all .hall-filter[data-filter="retired"].is-active { color: #e9bd72; border-color: rgba(210,157,71,.5); }
 
@@ -520,6 +521,10 @@ body.route-characters-all .hall-card.is-lost .status-badge {
   color: #a7edf2;
   background: rgba(12, 43, 52, .82);
 }
+body.route-characters-all .hall-card.is-unknown .status-badge {
+  color: #e8c797;
+  background: rgba(48, 34, 17, .82);
+}
 
 body.route-characters-all .hall-card:hover,
 body.route-characters-all .hall-card:focus-visible {
@@ -554,6 +559,10 @@ body.route-characters-all .hall-card.character-card.status-card.is-retired {
 body.route-characters-all .hall-card.character-card.status-card.is-lost {
   border-color: transparent !important;
   background: radial-gradient(circle at 50% 26%, rgba(75, 91, 150, .22), transparent 44%), linear-gradient(145deg, rgba(15, 24, 31, .88), rgba(13, 8, 23, .98)) !important;
+}
+body.route-characters-all .hall-card.character-card.status-card.is-unknown {
+  border-color: transparent !important;
+  background: radial-gradient(circle at 50% 25%, rgba(174, 120, 57, .2), transparent 44%), linear-gradient(145deg, rgba(29, 23, 22, .88), rgba(11, 9, 13, .98)) !important;
 }
 
 body.route-characters-all .hall-card:focus-visible {

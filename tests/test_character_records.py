@@ -58,7 +58,7 @@ class CharacterRecordsTest(unittest.TestCase):
 
     def test_portraits_are_not_repeated_below_the_hero(self) -> None:
         for name in (
-            "astera-zenith", "faaram", "guts", "jango", "jonathan",
+            "astera-zenith", "beru", "faaram", "guts", "jango", "jonathan",
             "lythariel", "obama", "william-carter", "zeke",
         ):
             with self.subTest(character=name):
