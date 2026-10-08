@@ -17,6 +17,8 @@ class UpdateLedgerTest(unittest.TestCase):
         ledger_titles = re.findall(r'<article class="archive-update">.*?<h2>([^<]+)</h2>', ledger)
         self.assertEqual(home_titles, ledger_titles[:3])
         self.assertEqual(len(home_titles), 3)
+        self.assertIn("Faaram nears his true potential", home_titles)
+        self.assertIn("has yet to fully claim", home_section)
         self.assertNotIn("Ichiro likeness recorded", home_section)
         self.assertNotIn("The Sunflower had three heads", home_section)
 
