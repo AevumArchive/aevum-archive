@@ -500,3 +500,131 @@ body:is(
 @media (prefers-reduced-motion: reduce) {
   .orb-archive-diagram::before, .orb-archive-diagram::after { animation: none; }
 }
+
+/* Faaram's Mythic mark is a signature record, not a third relic tile. */
+body.theme-characters.page-detail.route-characters-faaram main.page > .grace-section { margin-top: 22px; }
+body.theme-characters.page-detail.route-characters-faaram main.page > .grace-section > .overlord-grace-card {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, .62fr);
+  align-items: center;
+  gap: clamp(28px, 5vw, 80px);
+  min-height: 440px;
+  overflow: hidden;
+  padding: clamp(32px, 5vw, 72px);
+  border: 1px solid rgb(250 203 119 / .54);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 78% 50%, rgb(231 166 84 / .2), transparent 30%),
+    radial-gradient(circle at 21% 5%, rgb(166 104 210 / .17), transparent 43%),
+    linear-gradient(125deg, #241721 0%, #130e1b 48%, #0c0a14 100%);
+  box-shadow: 0 28px 85px rgb(0 0 0 / .38), 0 0 58px rgb(238 166 76 / .1), inset 0 1px rgb(255 234 187 / .16);
+}
+body.route-characters-faaram .overlord-grace-card::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: -70% auto -70% -42%;
+  width: 52%;
+  background: linear-gradient(90deg, transparent, rgb(255 218 146 / .095), transparent);
+  transform: rotate(18deg) translateX(-100%);
+  animation: graceLightPass 12s ease-in-out infinite;
+  pointer-events: none;
+}
+body.route-characters-faaram .overlord-grace-card::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 13px;
+  border: 1px solid rgb(255 216 148 / .18);
+  border-radius: 18px;
+  box-shadow: inset 0 0 60px rgb(234 181 104 / .045);
+  pointer-events: none;
+}
+.route-characters-faaram .grace-copy { position: relative; z-index: 1; }
+.route-characters-faaram .grace-copy .eyebrow { color: #e9bc86; letter-spacing: .2em; }
+.route-characters-faaram .grace-copy h2 {
+  max-width: 11ch;
+  margin: 16px 0;
+  color: #fff2db;
+  font-size: clamp(3.4rem, 6.2vw, 6.4rem);
+  line-height: .92;
+  letter-spacing: -.055em;
+  text-wrap: balance;
+  text-shadow: 0 0 34px rgb(236 173 92 / .16);
+}
+.route-characters-faaram .grace-copy .grace-rarity { color: #f2c678 !important; }
+.route-characters-faaram .grace-copy > p:not(.eyebrow, .grace-rarity) {
+  max-width: 52ch;
+  color: #e2d3df;
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+.route-characters-faaram .grace-count { max-width: 470px; margin-top: 28px; border-color: rgb(246 195 113 / .29); }
+.route-characters-faaram .grace-count strong { color: #ffe8b9; font-size: clamp(2.8rem, 5vw, 4.4rem); }
+.route-characters-faaram .grace-count span { color: #d9c5d6; }
+.route-characters-faaram .grace-emblem {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: min(100%, 360px);
+  aspect-ratio: 1;
+  justify-self: center;
+  border: 1px solid rgb(242 189 111 / .2);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgb(220 159 83 / .13), transparent 65%);
+  box-shadow: 0 0 86px rgb(197 119 78 / .13), inset 0 0 50px rgb(234 181 104 / .05);
+  animation: graceBreath 5s ease-in-out infinite;
+}
+.route-characters-faaram .grace-emblem::before {
+  content: "";
+  position: absolute;
+  inset: 7%;
+  border: 1px solid rgb(250 211 139 / .37);
+  border-radius: 50%;
+  background: radial-gradient(circle, #1c1320 0 63%, transparent 64%), repeating-conic-gradient(from 0deg, rgb(249 203 126 / .27) 0deg 1deg, transparent 1deg 15deg);
+  animation: graceOrbit 36s linear infinite;
+}
+.route-characters-faaram .grace-emblem::after {
+  content: "";
+  position: absolute;
+  inset: 2%;
+  border: 1px solid rgb(208 150 213 / .3);
+  border-radius: 50%;
+  transform: rotate(-23deg) scaleY(.54);
+  animation: graceEllipse 22s linear infinite;
+}
+.route-characters-faaram .grace-crest {
+  z-index: 2;
+  width: 52%;
+  height: auto;
+  aspect-ratio: 1;
+  margin: 0;
+  border-color: rgb(255 216 144 / .57);
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 43%, rgb(255 219 147 / .21), rgb(35 20 35 / .92) 66%);
+  box-shadow: 0 0 54px rgb(245 182 95 / .32), inset 0 0 42px rgb(250 197 118 / .09);
+}
+.route-characters-faaram .grace-crest span { font-size: clamp(4rem, 7vw, 6rem); }
+.route-characters-faaram .grace-crest i { animation: graceCrestOrbit 16s linear infinite; }
+.route-characters-faaram .grace-crest b { animation: graceCrestOrbitReverse 23s linear infinite; }
+@keyframes graceOrbit { to { transform: rotate(360deg); } }
+@keyframes graceEllipse { to { transform: rotate(337deg) scaleY(.54); } }
+@keyframes graceCrestOrbit { to { transform: rotate(338deg) scaleX(1.55); } }
+@keyframes graceCrestOrbitReverse { to { transform: rotate(-332deg) scaleX(1.72); } }
+@keyframes graceBreath { 50% { box-shadow: 0 0 105px rgb(221 146 76 / .23), inset 0 0 70px rgb(234 181 104 / .09); } }
+@keyframes graceLightPass { 0%, 20% { transform: rotate(18deg) translateX(-100%); opacity: 0; } 45%, 65% { opacity: 1; } 90%, 100% { transform: rotate(18deg) translateX(360%); opacity: 0; } }
+@media (max-width: 760px) {
+  body.theme-characters.page-detail.route-characters-faaram main.page > .grace-section > .overlord-grace-card { grid-template-columns: 1fr; gap: 16px; }
+  .route-characters-faaram .grace-emblem { width: min(66%, 260px); grid-row: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .route-characters-faaram .overlord-grace-card::before,
+  .route-characters-faaram .grace-emblem,
+  .route-characters-faaram .grace-emblem::before,
+  .route-characters-faaram .grace-emblem::after,
+  .route-characters-faaram .grace-crest i,
+  .route-characters-faaram .grace-crest b { animation: none; }
+}

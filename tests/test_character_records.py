@@ -73,6 +73,16 @@ class CharacterRecordsTest(unittest.TestCase):
         self.assertIn("Archive visualization · likeness unknown", detail)
         self.assertIn('/world-items/#gray-orb', detail)
 
+    def test_overlords_grace_keeps_its_signature_layout_and_motion(self) -> None:
+        detail = page("characters/faaram.html")
+        styles = page("assets/archive-record-refresh.css")
+        self.assertIn('class="section grace-section"', detail)
+        self.assertIn('class="grace-emblem" aria-hidden="true"', detail)
+        self.assertIn("8th recorded bearer", detail)
+        self.assertIn("page-detail.route-characters-faaram main.page > .grace-section > .overlord-grace-card", styles)
+        self.assertIn("animation: graceOrbit 36s linear infinite", styles)
+        self.assertIn("@media (prefers-reduced-motion: reduce)", styles)
+
     def test_hero_art_uses_uncropped_source_ratio(self) -> None:
         styles = page("assets/archive-record-refresh.css")
         self.assertIn("aspect-ratio: var(--portrait-ratio, 2 / 3)", styles)
