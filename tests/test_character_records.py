@@ -21,7 +21,7 @@ class CharacterRecordsTest(unittest.TestCase):
         self.assertIn("<dt>Status</dt><dd>ACTIVE</dd>", detail)
         self.assertIn('data-status="active" data-name="OBAMA"', hall)
         self.assertIn("Active <span>5</span>", hall)
-        self.assertIn("Sealed <span>3</span>", hall)
+        self.assertIn("Sealed <span>4</span>", hall)
         self.assertIn("Five active names", shelf)
         self.assertIn('status-card active golden-status" href="/aevum-archive/characters/obama.html"', old_road)
 
@@ -51,7 +51,7 @@ class CharacterRecordsTest(unittest.TestCase):
         self.assertIn('data-status="lost" data-name="Astera Zenith"', hall)
         self.assertIn('data-status="active" data-name="Faaram"', hall)
         self.assertIn('Active <span>5</span>', hall)
-        self.assertIn('Sealed <span>3</span>', hall)
+        self.assertIn('Sealed <span>4</span>', hall)
         self.assertIn('Lost / Unknown <span>2</span>', hall)
         self.assertIn('Faaram, Lythariel, William, Jango and OBAMA', shelf)
         self.assertIn('status-card active" href="/aevum-archive/characters/faaram.html"', old_road)
@@ -99,6 +99,23 @@ class CharacterRecordsTest(unittest.TestCase):
         self.assertIn('archive-record-refresh.css?v=20261008-jonathan2', detail)
         self.assertIn("route-characters-jonathan .record-hero {\n    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr)", styles)
         self.assertIn("background-size: cover, contain, cover", styles)
+
+    def test_astera_portrait_fits_and_beru_is_sealed(self) -> None:
+        astera = page("characters/astera-zenith.html")
+        beru = page("characters/beru.html")
+        hall = page("characters/all.html")
+        shelf = page("characters/index.html")
+        styles = page("assets/archive-record-refresh.css")
+
+        self.assertIn("archive-record-refresh.css?v=20261009-astera-fit", astera)
+        self.assertIn("route-characters-astera-zenith .record-hero > .record-panel", styles)
+        self.assertIn("route-characters-astera-zenith .record-hero > .character-card", styles)
+        self.assertIn("<dt>Current Status</dt><dd>SEALED</dd>", beru)
+        self.assertIn('data-status="sealed" data-name="Beru"', hall)
+        self.assertIn('Sealed <span>4</span>', hall)
+        self.assertNotIn('data-filter="unknown"', hall)
+        self.assertNotIn('href="/aevum-archive/characters/beru.html"', shelf)
+        self.assertIn('href="/aevum-archive/characters/obama.html"', shelf)
 
 
 if __name__ == "__main__":

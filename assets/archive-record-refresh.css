@@ -657,3 +657,27 @@ body.theme-characters.page-detail.route-characters-jonathan .record-hero > .char
   background-position: center, center, center;
   background-size: cover, contain, cover;
 }
+
+/* Let Astera's 2:3 artwork set the desktop hero height, without cropping it. */
+@media (min-width: 1151px) {
+  body.theme-characters.page-detail.route-characters-astera-zenith .record-hero > .record-panel {
+    padding: clamp(40px, 4vw, 64px);
+  }
+  body.theme-characters.page-detail.route-characters-astera-zenith .record-panel .lede {
+    margin-top: 22px;
+    font-size: clamp(1.05rem, 1.45vw, 1.16rem);
+    line-height: 1.62;
+  }
+  body.theme-characters.page-detail.route-characters-astera-zenith .record-panel dl { margin-top: clamp(26px, 3vw, 38px); }
+  body.theme-characters.page-detail.route-characters-astera-zenith .record-panel dt,
+  body.theme-characters.page-detail.route-characters-astera-zenith .record-panel dd { padding-block: 10px; }
+}
+body.theme-characters.page-detail.route-characters-astera-zenith .record-hero > .character-card {
+  background-image:
+    linear-gradient(180deg, rgb(8 5 15 / .25), transparent 16% 84%, rgb(8 5 15 / .35)),
+    var(--record-art),
+    radial-gradient(ellipse at 50% 50%, #392238, #100b19 72%) !important;
+  background-color: #100b19;
+  background-position: center, center, center;
+  background-size: cover, contain, cover;
+}
