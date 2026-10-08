@@ -37,6 +37,8 @@ class FullCanonSyncTest(unittest.TestCase):
         self.assertIn('permanent +70%', page("characters/obama.html"))
         self.assertIn('Event Wish later revived her', page("npcs/poison.html"))
         self.assertIn('Treacherous Cleaver ×2', page("npcs/timeo.html"))
+        self.assertIn('<span>World Items</span><strong>Treacherous Cleaver ×2</strong>', page("npcs/timeo.html"))
+        self.assertIn('Each is a World Item', page("npcs/timeo.html"))
 
     def test_codex_classification_boundaries(self) -> None:
         traits = page("codex/traits.html")
@@ -48,6 +50,13 @@ class FullCanonSyncTest(unittest.TestCase):
         self.assertNotIn('id="faarams-soul-mark"', traits)
         self.assertIn('id="faarams-soul-mark"', page("codex/bindings.html"))
         self.assertIn('Character-bound artifact · not a World Item', page("world-items/index.html"))
+        relics = page("world-items/index.html")
+        self.assertIn('id="treacherous-cleavers"', relics)
+        self.assertIn('Two distinct World Items', relics)
+        held_equipment = relics.split('id="held-equipment"', 1)[1].split('id="lost-relics"', 1)[0]
+        self.assertNotIn('Treacherous Cleaver', held_equipment)
+        self.assertNotIn('not a single item and not a World Item', relics)
+        self.assertIn('two separate Treacherous Cleavers, each a World Item', page("updates/index.html"))
 
 
 if __name__ == "__main__":
