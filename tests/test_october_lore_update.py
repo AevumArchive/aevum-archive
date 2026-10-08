@@ -28,6 +28,28 @@ class OctoberLoreUpdateTest(unittest.TestCase):
         self.assertIn('<dt>Power Level</dt><dd>2100</dd>', detail)
         self.assertNotIn('<dt>Power Level</dt><dd>1600</dd>', detail)
 
+    def test_money_achievements_have_both_owners_and_rarities(self) -> None:
+        trophies = page("achievements/index.html")
+        jawohl = page("characters/jawohl.html")
+        obama = page("characters/obama.html")
+
+        for record_id, title, rarity in (
+            ("moooney", "MOOONEY!", "Common"),
+            ("i-am-rich", "I AM RICH!", "Rare"),
+            ("too-big-to-fall", "Too Big to Fall", "Epic"),
+        ):
+            record = trophies.split(f'id="{record_id}"', 1)[1].split("</article>", 1)[0]
+            self.assertIn(f"{rarity} achievement", record)
+            self.assertIn(f"<h3>{title}</h3>", record)
+            self.assertIn('/aevum-archive/characters/jawohl.html', record)
+            self.assertIn('/aevum-archive/characters/obama.html', record)
+            for profile in (jawohl, obama):
+                self.assertIn(f'/aevum-archive/achievements/#{record_id}', profile)
+                self.assertIn(f'{title} · {rarity}', profile)
+
+        self.assertNotIn('Character Owner: None', trophies)
+        self.assertNotIn('Classification Pending', trophies)
+
     def test_astera_divine_discovery_is_witnessed(self) -> None:
         trophies = page("achievements/index.html")
         astera = page("characters/astera-zenith.html")
@@ -38,7 +60,7 @@ class OctoberLoreUpdateTest(unittest.TestCase):
         self.assertIn('A Name Unknown to the World...', trophies)
         self.assertIn('<strong>Tenrei</strong>', trophies)
         self.assertIn('+250,000 Points', trophies)
-        self.assertIn('7 records held', trophies)
+        self.assertIn('10 records held', trophies)
         self.assertEqual(trophies.count('class="trophy-card'), 7)
         self.assertNotIn('Coin of the Astral Veil', trophies)
         self.assertNotIn('Astral Coin · Guts', trophies)
