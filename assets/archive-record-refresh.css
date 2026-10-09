@@ -501,6 +501,38 @@ body:is(
   .orb-archive-diagram::before, .orb-archive-diagram::after { animation: none; }
 }
 
+/* Cross-continuity art is kept separate from Faaram's present portrait. */
+.route-characters-faaram .faaram-variant-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 520px));
+  justify-content: center;
+  align-items: start;
+  gap: clamp(16px, 2.5vw, 30px);
+}
+.route-characters-faaram .faaram-variant-card {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgb(192 153 222 / .3);
+  border-radius: 24px;
+  background: linear-gradient(155deg, #1a121f, #0d0a12 74%);
+  box-shadow: 0 22px 60px rgb(0 0 0 / .28);
+}
+.route-characters-faaram .faaram-variant-card.witnessed-variant {
+  border-color: rgb(179 188 220 / .33);
+  background: linear-gradient(155deg, #161723, #0b0b12 74%);
+}
+.route-characters-faaram .faaram-variant-card > a { display: block; overflow: hidden; }
+.route-characters-faaram .faaram-variant-card img { display: block; width: 100%; height: auto; }
+.route-characters-faaram .faaram-variant-card figcaption { padding: clamp(22px, 2.6vw, 34px); }
+.route-characters-faaram .faaram-variant-card .eyebrow { color: #d2a7e5; }
+.route-characters-faaram .witnessed-variant .eyebrow { color: #bcc7ee; }
+.route-characters-faaram .faaram-variant-card h3 { margin: 8px 0 12px; font-size: clamp(1.8rem, 2.6vw, 2.65rem); line-height: 1.08; }
+.route-characters-faaram .faaram-variant-card figcaption > p:not(.eyebrow) { color: #cbbfd0; line-height: 1.6; }
+.route-characters-faaram .faaram-variant-card figcaption > a { display: inline-block; margin-top: 14px; color: #e3c8ed; }
+@media (max-width: 760px) {
+  .route-characters-faaram .faaram-variant-grid { grid-template-columns: minmax(0, 1fr); }
+}
+
 /* Faaram's Mythic mark is a signature record, not a third relic tile. */
 body.theme-characters.page-detail.route-characters-faaram main.page > .grace-section { margin-top: 22px; }
 body.theme-characters.page-detail.route-characters-faaram main.page > .grace-section > .overlord-grace-card {
