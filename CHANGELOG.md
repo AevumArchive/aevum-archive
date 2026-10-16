@@ -1,5 +1,9 @@
 # Archive changelog
 
+## 2026-10-17
+
+- Replaced Keanu's old portrait with the new supplied artwork, updated its dimensions and cache version, and preserved the complete portrait composition on desktop and mobile.
+
 ## 2026-10-16
 
 - Restored Ichiro's original soul-fracture artwork and pulsing Soul Seal as an interactive entrance. The dossier stays hidden until the reader chooses "Lift the Soul Seal"; it can be veiled again without JavaScript or persistent unlocks.

@@ -199,3 +199,8 @@ body.legacy-timeo { --legacy-accent: #dc737a; --legacy-accent-rgb: 220, 115, 122
 }
 
 @media (prefers-reduced-motion: reduce) { .izumi-controls button { transition: none; } }
+
+/* Keanu's replacement artwork keeps its full 2:3 composition at every viewport. */
+.route-npcs-keanu .legacy-hero { min-height: 0; align-items: center; }
+.route-npcs-keanu .legacy-portrait { min-height: 0; }
+.route-npcs-keanu .legacy-portrait img { height: auto; min-height: 0; }

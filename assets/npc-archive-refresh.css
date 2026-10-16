@@ -202,7 +202,7 @@ body:has(.record-hero) .tag-row { justify-content: flex-end; opacity: 1 !importa
 body.route-npcs-bomir .record-hero > .character-card { background: linear-gradient(90deg, rgba(7, 6, 8, .7), transparent 25%), linear-gradient(180deg, transparent 55%, #050407 100%), url("/aevum-archive/assets/images/bomir.png") 50% 12% / cover no-repeat !important; }
 body.route-npcs-ichiro .record-hero > .character-card { background: linear-gradient(90deg, rgba(7, 6, 8, .72), transparent 25%), linear-gradient(180deg, transparent 55%, #050407 100%), url("/aevum-archive/assets/images/ichiro.png") 50% 15% / cover no-repeat !important; }
 body.route-npcs-jiro .record-hero > .character-card { background: linear-gradient(90deg, rgba(7, 6, 8, .7), transparent 25%), linear-gradient(180deg, transparent 55%, #050407 100%), url("/aevum-archive/assets/images/jiro.png") 50% 14% / cover no-repeat !important; }
-body.route-npcs-keanu .record-hero > .character-card { background: linear-gradient(90deg, rgba(7, 6, 8, .72), transparent 25%), linear-gradient(180deg, transparent 55%, #050407 100%), url("/aevum-archive/assets/images/keanu.png") 50% 12% / cover no-repeat !important; }
+body.route-npcs-keanu .record-hero > .character-card { background: linear-gradient(90deg, rgba(7, 6, 8, .72), transparent 25%), linear-gradient(180deg, transparent 55%, #050407 100%), url("/aevum-archive/assets/images/keanu.png?v=20261017") 50% 12% / cover no-repeat !important; }
 
 body.route-npcs-bomir .record-hero .portrait-slot,
 body.route-npcs-ichiro .record-hero .portrait-slot,
