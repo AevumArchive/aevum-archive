@@ -35,7 +35,8 @@ class JiroReturnTest(unittest.TestCase):
         self.assertIn("After the Aizen event, the Archive recorded Jiro as fallen again", detail)
         self.assertEqual(detail.count('src="/aevum-archive/assets/images/jiro-returned.png"'), 1)
         self.assertTrue((ROOT / "assets/images/jiro-returned.png").is_file())
-        self.assertIn("In Jiro's eyes, every living thing is vermin.", unescape(detail))
+        visible_text = " ".join(unescape(re.sub(r"<[^>]+>", " ", detail)).split())
+        self.assertIn("In Jiro's eyes, every living thing is vermin.", visible_text)
         self.assertIn("Jiro remembers the height from which he once looked down upon the world. He simply has not climbed back to it yet.", unescape(detail))
 
     def test_connected_current_records_no_longer_call_jiro_fallen(self) -> None:

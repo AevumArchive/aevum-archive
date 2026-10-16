@@ -1,4 +1,11 @@
 /* Jiro: an open archive dossier, in charcoal, iron and restrained rose. */
+@font-face {
+  font-family: "Pirata One";
+  src: url("/aevum-archive/assets/fonts/pirata-one/PirataOne-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 body.route-npcs-jiro {
   --jiro-ink: #eee9ea;
   --jiro-muted: #bab1b8;
@@ -33,9 +40,14 @@ body.route-npcs-jiro main.jiro-dossier { width: min(1440px, calc(100% - 80px)); 
 .jiro-hero-art::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, #09090c, transparent 13%), linear-gradient(0deg, #09090c, transparent 14%); }
 .jiro-hero-art figcaption { position: absolute; z-index: 1; bottom: 24px; right: 24px; color: #d6c5cf; text-align: right; font: 500 .65rem/1.7 Verdana, sans-serif; letter-spacing: .12em; text-transform: uppercase; }
 .jiro-hero-art figcaption span { display: block; color: #9e919b; font-size: .6rem; }
-.jiro-verdict { padding: clamp(80px, 10vw, 152px) 0; }
-.jiro-verdict .eyebrow { margin-bottom: 30px; }
-.jiro-verdict blockquote { max-width: 1210px; margin: 0; color: #e9e2e5; font: 400 clamp(3.4rem, 6.5vw, 6.8rem)/1.08 Georgia, serif; letter-spacing: -.045em; text-wrap: balance; }
+.jiro-verdict { padding: clamp(80px, 10vw, 152px) 0; background: radial-gradient(ellipse at 70% 60%, rgb(107 42 66 / .09), transparent 65%); }
+.jiro-verdict .eyebrow { display: flex; align-items: center; gap: 18px; margin-bottom: 38px; color: #c394a6; letter-spacing: .24em; }
+.jiro-verdict .eyebrow::before { content: ""; width: 42px; height: 1px; background: #986379; }
+.jiro-verdict blockquote { max-width: 1240px; margin: 0; color: #e2d9df; font: 400 clamp(4rem, 7.7vw, 8.2rem)/1.12 "Pirata One", Georgia, serif; letter-spacing: .005em; text-wrap: balance; }
+.jiro-verdict-opening { display: block; margin-bottom: .45em; color: #a99ca7; font: italic 400 .43em/1.4 Georgia, serif; letter-spacing: -.015em; }
+.jiro-verdict-judgment { display: block; }
+.jiro-verdict-judgment em { position: relative; display: inline-block; color: #d18aa3; font-style: normal; text-shadow: 0 3px 18px rgb(109 32 59 / .18); }
+.jiro-verdict-judgment em::after { content: ""; position: absolute; bottom: -.025em; left: .03em; right: .03em; height: 1px; background: linear-gradient(90deg, transparent, #a35a78, transparent); }
 .jiro-section { padding: clamp(56px, 6.5vw, 100px) 0; border-top: 1px solid var(--jiro-line); }
 .jiro-section-heading { margin-bottom: 40px; }
 .jiro-section-heading h2 { max-width: 22ch; font-size: clamp(2.65rem, 4.5vw, 4.9rem); line-height: 1.04; letter-spacing: -.04em; font-weight: 500; text-wrap: balance; }
@@ -104,7 +116,8 @@ body.route-npcs-jiro main.jiro-dossier { width: min(1440px, calc(100% - 80px)); 
   .jiro-hero-art::after { background: linear-gradient(0deg, #09090c, transparent 12%); }
   .jiro-hero-art figcaption { right: 18px; bottom: 18px; }
   .jiro-verdict { padding: 76px 4px; }
-  .jiro-verdict blockquote { font-size: clamp(2.8rem, 9.8vw, 4.6rem); }
+  .jiro-verdict blockquote { font-size: clamp(3rem, 11vw, 5.7rem); }
+  .jiro-verdict-opening { font-size: .51em; }
   .jiro-section { padding-block: 54px; }
   .jiro-state-grid, .jiro-bonds-grid, .jiro-editorial, .jiro-soul-layout, .jiro-unresolved { grid-template-columns: 1fr; gap: 32px; }
   .jiro-state-grid article + article, .jiro-bonds-grid article + article { padding: 32px 0 0; border-left: 0; border-top: 1px solid var(--jiro-line); }
