@@ -32,7 +32,9 @@ class JiroReturnTest(unittest.TestCase):
         self.assertIn("Ichiro's brother", detail)
         self.assertIn("Ultimate Empowered Resurrection", detail)
         self.assertIn("cost Faaram the ability itself", detail)
-        self.assertIn("After the Aizen event, the Archive recorded Jiro as fallen again", detail)
+        self.assertIn("Jiro survived the Aizen event with severe injuries", detail)
+        self.assertNotIn("as fallen again", detail)
+        self.assertNotIn("Ichiro's defining association remains", detail)
         self.assertEqual(detail.count('src="/aevum-archive/assets/images/jiro-returned.png"'), 1)
         self.assertTrue((ROOT / "assets/images/jiro-returned.png").is_file())
         visible_text = " ".join(unescape(re.sub(r"<[^>]+>", " ", detail)).split())
@@ -44,8 +46,26 @@ class JiroReturnTest(unittest.TestCase):
         bond_entry = re.search(r'<a[^>]+href="/aevum-archive/npcs/jiro.html".*?</a>', page("characters/bonds.html"), re.S).group(0)
         faction_entry = re.search(r'<div class="faction-member"><strong>Jiro</strong>.*?</div>', page("lore/factions/faaram-servants.html"), re.S).group(0)
         for entry in (npc_entry, bond_entry, faction_entry):
-            self.assertIn("returned", entry.lower())
+            self.assertRegex(entry.lower(), r"alive|surviv")
+            self.assertIn("aizen", entry.lower())
             self.assertNotIn("fallen", entry.lower())
+
+    def test_hero_summary_agrees_with_detailed_power_record(self) -> None:
+        detail = page("npcs/jiro.html")
+        hero = re.search(r'<dl class="jiro-identity-facts">(.*?)</dl>', detail, re.S).group(1)
+        ledger = re.search(r'<dl class="jiro-power-ledger">(.*?)</dl>', detail, re.S).group(1)
+        summary = dict(re.findall(r'<dt>(.*?)</dt><dd>(.*?)</dd>', hero))
+        facts = dict(re.findall(r'<dt>(.*?)</dt><dd>(.*?)</dd>', ledger))
+        self.assertEqual(summary["Power Level"], facts["Current power"])
+        self.assertEqual(summary["Historical PL"], facts["Historical power"])
+        self.assertEqual(summary["Memory"], facts["Memory state"])
+        self.assertEqual(summary["Peak strength"], facts["Peak strength"])
+        self.assertEqual(summary["Presence"], "Alive · Recovering")
+
+    def test_aizen_survival_is_explained_in_connected_lore(self) -> None:
+        for path in ("npcs/jiro.html", "npcs/index.html", "lore/factions/faaram-servants.html", "lore/history/ichiro-and-jiro.html", "updates/index.html", "index.html"):
+            with self.subTest(path=path):
+                self.assertIn("survived the aizen event with severe injuries", page(path).lower())
 
 
 if __name__ == "__main__":
