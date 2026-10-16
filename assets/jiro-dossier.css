@@ -1,4 +1,4 @@
-/* Jiro: a cold archive dossier etched in charcoal and iron. */
+/* Shared brother-dossier foundation. Keep the original jiro-* primitives for compatibility. */
 @font-face {
   font-family: "New Rocker";
   src: url("/aevum-archive/assets/fonts/new-rocker/NewRocker-Regular.ttf") format("truetype");
@@ -6,7 +6,7 @@
   font-style: normal;
   font-display: swap;
 }
-body.route-npcs-jiro {
+body:is(.route-npcs-jiro, .route-npcs-ichiro) {
   --jiro-ink: #bfc0c5;
   --jiro-muted: #adaeb4;
   --jiro-line: rgb(164 165 168 / .23);
@@ -15,13 +15,13 @@ body.route-npcs-jiro {
   color: var(--jiro-ink);
   background: radial-gradient(ellipse at 91% 4%, #1d1e21 0, transparent 38rem), radial-gradient(ellipse at 0 38%, rgb(66 67 70 / .12), transparent 48rem), repeating-linear-gradient(105deg, transparent 0 179px, rgb(184 185 188 / .018) 180px, transparent 181px 340px), linear-gradient(180deg, #090a0d, #0d0e11 48%, #07080b) !important;
 }
-body.route-npcs-jiro::before,
-body.route-npcs-jiro::after,
-body.route-npcs-jiro main.page::before,
-body.route-npcs-jiro main.page::after { content: none !important; }
-body.route-npcs-jiro main.jiro-dossier { width: min(1440px, calc(100% - 80px)); max-width: 1440px; padding-top: 18px; }
-body.route-npcs-jiro .site-header .nav a { border-color: #34363d; color: #a2a4ac; background: rgb(18 19 23 / .7); }
-body.route-npcs-jiro .site-header .nav a.master-nav-current { border-color: #70747e; color: #d1d3d9; box-shadow: none; }
+body:is(.route-npcs-jiro, .route-npcs-ichiro)::before,
+body:is(.route-npcs-jiro, .route-npcs-ichiro)::after,
+body:is(.route-npcs-jiro, .route-npcs-ichiro) main.page::before,
+body:is(.route-npcs-jiro, .route-npcs-ichiro) main.page::after { content: none !important; }
+body:is(.route-npcs-jiro, .route-npcs-ichiro) main.jiro-dossier { width: min(1440px, calc(100% - 80px)); max-width: 1440px; padding-top: 18px; }
+body:is(.route-npcs-jiro, .route-npcs-ichiro) .site-header .nav a { border-color: #34363d; color: #a2a4ac; background: rgb(18 19 23 / .7); }
+body:is(.route-npcs-jiro, .route-npcs-ichiro) .site-header .nav a.master-nav-current { border-color: #70747e; color: #d1d3d9; box-shadow: none; }
 .jiro-dossier .eyebrow, .jiro-dossier .jiro-label { color: var(--jiro-accent); font: 600 .72rem/1.7 Verdana, sans-serif; letter-spacing: .15em; text-transform: uppercase; }
 .jiro-dossier h1, .jiro-dossier h2, .jiro-dossier h3 { color: var(--jiro-ink); text-shadow: none; }
 .jiro-dossier h1, .jiro-dossier h2 { font-family: "New Rocker", Georgia, serif; font-weight: 400; }
@@ -130,7 +130,7 @@ body.route-npcs-jiro .site-header .nav a.master-nav-current { border-color: #707
 .jiro-gallery p { max-width: 48ch !important; }
 @keyframes jiroSoulContour { 0%, 100% { opacity: .5; transform: translate(-3px, 3px); } 50% { opacity: 1; transform: translate(3px, -3px); } }
 @media (max-width: 1050px) {
-  body.route-npcs-jiro main.jiro-dossier { width: calc(100% - 48px); }
+  body:is(.route-npcs-jiro, .route-npcs-ichiro) main.jiro-dossier { width: calc(100% - 48px); }
   .jiro-identity { padding: 32px 24px; }
   .jiro-identity h1 { font-size: clamp(6rem, 14vw, 9rem); }
   .jiro-identity-facts > div { grid-template-columns: 100px 1fr; }
@@ -142,7 +142,7 @@ body.route-npcs-jiro .site-header .nav a.master-nav-current { border-color: #707
   .jiro-chapter-nav { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 900px) {
-  body.route-npcs-jiro main.jiro-dossier { width: calc(100% - 36px); padding-top: 0; }
+  body:is(.route-npcs-jiro, .route-npcs-ichiro) main.jiro-dossier { width: calc(100% - 36px); padding-top: 0; }
   .jiro-hero { display: flex; flex-direction: column; align-items: stretch; }
   .jiro-identity { display: contents; }
   .jiro-identity > .eyebrow { order: 0; margin: 32px 20px 14px; font-size: .69rem; }

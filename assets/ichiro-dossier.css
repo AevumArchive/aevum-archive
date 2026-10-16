@@ -1,0 +1,65 @@
+/* Ichiro shares his brother's dossier structure, with restrained crimson soul threads. */
+body.route-npcs-ichiro {
+  --jiro-ink: #c5c2c4;
+  --jiro-muted: #b5afb3;
+  --jiro-line: rgb(158 131 139 / .24);
+  --jiro-accent: #b68e98;
+  --jiro-soul: #c59ba5;
+  background: radial-gradient(ellipse at 93% 4%, #24151c, transparent 42rem), radial-gradient(ellipse at 0 45%, rgb(81 31 46 / .12), transparent 48rem), repeating-linear-gradient(105deg, transparent 0 179px, rgb(184 151 162 / .018) 180px, transparent 181px 340px), linear-gradient(180deg, #090a0d, #100c10 48%, #07080b) !important;
+}
+.ichiro-dossier .jiro-hero { background: radial-gradient(ellipse at 15% 25%, rgb(83 36 50 / .15), transparent 55%), #090a0d; }
+.ichiro-dossier .jiro-identity h1 { font-size: clamp(5rem, 9vw, 9rem); }
+.ichiro-dossier .jiro-epithet { color: #ba9ea8; }
+.ichiro-dossier .jiro-identity-facts dt { color: #b19aa3; }
+.ichiro-dossier .jiro-verdict-opening { color: #979199; }
+.ichiro-dossier .jiro-verdict-judgment { color: #9e959d; }
+.ichiro-dossier .jiro-verdict-judgment em { color: #b17f8c; }
+.ichiro-dossier .jiro-verdict-judgment em::after { background: linear-gradient(90deg, transparent, #864b5c, transparent); }
+.ichiro-dossier .jiro-state-grid article { border-top-color: #81505e; background: linear-gradient(135deg, rgb(94 43 57 / .14), rgb(17 18 21 / .4)); }
+.ichiro-dossier .jiro-state-grid article + article { border-top-color: #6e626c; }
+.ichiro-dossier .jiro-section::before { background: linear-gradient(90deg, #986371, transparent); }
+.ichiro-dossier .jiro-chapter-mark { color: rgb(156 107 123 / .085); }
+.ichiro-dossier .ichiro-soul-section { overflow: hidden; border-color: rgb(151 91 109 / .45); background: radial-gradient(ellipse at 8% 65%, rgb(109 36 58 / .18), transparent 60%), linear-gradient(130deg, #171117, #0b0c0f 85%); }
+.ichiro-dossier .ichiro-soul-section::before,
+.ichiro-dossier .ichiro-soul-section::after { border-color: rgb(174 115 133 / .2); background: none; animation: none; transform: none; }
+.ichiro-dossier .jiro-soul-statement { text-shadow: none; color: #cfbfc5; }
+.ichiro-dossier .jiro-soul-statement span { color: #b497a2; }
+.ichiro-soul-section > .ichiro-threadwork { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
+.ichiro-threadwork i { position: absolute; top: -45%; left: 12%; width: 1px; height: 190%; background: linear-gradient(transparent, rgb(153 64 90 / .35), transparent); transform: rotate(24deg); transform-origin: center; animation: ichiroThreadTension 12s ease-in-out infinite; }
+.ichiro-threadwork i:nth-child(2) { left: 30%; animation-delay: -3s; }
+.ichiro-threadwork i:nth-child(3) { left: 53%; animation-delay: -6s; }
+.ichiro-threadwork i:nth-child(4) { left: 75%; animation-delay: -9s; }
+.ichiro-threadwork i:nth-child(5) { left: 90%; animation-delay: -4s; }
+.ichiro-dossier .ichiro-seal-section { padding-inline: clamp(24px, 4vw, 60px); border: 1px solid rgb(151 91 109 / .35); background: radial-gradient(ellipse at 15% 50%, rgb(75 32 48 / .18), transparent 55%), #0b0b0f; }
+.ichiro-seal-layout { display: grid; grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr); align-items: center; gap: clamp(32px, 6vw, 90px); }
+.ichiro-seal-emblem { position: relative; display: grid; place-items: center; width: min(100%, 330px); aspect-ratio: 1; margin: auto; border: 1px solid rgb(158 101 121 / .45); border-radius: 50%; background: radial-gradient(circle, rgb(103 46 68 / .12), transparent 70%); }
+.ichiro-seal-emblem::before, .ichiro-seal-emblem::after, .ichiro-seal-emblem span, .ichiro-seal-emblem i { content: ""; position: absolute; inset: 11%; border: 1px solid rgb(158 101 121 / .3); pointer-events: none; }
+.ichiro-seal-emblem::before { border-radius: 50%; inset: 5%; }
+.ichiro-seal-emblem::after { transform: rotate(45deg); inset: 22%; }
+.ichiro-seal-emblem span { inset: 25%; border-radius: 50%; }
+.ichiro-seal-emblem i { inset: 16%; border-inline: 0; transform: rotate(-24deg); }
+.ichiro-seal-emblem b { color: #a88694; font: 400 clamp(4rem, 8vw, 7rem)/1 "New Rocker", Georgia, serif; }
+.ichiro-seal-links { display: flex; flex-wrap: wrap; gap: 16px 30px; margin-top: 32px; }
+.ichiro-dossier .ichiro-likeness-note { max-width: none; margin-top: 50px; padding-top: 24px; border-top: 1px solid var(--jiro-line); }
+.ichiro-trace-layout { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); align-items: center; gap: clamp(32px, 6vw, 90px); }
+.ichiro-trace-layout > div > .jiro-text-link { margin-top: 28px; }
+.ichiro-trace-art { position: relative; max-width: 420px; margin: 0 0 0 auto; padding: 12px; border: 1px solid var(--jiro-line); background: #100d12; }
+.ichiro-trace-art img { display: block; width: 100%; height: auto; }
+.ichiro-trace-art figcaption { padding: 20px 8px 8px; color: #c8b9c1; font: 400 2.2rem/1.2 "New Rocker", Georgia, serif; }
+.ichiro-trace-art figcaption span { display: block; margin-top: 12px; color: #b0a2ab; font: 500 .64rem/1.7 Verdana, sans-serif; letter-spacing: .08em; text-transform: uppercase; }
+.ichiro-dossier .jiro-bond-line { border-left-color: #7e4e5c; }
+.ichiro-dossier .jiro-chronicle li:last-child { border-top-color: #865361; background: linear-gradient(90deg, rgb(97 41 59 / .12), transparent); }
+@keyframes ichiroThreadTension { 0%, 100% { opacity: .3; transform: rotate(24deg) translateX(-4px); } 50% { opacity: .8; transform: rotate(26deg) translateX(4px); } }
+@media (max-width: 1050px) {
+  .ichiro-dossier .jiro-identity h1 { font-size: clamp(5rem, 8.8vw, 7rem); }
+}
+@media (max-width: 900px) {
+  .ichiro-dossier .jiro-identity h1 { font-size: clamp(3.8rem, 20.5vw, 9rem); }
+  .ichiro-seal-layout, .ichiro-trace-layout { grid-template-columns: 1fr; gap: 40px; }
+  .ichiro-seal-emblem { width: min(65%, 240px); }
+  .ichiro-trace-art { margin: 0; max-width: 360px; }
+  .ichiro-dossier .jiro-verdict blockquote { font-size: clamp(2.6rem, 10vw, 5.7rem); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ichiro-threadwork i { animation: none; }
+}
