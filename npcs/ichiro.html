@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ichiro — The Soul Conspirator - Aevum Archive</title>
-  <meta name="description" content="Ichiro, The Soul Conspirator: Jiro's brother, Faaram's betrayer, sealed remains and an influence that endures through UWU.">
+  <meta name="description" content="Ichiro — a sealed soul record. Lift the Soul Seal to read the recovered dossier.">
   <link rel="stylesheet" href="/aevum-archive/assets/styles.css?v=20260815-sitefocus2">
   <link rel="stylesheet" href="/aevum-archive/assets/frame-overrides.css?v=20260817-cardstates7">
   <link rel="stylesheet" href="/aevum-archive/assets/ornament-v3.css?v=20260817-1">
@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="/aevum-archive/assets/master-ui.css?v=20260821-2">
   <link rel="stylesheet" href="/aevum-archive/assets/global-header.css?v=20260902-header4">
   <link rel="stylesheet" href="/aevum-archive/assets/jiro-dossier.css?v=20261016-brothers1">
-  <link rel="stylesheet" href="/aevum-archive/assets/ichiro-dossier.css?v=20261016-1">
+  <link rel="stylesheet" href="/aevum-archive/assets/ichiro-dossier.css?v=20261016-soulseal2">
 </head>
 <body class="archive-page theme-npcs page-detail route-npcs-ichiro">
   <header class="site-header">
@@ -26,6 +26,13 @@
   </header>
 
   <main class="page jiro-dossier ichiro-dossier">
+    <details class="ichiro-soul-gate ichiro-portrait" id="soul-seal">
+      <summary class="ichiro-seal-stage sealed-portrait-frame" aria-controls="ichiro-unsealed-record">
+        <span class="ichiro-gate-heading"><span class="eyebrow">Sealed soul record</span><strong>Ichiro</strong></span>
+        <span class="ichiro-gate-sigil" aria-hidden="true">☍</span>
+        <span class="ichiro-gate-invitation"><span class="ichiro-gate-open">Lift the Soul Seal <span aria-hidden="true">↓</span></span><span class="ichiro-gate-close">Veil the record <span aria-hidden="true">↑</span></span><span class="ichiro-gate-hint">The record waits beneath the seal.</span></span>
+      </summary>
+      <div class="ichiro-unsealed-record" id="ichiro-unsealed-record">
     <section class="jiro-hero" aria-labelledby="ichiro-title">
       <div class="jiro-identity">
         <p class="eyebrow">Sealed record · Former servant</p>
@@ -37,7 +44,7 @@
           <div><dt>Core power</dt><dd><a href="#soul-manipulation">Soul Manipulation</a></dd></div>
           <div><dt>Former role</dt><dd>Faaram's Servant</dd></div>
           <div><dt>Brother</dt><dd><a href="/aevum-archive/npcs/jiro.html">Jiro</a></dd></div>
-          <div><dt>Remains</dt><dd><a href="#soul-seal">Shadow Realm · Cursed</a></dd></div>
+          <div><dt>Remains</dt><dd><a href="#sealed-remains">Shadow Realm · Cursed</a></dd></div>
           <div><dt>Current trace</dt><dd><a href="#uwu-trace">Influence Through UWU</a></dd></div>
         </dl>
         <a class="jiro-text-link" href="#current-state">Read the sealed record <span aria-hidden="true">↓</span></a>
@@ -47,7 +54,7 @@
 
     <nav class="jiro-chapter-nav" aria-label="Ichiro dossier chapters">
       <span class="jiro-index-label">Within the record</span>
-      <div><a href="#current-state">I · Aftermath</a><a href="#soul-manipulation">II · Soul</a><a href="#conspiracy">III · Betrayal</a><a href="#soul-seal">IV · Seal</a><a href="#uwu-trace">V · Trace</a><a href="#bonds">VI · Bonds</a></div>
+      <div><a href="#current-state">I · Aftermath</a><a href="#soul-manipulation">II · Soul</a><a href="#conspiracy">III · Betrayal</a><a href="#sealed-remains">IV · Seal</a><a href="#uwu-trace">V · Trace</a><a href="#bonds">VI · Bonds</a></div>
     </nav>
 
     <section class="jiro-verdict" aria-label="Ichiro's enduring conspiracy">
@@ -59,7 +66,7 @@
       <span class="jiro-chapter-mark" aria-hidden="true">I</span>
       <header class="jiro-section-heading"><p class="eyebrow">01 / Aftermath</p><h2 id="current-state-title">Death was not<br>the end of the danger.</h2></header>
       <div class="jiro-state-grid">
-        <article><p class="jiro-label">The remains</p><h3>Dead. Sealed.</h3><p>Ichiro was killed by the Death Note. Keanu laid an enormous curse upon his remains and bound them within the Shadow Realm. Death had not made them safe.</p><a class="jiro-text-link" href="#soul-seal">The Soul Seal ↓</a></article>
+        <article><p class="jiro-label">The remains</p><h3>Dead. Sealed.</h3><p>Ichiro was killed by the Death Note. Keanu laid an enormous curse upon his remains and bound them within the Shadow Realm. Death had not made them safe.</p><a class="jiro-text-link" href="#sealed-remains">The Soul Seal ↓</a></article>
         <article><p class="jiro-label">The influence</p><h3>Still moving.</h3><p>UWU, Faaram's first servant, still carries one of Ichiro's finger bones. The fragment sustains an influence that outlived its maker. How much of UWU's own will remains is uncertain.</p><a class="jiro-text-link" href="#uwu-trace">The surviving trace ↓</a></article>
       </div>
     </section>
@@ -87,10 +94,9 @@
       </ol>
     </section>
 
-    <section class="jiro-section ichiro-seal-section" id="soul-seal" aria-labelledby="soul-seal-title">
+    <section class="jiro-section ichiro-seal-section" id="sealed-remains" aria-labelledby="soul-seal-title">
       <span class="jiro-chapter-mark" aria-hidden="true">IV</span>
       <div class="ichiro-seal-layout">
-        <div class="ichiro-seal-emblem" aria-hidden="true"><span></span><i></i><b>IV</b></div>
         <div>
           <header class="jiro-section-heading"><p class="eyebrow">04 / Shadow Realm</p><h2 id="soul-seal-title">The Soul Seal</h2></header>
           <div class="jiro-prose"><p class="jiro-prose-lead">Keanu became the curse that kept the remains sealed.</p><p>He laid an enormous curse directly upon Ichiro's remains, paying for it with the slow loss of his own conscious existence.</p><p>The remains lie cursed within the Shadow Realm. Reaching them is considered nearly impossible. Approaching them is expected to destroy the body almost immediately.</p></div>
@@ -121,6 +127,8 @@
       </div>
     </section>
 
+      </div>
+    </details>
     <footer class="footer"><span>&#10022; Aevum Archive &mdash; witnessed knowledge only.</span><span>Unwritten pages remain sealed until discovered.</span></footer>
   </main>
   <script src="/aevum-archive/assets/master-ui.js?v=20260821-2" defer></script>

@@ -17,17 +17,32 @@ class DossierParser(HTMLParser):
         self.anchors = []
         self.images = []
         self.styles = []
+        self.gate_attrs = None
+        self.in_gate = False
+        self.gated_ids = set()
+        self.ungated_images = []
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
+        if tag == "details" and attrs.get("id") == "soul-seal":
+            self.gate_attrs = attrs
+            self.in_gate = True
         if "id" in attrs:
             self.ids.append(attrs["id"])
+            if self.in_gate:
+                self.gated_ids.add(attrs["id"])
         if tag == "a" and attrs.get("href", "").startswith("#"):
             self.anchors.append(attrs["href"][1:])
         if tag == "img":
             self.images.append(attrs)
+            if not self.in_gate:
+                self.ungated_images.append(attrs["src"])
         if tag == "link" and attrs.get("rel") == "stylesheet":
             self.styles.append(attrs["href"].split("?")[0])
+
+    def handle_endtag(self, tag):
+        if tag == "details":
+            self.in_gate = False
 
 
 class IchiroDossierTest(unittest.TestCase):
@@ -82,6 +97,26 @@ class IchiroDossierTest(unittest.TestCase):
         styles = (ROOT / "assets/ichiro-dossier.css").read_text(encoding="utf-8")
         self.assertIn("prefers-reduced-motion: reduce", styles)
         self.assertIn(".ichiro-threadwork i { animation: none; }", styles)
+
+    def test_seal_must_be_lifted_before_any_dossier_information(self):
+        parser = DossierParser()
+        parser.feed(self.detail)
+        self.assertIsNotNone(parser.gate_attrs)
+        self.assertNotIn("open", parser.gate_attrs)
+        for chapter in ("ichiro-title", "ichiro-unsealed-record", "current-state",
+                        "soul-manipulation", "conspiracy", "sealed-remains", "uwu-trace", "bonds"):
+            self.assertIn(chapter, parser.gated_ids)
+        self.assertEqual(parser.ungated_images, ["/aevum-archive/assets/home-v2/home-archive-sigil.webp"])
+        summary = re.search(r"<summary\b.*?</summary>", self.detail, re.S).group(0)
+        self.assertIn("Lift the Soul Seal", summary)
+        self.assertIn('aria-controls="ichiro-unsealed-record"', summary)
+        for spoiler in ("Death Note", "Keanu", "UWU", "Timeo"):
+            self.assertNotIn(spoiler, summary)
+        base = (ROOT / "assets/styles.css").read_text(encoding="utf-8")
+        frame = (ROOT / "assets/frame-overrides.css").read_text(encoding="utf-8")
+        self.assertIn("animation: soulPulse 4.6s ease-in-out infinite", base)
+        self.assertIn('url("ui/frames/ichiro-soul-wide.png")', frame)
+        self.assertNotIn("ichiro-seal-emblem", self.detail)
 
 
 if __name__ == "__main__":

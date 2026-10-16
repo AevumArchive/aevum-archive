@@ -31,14 +31,7 @@ body.route-npcs-ichiro {
 .ichiro-threadwork i:nth-child(4) { left: 75%; animation-delay: -9s; }
 .ichiro-threadwork i:nth-child(5) { left: 90%; animation-delay: -4s; }
 .ichiro-dossier .ichiro-seal-section { padding-inline: clamp(24px, 4vw, 60px); border: 1px solid rgb(151 91 109 / .35); background: radial-gradient(ellipse at 15% 50%, rgb(75 32 48 / .18), transparent 55%), #0b0b0f; }
-.ichiro-seal-layout { display: grid; grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr); align-items: center; gap: clamp(32px, 6vw, 90px); }
-.ichiro-seal-emblem { position: relative; display: grid; place-items: center; width: min(100%, 330px); aspect-ratio: 1; margin: auto; border: 1px solid rgb(158 101 121 / .45); border-radius: 50%; background: radial-gradient(circle, rgb(103 46 68 / .12), transparent 70%); }
-.ichiro-seal-emblem::before, .ichiro-seal-emblem::after, .ichiro-seal-emblem span, .ichiro-seal-emblem i { content: ""; position: absolute; inset: 11%; border: 1px solid rgb(158 101 121 / .3); pointer-events: none; }
-.ichiro-seal-emblem::before { border-radius: 50%; inset: 5%; }
-.ichiro-seal-emblem::after { transform: rotate(45deg); inset: 22%; }
-.ichiro-seal-emblem span { inset: 25%; border-radius: 50%; }
-.ichiro-seal-emblem i { inset: 16%; border-inline: 0; transform: rotate(-24deg); }
-.ichiro-seal-emblem b { color: #a88694; font: 400 clamp(4rem, 8vw, 7rem)/1 "New Rocker", Georgia, serif; }
+.ichiro-seal-layout { max-width: 78ch; }
 .ichiro-seal-links { display: flex; flex-wrap: wrap; gap: 16px 30px; margin-top: 32px; }
 .ichiro-dossier .ichiro-likeness-note { max-width: none; margin-top: 50px; padding-top: 24px; border-top: 1px solid var(--jiro-line); }
 .ichiro-trace-layout { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); align-items: center; gap: clamp(32px, 6vw, 90px); }
@@ -50,16 +43,44 @@ body.route-npcs-ichiro {
 .ichiro-dossier .jiro-bond-line { border-left-color: #7e4e5c; }
 .ichiro-dossier .jiro-chronicle li:last-child { border-top-color: #865361; background: linear-gradient(90deg, rgb(97 41 59 / .12), transparent); }
 @keyframes ichiroThreadTension { 0%, 100% { opacity: .3; transform: rotate(24deg) translateX(-4px); } 50% { opacity: .8; transform: rotate(26deg) translateX(4px); } }
+
+/* Restore the original soul-fracture artwork and soulPulse animation as the entrance. */
+.ichiro-soul-gate { border: 0; }
+.ichiro-soul-gate:not([open]) > .ichiro-unsealed-record { display: none; }
+.ichiro-soul-gate > .ichiro-seal-stage { min-height: clamp(540px, 49vw, 720px); grid-template-rows: auto 1fr auto; gap: 20px; padding: clamp(42px, 5vw, 76px); border-radius: 3px; list-style: none; cursor: pointer; text-align: center; }
+.ichiro-seal-stage::-webkit-details-marker { display: none; }
+.ichiro-seal-stage::marker { content: ""; }
+.ichiro-seal-stage > span { position: relative; z-index: 1; }
+.ichiro-seal-stage span { color: inherit; font: inherit; text-shadow: none; }
+.ichiro-seal-stage .ichiro-gate-heading { display: grid; gap: 14px; }
+.ichiro-seal-stage .ichiro-gate-heading .eyebrow { color: #c596a6; font: 600 .65rem/1.7 Verdana, sans-serif; letter-spacing: .25em; }
+.ichiro-gate-heading strong { color: #d2bdc7; font: 400 clamp(3.5rem, 6vw, 6rem)/1.1 "New Rocker", Georgia, serif; text-shadow: 0 0 32px #030104; }
+.ichiro-seal-stage .ichiro-gate-sigil { display: grid; place-items: center; align-self: center; width: 150px; aspect-ratio: 1; color: #f3b6cc; font: 400 6rem/1 Georgia, serif; text-shadow: 0 0 54px rgb(255 77 125 / .82); animation: ichiroFractureGlow 4.6s ease-in-out infinite; }
+.ichiro-seal-stage .ichiro-gate-invitation { display: grid; gap: 18px; justify-items: center; }
+.ichiro-seal-stage .ichiro-gate-open, .ichiro-seal-stage .ichiro-gate-close { display: inline-block; padding: 15px 24px; border: 1px solid rgb(201 133 156 / .5); background: rgb(10 4 10 / .85); color: #e6c8d3; font: 500 .84rem/1.5 Verdana, sans-serif; letter-spacing: .09em; box-shadow: 0 0 28px rgb(151 38 78 / .16); }
+.ichiro-seal-stage .ichiro-gate-hint { color: #c1a2b0; font: italic 1rem/1.6 Georgia, serif; }
+.ichiro-seal-stage .ichiro-gate-close { display: none; }
+.ichiro-seal-stage:hover .ichiro-gate-open { border-color: #e0a2ba; box-shadow: 0 0 40px rgb(192 51 99 / .25); }
+.ichiro-seal-stage:focus-visible { outline: 2px solid #e0a2ba; outline-offset: 5px; }
+.ichiro-soul-gate[open] > .ichiro-seal-stage { display: flex; justify-content: flex-end; min-height: 0; margin-bottom: 20px; padding: 0; border: 0; background: none !important; box-shadow: none !important; overflow: visible; }
+.ichiro-soul-gate[open] > .ichiro-seal-stage::before, .ichiro-soul-gate[open] > .ichiro-seal-stage::after { content: none; }
+.ichiro-soul-gate[open] .ichiro-gate-heading, .ichiro-soul-gate[open] .ichiro-gate-sigil, .ichiro-soul-gate[open] .ichiro-gate-open, .ichiro-soul-gate[open] .ichiro-gate-hint { display: none; }
+.ichiro-soul-gate[open] .ichiro-gate-close { display: inline-block; }
+.ichiro-soul-gate[open] > .ichiro-unsealed-record { animation: ichiroRecordUnveil 900ms ease-out both; }
+@keyframes ichiroFractureGlow { 0%, 100% { opacity: .75; filter: brightness(.9); } 50% { opacity: 1; filter: brightness(1.25); } }
+@keyframes ichiroRecordUnveil { from { opacity: 0; filter: blur(5px); transform: translateY(12px); } to { opacity: 1; filter: blur(0); transform: none; } }
 @media (max-width: 1050px) {
   .ichiro-dossier .jiro-identity h1 { font-size: clamp(5rem, 8.8vw, 7rem); }
 }
 @media (max-width: 900px) {
   .ichiro-dossier .jiro-identity h1 { font-size: clamp(3.8rem, 20.5vw, 9rem); }
-  .ichiro-seal-layout, .ichiro-trace-layout { grid-template-columns: 1fr; gap: 40px; }
-  .ichiro-seal-emblem { width: min(65%, 240px); }
+  .ichiro-trace-layout { grid-template-columns: 1fr; gap: 40px; }
   .ichiro-trace-art { margin: 0; max-width: 360px; }
   .ichiro-dossier .jiro-verdict blockquote { font-size: clamp(2.6rem, 10vw, 5.7rem); }
 }
 @media (prefers-reduced-motion: reduce) {
   .ichiro-threadwork i { animation: none; }
+  .ichiro-soul-gate .sealed-portrait-frame::after,
+  .ichiro-seal-stage .ichiro-gate-sigil,
+  .ichiro-soul-gate[open] > .ichiro-unsealed-record { animation: none; }
 }
