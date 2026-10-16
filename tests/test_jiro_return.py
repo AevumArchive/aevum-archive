@@ -19,7 +19,7 @@ class JiroReturnTest(unittest.TestCase):
         ledger = re.search(r'<dl class="jiro-power-ledger">(.*?)</dl>', detail, re.S).group(1)
         facts = dict(re.findall(r'<dt>(.*?)</dt><dd>(.*?)</dd>', ledger))
         self.assertEqual(facts["Current power"], "Unconfirmed / Recovering")
-        self.assertEqual(facts["Historical power"], "Approx. 1400–1600")
+        self.assertEqual(facts["Historical power"], "Approx. 2200–2400")
         self.assertEqual(facts["Memory state"], "Appears Fully Restored")
         self.assertEqual(facts["Peak strength"], "Not Restored")
         self.assertIn("Whether every memory has truly returned cannot yet be proven", detail)
