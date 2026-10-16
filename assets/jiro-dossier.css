@@ -1,0 +1,121 @@
+/* Jiro: an open archive dossier, in charcoal, iron and restrained rose. */
+body.route-npcs-jiro {
+  --jiro-ink: #eee9ea;
+  --jiro-muted: #bab1b8;
+  --jiro-line: rgb(194 177 190 / .19);
+  --jiro-rose: #bd8e9e;
+  --jiro-violet: #b1a2c2;
+  color: var(--jiro-ink);
+  background: radial-gradient(ellipse at 91% 4%, #21151c 0, transparent 35rem), linear-gradient(180deg, #09090c, #0d0b10 48%, #070709) !important;
+}
+body.route-npcs-jiro::before,
+body.route-npcs-jiro::after,
+body.route-npcs-jiro main.page::before,
+body.route-npcs-jiro main.page::after { content: none !important; }
+body.route-npcs-jiro main.jiro-dossier { width: min(1440px, calc(100% - 80px)); max-width: 1440px; padding-top: 18px; }
+.jiro-dossier .eyebrow, .jiro-dossier .jiro-label { color: var(--jiro-rose); font: 600 .72rem/1.7 Verdana, sans-serif; letter-spacing: .15em; text-transform: uppercase; }
+.jiro-dossier h1, .jiro-dossier h2, .jiro-dossier h3 { color: var(--jiro-ink); text-shadow: none; }
+.jiro-dossier a:focus-visible { outline: 2px solid #e0b9ca; outline-offset: 6px; }
+.jiro-dossier .jiro-text-link { display: inline-block; color: #d2b7c6; font: 500 .79rem/1.7 Verdana, sans-serif; text-underline-offset: 6px; }
+.jiro-dossier .jiro-text-link:hover { color: #fff; }
+.jiro-hero { display: grid; grid-template-columns: minmax(0, .84fr) minmax(0, 1.16fr); align-items: center; border-bottom: 1px solid var(--jiro-line); }
+.jiro-identity { position: relative; z-index: 2; padding: 56px 34px 56px 8px; }
+.jiro-identity h1 { margin: 20px 0 10px; font-size: clamp(6.5rem, 13vw, 12rem); font-weight: 500; line-height: .9; letter-spacing: -.07em; }
+.jiro-epithet { margin: 24px 0 28px; color: #d2c3ce; font: italic 400 clamp(1.45rem, 2.4vw, 2.3rem)/1.25 Georgia, serif; }
+.jiro-intro { max-width: 45ch; color: var(--jiro-muted); font-size: clamp(1.03rem, 1.4vw, 1.18rem); line-height: 1.85; }
+.jiro-identity-facts { margin: 34px 0 30px; max-width: 440px; }
+.jiro-identity-facts > div { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 12px; padding: 13px 0; border-top: 1px solid var(--jiro-line); }
+.jiro-identity-facts dt { color: #a89aa5; font: 600 .69rem/1.6 Verdana, sans-serif; letter-spacing: .08em; text-transform: uppercase; }
+.jiro-identity-facts dd { margin: 0; font-size: 1rem; line-height: 1.5; }
+.jiro-identity-facts a { text-decoration-color: #69555f; text-underline-offset: 4px; }
+.jiro-hero-art { position: relative; margin: 0; min-width: 0; background: #09090c; }
+.jiro-hero-art img { display: block; width: 100%; height: auto; }
+.jiro-hero-art::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, #09090c, transparent 13%), linear-gradient(0deg, #09090c, transparent 14%); }
+.jiro-hero-art figcaption { position: absolute; z-index: 1; bottom: 24px; right: 24px; color: #d6c5cf; text-align: right; font: 500 .65rem/1.7 Verdana, sans-serif; letter-spacing: .12em; text-transform: uppercase; }
+.jiro-hero-art figcaption span { display: block; color: #9e919b; font-size: .6rem; }
+.jiro-verdict { padding: clamp(80px, 10vw, 152px) 0; }
+.jiro-verdict .eyebrow { margin-bottom: 30px; }
+.jiro-verdict blockquote { max-width: 1210px; margin: 0; color: #e9e2e5; font: 400 clamp(3.4rem, 6.5vw, 6.8rem)/1.08 Georgia, serif; letter-spacing: -.045em; text-wrap: balance; }
+.jiro-section { padding: clamp(56px, 6.5vw, 100px) 0; border-top: 1px solid var(--jiro-line); }
+.jiro-section-heading { margin-bottom: 40px; }
+.jiro-section-heading h2 { max-width: 22ch; font-size: clamp(2.65rem, 4.5vw, 4.9rem); line-height: 1.04; letter-spacing: -.04em; font-weight: 500; text-wrap: balance; }
+.jiro-section-heading .jiro-text-link { margin-top: 24px; }
+.jiro-dossier p { text-wrap: pretty; }
+.jiro-state-grid, .jiro-bonds-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(32px, 6vw, 96px); }
+.jiro-state-grid article + article, .jiro-bonds-grid article + article { padding-left: clamp(24px, 4vw, 64px); border-left: 1px solid var(--jiro-line); }
+.jiro-state-grid h3 { margin: 12px 0 24px; font-size: clamp(2rem, 3vw, 3.1rem); font-weight: 500; letter-spacing: -.035em; }
+.jiro-state-grid p:not(.jiro-label), .jiro-prose p, .jiro-bonds-grid p:not(.jiro-label), .jiro-gallery p:not(.jiro-label) { max-width: 64ch; color: var(--jiro-muted); font-size: 1.1rem; line-height: 1.85; }
+.jiro-editorial { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 20px clamp(32px, 6vw, 96px); }
+.jiro-editorial .jiro-section-heading { margin-bottom: 0; }
+.jiro-prose p:first-child { margin-top: 0; }
+.jiro-prose p:last-child { margin-bottom: 0; }
+.jiro-closing-line { grid-column: 1 / -1; max-width: 1100px; margin: 46px 0 0; padding-left: 28px; border-left: 1px solid #9e6c83; color: #d4c4d0; font: 400 clamp(1.8rem, 3.3vw, 3.4rem)/1.35 Georgia, serif; letter-spacing: -.025em; }
+.jiro-soul-section { position: relative; padding-inline: clamp(24px, 4vw, 60px); background: linear-gradient(130deg, rgb(146 122 167 / .075), transparent 75%); border-left: 1px solid rgb(177 162 194 / .4); }
+.jiro-soul-section .eyebrow { color: var(--jiro-violet); }
+.jiro-soul-layout { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: clamp(32px, 6vw, 88px); }
+.jiro-soul-statement { max-width: 15ch; margin: 0; color: #e2d8ec; font: 400 clamp(2rem, 3.4vw, 3.7rem)/1.2 Georgia, serif; letter-spacing: -.025em; }
+.jiro-soul-statement span { display: block; margin-top: 20px; color: #a999ba; }
+.jiro-power-ledger { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 64px; margin: 0; }
+.jiro-power-ledger > div { display: grid; grid-template-columns: minmax(110px, .55fr) minmax(0, 1fr); align-items: baseline; gap: 20px; padding: 23px 0; border-top: 1px solid var(--jiro-line); }
+.jiro-power-ledger dt { color: #afa0ac; font: 600 .72rem/1.7 Verdana, sans-serif; letter-spacing: .07em; text-transform: uppercase; }
+.jiro-power-ledger dd { margin: 0; color: #e8dfe6; font-size: 1.3rem; line-height: 1.4; }
+.jiro-record-note { max-width: 65ch; margin: 24px 0 0; color: #a89ba8; font-size: .95rem; line-height: 1.7; }
+.jiro-combat-record { display: grid; grid-template-columns: .6fr 1.4fr; gap: 32px; padding-top: 40px; margin-top: 40px; border-top: 1px solid var(--jiro-line); }
+.jiro-combat-record h3 { font-size: 1.8rem; font-weight: 500; }
+.jiro-combat-record p { margin: 0; max-width: 66ch; color: var(--jiro-muted); font-size: 1.05rem; line-height: 1.85; }
+.jiro-dossier .jiro-prose-lead { color: #e0d6de; font-size: 1.4rem; line-height: 1.6; }
+.jiro-bonds-grid h3 { margin: 16px 0 24px; font-size: clamp(1.9rem, 2.6vw, 2.7rem); font-weight: 500; line-height: 1.12; }
+.jiro-bonds-grid p a { color: #dfc1d0; text-underline-offset: 4px; }
+.jiro-bonds-grid .jiro-bond-line { margin: 28px 0; padding-left: 20px; border-left: 1px solid #6d597b; color: #cbb9da; font-style: italic; }
+.jiro-chronicle { margin: 0; padding: 0; list-style: none; counter-reset: jiro-history; }
+.jiro-chronicle li { display: grid; grid-template-columns: 48px minmax(0, .6fr) minmax(0, 1.4fr); gap: 24px; padding: 30px 0; border-top: 1px solid var(--jiro-line); }
+.jiro-chronicle li::before { counter-increment: jiro-history; content: counter(jiro-history, decimal-leading-zero); color: #96798a; font: 500 .8rem/1.6 Verdana, sans-serif; }
+.jiro-chronicle h3 { font-size: 1.65rem; font-weight: 500; line-height: 1.2; }
+.jiro-chronicle p { margin: 0; max-width: 70ch; color: var(--jiro-muted); font-size: 1.05rem; line-height: 1.8; }
+.jiro-unresolved { display: grid; grid-template-columns: .85fr 1.15fr; gap: 64px; }
+.jiro-unresolved .jiro-section-heading { margin-bottom: 0; }
+.jiro-gallery { display: grid; grid-template-columns: minmax(0, 360px) minmax(0, 1fr); gap: clamp(32px, 6vw, 88px); align-items: center; }
+.jiro-gallery figure { margin: 0; }
+.jiro-gallery img { display: block; width: 100%; height: auto; }
+.jiro-gallery figcaption { padding-top: 16px; color: #a99aa8; font: 500 .7rem/1.6 Verdana, sans-serif; letter-spacing: .08em; text-transform: uppercase; }
+.jiro-gallery h3 { font-size: clamp(2rem, 3vw, 3.2rem); font-weight: 500; }
+.jiro-gallery p { max-width: 48ch !important; }
+@media (max-width: 1050px) {
+  body.route-npcs-jiro main.jiro-dossier { width: calc(100% - 48px); }
+  .jiro-identity { padding: 32px 20px 32px 0; }
+  .jiro-identity h1 { font-size: clamp(6rem, 14vw, 9rem); }
+  .jiro-identity-facts > div { grid-template-columns: 100px 1fr; }
+  .jiro-identity .eyebrow { font-size: .63rem; }
+  .jiro-power-ledger { gap: 0 32px; }
+  .jiro-power-ledger > div { grid-template-columns: 1fr; gap: 8px; }
+  .jiro-editorial, .jiro-soul-layout { grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 32px; }
+}
+@media (max-width: 900px) {
+  body.route-npcs-jiro main.jiro-dossier { width: calc(100% - 36px); padding-top: 0; }
+  .jiro-hero { display: flex; flex-direction: column; align-items: stretch; }
+  .jiro-identity { display: contents; }
+  .jiro-identity > .eyebrow { order: 0; margin: 32px 4px 14px; font-size: .69rem; }
+  .jiro-identity h1 { order: 1; margin: 0 4px; font-size: clamp(6.5rem, 26vw, 10rem); }
+  .jiro-epithet { order: 2; margin: 20px 4px 32px; }
+  .jiro-hero-art { order: 3; }
+  .jiro-intro { order: 4; max-width: 60ch; margin: 26px 4px 0; }
+  .jiro-identity-facts { order: 5; width: 100%; max-width: none; margin: 30px 0; }
+  .jiro-identity > .jiro-text-link { order: 6; align-self: start; margin-bottom: 36px; }
+  .jiro-hero-art::after { background: linear-gradient(0deg, #09090c, transparent 12%); }
+  .jiro-hero-art figcaption { right: 18px; bottom: 18px; }
+  .jiro-verdict { padding: 76px 4px; }
+  .jiro-verdict blockquote { font-size: clamp(2.8rem, 9.8vw, 4.6rem); }
+  .jiro-section { padding-block: 54px; }
+  .jiro-state-grid, .jiro-bonds-grid, .jiro-editorial, .jiro-soul-layout, .jiro-unresolved { grid-template-columns: 1fr; gap: 32px; }
+  .jiro-state-grid article + article, .jiro-bonds-grid article + article { padding: 32px 0 0; border-left: 0; border-top: 1px solid var(--jiro-line); }
+  .jiro-closing-line { margin-top: 10px; padding-left: 18px; }
+  .jiro-soul-statement { max-width: 22ch; }
+  .jiro-power-ledger { grid-template-columns: 1fr; }
+  .jiro-power-ledger > div { grid-template-columns: minmax(100px, .55fr) minmax(0, 1fr); gap: 18px; }
+  .jiro-power-ledger dd { font-size: 1.15rem; }
+  .jiro-combat-record { grid-template-columns: 1fr; gap: 20px; }
+  .jiro-chronicle li { grid-template-columns: 28px 1fr; gap: 16px; }
+  .jiro-chronicle p { grid-column: 2; }
+  .jiro-gallery { grid-template-columns: 1fr; gap: 32px; }
+  .jiro-gallery figure { max-width: 360px; }
+}
