@@ -2,6 +2,7 @@
 
 ## 2026-10-17
 
+- Corrected Ichiro's Soul Seal to a permanently sealed, non-interactive animated card inside his profile. Removed the page gate and all unlock/reseal controls; the dossier opens directly.
 - Replaced Keanu's old portrait with the new supplied artwork, updated its dimensions and cache version, and preserved the complete portrait composition on desktop and mobile.
 
 ## 2026-10-16
