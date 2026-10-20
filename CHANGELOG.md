@@ -2,8 +2,9 @@
 
 ## 2026-10-20
 
+- Corrected Faaram Tempest to a whole, independent identity; removed Faceless, fragment-integration and vessel associations from his profile and connected records.
 - Added the supplied Faaram Tempest artwork as his current Ascended portrait with Icewhisper, preserving its complete composition.
-- Rebuilt Faaram's profile around his current identity, Faaram Tempest: permanent Ascension, 2500 PL, the integrated First Piece, Everthorn and all 18 current kit entries.
+- Rebuilt Faaram's profile around his current identity, Faaram Tempest: permanent Ascension, 2500 PL, Everthorn and all 18 current kit entries.
 - Added the Ascended Icewhisper record and the Soul Devourer / Demigod's Unholy Blade arsenal with supplied effects, limits and statistics; preserved World Items, Overlord's Grace, historical events and separately classified variants.
 - Synchronized the current character shelf and latest-record links with the new identity.
 

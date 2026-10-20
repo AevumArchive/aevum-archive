@@ -32,7 +32,8 @@ class FullCanonSyncTest(unittest.TestCase):
     def test_character_states_and_world_gateway(self) -> None:
         self.assertIn('Reclaiming His Place · COMPLETE', page("characters/faaram.html"))
         self.assertIn('<dt>Earlier quest</dt><dd>Reclaiming His Place · COMPLETE</dd>', page("characters/faaram.html"))
-        self.assertIn('<dt>Current milestone</dt><dd>The First Piece · INTEGRATED</dd>', page("characters/faaram.html"))
+        self.assertIn('<dt>Current milestone</dt><dd>Ascension · COMPLETE</dd>', page("characters/faaram.html"))
+        self.assertIn('<dt>Identity</dt><dd>Faaram Tempest · Whole and independent</dd>', page("characters/faaram.html"))
         self.assertIn('major but incomplete portion', page("characters/astera-zenith.html"))
         self.assertIn("Faaram's Soul Mark", page("codex/bindings.html"))
         self.assertIn('Gateway status</dt><dd>OPEN', page("world-events/index.html"))

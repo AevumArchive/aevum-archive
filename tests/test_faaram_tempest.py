@@ -45,9 +45,17 @@ class FaaramTempestTest(unittest.TestCase):
         self.assertNotRegex(hero, r"908|2050|The Faceless</h1>")
         self.assertIn("Historical milestone", self.detail)
         self.assertIn("+450 PL since initial Ascension", self.text)
-        self.assertIn("The First Piece / Integrated", self.text)
+        self.assertIn("Whole. Sovereign. Faaram Tempest.", self.text)
+        self.assertIn("Not a fragment. A whole being.", self.text)
+        self.assertIn("Faaram Tempest is a complete, independent being.", self.text)
         self.assertIn("not a form waiting to end", self.text)
-        self.assertIn("no longer only an external state", self.text)
+        self.assertNotRegex(self.detail, r"(?i)faceless|first piece|champion vessel|further integration")
+
+    def test_connected_records_do_not_assign_the_old_identity(self):
+        for filename in ("characters/bonds.html", "npcs/nox.html", "npcs/nyx.html", "npcs/rapax.html", "npcs/poison.html", "playthroughs/aizen-ended-road.html", "updates/index.html"):
+            with self.subTest(filename=filename):
+                text = (ROOT / filename).read_text(encoding="utf-8")
+                self.assertNotRegex(text, r"(?i)faceless|first piece")
 
     def test_all_eighteen_kit_entries_and_three_unique_weapons(self):
         parsed = RecordParser()
