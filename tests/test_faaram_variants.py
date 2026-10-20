@@ -26,7 +26,7 @@ class FaaramVariantsTest(unittest.TestCase):
                 self.assertIn(f'/aevum-archive/assets/images/{asset}', detail)
 
         # The variants must not replace his present-day hero portrait.
-        self.assertIn('body.route-characters-faaram .record-hero > .character-card { --record-art: url("/aevum-archive/assets/images/faaram.png"); }', styles)
+        self.assertIn('class="tempest-portrait"><img src="/aevum-archive/assets/images/faaram.png"', detail)
 
 
 if __name__ == "__main__":

@@ -49,11 +49,11 @@ class CharacterRecordsTest(unittest.TestCase):
         self.assertIn('Her current whereabouts are unknown; no death is confirmed.', astera)
         self.assertIn('<dt>Status</dt><dd>ACTIVE</dd>', faaram)
         self.assertIn('data-status="lost" data-name="Astera Zenith"', hall)
-        self.assertIn('data-status="active" data-name="Faaram"', hall)
+        self.assertIn('data-status="active" data-name="Faaram Tempest"', hall)
         self.assertIn('Active <span>5</span>', hall)
         self.assertIn('Sealed <span>4</span>', hall)
         self.assertIn('Lost / Unknown <span>2</span>', hall)
-        self.assertIn('Faaram, Lythariel, William and Jango', shelf)
+        self.assertIn('Faaram Tempest, Lythariel, William and Jango', shelf)
         self.assertIn('status-card active" href="/aevum-archive/characters/faaram.html"', old_road)
 
     def test_portraits_are_not_repeated_below_the_hero(self) -> None:
@@ -63,6 +63,11 @@ class CharacterRecordsTest(unittest.TestCase):
         ):
             with self.subTest(character=name):
                 detail = page(f"characters/{name}.html")
+                if name == "faaram":
+                    self.assertIn('class="tempest-hero"', detail)
+                    self.assertEqual(detail.count('src="/aevum-archive/assets/images/faaram.png"'), 1)
+                    self.assertNotIn('class="card portrait-card', detail)
+                    continue
                 self.assertIn('class="record-hero"', detail)
                 self.assertNotIn('class="card portrait-card', detail)
                 self.assertIn('role="img" aria-label="Portrait of ', detail)
