@@ -26,7 +26,7 @@ class FaaramVariantsTest(unittest.TestCase):
                 self.assertIn(f'/aevum-archive/assets/images/{asset}', detail)
 
         # The variants must not replace his present-day hero portrait.
-        self.assertIn('class="tempest-portrait"><img src="/aevum-archive/assets/images/faaram.png"', detail)
+        self.assertIn('class="tempest-portrait"><img src="/aevum-archive/assets/images/faaram-tempest.png"', detail)
 
 
 if __name__ == "__main__":

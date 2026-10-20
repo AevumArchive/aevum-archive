@@ -2,8 +2,10 @@
 
 from html import unescape
 from html.parser import HTMLParser
+import hashlib
 from pathlib import Path
 import re
+import struct
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -58,6 +60,17 @@ class FaaramTempestTest(unittest.TestCase):
         self.assertEqual(parsed.weapons, ["Icewhisper", "Soul Devourer", "Demigod's Unholy Blade"])
         self.assertEqual(len(parsed.ids), len(set(parsed.ids)))
         self.assertTrue(set(parsed.anchors).issubset(set(parsed.ids)))
+
+    def test_current_portrait_is_the_supplied_tempest_artwork(self):
+        artwork = (ROOT / "assets/images/faaram-tempest.png").read_bytes()
+        self.assertEqual(hashlib.sha256(artwork).hexdigest(),
+                         "af1400393858726266ad3490915724424915e6299e440cf214b48f90ec7c2e2b")
+        self.assertEqual(struct.unpack(">II", artwork[16:24]), (1024, 1536))
+        hero = re.search(r'<section class="tempest-hero".*?</section>', self.detail, re.S).group(0)
+        self.assertIn('src="/aevum-archive/assets/images/faaram-tempest.png"', hero)
+        self.assertNotIn('src="/aevum-archive/assets/images/faaram.png"', hero)
+        self.assertIn('width="1024" height="1536"', hero)
+        self.assertIn("Ascended · Icewhisper", hero)
 
     def test_everthorn_history_and_counter_limits(self):
         for phrase in ("Five legendary elven warriors", "S'klrdor", "One fell", "four survivors", "Legendary Warrior Trait",

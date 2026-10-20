@@ -65,7 +65,7 @@ class CharacterRecordsTest(unittest.TestCase):
                 detail = page(f"characters/{name}.html")
                 if name == "faaram":
                     self.assertIn('class="tempest-hero"', detail)
-                    self.assertEqual(detail.count('src="/aevum-archive/assets/images/faaram.png"'), 1)
+                    self.assertEqual(detail.count('src="/aevum-archive/assets/images/faaram-tempest.png"'), 1)
                     self.assertNotIn('class="card portrait-card', detail)
                     continue
                 self.assertIn('class="record-hero"', detail)
