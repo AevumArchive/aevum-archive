@@ -2,6 +2,7 @@
 
 ## 2026-10-21
 
+- Set Faaram Tempest's current classification to Elf, Dragonborne heritage, Wyrm Sovereign and Polearm Warrior; retained Legendary Everthorn, ASCENDED and 2500 PL, and synchronized the current character shelves and update summary.
 - Removed the obsolete Faceless possible-future path from Faaram Tempest's profile; kept the separate witnessed multiverse alternative without presenting it as his future.
 - Clarified that Tempest is a different, whole person who has never lost his soul or replaced his body. The Faceless and its body are gone and cannot be his future form.
 - Removed the old-form power step from Tempest's progression and the ambiguous scar/body-change description; synchronized the update ledger.

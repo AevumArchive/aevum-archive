@@ -68,6 +68,21 @@ class FaaramTempestTest(unittest.TestCase):
         self.assertNotIn("908", progression)
         self.assertEqual(progression.count("<li"), 2)
 
+    def test_current_classification_keeps_race_and_heritage_separate(self):
+        hero = re.search(r'<section class="tempest-hero".*?</section>', self.detail, re.S).group(0)
+        for label, value in (("Race", "Elf"), ("Heritage", "Dragonborne"),
+                             ("Class", "Wyrm Sovereign"), ("Combat Style", "Polearm Warrior"),
+                             ("State", "ASCENDED"), ("Power Level", "2500")):
+            with self.subTest(label=label):
+                self.assertIn(f"<dt>{label}</dt><dd>{value}</dd>", hero)
+        self.assertIn('<dt>Legendary Trait</dt><dd><a href="#everthorn">Everthorn</a></dd>', hero)
+        self.assertNotIn("<dt>Race</dt><dd>Dragonborne</dd>", self.detail)
+        self.assertNotIn("Control Mage", self.detail)
+        for filename in ("characters/index.html", "characters/all.html", "index.html", "updates/index.html"):
+            with self.subTest(filename=filename):
+                text = (ROOT / filename).read_text(encoding="utf-8")
+                self.assertIn("Wyrm Sovereign", text)
+
     def test_connected_records_do_not_assign_the_old_identity(self):
         for filename in ("characters/bonds.html", "npcs/nox.html", "npcs/nyx.html", "npcs/rapax.html", "npcs/poison.html", "playthroughs/aizen-ended-road.html", "updates/index.html"):
             with self.subTest(filename=filename):
