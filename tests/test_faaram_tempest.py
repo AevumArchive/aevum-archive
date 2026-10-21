@@ -49,7 +49,24 @@ class FaaramTempestTest(unittest.TestCase):
         self.assertIn("Not a fragment. A whole being.", self.text)
         self.assertIn("Faaram Tempest is a complete, independent being.", self.text)
         self.assertIn("not a form waiting to end", self.text)
-        self.assertNotRegex(self.detail, r"(?i)faceless|first piece|champion vessel|further integration")
+        self.assertNotRegex(hero, r"(?i)faceless|first piece|champion vessel|further integration")
+        self.assertNotRegex(self.detail, r"(?i)first piece|champion vessel|further integration")
+
+    def test_tempest_has_never_lost_his_soul_or_replaced_his_body(self):
+        hero = re.search(r'<section class="tempest-hero".*?</section>', self.detail, re.S).group(0)
+        self.assertIn("a different person", hero)
+        self.assertIn("a soul he has never lost", hero)
+        self.assertIn("a body he has never had to replace", hero)
+        self.assertIn("He has never lost his soul and has never needed to change bodies.", self.text)
+        self.assertIn("He is not a new vessel", self.text)
+        history = re.search(r'<section class="tempest-section" id="history".*?</section>', self.detail, re.S).group(0)
+        self.assertIn("The Faceless was the old form. That form and its body are entirely gone.", history)
+        self.assertIn("The Faceless is not a future form he can become.", history)
+        self.assertNotIn("Faceless", self.detail.replace(history, ""))
+        self.assertNotIn("preserved scar", self.detail)
+        progression = re.search(r'<ol class="tempest-progression".*?</ol>', self.detail, re.S).group(0)
+        self.assertNotIn("908", progression)
+        self.assertEqual(progression.count("<li"), 2)
 
     def test_connected_records_do_not_assign_the_old_identity(self):
         for filename in ("characters/bonds.html", "npcs/nox.html", "npcs/nyx.html", "npcs/rapax.html", "npcs/poison.html", "playthroughs/aizen-ended-road.html", "updates/index.html"):

@@ -1,5 +1,11 @@
 # Archive changelog
 
+## 2026-10-21
+
+- Removed the obsolete Faceless possible-future path from Faaram Tempest's profile; kept the separate witnessed multiverse alternative without presenting it as his future.
+- Clarified that Tempest is a different, whole person who has never lost his soul or replaced his body. The Faceless and its body are gone and cannot be his future form.
+- Removed the old-form power step from Tempest's progression and the ambiguous scar/body-change description; synchronized the update ledger.
+
 ## 2026-10-20
 
 - Corrected Faaram Tempest to a whole, independent identity; removed Faceless, fragment-integration and vessel associations from his profile and connected records.
