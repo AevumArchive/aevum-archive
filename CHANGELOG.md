@@ -1,5 +1,10 @@
 # Archive changelog
 
+## 2026-10-23
+
+- Replaced the Hall of Names' illustrated library backdrop and side banners with a restrained violet archive gradient; centered the heading independently of the search and moved search into its own row.
+- Preserved all 15 character records and the five original ornate status frames, with no portrait previews. Retained search, status filters, sorting, pagination and list view; added layout and frame regression checks.
+
 ## 2026-10-22
 
 - Refreshed Astera Zenith's dossier with a top-aligned full portrait, astral-violet typography, a quick fact block and seven chapter links. Kept Lost / Unknown, the soul incident and every witnessed discovery unchanged.
