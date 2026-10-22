@@ -31,7 +31,7 @@ body.route-characters-faaram main.tempest-dossier { width: min(1440px, calc(100%
 .tempest-facts dt { color: #b7a6c7; font: 600 .72rem/1.6 Verdana, sans-serif; letter-spacing: .04em; text-transform: uppercase; }
 .tempest-facts dd { margin: 5px 0 0; color: #ece1f6; font-size: 1rem; line-height: 1.5; }
 .tempest-facts dd a { text-decoration-color: #776186; }
-.tempest-portrait { position: relative; min-width: 0; margin: 0; background: #0d0a13; }
+.tempest-portrait { position: relative; align-self: start; min-width: 0; margin: 0; background: #0d0a13; }
 .tempest-portrait img { display: block; width: 100%; height: auto; }
 .tempest-portrait::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, #0d0a13, transparent 12%), linear-gradient(0deg, #0d0a13, transparent 16%); }
 .tempest-portrait figcaption { position: absolute; z-index: 1; bottom: 24px; right: 28px; display: grid; gap: 8px; text-align: right; }

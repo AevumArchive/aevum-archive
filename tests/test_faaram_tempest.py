@@ -112,6 +112,14 @@ class FaaramTempestTest(unittest.TestCase):
         self.assertIn('width="1024" height="1536"', hero)
         self.assertIn("Ascended · Icewhisper", hero)
 
+    def test_portrait_stays_anchored_to_the_top_when_facts_grow(self):
+        styles = (ROOT / "assets/faaram-tempest.css").read_text(encoding="utf-8")
+        portrait = re.search(r'\.tempest-portrait\s*\{([^}]+)\}', styles).group(1)
+        self.assertIn("align-self: start", portrait)
+        image = re.search(r'\.tempest-portrait img\s*\{([^}]+)\}', styles).group(1)
+        self.assertIn("height: auto", image)
+        self.assertNotIn("object-fit: cover", image)
+
     def test_everthorn_history_and_counter_limits(self):
         for phrase in ("Five legendary elven warriors", "S'klrdor", "One fell", "four survivors", "Legendary Warrior Trait",
                        "Up to +15%", "+20%", "+25%", "+50%", "Three observations do not reveal every attack",
