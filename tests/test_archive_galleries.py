@@ -34,8 +34,11 @@ class ArchiveGalleriesTest(unittest.TestCase):
                 parser.feed(page)
                 self.assertEqual(len(parser.ids), len(set(parser.ids)))
                 self.assertTrue(set(parser.fragments).issubset(set(parser.ids)))
-                self.assertIn("archive-galleries.css?v=20261022-1", page)
-                self.assertIn("gallery-page", page)
+                if filename == "world-items/index.html":
+                    self.assertIn("archive-galleries.css?v=20261022-1", page)
+                    self.assertIn("gallery-page", page)
+                else:
+                    self.assertNotIn("archive-galleries.css", page)
 
     def test_every_npc_record_survives_without_javascript(self):
         page = (ROOT / "npcs/index.html").read_text(encoding="utf-8")
@@ -48,21 +51,21 @@ class ArchiveGalleriesTest(unittest.TestCase):
                      "Uwubama", "Library Entity", "Chax", "Malrik", "Bobby", "???"):
             with self.subTest(name=name):
                 self.assertIn(name, page)
-        record_markup = page.split('id="npc-ledger-records"', 1)[1].split('data-ledger-empty', 1)[0]
-        self.assertNotRegex(record_markup, r'<[^>]+\shidden(?:[=\s>])')
+        self.assertNotRegex(page, r'<[^>]+\shidden(?:[=\s>])')
         self.assertNotIn("Enski", page)
         self.assertNotIn("Tenrei", page)
         self.assertIn('<span class="pill">Alive</span>', page)
 
-    def test_filters_are_labelled_and_progressively_enhanced(self):
+    def test_npc_index_keeps_the_original_special_divine_design(self):
         page = (ROOT / "npcs/index.html").read_text(encoding="utf-8")
-        for marker in ('for="npc-search"', 'for="npc-shelf"', 'aria-controls="npc-ledger-records"',
-                       'role="status"', 'aria-live="polite"', 'data-ledger-tools hidden'):
+        for marker in ('npc-index.css', 'npc-effects.css', 'npc-divine-ledger',
+                       'npc-divine-card npc-feature-izumi', 'npc-divine-card npc-feature-bomir'):
             self.assertIn(marker, page)
-        script = (ROOT / "assets/npc-ledger.js").read_text(encoding="utf-8")
-        self.assertNotIn("innerHTML", script)
-        self.assertNotIn("fetch(", script)
-        self.assertIn("normalize('NFD')", script)
+        for removed in ('gallery-page', 'npc-portrait-thumb', 'npc-exhibit', 'npc-ledger.js'):
+            self.assertNotIn(removed, page)
+        styles = (ROOT / "assets/npc-index.css").read_text(encoding="utf-8")
+        self.assertIn('rgba(109, 222, 145, .18)', styles)
+        self.assertIn('rgba(231, 189, 89, .2)', styles)
 
     def test_relic_classifications_and_scaling_survive(self):
         page = (ROOT / "world-items/index.html").read_text(encoding="utf-8")
