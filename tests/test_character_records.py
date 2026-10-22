@@ -68,6 +68,11 @@ class CharacterRecordsTest(unittest.TestCase):
                     self.assertEqual(detail.count('src="/aevum-archive/assets/images/faaram-tempest.png"'), 1)
                     self.assertNotIn('class="card portrait-card', detail)
                     continue
+                if name == "astera-zenith":
+                    self.assertIn('class="astral-hero"', detail)
+                    self.assertEqual(detail.count('src="/aevum-archive/assets/images/astera-zenith-cosmic-ruins.png"'), 1)
+                    self.assertNotIn('class="card portrait-card', detail)
+                    continue
                 self.assertIn('class="record-hero"', detail)
                 self.assertNotIn('class="card portrait-card', detail)
                 self.assertIn('role="img" aria-label="Portrait of ', detail)
@@ -112,9 +117,10 @@ class CharacterRecordsTest(unittest.TestCase):
         shelf = page("characters/index.html")
         styles = page("assets/archive-record-refresh.css")
 
-        self.assertIn("archive-record-refresh.css?v=20261009-astera-fit", astera)
-        self.assertIn("route-characters-astera-zenith .record-hero > .record-panel", styles)
-        self.assertIn("route-characters-astera-zenith .record-hero > .character-card", styles)
+        self.assertIn("astera-dossier.css?v=20261022-1", astera)
+        dossier_styles = page("assets/astera-dossier.css")
+        self.assertIn(".astral-portrait > img { display: block; width: 100%; height: auto; }", dossier_styles)
+        self.assertIn("align-self: start", dossier_styles)
         self.assertIn("<dt>Current Status</dt><dd>SEALED</dd>", beru)
         self.assertIn('data-status="sealed" data-name="Beru"', hall)
         self.assertIn('Sealed <span>4</span>', hall)

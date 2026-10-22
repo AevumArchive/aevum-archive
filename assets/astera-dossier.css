@@ -1,0 +1,149 @@
+/* Astera Zenith — astral violet, vanished starlight and the gold of Divine discovery. */
+body.route-characters-astera-zenith { --astral-line: rgb(189 157 222 / .25); --astral-ink: #f1e9f6; --astral-violet: #cbb0ef; --astral-gold: #e4c895; background: radial-gradient(ellipse at 85% 0, #362437, transparent 65rem), radial-gradient(ellipse at 0 40%, #20132d, transparent 65rem), #09080e !important; color: var(--astral-ink); }
+body.route-characters-astera-zenith::before, body.route-characters-astera-zenith::after, body.route-characters-astera-zenith main.page::before, body.route-characters-astera-zenith main.page::after { content: none !important; }
+body.route-characters-astera-zenith main.astera-dossier { width: min(1440px, calc(100% - 64px)); max-width: 1440px; padding-top: 24px; }
+.astera-dossier *, .astera-dossier *::before, .astera-dossier *::after { box-sizing: border-box; }
+.astera-dossier h1, .astera-dossier h2, .astera-dossier h3 { color: var(--astral-ink); text-shadow: none; }
+.astera-dossier p { color: #c0b2cb; font-size: 1.05rem; line-height: 1.85; text-wrap: pretty; }
+.astera-dossier a { text-underline-offset: 5px; }
+.astera-dossier a:focus-visible { outline: 2px solid var(--astral-gold); outline-offset: 6px; }
+.astera-dossier .eyebrow, .astera-dossier .astral-kicker { color: var(--astral-violet); font: 500 .7rem/1.8 Verdana, sans-serif; text-transform: uppercase; letter-spacing: .1em; }
+.astral-hero { position: relative; isolation: isolate; display: grid; grid-template-columns: minmax(0, .98fr) minmax(0, 1.02fr); align-items: start; border: 1px solid var(--astral-line); background: radial-gradient(ellipse at 5% 0, #62487922, transparent 65%), #0d0a14; }
+.astral-hero::before { content: ""; position: absolute; z-index: 2; inset: 14px; border-top: 1px solid #e7cdff29; border-left: 1px solid #e7cdff29; pointer-events: none; mask-image: linear-gradient(135deg, #000, transparent 30%); }
+.astral-identity { min-width: 0; padding: clamp(32px, 3.7vw, 58px); }
+.astral-identity > .astral-kicker { display: flex; align-items: center; gap: 12px; margin: 0 0 25px; font-size: .64rem; }
+.astral-kicker > span { color: #dfc5ff; font: 400 1.6rem/1 Georgia, serif; text-shadow: 0 0 20px #c392f2; }
+.astera-dossier .astral-identity h1 { margin: 0; font: 400 clamp(4rem, 7.1vw, 7.4rem)/.99 Georgia, serif; letter-spacing: -.045em; }
+.astral-identity h1 > span, .astral-identity h1 > em { display: block; }
+.astral-identity h1 > em { margin-top: 8px; color: #d4b9ec; font-weight: 400; }
+.astera-dossier .astral-epithet { color: #e1c59f; font: italic 1.3rem/1.5 Georgia, serif; margin: 24px 0 20px; }
+.astral-intro { max-width: 45ch; margin: 0; }
+.astral-status { display: grid; gap: 12px; margin: 27px 0; padding: 20px 0; border-block: 1px solid var(--astral-line); }
+.astral-status > span { color: #ebd0cc; font: 500 .8rem/1.6 Verdana, sans-serif; letter-spacing: .1em; text-transform: uppercase; }
+.astral-status > span::before { content: "◇"; margin-right: 12px; color: #d5abc5; }
+.astera-dossier .astral-status p { max-width: 43ch; margin: 0; color: #b6a4c3; font-size: .88rem; line-height: 1.7; }
+.astral-facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 24px; margin: 0 0 27px; }
+.astral-facts > div { min-width: 0; }
+.astral-facts dt { margin: 0 0 6px; color: #b7a1cb; font: 500 .68rem/1.6 Verdana, sans-serif; letter-spacing: .045em; text-transform: uppercase; }
+.astral-facts dd { margin: 0; color: #e6daee; font-size: .95rem; line-height: 1.6; }
+.astral-facts > div:last-child { grid-column: 1 / -1; }
+.astral-facts .pill { display: inline-block; margin: 0 6px 6px 0; padding: 6px 9px; font: 400 .7rem/1.5 Verdana, sans-serif; }
+.astral-link { display: inline-flex; align-items: center; gap: 25px; color: #dbc6ec; font: 500 .75rem/1.8 Verdana, sans-serif; text-decoration: none; }
+.astral-link > span { color: var(--astral-gold); font-size: 1.1rem; }
+.astral-portrait { position: relative; align-self: start; margin: 0; min-width: 0; background: #0d0a14; }
+.astral-portrait > img { display: block; width: 100%; height: auto; }
+.astral-portrait::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, #0d0a14, transparent 10%), linear-gradient(0deg, #0d0a14, transparent 15%); }
+.astral-portrait figcaption { position: absolute; z-index: 1; bottom: 27px; right: 27px; left: 27px; text-align: right; }
+.astral-portrait figcaption > span { display: block; color: #e6caef; font: italic 400 1.8rem/1.1 Georgia, serif; }
+.astral-portrait figcaption > small { display: block; margin-top: 9px; color: #c3a9ce; font: 400 .6rem/1.8 Verdana, sans-serif; letter-spacing: .08em; text-transform: uppercase; }
+.astral-chapters { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 30px; align-items: center; padding: 22px; border-bottom: 1px solid var(--astral-line); background: #100c17; }
+.astral-chapters > span { color: #a18bae; font: 500 .6rem/1.7 Verdana, sans-serif; letter-spacing: .1em; text-transform: uppercase; }
+.astral-chapters > div { display: flex; align-items: center; justify-content: space-between; gap: 22px; overflow: auto; scrollbar-width: thin; }
+.astral-chapters a { flex-shrink: 0; padding-block: 4px; color: #cdb5e0; font: 400 .65rem/1.8 Verdana, sans-serif; text-decoration: none; text-transform: uppercase; }
+.astral-chapters a:hover { color: #fff0df; }
+body.route-characters-astera-zenith .astera-dossier > .section { position: relative; padding-top: 40px; margin-top: 80px; border-top: 1px solid var(--astral-line); scroll-margin-top: 30px; }
+body.route-characters-astera-zenith .astera-dossier > .section::before { content: none !important; }
+.astera-dossier .section-head { display: grid; grid-template-columns: 1fr .85fr; gap: 45px; align-items: end; margin-bottom: 32px; }
+.astera-dossier .section-head h2 { margin: 12px 0 0; font: 400 clamp(2.4rem, 4.6vw, 4.6rem)/1.12 Georgia, serif; letter-spacing: -.04em; }
+.astera-dossier .section-head > p { max-width: 48ch; margin: 0; color: #baacc5; line-height: 1.8; }
+.astera-dossier .card { min-width: 0; padding: clamp(26px, 3vw, 42px); border: 1px solid var(--astral-line); border-radius: 5px; background: linear-gradient(140deg, #20162b, #0e0b14); box-shadow: none; }
+.astera-dossier .card::before, .astera-dossier .card::after { content: none !important; }
+.astera-dossier .card h2 { margin: 17px 0; font: 400 clamp(2rem, 3vw, 3.2rem)/1.12 Georgia, serif; letter-spacing: -.035em; }
+.astera-dossier .card h3 { font: 400 clamp(1.7rem, 2.7vw, 2.7rem)/1.15 Georgia, serif; }
+.astera-dossier .small-button { display: inline-block; padding: 11px 17px; border-radius: 3px; border-color: var(--astral-line); background: #22172e; color: #ddc6ec; font: 500 .73rem/1.7 Verdana, sans-serif; }
+.astera-dossier .astral-last-sighting { display: grid; grid-template-columns: .85fr 1.15fr; gap: 55px; align-items: start; padding: 35px; border: 1px solid rgb(196 143 171 / .35); background: radial-gradient(ellipse at 0 0, #622f4933, transparent 70%), #130d19; }
+.astera-dossier .astral-last-sighting h2 { margin: 25px 0; font: 400 clamp(2.3rem, 3.5vw, 3.5rem)/1.12 Georgia, serif; letter-spacing: -.035em; }
+.astral-last-sighting h2 em { color: #d5abc3; font-weight: 400; }
+.astral-last-sighting > p { margin: 0; font-size: 1.1rem; line-height: 1.9; }
+.astral-unknown-label { display: inline-block; padding: 7px 10px; border: 1px dashed #c18baf66; color: #d0a9c4; font: 400 .64rem/1.7 Verdana, sans-serif; text-transform: uppercase; letter-spacing: .07em; }
+.astera-dossier .astera-state-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.astera-dossier .astera-state-grid .state-card-primary { padding: clamp(26px, 3vw, 42px); background: radial-gradient(ellipse at 90% 10%, #8052ba44, transparent 65%), #191021; }
+.astera-dossier .state-glyph { top: 30px; right: 20px; transform: none; opacity: .12; font-size: 6.5rem; }
+.astera-dossier .zenith-discovery-chain { border-radius: 5px; border-color: var(--astral-line); background: #120d1a; }
+.astera-dossier .zenith-discovery-chain span { color: #c8a97c; font: 400 1.6rem/1 Georgia, serif; margin-bottom: 24px; }
+.astera-dossier .zenith-discovery-chain small { color: #b8a8c7; font-size: .85rem; line-height: 1.6; }
+.astera-dossier .grid.two { gap: 24px; }
+.astera-dossier .astera-quest-completion { padding: clamp(26px, 4vw, 55px); border: 1px solid #b495d15c; border-radius: 6px; background: radial-gradient(ellipse at 100% 0, #7d517733, transparent 70%), #120d1b; box-shadow: none; }
+.astera-dossier .astera-quest-completion::before { content: none; }
+.astera-dossier .astera-quest-heading { gap: 30px; }
+.astera-dossier .astera-quest-heading h2 { margin: 20px 0; font: 400 clamp(2.5rem, 5.3vw, 5.3rem)/1.1 Georgia, serif; letter-spacing: -.045em; }
+.astera-dossier .astera-quest-artwork { border-radius: 4px; border-color: var(--astral-line); }
+.astera-dossier .astera-quest-artwork figcaption { color: #b6a4c4; font: 400 .65rem/1.8 Verdana, sans-serif; letter-spacing: .04em; }
+.astera-dossier .astera-quest-results { border-color: var(--astral-line); }
+.astera-dossier .astera-quest-results span { color: #baa1cd; font: 500 .69rem/1.8 Verdana, sans-serif; letter-spacing: .06em; }
+.astera-dossier .astera-quest-results strong { color: #e1caa7; font: 400 1.2rem/1.5 Georgia, serif; }
+.astera-dossier .astera-quest-lore h3 { margin-block: 15px; font: 400 clamp(1.8rem, 2.7vw, 2.7rem)/1.2 Georgia, serif; }
+.astera-dossier .astera-meridian-bond { border-color: #cbb17f; padding: 23px; }
+.astera-dossier .astera-quest-completion blockquote { margin-top: 40px; color: #d8bbef; font: italic clamp(1.4rem, 2.8vw, 2.6rem)/1.5 Georgia, serif; }
+/* Divine discovery is deliberately distinct from the ordinary violet records. */
+.astera-dossier .divine-discovery-card { grid-template-columns: minmax(150px, .4fr) minmax(0, 1fr); gap: 45px; padding: clamp(30px, 5vw, 68px); border: 1px solid #f1d297aa; border-radius: 6px; background: radial-gradient(ellipse at 15% 50%, #9573c03d, transparent 55%), radial-gradient(ellipse at 100% 0, #b28b3d26, transparent 70%), #13101d; box-shadow: 0 0 60px #bd91570d; }
+.astera-dossier .divine-discovery-card::before { inset: 12px; border-radius: 2px; border-color: #f3d59333; }
+.astera-dossier .divine-discovery-mark { position: relative; justify-self: center; width: min(100%, 185px); font-size: 7rem; overflow: visible; }
+.divine-discovery-mark::before, .divine-discovery-mark::after { content: ""; position: absolute; inset: -15px; border: 1px dashed #eaca9366; border-radius: 50%; pointer-events: none; animation: asteraDivineOrbit 50s linear infinite; }
+.divine-discovery-mark::after { inset: 15px; border-style: solid; border-color: #d0aee955; border-radius: 3px; transform: rotate(45deg); animation: none; }
+.astera-dossier .divine-discovery-card .eyebrow { color: #ebce96; font-size: .72rem; }
+.astera-dossier .divine-discovery-card h2 { max-width: 24ch; margin: 20px 0; color: #fff0d6; font: 400 clamp(2.1rem, 3.9vw, 4.2rem)/1.12 Georgia, serif; letter-spacing: -.035em; }
+.astera-dossier .divine-discovery-footer { gap: 20px 35px; margin-top: 30px; }
+.astera-dossier .divine-discovery-footer > strong { color: #f4d79e; font: 400 clamp(1.5rem, 2.7vw, 2.5rem)/1.3 Georgia, serif; }
+.astera-dossier .divine-discovery-footer .small-button { color: #f0d3a0; border-color: #e4c28c66; background: #372a2355; }
+.astera-dossier .card.astera-soul-mark { grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); padding: 0; background: radial-gradient(ellipse at 20% 50%, #512b7133, transparent 65%), #0d0912; }
+.astera-dossier .soul-mark-visual { min-width: 0; min-height: 470px; }
+.astera-dossier .soul-mark-copy { padding: clamp(28px, 3.5vw, 50px); }
+.astera-dossier .soul-mark-copy h2 { font-size: clamp(2.5rem, 4.3vw, 4.3rem); }
+.astera-dossier .soul-mark-copy dl { grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: 0 20px; }
+.astera-dossier .soul-mark-copy dt { color: #baa0cd; font: 500 .7rem/1.7 Verdana, sans-serif; letter-spacing: .03em; }
+.astera-dossier .soul-mark-copy dd { color: #e0cfe9; font-size: .95rem; line-height: 1.7; text-align: left; }
+.astera-dossier .soul-mark-copy .archive-caution { color: #b09bc1; font-size: .85rem; }
+.astera-dossier .lore-notes ul { margin: 25px 0 0; padding-left: 20px; }
+.astera-dossier .lore-notes li { margin: 0 0 18px; color: #c3b3cc; font-size: 1rem; line-height: 1.9; }
+.astera-dossier .lore-notes li::marker { color: #c7a5e5; }
+.astera-dossier .duality-card { min-width: 0; border-radius: 5px; border-color: var(--astral-line); background: #130f1c; box-shadow: none; }
+.astera-dossier .duality-art { border-radius: 3px; }
+.astera-dossier .duality-card h3 { margin: 22px 0 12px; font: 400 2.2rem/1.2 Georgia, serif; }
+.astera-dossier .astera-duality-current .duality-card .eyebrow { margin: 22px 0 0; }
+.astera-dossier .astera-duality-current .is-current { border-color: #c6a1ec88; background: radial-gradient(ellipse at 100% 0, #75509a33, transparent 65%), #150f20; }
+.astera-dossier .footer { margin-top: 80px; }
+@keyframes asteraDivineOrbit { to { transform: rotate(360deg); } }
+@media (max-width: 1150px) {
+  .astral-identity { padding: 30px; }.astral-identity > .astral-kicker { font-size: .57rem; }
+  .astral-facts { gap: 15px 18px; }.astral-facts dd { font-size: .88rem; }
+  .astral-chapters { grid-template-columns: 1fr; padding-inline: 18px; }.astral-chapters > span { display: none; }
+  .astera-dossier .astera-state-grid { grid-template-columns: 1fr 1fr; }.astera-dossier .state-card-primary { grid-column: 1 / -1; }
+  .astera-dossier .divine-discovery-card { gap: 35px; }
+}
+@media (max-width: 900px) {
+  body.route-characters-astera-zenith main.astera-dossier { width: calc(100% - 36px); padding-top: 0; }
+  .astral-hero { grid-template-columns: 1fr; }.astral-identity { padding: 35px 28px; }
+  .astera-dossier .astral-identity h1 { font-size: clamp(4rem, 12vw, 6.5rem); }
+  .astral-intro { max-width: 65ch; }.astral-facts dd { font-size: 1rem; }
+  .astral-portrait::after { background: linear-gradient(0deg, #0d0a14, transparent 14%); }
+  .astera-dossier .section-head { grid-template-columns: 1fr; gap: 20px; }
+  .astera-dossier .astral-last-sighting { grid-template-columns: 1fr; gap: 25px; }
+  .astera-dossier .card.astera-soul-mark { grid-template-columns: 1fr; }.astera-dossier .soul-mark-visual { min-height: 380px; }
+  .astera-dossier .soul-mark-copy { border-left: 0; border-top: 1px solid var(--astral-line); }
+  .astera-dossier .divine-discovery-card { grid-template-columns: 1fr; gap: 35px; }.astera-dossier .divine-discovery-mark { width: 125px; font-size: 5rem; justify-self: start; margin: 15px; }
+  .astera-dossier .grid.two { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .astera-dossier .astral-identity h1 { font-size: clamp(3.6rem, 16vw, 5.5rem); }
+  .astral-identity { padding: 30px 23px; }.astral-identity > .astral-kicker { font-size: .55rem; letter-spacing: .07em; }
+  .astral-facts { grid-template-columns: 1fr; gap: 15px; }.astral-facts > div { padding-top: 12px; border-top: 1px solid var(--astral-line); }
+  .astral-portrait figcaption { bottom: 20px; right: 20px; left: 20px; }.astral-portrait figcaption > span { font-size: 1.5rem; }.astral-portrait figcaption > small { font-size: .5rem; }
+  .astera-dossier .astera-state-grid { grid-template-columns: 1fr; }.astera-dossier .state-card-primary { grid-column: auto; }
+  .astera-dossier .astral-last-sighting { padding: 25px; }
+  .astera-dossier .zenith-discovery-chain { grid-template-columns: 1fr; }
+  .astera-dossier .zenith-discovery-chain li { min-height: 0; padding: 22px; border-right: 0; border-top: 1px solid var(--astral-line); }
+  .astera-dossier .zenith-discovery-chain li:first-child { border-top: 0; }
+  .astera-dossier .zenith-discovery-chain li:not(:last-child)::after { display: none; }
+  .astera-dossier .zenith-discovery-chain span { font-size: 1.3rem; margin-bottom: 15px; }
+  .astera-dossier .astera-quest-completion { padding: 24px 20px; }
+  .astera-dossier .astera-quest-results { grid-template-columns: 1fr; }
+  .astera-dossier .astera-quest-heading h2 { font-size: clamp(2.3rem, 10vw, 3.5rem); }
+  .astera-dossier .astera-quest-seal { display: none; }
+  .astera-dossier .divine-discovery-card { padding: 28px; }.astera-dossier .divine-discovery-card h2 { font-size: clamp(1.9rem, 8.5vw, 2.8rem); }
+  .astera-dossier .soul-mark-copy dl { grid-template-columns: 1fr; gap: 0; }.astera-dossier .soul-mark-copy dt { padding-bottom: 5px; }.astera-dossier .soul-mark-copy dd { padding-top: 0; border-top: 0; }
+  .astera-dossier .soul-mark-visual { min-height: 330px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .astera-dossier *, .astera-dossier *::before, .astera-dossier *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}

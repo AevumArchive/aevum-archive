@@ -2,6 +2,8 @@
 
 ## 2026-10-22
 
+- Refreshed Astera Zenith's dossier with a top-aligned full portrait, astral-violet typography, a quick fact block and seven chapter links. Kept Lost / Unknown, the soul incident and every witnessed discovery unchanged.
+- Gave her Divine lore discovery a distinct gold-and-starlight presentation while preserving the quest-completion artwork, Soul Mark animation and separately classified Duality visions; verified nine responsive widths and reduced motion.
 - Refreshed the Playthrough index with a distinct current-campaign feature, a six-era monument and a clearer recovered chronology; preserved dates, sealed records and all campaign routes.
 - Rebuilt the current-character selection as four individually colored, portrait-free sigil cards. Portraits remain inside the character dossiers; corrected the campaign shortcut to four current names.
 - Added checks for portrait-free selection markup, exact current-company membership, chronology preservation, keyboard navigation and responsive/reduced-motion behavior.
