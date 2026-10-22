@@ -4,15 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Characters - Aevum Archive</title>
-  <meta name="description" content="A living Aevum wiki for characters, playthroughs, lore, events and traveler downloads.">
+  <meta name="description" content="The current Age of First Roads company: Faaram Tempest, Lythariel, William Carter and Jango. Open each name to read their full record.">
   <link rel="stylesheet" href="/aevum-archive/assets/styles.css?v=20260815-sitefocus2">
   <link rel="stylesheet" href="/aevum-archive/assets/frame-overrides.css?v=20260817-cardstates7">
   <link rel="stylesheet" href="/aevum-archive/assets/ornament-v3.css?v=20260817-1">
   <link rel="stylesheet" href="/aevum-archive/assets/round4-assets.css?v=20260817-3">
   <link rel="stylesheet" href="/aevum-archive/assets/master-ui.css?v=20260821-2">
   <link rel="stylesheet" href="/aevum-archive/assets/global-header.css?v=20260902-header4">
+  <link rel="stylesheet" href="/aevum-archive/assets/archive-shelves.css?v=20261022-1">
 </head>
-<body class="archive-page theme-characters page-index route-characters">
+<body class="archive-page theme-characters page-index route-characters shelf-page">
   <header class="site-header">
   <a class="brand" href="/aevum-archive/">
     <img class="brand-mark home-brand-crest" src="/aevum-archive/assets/home-v2/home-archive-sigil.webp" alt="" width="1254" height="1254">
@@ -31,14 +32,23 @@
     <a href="/aevum-archive/downloads/texture-pack.html">Downloads</a>
   </nav>
 </header>
-<main class="page">
-<section class="hero compact-hero"><div><p class="eyebrow">Character records</p><h1>Known faces of the current shelf.</h1><p class="lede">These entries hold the names currently fit for the archive. Secret quests, hidden consequences and sealed truths remain unwritten.</p><div class="hero-actions"><a class="button primary" href="/aevum-archive/characters/all.html">Open all character records</a><a class="button" href="/aevum-archive/characters/bonds.html">Character Bonds</a><a class="button" href="/aevum-archive/npcs/">NPC Ledger</a></div></div><aside class="archive-card"><span class="sigil">&#10022;</span><p class="eyebrow">Current playthrough</p><h2>Four current names</h2><p class="lede">Faaram Tempest, Lythariel, William and Jango belong to this playthrough. Astera's whereabouts remain unknown; Beru's record is sealed.</p></aside></section>
-<section class="section"><div class="grid characters"><a class="character-card" href="/aevum-archive/characters/faaram.html" style="--accent:#7c3aed;--glow:rgba(76,29,149,0.42)"><div class="portrait-slot"><div class="portrait-rune">&#10022;</div></div><div class="character-body"><h3>Faaram Tempest</h3><p>Wyrm Sovereign · Ascended · 2500 PL · Everthorn</p></div></a><a class="character-card" href="/aevum-archive/characters/lythariel.html" style="--accent:#63d982;--glow:rgba(34,197,94,0.26)"><div class="portrait-slot"><div class="portrait-rune alchemy-rune">⚗</div></div><div class="character-body"><h3>Lythariel</h3><p>Alchemy / Nature</p></div></a><a class="character-card" href="/aevum-archive/characters/william-carter.html" style="--accent:#f4b84a;--glow:rgba(132,86,27,0.32)"><div class="portrait-slot"><div class="portrait-rune">&#127866;</div></div><div class="character-body"><h3>William Carter</h3><p>Tavern / Brewing</p></div></a><a class="character-card" href="/aevum-archive/characters/jango.html" style="--accent:#74d6ff;--glow:rgba(14,165,233,0.24)"><div class="portrait-slot"><div class="portrait-rune">&#9876;</div></div><div class="character-body"><h3>Jango</h3><p>Swordsman</p></div></a></div></section>
-<footer class="footer">
-  <span>&#10022; Aevum Archive &mdash; witnessed knowledge only.</span>
-  <span>Unwritten pages remain sealed until discovered.</span>
-</footer>
-  </main>
+<main class="page shelf-main">
+<section class="shelf-hero" aria-labelledby="current-characters-title">
+  <div class="shelf-hero-copy"><p class="shelf-kicker">The current company <span>Era VI / Character records</span></p><h1 id="current-characters-title">The lives<br>shaping this <em>age.</em></h1><p class="shelf-intro">Different roads. Different reasons to keep walking. These are the names still writing their place in the Age of First Roads.</p><div class="shelf-actions"><a class="shelf-button" href="#current-company">Meet the company <span aria-hidden="true">↘</span></a><a class="shelf-text-link" href="/aevum-archive/characters/all.html">All character records ↗</a></div></div>
+  <aside class="company-register"><div class="register-heading"><span class="shelf-kicker">Current playthrough</span><a href="/aevum-archive/playthroughs/fantasy-medieval.html">Age of First Roads ↗</a></div><div class="register-count" aria-hidden="true">IV</div><h2>Four current names</h2><p>Faaram Tempest, Lythariel, William and Jango belong to this playthrough.</p><div class="register-footer"><span class="live-dot" aria-hidden="true"></span>Active records / Living continuity</div></aside>
+</section>
+<section class="shelf-section" id="current-company" aria-labelledby="company-title">
+  <header class="shelf-section-head"><div><p class="shelf-kicker">01 / Current playthrough</p><h2 id="company-title">A road of their own.</h2></div><p>Choose a name to open the full character record.</p></header>
+  <div class="current-company-grid">
+    <a class="current-record record-faaram" data-current-character="faaram" href="/aevum-archive/characters/faaram.html"><div class="record-topline"><span>01 / Ascended</span><span class="record-state">Active</span></div><span class="character-crest"><svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M33 93 87 27M68 26l21-8-3 23M48 61c-26-2-32-16-25-29 0 18 16 19 31 21M68 46c25 2 31 16 24 29 0-18-15-19-30-21"/></svg></span><div class="current-record-copy"><p class="record-role">Wyrm Sovereign</p><h3>Faaram<br>Tempest</h3><p class="record-summary">Elf · Dragonborne heritage<br>Polearm Warrior</p><div class="record-detail"><span>2500 PL</span><span>Everthorn</span></div></div><span class="record-open">Open character record <b aria-hidden="true">↗</b></span></a>
+    <a class="current-record record-lythariel" data-current-character="lythariel" href="/aevum-archive/characters/lythariel.html"><div class="record-topline"><span>02 / Alchemy &amp; nature</span><span class="record-state">Active</span></div><span class="character-crest"><svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M60 98V47M60 75C28 78 21 62 25 44c24 0 37 11 35 31ZM60 58c-3-23 11-39 33-40 4 24-7 40-33 40Z"/><path d="m39 58 21 17 20-37"/></svg></span><div class="current-record-copy"><p class="record-role">Druid / Alchemist</p><h3>Lythariel</h3><p class="record-summary">Wood Elf<br>Healing and humanitarian alchemy</p><div class="record-detail"><span>Botany</span><span>Alchemy</span></div></div><span class="record-open">Open character record <b aria-hidden="true">↗</b></span></a>
+    <a class="current-record record-william" data-current-character="william-carter" href="/aevum-archive/characters/william-carter.html"><div class="record-topline"><span>03 / Tavern &amp; brewing</span><span class="record-state">Active</span></div><span class="character-crest"><svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M31 39h51v50c-15 9-36 9-51 0ZM82 47h10c15 0 15 30 0 30H82M41 52v25M53 52v29M66 52v25M29 39c-10-15 4-28 18-23 10-12 26-4 28 6 13-3 21 8 14 17"/></svg></span><div class="current-record-copy"><p class="record-role">Tavern keeper / Brewer</p><h3>William<br>Carter</h3><p class="record-summary">A hearth, a trade<br>and a place on the road</p><div class="record-detail"><span>Tavern</span><span>Brewing</span></div></div><span class="record-open">Open character record <b aria-hidden="true">↗</b></span></a>
+    <a class="current-record record-jango" data-current-character="jango" href="/aevum-archive/characters/jango.html"><div class="record-topline"><span>04 / Sword &amp; adventure</span><span class="record-state">Active</span></div><span class="character-crest"><svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m27 96 60-69 10-6-4 17-59 65M68 43l15 15M60 52l14 12M28 91l-9-8M39 100l-10-9M21 103l8-12"/><path d="m42 28 10-9 8 22-8 10-20-9 10-14ZM52 51l33 33M75 93l18-18"/></svg></span><div class="current-record-copy"><p class="record-role">Swordsman / Adventurer</p><h3>Jango</h3><p class="record-summary">Half Human / Half Elf<br>Raised around House Zenith</p><div class="record-detail"><span>Swordsmanship</span><span>Adventure</span></div></div><span class="record-open">Open character record <b aria-hidden="true">↗</b></span></a>
+  </div>
+</section>
+<section class="shelf-crossroads" aria-labelledby="other-records-title"><div><p class="shelf-kicker">Beyond the current company</p><h2 id="other-records-title">Not every road is open.</h2><p>Astera's whereabouts remain unknown; Beru's record is sealed. Their entries remain in the wider character archive.</p></div><div class="crossroad-links"><a href="/aevum-archive/characters/all.html"><span>All states &amp; eras</span><strong>The character archive ↗</strong></a><a href="/aevum-archive/characters/bonds.html"><span>Connections &amp; histories</span><strong>Character Bonds ↗</strong></a><a href="/aevum-archive/npcs/"><span>Names beyond the party</span><strong>NPC Ledger ↗</strong></a></div></section>
+<footer class="footer"><span>&#10022; Aevum Archive &mdash; witnessed knowledge only.</span><span>Unwritten pages remain sealed until discovered.</span></footer>
+</main>
 <script src="/aevum-archive/assets/master-ui.js?v=20260821-2" defer></script>
 </body>
 </html>

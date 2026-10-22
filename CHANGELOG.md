@@ -2,6 +2,9 @@
 
 ## 2026-10-22
 
+- Refreshed the Playthrough index with a distinct current-campaign feature, a six-era monument and a clearer recovered chronology; preserved dates, sealed records and all campaign routes.
+- Rebuilt the current-character selection as four individually colored, portrait-free sigil cards. Portraits remain inside the character dossiers; corrected the campaign shortcut to four current names.
+- Added checks for portrait-free selection markup, exact current-company membership, chronology preservation, keyboard navigation and responsive/reduced-motion behavior.
 - Anchored Faaram Tempest's portrait to the top of his hero so the expanded fact block cannot create a gap above the artwork; preserved the full image composition.
 - Restored the NPC index exactly to its pre-redesign layout, including Izumi's green and Bomir's gold divine cards; removed the small portrait gallery and filter script. The Relic vault redesign remains unchanged.
 - Redesigned the NPC index as a portrait-led living ledger with readable record cards, six chapter links, accent-insensitive search and combined shelf filtering. All 34 named entries and three unopened presences remain available without JavaScript.
