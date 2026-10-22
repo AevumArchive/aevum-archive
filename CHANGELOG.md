@@ -1,5 +1,11 @@
 # Archive changelog
 
+## 2026-10-22
+
+- Redesigned the NPC index as a portrait-led living ledger with readable record cards, six chapter links, accent-insensitive search and combined shelf filtering. All 34 named entries and three unopened presences remain available without JavaScript.
+- Rebuilt the Relic index as a gold-and-violet vault with an animated archive seal, larger Nocturne and Runic Piercer exhibits, and separate World Item, heirloom, bound-artifact, material and equipment shelves. Preserved all ownership, Gray Orb scaling and classification boundaries.
+- Added responsive, keyboard, reduced-motion and no-JavaScript checks; kept the new visual layer scoped to the two indexes.
+
 ## 2026-10-21
 
 - Set Faaram Tempest's current classification to Elf, Dragonborne heritage, Wyrm Sovereign and Polearm Warrior; retained Legendary Everthorn, ASCENDED and 2500 PL, and synchronized the current character shelves and update summary.
