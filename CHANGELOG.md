@@ -2,6 +2,9 @@
 
 ## 2026-10-23
 
+- Added Poison's report of finding UWU apparently near death, discarded by the still-controlled Ichiro after his reawakening. Kept the report attributed and UWU's later rescue, recovery and autonomy unconfirmed.
+- Recorded Poison holding Jiro back for Faaram and Faaram's later inability to sense her. Changed Poison's current summaries to Presence Lost / Fate Unconfirmed without declaring a death or erasing her earlier Event Wish revival.
+- Connected Bomir's unnamed pull-away intervention and Faaram's conversation with the freed Ichiro before he lost consciousness. Added the confirmed use of Divinity Beyond Death against Jiro, with unknown mechanics and an estimated little over 200 blows during the witnessed 30-second barrage; preserved the distinction between barrage length and ability duration.
 - Recorded Faaram Tempest's multi-year Overlord Questline completion on the second-highest difficulty tier, with a dedicated closing chapter and the Transcendent achievement The One Who Refused the End. Preserved 2500 PL, ASCENDED and ACTIVE; distinguished 26 Soul Death escapes (five in the final eight sections) from resurrection after soul destruction.
 - Added a shared highest-rarity achievement exhibit with slow celestial motion, readable survival statistics and reduced-motion support; retained the separate Mythic Overlord's Grace mark and Astera's Divine discovery.
 - Replaced the brothers' willing-betrayal interpretation with the confirmed long-term outside control. Ichiro is free, unconscious and recovering; Jiro is free but critically injured after Bomir removed the Orb, with his left arm lost and survival uncertain. Recorded the Tal memory, Kazz's nonlethal intent and explicitly uncertain interception/captivity details.

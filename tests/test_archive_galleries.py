@@ -54,7 +54,8 @@ class ArchiveGalleriesTest(unittest.TestCase):
         self.assertNotRegex(page, r'<[^>]+\shidden(?:[=\s>])')
         self.assertNotIn("Enski", page)
         self.assertNotIn("Tenrei", page)
-        self.assertIn('<span class="pill">Alive</span>', page)
+        self.assertIn('<span class="pill">Fate Unconfirmed</span>', page)
+        self.assertIn('<span class="pill">Reported Near Death</span>', page)
 
     def test_npc_index_keeps_the_original_special_divine_design(self):
         page = (ROOT / "npcs/index.html").read_text(encoding="utf-8")

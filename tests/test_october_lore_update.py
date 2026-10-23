@@ -12,14 +12,16 @@ def page(path: str) -> str:
 
 
 class OctoberLoreUpdateTest(unittest.TestCase):
-    def test_poison_is_alive_across_public_records(self) -> None:
+    def test_poison_revival_is_historical_and_new_fate_is_unconfirmed(self) -> None:
         detail = page("npcs/poison.html")
         ledger = page("npcs/index.html")
         bonds = page("characters/bonds.html")
 
-        self.assertIn('<span>Current state</span><strong>Alive</strong>', detail)
-        self.assertIn('<span class="pill">Alive</span>', ledger)
-        self.assertIn('Mirrored mimic · alive', bonds)
+        self.assertIn('<span>Current state</span><strong>Presence Lost / Fate Unconfirmed</strong>', detail)
+        self.assertIn('an Event Wish later revived her', detail)
+        self.assertIn('<span class="pill">Fate Unconfirmed</span>', ledger)
+        self.assertIn('Held Jiro back · fate unconfirmed', bonds)
+        self.assertNotIn('<span>Current state</span><strong>Dead</strong>', detail)
         self.assertNotIn('Afterlife', detail)
         self.assertNotIn('fallen before Rift', bonds)
 
