@@ -60,7 +60,7 @@ class OctoberLoreUpdateTest(unittest.TestCase):
         self.assertIn('A Name Unknown to the World...', trophies)
         self.assertIn('<strong>Tenrei</strong>', trophies)
         self.assertIn('+250,000 Points', trophies)
-        self.assertIn('10 records held', trophies)
+        self.assertIn('11 records held', trophies)
         self.assertEqual(trophies.count('class="trophy-card'), 7)
         self.assertNotIn('Coin of the Astral Veil', trophies)
         self.assertNotIn('Astral Coin · Guts', trophies)

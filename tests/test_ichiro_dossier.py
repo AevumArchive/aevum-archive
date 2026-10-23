@@ -1,4 +1,4 @@
-"""Ichiro's new presentation must keep the sealed record and its lore intact."""
+"""Ichiro is free; the earlier Soul Seal remains a closed historical card."""
 
 from html import unescape
 from html.parser import HTMLParser
@@ -36,30 +36,31 @@ class IchiroDossierTest(unittest.TestCase):
         cls.detail = (ROOT / "npcs/ichiro.html").read_text(encoding="utf-8")
         cls.text = " ".join(unescape(re.sub(r"<[^>]+>", " ", cls.detail)).split())
 
-    def test_hero_keeps_death_seal_and_trace_distinct(self):
+    def test_hero_records_liberation_without_inventing_a_power_level(self):
         hero = re.search(r'<dl class="jiro-identity-facts">(.*?)</dl>', self.detail, re.S).group(1)
         facts = dict(re.findall(r'<dt>(.*?)</dt><dd>(.*?)</dd>', hero))
-        self.assertEqual(facts["Status"], "Dead / Remains Sealed")
+        self.assertEqual(facts["Status"], "Free · Unconscious")
         self.assertIn("Soul Manipulation", facts["Core power"])
-        self.assertIn("Shadow Realm · Cursed", facts["Remains"])
-        self.assertIn("Influence Through UWU", facts["Current trace"])
+        self.assertEqual(facts["Control"], "World Item connection severed")
+        self.assertEqual(facts["Recovery"], "Soul-separation damage")
         self.assertIn("Faaram's Servant", facts["Former role"])
         self.assertNotIn("Power Level", facts)
 
-    def test_conspiracy_and_family_history_survive(self):
+    def test_cellar_memory_and_world_item_control_are_explicit(self):
         for fact in ("destroyed their home planet", "original universe", "perfect souls",
-                     "Ichiro remembered everything", "taken his brother from him",
-                     "turned Timeo against Faaram", "restored Jiro's memories",
-                     "stood apart from the final clash", "killed by the Death Note"):
+                     "drinking tea", "servant cellar", "possibly more than one person",
+                     "warn Faaram", "Ichiro lost consciousness", "World Item controlled his soul and body",
+                     "Kazz lent Faaram part of his power", "not intend to kill either brother"):
             with self.subTest(fact=fact):
                 self.assertIn(fact, self.text)
-        self.assertIn("Jiro's Reinforced Soul resisted Ichiro's direct control", self.text)
+        self.assertIn("suspected explanation", self.text)
+        self.assertIn("cannot simply be treated as his freely chosen intent", self.text)
 
-    def test_seal_and_likeness_do_not_imply_resurrection_or_open_access(self):
-        for fact in ("slow loss of his own conscious existence", "Reaching them is considered nearly impossible",
-                     "destroy the body almost immediately", "the Soul Seal stays closed",
-                     "Multiversal Convergence", "Whether the fusion lifted an older veil remains unknown",
-                     "one of Ichiro's finger bones", "autonomy cannot yet be separated from his control"):
+    def test_seal_history_does_not_override_current_survival_or_free_uwu(self):
+        for fact in ("slow loss of his own conscious existence", "nearly impossible to reach",
+                     "destroy the body almost immediately", "The Soul Seal stays closed",
+                     "historical record", "present survival remain unrecorded",
+                     "one of Ichiro's finger bones", "does not establish that she is free as well"):
             with self.subTest(fact=fact):
                 self.assertIn(fact, self.text)
         self.assertNotIn("No likeness is opened", self.text)

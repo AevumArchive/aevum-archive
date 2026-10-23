@@ -2,6 +2,10 @@
 
 ## 2026-10-23
 
+- Recorded Faaram Tempest's multi-year Overlord Questline completion on the second-highest difficulty tier, with a dedicated closing chapter and the Transcendent achievement The One Who Refused the End. Preserved 2500 PL, ASCENDED and ACTIVE; distinguished 26 Soul Death escapes (five in the final eight sections) from resurrection after soul destruction.
+- Added a shared highest-rarity achievement exhibit with slow celestial motion, readable survival statistics and reduced-motion support; retained the separate Mythic Overlord's Grace mark and Astera's Divine discovery.
+- Replaced the brothers' willing-betrayal interpretation with the confirmed long-term outside control. Ichiro is free, unconscious and recovering; Jiro is free but critically injured after Bomir removed the Orb, with his left arm lost and survival uncertain. Recorded the Tal memory, Kazz's nonlethal intent and explicitly uncertain interception/captivity details.
+- Synchronized the NPC, bond, faction, history, dimensional and homepage/update summaries. Kept the closed Soul Seal card inside Ichiro's open profile as historical material; did not invent a resurrection, a named controller, a new Power Level or UWU's liberation.
 - Replaced the Hall of Names' illustrated library backdrop and side banners with a restrained violet archive gradient; centered the heading independently of the search and moved search into its own row.
 - Preserved all 15 character records and the five original ornate status frames, with no portrait previews. Retained search, status filters, sorting, pagination and list view; added layout and frame regression checks.
 
