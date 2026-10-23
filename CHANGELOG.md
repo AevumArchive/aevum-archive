@@ -2,6 +2,8 @@
 
 ## 2026-10-23
 
+- Rebuilt the Lore Atlas as a portrait-free violet-and-gold folio, with a slow animated astrolabe, chapter navigation, a Transcendent finale feature, current-aftermath links, six archive wings and distinct cosmology/dimensional gateways.
+- Brought Faaram's completed Overlord Questline, the brothers' liberation, Poison's unconfirmed fate and UWU's reported near-death condition to the hub. Preserved all existing destinations, dated historical eras and sealed knowledge boundaries; added a direct Astera Lost / Unknown reference without implying her death.
 - Added Poison's report of finding UWU apparently near death, discarded by the still-controlled Ichiro after his reawakening. Kept the report attributed and UWU's later rescue, recovery and autonomy unconfirmed.
 - Recorded Poison holding Jiro back for Faaram and Faaram's later inability to sense her. Changed Poison's current summaries to Presence Lost / Fate Unconfirmed without declaring a death or erasing her earlier Event Wish revival.
 - Connected Bomir's unnamed pull-away intervention and Faaram's conversation with the freed Ichiro before he lost consciousness. Added the confirmed use of Divinity Beyond Death against Jiro, with unknown mechanics and an estimated little over 200 blows during the witnessed 30-second barrage; preserved the distinction between barrage length and ability duration.
