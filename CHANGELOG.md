@@ -1,5 +1,10 @@
 # Archive changelog
 
+## 2026-10-25
+
+- Updated Ichiro to Free / Awake at 3300 PL: during training he received 15% of Jiro's power and awakened further strength. Kept the earlier unconscious recovery as history, without deriving a new Power Level, recovery outcome or ability for Jiro.
+- Added the supplied sunlit Ichiro portrait unchanged and synchronized the profile, brother's bond portrait, NPC/bond/faction/cosmology shelves, Lore Atlas and current update summaries. Preserved the original Soul Seal animation as a closed historical card inside the open profile.
+
 ## 2026-10-23
 
 - Rebuilt the Lore Atlas as a portrait-free violet-and-gold folio, with a slow animated astrolabe, chapter navigation, a Transcendent finale feature, current-aftermath links, six archive wings and distinct cosmology/dimensional gateways.

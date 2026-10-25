@@ -55,7 +55,7 @@ class LoreHubTest(unittest.TestCase):
     def test_latest_revelations_keep_completion_and_survival_distinct(self):
         for fact in ("Overlord Questline / COMPLETED", "The One Who Refused the End", "TRANSCENDENT",
                      "Highest achievement rarity", "26 Soul Deaths escaped", "5 in the final 8 sections",
-                     "They never chose to leave.", "outside control", "Ichiro Free · Unconscious",
+                     "They never chose to leave.", "outside control", "Ichiro Awake · 3300 PL",
                      "Jiro Free · Critical", "Poison Fate Unconfirmed", "UWU Reported Near Death"):
             self.assertIn(fact, self.text)
         self.assertIn("characters/faaram.html#overlord-completion", self.source)

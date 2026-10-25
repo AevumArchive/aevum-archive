@@ -36,15 +36,15 @@ class IchiroDossierTest(unittest.TestCase):
         cls.detail = (ROOT / "npcs/ichiro.html").read_text(encoding="utf-8")
         cls.text = " ".join(unescape(re.sub(r"<[^>]+>", " ", cls.detail)).split())
 
-    def test_hero_records_liberation_without_inventing_a_power_level(self):
+    def test_hero_records_liberation_awaking_and_supplied_power_level(self):
         hero = re.search(r'<dl class="jiro-identity-facts">(.*?)</dl>', self.detail, re.S).group(1)
         facts = dict(re.findall(r'<dt>(.*?)</dt><dd>(.*?)</dd>', hero))
-        self.assertEqual(facts["Status"], "Free · Unconscious")
+        self.assertEqual(facts["Status"], "Free · Awake")
         self.assertIn("Soul Manipulation", facts["Core power"])
         self.assertEqual(facts["Control"], "World Item connection severed")
-        self.assertEqual(facts["Recovery"], "Soul-separation damage")
+        self.assertEqual(facts["Training"], "15% of Jiro’s power")
         self.assertIn("Faaram's Servant", facts["Former role"])
-        self.assertNotIn("Power Level", facts)
+        self.assertEqual(facts["Power Level"], "3300")
 
     def test_cellar_memory_and_world_item_control_are_explicit(self):
         for fact in ("destroyed their home planet", "original universe", "perfect souls",
@@ -73,10 +73,10 @@ class IchiroDossierTest(unittest.TestCase):
         self.assertGreaterEqual(len(set(parser.anchors)), 6)
         for sheet in ("jiro-dossier.css", "ichiro-dossier.css"):
             self.assertIn("/aevum-archive/assets/" + sheet, parser.styles)
-        portrait = [img for img in parser.images if img["src"].endswith("/ichiro.png")]
+        portrait = [img for img in parser.images if img["src"].endswith("/ichiro-awakened.png")]
         self.assertEqual(len(portrait), 1)
-        self.assertEqual(portrait[0]["width"], "1024")
-        self.assertEqual(portrait[0]["height"], "1536")
+        self.assertEqual(portrait[0]["width"], "1087")
+        self.assertEqual(portrait[0]["height"], "1447")
         for image in parser.images:
             self.assertIn("alt", image)
             self.assertTrue((ROOT / image["src"].removeprefix("/aevum-archive/")).is_file())

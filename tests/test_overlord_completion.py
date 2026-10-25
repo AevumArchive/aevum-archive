@@ -91,7 +91,8 @@ class OverlordCompletionTest(unittest.TestCase):
             source = page(filename)
             self.assertNotIn("hidden betrayer", source)
             self.assertNotIn("Former servant · betrayer", source)
-            self.assertIn("Unconscious" if filename != "characters/bonds.html" else "unconscious", source)
+            self.assertIn("Awake" if filename == "npcs/index.html" else "awake", source)
+            self.assertIn("3300 PL", source)
         for filename in ("index.html", "updates/index.html"):
             self.assertIn("The One Who Refused the End", page(filename))
             self.assertIn("They never chose to leave", page(filename))

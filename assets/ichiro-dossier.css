@@ -8,6 +8,7 @@ body.route-npcs-ichiro {
   background: radial-gradient(ellipse at 93% 4%, #24151c, transparent 42rem), radial-gradient(ellipse at 0 45%, rgb(81 31 46 / .12), transparent 48rem), repeating-linear-gradient(105deg, transparent 0 179px, rgb(184 151 162 / .018) 180px, transparent 181px 340px), linear-gradient(180deg, #090a0d, #100c10 48%, #07080b) !important;
 }
 .ichiro-dossier .jiro-hero { background: radial-gradient(ellipse at 15% 25%, rgb(83 36 50 / .15), transparent 55%), #090a0d; }
+.ichiro-dossier .jiro-hero-art { align-self: start; }
 .ichiro-dossier .jiro-identity h1 { font-size: clamp(5rem, 9vw, 9rem); }
 .ichiro-dossier .jiro-epithet { color: #ba9ea8; }
 .ichiro-dossier .jiro-identity-facts dt { color: #b19aa3; }
