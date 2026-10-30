@@ -1,5 +1,10 @@
 # Archive changelog
 
+## 2026-10-30
+
+- Dressed all 123 wiki pages for Halloween on October 30–31, 2026 in Europe/Berlin time: an illustrated lantern banner, corner cobwebs, drifting mist, embers and occasional bats, with warm amber navigation accents. Preserved profile artwork, character status frames, special NPC cards and all canon.
+- Automatically restores each original page theme on November 1, including already-open tabs. Added a session-wide quiet-effects switch, keyboard support and reduced-motion/print styles; no external assets or tracking.
+
 ## 2026-10-25
 
 - Updated Ichiro to Free / Awake at 3300 PL: during training he received 15% of Jiro's power and awakened further strength. Kept the earlier unconscious recovery as history, without deriving a new Power Level, recovery outcome or ability for Jiro.

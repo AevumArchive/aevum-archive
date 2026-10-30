@@ -78,7 +78,8 @@ class LoreHubTest(unittest.TestCase):
         self.assertEqual(len(self.parsed.images), 1)  # Shared header crest only.
         self.assertNotIn("assets/images/", self.source)
         self.assertNotRegex(self.source, r'<[^>]+\shidden(?:[=\s>])')
-        self.assertEqual(self.parsed.scripts, ["/aevum-archive/assets/master-ui.js?v=20260821-2"])
+        self.assertEqual(self.parsed.scripts, ["/aevum-archive/assets/halloween.js?v=20261030-allhallows1",
+                                               "/aevum-archive/assets/master-ui.js?v=20260821-2"])
 
     def test_hub_styles_are_scoped_local_and_accessible(self):
         css = (ROOT / "assets/lore-atlas.css").read_text(encoding="utf-8")
