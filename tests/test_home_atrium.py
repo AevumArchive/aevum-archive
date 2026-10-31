@@ -51,6 +51,9 @@ class HomeAtriumTest(unittest.TestCase):
         self.assertIn('New to Aevum?', self.page)
 
     def test_current_facts_and_ledger_records_survive(self):
+        self.assertIn('A record of lives once lived,<br><em>and those still to unfold.</em>', self.page)
+        self.assertIn('Pick up the thread', self.page)
+        self.assertNotIn('and what they left behind', self.page)
         for fact in ('data-archive-player-count>4,981<', 'Avalon', 'Neris', 'First Roads.',
                      'Ichiro — Awake at 3300 PL', 'The One Who Refused the End', 'They never chose to leave',
                      '2500 PL', '26 Soul Deaths escaped', 'Jiro’s last recorded injuries remain unresolved',

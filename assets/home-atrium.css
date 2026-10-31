@@ -39,17 +39,27 @@ body.route-home .atrium-hero h1 { margin: 25px 0 32px; color: #eee6eb; font-weig
 .grimoire-seal-orbit { transform-origin: 300px 300px; animation: grimoire-orbit 150s linear infinite; }
 .grimoire-seal-star { stroke: #b39a71; stroke-width: .8; opacity: .7; }
 @keyframes grimoire-orbit { to { transform: rotate(360deg); } }
-.atrium-census { display: flex; align-items: center; justify-content: space-between; gap: 35px; border-top: 1px solid var(--atrium-line); border-bottom: 1px solid var(--atrium-line); padding: 25px 0; }
-.atrium-census-count { display: flex; align-items: center; gap: 18px; }
-.atrium-census-count strong { color: #e0c9a5; font: 400 2.8rem/1 Georgia, serif; }
-.atrium-census-count > span { color: #ac9ab8; font: 400 .75rem/1.8 var(--folio-label); }
-.atrium-era-link { display: flex; align-items: center; gap: 16px; text-decoration: none; }
+.atrium-census { position: relative; display: grid; grid-template-columns: .95fr 1.1fr 1.1fr; align-items: stretch; gap: 0; margin-top: 12px; border: 1px solid #ad90bd35; border-inline-color: #ad90bd19; background: radial-gradient(ellipse at 0 50%, #856b4313, transparent 50%), linear-gradient(100deg, #17101c80, #100c1580); }
+.atrium-census::before, .atrium-census::after { content: "✧"; position: absolute; z-index: 1; top: -9px; color: #c6a775; background: #0d0912; font: 400 16px/1 Georgia, serif; pointer-events: none; }
+.atrium-census::before { left: -6px; }
+.atrium-census::after { right: -6px; }
+.atrium-census-count { display: flex; align-items: center; gap: 20px; padding: 25px 30px; }
+.atrium-census-mark { display: grid; place-items: center; flex: 0 0 44px; width: 44px; height: 44px; border: 1px solid #c6a7753b; border-radius: 50%; color: #d4b887; font: 400 1.8rem/1 Georgia, serif; box-shadow: 0 0 0 5px #c6a77508; }
+.atrium-census-count > div { display: grid; gap: 6px; }
+.atrium-census-count small { color: #bda5ca; font: 400 .67rem/1.7 var(--folio-label); text-transform: uppercase; letter-spacing: .08em; }
+.atrium-census-count strong { color: #e0c9a5; font: 400 2.8rem/1 Georgia, serif; letter-spacing: -.03em; }
+.atrium-census-count > div > span { color: #ac9ab8; font: 400 .75rem/1.8 var(--folio-label); }
+.atrium-era-link { display: flex; align-items: center; justify-content: space-between; min-width: 0; gap: 18px; padding: 26px 30px; border-inline: 1px solid var(--atrium-line); text-decoration: none; transition: background .25s; }
 .atrium-live-dot { display: inline-block; width: 5px; height: 5px; flex: 0 0 5px; border-radius: 50%; background: #b0c6a5; box-shadow: 0 0 14px #a2d79c66; }
-.atrium-era-link small { display: block; margin-bottom: 6px; color: #a793b3; font: 400 .75rem/1.7 var(--folio-label); text-transform: uppercase; letter-spacing: .1em; }
-.atrium-era-link b { color: #ddcfE5; font: 400 1.12rem/1.6 Georgia, serif; }
-.atrium-era-link > span:last-child { margin-left: 22px; color: #c4a4d5; }
-.atrium-scroll { color: #c1a5d2; font: 400 .75rem/1.8 var(--folio-label); text-decoration: none; }
-.atrium-scroll span { margin-left: 20px; }
+.atrium-era-link small { display: flex; align-items: center; gap: 10px; margin-bottom: 13px; color: #ad98bb; font: 400 .67rem/1.7 var(--folio-label); text-transform: uppercase; letter-spacing: .07em; }
+.atrium-era-link b { color: #ddcfe5; font: 400 1.35rem/1.4 Georgia, serif; }
+.atrium-era-arrow { color: #bca0cc; font-size: 1rem; }
+.atrium-scroll { display: grid; grid-template-columns: minmax(0, 1fr) 40px; gap: 12px 15px; align-content: center; align-items: center; min-width: 0; padding: 26px 30px; color: #dcc49b; text-decoration: none; transition: background .25s; }
+.atrium-scroll small { grid-column: 1; color: #b7a2c3; font: 400 .67rem/1.7 var(--folio-label); text-transform: uppercase; letter-spacing: .07em; }
+.atrium-scroll > span { grid-column: 1; font: italic 400 clamp(1.15rem, 1.65vw, 1.6rem)/1.35 Georgia, serif; }
+.atrium-scroll > i { grid-column: 2; grid-row: 1 / span 2; display: grid; place-items: center; width: 40px; height: 40px; border: 1px solid #c2a57655; border-radius: 50%; color: #d3b783; font: normal 400 1.1rem/1 Georgia, serif; transition: transform .25s, border-color .25s; }
+.atrium-era-link:hover, .atrium-scroll:hover { background: #af88bf09; }
+.atrium-scroll:hover > i { transform: translateY(3px); border-color: #dbbf8a; }
 .atrium-dust { position: absolute; z-index: -1; inset: 0; pointer-events: none; overflow: hidden; }
 .atrium-dust i { position: absolute; bottom: 20%; left: 62%; width: 2px; height: 2px; border-radius: 50%; background: #d9bb8c; opacity: 0; box-shadow: 0 0 9px #d4ba86; animation: atrium-drift 26s linear infinite; }
 .atrium-dust i:nth-child(2) { left: 29%; animation-delay: -6s; }
@@ -140,8 +150,9 @@ body.route-home .home-atrium .footer { position: relative; isolation: isolate; d
  .atrium-current, .atrium-explore { column-gap: 45px; }
  .atrium-path { padding-inline: 16px; }
  .atrium-path strong { font-size: 1.25rem; }
- .atrium-scroll { display: none; }
- .atrium-census { justify-content: space-around; }
+ .atrium-census-count, .atrium-era-link, .atrium-scroll { padding-inline: 22px; }
+ .atrium-census-count { gap: 15px; }
+ .atrium-census-mark { flex-basis: 36px; width: 36px; height: 36px; font-size: 1.5rem; }
 }
 @media (max-width: 900px) {
  .home-atrium .atrium-width { width: calc(100% - 64px); }
@@ -175,9 +186,12 @@ body.route-home .home-atrium .footer { position: relative; isolation: isolate; d
  .home-atrium .atrium-intro { font-size: .75rem; margin-top: 22px; }
  .atrium-actions { flex-direction: column; gap: 26px; margin-top: 30px; }
  .home-atrium .atrium-button { padding-inline: 18px; font-size: .75rem; gap: 22px; }
- .atrium-census { flex-direction: column; align-items: stretch; gap: 24px; padding-block: 25px; }
- .atrium-census-count { justify-content: center; }
- .atrium-era-link { justify-content: center; padding-top: 20px; border-top: 1px solid var(--atrium-line); }
+ .atrium-census { grid-template-columns: 1fr; }
+ .atrium-census-count { padding: 24px; gap: 22px; }
+ .atrium-census-mark { width: 44px; height: 44px; flex-basis: 44px; font-size: 1.8rem; }
+ .atrium-era-link { padding: 24px; border-inline: 0; border-block: 1px solid var(--atrium-line); }
+ .atrium-scroll { padding: 24px; }
+ .atrium-scroll > span { font-size: 1.4rem; }
  .atrium-current { grid-template-columns: 1fr; padding-top: 50px; }
  .grimoire-chapter { gap: 15px; margin-bottom: 20px; }
  .grimoire-chapter small { font-size: .75rem; }
