@@ -1,4 +1,4 @@
-/* Aevum's welcome threshold. Homepage only; one atmospheric artwork, no portrait previews. */
+/* Aevum's welcome threshold. Homepage only; image-free atmosphere and no portrait previews. */
 body.route-home { --atrium-ivory: #f1e8f2; --atrium-muted: #bdafc8; --atrium-violet: #ccb0e3; --atrium-gold: #ddbe8b; --atrium-line: #b99ac72d; background: radial-gradient(ellipse at 100% 40%, #3d244f33, transparent 60rem), radial-gradient(ellipse at 0 80%, #3d243533, transparent 55rem), #09070e !important; color: var(--atrium-ivory); }
 body.route-home::before, body.route-home::after, body.route-home main.home-atrium::before, body.route-home main.home-atrium::after { content: none !important; }
 body.route-home main.home-atrium { position: relative; z-index: 1; width: 100%; max-width: none; margin: 0; padding: 0; }
@@ -9,8 +9,7 @@ body.route-home main.home-atrium { position: relative; z-index: 1; width: 100%; 
 .home-atrium p { text-wrap: pretty; }
 .home-atrium .atrium-kicker { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; margin: 0; color: var(--atrium-gold); font: 500 .65rem/1.8 Verdana, sans-serif; text-transform: uppercase; letter-spacing: .17em; }
 .atrium-kicker > span:not(.atrium-live-dot) { font-size: 1.25rem; }
-.atrium-hero { position: relative; isolation: isolate; overflow: hidden; min-height: 790px; background: #0b0810; }
-.atrium-backdrop { position: absolute; z-index: -3; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 66% 50%; }
+.atrium-hero { position: relative; isolation: isolate; overflow: hidden; min-height: 790px; background: radial-gradient(ellipse at 75% 32%, #64438044, transparent 58%), radial-gradient(ellipse at 85% 65%, #c0984d16, transparent 48%), linear-gradient(125deg, #0a0710, #16101e 68%, #0a0810); }
 .atrium-hero::before { content: ""; pointer-events: none; position: absolute; z-index: -2; inset: 0; background: linear-gradient(90deg, #09070ef2 0%, #09070ec4 27%, #09070e45 57%, #09070e00 80%), linear-gradient(180deg, #09070e25 55%, #09070e 100%); }
 .atrium-hero::after { content: ""; pointer-events: none; position: absolute; z-index: -1; inset: 0; background: linear-gradient(180deg, #09070e33, transparent 15%), radial-gradient(ellipse at 70% 60%, #b989db0a, transparent 65%); }
 .atrium-hero-inner { position: relative; display: grid; grid-template-columns: 1.3fr .7fr; min-height: 790px; padding-top: 68px; align-items: center; }
@@ -113,7 +112,6 @@ body.route-home .home-atrium .footer { width: min(1440px, calc(100% - 80px)); ma
   .atrium-hero-inner { grid-template-columns: 1fr; padding-top: 55px; }
   .atrium-welcome { max-width: 590px; }
   .atrium-hero-note { display: none; }
-  .atrium-backdrop { object-position: 66% 50%; opacity: .75; }
   .atrium-hero::before { background: linear-gradient(90deg, #09070ee6 0%, #09070e9c 50%, #09070e33), linear-gradient(0deg, #09070e, transparent 50%); }
   .atrium-current { grid-template-columns: 1fr; gap: 45px; padding-block: 65px; }
   .atrium-starting-points { display: grid; grid-template-columns: 1fr; }
@@ -127,7 +125,6 @@ body.route-home .home-atrium .footer { width: min(1440px, calc(100% - 80px)); ma
   .atrium-hero-inner { padding-top: 45px; }
   body.route-home .atrium-hero h1 { font-size: clamp(4.7rem, 19vw, 7rem); margin-top: 28px; }
   .atrium-hero::before { background: linear-gradient(90deg, #09070ecf, #09070e88), linear-gradient(0deg, #09070e, transparent 60%); }
-  .atrium-backdrop { object-position: 62% 50%; }
   .home-atrium .atrium-kicker { font-size: .56rem; letter-spacing: .12em; }
   .home-atrium .atrium-intro { font-size: .96rem; }
   .atrium-intro br { display: none; }
@@ -156,4 +153,4 @@ body.route-home .home-atrium .footer { width: min(1440px, calc(100% - 80px)); ma
   html:has(body.route-home) { scroll-behavior: auto !important; }
   .home-atrium *, .home-atrium *::before, .home-atrium *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
-@media print { .atrium-backdrop, .atrium-dust { display: none; } }
+@media print { .atrium-dust { display: none; } }

@@ -2,7 +2,6 @@
 from html.parser import HTMLParser
 from pathlib import Path
 import re
-import struct
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -32,16 +31,11 @@ class HomeAtriumTest(unittest.TestCase):
         self.parsed = AtriumParser()
         self.parsed.feed(self.page)
 
-    def test_one_new_atmospheric_image_replaces_the_old_tile_gallery(self):
+    def test_homepage_has_no_background_or_tile_artwork(self):
         self.assertEqual([image['src'] for image in self.parsed.images], [
-            '/aevum-archive/assets/home-v2/home-archive-sigil.webp',
-            '/aevum-archive/assets/images/archive-threshold.png'])
-        self.assertEqual(self.parsed.images[1]['alt'], '')
-        self.assertEqual(self.parsed.images[1]['fetchpriority'], 'high')
-        self.assertEqual(self.parsed.images[1]['width'], '1672')
-        self.assertEqual(self.parsed.images[1]['height'], '941')
-        data = (ROOT / 'assets/images/archive-threshold.png').read_bytes()
-        self.assertEqual(struct.unpack('>II', data[16:24]), (1672, 941))
+            '/aevum-archive/assets/home-v2/home-archive-sigil.webp'])
+        self.assertNotIn('archive-threshold', self.page)
+        self.assertNotIn('atrium-backdrop', self.page)
         for old in ('home-hero-archive-realm', 'home-current-playthrough', 'home-card-', 'home-v2.css', 'landing-polish.css'):
             self.assertNotIn(old, self.page)
 
@@ -71,4 +65,5 @@ class HomeAtriumTest(unittest.TestCase):
         self.assertIn('prefers-reduced-motion: reduce', styles)
         self.assertIn('pointer-events: none', styles)
         self.assertIn(':focus-visible', styles)
-        self.assertNotIn('url(', styles)  # The one artwork is a semantic, preloaded HTML image.
+        self.assertNotIn('url(', styles)
+        self.assertNotIn('atrium-backdrop', styles)

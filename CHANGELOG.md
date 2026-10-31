@@ -2,8 +2,8 @@
 
 ## 2026-10-31
 
-- Rebuilt the homepage as an inviting violet-and-gold archive threshold with one newly generated atmospheric backdrop, replacing the old illustrated tile gallery and mismatched homepage ornament layers. Added clear paths to the current campaign, current company and newcomer handbook, six portrait-free archive wings and a secondary destination row.
-- Preserved the 4,981-player census and sync fallback, latest three lore updates, all original destinations and Halloween expiry. Kept shared site branding and artwork used by other pages; recorded the generated background's source prompt alongside the new asset.
+- Rebuilt the homepage as an inviting violet-and-gold archive threshold with subtle gradients, replacing the old illustrated tile gallery and mismatched homepage ornament layers. Removed the generated backdrop entirely at the user's request. Added clear paths to the current campaign, current company and newcomer handbook, six portrait-free archive wings and a secondary destination row.
+- Preserved the 4,981-player census and sync fallback, latest three lore updates, all original destinations and Halloween expiry. Kept shared site branding and artwork used by other pages.
 - Modernized the NPC directory with a violet editorial header, an animated record register, clearer chapter navigation, more readable portrait-free ordinary cards and local name/affiliation/Power Level search with shelf filters.
 - Preserved Lilith and Veyr's two existing preview backgrounds, Izumi and Bomir's green/gold empty-circle designs and Peter's white-to-crimson gradient. Kept all 37 entries (34 known records and three unopened presences), all links and uncertain states; corrected the independent shelf count to five and removed the obsolete broken-loyalty framing for the controlled brothers.
 - Search progressively enhances the open HTML ledger, supports accent-insensitive names, keyboard use, empty results and clear/reset; all records remain accessible without JavaScript. Kept Halloween expiry and reduced-motion preferences intact.
