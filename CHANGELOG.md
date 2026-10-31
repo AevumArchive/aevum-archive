@@ -1,5 +1,11 @@
 # Archive changelog
 
+## 2026-10-31
+
+- Modernized the NPC directory with a violet editorial header, an animated record register, clearer chapter navigation, more readable portrait-free ordinary cards and local name/affiliation/Power Level search with shelf filters.
+- Preserved Lilith and Veyr's two existing preview backgrounds, Izumi and Bomir's green/gold empty-circle designs and Peter's white-to-crimson gradient. Kept all 37 entries (34 known records and three unopened presences), all links and uncertain states; corrected the independent shelf count to five and removed the obsolete broken-loyalty framing for the controlled brothers.
+- Search progressively enhances the open HTML ledger, supports accent-insensitive names, keyboard use, empty results and clear/reset; all records remain accessible without JavaScript. Kept Halloween expiry and reduced-motion preferences intact.
+
 ## 2026-10-30
 
 - Dressed all 123 wiki pages for Halloween on October 30–31, 2026 in Europe/Berlin time: an illustrated lantern banner, corner cobwebs, drifting mist, embers and occasional bats, with warm amber navigation accents. Preserved profile artwork, character status frames, special NPC cards and all canon.

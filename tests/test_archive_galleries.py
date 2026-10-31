@@ -51,7 +51,9 @@ class ArchiveGalleriesTest(unittest.TestCase):
                      "Uwubama", "Library Entity", "Chax", "Malrik", "Bobby", "???"):
             with self.subTest(name=name):
                 self.assertIn(name, page)
-        self.assertNotRegex(page, r'<[^>]+\shidden(?:[=\s>])')
+        # Only the progressively enhanced search UI starts hidden, never a record.
+        self.assertNotRegex(page, r'<[^>]+class="[^"]*npc-card[^"]*"[^>]*\shidden(?:[=\s>])')
+        self.assertNotRegex(page, r'<section[^>]*\shidden(?:[=\s>])')
         self.assertNotIn("Enski", page)
         self.assertNotIn("Tenrei", page)
         self.assertIn('<span class="pill">Fate Unconfirmed</span>', page)

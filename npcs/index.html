@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="/aevum-archive/assets/global-header.css?v=20260902-header4">
   <link rel="stylesheet" href="/aevum-archive/assets/npc-effects.css?v=20260916-2">
   <link rel="stylesheet" href="/aevum-archive/assets/npc-index.css?v=20260918-2">
+  <link rel="stylesheet" href="/aevum-archive/assets/npc-directory.css?v=20261031-directory1">
   <link rel="stylesheet" href="/aevum-archive/assets/halloween.css?v=20261030-allhallows1">
   <script src="/aevum-archive/assets/halloween.js?v=20261030-allhallows1"></script>
 </head>
@@ -23,12 +24,20 @@
   <a class="brand" href="/aevum-archive/"><img class="brand-mark home-brand-crest" src="/aevum-archive/assets/home-v2/home-archive-sigil.webp" alt="" width="1254" height="1254"><span><span class="brand-title">Aevum Archive</span><span class="brand-subtitle">world wiki and living archive</span></span></a>
   <nav class="nav" aria-label="Archive navigation"><a href="/aevum-archive/">Start</a><a href="/aevum-archive/playthroughs/">Playthroughs</a><a href="/aevum-archive/characters/">Characters</a><a href="/aevum-archive/codex/">Codex</a><a href="/aevum-archive/npcs/">NPCs</a><a href="/aevum-archive/lore/">Lore</a><a href="/aevum-archive/events/">Events</a><a href="/aevum-archive/achievements/">Achievements</a><a href="/aevum-archive/leaderboard/">Leaderboard</a><a href="/aevum-archive/world-items/">Relics</a><a href="/aevum-archive/downloads/texture-pack.html">Downloads</a></nav>
 </header>
-<main class="page">
-<section class="hero compact-hero npc-hero">
-  <div class="npc-hero-copy"><p class="eyebrow">NPC registry · witnessed records</p><h1>Names beyond the party.</h1><p class="lede">Sovereigns, servants, allies and anomalies—ordered by the place they hold in the living archive.</p><div class="hero-actions"><a class="button primary" href="#current-npcs">Current path</a><a class="button" href="#sovereigns">Major presences</a><a class="button" href="#divine-alliance">Divine alliance</a></div></div>
-  <aside class="archive-card npc-ledger-seal" aria-label="NPC registry summary">
-    <span class="npc-seal-orbit" aria-hidden="true"><i></i><b>◇</b></span>
-    <div class="npc-ledger-summary"><p class="eyebrow">Opened ledger</p><h2><span>34</span> known names</h2><p>Six ordered shelves. No invented history beyond what the Archive has witnessed.</p></div>
+<main class="page npc-directory">
+<section class="npc-directory-hero" aria-labelledby="npc-directory-title">
+  <div class="npc-directory-copy">
+    <p class="directory-kicker">The living ledger <span>NPC Archive / Open Index</span></p>
+    <h1 id="npc-directory-title">Names beyond<br>the <em>party.</em></h1>
+    <p class="directory-intro">Some walk beside you. Others change the world.<br>Sovereigns, servants, allies and anomalies—each with a place in the story.</p>
+    <div class="directory-actions"><a class="directory-button" href="#current-npcs">Follow the current path <span aria-hidden="true">↗</span></a><a href="#sovereigns">Meet the exceptional <span aria-hidden="true">↓</span></a></div>
+  </div>
+  <aside class="npc-directory-register" aria-label="NPC registry summary">
+    <div class="directory-register-head"><span>Witnessed presences</span><span aria-hidden="true">◇</span></div>
+    <div class="directory-register-count"><strong>34</strong><span>known<br>records</span></div>
+    <div class="directory-register-orbit" aria-hidden="true"><i></i><i></i><b>✧</b></div>
+    <p>Power does not tell the whole story.<br>Every name leaves a mark.</p>
+    <div class="directory-register-foot"><span><b>06</b> archive shelves</span><span><b>03</b> unopened presences</span></div>
   </aside>
 </section>
 
@@ -37,9 +46,17 @@
   <a href="#sovereigns"><span>02</span><strong>Major Presences</strong><small>2 exceptional records</small></a>
   <a href="#divine-alliance"><span>03</span><strong>Götterfamilie</strong><small>2 divine records</small></a>
   <a href="#servants"><span>04</span><strong>Bonded</strong><small>15 servant records</small></a>
-  <a href="#known-figures"><span>05</span><strong>Independent</strong><small>6 recovered records</small></a>
+  <a href="#known-figures"><span>05</span><strong>Independent</strong><small>5 recovered records</small></a>
   <a href="#contained-records"><span>06</span><strong>Restricted</strong><small>4 contained records</small></a>
 </nav>
+
+<form class="npc-directory-tools" data-npc-tools role="search" aria-label="Search NPC records" hidden>
+  <label class="directory-search" for="npc-search"><span>Find a presence</span><input id="npc-search" name="q" type="search" placeholder="Name, allegiance, power level…" autocomplete="off" aria-controls="npc-search-results"></label>
+  <label for="npc-shelf"><span>Archive shelf</span><select id="npc-shelf" name="shelf" aria-controls="npc-search-results"><option value="all">All six shelves</option><option value="current-npcs">Current Path</option><option value="sovereigns">Major Presences</option><option value="divine-alliance">Götterfamilie</option><option value="servants">Bonded</option><option value="known-figures">Independent</option><option value="contained-records">Restricted</option></select></label>
+  <button type="reset">Clear filters <span aria-hidden="true">↺</span></button>
+  <p id="npc-search-results" role="status" aria-live="polite" aria-atomic="true">37 entries across six shelves</p>
+</form>
+<div class="npc-directory-empty" data-npc-empty hidden><span aria-hidden="true">◇</span><h2>No matching presence.</h2><p>Try another name, affiliation or power level, or clear the filters.</p><button type="button" data-npc-clear>Show all records</button></div>
 
 <section class="section" id="current-npcs">
   <div class="section-head"><div><p class="eyebrow">Current playthrough</p><h2>Figures on the road.</h2></div><p>Opened names from the active fantasy-medieval shelf.</p></div>
@@ -89,7 +106,7 @@
 <section class="section" id="servants">
   <div class="section-head"><div><p class="eyebrow">Recovered bonds</p><h2>Servants and bonded entities.</h2></div><p>Current, former and fallen servants remain together while their individual states stay visible.</p></div>
   <div class="npc-ledger-group">
-    <div class="npc-group-head"><div><span class="npc-count">06 records</span><h3>Foundational and fractured bonds</h3></div><p>The earliest servants and the names most deeply marked by broken loyalty.</p></div>
+    <div class="npc-group-head"><div><span class="npc-count">06 records</span><h3>Foundational and fractured bonds</h3></div><p>The earliest servants and the names most deeply marked by loss and outside control.</p></div>
     <div class="npc-compact-grid">
       <a class="card npc-card npc-feature-uwu" href="/aevum-archive/npcs/uwu.html"><span class="realm-symbol">⌛</span><h3>UWU · The First Servant</h3><p>Found by Poison, reportedly near death after being discarded by the still-controlled Ichiro.</p><div class="meta-row"><span class="pill">Major Story NPC</span><span class="pill">Last PL 1377</span><span class="pill">Reported Near Death</span></div></a>
       <a class="card npc-card faaram-npc" href="/aevum-archive/npcs/jiro.html"><span class="realm-symbol">⚔</span><h3>Jiro</h3><p>Freed when Bomir removed the Orb. Left arm lost, chest devastated; survival uncertain.</p><div class="meta-row"><span class="pill">Faaram</span><span class="pill">Critical</span></div></a>
@@ -148,5 +165,6 @@
 <footer class="footer"><span>&#10022; Aevum Archive &mdash; witnessed knowledge only.</span><span>Unwritten pages remain sealed until discovered.</span></footer>
   </main>
 <script src="/aevum-archive/assets/master-ui.js?v=20260821-2" defer></script>
+<script src="/aevum-archive/assets/npc-directory.js?v=20261031-directory1" defer></script>
 </body>
 </html>
