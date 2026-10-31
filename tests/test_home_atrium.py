@@ -66,16 +66,24 @@ class HomeAtriumTest(unittest.TestCase):
         self.assertIn('pointer-events: none', styles)
         self.assertIn(':focus-visible', styles)
         self.assertEqual(re.findall(r'url\("([^"]+)"\)', styles),
-                         ['/aevum-archive/assets/fonts/pirata-one/PirataOne-Regular.ttf'])
+                         ['/aevum-archive/assets/fonts/cinzel/Cinzel-Variable.ttf'])
         self.assertNotIn('atrium-backdrop', styles)
 
     def test_grimoire_layout_uses_local_type_and_decorative_seal(self):
         styles = (ROOT / 'assets/home-atrium.css').read_text(encoding='utf-8')
         self.assertIn('font-display: swap', styles)
-        self.assertIn('"Aevum Script"', styles)
-        self.assertIn('"Courier New"', styles)
-        self.assertTrue((ROOT / 'assets/fonts/pirata-one/OFL.txt').is_file())
+        self.assertIn('"Aevum Display"', styles)
+        self.assertNotIn('"Courier New"', styles)
+        self.assertIn('--folio-label: Verdana, Geneva, sans-serif', styles)
+        self.assertTrue((ROOT / 'assets/fonts/cinzel/OFL.txt').is_file())
         self.assertIn('class="grimoire-seal" aria-hidden="true"', self.page)
         self.assertIn('class="grimoire-campaign"', self.page)
         self.assertEqual(self.page.count('class="grimoire-chapter"'), 3)
         self.assertIn('.atrium-wings { display: block;', styles)
+
+    def test_seasonal_strip_is_scoped_to_the_cover_and_matches_its_measure(self):
+        styles = (ROOT / 'assets/home-atrium.css').read_text(encoding='utf-8')
+        self.assertIn('html.halloween-night body.route-home > .halloween-banner', styles)
+        self.assertIn('width: min(1360px, calc(100% - 112px))', styles)
+        self.assertIn('border-radius: 0;', styles)
+        self.assertNotIn('font-size: .54rem', styles)
