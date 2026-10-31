@@ -1,0 +1,7 @@
+# Archive threshold — decorative homepage art
+
+Generated with the built-in `image_gen` tool on 2026-10-31. Original source copied unchanged to `archive-threshold.png` (1672 × 941). This is atmospheric artwork, not a named canonical place.
+
+Prompt:
+
+Use case: stylized-concept. Asset type: cinematic decorative background for the Aevum Archive dark fantasy wiki homepage, wide landscape 16:9. Create an epic yet inviting threshold into an ancient living archive: colossal weathered black stone archways framing a warm pale-gold opening to an endless misty violet starfield, subtle astronomical rings etched into the architecture, a quiet illuminated path leading inward. Restrained deep aubergine, charcoal, amethyst and antique gold, elegant atmospheric painted dark fantasy concept art, sophisticated rich detail, not horror, not neon, no game HUD. Composition: the portal architecture and luminous opening concentrated on the RIGHT half, the LEFT half almost empty deep shadow and faint violet mist suitable for highly readable large HTML title overlay. Soft warm rim lighting, fine drifting dust and vast sense of scale; welcoming mystery rather than violence. It is purely decorative atmosphere, not a depiction of a named canonical location. No people, no faces, no portraits, no figures, no books floating in front, no text, no logos, no lettering, no watermark. Crisp high quality landscape artwork.

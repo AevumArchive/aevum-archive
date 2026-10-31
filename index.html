@@ -5,16 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Start - Aevum Archive</title>
   <meta name="description" content="A living Aevum wiki for characters, playthroughs, lore, events and traveler downloads.">
-  <link rel="preload" as="image" href="/aevum-archive/assets/home-v2/home-hero-archive-realm.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="/aevum-archive/assets/images/archive-threshold.png" fetchpriority="high">
   <link rel="stylesheet" href="/aevum-archive/assets/styles.css?v=20260815-sitefocus2">
-  <link rel="stylesheet" href="/aevum-archive/assets/frame-overrides.css?v=20260817-cardstates7">
-  <link rel="stylesheet" href="/aevum-archive/assets/ornament-v3.css?v=20260817-1">
-  <link rel="stylesheet" href="/aevum-archive/assets/round4-assets.css?v=20260817-3">
   <link rel="stylesheet" href="/aevum-archive/assets/master-ui.css?v=20260821-2">
-  <link rel="stylesheet" href="/aevum-archive/assets/landing-polish.css?v=20260827-1">
-  <link rel="stylesheet" href="/aevum-archive/assets/home-v2.css?v=20260830-homev2-6">
-  <link rel="stylesheet" href="/aevum-archive/assets/master-pass.css?v=20260912-1">
   <link rel="stylesheet" href="/aevum-archive/assets/global-header.css?v=20260902-header4">
+  <link rel="stylesheet" href="/aevum-archive/assets/home-atrium.css?v=20261031-atrium1">
   <link rel="stylesheet" href="/aevum-archive/assets/halloween.css?v=20261030-allhallows1">
   <script src="/aevum-archive/assets/halloween.js?v=20261030-allhallows1"></script>
 </head>
@@ -37,67 +32,55 @@
     <a href="/aevum-archive/downloads/texture-pack.html">Downloads</a>
   </nav>
 </header>
-<main class="page">
-<section class="welcome-gate home-v2-hero">
-  <div class="gate-glow"></div>
-  <p class="eyebrow">The archive doors are open</p>
-  <h1>Aevum Archive</h1>
-  <p class="lede">A living archive for characters, playthroughs, lore, relics and world events — gathered as the realm reveals them.</p>
-  <div class="realm-census" aria-label="Overall player count"><span class="realm-census-sigil" aria-hidden="true">&#10022;</span><span><small>Archive Census</small><strong data-archive-player-count>4,981</strong><em>players witnessed overall</em></span></div>
-  <div class="hero-actions portal-actions centered-actions">
-    <a class="button primary mega-button" href="/aevum-archive/playthroughs/#current">Continue Playthrough</a>
-    <a class="button" href="/aevum-archive/characters/">Current Characters</a>
-    <a class="button compact-button" href="/aevum-archive/downloads/texture-pack.html">Downloads</a>
-  </div>
-</section>
-<section class="section home-v2-dashboard" aria-label="Archive entry shelves">
-  <article class="card landing-feature home-v2-playthrough">
-    <img class="home-v2-playthrough-art" src="/aevum-archive/assets/home-v2/home-current-playthrough.webp" alt="" width="1448" height="1086" decoding="async">
-    <div class="home-v2-playthrough-copy">
-      <p class="eyebrow">Current Playthrough</p>
-      <h2>Fantasy Medieval Playthrough</h2>
-      <p>The Age of First Roads has begun. Avalon holds the current stage, Neris is rising from village toward city, and the first character records are now taking shape.</p>
-      <div class="meta-row"><span class="pill">Age of First Roads</span><span class="pill">Avalon</span><span class="pill">Neris</span></div>
-      <a class="small-button" href="/aevum-archive/playthroughs/#current">Enter Playthrough <span aria-hidden="true">→</span></a>
+<main class="page home-atrium">
+<section class="atrium-hero" aria-labelledby="atrium-title">
+  <img class="atrium-backdrop" src="/aevum-archive/assets/images/archive-threshold.png" alt="" width="1672" height="941" fetchpriority="high" decoding="async">
+  <div class="atrium-dust" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="atrium-hero-inner atrium-width">
+    <div class="atrium-welcome">
+      <p class="atrium-kicker"><span aria-hidden="true">✧</span> A world worth remembering</p>
+      <h1 id="atrium-title">Aevum<br><em>Archive.</em></h1>
+      <p class="atrium-invitation">Every life leaves a story.<br>Step inside. Find yours.</p>
+      <p class="atrium-intro">Characters, forgotten histories and worlds still unfolding.<br>Your next chapter begins here.</p>
+      <div class="atrium-actions"><a class="atrium-button" href="/aevum-archive/playthroughs/#current">Enter the current story <span aria-hidden="true">↗</span></a><a class="atrium-text-link" href="#explore">Explore the Archive <span aria-hidden="true">↓</span></a></div>
     </div>
-  </article>
-  <article class="card quiet-card quick-panel home-v2-shelves">
-    <p class="eyebrow">Quick shelves</p>
-    <a class="shelf-link" data-shelf-icon="✦" href="/aevum-archive/characters/all.html"><span>Characters</span><small>Active, sealed, fallen and retired</small></a>
-    <a class="shelf-link" data-shelf-icon="◇" href="/aevum-archive/codex/"><span>Character Codex</span><small>Races, bloodlines and traits discovered by the realm.</small></a>
-    <a class="shelf-link" data-shelf-icon="☽" href="/aevum-archive/npcs/"><span>NPCs</span><small>Servants, instructors and world figures</small></a>
-    <a class="shelf-link" data-shelf-icon="♕" href="/aevum-archive/achievements/"><span>Achievements</span><small>Trophy wall and locked deeds</small></a>
-    <a class="shelf-link" data-shelf-icon="⌖" href="/aevum-archive/lore/"><span>Lore Atlas</span><small>Kingdoms, settlements and noble houses</small></a>
-    <a class="shelf-link" data-shelf-icon="Ⅰ" href="/aevum-archive/leaderboard/"><span>Leaderboard</span><small>Awaiting player synchronization</small></a>
-  </article>
-  <div class="home-v2-features">
-    <a class="home-v2-feature-card feature-world-events" href="/aevum-archive/world-events/">
-      <img src="/aevum-archive/assets/home-v2/home-card-world-events.webp" alt="" width="1122" height="1402" loading="lazy" decoding="async">
-      <span class="home-v2-feature-copy"><h3>World Events</h3><p>Realm-scale turns such as World Anchor Part I.</p></span>
-    </a>
-    <a class="home-v2-feature-card feature-relics" href="/aevum-archive/world-items/">
-      <img src="/aevum-archive/assets/home-v2/home-card-relics.webp" alt="" width="1122" height="1402" loading="lazy" decoding="async">
-      <span class="home-v2-feature-copy"><h3>Relics</h3><p>World Items, sealed relics and bound artifacts.</p></span>
-    </a>
-    <a class="home-v2-feature-card feature-npcs" href="/aevum-archive/npcs/">
-      <img src="/aevum-archive/assets/home-v2/home-card-npc-ledger.webp" alt="" width="1122" height="1402" loading="lazy" decoding="async">
-      <span class="home-v2-feature-copy"><h3>NPC Ledger</h3><p>Known figures, servants and instructors.</p></span>
-    </a>
-    <a class="home-v2-feature-card feature-sealed" href="/aevum-archive/sealed-records/">
-      <img src="/aevum-archive/assets/home-v2/home-card-sealed-records.webp" alt="" width="1122" height="1402" loading="lazy" decoding="async">
-      <span class="home-v2-feature-copy"><h3>Sealed Records</h3><p>Locked names, hidden banners and unopened truths.</p></span>
-    </a>
-    <a class="home-v2-feature-card feature-downloads" href="/aevum-archive/downloads/texture-pack.html">
-      <img src="/aevum-archive/assets/home-v2/home-card-downloads.webp" alt="" width="1122" height="1402" loading="lazy" decoding="async">
-      <span class="home-v2-feature-copy"><h3>Downloads</h3><p>Resource packs and traveler bundles.</p></span>
-    </a>
-    <a class="home-v2-feature-card feature-events" href="/aevum-archive/events/">
-      <img src="/aevum-archive/assets/home-v2/home-card-events.webp" alt="" width="1122" height="1402" loading="lazy" decoding="async">
-      <span class="home-v2-feature-copy"><h3>Events</h3><p>Smaller records and scenes already safe to read.</p></span>
-    </a>
+    <div class="atrium-hero-note" aria-hidden="true"><span>Beyond the written page</span><i></i><small>The world remembers.</small></div>
+    <div class="atrium-census">
+      <div class="atrium-census-count"><strong data-archive-player-count>4,981</strong><span>players witnessed<br>across the Archive</span></div>
+      <a class="atrium-era-link" href="/aevum-archive/playthroughs/fantasy-medieval.html"><span class="atrium-live-dot" aria-hidden="true"></span><span><small>The current chapter</small><b>Fantasy Medieval</b></span><span aria-hidden="true">↗</span></a>
+      <a class="atrium-scroll" href="#current-story">Pick up the thread <span aria-hidden="true">↓</span></a>
+    </div>
   </div>
 </section>
-<section class="section" aria-labelledby="latest-archive-updates">
+
+<section class="atrium-current atrium-width" id="current-story" aria-labelledby="current-story-title">
+  <div class="atrium-current-copy">
+    <p class="atrium-kicker"><span class="atrium-live-dot" aria-hidden="true"></span> The story is still being written</p>
+    <h2 id="current-story-title">The Age of<br><em>First Roads.</em></h2>
+    <p>Avalon holds the current stage. Neris is rising from village toward city, and new lives are finding their place in the world.</p>
+    <div class="atrium-current-meta"><span>Fantasy Medieval Playthrough</span><span>Avalon · Neris</span></div>
+    <a class="atrium-button atrium-button-outline" href="/aevum-archive/playthroughs/#current">Continue the playthrough <span aria-hidden="true">↗</span></a>
+  </div>
+  <div class="atrium-starting-points">
+    <a class="atrium-path" href="/aevum-archive/characters/"><span class="atrium-path-mark" aria-hidden="true">01</span><span><small>Follow the present</small><strong>The current company</strong><em>Meet the characters walking the current road.</em></span><b aria-hidden="true">↗</b></a>
+    <a class="atrium-path" href="/aevum-archive/codex/handbook.html"><span class="atrium-path-mark" aria-hidden="true">02</span><span><small>New to Aevum?</small><strong>Your first steps</strong><em>Begin with the handbook. Get to know the world.</em></span><b aria-hidden="true">↗</b></a>
+    <a class="atrium-path" href="/aevum-archive/playthroughs/"><span class="atrium-path-mark" aria-hidden="true">03</span><span><small>Look beyond this era</small><strong>Every road before us</strong><em>Explore the playthroughs that shaped the Archive.</em></span><b aria-hidden="true">↗</b></a>
+  </div>
+</section>
+
+<section class="atrium-explore atrium-width" id="explore" aria-labelledby="explore-title">
+  <div class="atrium-section-head"><div><p class="atrium-kicker">Choose a thread</p><h2 id="explore-title">A world to <em>get lost in.</em></h2></div><p>Follow a name, a place or a question.<br>See where the record takes you.</p></div>
+  <div class="atrium-wings">
+    <a class="atrium-wing" href="/aevum-archive/characters/all.html"><div class="atrium-wing-top"><span aria-hidden="true">✦</span><small>01 / Hall of Names</small><b aria-hidden="true">↗</b></div><h3>Characters</h3><p>Lives, legacies and the paths they leave behind.</p><span class="atrium-wing-link">Find a name <span aria-hidden="true">→</span></span></a>
+    <a class="atrium-wing" href="/aevum-archive/npcs/"><div class="atrium-wing-top"><span aria-hidden="true">☾</span><small>02 / The living ledger</small><b aria-hidden="true">↗</b></div><h3>NPCs</h3><p>Allies, sovereigns and presences beyond the party.</p><span class="atrium-wing-link">Meet the world <span aria-hidden="true">→</span></span></a>
+    <a class="atrium-wing" href="/aevum-archive/lore/"><div class="atrium-wing-top"><span aria-hidden="true">⌖</span><small>03 / Lore Atlas</small><b aria-hidden="true">↗</b></div><h3>Lore</h3><p>Kingdoms, histories and the truths between them.</p><span class="atrium-wing-link">Follow the history <span aria-hidden="true">→</span></span></a>
+    <a class="atrium-wing" href="/aevum-archive/codex/"><div class="atrium-wing-top"><span aria-hidden="true">◇</span><small>04 / Character Codex</small><b aria-hidden="true">↗</b></div><h3>The Codex</h3><p>Races, paths, traits and abilities revealed so far.</p><span class="atrium-wing-link">Study the record <span aria-hidden="true">→</span></span></a>
+    <a class="atrium-wing" href="/aevum-archive/world-items/"><div class="atrium-wing-top"><span aria-hidden="true">◈</span><small>05 / The relic vault</small><b aria-hidden="true">↗</b></div><h3>Relics</h3><p>World Items, bound artifacts and extraordinary finds.</p><span class="atrium-wing-link">Enter the vault <span aria-hidden="true">→</span></span></a>
+    <a class="atrium-wing" href="/aevum-archive/achievements/"><div class="atrium-wing-top"><span aria-hidden="true">♕</span><small>06 / Deeds remembered</small><b aria-hidden="true">↗</b></div><h3>Achievements</h3><p>The discoveries and impossible journeys worth remembering.</p><span class="atrium-wing-link">Witness the milestones <span aria-hidden="true">→</span></span></a>
+  </div>
+  <nav class="atrium-more" aria-label="More archive destinations"><span>There is more to discover</span><a href="/aevum-archive/world-events/">World Events ↗</a><a href="/aevum-archive/events/">Events ↗</a><a href="/aevum-archive/leaderboard/">Leaderboard ↗</a><a href="/aevum-archive/sealed-records/">Sealed Records ↗</a><a href="/aevum-archive/downloads/texture-pack.html">Downloads ↗</a></nav>
+</section>
+<section class="section atrium-updates atrium-width" aria-labelledby="latest-archive-updates">
   <div class="section-head"><div><p class="eyebrow">Living Archive</p><h2 id="latest-archive-updates">Latest opened records.</h2></div><a class="small-button" href="/aevum-archive/updates/">Open update ledger</a></div>
   <div class="archive-branch-grid">
     <a class="archive-branch-card" href="/aevum-archive/npcs/ichiro.html"><span class="archive-update-tag continuity">Awakening</span><h3>Ichiro — Awake at 3300 PL</h3><p>Ichiro is awake. Training with 15% of Jiro’s power awakened further strength and brought him to 3300 PL.</p></a>
