@@ -1,4 +1,4 @@
-"""The new liberation canon supersedes apparent memory recovery and safe survival."""
+"""Liberation and severe injuries remain historical after Jiro's confirmed awakening."""
 
 from pathlib import Path
 import re
@@ -18,11 +18,11 @@ class JiroReturnTest(unittest.TestCase):
 
     def test_orb_amplification_is_not_a_new_current_power_measurement(self):
         facts = self.facts("jiro-power-ledger")
-        self.assertEqual(facts["Current power"], "Unconfirmed / Critical")
+        self.assertEqual(facts["Current power"], "3000")
         self.assertEqual(facts["Historical power"], "Approx. 2200–2400")
         self.assertEqual(facts["Memory state"], "Gaps during control")
         self.assertEqual(facts["Control"], "Orb removed")
-        self.assertEqual(facts["Survival"], "Uncertain")
+        self.assertEqual(facts["Recovery"], "Healed · Permanent left-arm injury")
         detail = page("npcs/jiro.html")
         self.assertIn("Jiro injured Bomir", detail)
         self.assertIn("The echo is Jiro's own soul", detail)
@@ -34,20 +34,21 @@ class JiroReturnTest(unittest.TestCase):
         self.assertIn("Ultimate Empowered Resurrection", detail)
         self.assertIn("cost Faaram the ability itself", detail)
         self.assertIn("Jiro survived the Aizen event with severe injuries", detail)
-        self.assertEqual(detail.count('src="/aevum-archive/assets/images/jiro-returned.png"'), 1)
-        self.assertIn("Before the final injuries", detail)
-        self.assertIn("Both portraits predate the loss of his left arm", detail)
-        for phrase in ("left arm", "massive hole in his chest", "condition is critical", "whether he will survive"):
+        self.assertEqual(detail.count('src="/aevum-archive/assets/images/jiro-awakened.png"'), 1)
+        self.assertIn('href="/aevum-archive/assets/images/jiro-returned.png"', detail)
+        self.assertIn("Both earlier portraits predate the loss of his left arm", detail)
+        for phrase in ("left arm", "massive hole in his chest", "condition was critical", "survival was uncertain"):
             self.assertIn(phrase, detail)
         self.assertNotIn("His loyalty was conscious and chosen.", detail)
         self.assertNotIn("every living thing is <em>vermin", detail)
 
-    def test_connected_current_records_agree_that_jiro_is_critical_not_dead(self):
+    def test_connected_current_records_agree_that_jiro_is_awakened_not_dead(self):
         npc_entry = re.search(r'<a[^>]+href="/aevum-archive/npcs/jiro.html".*?</a>', page("npcs/index.html"), re.S).group(0)
         bond_entry = re.search(r'<a[^>]+href="/aevum-archive/npcs/jiro.html".*?</a>', page("characters/bonds.html"), re.S).group(0)
         faction_entry = re.search(r'<div class="faction-member"><strong>Jiro</strong>.*?</div>', page("lore/factions/faaram-servants.html"), re.S).group(0)
         for entry in (npc_entry, bond_entry, faction_entry):
-            self.assertIn("critical", entry.lower())
+            self.assertIn("3000 PL", entry)
+            self.assertIn("awaken", entry.lower())
             self.assertIn("free", entry.lower())
             self.assertNotIn("fallen", entry.lower())
 
@@ -56,8 +57,8 @@ class JiroReturnTest(unittest.TestCase):
         ledger = self.facts("jiro-power-ledger")
         for short, full in (("Power Level", "Current power"), ("Historical PL", "Historical power"), ("Memory", "Memory state"), ("Control", "Control")):
             self.assertEqual(hero[short], ledger[full])
-        self.assertEqual(hero["Presence"], "Free · Critical")
-        self.assertEqual(hero["Injuries"], "Left arm lost · Massive chest wound")
+        self.assertEqual(hero["Presence"], "Free · Awakened")
+        self.assertEqual(hero["Injuries"], "Permanent left-arm injury · Left hand needs special protection")
 
     def test_the_warning_and_implantation_keep_uncertainty_distinct(self):
         detail = page("npcs/jiro.html")

@@ -55,9 +55,9 @@ class HomeAtriumTest(unittest.TestCase):
         self.assertIn('Pick up the thread', self.page)
         self.assertNotIn('and what they left behind', self.page)
         for fact in ('data-archive-player-count>4,981<', 'Avalon', 'Neris', 'First Roads.',
-                     'Ichiro — Awake at 3300 PL', 'The One Who Refused the End', 'They never chose to leave',
-                     '2500 PL', '26 Soul Deaths escaped', 'Jiro’s last recorded injuries remain unresolved',
-                     'Poison’s fate is unconfirmed'):
+                     'Ichiro — Awake at 3300 PL', 'The One Who Refused the End', 'Jiro — Awakened at 3000 PL',
+                     '2500 PL', '26 Soul Deaths escaped', 'his left arm remains permanently injured',
+                     'his left hand needs special protection'):
             self.assertIn(fact, self.page)
         self.assertIn('archive-sync.js', self.page)
         self.assertIn('halloween.js?v=20261030-allhallows1', self.page)

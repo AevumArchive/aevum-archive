@@ -62,7 +62,7 @@ class OverlordCompletionTest(unittest.TestCase):
     def test_no_new_facts_are_invented_about_the_controller_or_recovery(self):
         story = text(page("lore/history/ichiro-and-jiro.html"))
         for fact in ("probably intercepted", "That interpretation remains a suspicion", "Kazz lent Faaram part of his power",
-                     "no intention of killing Ichiro or Jiro", "World Item", "mysterious Orb", "left arm", "survive is unknown"):
+                     "no intention of killing Ichiro or Jiro", "World Item", "mysterious Orb", "left arm", "survival was uncertain"):
             self.assertIn(fact, story)
         self.assertNotIn("Gray Orb", story)
         ichiro = page("npcs/ichiro.html")
@@ -95,7 +95,8 @@ class OverlordCompletionTest(unittest.TestCase):
             self.assertIn("3300 PL", source)
         for filename in ("index.html", "updates/index.html"):
             self.assertIn("The One Who Refused the End", page(filename))
-            self.assertIn("They never chose to leave", page(filename))
+            self.assertIn("Jiro — Awakened at 3000 PL", page(filename))
+        self.assertIn("They never chose to leave", page("updates/index.html"))
 
 
 if __name__ == "__main__":

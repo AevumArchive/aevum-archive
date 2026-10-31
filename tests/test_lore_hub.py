@@ -56,7 +56,7 @@ class LoreHubTest(unittest.TestCase):
         for fact in ("Overlord Questline / COMPLETED", "The One Who Refused the End", "TRANSCENDENT",
                      "Highest achievement rarity", "26 Soul Deaths escaped", "5 in the final 8 sections",
                      "They never chose to leave.", "outside control", "Ichiro Awake · 3300 PL",
-                     "Jiro Free · Critical", "Poison Fate Unconfirmed", "UWU Reported Near Death"):
+                     "Jiro Awakened · 3000 PL", "Poison Fate Unconfirmed", "UWU Reported Near Death"):
             self.assertIn(fact, self.text)
         self.assertIn("characters/faaram.html#overlord-completion", self.source)
         self.assertIn("lore/history/ichiro-and-jiro.html", self.source)

@@ -1,4 +1,4 @@
-"""The October 25 update changes Ichiro, not Jiro's unreported current strength."""
+"""Ichiro's awakening and power share do not invent calculated stats or inherited traits."""
 
 import hashlib
 from pathlib import Path
@@ -44,10 +44,10 @@ class IchiroAwakeningTest(unittest.TestCase):
                                  "For now, all he can do is wait for Ichiro to wake", "He is now free, unconscious and recovering"):
                     self.assertNotIn(obsolete, source)
 
-    def test_donor_share_does_not_invent_a_jiro_power_level_or_new_trait(self):
+    def test_donor_share_does_not_calculate_a_jiro_power_level_or_new_trait(self):
         jiro = page("npcs/jiro.html")
         hero = re.search(r'<dl class="jiro-identity-facts">.*?</dl>', jiro, re.S).group(0)
-        self.assertIn("Unconfirmed / Critical", hero)
+        self.assertIn("<dt>Power Level</dt><dd>3000</dd>", hero)
         self.assertIn("Approx. 2200–2400", hero)
         self.assertNotRegex(jiro, r"22000|22,000|18700|18,700")
         source = page("npcs/ichiro.html")

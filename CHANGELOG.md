@@ -2,6 +2,8 @@
 
 ## 2026-10-31
 
+- Updated Jiro to Free / Awakened at 3000 PL after training with Ichiro. He is healed, while his left arm remains permanently injured and his left hand requires special protection. Added his search for the family sword inherited across generations, without inventing its name, location, classification or abilities.
+- Added the supplied awakened Jiro portrait unchanged and synchronized Ichiro's brother portrait, NPC/bond/faction/cosmology shelves, Faaram/Bomir aftermath references, brother history, Lore Atlas and homepage/update ledger. Preserved the Orb conflict, arm loss and critical aftermath as history without inventing a healing mechanism; left Poison and UWU's unresolved fates unchanged.
 - Refreshed the Fantasy Medieval campaign page as a green-and-gold chronicle with readable Cinzel headings, an engraved decorative shield, five chapter links, a current-state ribbon, portrait-free character/NPC entries, an open geography register and a clearer story-thread ledger. Preserved all 19 original record links/descriptions and their uncertainty/completion states; added direct World Atlas and campaign-index shortcuts without inventing map geometry or changing canon.
 - Changed the homepage invitation to include lives still to unfold and rebuilt the census/current-chapter/continuation strip as one engraved ribbon. Preserved “Pick up the thread” and made its link available on mobile as well as desktop.
 - Replaced the homepage's dense Gothic lettering with locally hosted Cinzel and its tiny typewriter labels with larger Verdana text. Integrated the Halloween strip with the cover's content width and palette, removing the abrupt background edge while preserving the grimoire layout, seal and automatic seasonal expiry.
