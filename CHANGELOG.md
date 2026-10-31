@@ -2,6 +2,7 @@
 
 ## 2026-10-31
 
+- Refreshed the Fantasy Medieval campaign page as a green-and-gold chronicle with readable Cinzel headings, an engraved decorative shield, five chapter links, a current-state ribbon, portrait-free character/NPC entries, an open geography register and a clearer story-thread ledger. Preserved all 19 original record links/descriptions and their uncertainty/completion states; added direct World Atlas and campaign-index shortcuts without inventing map geometry or changing canon.
 - Changed the homepage invitation to include lives still to unfold and rebuilt the census/current-chapter/continuation strip as one engraved ribbon. Preserved “Pick up the thread” and made its link available on mobile as well as desktop.
 - Replaced the homepage's dense Gothic lettering with locally hosted Cinzel and its tiny typewriter labels with larger Verdana text. Integrated the Halloween strip with the cover's content width and palette, removing the abrupt background edge while preserving the grimoire layout, seal and automatic seasonal expiry.
 - Recast the image-free homepage as a dark grimoire: a locally hosted Gothic wordmark, engraved animated SVG seal, marginalia and three chapter markers. Set the current campaign as a folio with a compact factual register, changed the six navigation tiles into an open contents index and gave the latest ledger entries a lead-story layout. Retained all routes, current lore, the player census, Halloween behavior and reduced-motion/no-script access.
