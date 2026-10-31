@@ -8,7 +8,8 @@
   <link rel="stylesheet" href="/aevum-archive/assets/styles.css?v=20260815-sitefocus2">
   <link rel="stylesheet" href="/aevum-archive/assets/master-ui.css?v=20260821-2">
   <link rel="stylesheet" href="/aevum-archive/assets/global-header.css?v=20260902-header4">
-  <link rel="stylesheet" href="/aevum-archive/assets/home-atrium.css?v=20261031-atrium2">
+  <link rel="preload" href="/aevum-archive/assets/fonts/pirata-one/PirataOne-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="/aevum-archive/assets/home-atrium.css?v=20261031-grimoire1">
   <link rel="stylesheet" href="/aevum-archive/assets/halloween.css?v=20261030-allhallows1">
   <script src="/aevum-archive/assets/halloween.js?v=20261030-allhallows1"></script>
 </head>
@@ -33,16 +34,26 @@
 </header>
 <main class="page home-atrium">
 <section class="atrium-hero" aria-labelledby="atrium-title">
+  <div class="grimoire-seal" aria-hidden="true">
+    <svg viewBox="0 0 600 600" fill="none">
+      <circle cx="300" cy="300" r="286"/><circle cx="300" cy="300" r="279"/>
+      <g class="grimoire-seal-orbit"><circle cx="300" cy="300" r="256" stroke-dasharray="1 14"/><path d="M300 17 583 300 300 583 17 300Z"/><path d="M100 100H500V500H100Z"/><path d="m300 31 7 14-7 14-7-14Zm269 269-14 7-14-7 14-7ZM300 569l-7-14 7-14 7 14ZM31 300l14-7 14 7-14 7Z"/></g>
+      <circle cx="300" cy="300" r="224"/><circle cx="300" cy="300" r="194" stroke-dasharray="95 16 2 16"/>
+      <path class="grimoire-seal-star" d="m300 98 21 175 181 27-181 21-21 181-27-181L98 300l175-27Z"/>
+      <path d="M300 60v45m240 195h-45M300 540v-45M60 300h45"/>
+    </svg>
+  </div>
+  <span class="grimoire-margin grimoire-margin-left" aria-hidden="true">A record of the living world</span>
+  <span class="grimoire-margin grimoire-margin-right" aria-hidden="true">The unwritten remains sealed</span>
   <div class="atrium-dust" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
   <div class="atrium-hero-inner atrium-width">
     <div class="atrium-welcome">
-      <p class="atrium-kicker"><span aria-hidden="true">✧</span> A world worth remembering</p>
-      <h1 id="atrium-title">Aevum<br><em>Archive.</em></h1>
-      <p class="atrium-invitation">Every life leaves a story.<br>Step inside. Find yours.</p>
-      <p class="atrium-intro">Characters, forgotten histories and worlds still unfolding.<br>Your next chapter begins here.</p>
+      <p class="atrium-kicker"><span aria-hidden="true">✧</span> The living chronicle <span aria-hidden="true">✧</span></p>
+      <h1 id="atrium-title"><span class="grimoire-name">Aevum</span> <span class="grimoire-subtitle">Archive</span></h1>
+      <p class="atrium-invitation">A record of those who lived,<br><em>and what they left behind.</em></p>
+      <p class="atrium-intro">The lives. The worlds. The consequences.</p>
       <div class="atrium-actions"><a class="atrium-button" href="/aevum-archive/playthroughs/#current">Enter the current story <span aria-hidden="true">↗</span></a><a class="atrium-text-link" href="#explore">Explore the Archive <span aria-hidden="true">↓</span></a></div>
     </div>
-    <div class="atrium-hero-note" aria-hidden="true"><span>Beyond the written page</span><i></i><small>The world remembers.</small></div>
     <div class="atrium-census">
       <div class="atrium-census-count"><strong data-archive-player-count>4,981</strong><span>players witnessed<br>across the Archive</span></div>
       <a class="atrium-era-link" href="/aevum-archive/playthroughs/fantasy-medieval.html"><span class="atrium-live-dot" aria-hidden="true"></span><span><small>The current chapter</small><b>Fantasy Medieval</b></span><span aria-hidden="true">↗</span></a>
@@ -52,13 +63,18 @@
 </section>
 
 <section class="atrium-current atrium-width" id="current-story" aria-labelledby="current-story-title">
+  <div class="grimoire-chapter" aria-hidden="true"><span>I</span><small>The current chronicle</small><i></i></div>
   <div class="atrium-current-copy">
-    <p class="atrium-kicker"><span class="atrium-live-dot" aria-hidden="true"></span> The story is still being written</p>
-    <h2 id="current-story-title">The Age of<br><em>First Roads.</em></h2>
+    <p class="atrium-kicker"><span class="atrium-live-dot" aria-hidden="true"></span> A chapter still unfolding</p>
+    <h2 id="current-story-title"><small>The Age of</small>First Roads.</h2>
     <p>Avalon holds the current stage. Neris is rising from village toward city, and new lives are finding their place in the world.</p>
     <div class="atrium-current-meta"><span>Fantasy Medieval Playthrough</span><span>Avalon · Neris</span></div>
-    <a class="atrium-button atrium-button-outline" href="/aevum-archive/playthroughs/#current">Continue the playthrough <span aria-hidden="true">↗</span></a>
   </div>
+  <aside class="grimoire-campaign" aria-label="Current playthrough">
+    <p class="atrium-kicker">Where the story stands</p>
+    <dl><div><dt>Era</dt><dd>Fantasy Medieval</dd></div><div><dt>Current stage</dt><dd>Avalon</dd></div><div><dt>A settlement growing</dt><dd>Neris</dd></div></dl>
+    <a class="atrium-button atrium-button-outline" href="/aevum-archive/playthroughs/#current">Continue the playthrough <span aria-hidden="true">↗</span></a>
+  </aside>
   <div class="atrium-starting-points">
     <a class="atrium-path" href="/aevum-archive/characters/"><span class="atrium-path-mark" aria-hidden="true">01</span><span><small>Follow the present</small><strong>The current company</strong><em>Meet the characters walking the current road.</em></span><b aria-hidden="true">↗</b></a>
     <a class="atrium-path" href="/aevum-archive/codex/handbook.html"><span class="atrium-path-mark" aria-hidden="true">02</span><span><small>New to Aevum?</small><strong>Your first steps</strong><em>Begin with the handbook. Get to know the world.</em></span><b aria-hidden="true">↗</b></a>
@@ -67,7 +83,8 @@
 </section>
 
 <section class="atrium-explore atrium-width" id="explore" aria-labelledby="explore-title">
-  <div class="atrium-section-head"><div><p class="atrium-kicker">Choose a thread</p><h2 id="explore-title">A world to <em>get lost in.</em></h2></div><p>Follow a name, a place or a question.<br>See where the record takes you.</p></div>
+  <div class="grimoire-chapter" aria-hidden="true"><span>II</span><small>The contents</small><i></i></div>
+  <div class="atrium-section-head"><div><p class="atrium-kicker">Open a record</p><h2 id="explore-title">Lives.<br>Legends.<br><em>Loose ends.</em></h2></div><p>Begin with a name.<br>The rest will follow.</p><span class="grimoire-index-mark" aria-hidden="true">✧</span></div>
   <div class="atrium-wings">
     <a class="atrium-wing" href="/aevum-archive/characters/all.html"><div class="atrium-wing-top"><span aria-hidden="true">✦</span><small>01 / Hall of Names</small><b aria-hidden="true">↗</b></div><h3>Characters</h3><p>Lives, legacies and the paths they leave behind.</p><span class="atrium-wing-link">Find a name <span aria-hidden="true">→</span></span></a>
     <a class="atrium-wing" href="/aevum-archive/npcs/"><div class="atrium-wing-top"><span aria-hidden="true">☾</span><small>02 / The living ledger</small><b aria-hidden="true">↗</b></div><h3>NPCs</h3><p>Allies, sovereigns and presences beyond the party.</p><span class="atrium-wing-link">Meet the world <span aria-hidden="true">→</span></span></a>
@@ -79,6 +96,7 @@
   <nav class="atrium-more" aria-label="More archive destinations"><span>There is more to discover</span><a href="/aevum-archive/world-events/">World Events ↗</a><a href="/aevum-archive/events/">Events ↗</a><a href="/aevum-archive/leaderboard/">Leaderboard ↗</a><a href="/aevum-archive/sealed-records/">Sealed Records ↗</a><a href="/aevum-archive/downloads/texture-pack.html">Downloads ↗</a></nav>
 </section>
 <section class="section atrium-updates atrium-width" aria-labelledby="latest-archive-updates">
+  <div class="grimoire-chapter" aria-hidden="true"><span>III</span><small>Fresh ink</small><i></i></div>
   <div class="section-head"><div><p class="eyebrow">Living Archive</p><h2 id="latest-archive-updates">Latest opened records.</h2></div><a class="small-button" href="/aevum-archive/updates/">Open update ledger</a></div>
   <div class="archive-branch-grid">
     <a class="archive-branch-card" href="/aevum-archive/npcs/ichiro.html"><span class="archive-update-tag continuity">Awakening</span><h3>Ichiro — Awake at 3300 PL</h3><p>Ichiro is awake. Training with 15% of Jiro’s power awakened further strength and brought him to 3300 PL.</p></a>
@@ -87,6 +105,7 @@
   </div>
 </section>
 <footer class="footer">
+  <span class="grimoire-footer-word" aria-hidden="true">Aevum</span>
   <span>&#10022; Aevum Archive &mdash; witnessed knowledge only.</span>
   <span>Unwritten pages remain sealed until discovered.</span>
 </footer>

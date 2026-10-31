@@ -2,6 +2,7 @@
 
 ## 2026-10-31
 
+- Recast the image-free homepage as a dark grimoire: a locally hosted Gothic wordmark, engraved animated SVG seal, marginalia and three chapter markers. Set the current campaign as a folio with a compact factual register, changed the six navigation tiles into an open contents index and gave the latest ledger entries a lead-story layout. Retained all routes, current lore, the player census, Halloween behavior and reduced-motion/no-script access.
 - Rebuilt the homepage as an inviting violet-and-gold archive threshold with subtle gradients, replacing the old illustrated tile gallery and mismatched homepage ornament layers. Removed the generated backdrop entirely at the user's request. Added clear paths to the current campaign, current company and newcomer handbook, six portrait-free archive wings and a secondary destination row.
 - Preserved the 4,981-player census and sync fallback, latest three lore updates, all original destinations and Halloween expiry. Kept shared site branding and artwork used by other pages.
 - Modernized the NPC directory with a violet editorial header, an animated record register, clearer chapter navigation, more readable portrait-free ordinary cards and local name/affiliation/Power Level search with shelf filters.

@@ -65,5 +65,17 @@ class HomeAtriumTest(unittest.TestCase):
         self.assertIn('prefers-reduced-motion: reduce', styles)
         self.assertIn('pointer-events: none', styles)
         self.assertIn(':focus-visible', styles)
-        self.assertNotIn('url(', styles)
+        self.assertEqual(re.findall(r'url\("([^"]+)"\)', styles),
+                         ['/aevum-archive/assets/fonts/pirata-one/PirataOne-Regular.ttf'])
         self.assertNotIn('atrium-backdrop', styles)
+
+    def test_grimoire_layout_uses_local_type_and_decorative_seal(self):
+        styles = (ROOT / 'assets/home-atrium.css').read_text(encoding='utf-8')
+        self.assertIn('font-display: swap', styles)
+        self.assertIn('"Aevum Script"', styles)
+        self.assertIn('"Courier New"', styles)
+        self.assertTrue((ROOT / 'assets/fonts/pirata-one/OFL.txt').is_file())
+        self.assertIn('class="grimoire-seal" aria-hidden="true"', self.page)
+        self.assertIn('class="grimoire-campaign"', self.page)
+        self.assertEqual(self.page.count('class="grimoire-chapter"'), 3)
+        self.assertIn('.atrium-wings { display: block;', styles)
