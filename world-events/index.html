@@ -6,15 +6,16 @@
   <title>World Events - Aevum Archive</title>
   <meta name="description" content="A living Aevum wiki for characters, playthroughs, lore, events and traveler downloads.">
   <link rel="stylesheet" href="/aevum-archive/assets/styles.css?v=20260815-sitefocus2">
-  <link rel="stylesheet" href="/aevum-archive/assets/frame-overrides.css?v=20260817-cardstates7">
-  <link rel="stylesheet" href="/aevum-archive/assets/ornament-v3.css?v=20260817-1">
-  <link rel="stylesheet" href="/aevum-archive/assets/round4-assets.css?v=20260817-3">
   <link rel="stylesheet" href="/aevum-archive/assets/master-ui.css?v=20260828-bridge-reorg1">
   <link rel="stylesheet" href="/aevum-archive/assets/global-header.css?v=20260902-header4">
   <link rel="stylesheet" href="/aevum-archive/assets/halloween.css?v=20261030-allhallows1">
   <script src="/aevum-archive/assets/halloween.js?v=20261030-allhallows1"></script>
+
+  <link rel="preload" href="/aevum-archive/assets/fonts/cinzel/Cinzel-Variable.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="/aevum-archive/assets/archive-wings.css?v=20261102-folio1">
+  <link rel="stylesheet" href="/aevum-archive/assets/world-anchor.css?v=20261102-renewal1">
 </head>
-<body class="archive-page theme-events page-index route-world-events">
+<body class="archive-page theme-events page-index route-world-events grimoire-wing world-anchor-page">
   <header class="site-header">
   <a class="brand" href="/aevum-archive/">
     <img class="brand-mark home-brand-crest" src="/aevum-archive/assets/home-v2/home-archive-sigil.webp" alt="" width="1254" height="1254">
@@ -33,8 +34,11 @@
     <a href="/aevum-archive/downloads/texture-pack.html">Downloads</a>
   </nav>
 </header>
-<main class="page">
-<section class="hero compact-hero"><div><p class="eyebrow">World event</p><h1>World Anchor Part I.</h1><p class="lede">A large event shelf for world-scale arcs, anchors, faults and consequences that shape more than one character.</p><div class="hero-actions"><a class="button primary" href="#world-anchor">Open event</a><a class="button" href="/aevum-archive/events/">Other events</a></div></div><aside class="archive-card anchor-card"><span class="sigil">&#x1F70F;</span><p class="eyebrow">Time remaining</p><h2 id="world-anchor-countdown">Loading...</h2><p class="lede" id="world-anchor-detail">The anchor continues to turn.</p></aside></section>
+<main class="page wing-main"><nav class="wing-breadcrumb" aria-label="Breadcrumb"><a href="/aevum-archive/events/">Event chronicle</a><span aria-hidden="true">/</span><span aria-current="page">World Anchor Part I.</span></nav>
+<section class="world-anchor-hero" aria-labelledby="anchor-title">
+<div class="anchor-opening"><p class="wing-kicker">World event</p><h1 id="anchor-title">World Anchor<br><em>Part I.</em></h1><p class="lede">A large event shelf for world-scale arcs, anchors, faults and consequences that shape more than one character.</p><div class="wing-actions"><a class="wing-button" href="#world-anchor">Open event <span aria-hidden="true">↓</span></a><a class="wing-text-link" href="/aevum-archive/events/">Other events ↗</a></div><div class="anchor-status"><span>Last recorded status <strong>ACTIVE</strong></span><span>Earth Gateway <strong>OPEN</strong></span></div></div>
+<aside class="anchor-instrument" aria-label="World Anchor countdown"><div class="anchor-orbits" aria-hidden="true"><i></i><i></i><b>⌁</b></div><p class="eyebrow">Time remaining</p><h2 id="world-anchor-countdown" role="timer" aria-live="off">31 Oct 2026</h2><p id="world-anchor-detail">The anchor continues to turn.</p><small>The event status and gateway access are recorded separately.</small></aside>
+</section><nav class="wing-register" aria-label="World event chapters"><a href="#world-anchor"><span>01</span><strong>The anchor</strong><small>Recorded state</small></a><a href="#earth-gateway"><span>02</span><strong>Earth Gateway</strong><small>Access established</small></a><a href="#access-record"><span>03</span><strong>Current access</strong><small>Opened record</small></a><a href="#connected-records"><span>04</span><strong>Beside the anchor</strong><small>Separate anomalies</small></a></nav>
 <section class="section" id="world-anchor"><article class="card event-card"><p class="eyebrow">Active world event</p><h2>World Anchor Part I</h2><p>The first known World Anchor event remains active. Its full shape is still unfolding, and its consequences are not yet fully written.</p><dl class="mini-ledger"><dt>Status</dt><dd>ACTIVE</dd><dt>Scale</dt><dd>World Event</dd><dt>Known thread</dt><dd>Silent Fault / World Anchor</dd><dt>Timer target</dt><dd>2026-10-31 08:41:24 realm time</dd></dl></article></section>
 <script>
 (function() {
@@ -49,15 +53,15 @@
     var hours = Math.floor((totalSeconds % 86400) / 3600);
     var minutes = Math.floor((totalSeconds % 3600) / 60);
     var seconds = totalSeconds % 60;
-    main.textContent = days + 'd ' + hours + 'h ' + minutes + 'm ' + seconds + 's';
+    main.textContent = diff > 0 ? days + 'd ' + hours + 'h ' + minutes + 'm ' + seconds + 's' : 'Marked hour reached';
     detail.textContent = diff > 0 ? 'The World Anchor is still counting down.' : 'The World Anchor has reached its marked hour.';
   }
   tick(); setInterval(tick, 1000);
 })();
 </script>
-<section class="section"><article class="card event-card"><p class="eyebrow">Separate gateway state · Earth</p><h2>William's Event Gateway is open.</h2><p>William Carter completed the Opening Gateway Sequence on Earth. World Anchor — Part I is now accessible through it. The World Event countdown above remains a separate active timer.</p><dl class="mini-ledger"><dt>Gateway status</dt><dd>OPEN</dd><dt>Initiator</dt><dd>William Carter</dd><dt>World</dt><dd>Earth</dd><dt>Opening sequence</dt><dd>COMPLETE</dd><dt>Destination</dt><dd>World Anchor — Part I</dd></dl></article></section>
-<section class="section"><article class="card"><p class="eyebrow">Current record</p><h2>Access established.</h2><p>Earlier formation and conflict reports are historical. No current sabotage window, join procedure or additional reward mechanic is asserted here.</p></article></section>
-<section class="section"><div class="section-head"><div><p class="eyebrow">Connected anomaly records</p><h2>Faults beside the anchor.</h2></div><p>Related world-scale records are linked without merging separate events.</p></div><div class="archive-branch-grid"><a class="archive-branch-card danger" href="/aevum-archive/events/the-silent-fault.html"><span class="realm-symbol">⌁</span><h3>The Silent Fault</h3><p>Damaged World Anchor clues, Veyr, riddles and ANCHOR / ANKER.</p></a><a class="archive-branch-card sealed" href="/aevum-archive/events/night-of-thousand-gates.html"><span class="realm-symbol">⊚</span><h3>Night of Thousand Gates</h3><p>Ancient Gates opened on their own; separate from Silent Fault.</p></a></div></section><footer class="footer">
+<section class="section" id="earth-gateway"><article class="card event-card"><p class="eyebrow">Separate gateway state · Earth</p><h2>William's Event Gateway is open.</h2><p>William Carter completed the Opening Gateway Sequence on Earth. World Anchor — Part I is now accessible through it. The World Event countdown above remains a separate active timer.</p><dl class="mini-ledger"><dt>Gateway status</dt><dd>OPEN</dd><dt>Initiator</dt><dd>William Carter</dd><dt>World</dt><dd>Earth</dd><dt>Opening sequence</dt><dd>COMPLETE</dd><dt>Destination</dt><dd>World Anchor — Part I</dd></dl></article></section>
+<section class="section" id="access-record"><article class="card"><p class="eyebrow">Current record</p><h2>Access established.</h2><p>Earlier formation and conflict reports are historical. No current sabotage window, join procedure or additional reward mechanic is asserted here.</p></article></section>
+<section class="section" id="connected-records"><div class="section-head"><div><p class="eyebrow">Connected anomaly records</p><h2>Faults beside the anchor.</h2></div><p>Related world-scale records are linked without merging separate events.</p></div><div class="archive-branch-grid"><a class="archive-branch-card danger" href="/aevum-archive/events/the-silent-fault.html"><span class="realm-symbol">⌁</span><h3>The Silent Fault</h3><p>Damaged World Anchor clues, Veyr, riddles and ANCHOR / ANKER.</p></a><a class="archive-branch-card sealed" href="/aevum-archive/events/night-of-thousand-gates.html"><span class="realm-symbol">⊚</span><h3>Night of Thousand Gates</h3><p>Ancient Gates opened on their own; separate from Silent Fault.</p></a></div></section><footer class="footer">
   <span>&#10022; Aevum Archive &mdash; witnessed knowledge only.</span>
   <span>Unwritten pages remain sealed until discovered.</span>
 </footer>

@@ -1,0 +1,68 @@
+/* The Codex keeps its animated instruments, colored records and sealed discoveries. */
+body.codex-grimoire { --codex-gold: 224 194 140; --codex-violet: 155 117 198; --codex-pink: 210 147 181; }
+.codex-grimoire .hero { position: relative; display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, .65fr); gap: 55px; min-height: 440px; margin-block: 35px; padding: 35px 0; border: 0; border-radius: 0; background: none; box-shadow: none; overflow: visible; }
+.codex-grimoire .hero::before, .codex-grimoire .hero::after { content: none !important; }
+.codex-grimoire .hero > div { min-width: 0; }
+.codex-grimoire .hero h1 { margin: 24px 0; max-width: 18ch; color: #e8d9eb; font: 400 clamp(2.8rem, 4.6vw, 4.8rem)/1.16 "Archive Display", Georgia, serif; letter-spacing: -.04em; text-shadow: none; overflow-wrap: break-word; }
+.codex-grimoire .hero .lede { max-width: 62ch; color: #bdaac8; font: 400 1.08rem/1.9 Georgia, serif; }
+.codex-grimoire .hero .eyebrow { color: #c3a778; font: 400 .7rem/1.8 var(--wing-label); letter-spacing: .1em; }
+.codex-grimoire .button { padding: 13px 18px; min-height: 44px; border-radius: 1px; background: #24172d4d; border-color: #ab86c14d; color: #cdb0df; box-shadow: none; font: 400 .74rem/1.8 var(--wing-label); }
+.codex-grimoire .button.primary { color: #e1c79c; border-color: #b89b646e; background: linear-gradient(110deg, #69533430, #18111988); }
+.codex-grimoire .hero .archive-card { min-width: 0; min-height: 0; padding: 35px 28px; border: 1px solid #c0a5794d; border-radius: 3px 3px 28px 3px; background: radial-gradient(ellipse at 50% 0, #8e693d1f, transparent 75%), #16101e; box-shadow: none; text-align: center; }
+.codex-grimoire .hero .archive-card::before, .codex-grimoire .hero .archive-card::after { content: none !important; }
+.codex-grimoire .hero .archive-card h2 { color: #e0c69b; font: 400 clamp(1.8rem, 2.5vw, 2.5rem)/1.2 Georgia, serif; }
+.codex-grimoire .hero .archive-card .sigil { position: relative; inset: auto; display: grid; place-items: center; width: 125px; height: 125px; margin: 5px auto 25px; border: 1px solid #c6ae7640; border-radius: 50%; color: #d1bb8e; font: 400 3.5rem/1 Georgia, serif; opacity: .8; }
+.codex-grimoire .hero:not(:has(aside)) { grid-template-columns: 1fr; }
+.codex-grimoire .codex-mini-seal { position: relative; inset: auto; flex: 0 0 135px; width: 135px; height: 135px; margin: 0 auto 30px; color: #e2ca9f; font-weight: 400; }
+.codex-grimoire .codex-vault-count > strong { color: #e3cda5; font: 400 2rem/1.2 "Archive Display", Georgia, serif; }
+.codex-grimoire .codex-vault-count > p:not(.eyebrow) { color: #bca7c8; font: 400 1rem/1.85 Georgia, serif; }
+.codex-grimoire .codex-section-nav { position: relative; top: auto; display: grid; align-items: center; min-height: 54px; width: 100%; margin: 25px 0 50px; border-block: 1px solid #b69abd4d; border-inline: 0; border-radius: 0; background: #140e1a80; box-shadow: none; grid-template-columns: 40px minmax(0, 1fr); backdrop-filter: none; }
+.codex-grimoire .codex-section-nav-mark { display: grid; place-items: center; width: 40px; color: #d8ba86; border-color: var(--wing-line); }
+.codex-grimoire .codex-section-nav-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 0 3px; overflow: visible; padding: 7px; min-width: 0; }
+.codex-grimoire .codex-section-nav a { border-radius: 1px; padding: 12px 13px; color: #b49bc2; font: 400 .67rem/1.8 var(--wing-label); letter-spacing: .03em; text-decoration: none; }
+.codex-grimoire .codex-section-nav a[aria-current="page"] { color: #e8d2a7; background: #c4a56f17; box-shadow: inset 0 -1px #d0b281; }
+.codex-grimoire .codex-section-nav a:focus-visible { outline: 2px solid #d4ba8c; outline-offset: -2px; }
+.codex-grimoire .codex-home-hero { min-height: 600px; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: 60px; padding: 35px 0; margin: 35px 0; border: 0; border-radius: 0; background: none; box-shadow: none; overflow: visible; }
+.codex-grimoire .codex-home-hero::before, .codex-grimoire .codex-home-hero::after { content: none; }
+.codex-grimoire .codex-home-copy { min-width: 0; }
+.codex-grimoire .codex-home-copy h1 { margin: 25px 0; color: #e8d9ec; font: 400 clamp(3rem, 5.6vw, 5.6rem)/1.15 "Archive Display", Georgia, serif; letter-spacing: -.04em; text-shadow: none; }
+.codex-grimoire .codex-home-copy h1 em { color: #d3b889; font: italic 400 1em/1.12 Georgia, serif; }
+.codex-grimoire .codex-home-copy .eyebrow { color: #bfa475; font: 400 .68rem/1.8 var(--wing-label); letter-spacing: .1em; }
+.codex-grimoire .codex-home-copy .lede { color: #bdadca; font: 400 1.12rem/1.9 Georgia, serif; }
+.codex-grimoire .codex-home-instrument { min-height: 540px; border-radius: 3px 3px 30px 3px; padding: 370px 32px 32px; border-color: #bc9c624d; background: radial-gradient(ellipse at 50% 10%, #84589b32, transparent 70%), #120e19; box-shadow: 0 0 70px #a67ac714; }
+.codex-grimoire .codex-home-instrument .codex-compass { top: 75px; transform: translateX(-50%) scale(1.25); }
+.codex-grimoire .codex-home-instrument-copy { text-align: center; }
+.codex-grimoire .codex-home-instrument-copy strong { font: 400 1.8rem/1.2 "Archive Display", Georgia, serif; }
+.codex-grimoire .codex-home-instrument-copy .eyebrow { font: 400 .65rem/1.8 var(--wing-label); color: #b79ac4; }
+.codex-grimoire .codex-home-instrument-copy p { color: #b8a3c6; font: 400 1rem/1.85 Georgia, serif; }
+.codex-grimoire .codex-home-ledger { border-radius: 0; background: none; border-color: var(--wing-line); gap: 0; }
+.codex-grimoire .codex-home-ledger div { padding: 18px; background: #1a122140; border-right: 1px solid var(--wing-line); }
+.codex-grimoire .codex-home-ledger div:last-child { border-right: 0; }
+.codex-grimoire .codex-home-ledger dt { font: 400 .6rem/1.8 var(--wing-label); color: #ac8cbb; }
+.codex-grimoire .codex-home-ledger dd { color: #d8c3e2; font: 400 1rem/1.6 Georgia, serif; }
+.codex-grimoire .codex-home-section { margin-top: 70px; }
+.codex-grimoire .codex-home-section-head h2 { color: #e4d5eb; font: 400 clamp(2.2rem, 3.5vw, 3.4rem)/1.2 Georgia, serif; letter-spacing: -.03em; }
+.codex-grimoire .codex-home-section-head > p { color: #ae98bb; font: 400 1rem/1.85 Georgia, serif; text-align: left; }
+.codex-grimoire .codex-home-section-head .eyebrow { font: 400 .67rem/1.8 var(--wing-label); color: #c2a676; }
+.codex-grimoire .codex-build-step a { min-height: 310px; border-radius: 3px; border-color: #b498c43d; background: radial-gradient(ellipse at 100% 0, #77538e21, transparent 70%), #150f1d; box-shadow: none; }
+.codex-grimoire .codex-build-number { font-weight: 400; }
+.codex-grimoire .codex-build-step h3 { color: #e0cce9; font: 400 2rem/1.2 Georgia, serif; }
+.codex-grimoire .codex-build-step p { color: #b49dc2; font: 400 1rem/1.8 Georgia, serif; }
+.codex-grimoire .codex-build-step em { font: 400 .64rem/1.8 var(--wing-label); }
+.codex-grimoire .codex-reference-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: none; }
+.codex-grimoire .codex-reference-card { min-height: 280px; border-radius: 3px; box-shadow: none; }
+.codex-grimoire .codex-reference-card.abilities { grid-row: auto; min-height: 280px; }
+.codex-grimoire .codex-reference-card:first-child { grid-column: 1 / -1; min-height: 330px; }
+.codex-grimoire .codex-reference-card.chapters { grid-column: auto; min-height: 280px; }
+.codex-grimoire .codex-reference-card h3 { color: #e0cce9; font: 400 clamp(2rem, 3.2vw, 3.3rem)/1.2 Georgia, serif; }
+.codex-grimoire .codex-reference-card p:not(.eyebrow) { color: #b19dc0; font: 400 1.02rem/1.85 Georgia, serif; }
+.codex-grimoire .codex-reference-card .eyebrow, .codex-grimoire .codex-open { font: 400 .64rem/1.8 var(--wing-label); }
+.codex-grimoire .codex-home-boundary p { color: #ad94bb; font: 400 1rem/1.85 Georgia, serif; }
+.codex-grimoire .codex-home-boundary a { font: 400 .65rem/1.8 var(--wing-label); }
+.codex-grimoire .chapter-hero { border-radius: 3px; background: radial-gradient(ellipse at 100% 0, #7652862b, transparent 70%), #140f1c; border-color: #b598c341; box-shadow: none; }
+.codex-grimoire .chapter-hero h1 { font: 400 clamp(3rem, 5.3vw, 5.5rem)/1.15 "Archive Display", Georgia, serif; }
+.codex-grimoire [hidden] { display: none !important; }
+.codex-grimoire [id] { scroll-margin-top: 30px; }
+@media (max-width: 1080px) { .codex-grimoire .hero, .codex-grimoire .codex-home-hero { grid-template-columns: 1fr; } .codex-grimoire .hero .archive-card, .codex-grimoire .codex-home-instrument { width: min(100%, 480px); justify-self: center; } .codex-grimoire .codex-section-nav { position: relative; } }
+@media (max-width: 720px) { .codex-grimoire .codex-section-nav { grid-template-columns: 1fr; } .codex-grimoire .codex-section-nav-mark { display: none; } .codex-grimoire .codex-section-nav-links { justify-content: start; } .codex-grimoire .codex-section-nav a { padding: 10px 13px; } .codex-grimoire .codex-reference-grid { grid-template-columns: 1fr; } .codex-grimoire .codex-reference-card.chapters { grid-column: 1; } }
+@media (max-width: 600px) { .codex-grimoire .hero h1, .codex-grimoire .codex-home-copy h1 { font-size: clamp(2.5rem, 9.8vw, 3.5rem); } .codex-grimoire .codex-home-instrument { min-height: 515px; padding-inline: 24px; } .codex-grimoire .codex-home-ledger { grid-template-columns: 1fr; } .codex-grimoire .codex-home-ledger div { border-right: 0; border-bottom: 1px solid var(--wing-line); } .codex-grimoire .codex-home-ledger div:last-child { border-bottom: 0; } .codex-grimoire .codex-home-boundary { padding-inline: 0; } .codex-grimoire .chapter-hero h1 { font-size: 2.6rem; } }

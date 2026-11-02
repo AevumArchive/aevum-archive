@@ -1,0 +1,77 @@
+/* The public record template, shared by older lore, event and utility leaves. */
+body.archive-folio { --folio-accent: #c4a6d7; }
+body.archive-folio.theme-events { --folio-accent: #d2a5b7; }
+body.archive-folio.theme-downloads { --folio-accent: #b9c8ab; }
+.archive-folio .hero { position: relative; isolation: isolate; display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(0, .65fr); align-items: center; gap: clamp(35px, 5vw, 80px); min-height: 450px; margin: 35px 0 45px; padding: 35px 0; border: 0; border-radius: 0; background: none !important; box-shadow: none; overflow: visible; }
+.archive-folio .hero::before, .archive-folio .hero::after { content: none !important; }
+.archive-folio .hero > div { min-width: 0; }
+.archive-folio .hero h1 { max-width: 18ch; margin: 25px 0; color: #e6d9ec; font: 400 clamp(2.8rem, 4.5vw, 5rem)/1.14 "Archive Display", Georgia, serif; letter-spacing: -.04em; text-shadow: none; overflow-wrap: break-word; }
+.archive-folio .hero .eyebrow { color: #bda078; font: 400 .7rem/1.9 var(--wing-label); letter-spacing: .1em; }
+.archive-folio .hero .lede { max-width: 61ch; color: #bcaac7; font: 400 1.1rem/1.9 Georgia, serif; }
+.archive-folio .hero .hero-actions { display: flex; flex-wrap: wrap; gap: 15px; margin-top: 30px; }
+.archive-folio .button { min-height: 44px; border-radius: 1px; background: #21162b55; color: #ceb5dc; border-color: #ad8ebc48; font: 400 .75rem/1.8 var(--wing-label); box-shadow: none; }
+.archive-folio .button.primary { color: #dec59d; background: linear-gradient(120deg, #69533430, #18111988); border-color: #b99a646e; }
+.archive-folio .hero .archive-card { position: relative; min-width: 0; min-height: 0; padding: 32px 26px; border: 1px solid #b39ac541; border-radius: 2px 2px 26px 2px; background: radial-gradient(ellipse at 50% 10%, #65457722, transparent 70%), #140f1c !important; box-shadow: none; text-align: center; }
+.archive-folio .hero .archive-card::before, .archive-folio .hero .archive-card::after { content: none !important; }
+.archive-folio .hero .archive-card .sigil { position: relative; inset: auto; display: grid; place-items: center; width: 130px; height: 130px; min-width: 0; margin: 8px auto 30px; border: 1px solid #c6a0d03b; border-radius: 50%; color: var(--folio-accent); font: 400 4rem/1 Georgia, serif; opacity: .8; box-shadow: 0 0 0 10px #b790cc05; }
+.archive-folio .hero .archive-card h2 { margin: 18px 0; color: var(--folio-accent); font: 400 clamp(1.8rem, 2.4vw, 2.5rem)/1.2 Georgia, serif; overflow-wrap: break-word; }
+.archive-folio .hero .archive-card .lede { font-size: .98rem; }
+.archive-folio .hero:not(:has(aside)) { grid-template-columns: 1fr; min-height: 330px; }
+.archive-folio .hero:not(:has(aside)) > div { max-width: 900px; }
+.folio-section-nav { display: flex; flex-wrap: wrap; gap: 0 30px; border-block: 1px solid var(--wing-line); }
+.folio-section-nav a { display: flex; align-items: baseline; gap: 13px; padding: 19px 0; color: #c8b1d7; font: 400 .75rem/1.8 var(--wing-label); text-decoration: none; }
+.folio-section-nav a > span { color: #a584b8; font-size: .64rem; }
+.folio-section-nav a:hover { color: #ecdaef; }
+.archive-folio .section { min-width: 0; }
+.archive-folio .section-head h2 { font-size: clamp(2rem, 3.4vw, 3.2rem); }
+.archive-folio .section-head > div { padding-left: 0; }
+.archive-folio .grid { gap: 22px; }
+.archive-folio .card, .archive-folio .archive-branch-card { position: relative; min-width: 0; min-height: 0; padding: 30px; border-radius: 3px; border-color: #b294c13b; background: #140f1b; box-shadow: none; }
+.archive-folio .card h2, .archive-folio .archive-branch-card h2 { margin: 0 0 20px; color: #e1d3e9; font: 400 clamp(1.8rem, 2.7vw, 2.7rem)/1.2 Georgia, serif; letter-spacing: -.025em; }
+.archive-folio .card h3, .archive-folio .archive-branch-card h3 { color: #d9c4e4; font: 400 1.65rem/1.2 Georgia, serif; }
+.archive-folio .card p, .archive-folio .archive-branch-card p, .archive-folio .card li { color: #b6a5c1; font: 400 1.02rem/1.9 Georgia, serif; }
+.archive-folio .card .eyebrow { color: #bba17c; font: 400 .67rem/1.8 var(--wing-label); letter-spacing: .07em; }
+.archive-folio .card > .eyebrow:first-child { margin-top: 0; }
+.archive-folio .card p:last-child { margin-bottom: 0; }
+.archive-folio .pill { max-width: 100%; border-radius: 3px; font: 400 .66rem/1.8 var(--wing-label); }
+.archive-folio :is(.rule-card, .timeline-era, .sealed-house, .house-principle, .heraldry-layer, .servant-record, .download-panel) { min-width: 0; padding: 30px; border: 1px solid var(--wing-line); border-radius: 3px; background: #140f1b; box-shadow: none; }
+.archive-folio :is(.rule-card, .timeline-era, .sealed-house, .house-principle, .heraldry-layer, .servant-record, .download-panel) h2 { color: #dfd0e8; font: 400 clamp(1.8rem, 2.7vw, 2.7rem)/1.2 Georgia, serif; }
+.archive-folio :is(.rule-card, .timeline-era, .sealed-house, .house-principle, .heraldry-layer, .servant-record, .download-panel) h3 { color: #d9c4e4; font: 400 1.65rem/1.25 Georgia, serif; }
+.archive-folio :is(.rule-card, .timeline-era, .sealed-house, .house-principle, .heraldry-layer, .servant-record, .download-panel) :is(p, li) { color: #b6a5c1; font: 400 1.02rem/1.9 Georgia, serif; }
+.archive-folio :is(.rule-card, .timeline-era).danger { border-color: #b47e8d55; background: linear-gradient(120deg, #72314316, transparent), #171019; }
+.archive-folio :is(.rule-card, .timeline-era).gold { border-color: #b89a6855; background: linear-gradient(120deg, #89632e16, transparent), #171319; }
+.archive-folio .card a:not(.button):not(.pill), .archive-folio .archive-branch-card a { color: #d0b3e0; }
+.archive-folio .card.danger, .archive-folio .archive-branch-card.danger { border-color: #bc87934d; background: linear-gradient(120deg, #72314312, transparent), #171019; }
+.archive-folio .mini-ledger { grid-template-columns: minmax(0, .6fr) minmax(0, 1fr); gap: 0 20px; }
+.archive-folio .mini-ledger dt, .archive-folio .mini-ledger dd { min-width: 0; overflow-wrap: anywhere; border-color: var(--wing-line); }
+.archive-folio .mini-ledger dt { color: #ad95bc; font: 400 .66rem/1.9 var(--wing-label); }
+.archive-folio .mini-ledger dd { color: #ddd0e4; font: 400 1rem/1.8 Georgia, serif; }
+.archive-folio .archive-update { border-radius: 3px; border-color: var(--wing-line); background: #130f19; }
+.archive-folio .archive-update h2 { color: #dfcde9; font: 400 clamp(1.7rem, 2.7vw, 2.7rem)/1.2 Georgia, serif; }
+.archive-folio .archive-update p { color: #bba9c6; font: 400 1.03rem/1.9 Georgia, serif; }
+.archive-folio .archive-update time { color: #ad95bb; font: 400 .68rem/1.8 var(--wing-label); }
+.archive-folio .archive-update-tag { max-width: 100%; border-radius: 3px; font: 400 .62rem/1.8 var(--wing-label); }
+.archive-folio .table-wrap, .archive-folio .table-scroll { overflow-x: auto; }
+.archive-folio th, .archive-folio td { overflow-wrap: anywhere; line-height: 1.7; }
+.archive-folio [id] { scroll-margin-top: 25px; }
+@media (max-width: 1000px) {
+ .archive-folio .hero { grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: 35px; }
+ .archive-folio .grid.four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 800px) {
+ .archive-folio .hero { grid-template-columns: 1fr; gap: 30px; min-height: 0; }
+ .archive-folio .hero .archive-card { width: min(100%, 480px); justify-self: center; }
+ .archive-folio .grid.three { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+ .archive-folio .hero { margin-top: 20px; padding-top: 20px; }
+ .archive-folio .hero h1 { font-size: clamp(2.3rem, 9vw, 3.3rem); }
+ .archive-folio .hero .lede { font-size: 1.04rem; }
+ .archive-folio .hero .archive-card { padding: 28px; }
+ .archive-folio .card, .archive-folio .archive-branch-card { padding: 24px; }
+ .archive-folio :is(.rule-card, .timeline-era, .sealed-house, .house-principle, .heraldry-layer, .servant-record, .download-panel) { padding: 24px; }
+ .archive-folio .grid.two, .archive-folio .grid.three, .archive-folio .grid.four { grid-template-columns: 1fr; }
+ .folio-section-nav { display: grid; grid-template-columns: 1fr; }
+ .folio-section-nav a { padding-block: 13px; }
+ .archive-folio .mini-ledger { grid-template-columns: minmax(0, .65fr) minmax(0, 1fr); gap: 0 14px; }
+}
