@@ -2,6 +2,7 @@
 
 ## 2026-11-02
 
+- Strengthened Divine and Transcendent in the rarity ladder above Mythic and Ancient: a luminous gold Divine medallion and a brighter platinum/violet Transcendent seal with orbiting light. Preserved all rarity names and the separate trophy exhibits; gave narrow mobile layouts a full-width row for each tier and retained reduced-motion support.
 - Distinguished Mythic and Ancient in the achievement rarity ladder with a rose-lit Mythic seal and an engraved, slowly orbiting Ancient emblem. Preserved the higher Divine/Transcendent tiers and reduced-motion behavior.
 - Renewed World Events with an animated anchor instrument, chapter links and separate recorded event/gateway states. Kept the existing countdown target; after the marked hour the display states that the hour was reached without completing the event or closing the gateway. Added a readable date fallback without JavaScript.
 - Brought all ten regular Codex pages and 43 older public lore, event, NPC, bond, update and utility leaves into the current image-free folio design. Retained the Codex's compass, signature colors, unique-trait animations, search, filters, sorting, disclosures and sealed records; added ten native shelf links including Bindings and Chapters. Preserved every existing public text block, destination, image and anchor, alongside the distinct character dossiers, special NPCs, atlas and dimensional designs.
