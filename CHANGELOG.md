@@ -2,6 +2,8 @@
 
 ## 2026-11-02
 
+- Redesigned the Events and Achievements indexes as companion leaves to the image-free homepage grimoire, with readable Cinzel/Georgia typography, slowly engraved cover seals, chapter navigation, compact record counts and open editorial registers. Replaced the Events index's illustrated backgrounds with abstract continuity diagrams; retained all nine opened events and three backlog entries.
+- Enlarged the Transcendent achievement into the highest-rarity celestial exhibit with a larger animated halo, platinum/gold/violet lighting and monumental survival statistics. Kept its shared record identical to Faaram's profile, preserved the Divine discovery and Ancient exhibit, added restrained crown orbits to Overlord's Grace and retained all 24 chain-sealed cards. All 11 earned records, owners, rarity classifications and rewards remain unchanged; checked responsive, keyboard, reduced-motion and no-script access.
 - Brought all four recovered playthrough detail pages (Alterra, Vault 8, Temmie Town and the Aizen-Ended Road) into the Fantasy Medieval chronicle design: readable Cinzel covers, decorative era emblems, quick facts, numbered chapters and previous/next-era navigation. Added distinct amber, blue, violet and muted crimson accents without portrait previews.
 - Preserved every existing story heading, paragraph, list item, definition and record destination, including working-date caveats, incomplete endings and uncertain returns. Shared the existing campaign folio layout while keeping the current campaign and directory intact; verified responsive layouts, keyboard navigation, no-script access and seasonal expiry.
 

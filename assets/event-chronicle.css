@@ -1,0 +1,69 @@
+/* A witnessed event ledger, engraved rather than illustrated. */
+body.route-events.grimoire-wing { --wing-accent: #cfabc8; }
+.route-events .event-feature-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: 22px; }
+.route-events .event-feature-stack { display: grid; gap: 22px; }
+.route-events .event-feature { position: relative; isolation: isolate; display: flex; align-items: end; min-width: 0; min-height: 280px; padding: 80px 35px 35px; overflow: hidden; border: 1px solid #b89bc13d; border-radius: 2px; color: #e6d7ec; text-decoration: none; background: radial-gradient(ellipse at 100% 0, #68314c26, transparent 75%), #140d17; transition: border-color .3s, transform .3s; }
+.route-events .event-feature::before { content: ""; position: absolute; z-index: -1; pointer-events: none; inset: 9px; border: 1px solid #c4a9ce12; }
+.route-events .event-feature-main { min-height: 610px; padding: 275px 45px 45px; background: radial-gradient(ellipse at 50% 15%, #68458032, transparent 65%), linear-gradient(160deg, #1c1025, #0e0b14 80%); }
+.route-events .event-feature-fault { background: radial-gradient(ellipse at 100% 0, #8b3e4326, transparent 80%), #180f17; border-color: #b5737b40; }
+.route-events .event-feature-gates { background: radial-gradient(ellipse at 100% 0, #41407930, transparent 80%), #100f1d; }
+.route-events .event-index { position: absolute; top: 27px; left: 30px; color: #bba1c8; font: 400 .64rem/1.8 var(--wing-label); letter-spacing: .08em; text-transform: uppercase; }
+.route-events .event-feature-main .event-index { left: 45px; color: #cbb594; }
+.route-events .event-symbol { position: absolute; right: 25px; top: 22px; color: #b787b54d; font: 400 4.5rem/1 Georgia, serif; }
+.route-events .event-feature-fault .event-symbol { color: #bd7c814d; }
+.route-events .event-convergence-seal { position: absolute; z-index: -1; pointer-events: none; width: min(85%, 370px); top: 35px; left: 50%; transform: translateX(-50%); color: #bb9ace; stroke: currentColor; stroke-width: .8; opacity: .48; mask-image: linear-gradient(#000 50%, transparent); }
+.event-convergence-orbit { transform-origin: 200px 200px; animation: wing-orbit 110s linear infinite; }
+.route-events .event-feature > div { position: relative; min-width: 0; }
+.route-events .event-feature .eyebrow { margin: 0 0 20px; color: #c9a9ce; font: 400 .65rem/1.8 var(--wing-label); letter-spacing: .1em; }
+.route-events .event-feature h3 { margin: 0 0 22px; color: #e5d7ec; font: 400 clamp(2rem, 2.5vw, 2.8rem)/1.15 Georgia, serif; letter-spacing: -.025em; }
+.route-events .event-feature-main h3 { color: #e2cce9; font: 400 clamp(2.3rem, 3.7vw, 3.6rem)/1.13 "Archive Display", Georgia, serif; letter-spacing: -.03em; }
+.route-events .event-feature p:not(.eyebrow) { max-width: 49ch; margin: 0; color: #b9a8c5; font: 400 1.04rem/1.85 Georgia, serif; }
+.route-events .event-open { display: inline-flex; gap: 22px; align-items: center; margin-top: 28px; color: #d5bb8d; font: 400 .72rem/1.8 var(--wing-label); }
+.route-events .event-open b { font-weight: 400; }
+.route-events .event-feature:hover { border-color: #cfb3dc8a; transform: translateY(-3px); }
+.route-events .event-ledger { border-top: 1px solid var(--wing-line); }
+.route-events .event-ledger-row { position: relative; display: grid; grid-template-columns: 30px 48px minmax(0, 1fr) 135px; align-items: center; gap: 25px; min-width: 0; padding: 30px 10px 30px 0; border-bottom: 1px solid var(--wing-line); color: #ddcbe5; text-decoration: none; transition: background .25s; }
+.route-events .event-ledger-no { color: #a88db9; font: 400 .7rem/1.8 var(--wing-label); }
+.route-events .event-ledger-icon { display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid #ba98ce39; border-radius: 50%; color: #c3a8d4; font: 400 1.5rem/1 Georgia, serif; }
+.route-events .event-ledger-row.ending .event-ledger-icon { color: #c7b18c; border-color: #b4986140; }
+.route-events .event-ledger-row.poison .event-ledger-icon { color: #b6c6ab; border-color: #91b17940; }
+.route-events .event-ledger-row small { display: block; color: #ac90ba; font: 400 .63rem/1.8 var(--wing-label); letter-spacing: .06em; text-transform: uppercase; }
+.route-events .event-ledger-row strong { display: block; margin: 12px 0; color: #e2d2eb; font: 400 1.65rem/1.25 Georgia, serif; }
+.route-events .event-ledger-row em { display: block; max-width: 70ch; color: #ad9ab8; font: normal 400 1rem/1.85 Georgia, serif; }
+.route-events .event-ledger-row > b { color: #bda77f; font: 400 .65rem/1.8 var(--wing-label); text-align: right; }
+.route-events .event-ledger-row:hover { background: #b78cd208; }
+.route-events .event-backlog-list { border-block: 1px solid var(--wing-line); }
+.route-events .event-backlog-list article { display: grid; grid-template-columns: 135px minmax(0, 1fr) 110px; gap: 30px; align-items: center; padding: 28px 0; }
+.route-events .event-backlog-list article + article { border-top: 1px solid var(--wing-line); }
+.route-events .event-backlog-era { color: #c5ae85; font: 400 .68rem/1.8 var(--wing-label); }
+.route-events .event-backlog-list small { color: #a489af; font: 400 .65rem/1.8 var(--wing-label); }
+.route-events .event-backlog-list strong { display: block; margin: 10px 0 12px; color: #d9c9e1; font: 400 1.45rem/1.3 Georgia, serif; }
+.route-events .event-backlog-list p { margin: 0; color: #a38eaf; font: 400 .98rem/1.85 Georgia, serif; }
+.route-events .event-status { justify-self: end; padding: 6px 9px; border: 1px solid #a787ba3a; color: #baa0ce; font: 400 .62rem/1.8 var(--wing-label); }
+.route-events .event-status.opening { color: #d3b485; border-color: #bda46d47; }
+@media (max-width: 1000px) {
+ .route-events .event-feature-grid { grid-template-columns: 1fr; }
+ .route-events .event-feature-main { min-height: 530px; }
+ .route-events .event-feature-stack { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+ .route-events .event-feature { padding-inline: 28px; }
+ .route-events .event-ledger-row { grid-template-columns: 25px 44px minmax(0, 1fr); gap: 18px; }
+ .route-events .event-ledger-row > b { grid-column: 3; text-align: left; }
+}
+@media (max-width: 700px) {
+ .route-events .event-feature-stack { grid-template-columns: 1fr; }
+ .route-events .event-backlog-list article { grid-template-columns: minmax(0, 1fr) auto; gap: 16px; }
+ .route-events .event-backlog-era { grid-column: 1; }
+ .route-events .event-backlog-list article > span:nth-child(2) { grid-column: 1 / -1; grid-row: 2; }
+ .route-events .event-status { grid-row: 1; grid-column: 2; }
+}
+@media (max-width: 600px) {
+ .route-events .event-feature-main { min-height: 0; padding: 235px 24px 30px; }
+ .route-events .event-feature-main .event-index, .route-events .event-index { left: 24px; top: 24px; font-size: .6rem; }
+ .route-events .event-convergence-seal { top: 32px; width: 260px; }
+ .route-events .event-feature-main h3 { font-size: clamp(1.9rem, 8.5vw, 2.8rem); }
+ .route-events .event-feature { padding-inline: 24px; }
+ .route-events .event-ledger-row { grid-template-columns: 24px minmax(0, 1fr); gap: 12px 14px; padding-block: 25px; }
+ .route-events .event-ledger-icon { display: none; }
+ .route-events .event-ledger-row > b { grid-column: 2; }
+ .route-events .event-ledger-row strong { font-size: 1.45rem; }
+}
