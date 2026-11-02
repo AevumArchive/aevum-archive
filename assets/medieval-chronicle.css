@@ -1,9 +1,9 @@
-/* The current campaign folio. Scoped to one page; no portraits or invented map geometry. */
+/* Shared campaign folio: current and recovered eras. No portraits or invented map geometry. */
 @font-face { font-family: "Chronicle Display"; src: url("/aevum-archive/assets/fonts/cinzel/Cinzel-Variable.ttf") format("truetype"); font-weight: 400 900; font-style: normal; font-display: swap; }
-body.route-playthrough-fantasy-medieval { --chronicle-ink: #e8e0e9; --chronicle-muted: #b8adbf; --chronicle-gold: #d6bc8e; --chronicle-green: #afc6ac; --chronicle-line: #bb9ec12e; background: radial-gradient(ellipse at 95% 0, #35403133, transparent 70rem), radial-gradient(ellipse at 0 40%, #40254522, transparent 70rem), #0b090f !important; color: var(--chronicle-ink); }
-body.route-playthrough-fantasy-medieval::before, body.route-playthrough-fantasy-medieval::after,
-body.route-playthrough-fantasy-medieval main.medieval-chronicle::before, body.route-playthrough-fantasy-medieval main.medieval-chronicle::after { content: none !important; }
-body.route-playthrough-fantasy-medieval main.medieval-chronicle { width: min(1440px, calc(100% - 80px)); max-width: 1440px; padding: 25px 0 35px; }
+:is(body.route-playthrough-fantasy-medieval, body.playthrough-chronicle) { --chronicle-ink: #e8e0e9; --chronicle-muted: #b8adbf; --chronicle-gold: #d6bc8e; --chronicle-green: #afc6ac; --chronicle-line: #bb9ec12e; background: radial-gradient(ellipse at 95% 0, #35403133, transparent 70rem), radial-gradient(ellipse at 0 40%, #40254522, transparent 70rem), #0b090f !important; color: var(--chronicle-ink); }
+:is(body.route-playthrough-fantasy-medieval, body.playthrough-chronicle)::before, :is(body.route-playthrough-fantasy-medieval, body.playthrough-chronicle)::after,
+:is(body.route-playthrough-fantasy-medieval, body.playthrough-chronicle) main.medieval-chronicle::before, :is(body.route-playthrough-fantasy-medieval, body.playthrough-chronicle) main.medieval-chronicle::after { content: none !important; }
+:is(body.route-playthrough-fantasy-medieval, body.playthrough-chronicle) main.medieval-chronicle { width: min(1440px, calc(100% - 80px)); max-width: 1440px; padding: 25px 0 35px; }
 .medieval-chronicle *, .medieval-chronicle *::before, .medieval-chronicle *::after { box-sizing: border-box; }
 .medieval-chronicle a { text-underline-offset: 6px; }
 .medieval-chronicle a:focus-visible { outline: 2px solid #dec491; outline-offset: 5px; }
@@ -16,7 +16,7 @@ body.route-playthrough-fantasy-medieval main.medieval-chronicle { width: min(144
 .medieval-chronicle .chronicle-kicker { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin: 0; color: var(--chronicle-gold); font: 400 .72rem/1.8 Verdana, sans-serif; text-transform: uppercase; letter-spacing: .1em; }
 .chronicle-kicker > span:not(.chronicle-live) { margin-left: 15px; color: #a695b4; font-size: .68rem; letter-spacing: .05em; }
 .chronicle-live { display: inline-block; width: 5px; height: 5px; border-radius: 50%; background: #b3cba7; box-shadow: 0 0 14px #b1cd9e66; }
-body.route-playthrough-fantasy-medieval .chronicle-hero h1 { margin: 30px 0 25px; color: #e5d0aa; font: 400 clamp(3.1rem, 6.5vw, 6.4rem)/1.12 "Chronicle Display", Georgia, serif; letter-spacing: -.045em; text-shadow: none; }
+:is(body.route-playthrough-fantasy-medieval, body.playthrough-chronicle) .chronicle-hero h1 { margin: 30px 0 25px; color: #e5d0aa; font: 400 clamp(3.1rem, 6.5vw, 6.4rem)/1.12 "Chronicle Display", Georgia, serif; letter-spacing: -.045em; text-shadow: none; }
 .chronicle-hero h1 > span { display: block; margin-bottom: 8px; color: #c9b7d5; font: italic 400 clamp(1.65rem, 2.8vw, 2.7rem)/1.3 Georgia, serif; letter-spacing: 0; }
 .chronicle-lede { max-width: 48ch; margin: 0; color: #c4b6cd; font: 400 1.17rem/1.85 Georgia, serif; }
 .chronicle-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 25px 30px; margin-top: 32px; }
@@ -99,7 +99,7 @@ body.route-playthrough-fantasy-medieval .chronicle-hero h1 { margin: 30px 0 25px
 .chronicle-return a:hover { text-decoration: underline; }
 .chronicle-return > span { color: #b39b71; font-size: 1.4rem; }
 .medieval-chronicle .footer { margin-top: 28px; padding-top: 0; border-top: 0; color: #9887a3; gap: 20px; line-height: 1.8; }
-html.halloween-night body.route-playthrough-fantasy-medieval > .halloween-banner { width: min(1440px, calc(100% - 80px)); margin-bottom: 0; }
+html.halloween-night :is(body.route-playthrough-fantasy-medieval, body.playthrough-chronicle) > .halloween-banner { width: min(1440px, calc(100% - 80px)); margin-bottom: 0; }
 @media (max-width: 1150px) {
  .chronicle-hero { grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: 35px; }
  .chronicle-cover { padding-inline: 24px; }
@@ -126,12 +126,12 @@ html.halloween-night body.route-playthrough-fantasy-medieval > .halloween-banner
  .medieval-chronicle .campaign-location p { grid-column: 2; }
 }
 @media (max-width: 600px) {
- body.route-playthrough-fantasy-medieval main.medieval-chronicle { width: calc(100% - 40px); padding-top: 18px; }
+ :is(body.route-playthrough-fantasy-medieval, body.playthrough-chronicle) main.medieval-chronicle { width: calc(100% - 40px); padding-top: 18px; }
  .chronicle-breadcrumb { font-size: .65rem; }
  .chronicle-opening { padding-block: 10px; }
  .medieval-chronicle .chronicle-kicker { font-size: .66rem; gap: 12px; }
  .chronicle-kicker > span:not(.chronicle-live) { flex-basis: 100%; margin-left: 17px; }
- body.route-playthrough-fantasy-medieval .chronicle-hero h1 { font-size: clamp(2.8rem, 12vw, 4rem); margin-top: 28px; }
+ :is(body.route-playthrough-fantasy-medieval, body.playthrough-chronicle) .chronicle-hero h1 { font-size: clamp(2.8rem, 12vw, 4rem); margin-top: 28px; }
  .chronicle-lede { font-size: 1.07rem; }
  .chronicle-actions { gap: 26px; }
  .chronicle-button { font-size: .72rem; padding-inline: 17px; gap: 20px; max-width: 100%; }
@@ -157,9 +157,9 @@ html.halloween-night body.route-playthrough-fantasy-medieval > .halloween-banner
  .medieval-chronicle .campaign-thread h3 { font-size: 1.7rem; }
  .chronicle-return { margin-top: 50px; }
  .chronicle-return > span { display: none; }
- html.halloween-night body.route-playthrough-fantasy-medieval > .halloween-banner { width: calc(100% - 40px); }
+ html.halloween-night :is(body.route-playthrough-fantasy-medieval, body.playthrough-chronicle) > .halloween-banner { width: calc(100% - 40px); }
 }
 @media (prefers-reduced-motion: reduce) {
- html:has(body.route-playthrough-fantasy-medieval) { scroll-behavior: auto !important; }
+ html:has(:is(body.route-playthrough-fantasy-medieval, body.playthrough-chronicle)) { scroll-behavior: auto !important; }
  .medieval-chronicle *, .medieval-chronicle *::before, .medieval-chronicle *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
