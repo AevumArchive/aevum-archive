@@ -1,5 +1,9 @@
 # Archive changelog
 
+## 2026-11-08
+
+- Rebuilt the Global Top Ten as an engraved ranking hall with a crowned summit, a portrait-free comparison ledger and a Pilgrim Gap exhibit. Reframed all ten dossiers with readable headings and uncropped artwork while retaining the achievement motifs, challenge writs, rankings and public snapshot hooks.
+
 ## 2026-11-02
 
 - Brought the 13 remaining standard player-character profiles into Faaram's dossier architecture: framed identity/portrait openings, readable paired facts, prominent recorded PL or status, native chapter navigation and larger narrative sections. Kept individual palettes, used existing uncropped artwork once and gave the five profiles without artwork animated archive sigils. Replaced file-placement instructions with an immersive portrait placeholder.

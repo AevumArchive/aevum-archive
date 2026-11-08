@@ -1,0 +1,345 @@
+/* The global ranking pairs the archive's folio typography with an engraved summit and power ledger. */
+body.route-leaderboard.grimoire-wing {
+  --hall-gold: #f1d49e;
+  --hall-line: #a888603f;
+  --hall-columns: 52px minmax(165px, 1.05fr) minmax(0, 1.65fr) 106px 20px;
+  background:
+    radial-gradient(ellipse at 76% 9%, #50406523, transparent 56rem),
+    radial-gradient(ellipse at 22% 13%, #3f233d2a, transparent 52rem),
+    repeating-linear-gradient(117deg, transparent 0 3px, #d8bfe402 3px 4px),
+    #0a080e !important;
+}
+
+.hall-cover {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: minmax(0, 1.04fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(24px, 5vw, 76px);
+  min-height: 508px;
+  margin-top: 25px;
+  padding: clamp(28px, 5vw, 74px);
+  border: 1px solid var(--hall-line);
+  background:
+    radial-gradient(ellipse at 84% 36%, #a0773f20, transparent 55%),
+    linear-gradient(113deg, #211427 0%, #140f1b 46%, #0c0a10 82%);
+}
+
+.hall-cover::before {
+  content: "";
+  position: absolute;
+  inset: 9px;
+  pointer-events: none;
+  border: 1px solid #d1aa6c20;
+  background:
+    linear-gradient(var(--hall-gold), var(--hall-gold)) top left / 16px 1px,
+    linear-gradient(var(--hall-gold), var(--hall-gold)) top left / 1px 16px,
+    linear-gradient(var(--hall-gold), var(--hall-gold)) bottom right / 16px 1px,
+    linear-gradient(var(--hall-gold), var(--hall-gold)) bottom right / 1px 16px;
+  background-repeat: no-repeat;
+}
+
+.ranking-hall .hall-label,
+.hall-register dt,
+.hall-table-head,
+.hall-record-footer a {
+  color: #d8bb8b;
+  font: 400 .68rem/1.65 var(--wing-label);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.hall-label > span { margin-right: .45em; color: #e9c784; }
+.ranking-hall .hall-intro h1 {
+  margin: 18px 0 21px;
+  color: #f4e9f2;
+  font: 500 clamp(3.4rem, 6vw, 6.5rem)/.99 "Archive Display", Georgia, serif;
+  letter-spacing: -.055em;
+}
+.hall-intro h1 em {
+  display: block;
+  color: var(--hall-gold);
+  font: italic 400 1.13em/.91 Georgia, serif;
+}
+.hall-intro .hall-lede {
+  max-width: 35ch;
+  color: #c9b9d0;
+  font: 400 clamp(1rem, 1.45vw, 1.16rem)/1.72 Georgia, serif;
+}
+.hall-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px 25px;
+  margin-top: 28px;
+}
+
+.hall-summit {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  min-height: 340px;
+  text-align: center;
+}
+.hall-engraving {
+  position: absolute;
+  z-index: -1;
+  width: min(115%, 455px);
+  height: auto;
+  max-width: none;
+  overflow: visible;
+  stroke: #c69c61;
+  opacity: .7;
+  filter: drop-shadow(0 0 12px #bc894859);
+}
+.hall-orbit { transform-origin: 220px 220px; animation: wing-orbit 100s linear infinite; }
+.hall-orbit-inner { animation-direction: reverse; animation-duration: 68s; }
+.hall-summit-copy {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  width: 100%;
+  padding: 20px 0;
+  background: radial-gradient(ellipse, #181119 15%, #171019eb 41%, transparent 74%);
+}
+.hall-crown {
+  width: clamp(48px, 5.5vw, 82px);
+  margin-bottom: 16px;
+  color: #f3d594;
+  filter: drop-shadow(0 0 14px #dda84eb0);
+}
+.hall-summit-copy .hall-label { margin: 0 0 8px; }
+.hall-summit-copy .hall-label span { margin: 0 .28em; }
+.hall-summit-value {
+  color: #ffebbb;
+  font: 500 clamp(3rem, 6.8vw, 6.4rem)/1 "Archive Display", Georgia, serif;
+  letter-spacing: -.055em;
+  font-variant-numeric: lining-nums tabular-nums;
+  text-shadow: 0 0 26px #e7ac5461, 0 3px 3px #130d12;
+}
+.hall-summit-copy .hall-summit-name {
+  margin: 13px 0 2px;
+  color: #f1e5ec;
+  font: 500 clamp(1.25rem, 2.5vw, 2.12rem)/1.2 "Archive Display", Georgia, serif;
+}
+.hall-summit-copy .hall-summit-title {
+  margin: 3px 0 0;
+  color: #d3b88a;
+  font: italic 400 1rem/1.4 Georgia, serif;
+}
+
+.hall-register {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 0;
+  border: 1px solid var(--hall-line);
+  border-top: 0;
+  background: #16101c;
+}
+.hall-register > div { padding: 21px clamp(15px, 3vw, 36px); }
+.hall-register > div + div { border-left: 1px solid var(--hall-line); }
+.hall-register dd {
+  margin: 5px 0 0;
+  color: #eadfea;
+  font: 400 clamp(1rem, 1.6vw, 1.26rem)/1.4 Georgia, serif;
+}
+.hall-register [data-archive-player-count] { color: var(--hall-gold); font-variant-numeric: lining-nums; }
+
+.ranking-hall .power-ledger { padding-top: 0; }
+.hall-table-head {
+  display: grid;
+  grid-template-columns: var(--hall-columns);
+  align-items: center;
+  gap: 16px;
+  padding: 14px 20px;
+  border: 1px solid var(--hall-line);
+  background: #201724;
+}
+.hall-table-head span:first-child { text-align: center; }
+.hall-table-head span:nth-child(4) { text-align: right; }
+.ranking-hall .power-ledger-table {
+  gap: 0;
+  padding: 0;
+  border: 1px solid var(--hall-line);
+  border-top: 0;
+  border-radius: 0;
+  background: linear-gradient(110deg, #17111e, #0e0b13 86%);
+  box-shadow: none;
+}
+.ranking-hall .power-ledger-table::before { content: none; }
+.ranking-hall .power-ledger-row {
+  --bar-color: 169 133 205;
+  grid-template-columns: var(--hall-columns);
+  gap: 16px;
+  min-height: 69px;
+  padding: 10px 20px;
+  border-radius: 0;
+}
+.ranking-hall .power-ledger-row + .power-ledger-row { border-top: 1px solid #cbb0da19; }
+.ranking-hall .power-ledger-row:nth-child(1) {
+  --bar-color: 245 206 125;
+  background: linear-gradient(90deg, #bc884721, #bc884709 75%, transparent);
+  box-shadow: inset 2px 0 #d6a65e;
+}
+.ranking-hall .power-ledger-row:nth-child(2) { --bar-color: 201 209 229; }
+.ranking-hall .power-ledger-row:nth-child(3) { --bar-color: 225 158 118; }
+.ranking-hall .power-ledger-row:hover,
+.ranking-hall .power-ledger-row:focus-visible { background-color: #e1baff13; transform: none; }
+.ranking-hall .power-ledger-row:focus-visible { z-index: 2; outline: 2px solid var(--hall-gold); outline-offset: -3px; }
+.ranking-hall .power-ledger-row > span {
+  color: rgb(var(--bar-color));
+  font: 500 .9rem/1.25 "Archive Display", Georgia, serif;
+}
+.hall-row-name { display: grid; gap: 2px; }
+.hall-row-name strong { color: #f1e7f1; font: 500 clamp(1rem, 1.5vw, 1.23rem)/1.24 Georgia, serif; }
+.hall-row-name small { color: #baa9c3; font: italic 400 .84rem/1.35 Georgia, serif; }
+.ranking-hall .power-ledger-row > i {
+  height: 10px;
+  border-color: #d0b0df21;
+  border-radius: 0;
+  background: repeating-linear-gradient(to right, transparent 0 calc(25% - 1px), #d6b6de2a calc(25% - 1px) 25%), #0c0911;
+  box-shadow: none;
+}
+.ranking-hall .power-ledger-row > i > b {
+  background: linear-gradient(90deg, rgb(var(--bar-color) / .34), rgb(var(--bar-color)));
+  box-shadow: inset -2px 0 #ffffff70;
+}
+.ranking-hall .power-ledger-row > em {
+  color: #f4e7d7;
+  font: 400 clamp(.9rem, 1.45vw, 1.18rem)/1.2 Verdana, sans-serif;
+  font-variant-numeric: tabular-nums;
+}
+.ranking-hall .power-ledger-row > .hall-row-arrow {
+  color: #c7abc9;
+  font: 400 1rem/1 Verdana, sans-serif;
+}
+
+.hall-gap {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(16px, 4vw, 40px);
+  margin-top: 14px;
+  padding: 22px clamp(15px, 3vw, 34px);
+  border: 1px solid var(--hall-line);
+  border-left: 2px solid #d4ad73;
+  background: linear-gradient(103deg, #4b342548, #16101c 75%);
+}
+.hall-gap-mark {
+  color: #ddbd83;
+  font: 500 clamp(1.2rem, 2.5vw, 2.4rem)/1 "Archive Display", Georgia, serif;
+  white-space: nowrap;
+}
+.hall-gap-mark i { color: #bf8dc2; font-style: normal; }
+.hall-gap h3 { margin: 0 0 5px; color: #f5dfb4; font: 400 1.32rem/1.25 Georgia, serif; }
+.hall-gap small { color: #ceb9ca; font: 400 .94rem/1.5 Georgia, serif; }
+
+/* Leave the individual achievement motifs and their motion in the prestige sheets. */
+.ranking-hall .global-ranking { gap: 40px; }
+.ranking-hall .global-rank-card {
+  border-radius: 3px;
+  padding: clamp(18px, 3.2vw, 46px);
+}
+.ranking-hall .global-rank-card:target { border-color: rgb(var(--rank-accent) / .8); }
+.ranking-hall .global-rank-card::before { inset: 8px; border-radius: 0; }
+.ranking-hall .global-rank-head {
+  gap: 19px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid rgb(var(--rank-accent) / .23);
+}
+.ranking-hall .global-rank-head .eyebrow { color: #d8c9d8; }
+.ranking-hall .global-rank-head h2 {
+  color: #f7ecf3;
+  font: 500 clamp(1.7rem, 3.8vw, 3.8rem)/1.12 "Archive Display", Georgia, serif;
+  letter-spacing: -.04em;
+}
+.ranking-hall .global-rank-number {
+  border-radius: 2px;
+  color: color-mix(in srgb, rgb(var(--rank-accent)), #fff 24%);
+  font: 500 1.36rem/1 "Archive Display", Georgia, serif;
+}
+.ranking-hall .global-rank-title { color: color-mix(in srgb, rgb(var(--rank-accent)), #fff 30%); }
+.ranking-hall .global-power strong { font: 500 clamp(1.65rem, 3vw, 2.95rem)/1.08 "Archive Display", Georgia, serif; }
+.ranking-hall .leaderboard-challenge { border-radius: 2px; }
+.ranking-hall .global-rank-body { grid-template-columns: minmax(185px, 29%) minmax(0, 1fr); }
+.hall-dossier-copy {
+  display: grid;
+  align-self: center;
+  gap: 20px;
+  min-width: 0;
+}
+.ranking-hall .global-rank-portrait {
+  display: block;
+  grid-row: 1;
+  min-height: 0;
+  padding: 0;
+  border-radius: 2px;
+}
+.ranking-hall .global-rank-portrait > img { position: relative; display: block; height: auto; }
+.ranking-hall .global-rank-portrait > img[hidden] { display: none; }
+.ranking-hall .global-rank-portrait:has(img[hidden]) { min-height: 210px; }
+.ranking-hall .global-rank-portrait::before { inset: 6px; border-radius: 0; }
+.ranking-hall .portrait-slot-label { position: absolute; inset: auto 15px 15px; }
+.ranking-hall .global-rank-portrait:has(img:not([hidden])) .portrait-slot-label { visibility: hidden; }
+.ranking-hall .global-rank-facts div,
+.ranking-hall .global-public-row > .global-public-record { border-radius: 2px; }
+.ranking-hall .character-archive-note { font-size: 1.01rem; }
+.hall-record-footer {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: end;
+  margin-top: 25px;
+  padding-top: 14px;
+  border-top: 1px solid rgb(var(--rank-accent) / .18);
+}
+.hall-record-footer a { padding-block: 6px; letter-spacing: .07em; }
+
+@media (max-width: 900px) {
+  .hall-cover { gap: 22px; padding: 35px 30px; min-height: 415px; }
+  .hall-summit { min-height: 295px; }
+  .ranking-hall .global-achievements { grid-column: 1 / -1; }
+}
+
+@media (max-width: 760px) {
+  body.route-leaderboard.grimoire-wing { --hall-columns: 31px minmax(0, 1fr) 76px 12px; }
+  .hall-cover { grid-template-columns: minmax(0, 1fr); padding: 38px 24px 18px; }
+  .hall-intro { text-align: center; }
+  .ranking-hall .hall-intro h1 { font-size: clamp(2.85rem, 11vw, 4.8rem); }
+  .hall-intro .hall-lede { margin-inline: auto; }
+  .hall-links { justify-content: center; }
+  .hall-engraving { width: min(105%, 370px); }
+  .hall-summit-value { font-size: clamp(2.85rem, 11vw, 4.5rem); }
+  .hall-table-head,
+  .ranking-hall .power-ledger-row { gap: 7px 10px; padding-inline: 12px; }
+  .hall-table-head span:nth-child(3) { display: none; }
+  .ranking-hall .power-ledger-row > i { grid-row: 2; grid-column: 2 / -1; height: 5px; }
+  .ranking-hall .power-ledger-row > em { grid-row: 1; grid-column: 3; }
+  .ranking-hall .power-ledger-row > .hall-row-arrow { grid-row: 1; grid-column: 4; }
+  .ranking-hall .global-rank-head { grid-template-columns: 44px minmax(0, 1fr); gap: 13px; }
+  .ranking-hall .global-rank-number { width: 44px; height: 44px; }
+  .ranking-hall .global-power { padding-left: 0; justify-items: start; }
+  .ranking-hall .global-rank-body { grid-template-columns: minmax(0, 1fr); }
+  .ranking-hall .global-rank-portrait {
+    grid-row: auto;
+    width: min(100%, 440px);
+    justify-self: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .hall-cover { padding-inline: 17px; }
+  .hall-register { grid-template-columns: 1fr; }
+  .hall-register > div { display: grid; grid-template-columns: .85fr 1.15fr; align-items: center; gap: 12px; padding-block: 11px; }
+  .hall-register > div + div { border-left: 0; border-top: 1px solid var(--hall-line); }
+  .hall-register dd { margin-top: 0; }
+  .hall-gap { align-items: start; }
+  .hall-gap-mark { margin-top: 4px; }
+}
+
+@media print {
+  .hall-engraving, .hall-links, .hall-record-footer, .leaderboard-challenge { display: none !important; }
+}
