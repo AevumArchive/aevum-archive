@@ -2,7 +2,7 @@
 
 ## 2026-11-08
 
-- Moved Vael Orrix to Global #3 at 400,000 Stable PL. Rhazek Vaul and Serin Dhal moved to #4 and #5 respectively at their existing Stable PL.
+- Moved Vael Orrix to Global #3 at 401,800 Stable PL. Rhazek Vaul and Serin Dhal moved to #4 and #5 respectively at their existing Stable PL.
 - Rebuilt the Global Top Ten as an engraved ranking hall with a crowned summit, a portrait-free comparison ledger and a Pilgrim Gap exhibit. Reframed all ten dossiers with readable headings and uncropped artwork while retaining the achievement motifs, challenge writs, rankings and public snapshot hooks.
 
 ## 2026-11-02
