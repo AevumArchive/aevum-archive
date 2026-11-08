@@ -188,9 +188,9 @@
 }
 .global-rank-card.rank-1 { --rank-accent: 255 207 111; }
 .global-rank-card.rank-2 { --rank-accent: 210 220 235; }
-.global-rank-card.rank-3 { --rank-accent: 206 128 72; }
-.global-rank-card.rank-4 { --rank-accent: 150 130 225; }
-.global-rank-card.rank-5 { --rank-accent: 90 137 126; }
+.global-rank-card[data-archive-character-id="rhazek-vaul"] { --rank-accent: 206 128 72; }
+.global-rank-card[data-archive-character-id="serin-dhal"] { --rank-accent: 150 130 225; }
+.global-rank-card[data-archive-character-id="vael-orrix"] { --rank-accent: 90 137 126; }
 .global-rank-card.rank-6 { --rank-accent: 235 224 193; }
 .global-rank-card.rank-7 { --rank-accent: 166 73 73; }
 .global-rank-card.rank-8 { --rank-accent: 126 169 214; }
