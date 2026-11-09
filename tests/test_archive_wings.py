@@ -40,7 +40,7 @@ class ArchiveWingsTest(unittest.TestCase):
                 source = (ROOT / name / 'index.html').read_text(encoding='utf-8')
                 if name == 'achievements':
                     records = re.findall(r'<article\b[^>]*>[\s\S]*?</article>', source)
-                    self.assertEqual(len(records), 49)  # 22 earned, 3 explanatory notes, 24 locked.
+                    self.assertEqual(len(records), 52)  # 25 earned, 3 explanatory notes, 24 locked.
                     hashes = {hashlib.sha256(plain(record).encode()).hexdigest() for record in records}
                     self.assertTrue(set(baseline['records']).issubset(hashes))
                 else:
