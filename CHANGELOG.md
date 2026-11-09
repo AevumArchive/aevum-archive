@@ -1,5 +1,9 @@
 # Archive changelog
 
+## 2026-11-10
+
+- Marked Thren Valis as the only holder worldwide of Beyond the Final Horizon on the leaderboard.
+
 ## 2026-11-09
 
 - Applied the Jiro and Ichiro dossier style to 27 NPC profiles with framed likenesses, readable quick facts and chapter navigation. Preserved the individual palettes, portraits, form switches and special records.
