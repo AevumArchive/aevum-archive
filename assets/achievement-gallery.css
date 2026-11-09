@@ -48,6 +48,46 @@ body.route-achievements.grimoire-wing { --wing-accent: #d6c09b; }
 .route-achievements .divine-trophy-facts { margin-top: 28px; }
 .route-achievements .divine-trophy-facts strong { font-weight: 400; }
 .route-achievements .divine-trophy-facts span { font-weight: 400; font-size: .62rem; line-height: 1.8; }
+
+/* Earlier playthroughs keep their own emblems within the established rarity treatments. */
+.route-achievements .trophy-card.tree-trophy {
+  border-color: #e1c18a91;
+  background: radial-gradient(ellipse at 14% 40%, #41664b48, transparent 57%),
+              radial-gradient(ellipse at 100% 0, #ad8e4f29, transparent 65%), #111817;
+}
+.route-achievements .tree-trophy .divine-trophy-emblem {
+  background: radial-gradient(circle, #53683964, #0b1a16e6 68%);
+  box-shadow: 0 0 0 12px #e3cf8c0a, 0 0 48px #a1b67f2b, inset 0 0 34px #d4b56a20;
+}
+.route-achievements .tree-trophy .divine-trophy-emblem::after {
+  border-color: #c2ce9a40;
+}
+.route-achievements .tree-trophy svg {
+  position: relative;
+  z-index: 1;
+  width: 58%;
+  color: #f7dfa1;
+  filter: drop-shadow(0 0 12px #d8c48266);
+}
+.route-achievements .tree-trophy .divine-trophy-note {
+  max-width: 65ch;
+  margin-top: 23px;
+  color: #d1cec4;
+}
+.route-achievements .trophy-card.greenland-trophy {
+  grid-column: 1 / -1;
+  border-color: #8cc9db64;
+  background: radial-gradient(ellipse at 0 15%, #49839f39, transparent 62%), #111721;
+}
+.route-achievements .greenland-trophy .trophy-seal {
+  color: #c2eef6;
+  border-color: #9dd7ec59;
+  box-shadow: inset 0 0 23px #b1e9ff14;
+}
+.route-achievements .greenland-trophy svg { width: 58%; }
+.route-achievements .greenland-trophy h3 { color: #def4fb; }
+.route-achievements .greenland-trophy .eyebrow { color: #b5d8e6; }
+
 .route-achievements #money-achievements .archive-branch-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; border-block: 1px solid var(--wing-line); }
 .route-achievements #money-achievements .archive-branch-card { min-width: 0; min-height: 0; padding: 30px; border: 0; border-right: 1px solid var(--wing-line); border-radius: 0; background: none; box-shadow: none; }
 .route-achievements #money-achievements .archive-branch-card:first-child { padding-left: 0; }
