@@ -2,6 +2,7 @@
 
 ## 2026-11-10
 
+- Matched the Ancient trophies to their rarity tier with engraved violet backgrounds, gold edges and rotating seal details.
 - Set the sealed achievement total to 16,822 in the page census and register.
 - Added the achievement message to Good Work! alongside its unlock condition.
 - Clarified the Scythe of Death unlock text to name Earth's Death.
