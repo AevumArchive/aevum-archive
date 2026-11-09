@@ -253,6 +253,14 @@ body.route-achievements.grimoire-wing { --wing-accent: #d6c09b; }
   background: radial-gradient(ellipse at 14% 40%, #795b984a, transparent 57%),
               radial-gradient(ellipse at 100% 0, #ad804835, transparent 65%), #181321;
 }
+.route-achievements .instructor-trophy .achievement-quote {
+  max-width: 56ch;
+  margin: 18px 0 0;
+  padding: 9px 0 9px 17px;
+  border-left: 1px solid #d4b68180;
+  color: #e2cde6;
+  font: italic 400 1.06rem/1.65 Georgia, serif;
+}
 .route-achievements .trophy-card.cursed-trophy {
   border-color: #d7a07d91;
   background: radial-gradient(ellipse at 14% 40%, #963e544a, transparent 57%),

@@ -2,6 +2,7 @@
 
 ## 2026-11-10
 
+- Added the achievement message to Good Work! alongside its unlock condition.
 - Clarified the Scythe of Death unlock text to name Earth's Death.
 - Restored the portrait-free folio layouts for Raoul, Arnold and Mira.
 - Marked Thren Valis as the only holder worldwide of Beyond the Final Horizon on the leaderboard.
