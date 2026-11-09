@@ -75,7 +75,7 @@ class ArchiveWingsTest(unittest.TestCase):
             source = (ROOT / name / 'index.html').read_text(encoding='utf-8')
             parsed = WingParser()
             parsed.feed(source)
-            allowed = {'/aevum-archive/assets/home-v2/home-archive-sigil.webp'}
+            allowed = {'/aevum-archive/assets/archive-mark.svg'}
             if name == 'achievements':
                 allowed.add('/aevum-archive/assets/ui/achievements/locked-achievement-chain-overlay.png')
                 self.assertEqual(source.count('class="locked-achievement-chain-overlay"'), 24)

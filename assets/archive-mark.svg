@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="field" x2="0" y2="1">
+      <stop stop-color="#352344"/>
+      <stop offset="1" stop-color="#130f1c"/>
+    </linearGradient>
+    <linearGradient id="gold" x2="0" y2="1">
+      <stop stop-color="#fff0c9"/>
+      <stop offset="1" stop-color="#d8ab6b"/>
+    </linearGradient>
+  </defs>
+
+  <!-- An engraved seal with a custom A and the fold of an open book. -->
+  <path d="M32 3 53 13l8 19-8 19-21 10L11 51 3 32l8-19Z"
+        fill="url(#field)" stroke="#c69a65" stroke-width="1.5"/>
+  <path d="M32 8 49 17l6 15-6 15-17 9-17-9-6-15 6-15Z"
+        fill="none" stroke="#b896cc" stroke-opacity=".5"/>
+  <path d="M32 8v4m0 40v4M9 32h5m36 0h5" stroke="#d9af78" stroke-width="1.4"/>
+  <path d="M16 45v-1.5l4-1L30.5 16H34l11 26.5 4 1V45H36v-1.5l4-1-2.8-7H26.4l-2.7 7 4.3 1V45Zm11.6-12.5H36L31.7 22Z"
+        fill="url(#gold)" fill-rule="evenodd"/>
+  <path d="M17 48q9 0 15 4 6-4 15-4" fill="none" stroke="#d2ace8"
+        stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

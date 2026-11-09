@@ -49,7 +49,7 @@ class MedievalChronicleTest(unittest.TestCase):
 
     def test_records_remain_open_without_portrait_previews(self):
         self.assertEqual(len(self.parsed.records), 19)  # 4 characters, 3 NPCs, 4 places, 8 threads.
-        self.assertEqual(self.parsed.images, ['/aevum-archive/assets/home-v2/home-archive-sigil.webp'])
+        self.assertEqual(self.parsed.images, ['/aevum-archive/assets/archive-mark.svg'])
         self.assertNotIn('assets/images/', self.page)
         self.assertNotRegex(self.page, r'<[^>]+\shidden(?:[=\s>])')
         self.assertIn('class="chronicle-crest"', self.page)

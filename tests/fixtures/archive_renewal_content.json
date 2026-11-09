@@ -22,7 +22,7 @@
       "/aevum-archive/world-items/"
     ],
     "images": [
-      "/aevum-archive/assets/home-v2/home-archive-sigil.webp"
+      "/aevum-archive/assets/archive-mark.svg"
     ]
   },
   "characters/bonds.html": {
@@ -84,7 +84,7 @@
       "/aevum-archive/world-items/"
     ],
     "images": [
-      "/aevum-archive/assets/home-v2/home-archive-sigil.webp"
+      "/aevum-archive/assets/archive-mark.svg"
     ]
   },
   "codex/abilities.html": {
@@ -158,7 +158,7 @@
       "/aevum-archive/world-items/"
     ],
     "images": [
-      "/aevum-archive/assets/home-v2/home-archive-sigil.webp"
+      "/aevum-archive/assets/archive-mark.svg"
     ]
   },
   "codex/bindings.html": {
@@ -191,7 +191,7 @@
       "/aevum-archive/world-items/"
     ],
     "images": [
-      "/aevum-archive/assets/home-v2/home-archive-sigil.webp"
+      "/aevum-archive/assets/archive-mark.svg"
     ]
   },
   "codex/chapter-bosses.html": {
@@ -251,7 +251,7 @@
       "/aevum-archive/world-items/"
     ],
     "images": [
-      "/aevum-archive/assets/home-v2/home-archive-sigil.webp"
+      "/aevum-archive/assets/archive-mark.svg"
     ]
   },
   "codex/classes.html": {
@@ -322,7 +322,7 @@
       "/aevum-archive/world-items/"
     ],
     "images": [
-      "/aevum-archive/assets/home-v2/home-archive-sigil.webp"
+      "/aevum-archive/assets/archive-mark.svg"
     ]
   },
   "codex/handbook.html": {
@@ -376,7 +376,7 @@
       "/aevum-archive/world-items/"
     ],
     "images": [
-      "/aevum-archive/assets/home-v2/home-archive-sigil.webp"
+      "/aevum-archive/assets/archive-mark.svg"
     ]
   },
   "codex/index.html": {
@@ -444,7 +444,7 @@
       "/aevum-archive/world-items/"
     ],
     "images": [
-      "/aevum-archive/assets/home-v2/home-archive-sigil.webp"
+      "/aevum-archive/assets/archive-mark.svg"
     ]
   },
   "codex/paths.html": {
@@ -481,7 +481,7 @@
       "/aevum-archive/world-items/"
     ],
     "images": [
-      "/aevum-archive/assets/home-v2/home-archive-sigil.webp"
+      "/aevum-archive/assets/archive-mark.svg"
     ]
   },
   "codex/power.html": {
@@ -519,7 +519,7 @@
       "/aevum-archive/world-items/"
     ],
     "images": [
-      "/aevum-archive/assets/home-v2/home-archive-sigil.webp"
+      "/aevum-archive/assets/archive-mark.svg"
     ]
   },
   "codex/races.html": {
@@ -1194,7 +1194,7 @@
       "/aevum-archive/world-items/"
     ],
     "images": [
-      "/aevum-archive/assets/home-v2/home-archive-sigil.webp"
+      "/aevum-archive/assets/archive-mark.svg"
     ]
   },
   "codex/traits.html": {
@@ -1263,7 +1263,7 @@
       "/aevum-archive/world-items/"
     ],
     "images": [
-      "/aevum-archive/assets/home-v2/home-archive-sigil.webp"
+      "/aevum-archive/assets/archive-mark.svg"
     ]
   },
   "downloads/texture-pack.html": {
@@ -1304,7 +1304,7 @@
       "https://github.com/AevumArchive/aevum-archive/releases/latest"
     ],
     "images": [
-      "/aevum-archive/assets/home-v2/home-archive-sigil.webp"
+      "/aevum-archive/assets/archive-mark.svg"
     ]
   },
   "events/multiversal-convergence.html": {
@@ -1359,7 +1359,7 @@
       "/aevum-archive/world-items/"
     ],
     "images": [
-      "/aevum-archive/assets/home-v2/home-archive-sigil.webp"
+      "/aevum-archive/assets/archive-mark.svg"
     ]
   },
   "events/night-of-thousand-gates.html": {
@@ -1395,7 +1395,7 @@
       "/aevum-archive/world-items/"
     ],
     "images": [
-      "/aevum-archive/assets/home-v2/home-archive-sigil.webp"
+      "/aevum-archive/assets/archive-mark.svg"
     ]
   },
   "events/the-silent-fault.html": {
@@ -1445,7 +1445,7 @@
       "/aevum-archive/world-items/"
     ],
     "images": [
-      "/aevum-archive/assets/home-v2/home-archive-sigil.webp"
+      "/aevum-archive/assets/archive-mark.svg"
     ]
   },
   "lore/cosmology/index.html": {
@@ -1491,7 +1491,7 @@
       "/aevum-archive/world-items/"
     ],
     "images": [
-      "/aevum-archive/assets/home-v2/home-archive-sigil.webp"
+      "/aevum-archive/assets/archive-mark.svg"
     ]
   },
   "lore/cosmology/souls.html": {
@@ -1553,7 +1553,7 @@
       "/aevum-archive/world-items/"
     ],
     "images": [
-      "/aevum-archive/assets/home-v2/home-archive-sigil.webp"
+      "/aevum-archive/assets/archive-mark.svg"
     ]
   },
   "lore/cosmology/the-umbral-meridian.html": {
@@ -1587,7 +1587,7 @@
       "/aevum-archive/world-items/"
     ],
     "images": [
-      "/aevum-archive/assets/home-v2/home-archive-sigil.webp"
+      "/aevum-archive/assets/archive-mark.svg"
     ]
   },
   "lore/cosmology/time-and-reality.html": {
@@ -1630,7 +1630,7 @@
       "/aevum-archive/world-items/"
     ],
     "images": [
-      "/aevum-archive/assets/home-v2/home-archive-sigil.webp"
+      "/aevum-archive/assets/archive-mark.svg"
     ]
   },
   "lore/cosmology/world-continuity.html": {
@@ -1682,7 +1682,7 @@
       "/aevum-archive/world-items/"
     ],
     "images": [
-      "/aevum-archive/assets/home-v2/home-archive-sigil.webp"
+      "/aevum-archive/assets/archive-mark.svg"
     ]
   },
   "lore/dimensions/index.html": {
@@ -1721,7 +1721,7 @@
       "/aevum-archive/world-items/"
     ],
     "images": [
-      "/aevum-archive/assets/home-v2/home-archive-sigil.webp"
+      "/aevum-archive/assets/archive-mark.svg"
     ]
   },
   "lore/dimensions/shadow-realm.html": {
@@ -1767,7 +1767,7 @@
       "/aevum-archive/world-items/"
     ],
     "images": [
-      "/aevum-archive/assets/home-v2/home-archive-sigil.webp"
+      "/aevum-archive/assets/archive-mark.svg"
     ]
   },
   "lore/factions/faaram-servants.html": {
@@ -1823,7 +1823,7 @@
       "/aevum-archive/world-items/"
     ],
     "images": [
-      "/aevum-archive/assets/home-v2/home-archive-sigil.webp"
+      "/aevum-archive/assets/archive-mark.svg"
     ]
   },
   "lore/factions/goetterfamilie.html": {
@@ -1850,7 +1850,7 @@
       "/aevum-archive/playthroughs/"
     ],
     "images": [
-      "/aevum-archive/assets/home-v2/home-archive-sigil.webp"
+      "/aevum-archive/assets/archive-mark.svg"
     ]
   },
   "lore/factions/index.html": {
@@ -1894,7 +1894,7 @@
       "/aevum-archive/world-items/"
     ],
     "images": [
-      "/aevum-archive/assets/home-v2/home-archive-sigil.webp"
+      "/aevum-archive/assets/archive-mark.svg"
     ]
   },
   "lore/factions/jawohls-construction.html": {
@@ -1933,7 +1933,7 @@
       "/aevum-archive/world-items/"
     ],
     "images": [
-      "/aevum-archive/assets/home-v2/home-archive-sigil.webp"
+      "/aevum-archive/assets/archive-mark.svg"
     ]
   },
   "lore/factions/vault-8-authority.html": {
@@ -1970,7 +1970,7 @@
       "/aevum-archive/world-items/"
     ],
     "images": [
-      "/aevum-archive/assets/home-v2/home-archive-sigil.webp"
+      "/aevum-archive/assets/archive-mark.svg"
     ]
   },
   "lore/history/ichiro-and-jiro.html": {
@@ -2048,7 +2048,7 @@
       "/aevum-archive/world-items/"
     ],
     "images": [
-      "/aevum-archive/assets/home-v2/home-archive-sigil.webp"
+      "/aevum-archive/assets/archive-mark.svg"
     ]
   },
   "lore/history/index.html": {
@@ -2097,7 +2097,7 @@
       "/aevum-archive/world-items/"
     ],
     "images": [
-      "/aevum-archive/assets/home-v2/home-archive-sigil.webp"
+      "/aevum-archive/assets/archive-mark.svg"
     ]
   },
   "lore/history/timeline.html": {
@@ -2159,7 +2159,7 @@
       "/aevum-archive/world-items/"
     ],
     "images": [
-      "/aevum-archive/assets/home-v2/home-archive-sigil.webp"
+      "/aevum-archive/assets/archive-mark.svg"
     ]
   },
   "lore/kingdoms/avalon.html": {
@@ -2215,7 +2215,7 @@
       "/aevum-archive/world-items/"
     ],
     "images": [
-      "/aevum-archive/assets/home-v2/home-archive-sigil.webp",
+      "/aevum-archive/assets/archive-mark.svg",
       "/aevum-archive/assets/map-ornaments/section-frame.png",
       "/aevum-archive/assets/map-ornaments/section-divider.png",
       "/aevum-archive/assets/maps/avalon-rath-regional-map.png"
@@ -2252,7 +2252,7 @@
       "/aevum-archive/world-items/"
     ],
     "images": [
-      "/aevum-archive/assets/home-v2/home-archive-sigil.webp"
+      "/aevum-archive/assets/archive-mark.svg"
     ]
   },
   "lore/kingdoms/unnamed-crown.html": {
@@ -2286,7 +2286,7 @@
       "/aevum-archive/world-items/"
     ],
     "images": [
-      "/aevum-archive/assets/home-v2/home-archive-sigil.webp"
+      "/aevum-archive/assets/archive-mark.svg"
     ]
   },
   "lore/locations/alterra.html": {
@@ -2323,7 +2323,7 @@
       "/aevum-archive/world-items/"
     ],
     "images": [
-      "/aevum-archive/assets/home-v2/home-archive-sigil.webp"
+      "/aevum-archive/assets/archive-mark.svg"
     ]
   },
   "lore/locations/index.html": {
@@ -2384,7 +2384,7 @@
       "/aevum-archive/world-items/"
     ],
     "images": [
-      "/aevum-archive/assets/home-v2/home-archive-sigil.webp"
+      "/aevum-archive/assets/archive-mark.svg"
     ]
   },
   "lore/locations/sunken-bell-tower.html": {
@@ -2415,7 +2415,7 @@
       "/aevum-archive/world-items/"
     ],
     "images": [
-      "/aevum-archive/assets/home-v2/home-archive-sigil.webp"
+      "/aevum-archive/assets/archive-mark.svg"
     ]
   },
   "lore/locations/temmie-town.html": {
@@ -2453,7 +2453,7 @@
       "/aevum-archive/world-items/"
     ],
     "images": [
-      "/aevum-archive/assets/home-v2/home-archive-sigil.webp"
+      "/aevum-archive/assets/archive-mark.svg"
     ]
   },
   "lore/locations/the-bridge.html": {
@@ -2483,7 +2483,7 @@
       "/aevum-archive/world-items/"
     ],
     "images": [
-      "/aevum-archive/assets/home-v2/home-archive-sigil.webp"
+      "/aevum-archive/assets/archive-mark.svg"
     ]
   },
   "lore/locations/vault-8.html": {
@@ -2521,7 +2521,7 @@
       "/aevum-archive/world-items/"
     ],
     "images": [
-      "/aevum-archive/assets/home-v2/home-archive-sigil.webp"
+      "/aevum-archive/assets/archive-mark.svg"
     ]
   },
   "lore/locations/veiled-hamlet.html": {
@@ -2557,7 +2557,7 @@
       "/aevum-archive/world-items/"
     ],
     "images": [
-      "/aevum-archive/assets/home-v2/home-archive-sigil.webp"
+      "/aevum-archive/assets/archive-mark.svg"
     ]
   },
   "lore/locations/zenith-estate.html": {
@@ -2595,7 +2595,7 @@
       "/aevum-archive/world-items/"
     ],
     "images": [
-      "/aevum-archive/assets/home-v2/home-archive-sigil.webp"
+      "/aevum-archive/assets/archive-mark.svg"
     ]
   },
   "lore/noble-houses/heraldry.html": {
@@ -2654,7 +2654,7 @@
       "/aevum-archive/world-items/"
     ],
     "images": [
-      "/aevum-archive/assets/home-v2/home-archive-sigil.webp"
+      "/aevum-archive/assets/archive-mark.svg"
     ]
   },
   "lore/noble-houses/house-zenith.html": {
@@ -2720,7 +2720,7 @@
       "/aevum-archive/world-items/"
     ],
     "images": [
-      "/aevum-archive/assets/home-v2/home-archive-sigil.webp"
+      "/aevum-archive/assets/archive-mark.svg"
     ]
   },
   "lore/noble-houses/index.html": {
@@ -2788,7 +2788,7 @@
       "/aevum-archive/world-items/"
     ],
     "images": [
-      "/aevum-archive/assets/home-v2/home-archive-sigil.webp"
+      "/aevum-archive/assets/archive-mark.svg"
     ]
   },
   "lore/settlements/index.html": {
@@ -2819,7 +2819,7 @@
       "/aevum-archive/world-items/"
     ],
     "images": [
-      "/aevum-archive/assets/home-v2/home-archive-sigil.webp"
+      "/aevum-archive/assets/archive-mark.svg"
     ]
   },
   "lore/settlements/neris.html": {
@@ -2853,7 +2853,7 @@
       "/aevum-archive/world-items/"
     ],
     "images": [
-      "/aevum-archive/assets/home-v2/home-archive-sigil.webp"
+      "/aevum-archive/assets/archive-mark.svg"
     ]
   },
   "npcs/arnold.html": {
@@ -2890,7 +2890,7 @@
       "/aevum-archive/world-items/"
     ],
     "images": [
-      "/aevum-archive/assets/home-v2/home-archive-sigil.webp"
+      "/aevum-archive/assets/archive-mark.svg"
     ]
   },
   "npcs/mira.html": {
@@ -2926,7 +2926,7 @@
       "/aevum-archive/world-items/"
     ],
     "images": [
-      "/aevum-archive/assets/home-v2/home-archive-sigil.webp"
+      "/aevum-archive/assets/archive-mark.svg"
     ]
   },
   "npcs/raoul.html": {
@@ -2980,7 +2980,7 @@
       "/aevum-archive/world-items/"
     ],
     "images": [
-      "/aevum-archive/assets/home-v2/home-archive-sigil.webp"
+      "/aevum-archive/assets/archive-mark.svg"
     ]
   },
   "sealed-records/index.html": {
@@ -3023,7 +3023,7 @@
       "/aevum-archive/world-items/"
     ],
     "images": [
-      "/aevum-archive/assets/home-v2/home-archive-sigil.webp"
+      "/aevum-archive/assets/archive-mark.svg"
     ]
   },
   "top-characters/index.html": {
@@ -3048,7 +3048,7 @@
       "/aevum-archive/world-items/"
     ],
     "images": [
-      "/aevum-archive/assets/home-v2/home-archive-sigil.webp"
+      "/aevum-archive/assets/archive-mark.svg"
     ]
   },
   "updates/index.html": {
@@ -3132,7 +3132,7 @@
       "/aevum-archive/world-items/"
     ],
     "images": [
-      "/aevum-archive/assets/home-v2/home-archive-sigil.webp"
+      "/aevum-archive/assets/archive-mark.svg"
     ]
   },
   "world-events/index.html": {
@@ -3199,7 +3199,7 @@
       "/aevum-archive/world-items/"
     ],
     "images": [
-      "/aevum-archive/assets/home-v2/home-archive-sigil.webp"
+      "/aevum-archive/assets/archive-mark.svg"
     ]
   }
 }

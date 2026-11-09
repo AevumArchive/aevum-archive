@@ -33,7 +33,7 @@ class HomeAtriumTest(unittest.TestCase):
 
     def test_homepage_has_no_background_or_tile_artwork(self):
         self.assertEqual([image['src'] for image in self.parsed.images], [
-            '/aevum-archive/assets/home-v2/home-archive-sigil.webp'])
+            '/aevum-archive/assets/archive-mark.svg'])
         self.assertNotIn('archive-threshold', self.page)
         self.assertNotIn('atrium-backdrop', self.page)
         for old in ('home-hero-archive-realm', 'home-current-playthrough', 'home-card-', 'home-v2.css', 'landing-polish.css'):

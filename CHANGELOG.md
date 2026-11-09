@@ -1,5 +1,9 @@
 # Archive changelog
 
+## 2026-11-09
+
+- Replaced the header artwork with a hand-drawn SVG archive seal on all 115 pages that use the shared header.
+
 ## 2026-11-08
 
 - Moved Vael Orrix to Global #3 at 401,800 Stable PL. Rhazek Vaul and Serin Dhal moved to #4 and #5 respectively at their existing Stable PL.

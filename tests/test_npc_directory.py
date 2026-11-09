@@ -37,7 +37,7 @@ class NpcDirectoryTest(unittest.TestCase):
             self.assertNotIn('style', attrs)
             if tag == 'a':
                 self.assertTrue((ROOT / attrs['href'].removeprefix('/aevum-archive/')).is_file())
-        self.assertEqual(self.parsed.images, ['/aevum-archive/assets/home-v2/home-archive-sigil.webp'])
+        self.assertEqual(self.parsed.images, ['/aevum-archive/assets/archive-mark.svg'])
         self.assertNotIn('assets/images/', self.page)
         self.assertNotIn('Enski', self.page)
         self.assertNotIn('Tenrei', self.page)

@@ -65,7 +65,7 @@ class EraChroniclesTest(unittest.TestCase):
                 self.assertEqual(len(parsed.ids), len(set(parsed.ids)))
                 self.assertTrue(set(parsed.fragments).issubset(parsed.ids))
                 self.assertIn('era-status', parsed.fragments)
-                self.assertEqual(parsed.images, ['/aevum-archive/assets/home-v2/home-archive-sigil.webp'])
+                self.assertEqual(parsed.images, ['/aevum-archive/assets/archive-mark.svg'])
                 self.assertNotIn('assets/images/', source)
                 self.assertNotRegex(source, r'<[^>]+\shidden(?:[=\s>])')
                 self.assertIn('class="chronicle-crest"', source)
