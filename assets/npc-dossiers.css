@@ -21,9 +21,6 @@ body.npc-dossier-poison { --npc-accent: #86cbeb; }
 body.npc-dossier-uwu { --npc-accent: #df9b85; }
 body.npc-dossier-chax { --npc-accent: #cb8c98; }
 body.npc-dossier-willy { --npc-accent: #a95b69; --npc-paper: #080609; }
-body.npc-dossier-arnold { --npc-accent: #c4aa70; }
-body.npc-dossier-mira { --npc-accent: #a3a8d0; }
-body.npc-dossier-raoul { --npc-accent: #b9bd88; }
 
 body.npc-dossier-page.theme-npcs.page-detail {
   background: radial-gradient(ellipse at 85% 6%, var(--npc-faint), transparent 42rem),
@@ -57,7 +54,6 @@ body.npc-dossier-page main.npc-dossier {
 }
 .npc-dossier-breadcrumb a { color: var(--npc-label); text-decoration: none; }
 .npc-dossier-breadcrumb a:hover { text-decoration: underline; }
-.npc-dossier > .wing-breadcrumb { margin-bottom: 17px; }
 
 /* The portrait runs to the edge of the frame while the text stays on a readable measure. */
 body.npc-dossier-page .npc-dossier .npc-dossier-hero {
@@ -174,17 +170,6 @@ body.npc-dossier-page .npc-dossier .npc-dossier-symbol-hero > .npc-dossier-visua
 }
 .npc-dossier .npc-dossier-symbol-hero .npc-dossier-visual .portrait-slot { min-height: 290px; }
 .npc-dossier .npc-dossier-symbol-hero .npc-dossier-visual .character-body { display: block; }
-body.npc-dossier-page .npc-dossier .npc-dossier-folio-hero > .archive-card {
-  align-self: stretch;
-  display: grid;
-  align-content: center;
-  padding: clamp(28px, 4vw, 56px);
-  border: 0;
-  border-left: 1px solid var(--npc-line);
-  border-radius: 0;
-  background: radial-gradient(circle at 80% 20%, var(--npc-faint), transparent 70%), #110e17;
-  box-shadow: none;
-}
 
 /* Reuse the original stat and threat records inside the identity column. */
 .npc-dossier .npc-dossier-identity .npc-dossier-facts {
@@ -345,7 +330,6 @@ body.npc-dossier-page .npc-dossier .npc-dossier-chapter > h2 {
   body.npc-dossier-page .npc-dossier .npc-dossier-hero { grid-template-columns: minmax(0, 1fr); }
   body.npc-dossier-page .npc-dossier .npc-dossier-identity h1 { font-size: clamp(3.5rem, 13vw, 7rem); }
   body.npc-dossier-page .npc-dossier .npc-dossier-visual { border-top: 1px solid var(--npc-line); }
-  body.npc-dossier-page .npc-dossier .npc-dossier-folio-hero > .archive-card { border-left: 0; }
   body.npc-dossier-page .npc-dossier .npc-dossier-symbol-hero > .npc-dossier-visual { min-height: 320px; }
   .npc-dossier .npc-dossier-symbol-hero .npc-dossier-visual .portrait-slot { min-height: 170px; }
   .npc-dossier .npc-dossier-hero > .bobby-void-stage { min-height: 340px; }
