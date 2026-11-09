@@ -2,6 +2,7 @@
 
 ## 2026-11-09
 
+- Reframed the achievement hall as an exhibition with a compact opening, a persistent chapter index on desktop and a collapsible register for all 24 sealed records. Preserved every trophy, rarity color and animation.
 - Added The Tree (Divine, 9 December 2021) and Survived Greenland (Epic) for OBAMA, Faaram and Tony, with a historical record of the sapling and cross-links from their dossiers.
 - Redrew the shared header seal as a gold four-point star set in violet orbital rings.
 - Replaced the header artwork with a hand-drawn SVG archive seal on all 115 pages that use the shared header.
