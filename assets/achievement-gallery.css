@@ -149,6 +149,8 @@ body.route-achievements.grimoire-wing { --wing-accent: #d6c09b; }
 @media (max-width: 580px) {
   .achievement-title h1 { font-size: clamp(2.05rem, 9.2vw, 3.3rem); }
   .achievement-title > p:last-child { font-size: 1rem; }
+  .achievement-census { grid-template-columns: repeat(3, max-content); gap: 12px; }
+  .achievement-census > div { padding-left: 10px; }
   .achievement-index a { grid-template-columns: 18px minmax(0, 1fr); gap: 5px; min-height: 48px; padding: 9px 7px; }
   .achievement-index a span { grid-row: auto; }
   .achievement-index a small { display: none; }

@@ -2,6 +2,7 @@
 
 ## 2026-11-10
 
+- Set the sealed achievement total to 16,822 in the page census and register.
 - Added the achievement message to Good Work! alongside its unlock condition.
 - Clarified the Scythe of Death unlock text to name Earth's Death.
 - Restored the portrait-free folio layouts for Raoul, Arnold and Mira.
