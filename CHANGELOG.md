@@ -2,6 +2,7 @@
 
 ## 2026-11-09
 
+- Applied the Jiro and Ichiro dossier style to 27 NPC profiles with framed likenesses, readable quick facts and chapter navigation. Preserved the individual palettes, portraits, form switches and special records.
 - Gave the Transcendent exhibit its own stage, centered the rotating rarity seal and recorded The Even Bigeer Bigger Money, The First Homebase and Scythe of Death.
 - Added nine earned achievements with their rarities and owners. Simplified William Carter’s Void Coin and Astral Coin records to the discoveries themselves.
 - Moved the achievement index above the gallery so the unified trophy wall uses the full page width.
