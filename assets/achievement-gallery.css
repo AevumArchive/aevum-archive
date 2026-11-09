@@ -88,7 +88,7 @@ body.route-achievements.grimoire-wing { --wing-accent: #d6c09b; }
 .achievement-exhibits { min-width: 0; }
 .achievement-exhibits article[id] { scroll-margin-top: 25px; }
 .achievement-exhibits .wing-chapter { margin-bottom: 20px; }
-.route-achievements .achievement-exhibits .transcendent-exhibit { margin-top: 0; }
+.route-achievements .achievement-exhibits #trophy-wall { margin-top: 0; }
 .route-achievements .achievement-exhibits .achievement-notes { margin-top: 25px; }
 
 .achievement-seal-register {
@@ -118,8 +118,8 @@ body.route-achievements.grimoire-wing { --wing-accent: #d6c09b; }
 @media (max-width: 1180px) {
   .achievement-layout { grid-template-columns: minmax(0, 1fr); gap: 30px; }
   .achievement-index { position: static; padding-top: 0; border-top: 0; }
-  .achievement-index ol { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--wing-line); }
-  .achievement-index li:not(:nth-child(3n)) { border-right: 1px solid var(--wing-line); }
+  .achievement-index ol { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--wing-line); }
+  .achievement-index li:nth-child(odd) { border-right: 1px solid var(--wing-line); }
   .achievement-index a { padding-inline: 13px; }
 }
 @media (min-width: 1181px) and (max-height: 540px) {
@@ -133,16 +133,13 @@ body.route-achievements.grimoire-wing { --wing-accent: #d6c09b; }
   .achievement-title h1 { font-size: clamp(2.05rem, 9.2vw, 3.3rem); }
   .achievement-title > p:last-child { font-size: 1rem; }
   .achievement-layout { margin-top: 25px; }
-  .achievement-index ol { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .achievement-index li:not(:nth-child(3n)) { border-right: 0; }
-  .achievement-index li:nth-child(odd) { border-right: 1px solid var(--wing-line); }
   .achievement-index a { grid-template-columns: 18px minmax(0, 1fr); gap: 5px; min-height: 48px; padding: 9px 7px; }
   .achievement-index a span { grid-row: auto; }
   .achievement-index a small { display: none; }
 }
 @media print { .achievement-index, .achievement-index-return { display: none; } }
 
-.route-achievements .transcendent-achievement { grid-template-columns: minmax(240px, .65fr) minmax(0, 1.35fr); gap: 40px 65px; padding: clamp(35px, 5vw, 76px); border: 1px solid #cfbfd7bd; border-radius: 3px; background: radial-gradient(ellipse at 10% 12%, #809fb04d, transparent 60%), radial-gradient(ellipse at 80% 70%, #8b5b963d, transparent 60%), radial-gradient(ellipse at 25% 100%, #ad805f26, transparent 65%), #100e1b; box-shadow: 0 0 0 7px #b9a1d208, 0 0 0 8px #bea6d225, 0 0 100px #a781bf20, inset 0 0 100px #b8a2ce08; }
+.route-achievements .transcendent-achievement { grid-column: 1 / -1; grid-template-columns: minmax(240px, .65fr) minmax(0, 1.35fr); gap: 40px 65px; padding: clamp(35px, 5vw, 76px); border: 1px solid #cfbfd7bd; border-radius: 3px; background: radial-gradient(ellipse at 10% 12%, #809fb04d, transparent 60%), radial-gradient(ellipse at 80% 70%, #8b5b963d, transparent 60%), radial-gradient(ellipse at 25% 100%, #ad805f26, transparent 65%), #100e1b; box-shadow: 0 0 0 7px #b9a1d208, 0 0 0 8px #bea6d225, 0 0 100px #a781bf20, inset 0 0 100px #b8a2ce08; }
 .route-achievements .transcendent-achievement::before { inset: 13px; border-color: #decba13b; background: radial-gradient(circle at 9% 23%, #f2e5c7b3 0 1px, transparent 2px), radial-gradient(circle at 22% 7%, #d4d8f299 0 1px, transparent 2px), radial-gradient(circle at 66% 13%, #ddd0f099 0 1px, transparent 2px), radial-gradient(circle at 87% 28%, #eee4cb80 0 1px, transparent 2px), radial-gradient(circle at 94% 62%, #cbd6ee99 0 1px, transparent 2px), radial-gradient(circle at 13% 73%, #d8c4ed66 0 1px, transparent 2px), radial-gradient(circle at 71% 88%, #e6cdab80 0 1px, transparent 2px); }
 .route-achievements .transcendent-achievement::after { height: 2px; left: 5%; right: 5%; background: linear-gradient(90deg, transparent, #e4c895, #e3def7, #b6d6e9, transparent); box-shadow: 0 0 35px #d0c3ed99; }
 .route-achievements .transcendent-halo { width: min(100%, 310px); background: radial-gradient(circle, #efd6a624, transparent 67%), repeating-conic-gradient(from 15deg, #b9c8e512 0deg 1deg, transparent 1deg 15deg); box-shadow: 0 0 0 17px #c5b7df05, 0 0 0 18px #d4c6de1a, 0 0 100px #a3a8d933; }
@@ -156,8 +153,9 @@ body.route-achievements.grimoire-wing { --wing-accent: #d6c09b; }
 .route-achievements .transcendent-stats > div:nth-child(2) dd { font-size: clamp(3.8rem, 6vw, 5.7rem); }
 .route-achievements .transcendent-footnote { border-left: 1px solid #d3b77f55; padding-left: 23px; }
 .route-achievements .transcendent-category { color: #d4be9e !important; }
-.route-achievements .trophy-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
-.route-achievements .trophy-card { min-width: 0; grid-template-columns: 76px minmax(0, 1fr); gap: 25px; align-items: start; padding: 34px; border: 1px solid #aa8dbd42; border-radius: 3px; background: radial-gradient(ellipse at 0 0, #693c7b21, transparent 70%), #15101d; }
+.route-achievements .trophy-gallery { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 24px; }
+.trophy-gallery .trophy-fragment { position: absolute; inset: 0 auto auto 0; scroll-margin-top: 25px; }
+.route-achievements .trophy-card { grid-column: span 3; min-width: 0; grid-template-columns: 76px minmax(0, 1fr); gap: 25px; align-items: start; padding: 34px; border: 1px solid #aa8dbd42; border-radius: 3px; background: radial-gradient(ellipse at 0 0, #693c7b21, transparent 70%), #15101d; }
 .route-achievements .trophy-card > div { min-width: 0; }
 .route-achievements .trophy-card h3 { margin: 17px 0; color: #e9dbea; font: 400 1.85rem/1.2 Georgia, serif; letter-spacing: -.025em; }
 .route-achievements .trophy-card p { color: #bba9c6; font: 400 1.02rem/1.85 Georgia, serif; }
@@ -226,14 +224,11 @@ body.route-achievements.grimoire-wing { --wing-accent: #d6c09b; }
 .route-achievements .greenland-trophy h3 { color: #def4fb; }
 .route-achievements .greenland-trophy .eyebrow { color: #b5d8e6; }
 
-.route-achievements #money-achievements .archive-branch-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; border-block: 1px solid var(--wing-line); }
-.route-achievements #money-achievements .archive-branch-card { min-width: 0; min-height: 0; padding: 30px; border: 0; border-right: 1px solid var(--wing-line); border-radius: 0; background: none; box-shadow: none; }
-.route-achievements #money-achievements .archive-branch-card:first-child { padding-left: 0; }
-.route-achievements #money-achievements .archive-branch-card:last-child { border-right: 0; }
-.route-achievements #money-achievements .eyebrow { font: 400 .65rem/1.8 var(--wing-label); color: #b5a9bd; }
-.route-achievements #money-achievements h3 { margin: 25px 0 20px; color: #d7c8df; font: 400 1.9rem/1.2 Georgia, serif; }
-.route-achievements #money-achievements p:not(.eyebrow) { color: #b6a0c1; font: 400 1rem/1.85 Georgia, serif; }
-.route-achievements #money-achievements a { color: #dac1e8; }
+.route-achievements .trophy-gallery .archive-branch-card { position: relative; grid-column: span 2; min-width: 0; min-height: 0; padding: 27px 0; border: 0; border-block: 1px solid var(--wing-line); border-radius: 0; background: none; box-shadow: none; }
+.route-achievements .trophy-gallery .archive-branch-card .eyebrow { font: 400 .65rem/1.8 var(--wing-label); color: #b5a9bd; }
+.route-achievements .trophy-gallery .archive-branch-card h3 { margin: 25px 0 20px; color: #d7c8df; font: 400 1.9rem/1.2 Georgia, serif; }
+.route-achievements .trophy-gallery .archive-branch-card p:not(.eyebrow) { color: #b6a0c1; font: 400 1rem/1.85 Georgia, serif; }
+.route-achievements .trophy-gallery .archive-branch-card a { color: #dac1e8; }
 .route-achievements #i-am-rich h3, .route-achievements #i-am-rich .eyebrow { color: #aecedc; }
 .route-achievements #too-big-to-fall h3, .route-achievements #too-big-to-fall .eyebrow { color: #c6a8e5; }
 .route-achievements .achievement-notes { gap: 35px; padding-top: 30px; border-top: 1px solid var(--wing-line); }
@@ -275,14 +270,13 @@ body.route-achievements.grimoire-wing { --wing-accent: #d6c09b; }
  .route-achievements .transcendent-halo { width: 245px; margin: 25px 0 15px; }
  .route-achievements .transcendent-copy h2 { max-width: 16ch; font-size: clamp(3rem, 6vw, 4.5rem); }
  .route-achievements .transcendent-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
- .route-achievements .trophy-gallery { grid-template-columns: 1fr; }
+ .route-achievements .trophy-gallery { grid-template-columns: minmax(0, 1fr); }
+ .route-achievements .trophy-card { grid-column: 1 / -1; }
  .route-achievements .trophy-card.divine-trophy { grid-template-columns: 1fr; gap: 25px; }
  .route-achievements .divine-trophy-emblem { width: 180px; justify-self: center; }
  .route-achievements .divine-trophy-copy { text-align: center; }
  .route-achievements .divine-trophy-copy h3 { margin-inline: auto; font-size: 3rem; }
- .route-achievements #money-achievements .archive-branch-grid { grid-template-columns: 1fr; }
- .route-achievements #money-achievements .archive-branch-card { border-right: 0; border-bottom: 1px solid var(--wing-line); padding: 26px 0; }
- .route-achievements #money-achievements .archive-branch-card:last-child { border-bottom: 0; }
+ .route-achievements .trophy-gallery .archive-branch-card { grid-column: 1 / -1; }
  .route-achievements .achievement-notes { grid-template-columns: 1fr; gap: 25px; }
 }
 @media (max-width: 600px) {
