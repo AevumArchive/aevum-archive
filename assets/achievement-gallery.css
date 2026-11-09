@@ -139,9 +139,9 @@ body.route-achievements.grimoire-wing { --wing-accent: #d6c09b; }
 .route-achievements .transcendent-stats > div:nth-child(2) dd { font-size: clamp(3.8rem, 6vw, 5.7rem); }
 .route-achievements .transcendent-footnote { border-left: 1px solid #d3b77f55; padding-left: 23px; }
 .route-achievements .transcendent-category { color: #d4be9e !important; }
-.route-achievements .trophy-gallery { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 24px; }
+.route-achievements .trophy-gallery { grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 24px; }
 .trophy-gallery .trophy-fragment { position: absolute; inset: 0 auto auto 0; scroll-margin-top: 25px; }
-.route-achievements .trophy-card { grid-column: span 3; min-width: 0; grid-template-columns: 76px minmax(0, 1fr); gap: 25px; align-items: start; padding: 34px; border: 1px solid #aa8dbd42; border-radius: 3px; background: radial-gradient(ellipse at 0 0, #693c7b21, transparent 70%), #15101d; }
+.route-achievements .trophy-card { grid-column: span 6; min-width: 0; grid-template-columns: 76px minmax(0, 1fr); gap: 25px; align-items: start; padding: 34px; border: 1px solid #aa8dbd42; border-radius: 3px; background: radial-gradient(ellipse at 0 0, #693c7b21, transparent 70%), #15101d; }
 .route-achievements .trophy-card > div { min-width: 0; }
 .route-achievements .trophy-card h3 { margin: 17px 0; color: #e9dbea; font: 400 1.85rem/1.2 Georgia, serif; letter-spacing: -.025em; }
 .route-achievements .trophy-card p { color: #bba9c6; font: 400 1.02rem/1.85 Georgia, serif; }
@@ -210,13 +210,58 @@ body.route-achievements.grimoire-wing { --wing-accent: #d6c09b; }
 .route-achievements .greenland-trophy h3 { color: #def4fb; }
 .route-achievements .greenland-trophy .eyebrow { color: #b5d8e6; }
 
-.route-achievements .trophy-gallery .archive-branch-card { position: relative; grid-column: span 2; min-width: 0; min-height: 0; padding: 27px 0; border: 0; border-block: 1px solid var(--wing-line); border-radius: 0; background: none; box-shadow: none; }
+.route-achievements .trophy-gallery .archive-branch-card { position: relative; grid-column: span 4; min-width: 0; min-height: 0; padding: 27px 0; border: 0; border-block: 1px solid var(--wing-line); border-radius: 0; background: none; box-shadow: none; }
 .route-achievements .trophy-gallery .archive-branch-card .eyebrow { font: 400 .65rem/1.8 var(--wing-label); color: #b5a9bd; }
 .route-achievements .trophy-gallery .archive-branch-card h3 { margin: 25px 0 20px; color: #d7c8df; font: 400 1.9rem/1.2 Georgia, serif; }
 .route-achievements .trophy-gallery .archive-branch-card p:not(.eyebrow) { color: #b6a0c1; font: 400 1rem/1.85 Georgia, serif; }
 .route-achievements .trophy-gallery .archive-branch-card a { color: #dac1e8; }
 .route-achievements #i-am-rich h3, .route-achievements #i-am-rich .eyebrow { color: #aecedc; }
 .route-achievements #too-big-to-fall h3, .route-achievements #too-big-to-fall .eyebrow { color: #c6a8e5; }
+
+.route-achievements .trophy-card.instructor-trophy {
+  border-color: #dec18b90;
+  background: radial-gradient(ellipse at 14% 40%, #795b984a, transparent 57%),
+              radial-gradient(ellipse at 100% 0, #ad804835, transparent 65%), #181321;
+}
+.route-achievements .trophy-card.cursed-trophy {
+  border-color: #d7a07d91;
+  background: radial-gradient(ellipse at 14% 40%, #963e544a, transparent 57%),
+              radial-gradient(ellipse at 100% 0, #ad6f4939, transparent 65%), #1c1019;
+}
+.route-achievements .cursed-trophy .divine-trophy-emblem {
+  background: radial-gradient(circle, #842f4a69, #220f1a 67%);
+}
+.route-achievements .cursed-trophy svg { position: relative; z-index: 1; width: 62%; color: #ffe4c9; filter: drop-shadow(0 0 10px #e2a47f7a); }
+.route-achievements .trophy-card.contract-trophy {
+  grid-column: 1 / -1;
+  border-color: #c187ad79;
+  background: radial-gradient(ellipse at 8% 15%, #7a385d54, transparent 62%), #1b1221;
+}
+.route-achievements .contract-trophy h3 { color: #f2cbe3; }
+.route-achievements .contract-trophy .trophy-seal { color: #efb6d6; border-color: #bf79aa8f; }
+.route-achievements .contract-trophy .trophy-seal::before {
+  content: "";
+  position: absolute;
+  inset: -7px;
+  border: 1px dashed #dbaac180;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: wing-orbit 30s linear infinite;
+}
+.route-achievements .trophy-card.legendary-trophy {
+  border-color: #c7a47466;
+  background: radial-gradient(ellipse at 0 0, #8e653332, transparent 65%), #19151b;
+}
+.route-achievements .legendary-trophy h3 { color: #ead0a6; }
+.route-achievements .legendary-trophy .trophy-seal { color: #eacc95; border-color: #b8945f77; }
+.route-achievements .trophy-gallery .fortune-milestone { grid-column: span 3; }
+.route-achievements .fortune-milestone[data-rarity="uncommon"] h3,
+.route-achievements .fortune-milestone[data-rarity="uncommon"] .eyebrow { color: #b3d2ba; }
+.route-achievements .fortune-milestone[data-rarity="rare"] h3,
+.route-achievements .fortune-milestone[data-rarity="rare"] .eyebrow { color: #aecedc; }
+.route-achievements .fortune-milestone[data-rarity="epic"] h3,
+.route-achievements .fortune-milestone[data-rarity="epic"] .eyebrow { color: #c6a8e5; }
+
 .route-achievements .achievement-notes { gap: 35px; padding-top: 30px; border-top: 1px solid var(--wing-line); }
 .route-achievements .achievement-notes .card { padding: 0; min-height: 0; border: 0; border-radius: 0; background: none; box-shadow: none; }
 .route-achievements .achievement-notes .card h2 { color: #d7c4e0; font: 400 1.6rem/1.2 Georgia, serif; }

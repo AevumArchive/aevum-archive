@@ -2,6 +2,7 @@
 
 ## 2026-11-09
 
+- Added nine earned achievements with their rarities and owners. Simplified William Carter’s Void Coin and Astral Coin records to the discoveries themselves.
 - Moved the achievement index above the gallery so the unified trophy wall uses the full page width.
 - Unified the thirteen earned achievement records on one trophy wall and removed the separate playthrough and fortune sections.
 - Reframed the achievement hall as an exhibition with a compact opening, a persistent chapter index on desktop and a collapsible register for all 24 sealed records. Preserved every trophy, rarity color and animation.
