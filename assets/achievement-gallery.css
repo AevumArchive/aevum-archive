@@ -10,8 +10,7 @@ body.route-achievements.grimoire-wing { --wing-accent: #d6c09b; }
   padding: clamp(27px, 4vw, 54px) 0 30px;
   border-bottom: 1px solid #c5a47d66;
 }
-.achievement-title .eyebrow,
-.achievement-index .eyebrow {
+.achievement-title .eyebrow {
   margin: 0;
   color: #ddbc8f;
   font: 400 .72rem/1.7 var(--wing-label);
@@ -50,29 +49,24 @@ body.route-achievements.grimoire-wing { --wing-accent: #d6c09b; }
   font: 400 .64rem/1.5 var(--wing-label);
 }
 
-.achievement-layout {
+/* The index sits above the gallery, leaving its entire width for the exhibits. */
+.achievement-index { margin-bottom: clamp(26px, 3.5vw, 44px); scroll-margin-top: 25px; }
+.achievement-index ol {
   display: grid;
-  grid-template-columns: minmax(0, 198px) minmax(0, 1fr);
-  align-items: start;
-  gap: clamp(26px, 3.7vw, 54px);
-  margin-top: 35px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
-.achievement-index {
-  position: sticky;
-  top: 20px;
-  padding-top: 14px;
-  border-top: 1px solid #c5a47d66;
-  scroll-margin-top: 25px;
-}
-.achievement-index ol { margin: 14px 0 0; padding: 0; list-style: none; }
 .achievement-index li { border-bottom: 1px solid var(--wing-line); }
+.achievement-index li + li { border-left: 1px solid var(--wing-line); }
 .achievement-index a {
   display: grid;
   grid-template-columns: 22px minmax(0, 1fr);
   align-content: center;
   gap: 4px 10px;
   min-height: 62px;
-  padding: 12px 7px;
+  padding: 14px clamp(10px, 2vw, 24px);
   color: #e0cfdf;
   text-decoration: none;
 }
@@ -85,7 +79,6 @@ body.route-achievements.grimoire-wing { --wing-accent: #d6c09b; }
 }
 .achievement-index a strong { font: 400 1.04rem/1.25 Georgia, serif; }
 .achievement-index a small { color: #af9bb7; font: 400 .64rem/1.5 var(--wing-label); }
-.achievement-exhibits { min-width: 0; }
 .achievement-exhibits article[id] { scroll-margin-top: 25px; }
 .achievement-exhibits .wing-chapter { margin-bottom: 20px; }
 .route-achievements .achievement-exhibits #trophy-wall { margin-top: 0; }
@@ -115,15 +108,9 @@ body.route-achievements.grimoire-wing { --wing-accent: #d6c09b; }
 .achievement-seal-register .achievements-grid { margin: 0; padding: 16px; }
 .achievement-index-return { color: #dac2e3; }
 
-@media (max-width: 1180px) {
-  .achievement-layout { grid-template-columns: minmax(0, 1fr); gap: 30px; }
-  .achievement-index { position: static; padding-top: 0; border-top: 0; }
-  .achievement-index ol { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--wing-line); }
-  .achievement-index li:nth-child(odd) { border-right: 1px solid var(--wing-line); }
-  .achievement-index a { padding-inline: 13px; }
-}
-@media (min-width: 1181px) and (max-height: 540px) {
-  .achievement-index { position: static; }
+@media (max-width: 760px) {
+  .achievement-index ol { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .achievement-index li:nth-child(odd) { border-left: 0; }
 }
 @media (max-width: 850px) {
   .achievement-masthead { grid-template-columns: minmax(0, 1fr); }
@@ -132,7 +119,6 @@ body.route-achievements.grimoire-wing { --wing-accent: #d6c09b; }
 @media (max-width: 580px) {
   .achievement-title h1 { font-size: clamp(2.05rem, 9.2vw, 3.3rem); }
   .achievement-title > p:last-child { font-size: 1rem; }
-  .achievement-layout { margin-top: 25px; }
   .achievement-index a { grid-template-columns: 18px minmax(0, 1fr); gap: 5px; min-height: 48px; padding: 9px 7px; }
   .achievement-index a span { grid-row: auto; }
   .achievement-index a small { display: none; }
@@ -299,6 +285,6 @@ body.route-achievements.grimoire-wing { --wing-accent: #d6c09b; }
  .route-achievements .rarity-tier:last-child { grid-column: 1 / -1; }
  .route-achievements .rarity-tier::before { font-size: .62rem; }
 }
-@media (max-width: 1100px), (min-width: 1181px) and (max-width: 1260px) { .route-achievements .rarity-ladder { grid-template-columns: repeat(2, minmax(0, 1fr)); } .route-achievements .rarity-tier:last-child { grid-column: 1 / -1; } }
+@media (max-width: 1100px) { .route-achievements .rarity-ladder { grid-template-columns: repeat(2, minmax(0, 1fr)); } .route-achievements .rarity-tier:last-child { grid-column: 1 / -1; } }
 @media print { .route-achievements .transcendent-achievement { box-shadow: none; } }
 @media (max-width: 520px) { .route-achievements .rarity-ladder { grid-template-columns: 1fr; } }
