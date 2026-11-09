@@ -2,6 +2,7 @@
 
 ## 2026-11-09
 
+- Redrew the shared header seal as a gold four-point star set in violet orbital rings.
 - Replaced the header artwork with a hand-drawn SVG archive seal on all 115 pages that use the shared header.
 
 ## 2026-11-08
