@@ -2,6 +2,7 @@
 
 ## 2026-11-11
 
+- Matched Kenka’s NPC directory card to his red-and-gold dossier.
 - Added an ink-wash maple backdrop around Kenka’s dossier.
 - Added a mountain-cut scene to Kenka’s dossier that plays once on scroll, and restyled his profile header.
 

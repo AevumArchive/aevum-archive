@@ -70,6 +70,36 @@ body.route-npcs .npc-directory .npc-lock-grid > .npc-card { min-height: 165px !i
 body.route-npcs .npc-directory a.npc-card:hover { transform: translateY(-4px); }
 body.route-npcs .npc-directory article.npc-card:hover { transform: none; }
 body.route-npcs .npc-directory .npc-compact-grid .realm-symbol { animation: none; }
+body.route-npcs .npc-directory .npc-card-kenka {
+  border-color: #b47c52b3;
+  background:
+    linear-gradient(156deg, transparent 72%, #c58e5547 72.2%, transparent 72.6%),
+    radial-gradient(ellipse at 5% 5%, #74352366, transparent 65%),
+    linear-gradient(145deg, #301918, #1a1113 65%, #291416);
+  box-shadow: inset 0 0 0 1px #f4c48d0e;
+}
+body.route-npcs .npc-directory .npc-card-kenka::before {
+  background: linear-gradient(180deg, transparent, #e8b07a, #903f30, transparent);
+  opacity: .85;
+}
+body.route-npcs .npc-directory .npc-card-kenka:is(:hover, :focus-visible) {
+  border-color: #edbb85;
+  box-shadow: 0 14px 30px #0005, inset 0 0 26px #d3854426;
+}
+body.route-npcs .npc-directory .npc-card-kenka:focus-visible { outline-color: #edbb85; }
+body.route-npcs .npc-directory .npc-card-kenka > .realm-symbol {
+  border-color: #d89b69a6;
+  background: #321a17;
+  color: #ffdab0;
+  box-shadow: 0 0 19px #b65b313d;
+}
+.npc-directory .npc-card-kenka h3 { color: #f9e6d1; }
+body.route-npcs .npc-directory .npc-card-kenka > p:not(.eyebrow) { color: #dfc9bd; }
+body.route-npcs .npc-directory .npc-card-kenka .pill {
+  border-color: #d2a06b4f;
+  background: #b56f3b20;
+  color: #efd2b2;
+}
 /* Preserve Lilith/Veyr artwork, Izumi/Bomir's empty circles and Peter's white-to-crimson gradient. */
 body.route-npcs .npc-directory .npc-feature-ledger,
 body.route-npcs .npc-directory .npc-divine-ledger { margin-top: 28px; }
