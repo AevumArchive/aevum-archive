@@ -2,6 +2,7 @@
 
 ## 2026-11-10
 
+- Clarified that Specialist is one of the highest military ranks overall.
 - Added Haze, ACE, Gandred, Colonel Garrison and Seraph to the NPC ledger. Colonel Garrison has a name-only card.
 - Replaced the male Poison portrait with the supplied artwork and updated its dimensions.
 - Matched the Ancient trophies to their rarity tier with engraved violet backgrounds, gold edges and rotating seal details.
