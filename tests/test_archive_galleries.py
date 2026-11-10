@@ -44,7 +44,7 @@ class ArchiveGalleriesTest(unittest.TestCase):
         page = (ROOT / "npcs/index.html").read_text(encoding="utf-8")
         parser = GalleryParser()
         parser.feed(page)
-        self.assertEqual(parser.cards, 42)  # 39 named entries, 3 unopened presences.
+        self.assertEqual(parser.cards, 43)  # 40 named entries, 3 unopened presences.
         for name in ("Thalanil", "Rhys", "Varkhiel Dreadmar", "Raoul", "Arnold", "Mira", "Lilith", "Veyr",
                      "Izumi", "Bomir", "UWU", "Jiro", "Ichiro", "Keanu", "Timeo", "Arisu", "Nox", "Nyx", "Rapax",
                      "Poison", "Yori", "Kimiko", "Peter", "Hans", "Fritz", "J.A.R.V.I.S.", "John", "Deadshot",

@@ -2,6 +2,7 @@
 
 ## 2026-11-10
 
+- Added Kenka’s NPC dossier with his portrait, unknown Power Level and the account of his unseen katana.
 - Added Miles, Josef, Johann and Jackson to the fallen records as reincarnations of Tony.
 - Updated Fritz’s Hellknight portrait.
 - Restyled Kazz’s dossier with Minchō headings and a dedicated Spirit Domain artwork chapter.
