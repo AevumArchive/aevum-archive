@@ -1,0 +1,174 @@
+@font-face {
+  font-family: "Kazz Mincho";
+  src: url("/aevum-archive/assets/fonts/shippori-mincho/ShipporiMincho-Kazz.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+body.character-dossier.route-characters-kazz {
+  --dossier-title: "Kazz Mincho", Georgia, serif;
+  --dossier-rgb: 225 153 143;
+  --dossier-ink: #f1e7e2;
+  --dossier-muted: #c8bbbf;
+  --kazz-jade: #9dd9cd;
+  background: radial-gradient(ellipse at 13% 9%, #361d25 0, transparent 45rem), #0b090d !important;
+}
+
+body.route-characters-kazz.character-dossier.theme-characters.page-detail .record-hero {
+  background: linear-gradient(145deg, #22161b, #100d12 66%);
+}
+body.route-characters-kazz.character-dossier.theme-characters.page-detail .record-hero > .record-panel {
+  align-self: center;
+  padding-block: clamp(28px, 3vw, 46px);
+}
+body.route-characters-kazz.character-dossier.theme-characters.page-detail .record-panel .lede { margin-top: 22px; }
+.route-characters-kazz .dossier-quick { margin-block: 23px; padding-block: 16px; }
+.kazz-nameplate {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 28px;
+}
+.kazz-nameplate::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: min(72%, 16rem);
+  aspect-ratio: 1;
+  left: -1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, #b6545933 0%, #b6545915 50%, transparent 72%);
+  pointer-events: none;
+}
+body.route-characters-kazz.character-dossier.theme-characters.page-detail .record-panel h1 {
+  font-size: clamp(4rem, 8.7vw, 9rem);
+  line-height: .98;
+  letter-spacing: -.055em;
+}
+.kazz-title {
+  margin: 12px 0 0;
+  color: #e4a69a;
+  font: 400 clamp(1.2rem, 2.2vw, 1.65rem)/1.2 var(--dossier-title);
+  letter-spacing: .16em;
+}
+.kazz-stamp {
+  padding: 8px 6px;
+  border: 1px solid #e1958966;
+  outline: 1px solid #e195892e;
+  outline-offset: 3px;
+  background: #742e3733;
+  color: #f2c1b6;
+  font: 400 1.28rem/1 var(--dossier-title);
+  letter-spacing: .12em;
+  writing-mode: vertical-rl;
+}
+.route-characters-kazz .dossier-quick strong { color: var(--kazz-jade); }
+.route-characters-kazz .dossier-portrait::after {
+  background: linear-gradient(0deg, #100d12 0, transparent 16%);
+}
+.route-characters-kazz .dossier-nav {
+  background: #171117;
+  border-color: var(--dossier-line);
+}
+.route-characters-kazz .dossier-nav a, .route-characters-kazz .dossier-breadcrumb a { color: #dfc8c4; }
+.route-characters-kazz .dossier-nav a b { color: #db978a; }
+.route-characters-kazz .dossier-section-head h2 {
+  color: var(--dossier-ink);
+  font-family: var(--dossier-title);
+  letter-spacing: -.04em;
+  text-wrap: balance;
+}
+.route-characters-kazz .dossier-content .card {
+  background: linear-gradient(135deg, #26171c, #120e14 80%);
+}
+.route-characters-kazz .dossier-content .card p { color: var(--dossier-muted); }
+
+.kazz-domain-link {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+  margin-top: 28px;
+  padding: 11px 15px;
+  border: 1px solid #9dd9cd66;
+  background: #9dd9cd0e;
+  color: #cdf3ea;
+  font: 400 .76rem/1.65 Verdana, sans-serif;
+  text-decoration: none;
+}
+.kazz-domain-link:hover, .kazz-domain-link:focus-visible { background: #9dd9cd24; }
+.kazz-domain {
+  display: grid;
+  grid-template-areas: "art copy";
+  grid-template-columns: minmax(0, 1fr) minmax(0, .94fr);
+  border: 1px solid #9dd9cd40;
+  background: radial-gradient(ellipse at 86% 12%, #232830, transparent 65%), #0e1115;
+}
+.kazz-domain-copy {
+  grid-area: copy;
+  align-self: center;
+  padding: clamp(26px, 5vw, 78px);
+  color: var(--dossier-muted);
+}
+.kazz-domain-copy .dossier-section-head { margin: 28px 0 16px; }
+.kazz-domain-copy .dossier-kicker { color: var(--kazz-jade); }
+.route-characters-kazz .kazz-domain-copy h2 { font-size: clamp(2.8rem, 5.3vw, 5.4rem); }
+.kazz-domain-copy > p { max-width: 44ch; margin: 0 0 1em; font: 400 1.08rem/1.8 Georgia, serif; }
+.kazz-domain-copy > .kazz-domain-verse {
+  margin: 0 0 1.4em;
+  color: #e1cec8;
+  font: 400 clamp(1.18rem, 2.1vw, 1.7rem)/1.45 var(--dossier-title);
+}
+.kazz-domain-seal {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: clamp(68px, 8vw, 100px);
+  aspect-ratio: 1;
+  border: 1px solid #9dd9cd60;
+  border-radius: 50%;
+  color: #e7edeb;
+  font: 400 clamp(1.15rem, 2vw, 1.6rem)/1 var(--dossier-title);
+  box-shadow: 0 0 0 6px #9dd9cd08, 0 0 28px #b3d8d21a;
+}
+.kazz-domain-seal::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border: 1px solid transparent;
+  border-top-color: #e4bbb091;
+  border-bottom-color: #9dd9cd66;
+  border-radius: 50%;
+  animation: kazz-moon-orbit 36s linear infinite;
+}
+@keyframes kazz-moon-orbit { to { transform: rotate(1turn); } }
+
+.kazz-domain-art { grid-area: art; min-width: 0; margin: 0; border-right: 1px solid #9dd9cd33; }
+.kazz-domain-art img { display: block; width: 100%; height: auto; }
+.kazz-domain-art figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 9px 18px;
+  padding: 13px 20px;
+  color: #d4c8ca;
+  background: #0e1115;
+  font: 400 .72rem/1.65 Verdana, sans-serif;
+}
+.kazz-domain-art a { color: var(--kazz-jade); }
+
+@media (max-width: 1150px) {
+  .route-characters-kazz .record-hero > .dossier-portrait { width: 100%; }
+}
+@media (max-width: 760px) {
+  .kazz-domain { grid-template-areas: "copy" "art"; grid-template-columns: minmax(0, 1fr); }
+  .kazz-domain-art { border-right: 0; border-top: 1px solid #9dd9cd33; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .kazz-domain-seal::before { animation: none; }
+}

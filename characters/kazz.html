@@ -7,8 +7,9 @@
   <link rel="stylesheet" href="/aevum-archive/assets/archive-record-refresh.css?v=20261006-3">
   <link rel="stylesheet" href="/aevum-archive/assets/halloween.css?v=20261030-allhallows1">
   <script src="/aevum-archive/assets/halloween.js?v=20261030-allhallows1"></script>
-  <link rel="preload" href="/aevum-archive/assets/fonts/cinzel/Cinzel-Variable.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="/aevum-archive/assets/fonts/shippori-mincho/ShipporiMincho-Kazz.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/aevum-archive/assets/character-dossiers.css?v=20261110-kazz">
+  <link rel="stylesheet" href="/aevum-archive/assets/kazz-dossier.css?v=20261110-spirit-domain">
 </head>
 <body class="archive-page theme-characters page-detail route-characters-kazz character-dossier">
 <header class="site-header"><a class="brand" href="/aevum-archive/"><img class="brand-mark home-brand-crest" src="/aevum-archive/assets/archive-mark.svg" alt="" width="64" height="64"><span><span class="brand-title">Aevum Archive</span><span class="brand-subtitle">world wiki and living archive</span></span></a><nav class="nav" aria-label="Archive navigation"><a href="/aevum-archive/">Start</a><a href="/aevum-archive/playthroughs/">Playthroughs</a><a href="/aevum-archive/characters/">Characters</a><a href="/aevum-archive/codex/">Codex</a><a href="/aevum-archive/npcs/">NPCs</a><a href="/aevum-archive/lore/">Lore</a><a href="/aevum-archive/events/">Events</a><a href="/aevum-archive/achievements/">Achievements</a><a href="/aevum-archive/leaderboard/">Leaderboard</a><a href="/aevum-archive/world-items/">Relics</a><a href="/aevum-archive/downloads/texture-pack.html">Downloads</a></nav></header>
@@ -19,30 +20,33 @@
   <section class="record-hero" aria-labelledby="dossier-title">
     <article class="record-panel dossier-identity">
       <p class="eyebrow">Character record · Spirit Realm</p>
-      <h1 id="dossier-title">Kazz</h1>
+      <div class="kazz-nameplate">
+        <div><h1 id="dossier-title">Kazz</h1><p class="kazz-title">Shōgun</p></div>
+        <span class="kazz-stamp" lang="ja" aria-hidden="true">将軍</span>
+      </div>
       <p class="lede">A gifted Shōgun whose soul endured the death of his body. From the Spirit Realm, Kazz still holds himself to the samurai code he lived by.</p>
       <div class="dossier-quick">
         <div><span>Estimated Power Level</span><strong>≈ 4,000 <small>PL</small></strong></div>
         <span class="dossier-status">LOST / UNKNOWN</span>
       </div>
       <dl class="dossier-facts">
-        <div><dt>Title</dt><dd>Shōgun</dd></div>
         <div><dt>Whereabouts</dt><dd>Spirit Realm</dd></div>
         <div><dt>Body</dt><dd>Killed by the Faceless</dd></div>
         <div><dt>Soul</dt><dd>Enduring</dd></div>
         <div><dt>Weapon</dt><dd><a href="#kurogane">Katana gifted by the Kurogane family</a></dd></div>
       </dl>
+      <a class="kazz-domain-link" href="#spirit-realm">Enter the Spirit Domain <span aria-hidden="true">↓</span></a>
     </article>
     <figure class="dossier-portrait">
       <img src="/aevum-archive/assets/images/kazz.webp" alt="Kazz holding a turquoise-lit katana beneath a moonlit torii gate" width="1199" height="1312" fetchpriority="high" decoding="async">
-      <figcaption class="character-body"><p>Shōgun · Spirit Realm</p></figcaption>
+      <figcaption class="character-body"><p>Katana of the Kurogane family</p></figcaption>
     </figure>
   </section>
 
   <nav class="dossier-nav" aria-label="Kazz record chapters">
     <span>The record</span>
     <div>
-      <a href="#spirit-realm"><b aria-hidden="true">01</b>Spirit Realm</a>
+      <a href="#spirit-realm"><b aria-hidden="true">01</b>Spirit Domain</a>
       <a href="#ichiro"><b aria-hidden="true">02</b>The debt to Tempest</a>
       <a href="#kiba"><b aria-hidden="true">03</b>Kiba</a>
       <a href="#kurogane"><b aria-hidden="true">04</b>The Kurogane family</a>
@@ -50,12 +54,24 @@
   </nav>
 
   <section class="section dossier-chapter" id="spirit-realm" aria-labelledby="spirit-realm-title">
-    <header class="dossier-section-head"><p class="dossier-kicker">01 / After his death</p><h2 id="spirit-realm-title">A soul that will never fade.</h2></header>
-    <div class="dossier-content">
-      <article class="card">
-        <p>The Faceless killed Kazz's body. His soul endured and remains in the Spirit Realm, strong enough to persist indefinitely. The only way to end Kazz is to kill his soul in a duel. Even after his bodily death, his power is estimated at 4,000 PL.</p>
-        <p>Kazz still bears a grudge against the Faceless for what he did.</p>
-      </article>
+    <div class="kazz-domain">
+      <div class="kazz-domain-copy">
+        <span class="kazz-domain-seal" lang="ja" aria-hidden="true">霊域</span>
+        <header class="dossier-section-head">
+          <p class="dossier-kicker">01 / Spirit Realm</p>
+          <h2 id="spirit-realm-title">Spirit Domain</h2>
+        </header>
+        <p class="kazz-domain-verse">A soul that will never fade.</p>
+        <p>The Faceless killed Kazz's body. His soul endured and remains in the Spirit Realm. It will only perish if it is killed in a duel.</p>
+        <p>Even after his bodily death, his power is estimated at 4,000 PL. He still bears a grudge against the Faceless.</p>
+      </div>
+      <figure class="kazz-domain-art">
+        <img src="/aevum-archive/assets/images/kazz-spirit-domain.webp" alt="Kazz in his Spirit Domain, standing in a moonlit garden beside water, blossoms and a stone lantern" width="1024" height="1536" loading="lazy" decoding="async">
+        <figcaption>
+          <span>Kazz within his Spirit Domain</span>
+          <a href="/aevum-archive/assets/images/kazz-spirit-domain.webp" target="_blank" rel="noopener">Full artwork <span aria-hidden="true">↗</span></a>
+        </figcaption>
+      </figure>
     </div>
   </section>
 
