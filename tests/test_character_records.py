@@ -33,10 +33,26 @@ class CharacterRecordsTest(unittest.TestCase):
 
         self.assertIn("<dt>Status</dt><dd>FALLEN</dd>", detail)
         self.assertIn('data-status="fallen" data-name="Guts"', hall)
-        self.assertIn("Fallen <span>3</span>", hall)
+        self.assertIn("Fallen <span>7</span>", hall)
         self.assertIn("Four current names", shelf)
         self.assertNotIn('href="/aevum-archive/characters/guts.html"', shelf)
         self.assertNotIn('href="/aevum-archive/characters/guts.html"', playthrough)
+
+    def test_tony_reincarnations_have_separate_fallen_records(self) -> None:
+        hall = page("characters/all.html")
+        tony = page("characters/tony.html")
+        current = page("characters/index.html")
+        for name in ("Miles", "Josef", "Johann", "Jackson"):
+            with self.subTest(name=name):
+                profile = f"characters/{name.lower()}.html"
+                href = f'href="/aevum-archive/{profile}"'
+                detail = page(profile)
+                self.assertIn(f'data-status="fallen" data-name="{name}" {href}', hall)
+                self.assertIn(f'{href}>{name} · Fallen</a>', tony)
+                self.assertNotIn(href, current)
+                self.assertIn('class="dossier-state-word">FALLEN</strong>', detail)
+                self.assertIn('<dt>Reincarnation of</dt><dd><a href="/aevum-archive/characters/tony.html#incarnations">Tony</a>', detail)
+                self.assertIn('class="dossier-portrait dossier-seal"', detail)
 
     def test_astera_is_lost_and_faaram_is_active(self) -> None:
         astera = page("characters/astera-zenith.html")

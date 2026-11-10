@@ -2,6 +2,7 @@
 
 ## 2026-11-10
 
+- Added Miles, Josef, Johann and Jackson to the fallen records as reincarnations of Tony.
 - Updated Fritz’s Hellknight portrait.
 - Restyled Kazz’s dossier with Minchō headings and a dedicated Spirit Domain artwork chapter.
 - Added Kazz to Lost / Unknown with his Spirit Realm dossier, Kurogane ties and role in freeing Ichiro.
