@@ -2,7 +2,7 @@
 
 ## 2026-11-10
 
-- Added the Everthorn trait and its three passives to Faaram Tempest’s origin dossier.
+- Added the same animated Everthorn trait panel to Faaram Tempest’s origin dossier and current profile.
 - Added Faaram Tempest’s origin chronicle, from his first war and the Elven Circle to the Everthorns and the elven council.
 - Added a Lost / Unknown dossier for Faaram Tempest’s origin timeline, with an empty landscape and links to his active record.
 - Refined the Gandred and Haze lore and kept Deadshot’s heading on one line across screen sizes.

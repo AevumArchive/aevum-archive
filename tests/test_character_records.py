@@ -68,8 +68,10 @@ class CharacterRecordsTest(unittest.TestCase):
         self.assertIn('src="/aevum-archive/assets/images/faaram-tempest-origin-empty.png"', origin)
         self.assertNotIn('assets/images/faaram-tempest.png', origin)
         self.assertIn('href="#everthorn">Everthorn</a>', origin)
-        for ability in ("Battle Memory", "Thorn Instinct", "The Fourth Exchange"):
-            self.assertIn(f'data-ability="{ability}"', origin)
+        marker = '<section class="tempest-section tempest-everthorn" id="everthorn"'
+        active_trait = page("characters/faaram.html").split(marker, 1)[1].split("</section>", 1)[0]
+        origin_trait = origin.split(marker, 1)[1].split("</section>", 1)[0]
+        self.assertEqual(origin_trait, active_trait)
         self.assertNotIn('data-weapon="Icewhisper"', origin)
 
     def test_portraits_are_not_repeated_below_the_hero(self) -> None:
