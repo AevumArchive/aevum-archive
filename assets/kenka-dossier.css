@@ -10,7 +10,20 @@ body.npc-dossier-page.npc-dossier-kenka.theme-npcs.page-detail {
   --npc-ink: #f4e6d9;
   --npc-paper: #110d0d;
   --npc-display: "Shippori Mincho", Georgia, serif;
-  background: radial-gradient(ellipse at 80% 2%, #39221c 0, transparent 49rem), #0e0b0d !important;
+  isolation: isolate;
+  background: #110c0d !important;
+}
+body.npc-dossier-page.npc-dossier-kenka.theme-npcs.page-detail::before {
+  content: "" !important;
+  position: fixed;
+  z-index: -1;
+  inset: 0;
+  pointer-events: none;
+  opacity: 1;
+  mask-image: none;
+  background:
+    linear-gradient(180deg, #100a0d59, #100a0d0d 27%, #100a0d29),
+    url("/aevum-archive/assets/images/kenka-page-background.webp") center / 100% 100% no-repeat;
 }
 body.npc-dossier-page.npc-dossier-kenka .npc-dossier .npc-dossier-hero {
   border-color: #a9754c;
@@ -164,6 +177,13 @@ body.npc-dossier-page.npc-dossier-kenka .npc-dossier > #unseen-katana {
 
 @media (max-width: 900px) {
   .npc-dossier-kenka .kenka-portrait { border-inline-start: 0; }
+}
+@media (max-width: 700px) {
+  body.npc-dossier-page.npc-dossier-kenka.theme-npcs.page-detail::before {
+    bottom: auto;
+    height: min(62svh, 460px);
+    mask-image: linear-gradient(#000 38%, transparent);
+  }
 }
 @media (prefers-reduced-motion: reduce) {
   .kenka-cut.is-cut .kenka-cut-half,

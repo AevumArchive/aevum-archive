@@ -2,6 +2,7 @@
 
 ## 2026-11-11
 
+- Added an ink-wash maple backdrop around Kenka’s dossier.
 - Added a mountain-cut scene to Kenka’s dossier that plays once on scroll, and restyled his profile header.
 
 ## 2026-11-10
