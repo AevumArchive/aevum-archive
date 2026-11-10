@@ -2,6 +2,7 @@
 
 ## 2026-11-10
 
+- Added a Lost / Unknown dossier for Faaram Tempest’s origin timeline, with an empty landscape and links to his active record.
 - Refined the Gandred and Haze lore and kept Deadshot’s heading on one line across screen sizes.
 - Clarified that Specialist is one of the highest military ranks overall.
 - Added Haze, ACE, Gandred, Colonel Garrison and Seraph to the NPC ledger. Colonel Garrison has a name-only card.

@@ -1,8 +1,8 @@
 /* Faaram Tempest — obsidian, ritual violet, Everthorn gold and glacial silver. */
 @font-face { font-family: "New Rocker"; src: url("/aevum-archive/assets/fonts/new-rocker/NewRocker-Regular.ttf") format("truetype"); font-weight: 400; font-style: normal; font-display: swap; }
-body.route-characters-faaram { --tempest-ink: #eee9f1; --tempest-muted: #beb5c8; --tempest-line: rgb(183 151 211 / .23); --tempest-violet: #c8a2f4; --tempest-gold: #dbc087; background: radial-gradient(ellipse at 83% 1%, #2a1c39, transparent 55rem), radial-gradient(ellipse at 0 30%, rgb(83 59 92 / .16), transparent 65rem), #09080e !important; color: var(--tempest-ink); }
-body.route-characters-faaram::before, body.route-characters-faaram::after, body.route-characters-faaram main.page::before, body.route-characters-faaram main.page::after { content: none !important; }
-body.route-characters-faaram main.tempest-dossier { width: min(1440px, calc(100% - 64px)); max-width: 1440px; padding-top: 24px; }
+body:is(.route-characters-faaram, .route-characters-faaram-origin) { --tempest-ink: #eee9f1; --tempest-muted: #beb5c8; --tempest-line: rgb(183 151 211 / .23); --tempest-violet: #c8a2f4; --tempest-gold: #dbc087; background: radial-gradient(ellipse at 83% 1%, #2a1c39, transparent 55rem), radial-gradient(ellipse at 0 30%, rgb(83 59 92 / .16), transparent 65rem), #09080e !important; color: var(--tempest-ink); }
+body:is(.route-characters-faaram, .route-characters-faaram-origin)::before, body:is(.route-characters-faaram, .route-characters-faaram-origin)::after, body:is(.route-characters-faaram, .route-characters-faaram-origin) main.page::before, body:is(.route-characters-faaram, .route-characters-faaram-origin) main.page::after { content: none !important; }
+body:is(.route-characters-faaram, .route-characters-faaram-origin) main.tempest-dossier { width: min(1440px, calc(100% - 64px)); max-width: 1440px; padding-top: 24px; }
 .tempest-dossier *, .tempest-dossier *::before, .tempest-dossier *::after { box-sizing: border-box; }
 .tempest-dossier h1, .tempest-dossier h2, .tempest-dossier h3 { color: var(--tempest-ink); text-shadow: none; }
 .tempest-dossier p { color: var(--tempest-muted); font-size: 1.08rem; line-height: 1.8; text-wrap: pretty; }
@@ -31,6 +31,8 @@ body.route-characters-faaram main.tempest-dossier { width: min(1440px, calc(100%
 .tempest-facts dt { color: #b7a6c7; font: 600 .72rem/1.6 Verdana, sans-serif; letter-spacing: .04em; text-transform: uppercase; }
 .tempest-facts dd { margin: 5px 0 0; color: #ece1f6; font-size: 1rem; line-height: 1.5; }
 .tempest-facts dd a { text-decoration-color: #776186; }
+.tempest-origin-facts { margin-top: 30px; padding-block: 20px; border-block: 1px solid var(--tempest-line); }
+.tempest-origin-facts > div:first-child dd { color: #d8bdf5; font-weight: 700; }
 .tempest-portrait { position: relative; align-self: start; min-width: 0; margin: 0; background: #0d0a13; }
 .tempest-portrait img { display: block; width: 100%; height: auto; }
 .tempest-portrait::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, #0d0a13, transparent 12%), linear-gradient(0deg, #0d0a13, transparent 16%); }
@@ -202,7 +204,7 @@ body.route-characters-faaram main.tempest-dossier { width: min(1440px, calc(100%
   .tempest-weapon-heading { gap: 20px; }
 }
 @media (max-width: 900px) {
-  body.route-characters-faaram main.tempest-dossier { width: calc(100% - 36px); padding-top: 0; }
+  body:is(.route-characters-faaram, .route-characters-faaram-origin) main.tempest-dossier { width: calc(100% - 36px); padding-top: 0; }
   .tempest-hero { grid-template-columns: 1fr; }
   .tempest-identity { padding: 36px 26px; }
   .tempest-identity h1 { font-size: clamp(3.5rem, 12vw, 7rem); }
@@ -233,6 +235,7 @@ body.route-characters-faaram main.tempest-dossier { width: min(1440px, calc(100%
   .tempest-knowledge-grid article, .tempest-history-grid article { padding: 28px; }
 }
 @media (max-width: 550px) {
+  .tempest-origin-facts { padding-block: 0; border-top: 0; gap: 0; }
   .tempest-progression { grid-template-columns: 1fr; }
   .tempest-progression li { border-right: 0; border-bottom: 1px solid var(--tempest-line); }
   .tempest-progression li:last-child { border-bottom: 0; }

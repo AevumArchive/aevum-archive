@@ -21,17 +21,17 @@ class HallParser(HTMLParser):
 
 
 class HallLayoutTest(unittest.TestCase):
-    def test_all_fifteen_records_and_status_layers_remain(self):
+    def test_all_sixteen_records_and_status_layers_remain(self):
         page = (ROOT / "characters/all.html").read_text(encoding="utf-8")
         parsed = HallParser()
         parsed.feed(page)
-        self.assertEqual(len(parsed.cards), 15)
+        self.assertEqual(len(parsed.cards), 16)
         self.assertEqual(Counter(card["data-status"] for card in parsed.cards),
-                         {"active": 5, "sealed": 4, "fallen": 3, "lost": 2, "retired": 1})
+                         {"active": 5, "sealed": 4, "fallen": 3, "lost": 3, "retired": 1})
         for card in parsed.cards:
             self.assertIn("status-card", card["class"])
             self.assertTrue((ROOT / card["href"].removeprefix('/aevum-archive/')).is_file())
-        self.assertEqual(page.count('class="hall-card-overlay"'), 15)
+        self.assertEqual(page.count('class="hall-card-overlay"'), 16)
         self.assertNotIn('assets/images/', page)
 
     def test_environment_art_is_removed_and_heading_uses_the_full_width(self):

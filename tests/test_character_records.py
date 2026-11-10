@@ -52,9 +52,21 @@ class CharacterRecordsTest(unittest.TestCase):
         self.assertIn('data-status="active" data-name="Faaram Tempest"', hall)
         self.assertIn('Active <span>5</span>', hall)
         self.assertIn('Sealed <span>4</span>', hall)
-        self.assertIn('Lost / Unknown <span>2</span>', hall)
+        self.assertIn('Lost / Unknown <span>3</span>', hall)
         self.assertIn('Faaram Tempest, Lythariel, William and Jango', shelf)
         self.assertIn('status-card active" href="/aevum-archive/characters/faaram.html"', old_road)
+
+    def test_faaram_origin_timeline_has_a_separate_lost_record(self) -> None:
+        hall = page("characters/all.html")
+        origin = page("characters/faaram-tempest-origin.html")
+        origin_href = 'href="/aevum-archive/characters/faaram-tempest-origin.html"'
+        self.assertIn(f'data-status="lost" data-name="Faaram Tempest (Origin Timeline)" {origin_href}', hall)
+        self.assertIn('<dt>Origin timeline status</dt><dd>LOST / UNKNOWN</dd>', origin)
+        self.assertIn('href="/aevum-archive/characters/faaram.html">Read his active record', origin)
+        self.assertIn(origin_href, page("characters/faaram.html"))
+        self.assertNotIn(origin_href, page("characters/index.html"))
+        self.assertIn('src="/aevum-archive/assets/images/faaram-tempest-origin-empty.png"', origin)
+        self.assertNotIn('assets/images/faaram-tempest.png', origin)
 
     def test_portraits_are_not_repeated_below_the_hero(self) -> None:
         for name in (
