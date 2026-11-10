@@ -256,6 +256,52 @@ body:is(.route-characters-faaram, .route-characters-faaram-origin) main.tempest-
   .tempest-section-head h2 { overflow-wrap: break-word; }
   .tempest-weapon { padding: 26px; }
 }
+.tempest-origin-links { display: flex; flex-wrap: wrap; gap: 12px 24px; }
+.tempest-everthorn-origin .tempest-link { margin-top: 16px; }
+
+.tempest-chronicle { --chronicle-gold: #dac597; --chronicle-line: rgb(218 197 151 / .25); }
+.tempest-chronicle .tempest-section-head em { color: var(--chronicle-gold); }
+.tempest-chronicle-timeline { list-style: none; padding: 0; margin: 0; border-block: 1px solid var(--chronicle-line); }
+.tempest-chronicle-timeline > li {
+  display: grid;
+  grid-template-columns: minmax(0, .75fr) minmax(0, 1.25fr);
+  gap: 16px clamp(20px, 5vw, 72px);
+  padding: clamp(24px, 4vw, 54px) clamp(16px, 4vw, 54px);
+  border-inline-start: 1px solid var(--chronicle-line);
+  background: linear-gradient(100deg, rgb(218 197 151 / .055), transparent 75%);
+}
+.tempest-chronicle-timeline > li + li { border-top: 1px solid var(--tempest-line); }
+.tempest-chronicle-heading .tempest-kicker { margin: 0 0 12px; color: var(--chronicle-gold); }
+.tempest-chronicle-heading h3 {
+  margin: 0;
+  font: 400 clamp(1.8rem, 3.3vw, 3rem)/1.12 Georgia, serif;
+  text-wrap: balance;
+}
+.tempest-chronicle-copy { max-width: 65ch; }
+.tempest-chronicle-copy p { margin: 0; }
+.tempest-chronicle-copy p + p { margin-top: 1em; }
+.tempest-chronicle-close {
+  margin-top: clamp(32px, 6vw, 76px);
+  padding: clamp(26px, 5vw, 64px);
+  border: 1px solid var(--chronicle-line);
+  background: radial-gradient(ellipse at 50% 0%, rgb(122 131 65 / .17), transparent 80%), #10120e;
+  text-align: center;
+}
+.tempest-chronicle-close .tempest-kicker { margin: 0; color: var(--chronicle-gold); }
+.tempest-chronicle-close .tempest-chronicle-principle {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .25em .55em;
+  margin: 20px 0;
+  color: #f0dfb4;
+  font: 400 clamp(1.8rem, 4.2vw, 4.2rem)/1.1 Georgia, serif;
+}
+.tempest-chronicle-close p:last-child { max-width: 54ch; margin: auto; }
+@media (max-width: 720px) {
+  .tempest-chronicle-timeline > li { grid-template-columns: minmax(0, 1fr); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .tempest-thorn-seal i, .tempest-harvest-rings i { animation: none; }
 }
