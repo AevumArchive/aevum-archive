@@ -22,7 +22,7 @@ class JiroAwakeningTest(unittest.TestCase):
             source = page(filename)
             self.assertIn('src="/aevum-archive/assets/images/jiro-awakened.png"', source)
             self.assertIn('width="1024" height="1536"', source)
-            self.assertNotIn('src="/aevum-archive/assets/images/jiro-returned.png"', source)
+            self.assertNotIn('src="/aevum-archive/assets/images/jiro-returned.webp"', source)
         self.assertNotIn('jiro-awakened.png', page('npcs/index.html'))
 
     def test_hero_summarizes_training_power_goal_and_permanent_injury(self):
@@ -51,7 +51,7 @@ class JiroAwakeningTest(unittest.TestCase):
                         'not a confirmed ability duration', 'Both earlier portraits predate'):
             self.assertIn(history, source)
         self.assertIn('her fate remains unconfirmed', source)
-        self.assertIn('href="/aevum-archive/assets/images/jiro-returned.png"', source)
+        self.assertIn('href="/aevum-archive/assets/images/jiro-returned.webp"', source)
         self.assertIn('src="/aevum-archive/assets/images/jiro.png"', source)
 
     def test_connected_current_summaries_have_new_power_without_invented_other_outcomes(self):
