@@ -80,11 +80,6 @@ body.npc-dossier-page.npc-dossier-kenka .npc-dossier > #unseen-katana {
   background: linear-gradient(120deg, #2b1a16, #150e10 65%);
 }
 .kenka-feat-copy {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 22px 32px;
   padding: clamp(22px, 3.8vw, 50px);
 }
 .kenka-feat-copy h2 {
@@ -102,20 +97,6 @@ body.npc-dossier-page.npc-dossier-kenka .npc-dossier > #unseen-katana {
   font: 400 1.08rem/1.8 Georgia, serif;
 }
 .kenka-feat-copy strong { color: #ffe0b6; }
-.kenka-cut-button:not([hidden]) {
-  display: inline-block;
-  min-block-size: 44px;
-  min-inline-size: 11rem;
-  padding: 9px 16px;
-  border: 1px solid #dcaf7e;
-  border-radius: 2px;
-  background: #3d221d;
-  color: #ffe0b6;
-  font: 600 .82rem/1.5 Verdana, sans-serif;
-  cursor: pointer;
-}
-.kenka-cut-button:hover { background: #5b3228; }
-
 .kenka-cut {
   position: relative;
   width: 100%;
@@ -134,7 +115,10 @@ body.npc-dossier-page.npc-dossier-kenka .npc-dossier > #unseen-katana {
 .kenka-cut-half {
   position: absolute;
   inset: 0;
-  background: url("/aevum-archive/assets/images/kenka-mountain.webp") center / cover;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   filter: saturate(.82) brightness(.84);
 }
 .kenka-cut-upper {

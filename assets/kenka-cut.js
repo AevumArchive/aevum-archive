@@ -1,13 +1,19 @@
 (() => {
-  const scene = document.querySelector(".kenka-cut");
-  const button = document.querySelector(".kenka-cut-button");
+  if (!("IntersectionObserver" in window)) return;
 
-  button.addEventListener("click", () => {
-    scene.classList.remove("is-cut");
-    // Commit the intact state before replaying the CSS animations.
-    scene.getBoundingClientRect();
+  const scene = document.querySelector(".kenka-cut");
+  const landscape = scene.querySelector(".kenka-cut-upper");
+  const visibleFraction = 0.4;
+  const observer = new IntersectionObserver(([entry]) => {
+    if (entry.intersectionRatio < visibleFraction) return;
+
     scene.classList.add("is-cut");
-    button.textContent = "Replay the Cut";
-  });
-  button.hidden = false;
+    observer.disconnect();
+  }, { threshold: visibleFraction });
+
+  if (landscape.complete && landscape.naturalWidth) {
+    observer.observe(scene);
+  } else {
+    landscape.addEventListener("load", () => observer.observe(scene), { once: true });
+  }
 })();
