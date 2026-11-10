@@ -2,6 +2,7 @@
 
 ## 2026-11-10
 
+- Added Kazz to Lost / Unknown with his Spirit Realm dossier, Kurogane ties and role in freeing Ichiro.
 - Marked Thren Valis as the only holder worldwide of The Law Asked Permission.
 - Converted twelve character and NPC illustrations to lossless WebP to reduce the Pages package.
 - Added the same animated Everthorn trait panel to Faaram Tempest’s origin dossier and current profile.

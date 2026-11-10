@@ -52,7 +52,7 @@ class CharacterRecordsTest(unittest.TestCase):
         self.assertIn('data-status="active" data-name="Faaram Tempest"', hall)
         self.assertIn('Active <span>5</span>', hall)
         self.assertIn('Sealed <span>4</span>', hall)
-        self.assertIn('Lost / Unknown <span>3</span>', hall)
+        self.assertIn('Lost / Unknown <span>4</span>', hall)
         self.assertIn('Faaram Tempest, Lythariel, William and Jango', shelf)
         self.assertIn('status-card active" href="/aevum-archive/characters/faaram.html"', old_road)
 
@@ -73,6 +73,17 @@ class CharacterRecordsTest(unittest.TestCase):
         origin_trait = origin.split(marker, 1)[1].split("</section>", 1)[0]
         self.assertEqual(origin_trait, active_trait)
         self.assertNotIn('data-weapon="Icewhisper"', origin)
+
+    def test_kazz_is_lost_with_an_enduring_soul(self) -> None:
+        hall = page("characters/all.html")
+        detail = page("characters/kazz.html")
+        href = 'href="/aevum-archive/characters/kazz.html"'
+        self.assertIn(f'data-status="lost" data-name="Kazz" {href}', hall)
+        self.assertNotIn(href, page("characters/index.html"))
+        self.assertIn("<dt>Whereabouts</dt><dd>Spirit Realm</dd>", detail)
+        self.assertIn("<dt>Body</dt><dd>Killed by the Faceless</dd>", detail)
+        self.assertIn("<dt>Soul</dt><dd>Enduring</dd>", detail)
+        self.assertIn("Estimated Power Level</span><strong>≈ 4,000", detail)
 
     def test_portraits_are_not_repeated_below_the_hero(self) -> None:
         for name in (

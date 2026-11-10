@@ -53,7 +53,7 @@ class CharacterDossiersTest(unittest.TestCase):
     def test_all_regular_profiles_join_the_dossier_and_unknown_power_is_not_invented(self):
         profiles = set(p.as_posix() for p in (ROOT / 'characters').glob('*.html'))
         expected = {str(ROOT / name).replace('\\', '/') for name in BASELINE}
-        excluded = {str(ROOT / 'characters' / name).replace('\\', '/') for name in ('all.html', 'index.html', 'bonds.html', 'faaram.html', 'faaram-tempest-origin.html')}
+        excluded = {str(ROOT / 'characters' / name).replace('\\', '/') for name in ('all.html', 'index.html', 'bonds.html', 'faaram.html', 'faaram-tempest-origin.html', 'kazz.html')}
         self.assertEqual(profiles, expected | excluded)
         for name in BASELINE:
             source = (ROOT / name).read_text(encoding='utf-8')
