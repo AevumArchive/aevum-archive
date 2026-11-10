@@ -67,6 +67,10 @@ class CharacterRecordsTest(unittest.TestCase):
         self.assertNotIn(origin_href, page("characters/index.html"))
         self.assertIn('src="/aevum-archive/assets/images/faaram-tempest-origin-empty.png"', origin)
         self.assertNotIn('assets/images/faaram-tempest.png', origin)
+        self.assertIn('href="#everthorn">Everthorn</a>', origin)
+        for ability in ("Battle Memory", "Thorn Instinct", "The Fourth Exchange"):
+            self.assertIn(f'data-ability="{ability}"', origin)
+        self.assertNotIn('data-weapon="Icewhisper"', origin)
 
     def test_portraits_are_not_repeated_below_the_hero(self) -> None:
         for name in (
