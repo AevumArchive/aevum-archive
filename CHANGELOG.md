@@ -1,5 +1,9 @@
 # Archive changelog
 
+## 2026-11-11
+
+- Added a replayable mountain-cut scene to Kenka’s dossier and restyled his profile header.
+
 ## 2026-11-10
 
 - Added Kenka’s NPC dossier with his portrait, unknown Power Level and the account of his unseen katana.

@@ -12,6 +12,13 @@ body.npc-dossier-page.npc-dossier-kenka.theme-npcs.page-detail {
   --npc-display: "Shippori Mincho", Georgia, serif;
   background: radial-gradient(ellipse at 80% 2%, #39221c 0, transparent 49rem), #0e0b0d !important;
 }
+body.npc-dossier-page.npc-dossier-kenka .npc-dossier .npc-dossier-hero {
+  border-color: #a9754c;
+  background: radial-gradient(ellipse at 4% 20%, #48241f, #190f10 66%, #100b0d);
+}
+body.npc-dossier-page.npc-dossier-kenka .npc-dossier .npc-dossier-hero::before {
+  border-color: #e6b17d80;
+}
 .npc-dossier-kenka .npc-dossier-identity h1 {
   letter-spacing: -.055em;
 }
@@ -35,10 +42,13 @@ body.npc-dossier-page.npc-dossier-kenka.theme-npcs.page-detail {
 .kenka-power {
   display: grid;
   gap: 7px;
-  max-width: 22rem;
+  max-width: 16rem;
   margin: 28px 0;
-  padding: 19px 0;
-  border-block: 1px solid var(--npc-line);
+  padding: 18px 22px;
+  border: 1px solid #ae7e53;
+  background: linear-gradient(145deg, #47251e, #1e1213 72%);
+  box-shadow: inset 0 0 0 4px #211514, inset 0 0 0 5px #e3b58244;
+  text-align: center;
 }
 .kenka-power dt {
   color: var(--npc-label);
@@ -61,59 +71,117 @@ body.npc-dossier-page.npc-dossier-kenka.theme-npcs.page-detail {
   text-underline-offset: 5px;
 }
 
+body.npc-dossier-page.npc-dossier-kenka .npc-dossier > #unseen-katana {
+  padding-top: clamp(20px, 3vw, 40px);
+}
 .kenka-feat {
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-  align-items: stretch;
   overflow: hidden;
   border: 1px solid var(--npc-line);
   background: linear-gradient(120deg, #2b1a16, #150e10 65%);
 }
-.kenka-feat-copy { padding: clamp(24px, 5vw, 72px); }
+.kenka-feat-copy {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 22px 32px;
+  padding: clamp(22px, 3.8vw, 50px);
+}
 .kenka-feat-copy h2 {
-  max-width: 12ch;
   margin: 0;
   color: var(--npc-ink);
   font: 400 clamp(2.1rem, 5vw, 5.4rem)/1.12 var(--npc-display);
   letter-spacing: -.045em;
+  text-wrap: balance;
 }
 .kenka-feat-copy p,
 .kenka-clan p {
   max-width: 57ch;
-  margin: 22px 0 0;
+  margin: 14px 0 0;
   color: #dfcdc3;
   font: 400 1.08rem/1.8 Georgia, serif;
 }
 .kenka-feat-copy strong { color: #ffe0b6; }
+.kenka-cut-button:not([hidden]) {
+  display: inline-block;
+  min-block-size: 44px;
+  min-inline-size: 11rem;
+  padding: 9px 16px;
+  border: 1px solid #dcaf7e;
+  border-radius: 2px;
+  background: #3d221d;
+  color: #ffe0b6;
+  font: 600 .82rem/1.5 Verdana, sans-serif;
+  cursor: pointer;
+}
+.kenka-cut-button:hover { background: #5b3228; }
+
 .kenka-cut {
   position: relative;
-  isolation: isolate;
-  min-height: 220px;
+  width: 100%;
+  aspect-ratio: 3 / 1;
+  min-height: 205px;
   overflow: hidden;
-  background: radial-gradient(ellipse at 71% 28%, #8b483c, transparent 69%), linear-gradient(#2f1c22, #170e12);
+  border-top: 1px solid var(--npc-line);
+  background: radial-gradient(ellipse at center, #6f3f29, #1c1010 78%);
 }
-.kenka-cut::before {
+.kenka-cut-landscape {
+  --cut-left: 76%;
+  --cut-right: 25%;
+  position: absolute;
+  inset: -4%;
+}
+.kenka-cut-half {
+  position: absolute;
+  inset: 0;
+  background: url("/aevum-archive/assets/images/kenka-mountain.webp") center / cover;
+  filter: saturate(.82) brightness(.84);
+}
+.kenka-cut-upper {
+  --cut-shift-x: -2%;
+  --cut-shift-y: -3.5%;
+  clip-path: polygon(0 0, 100% 0, 100% calc(var(--cut-right) + .2%), 0 calc(var(--cut-left) + .2%));
+}
+.kenka-cut-lower {
+  --cut-shift-x: 2%;
+  --cut-shift-y: 3.5%;
+  clip-path: polygon(0 var(--cut-left), 100% var(--cut-right), 100% 100%, 0 100%);
+}
+.kenka-cut-light {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  filter: drop-shadow(0 0 8px #f6ae50);
+}
+.kenka-cut-light::before {
   content: "";
   position: absolute;
-  inset: 17% 0 0;
-  background: linear-gradient(145deg, #563028, #1d1519 68%);
-  clip-path: polygon(0 78%, 16% 50%, 23% 52%, 44% 11%, 56% 33%, 61% 31%, 83% 70%, 91% 67%, 100% 85%, 100% 100%, 0 100%);
+  inset: 0;
+  background: #ffe7ad;
+  clip-path: polygon(0 var(--cut-left), 100% var(--cut-right), 100% calc(var(--cut-right) + .65%), 0 calc(var(--cut-left) + .65%));
 }
-.kenka-cut::after {
-  content: "";
-  position: absolute;
-  inset: 49% -12% auto;
-  height: 2px;
-  transform: rotate(-19deg);
-  background: linear-gradient(90deg, transparent 3%, #c37957 22%, #f1c797 65%, transparent 92%);
-  box-shadow: 0 0 16px #d5895a99;
+.kenka-cut.is-cut .kenka-cut-half {
+  transform: translate(var(--cut-shift-x), var(--cut-shift-y));
+  animation: kenka-cut-split 780ms cubic-bezier(.24, .7, .3, 1) 400ms both;
 }
+.kenka-cut.is-cut .kenka-cut-light {
+  animation: kenka-cut-trace 1050ms ease-out both;
+}
+@keyframes kenka-cut-split {
+  from { transform: none; }
+}
+@keyframes kenka-cut-trace {
+  0% { opacity: 1; clip-path: inset(0 100% 0 0); }
+  40% { opacity: 1; clip-path: inset(0); }
+  100% { opacity: 0; clip-path: inset(0); }
+}
+
 .kenka-clan a { color: var(--npc-label); text-underline-offset: 4px; }
 
 @media (max-width: 900px) {
   .npc-dossier-kenka .kenka-portrait { border-inline-start: 0; }
 }
-@media (max-width: 720px) {
-  .kenka-feat { grid-template-columns: minmax(0, 1fr); }
-  .kenka-cut { min-height: 168px; }
+@media (prefers-reduced-motion: reduce) {
+  .kenka-cut.is-cut .kenka-cut-half,
+  .kenka-cut.is-cut .kenka-cut-light { animation: none; }
 }
