@@ -6,9 +6,9 @@
 }
 
 @font-face {
-  font-family: "Yuji Mai";
-  src: url("/aevum-archive/assets/fonts/yuji-mai/YujiMai-Kenka.woff2") format("woff2");
-  font-weight: 400;
+  font-family: "Cinzel";
+  src: url("/aevum-archive/assets/fonts/cinzel/Cinzel-Variable.ttf") format("truetype");
+  font-weight: 400 900;
   font-display: swap;
 }
 
@@ -40,8 +40,12 @@ body.npc-dossier-page.npc-dossier-kenka .npc-dossier .npc-dossier-hero::before {
   border-color: #e6b17d80;
 }
 body.npc-dossier-page.npc-dossier-kenka .npc-dossier-identity h1 {
-  font-family: "Yuji Mai", var(--npc-display);
-  letter-spacing: 0;
+  color: #fae4c3;
+  font-family: "Cinzel", var(--npc-display);
+  font-weight: 900;
+  letter-spacing: .035em;
+  text-transform: uppercase;
+  text-shadow: 0 1px #dfb37b, 0 4px #180d0e, 0 8px 26px #12090ab3;
 }
 .npc-dossier-kenka .kenka-portrait {
   border-inline-start: 1px solid var(--npc-line);
@@ -106,8 +110,8 @@ body.npc-dossier-page.npc-dossier-kenka .npc-dossier > #unseen-katana {
 .kenka-feat-copy h2 {
   margin: 0;
   color: var(--npc-ink);
-  font: 400 clamp(2.1rem, 5vw, 5.4rem)/1.17 "Yuji Mai", var(--npc-display);
-  letter-spacing: 0;
+  font: 750 clamp(2rem, 4.6vw, 4.8rem)/1.15 "Cinzel", var(--npc-display);
+  letter-spacing: .015em;
   text-wrap: balance;
 }
 .kenka-feat-copy p,
