@@ -203,7 +203,7 @@ body.route-npcs main.npc-directory > #tengoku-clan::before { content: none; }
 }
 .tengoku-card-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 14px;
   margin-top: 24px;
 }
@@ -211,6 +211,7 @@ body.route-npcs main.npc-directory > #tengoku-clan::before { content: none; }
 .tengoku-card--kiyoko { --tengoku-ink: #e4c8ed; --tengoku-wash: #7f468255; }
 .tengoku-card--asakura { --tengoku-ink: #f7c0b2; --tengoku-wash: #934c6050; }
 .tengoku-card--kenka { --tengoku-ink: #ffc398; --tengoku-wash: #a8472c51; }
+.tengoku-card--kenji { --tengoku-ink: #d5b1e3; --tengoku-wash: #684a7b66; }
 body.route-npcs .npc-directory .tengoku-card {
   isolation: isolate;
   display: flex;
@@ -287,6 +288,7 @@ body.route-npcs .npc-directory .tengoku-card:is(:hover, :focus-visible) {
 body.route-npcs .npc-directory .npc-feature-ledger,
 body.route-npcs .npc-directory .npc-divine-ledger { margin-top: 28px; }
 @media (max-width: 1120px) {
+  .tengoku-card-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   body.route-npcs .npc-directory #servants .npc-compact-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .npc-directory-hero { grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: 35px; }
   .npc-directory-register { padding: 24px; }
@@ -295,6 +297,7 @@ body.route-npcs .npc-directory .npc-divine-ledger { margin-top: 28px; }
   body.route-npcs .npc-directory .npc-ledger-nav a { padding: 18px; }
 }
 @media (max-width: 850px) {
+  .tengoku-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .npc-directory-hero { grid-template-columns: 1fr; gap: 35px; padding-top: 30px; }
   .npc-directory-register { max-width: 560px; width: 100%; box-sizing: border-box; }
   .directory-register-count strong { font-size: 7rem; }
@@ -304,7 +307,6 @@ body.route-npcs .npc-directory .npc-divine-ledger { margin-top: 28px; }
   body.route-npcs .npc-directory .section-head { grid-template-columns: 1fr; gap: 20px; }
 }
 @media (max-width: 1000px) {
-  .tengoku-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   body.route-npcs .npc-directory #sovereigns .npc-compact-grid,
   body.route-npcs .npc-directory #divine-alliance .npc-compact-grid { grid-template-columns: 1fr; }
 }

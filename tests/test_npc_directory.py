@@ -31,7 +31,7 @@ class NpcDirectoryTest(unittest.TestCase):
         self.parsed.feed(self.page)
 
     def test_all_entries_remain_public_without_script_and_have_no_portrait_elements(self):
-        self.assertEqual(len(self.parsed.cards), 46)
+        self.assertEqual(len(self.parsed.cards), 47)
         for tag, attrs in self.parsed.cards:
             self.assertNotIn('hidden', attrs)
             self.assertNotIn('style', attrs)
@@ -62,17 +62,17 @@ class NpcDirectoryTest(unittest.TestCase):
             self.assertIn(f'href="#{shelf}"', self.page)
         self.assertEqual(len(self.parsed.ids), len(set(self.parsed.ids)))
         self.assertIn('10 recovered records', self.page)
-        self.assertIn('46 entries across 7 shelves', self.page)
+        self.assertIn('47 entries across 7 shelves', self.page)
         self.assertNotIn('broken loyalty', self.page)
 
-    def test_tengoku_has_all_four_profiles_once_in_its_own_shelf(self):
+    def test_tengoku_has_all_five_profiles_once_in_its_own_shelf(self):
         clan_section = self.page.split('id="tengoku-clan"', 1)[1].split('</section>', 1)[0]
         clan = DirectoryParser()
         clan.feed(clan_section)
-        self.assertEqual(len(clan.cards), 4)
+        self.assertEqual(len(clan.cards), 5)
         self.assertFalse(clan.images)
         for name, slug in [('zenith', 'zenith-kurogane'), ('kiyoko', 'kiyoko-kurogane'),
-                           ('asakura', 'asakura-kurogane'), ('kenka', 'kenka')]:
+                           ('asakura', 'asakura-kurogane'), ('kenka', 'kenka'), ('kenji', 'kenji')]:
             href = f'/aevum-archive/npcs/{slug}.html'
             self.assertEqual(sum(attrs.get('href') == href for _, attrs in self.parsed.cards), 1)
             self.assertTrue(any(attrs.get('href') == href and f'tengoku-card--{name}' in attrs['class'].split()
