@@ -8,8 +8,8 @@
   <link rel="stylesheet" href="/aevum-archive/assets/halloween.css?v=20261030-allhallows1">
   <script src="/aevum-archive/assets/halloween.js?v=20261030-allhallows1"></script>
   <link rel="stylesheet" href="/aevum-archive/assets/npc-dossiers.css?v=20261109-npc1">
-  <link rel="stylesheet" href="/aevum-archive/assets/tengoku-dossiers.css?v=20261111-family">
-  <link rel="stylesheet" href="/aevum-archive/assets/kenka-dossier.css?v=20261111-portrait">
+  <link rel="stylesheet" href="/aevum-archive/assets/tengoku-dossiers.css?v=20261111-family-card">
+  <link rel="stylesheet" href="/aevum-archive/assets/kenka-dossier.css?v=20261111-family-card">
 </head>
 <body class="archive-page theme-npcs page-detail route-npcs-kenka npc-dossier-page npc-dossier-kenka">
   <header class="site-header"><a class="brand" href="/aevum-archive/"><img class="brand-mark home-brand-crest" src="/aevum-archive/assets/archive-mark.svg" alt="" width="64" height="64"><span><span class="brand-title">Aevum Archive</span><span class="brand-subtitle">world wiki and living archive</span></span></a><nav class="nav" aria-label="Archive navigation"><a href="/aevum-archive/">Start</a><a href="/aevum-archive/playthroughs/">Playthroughs</a><a href="/aevum-archive/characters/">Characters</a><a href="/aevum-archive/codex/">Codex</a><a href="/aevum-archive/npcs/">NPCs</a><a href="/aevum-archive/lore/">Lore</a><a href="/aevum-archive/events/">Events</a><a href="/aevum-archive/achievements/">Achievements</a><a href="/aevum-archive/leaderboard/">Leaderboard</a><a href="/aevum-archive/world-items/">Relics</a><a href="/aevum-archive/downloads/texture-pack.html">Downloads</a></nav></header>
@@ -22,9 +22,13 @@
         <p class="eyebrow">Tengoku clan</p>
         <h1 id="kenka-title">Kenka <span class="kenka-surname">Kurogane</span></h1>
         <p class="lede">A formidable swordsman and the son of <a href="/aevum-archive/npcs/zenith-kurogane.html">Zenith Kurogane</a>, head of the Tengoku clan.</p>
-        <dl class="kenka-power">
-          <dt>Power Level</dt>
-          <dd>???</dd>
+        <dl class="tengoku-fact">
+          <div><dt>Power Level</dt><dd>???</dd></div>
+          <div id="family">
+            <dt>Family</dt>
+            <dd>Son of <a href="/aevum-archive/npcs/kiyoko-kurogane.html">Kiyoko</a> and <a href="/aevum-archive/npcs/zenith-kurogane.html">Zenith Kurogane</a></dd>
+            <dd>Younger brother of <a href="/aevum-archive/npcs/asakura-kurogane.html">Asakura Kurogane</a></dd>
+          </div>
         </dl>
         <a class="kenka-jump" href="#unseen-katana">The unseen katana <span aria-hidden="true">↓</span></a>
       </div>
@@ -32,10 +36,6 @@
         <img src="/aevum-archive/assets/images/kenka.webp" alt="Kenka, white-haired and dressed in black with gold accents, standing beside a torii gate at sunset" width="1087" height="1446" fetchpriority="high" decoding="async">
       </figure>
     </section>
-
-    <nav class="npc-dossier-index" aria-label="On this record">
-      <div><a href="#unseen-katana">The unseen katana</a><a href="#family">Family</a></div>
-    </nav>
 
     <section class="npc-dossier-chapter" id="unseen-katana" aria-labelledby="unseen-katana-title">
       <div class="kenka-feat">
@@ -54,14 +54,9 @@
       </div>
     </section>
 
-    <section class="npc-dossier-chapter tengoku-family kenka-clan" id="family" aria-labelledby="family-title">
-      <h2 id="family-title">Family</h2>
-      <dl class="tengoku-family-links">
-        <div><dt>Mother</dt><dd><a href="/aevum-archive/npcs/kiyoko-kurogane.html">Kiyoko Kurogane</a></dd></div>
-        <div><dt>Father</dt><dd><a href="/aevum-archive/npcs/zenith-kurogane.html">Zenith Kurogane</a></dd></div>
-        <div><dt>Sister · Six years older</dt><dd><a href="/aevum-archive/npcs/asakura-kurogane.html">Asakura Kurogane</a></dd></div>
-      </dl>
-      <p id="kurogane">Kenka and <a href="/aevum-archive/characters/kazz.html#kurogane">Kazz</a> were close friends. The Kurogane family welcomed Kazz to the island where the Tengoku clan's main village stands and gave him a katana of his own.</p>
+    <section class="npc-dossier-chapter kenka-clan" id="kurogane" aria-labelledby="kenka-clan-title">
+      <h2 id="kenka-clan-title">Kazz and the clan</h2>
+      <p>Kenka and <a href="/aevum-archive/characters/kazz.html#kurogane">Kazz</a> were close friends. The Kurogane family welcomed Kazz to the island where the Tengoku clan's main village stands and gave him a katana of his own.</p>
     </section>
     <footer class="footer"><span>&#10022; Aevum Archive &mdash; witnessed knowledge only.</span><span>Unwritten pages remain sealed until discovered.</span></footer>
   </main>
