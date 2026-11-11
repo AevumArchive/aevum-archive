@@ -7,7 +7,11 @@ body.route-npcs main.npc-directory { width: min(1440px, calc(100% - 64px)); max-
 .npc-directory [hidden] { display: none !important; }
 .npc-directory a:focus-visible, .npc-directory button:focus-visible, .npc-directory input:focus-visible, .npc-directory select:focus-visible { outline: 2px solid #dfbdf4; outline-offset: 5px; }
 .npc-directory-hero {
-  padding: clamp(26px, 5vw, 60px) 0 23px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(235px, 25vw, 385px);
+  align-items: center;
+  gap: clamp(20px, 5vw, 78px);
+  padding: clamp(26px, 4vw, 50px) 0 24px;
   border-bottom: 1px solid var(--directory-line);
 }
 .directory-kicker {
@@ -26,18 +30,10 @@ body.route-npcs .npc-directory-hero h1 {
   text-shadow: none;
 }
 .npc-directory-hero h1 em { color: var(--directory-accent); font-weight: 400; }
-.directory-search-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px 24px;
-  align-items: center;
-  justify-content: space-between;
-}
 .npc-directory-tools {
   display: flex;
   align-items: center;
   gap: 10px 14px;
-  flex: 1 1 28rem;
   min-width: 0;
   max-width: 50rem;
 }
@@ -61,12 +57,51 @@ body.route-npcs .npc-directory-hero h1 {
 }
 .npc-directory-tools input::placeholder { color: #aa9ab5; opacity: 1; }
 .npc-directory-tools input::-webkit-search-cancel-button { appearance: none; }
-.directory-summary, #npc-search-results {
+#npc-search-results {
   margin: 0;
   color: var(--directory-muted);
   font: 400 .72rem/1.65 Verdana, sans-serif;
 }
-.directory-summary strong { color: #f4e6ff; font-weight: 600; }
+.directory-summary {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  justify-items: start;
+  gap: 12px;
+  overflow: hidden;
+  padding: clamp(24px, 3vw, 38px);
+  border: 1px solid #ae80c15e;
+  border-radius: 4px 26px 4px 4px;
+  background: radial-gradient(ellipse at 100% 0, #58356377, transparent 80%), #1b1223;
+}
+.directory-summary::before,
+.directory-summary::after {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  border: 1px solid #b88cc638;
+  pointer-events: none;
+}
+.directory-summary::before { inset: 7px; border-radius: inherit; }
+.directory-summary::after {
+  width: 210px;
+  aspect-ratio: 1;
+  top: -46px;
+  right: -85px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 12px #c095d018, inset 0 0 0 12px #c095d018;
+}
+.directory-summary strong {
+  color: #f5e7fa;
+  font: 400 clamp(5.75rem, 10vw, 9.25rem)/.85 Georgia, serif;
+  letter-spacing: -.075em;
+}
+.directory-summary span {
+  color: #ddbee9;
+  font: 500 .74rem/1.55 Verdana, sans-serif;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+}
 #npc-search-results:not(:empty) { margin-top: 16px; }
 .npc-directory-tools button, .npc-directory-empty button {
   min-height: 44px;
@@ -80,7 +115,7 @@ body.route-npcs .npc-directory-hero h1 {
 }
 .npc-directory-tools button:hover, .npc-directory-empty button:hover { background: #4b2b5766; border-color: #c69dd7; }
 body.route-npcs .npc-directory .npc-ledger-nav {
-  grid-template-columns: repeat(7, minmax(0, 1fr));
+  grid-template-columns: repeat(8, minmax(0, 1fr));
   gap: 1px;
   margin: 18px 0 0;
   border-radius: 4px;
@@ -340,6 +375,8 @@ body.route-npcs .npc-directory .npc-divine-ledger { margin-top: 28px; }
 }
 @media (max-width: 850px) {
   .tengoku-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .npc-directory-hero { grid-template-columns: minmax(0, 1fr); }
+  .directory-summary { max-width: 385px; }
   body.route-npcs .npc-directory .section-head { grid-template-columns: 1fr; gap: 20px; }
 }
 @media (max-width: 1000px) {
@@ -362,6 +399,7 @@ body.route-npcs .npc-directory .npc-divine-ledger { margin-top: 28px; }
   .npc-directory .npc-ledger-nav strong { font-size: .875rem; }
 }
 @media (max-width: 480px) {
+  .directory-summary { grid-template-columns: auto 1fr; align-items: center; gap: 20px; }
   .npc-directory-tools { flex-wrap: wrap; }
   .npc-directory-tools label { flex-basis: 100%; }
   .tengoku-card-grid { grid-template-columns: 1fr; }

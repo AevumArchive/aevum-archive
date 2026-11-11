@@ -54,7 +54,7 @@ class NpcDirectoryTest(unittest.TestCase):
         self.assertNotIn('url(', new_styles)
 
     def test_shelves_and_count_are_consistent(self):
-        expected = ['current-npcs', 'sovereigns', 'divine-alliance', 'servants',
+        expected = ['all-npcs', 'current-npcs', 'sovereigns', 'divine-alliance', 'servants',
                     'tengoku-clan', 'known-figures', 'contained-records']
         self.assertEqual(self.parsed.shelves, expected)
         for shelf in expected:
@@ -62,7 +62,8 @@ class NpcDirectoryTest(unittest.TestCase):
             self.assertIn(f'href="#{shelf}"', self.page)
         self.assertEqual(len(self.parsed.ids), len(set(self.parsed.ids)))
         self.assertIn('<strong>Known Figures</strong><small>10 records</small>', self.page)
-        self.assertIn('<strong>45</strong> known records', self.page)
+        self.assertIn('<strong>All NPCs</strong><small>7 shelves</small>', self.page)
+        self.assertRegex(self.page, r'<strong>45</strong>\s*<span>NPCs discovered</span>')
         self.assertNotIn('broken loyalty', self.page)
 
     def test_tengoku_has_all_six_profiles_once_in_its_own_shelf(self):

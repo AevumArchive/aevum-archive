@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="/aevum-archive/assets/global-header.css?v=20260902-header4">
   <link rel="stylesheet" href="/aevum-archive/assets/npc-effects.css?v=20260916-2">
   <link rel="stylesheet" href="/aevum-archive/assets/npc-index.css?v=20260918-2">
-  <link rel="stylesheet" href="/aevum-archive/assets/npc-directory.css?v=20261111-register">
+  <link rel="stylesheet" href="/aevum-archive/assets/npc-directory.css?v=20261111-all-npcs">
   <link rel="stylesheet" href="/aevum-archive/assets/halloween.css?v=20261030-allhallows1">
   <script src="/aevum-archive/assets/halloween.js?v=20261030-allhallows1"></script>
 </head>
@@ -24,21 +24,25 @@
   <a class="brand" href="/aevum-archive/"><img class="brand-mark home-brand-crest" src="/aevum-archive/assets/archive-mark.svg" alt="" width="64" height="64"><span><span class="brand-title">Aevum Archive</span><span class="brand-subtitle">world wiki and living archive</span></span></a>
   <nav class="nav" aria-label="Archive navigation"><a href="/aevum-archive/">Start</a><a href="/aevum-archive/playthroughs/">Playthroughs</a><a href="/aevum-archive/characters/">Characters</a><a href="/aevum-archive/codex/">Codex</a><a href="/aevum-archive/npcs/">NPCs</a><a href="/aevum-archive/lore/">Lore</a><a href="/aevum-archive/events/">Events</a><a href="/aevum-archive/achievements/">Achievements</a><a href="/aevum-archive/leaderboard/">Leaderboard</a><a href="/aevum-archive/world-items/">Relics</a><a href="/aevum-archive/downloads/texture-pack.html">Downloads</a></nav>
 </header>
-<main class="page npc-directory">
+<main class="page npc-directory" id="all-npcs">
 <section class="npc-directory-hero" aria-labelledby="npc-directory-title">
-  <p class="directory-kicker">NPC Archive</p>
-  <h1 id="npc-directory-title">Names beyond the <em>party.</em></h1>
-  <div class="directory-search-row">
+  <div class="directory-hero-copy">
+    <p class="directory-kicker">NPC Archive</p>
+    <h1 id="npc-directory-title">Names beyond the <em>party.</em></h1>
     <form class="npc-directory-tools" data-npc-tools role="search" aria-label="Search NPC records" hidden>
       <label for="npc-search">Search NPCs</label>
       <input id="npc-search" name="q" type="search" placeholder="Name, allegiance, power level…" autocomplete="off">
       <button type="reset" hidden>Clear search</button>
     </form>
-    <p class="directory-summary"><strong>45</strong> known records</p>
   </div>
+  <aside class="directory-summary" aria-label="NPC archive count">
+    <strong>45</strong>
+    <span>NPCs discovered</span>
+  </aside>
 </section>
 
 <nav class="npc-ledger-nav" aria-label="NPC ledger sections">
+  <a href="#all-npcs"><strong>All NPCs</strong><small>7 shelves</small></a>
   <a href="#current-npcs"><strong>Current Path</strong><small>6 opened · 3 sealed</small></a>
   <a href="#sovereigns"><strong>Major Presences</strong><small>2 records</small></a>
   <a href="#divine-alliance"><strong>Götterfamilie</strong><small>2 records</small></a>
@@ -214,6 +218,6 @@
 <footer class="footer"><span>&#10022; Aevum Archive &mdash; witnessed knowledge only.</span><span>Unwritten pages remain sealed until discovered.</span></footer>
   </main>
 <script src="/aevum-archive/assets/master-ui.js?v=20260821-2" defer></script>
-<script src="/aevum-archive/assets/npc-directory.js?v=20261111-register" defer></script>
+<script src="/aevum-archive/assets/npc-directory.js?v=20261111-all-npcs" defer></script>
 </body>
 </html>

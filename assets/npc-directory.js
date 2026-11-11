@@ -22,9 +22,10 @@
     const terms = normalize(search.value).split(/\s+/).filter(Boolean);
     const searching = terms.length > 0;
     const activeId = activeShelf.slice(1);
+    const showAll = activeId === 'all-npcs';
     let count = 0;
     entries.forEach(({card, section, text}) => {
-      const visible = searching ? terms.every(term => text.includes(term)) : section === activeId;
+      const visible = searching ? terms.every(term => text.includes(term)) : showAll || section === activeId;
       card.hidden = !visible;
       if (visible) count++;
     });
