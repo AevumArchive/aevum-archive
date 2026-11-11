@@ -11,7 +11,8 @@
   const normalize = text => text.normalize('NFKD').replace(/\p{M}/gu, '').toLocaleLowerCase().trim();
   const entries = [...directory.querySelectorAll('.npc-card')].map(card => {
     const section = card.closest('section').id;
-    return { card, section, text: normalize(`${card.textContent} ${section.replace(/-/g, ' ')}`) };
+    const affiliation = card.closest('[data-npc-affiliation]')?.dataset.npcAffiliation ?? '';
+    return { card, section, text: normalize(`${card.textContent} ${section.replace(/-/g, ' ')} ${affiliation}`) };
   });
   const render = () => {
     const terms = normalize(search.value).split(/\s+/).filter(Boolean);

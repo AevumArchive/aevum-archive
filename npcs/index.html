@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="/aevum-archive/assets/global-header.css?v=20260902-header4">
   <link rel="stylesheet" href="/aevum-archive/assets/npc-effects.css?v=20260916-2">
   <link rel="stylesheet" href="/aevum-archive/assets/npc-index.css?v=20260918-2">
-  <link rel="stylesheet" href="/aevum-archive/assets/npc-directory.css?v=20261111-tengoku">
+  <link rel="stylesheet" href="/aevum-archive/assets/npc-directory.css?v=20261111-servants">
   <link rel="stylesheet" href="/aevum-archive/assets/halloween.css?v=20261030-allhallows1">
   <script src="/aevum-archive/assets/halloween.js?v=20261030-allhallows1"></script>
 </head>
@@ -45,7 +45,7 @@
   <a href="#current-npcs"><span>01</span><strong>Current Path</strong><small>6 opened · 3 sealed</small></a>
   <a href="#sovereigns"><span>02</span><strong>Major Presences</strong><small>2 exceptional records</small></a>
   <a href="#divine-alliance"><span>03</span><strong>Götterfamilie</strong><small>2 divine records</small></a>
-  <a href="#servants"><span>04</span><strong>Bonded</strong><small>15 servant records</small></a>
+  <a href="#servants"><span>04</span><strong>Servants &amp; Bonds</strong><small>15 records</small></a>
   <a href="#tengoku-clan"><span>05</span><strong>Tengoku Clan</strong><small>4 clan records</small></a>
   <a href="#known-figures"><span>06</span><strong>Known Figures</strong><small>10 recovered records</small></a>
   <a href="#contained-records"><span>07</span><strong>Restricted</strong><small>4 contained records</small></a>
@@ -58,7 +58,7 @@
     <option value="current-npcs">Current Path</option>
     <option value="sovereigns">Major Presences</option>
     <option value="divine-alliance">Götterfamilie</option>
-    <option value="servants">Bonded</option>
+    <option value="servants">Servants &amp; Bonds</option>
     <option value="tengoku-clan">Tengoku Clan</option>
     <option value="known-figures">Known Figures</option>
     <option value="contained-records">Restricted</option>
@@ -113,10 +113,13 @@
   </div>
 </section>
 
-<section class="section" id="servants">
-  <div class="section-head"><div><p class="eyebrow">Recovered bonds</p><h2>Servants and bonded entities.</h2></div><p>Current, former and fallen servants remain together while their individual states stay visible.</p></div>
-  <div class="npc-ledger-group">
-    <div class="npc-group-head"><div><span class="npc-count">06 records</span><h3>Foundational and fractured bonds</h3></div><p>The earliest servants and the names most deeply marked by loss and outside control.</p></div>
+<section class="section" id="servants" aria-labelledby="servant-shelf-title">
+  <header class="servant-shelf-head">
+    <span class="servant-shelf-mark" aria-hidden="true"></span>
+    <div><h2 id="servant-shelf-title">Servants &amp; Bonds</h2><p>From Faaram’s first servant to the Chaos Lord era.</p></div>
+  </header>
+  <div class="npc-ledger-group servant-ledger servant-ledger--first" data-npc-affiliation="Faaram">
+    <div class="servant-group-head"><h3>Faaram’s early bonds</h3><span class="npc-count">6 records</span></div>
     <div class="npc-compact-grid">
       <a class="card npc-card npc-feature-uwu" href="/aevum-archive/npcs/uwu.html"><span class="realm-symbol">⌛</span><h3>UWU · The First Servant</h3><p>Found by Poison, reportedly near death after being discarded by the still-controlled Ichiro.</p><div class="meta-row"><span class="pill">Major Story NPC</span><span class="pill">Last PL 1377</span><span class="pill">Reported Near Death</span></div></a>
       <a class="card npc-card faaram-npc" href="/aevum-archive/npcs/jiro.html"><span class="realm-symbol">⚔</span><h3>Jiro</h3><p>Free, healed and awakened through training with Ichiro; 3000 PL. His left arm remains permanently injured. He seeks his family’s inherited sword.</p><div class="meta-row"><span class="pill">Awakened</span><span class="pill">3000 PL</span></div></a>
@@ -126,8 +129,8 @@
       <a class="card npc-card faaram-npc npc-legacy-arisu" href="/aevum-archive/npcs/arisu.html"><span class="realm-symbol">✣</span><h3>Arisu</h3><p>Faaram's former spider-bound servant, able to disperse into a swarm and move silently across walls and ceilings.</p><div class="meta-row"><span class="pill">Deceased</span><span class="pill">PL Unknown</span></div></a>
     </div>
   </div>
-  <div class="npc-ledger-group">
-    <div class="npc-group-head"><div><span class="npc-count">07 records</span><h3>Later orders and loyal hands</h3></div><p>Servants shaped by newer eras, other masters and different endings.</p></div>
+  <div class="npc-ledger-group servant-ledger servant-ledger--later" data-npc-affiliation="Faaram">
+    <div class="servant-group-head"><h3>Faaram’s later order</h3><span class="npc-count">6 records</span></div>
     <div class="npc-compact-grid">
       <a class="card npc-card faaram-npc" href="/aevum-archive/npcs/nox.html"><span class="realm-symbol">I</span><h3>Nox</h3><p>The First Vessel and foundation of Faaram's newer servant order.</p><div class="meta-row"><span class="pill">Phase II</span><span class="pill">PL 410</span></div></a>
       <a class="card npc-card faaram-npc" href="/aevum-archive/npcs/nyx.html"><span class="realm-symbol">II</span><h3>Nyx</h3><p>The Second Voice, a strategist whose counsel can change the choice before battle.</p><div class="meta-row"><span class="pill">Phase II</span><span class="pill">PL ~675</span></div></a>
@@ -135,12 +138,12 @@
       <a class="card npc-card faaram-npc" href="/aevum-archive/npcs/poison.html"><span class="realm-symbol">⇄</span><h3>Poison</h3><p>Held Jiro back for Faaram. Her presence can no longer be sensed; death is possible but unconfirmed.</p><div class="meta-row"><span class="pill">Fate Unconfirmed</span><span class="pill">Adaptive Copy</span></div></a>
       <a class="card npc-card faaram-npc" href="/aevum-archive/npcs/yori.html"><span class="realm-symbol">○</span><h3>Yori</h3><p>A Barrier Mage who died during the Abyssal Rift escape.</p><div class="meta-row"><span class="pill">Faaram</span><span class="pill">Deceased</span></div></a>
       <a class="card npc-card faaram-npc npc-legacy-kimiko" href="/aevum-archive/npcs/kimiko.html"><span class="realm-symbol">♈</span><h3>Kimiko</h3><p>A former Faaram servant of immense estimated power. Her race, abilities and whereabouts remain unknown.</p><div class="meta-row"><span class="pill">Former Faaram Servant</span><span class="pill">PL ≥ 1,900 · Estimated</span></div></a>
-      <a class="card npc-card npc-feature-peter" href="/aevum-archive/npcs/peter.html"><span class="realm-symbol">Ⅰ</span><h3>Peter · The First White</h3><p>OBAMA's right hand and an awakened Primal Demon whose recovered power has no witnessed ceiling.</p><div class="meta-row"><span class="pill">PL 4000+</span><span class="pill">First Color · White</span><span class="pill">Awakened</span></div></a>
     </div>
   </div>
-  <div class="npc-ledger-group npc-chaos-ledger">
-    <div class="npc-group-head"><div><span class="npc-count">02 fallen records</span><h3>Chaos Lord remnants</h3></div><p>Long-dead subordinates preserved from an older period of OBAMA's rule.</p></div>
+  <div class="npc-ledger-group servant-ledger servant-ledger--obama" data-npc-affiliation="OBAMA">
+    <div class="servant-group-head"><h3>OBAMA’s retinue</h3><span class="npc-count">3 records · 2 fallen</span></div>
     <div class="npc-compact-grid">
+      <a class="card npc-card npc-feature-peter" href="/aevum-archive/npcs/peter.html"><span class="realm-symbol">Ⅰ</span><h3>Peter · The First White</h3><p>OBAMA's right hand and an awakened Primal Demon whose recovered power has no witnessed ceiling.</p><div class="meta-row"><span class="pill">PL 4000+</span><span class="pill">First Color · White</span><span class="pill">Awakened</span></div></a>
       <a class="card npc-card npc-chaos-remnant" href="/aevum-archive/npcs/hans.html"><span class="realm-symbol">◉</span><h3>Hans</h3><p>A flesh-made predator from the Chaos Lord era whose enormous mouth formed his head.</p><div class="meta-row"><span class="pill">PL ≈ 1,200</span><span class="pill">Dead</span></div></a>
       <a class="card npc-card npc-chaos-remnant" href="/aevum-archive/npcs/fritz.html"><span class="realm-symbol">♜</span><h3>Fritz</h3><p>An immensely powerful Hellknight defined by absolute loyalty to OBAMA.</p><div class="meta-row"><span class="pill">PL ≈ 1,900</span><span class="pill">Fallen</span></div></a>
     </div>
@@ -216,6 +219,6 @@
 <footer class="footer"><span>&#10022; Aevum Archive &mdash; witnessed knowledge only.</span><span>Unwritten pages remain sealed until discovered.</span></footer>
   </main>
 <script src="/aevum-archive/assets/master-ui.js?v=20260821-2" defer></script>
-<script src="/aevum-archive/assets/npc-directory.js?v=20261111-tengoku" defer></script>
+<script src="/aevum-archive/assets/npc-directory.js?v=20261111-servants" defer></script>
 </body>
 </html>

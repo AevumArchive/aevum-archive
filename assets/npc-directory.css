@@ -87,11 +87,77 @@ body.route-npcs .npc-directory .npc-lock-grid > .npc-card { min-height: 165px !i
 body.route-npcs .npc-directory a.npc-card:hover { transform: translateY(-4px); }
 body.route-npcs .npc-directory article.npc-card:hover { transform: none; }
 body.route-npcs .npc-directory .npc-compact-grid .realm-symbol { animation: none; }
-body.route-npcs .npc-directory .npc-ledger-nav a[href="#tengoku-clan"] {
-  background: linear-gradient(135deg, #38201e, #171016);
-  box-shadow: inset 0 -2px #ca9360;
+.servant-shelf-head {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(18px, 3vw, 36px);
+  padding: clamp(22px, 4vw, 44px);
+  border: 1px solid #9178ad70;
+  border-radius: 4px;
+  background: linear-gradient(115deg, #282039, #14101d 65%, #1b1525);
 }
-.npc-directory .npc-ledger-nav a[href="#tengoku-clan"] :is(span, strong, small) { color: #f3d0a6; }
+.servant-shelf-mark {
+  position: relative;
+  display: block;
+  width: clamp(50px, 7vw, 84px);
+  aspect-ratio: 1;
+  border: 1px solid #ab95c96b;
+  border-radius: 50%;
+  background: radial-gradient(circle, #8e72b240, transparent 70%);
+}
+.servant-shelf-mark::before,
+.servant-shelf-mark::after {
+  content: "";
+  position: absolute;
+  inset: 32% 45% 32% 19%;
+  border: 1px solid #dcc2f1;
+  border-radius: 25%;
+  transform: rotate(-42deg);
+}
+.servant-shelf-mark::after { inset-inline: 45% 19%; }
+.servant-shelf-head h2 {
+  margin: 0 0 6px;
+  color: #f2e7fb;
+  font: 400 clamp(1.85rem, 4.25vw, 4rem)/1.08 Georgia, serif;
+  letter-spacing: -.035em;
+}
+.servant-shelf-head p { margin: 0; color: #d4c4e0; line-height: 1.6; }
+.servant-ledger--first { --bond-accent: #bac8e1; --bond-glow: #465d822e; }
+.servant-ledger--later { --bond-accent: #d3afe9; --bond-glow: #76509535; }
+.servant-ledger--obama { --bond-accent: #f0c797; --bond-glow: #92502e3b; }
+body.route-npcs .npc-directory #servants .servant-ledger {
+  margin-top: 22px;
+  padding: clamp(14px, 2.4vw, 29px);
+  border: 1px solid color-mix(in srgb, var(--bond-accent) 36%, #100d17);
+  border-radius: 4px;
+  background: linear-gradient(135deg, var(--bond-glow), transparent 70%), #100d17;
+}
+.servant-group-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 20px;
+  margin-bottom: 17px;
+  padding: 0 0 14px 12px;
+  border-bottom: 1px solid color-mix(in srgb, var(--bond-accent) 28%, transparent);
+}
+.servant-group-head h3 {
+  margin: 0;
+  color: var(--bond-accent);
+  font: 400 clamp(1.35rem, 2.3vw, 2.05rem)/1.2 Georgia, serif;
+}
+.servant-group-head .npc-count { color: var(--bond-accent); }
+body.route-npcs .npc-directory #servants .npc-card:not(.npc-feature-peter) {
+  border-color: color-mix(in srgb, var(--bond-accent) 30%, #100d17);
+}
+body.route-npcs .npc-directory #servants .npc-card:not(.npc-feature-peter)::before {
+  background: linear-gradient(180deg, transparent, var(--bond-accent), transparent);
+}
+body.route-npcs .npc-directory #servants .npc-card:not(.npc-feature-peter):is(:hover, :focus-visible) {
+  border-color: var(--bond-accent);
+}
 body.route-npcs main.npc-directory > #tengoku-clan {
   padding: clamp(20px, 4vw, 48px);
   border: 1px solid #b586595e;
@@ -221,6 +287,7 @@ body.route-npcs .npc-directory .tengoku-card:is(:hover, :focus-visible) {
 body.route-npcs .npc-directory .npc-feature-ledger,
 body.route-npcs .npc-directory .npc-divine-ledger { margin-top: 28px; }
 @media (max-width: 1120px) {
+  body.route-npcs .npc-directory #servants .npc-compact-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .npc-directory-hero { grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: 35px; }
   .npc-directory-register { padding: 24px; }
   .directory-register-count { gap: 18px; }
@@ -248,7 +315,7 @@ body.route-npcs .npc-directory .npc-divine-ledger { margin-top: 28px; }
   .directory-actions { gap: 24px; }
   body.route-npcs .npc-directory .npc-ledger-nav { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   body.route-npcs .npc-directory .npc-group-head { grid-template-columns: 1fr; gap: 14px; }
-  body.route-npcs .npc-directory .npc-chaos-ledger .npc-compact-grid { grid-template-columns: 1fr; }
+  body.route-npcs .npc-directory #servants .npc-compact-grid { grid-template-columns: 1fr; }
   body.route-npcs .npc-directory #sovereigns .npc-compact-grid .npc-feature { padding-right: 25%; }
   body.route-npcs .npc-directory #divine-alliance .npc-divine-card { padding-right: 20%; }
   .npc-directory-tools { padding: 19px; grid-template-columns: 1fr; gap: 18px; }

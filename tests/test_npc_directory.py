@@ -78,6 +78,17 @@ class NpcDirectoryTest(unittest.TestCase):
             self.assertTrue(any(attrs.get('href') == href and f'tengoku-card--{name}' in attrs['class'].split()
                                 for _, attrs in clan.cards))
 
+    def test_servants_are_grouped_under_their_existing_affiliations(self):
+        shelf = self.page.split('id="servants"', 1)[1].split('</section>', 1)[0]
+        groups = re.findall(r'data-npc-affiliation="([^"]+)">(.*?)(?=class="npc-ledger-group|$)', shelf, re.S)
+        expected = [
+            ('Faaram', ['uwu', 'jiro', 'ichiro', 'keanu', 'timeo', 'arisu']),
+            ('Faaram', ['nox', 'nyx', 'rapax', 'poison', 'yori', 'kimiko']),
+            ('OBAMA', ['peter', 'hans', 'fritz']),
+        ]
+        self.assertEqual([(affiliation, re.findall(r'/npcs/([^"]+)\.html"', group))
+                          for affiliation, group in groups], expected)
+
     def test_search_is_local_accessible_and_enhancement_only(self):
         self.assertIn('role="search"', self.page)
         self.assertIn('aria-live="polite"', self.page)
