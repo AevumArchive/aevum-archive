@@ -9,10 +9,10 @@
   const empty = directory.querySelector('[data-npc-empty]');
   const sections = [...directory.querySelectorAll(':scope > section.section')];
   const normalize = text => text.normalize('NFKD').replace(/\p{M}/gu, '').toLocaleLowerCase().trim();
-  const entries = [...directory.querySelectorAll('.npc-card')].map(card => ({
-    card, section: card.closest('section').id,
-    text: normalize(card.textContent)
-  }));
+  const entries = [...directory.querySelectorAll('.npc-card')].map(card => {
+    const section = card.closest('section').id;
+    return { card, section, text: normalize(`${card.textContent} ${section.replace(/-/g, ' ')}`) };
+  });
   const render = () => {
     const terms = normalize(search.value).split(/\s+/).filter(Boolean);
     let count = 0;
@@ -30,7 +30,7 @@
     empty.hidden = count !== 0;
     status.textContent = terms.length || shelf.value !== 'all'
       ? `${count} matching ${count === 1 ? 'entry' : 'entries'} · ${entries.length} in the archive`
-      : `${entries.length} entries across six shelves`;
+      : `${entries.length} entries across ${sections.length} shelves`;
   };
   const clear = () => { search.value = ''; shelf.value = 'all'; render(); };
   search.addEventListener('input', render);

@@ -45,13 +45,14 @@ class ArchiveGalleriesTest(unittest.TestCase):
         parser = GalleryParser()
         parser.feed(page)
         self.assertEqual(parser.cards, 46)  # 43 named entries, 3 unopened presences.
+        visible_text = re.sub(r'<[^>]+>', '', page)
         for name in ("Thalanil", "Rhys", "Varkhiel Dreadmar", "Raoul", "Arnold", "Mira", "Lilith", "Veyr",
                      "Izumi", "Bomir", "UWU", "Jiro", "Ichiro", "Keanu", "Timeo", "Arisu", "Nox", "Nyx", "Rapax",
                      "Poison", "Yori", "Kimiko", "Peter", "Hans", "Fritz", "J.A.R.V.I.S.", "John", "Deadshot",
                      "Uwubama", "Library Entity", "Haze", "ACE", "Gandred", "Colonel Garrison", "Seraph", "Kenka Kurogane", "Zenith Kurogane",
                      "Asakura Kurogane", "Kiyoko Kurogane", "Chax", "Malrik", "Bobby", "???"):
             with self.subTest(name=name):
-                self.assertIn(name, page)
+                self.assertIn(name, visible_text)
         # Only the progressively enhanced search UI starts hidden, never a record.
         self.assertNotRegex(page, r'<[^>]+class="[^"]*npc-card[^"]*"[^>]*\shidden(?:[=\s>])')
         self.assertNotRegex(page, r'<section[^>]*\shidden(?:[=\s>])')

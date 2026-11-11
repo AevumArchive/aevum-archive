@@ -54,15 +54,29 @@ class NpcDirectoryTest(unittest.TestCase):
         self.assertNotIn('url(', new_styles)
 
     def test_shelves_and_count_are_consistent(self):
-        expected = ['all', 'current-npcs', 'sovereigns', 'divine-alliance', 'servants', 'known-figures', 'contained-records']
+        expected = ['all', 'current-npcs', 'sovereigns', 'divine-alliance', 'servants',
+                    'tengoku-clan', 'known-figures', 'contained-records']
         self.assertEqual(self.parsed.shelves, expected)
         for shelf in expected[1:]:
             self.assertIn(shelf, self.parsed.ids)
             self.assertIn(f'href="#{shelf}"', self.page)
         self.assertEqual(len(self.parsed.ids), len(set(self.parsed.ids)))
-        self.assertIn('14 recovered records', self.page)
-        self.assertIn('46 entries across six shelves', self.page)
+        self.assertIn('10 recovered records', self.page)
+        self.assertIn('46 entries across 7 shelves', self.page)
         self.assertNotIn('broken loyalty', self.page)
+
+    def test_tengoku_has_all_four_profiles_once_in_its_own_shelf(self):
+        clan_section = self.page.split('id="tengoku-clan"', 1)[1].split('</section>', 1)[0]
+        clan = DirectoryParser()
+        clan.feed(clan_section)
+        self.assertEqual(len(clan.cards), 4)
+        self.assertFalse(clan.images)
+        for name, slug in [('zenith', 'zenith-kurogane'), ('kiyoko', 'kiyoko-kurogane'),
+                           ('asakura', 'asakura-kurogane'), ('kenka', 'kenka')]:
+            href = f'/aevum-archive/npcs/{slug}.html'
+            self.assertEqual(sum(attrs.get('href') == href for _, attrs in self.parsed.cards), 1)
+            self.assertTrue(any(attrs.get('href') == href and f'tengoku-card--{name}' in attrs['class'].split()
+                                for _, attrs in clan.cards))
 
     def test_search_is_local_accessible_and_enhancement_only(self):
         self.assertIn('role="search"', self.page)
