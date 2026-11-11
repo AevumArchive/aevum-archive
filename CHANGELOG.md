@@ -2,6 +2,7 @@
 
 ## 2026-11-11
 
+- Updated Kiyoko’s portrait, renamed her blindfold fabric to Stillweave, and added profile backdrops for Kiyoko, Asakura and Zenith. Removed the full artwork links from the Tengoku portraits.
 - Grouped the four Kurogane NPCs in the searchable Tengoku Clan shelf with portrait-free clan cards.
 - Added Asakura and Kiyoko Kurogane with their portraits, spiritual abilities and family links. Expanded Zenith’s Spiritual Pressure chapter.
 - Added Kenka Kurogane’s surname and Zenith Kurogane’s dossier with the Tengoku clan and Kagegane.

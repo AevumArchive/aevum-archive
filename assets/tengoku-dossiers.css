@@ -5,6 +5,26 @@
   font-display: swap;
 }
 
+body.npc-dossier-page.tengoku-backdrop.theme-npcs.page-detail {
+  isolation: isolate;
+  background: #110d13 !important;
+}
+body.npc-dossier-page.tengoku-backdrop.theme-npcs.page-detail::before {
+  content: "" !important;
+  position: fixed;
+  z-index: -1;
+  inset: 0;
+  opacity: 1;
+  mask-image: none;
+  background:
+    var(--tengoku-atmosphere),
+    url("/aevum-archive/assets/images/kenka-page-background.webp") center / 100% 100% no-repeat;
+}
+body.tengoku-backdrop.route-npcs-zenith-kurogane {
+  --tengoku-atmosphere:
+    repeating-radial-gradient(circle at 0 42%, transparent 0 54px, #c4ac831b 55px 56px, transparent 57px 115px),
+    linear-gradient(125deg, #161e2ac2, #090b10b0 52%, #2b2a2590);
+}
 body.npc-dossier-page.npc-dossier-tengoku {
   --npc-ink: #f6e9dc;
   --npc-display: "Cinzel", Georgia, serif;
@@ -13,11 +33,19 @@ body.npc-dossier-tengoku.route-npcs-asakura-kurogane {
   --npc-accent: #e5b083;
   --npc-paper: #1a1011;
   --tengoku-glow: #512a23;
+  --tengoku-atmosphere:
+    radial-gradient(ellipse at 2% 13%, #d6876360, transparent 41%),
+    radial-gradient(ellipse at 100% 77%, #ab55664d, transparent 54%),
+    linear-gradient(140deg, #391c29a6, #1a101ba6 65%, #48211d4d);
 }
 body.npc-dossier-tengoku.route-npcs-kiyoko-kurogane {
   --npc-accent: #d9b9ae;
   --npc-paper: #151016;
   --tengoku-glow: #432832;
+  --tengoku-atmosphere:
+    radial-gradient(circle at 96% 18%, #e4d6ee74 0, #b6acc555 3%, #d7cce462 3.4%, transparent 3.6%),
+    radial-gradient(circle at 96% 18%, #b6acc544, transparent 13%),
+    linear-gradient(145deg, #141528ae, #0b0e1cb0 53%, #291d3f91);
 }
 body.npc-dossier-page.npc-dossier-tengoku .npc-dossier .npc-dossier-hero {
   border-radius: 0;
@@ -58,14 +86,6 @@ body.npc-dossier-page.npc-dossier-tengoku .npc-dossier .npc-dossier-identity h1 
   text-underline-offset: 4px;
 }
 .npc-dossier-tengoku .tengoku-portrait { border-inline-start: 1px solid var(--npc-line); }
-.tengoku-portrait figcaption { position: absolute; inset: auto 14px 14px auto; }
-.tengoku-portrait a {
-  display: inline-block;
-  padding: 8px 11px;
-  border: 1px solid var(--npc-line);
-  background: #100d0dec;
-  font: 500 .75rem/1.6 Verdana, sans-serif;
-}
 .npc-dossier-tengoku .npc-dossier-index { background: var(--npc-paper); }
 
 .tengoku-chapter {
@@ -95,7 +115,7 @@ body.npc-dossier-tengoku .npc-dossier .tengoku-chapter > h2,
   border: 1px solid var(--npc-line);
   background: radial-gradient(ellipse at 12% 0%, var(--tengoku-glow), transparent 75%), var(--npc-paper);
 }
-.tengoku-mukenweave {
+.tengoku-stillweave {
   background:
     repeating-linear-gradient(48deg, #ffffff06 0 1px, transparent 1px 6px),
     repeating-linear-gradient(132deg, #ffffff05 0 1px, transparent 1px 6px),

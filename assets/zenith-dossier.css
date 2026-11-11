@@ -1,16 +1,8 @@
-@font-face {
-  font-family: "Cinzel";
-  src: url("/aevum-archive/assets/fonts/cinzel/Cinzel-Variable.ttf") format("truetype");
-  font-weight: 400 900;
-  font-display: swap;
-}
-
 body.npc-dossier-page.npc-dossier-zenith.theme-npcs.page-detail {
   --npc-accent: #c4ac83;
   --npc-paper: #111214;
   --npc-ink: #eee8dc;
   --npc-display: "Cinzel", Georgia, serif;
-  background: radial-gradient(ellipse at 72% 8%, #262423, transparent 50rem), #0b0b0e !important;
 }
 body.npc-dossier-page.npc-dossier-zenith .npc-dossier .npc-dossier-hero {
   display: block;

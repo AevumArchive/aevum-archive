@@ -67,19 +67,6 @@ body.npc-dossier-page.npc-dossier-kenka .npc-dossier-identity h1 {
 .npc-dossier-kenka .kenka-portrait {
   border-inline-start: 1px solid var(--npc-line);
 }
-.kenka-portrait figcaption {
-  position: absolute;
-  inset: auto 16px 16px auto;
-}
-.kenka-portrait a {
-  display: inline-block;
-  padding: 8px 12px;
-  border: 1px solid var(--npc-line);
-  background: #140e0deb;
-  color: #ffe0b6;
-  font: 400 .73rem/1.5 Verdana, sans-serif;
-  text-underline-offset: 4px;
-}
 
 .kenka-power {
   display: grid;
