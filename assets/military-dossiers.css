@@ -1,0 +1,123 @@
+@font-face {
+  font-family: "Cinzel";
+  src: url("/aevum-archive/assets/fonts/cinzel/Cinzel-Variable.ttf") format("truetype");
+  font-weight: 400 900;
+  font-display: swap;
+}
+
+body.npc-dossier-military {
+  --npc-display: "Cinzel", Georgia, serif;
+  --npc-ink: #f1e7da;
+}
+body.npc-dossier-military.route-npcs-haze {
+  --npc-accent: #e4a681;
+  --npc-paper: #171012;
+  --military-glow: #623329;
+}
+body.npc-dossier-military.route-npcs-ace {
+  --npc-accent: #d4c798;
+  --npc-paper: #171911;
+  --military-glow: #464934;
+}
+body.npc-dossier-page.npc-dossier-military.theme-npcs.page-detail {
+  background:
+    radial-gradient(ellipse at 4% 8%, var(--military-glow), transparent 48rem),
+    repeating-linear-gradient(90deg, transparent 0 79px, #fff2 80px, transparent 81px 160px),
+    #0b0b0c !important;
+}
+body.npc-dossier-page.npc-dossier-military .npc-dossier .npc-dossier-hero {
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr);
+  border-radius: 0;
+  background: radial-gradient(ellipse at 0 15%, var(--military-glow), transparent 65%), var(--npc-paper);
+}
+body.npc-dossier-page.npc-dossier-military .npc-dossier .npc-dossier-identity h1 {
+  margin-top: 22px;
+  letter-spacing: -.055em;
+  text-shadow: none;
+}
+.npc-dossier-military .npc-dossier-identity > .eyebrow,
+.military-facts dt,
+.npc-dossier-military .npc-dossier-index a {
+  font-family: Consolas, "Courier New", monospace;
+  letter-spacing: .09em;
+}
+
+.military-facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px 24px;
+  max-width: 32rem;
+  margin: 32px 0 25px;
+  padding-block: 18px;
+  border-block: 1px solid var(--npc-line);
+}
+.military-facts dt {
+  color: var(--npc-label);
+  font-size: .76rem;
+  text-transform: uppercase;
+}
+.military-facts dd {
+  margin: 6px 0 0;
+  color: var(--npc-ink);
+  font: 400 1.05rem/1.55 Georgia, serif;
+}
+.military-alterra-link,
+.military-portrait a {
+  color: var(--npc-label);
+  font: 500 .76rem/1.55 Verdana, sans-serif;
+  text-underline-offset: 4px;
+}
+.npc-dossier-military .military-portrait { border-inline-start: 1px solid var(--npc-line); }
+.military-portrait figcaption { position: absolute; inset: auto 14px 14px auto; }
+.military-portrait a {
+  display: inline-block;
+  padding: 7px 10px;
+  border: 1px solid var(--npc-line);
+  background: #100d0deb;
+}
+
+.npc-dossier-military .npc-dossier-index { background: var(--npc-paper); }
+.npc-dossier-military .npc-dossier-index a { color: var(--npc-label); }
+.military-chapter {
+  display: grid;
+  grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr);
+  gap: 18px clamp(30px, 6vw, 94px);
+  align-items: start;
+}
+body.npc-dossier-military .military-chapter .section-head {
+  display: block;
+  margin: 0;
+}
+body.npc-dossier-military .military-chapter .section-head .eyebrow {
+  margin: 0 0 13px;
+  color: var(--npc-label);
+  font: 500 .74rem/1.5 Consolas, "Courier New", monospace;
+}
+body.npc-dossier-military.npc-dossier-page .npc-dossier .military-chapter .section-head h2 {
+  max-width: 16ch;
+  margin: 0;
+  font: 400 clamp(1.9rem, 4vw, 3.65rem)/1.13 Georgia, serif;
+  letter-spacing: -.034em;
+  text-wrap: pretty;
+}
+.military-chapter-copy {
+  max-width: 65ch;
+  padding: 20px clamp(18px, 3vw, 32px);
+  border-inline-start: 1px solid var(--npc-accent);
+  background: linear-gradient(90deg, var(--npc-paper), transparent 94%);
+  color: #e1d5cb;
+  font: 400 1.06rem/1.85 Georgia, serif;
+}
+.military-chapter-copy p { margin: 0; }
+.military-chapter-copy p + p { margin-top: 1em; }
+.military-chapter-copy a { color: var(--npc-label); text-underline-offset: 4px; }
+
+@media (max-width: 900px) {
+  body.npc-dossier-page.npc-dossier-military .npc-dossier .npc-dossier-hero,
+  .military-chapter { grid-template-columns: minmax(0, 1fr); }
+  .npc-dossier-military .military-portrait { border-inline-start: 0; }
+}
+@media (max-width: 440px) {
+  .military-facts { gap: 16px; margin-block: 24px 20px; }
+  .military-chapter-copy { font-size: 1rem; }
+}
