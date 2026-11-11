@@ -115,7 +115,7 @@ class CharacterRecordsTest(unittest.TestCase):
                     continue
                 if name == "astera-zenith":
                     self.assertIn('class="astral-hero"', detail)
-                    self.assertEqual(detail.count('src="/aevum-archive/assets/images/astera-zenith-cosmic-ruins.png"'), 1)
+                    self.assertEqual(detail.count('src="/aevum-archive/assets/images/astera-dark-astral-complete.webp"'), 1)
                     self.assertNotIn('class="card portrait-card', detail)
                     continue
                 self.assertIn('class="record-hero"', detail)
@@ -142,9 +142,9 @@ class CharacterRecordsTest(unittest.TestCase):
         styles = page("assets/archive-record-refresh.css")
         self.assertIn("aspect-ratio: var(--portrait-ratio, 2 / 3)", styles)
         self.assertIn("background-size: cover, contain", styles)
-        self.assertIn('images/astera-zenith-cosmic-ruins.png', styles)
+        self.assertIn('images/astera-dark-astral-complete.webp', styles)
         self.assertNotIn('images/astera-zenith.png', styles)
-        self.assertTrue((ROOT / "assets/images/astera-zenith-cosmic-ruins.png").is_file())
+        self.assertTrue((ROOT / "assets/images/astera-dark-astral-complete.webp").is_file())
         for name in ("guts", "jonathan", "obama"):
             self.assertIn(f"body.route-characters-{name} {{ --portrait-ratio:", styles)
 

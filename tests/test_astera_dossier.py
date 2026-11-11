@@ -31,13 +31,13 @@ class AsteraDossierTest(unittest.TestCase):
     def test_hero_keeps_last_confirmed_state_and_full_portrait(self):
         hero = re.search(r'<section class="astral-hero".*?</section>', self.page, re.S).group(0)
         for fact in ('<dt>Status</dt><dd>LOST / UNKNOWN</dd>', '<dt>Race</dt><dd>Elf</dd>',
-                     '<dt>Path</dt><dd>Star Magic / Dark Astral</dd>', '<dt>Instructor</dt><dd>Mythic</dd>',
+                     '<dt>Path</dt><dd>Star Magic / Dark Astral · COMPLETE</dd>', '<dt>Instructor</dt><dd>Mythic</dd>',
                      '<dt>Known Bond</dt><dd>Jango</dd>', '<dd>Hollow Star · COMPLETE</dd>',
                      '<dd>STABILIZED · Left Eye Fully Awakened</dd>',
                      'Her current whereabouts are unknown; no death is confirmed.'):
             self.assertIn(fact, hero)
         self.assertNotIn("Power Level", hero)
-        self.assertEqual(self.page.count('src="/aevum-archive/assets/images/astera-zenith-cosmic-ruins.png"'), 1)
+        self.assertEqual(self.page.count('src="/aevum-archive/assets/images/astera-dark-astral-complete.webp"'), 1)
         self.assertNotIn('class="record-hero"', self.page)
         self.assertIn("align-self: start", self.styles)
         self.assertIn("width: 100%; height: auto", self.styles)
@@ -55,7 +55,7 @@ class AsteraDossierTest(unittest.TestCase):
                        "And still I remain.", "The Umbral Meridian", "Beyond the Mark", "it is not yet her home",
                        "A Name Unknown to the World... Until Now.", "+250,000 Points", "Tenrei",
                        "not a battle", "Duality", "zero-slot Signature Trait", "Historical / unrealized vision",
-                       "Dominant current trajectory", "Magical Understanding and Cleansing Breath"):
+                       "Completed path", "Magical Understanding and Cleansing Breath"):
             with self.subTest(phrase=phrase):
                 self.assertIn(phrase, self.page)
         self.assertIn('astera-umbral-meridian-quest-complete.png', self.page)

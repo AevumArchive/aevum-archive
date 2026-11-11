@@ -2,6 +2,7 @@
 
 ## 2026-11-11
 
+- Added Astera Zenith’s new portrait and recorded the completion of her Dark Astral Path.
 - Standardized Q.U.I.L. and S.E.M.P.A.I. across the Archive and gave both AI profiles monospace headings.
 - Moved Jon Snow to Lost / Unknown.
 - Added Thomas Meyer, Jon Snow and Tony Arasaka to Retired, Solaire to Fallen, and QUIL and SEMPAI to the NPC register.
