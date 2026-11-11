@@ -2,6 +2,7 @@
 
 ## 2026-11-11
 
+- Added Daiki’s Tengoku profile and portrait, gave the six clan cards more room, and put Family on its own row in the Kurogane profiles.
 - Moved the Kurogane family links into each profile’s main card alongside Power Level.
 - Added Kenji’s Tengoku Clan profile and portrait, and recorded how Kazz’s term Spiritual Power became the clan’s own.
 - Added Family tabs and linked relatives to all four Kurogane profiles. Marked each Tengoku NPC’s Power Level as unknown in the profiles and directory.

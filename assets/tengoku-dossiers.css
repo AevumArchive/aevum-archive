@@ -56,6 +56,15 @@ body.npc-dossier-tengoku.route-npcs-kenji {
     radial-gradient(ellipse at 0 62%, #62457242, transparent 48%),
     linear-gradient(145deg, #221b2dbb, #0f0e15b8 60%, #261a31a8);
 }
+body.npc-dossier-tengoku.route-npcs-daiki {
+  --npc-accent: #d09189;
+  --npc-paper: #170f12;
+  --tengoku-glow: #45201f;
+  --tengoku-atmosphere:
+    radial-gradient(ellipse at 5% 18%, #b6573b55, transparent 38%),
+    radial-gradient(ellipse at 100% 76%, #8b343747, transparent 46%),
+    linear-gradient(142deg, #211016a6, #130d13bb 60%, #2810138c);
+}
 body.npc-dossier-page.npc-dossier-tengoku .npc-dossier .npc-dossier-hero {
   border-radius: 0;
   background: radial-gradient(ellipse at 0 10%, var(--tengoku-glow), transparent 70%), var(--npc-paper);
@@ -98,7 +107,13 @@ body.npc-dossier-page.npc-dossier-tengoku .npc-dossier .npc-dossier-identity h1 
   color: var(--npc-label);
   text-underline-offset: 4px;
 }
-.tengoku-fact #family { scroll-margin-top: 24px; }
+.tengoku-fact #family {
+  flex-basis: 100%;
+  padding-top: 12px;
+  border-top: 1px solid var(--npc-line);
+  scroll-margin-top: 24px;
+}
+.tengoku-fact #family dd + dd { margin-top: 4px; }
 .npc-dossier-tengoku .tengoku-portrait { border-inline-start: 1px solid var(--npc-line); }
 .npc-dossier-tengoku .npc-dossier-index { background: var(--npc-paper); }
 
@@ -147,6 +162,7 @@ body.npc-dossier-tengoku .npc-dossier .tengoku-chapter > h2,
   border: 1px solid var(--npc-line);
   background: #110d10a6;
 }
+.daiki-curse-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .tengoku-note {
   padding: 16px 20px;
   border-inline-start: 2px solid var(--npc-accent);
