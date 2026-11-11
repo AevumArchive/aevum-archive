@@ -2,6 +2,7 @@
 
 ## 2026-11-11
 
+- Matched J.A.R.V.I.S.’s headings to the monospace typography of Q.U.I.L. and S.E.M.P.A.I.
 - Added Astera Zenith’s new portrait and recorded the completion of her Dark Astral Path.
 - Standardized Q.U.I.L. and S.E.M.P.A.I. across the Archive and gave both AI profiles monospace headings.
 - Moved Jon Snow to Lost / Unknown.
