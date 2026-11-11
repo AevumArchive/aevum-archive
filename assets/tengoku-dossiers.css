@@ -1,0 +1,121 @@
+@font-face {
+  font-family: "Cinzel";
+  src: url("/aevum-archive/assets/fonts/cinzel/Cinzel-Variable.ttf") format("truetype");
+  font-weight: 400 900;
+  font-display: swap;
+}
+
+body.npc-dossier-page.npc-dossier-tengoku {
+  --npc-ink: #f6e9dc;
+  --npc-display: "Cinzel", Georgia, serif;
+}
+body.npc-dossier-tengoku.route-npcs-asakura-kurogane {
+  --npc-accent: #e5b083;
+  --npc-paper: #1a1011;
+  --tengoku-glow: #512a23;
+}
+body.npc-dossier-tengoku.route-npcs-kiyoko-kurogane {
+  --npc-accent: #d9b9ae;
+  --npc-paper: #151016;
+  --tengoku-glow: #432832;
+}
+body.npc-dossier-page.npc-dossier-tengoku .npc-dossier .npc-dossier-hero {
+  border-radius: 0;
+  background: radial-gradient(ellipse at 0 10%, var(--tengoku-glow), transparent 70%), var(--npc-paper);
+}
+.npc-dossier-tengoku .npc-dossier-identity { container-type: inline-size; }
+body.npc-dossier-page.npc-dossier-tengoku .npc-dossier .npc-dossier-identity h1 {
+  font-size: min(7rem, 17cqi);
+  font-weight: 900;
+  letter-spacing: .015em;
+  white-space: nowrap;
+}
+.tengoku-surname {
+  display: block;
+  margin-top: .42em;
+  color: var(--npc-label);
+  font-size: .37em;
+  font-weight: 750;
+  letter-spacing: .14em;
+  text-shadow: none;
+}
+.tengoku-fact {
+  max-width: 32rem;
+  margin: 28px 0 0;
+  padding-block: 15px;
+  border-block: 1px solid var(--npc-line);
+}
+.tengoku-fact dt,
+.tengoku-detail-grid dt {
+  margin-bottom: 6px;
+  color: var(--npc-label);
+  font: 500 .75rem/1.6 Verdana, sans-serif;
+}
+.tengoku-fact dd,
+.tengoku-detail-grid dd { margin: 0; }
+.npc-dossier-tengoku .npc-dossier a {
+  color: var(--npc-label);
+  text-underline-offset: 4px;
+}
+.npc-dossier-tengoku .tengoku-portrait { border-inline-start: 1px solid var(--npc-line); }
+.tengoku-portrait figcaption { position: absolute; inset: auto 14px 14px auto; }
+.tengoku-portrait a {
+  display: inline-block;
+  padding: 8px 11px;
+  border: 1px solid var(--npc-line);
+  background: #100d0dec;
+  font: 500 .75rem/1.6 Verdana, sans-serif;
+}
+.npc-dossier-tengoku .npc-dossier-index { background: var(--npc-paper); }
+
+.tengoku-chapter {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+  align-items: start;
+  gap: 18px clamp(24px, 5vw, 72px);
+}
+body.npc-dossier-tengoku .npc-dossier .tengoku-chapter > h2,
+.tengoku-feature h2 {
+  margin: 0;
+  color: var(--npc-ink);
+  font: 750 clamp(1.85rem, 4vw, 4rem)/1.15 var(--npc-display);
+  text-wrap: balance;
+}
+.tengoku-chapter p,
+.tengoku-feature p,
+.tengoku-detail-grid dd {
+  max-width: 65ch;
+  color: #dfd2c9;
+  font: 400 1.06rem/1.85 Georgia, serif;
+}
+.tengoku-chapter p { margin: 0; }
+.tengoku-chapter p + p { margin-top: 1em; }
+.tengoku-feature {
+  padding: clamp(24px, 5vw, 68px);
+  border: 1px solid var(--npc-line);
+  background: radial-gradient(ellipse at 12% 0%, var(--tengoku-glow), transparent 75%), var(--npc-paper);
+}
+.tengoku-mukenweave {
+  background:
+    repeating-linear-gradient(48deg, #ffffff06 0 1px, transparent 1px 6px),
+    repeating-linear-gradient(132deg, #ffffff05 0 1px, transparent 1px 6px),
+    radial-gradient(ellipse at 0 0, #382632, #141017 72%);
+}
+.tengoku-feature p:last-child { margin-bottom: 0; }
+.tengoku-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 28px 0 0;
+}
+.tengoku-detail-grid > div {
+  padding: clamp(16px, 3vw, 28px);
+  border: 1px solid var(--npc-line);
+  background: #110d10a6;
+}
+@media (max-width: 900px) {
+  .npc-dossier-tengoku .tengoku-portrait { border-inline-start: 0; }
+}
+@media (max-width: 760px) {
+  .tengoku-chapter, .tengoku-detail-grid { grid-template-columns: minmax(0, 1fr); }
+}
