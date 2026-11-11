@@ -65,43 +65,89 @@ body.route-npcs .npc-directory-hero h1 {
 .directory-summary {
   position: relative;
   isolation: isolate;
-  display: grid;
-  justify-items: start;
-  gap: 12px;
+  min-width: 0;
   overflow: hidden;
   padding: clamp(24px, 3vw, 38px);
-  border: 1px solid #ae80c15e;
-  border-radius: 4px 26px 4px 4px;
-  background: radial-gradient(ellipse at 100% 0, #58356377, transparent 80%), #1b1223;
+  border: 1px solid var(--directory-line);
+  border-radius: 3px 26px 3px 3px;
+  background: radial-gradient(ellipse at 100% 0, #714f8540, transparent 70%), linear-gradient(145deg, #1c1324, #0e0b13);
+  box-shadow: 0 24px 70px #0002;
 }
-.directory-summary::before,
-.directory-summary::after {
+.directory-summary::before {
   position: absolute;
   z-index: -1;
+  inset: 9px;
   content: "";
-  border: 1px solid #b88cc638;
+  border: 1px solid #c5a6d312;
+  border-radius: inherit;
   pointer-events: none;
 }
-.directory-summary::before { inset: 7px; border-radius: inherit; }
-.directory-summary::after {
-  width: 210px;
-  aspect-ratio: 1;
-  top: -46px;
-  right: -85px;
-  border-radius: 50%;
-  box-shadow: 0 0 0 12px #c095d018, inset 0 0 0 12px #c095d018;
-}
-.directory-summary strong {
-  color: #f5e7fa;
-  font: 400 clamp(5.75rem, 10vw, 9.25rem)/.85 Georgia, serif;
-  letter-spacing: -.075em;
-}
-.directory-summary span {
-  color: #ddbee9;
-  font: 500 .74rem/1.55 Verdana, sans-serif;
-  letter-spacing: .11em;
+.directory-register-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--directory-line);
+  color: #c6b1d1;
+  font: 500 .65rem/1.8 Verdana, sans-serif;
+  letter-spacing: .13em;
   text-transform: uppercase;
 }
+.directory-register-head > span:last-child { color: #d4b1e8; font-size: 1rem; line-height: 1; }
+.directory-register-count {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: clamp(12px, 1.5vw, 24px);
+  row-gap: 8px;
+  margin-top: 22px;
+}
+.directory-register-count strong {
+  color: #f1e4f5;
+  font: 400 clamp(6rem, 10vw, 10rem)/.95 Georgia, serif;
+  letter-spacing: -.07em;
+}
+.directory-register-count > span {
+  color: #c2a6d3;
+  font: 500 .7rem/1.8 Verdana, sans-serif;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.directory-register-orbit {
+  position: absolute;
+  z-index: -1;
+  width: 270px;
+  height: 270px;
+  top: 65px;
+  right: -150px;
+  border: 1px solid #c99ce34d;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: directory-orbit 75s linear infinite;
+}
+.directory-register-orbit::before {
+  position: absolute;
+  inset: 18px;
+  content: "";
+  border: 1px dashed #c99ce336;
+  border-radius: 50%;
+}
+.directory-register-orbit i {
+  position: absolute;
+  inset: 42px;
+  border: 1px solid #c99ce345;
+  transform: rotate(45deg);
+}
+.directory-register-orbit i + i { transform: rotate(0); }
+.directory-register-orbit b {
+  position: absolute;
+  left: -5px;
+  top: 50%;
+  color: #b893d4;
+  font-size: 14px;
+  font-weight: 400;
+}
+@keyframes directory-orbit { to { transform: rotate(360deg); } }
 #npc-search-results:not(:empty) { margin-top: 16px; }
 .npc-directory-tools button, .npc-directory-empty button {
   min-height: 44px;
@@ -399,7 +445,7 @@ body.route-npcs .npc-directory .npc-divine-ledger { margin-top: 28px; }
   .npc-directory .npc-ledger-nav strong { font-size: .875rem; }
 }
 @media (max-width: 480px) {
-  .directory-summary { grid-template-columns: auto 1fr; align-items: center; gap: 20px; }
+  .directory-register-orbit { top: 47px; right: -175px; }
   .npc-directory-tools { flex-wrap: wrap; }
   .npc-directory-tools label { flex-basis: 100%; }
   .tengoku-card-grid { grid-template-columns: 1fr; }

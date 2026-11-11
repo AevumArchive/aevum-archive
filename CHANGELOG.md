@@ -2,6 +2,7 @@
 
 ## 2026-11-11
 
+- Restored the rotating orbit on the NPC discovery count.
 - Restored the prominent discovered-NPC count and opened the NPC register on all shelves by default.
 - Added a compact NPC register with shelf views, direct links to each shelf, and search across the whole directory.
 - Added Daiki’s Tengoku profile and portrait, gave the six clan cards more room, and put Family on its own row in the Kurogane profiles.
