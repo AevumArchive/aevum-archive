@@ -31,7 +31,7 @@ class NpcDirectoryTest(unittest.TestCase):
         self.parsed.feed(self.page)
 
     def test_all_entries_remain_public_without_script_and_have_no_portrait_elements(self):
-        self.assertEqual(len(self.parsed.cards), 43)
+        self.assertEqual(len(self.parsed.cards), 44)
         for tag, attrs in self.parsed.cards:
             self.assertNotIn('hidden', attrs)
             self.assertNotIn('style', attrs)
@@ -60,8 +60,8 @@ class NpcDirectoryTest(unittest.TestCase):
             self.assertIn(shelf, self.parsed.ids)
             self.assertIn(f'href="#{shelf}"', self.page)
         self.assertEqual(len(self.parsed.ids), len(set(self.parsed.ids)))
-        self.assertIn('11 recovered records', self.page)
-        self.assertIn('43 entries across six shelves', self.page)
+        self.assertIn('12 recovered records', self.page)
+        self.assertIn('44 entries across six shelves', self.page)
         self.assertNotIn('broken loyalty', self.page)
 
     def test_search_is_local_accessible_and_enhancement_only(self):

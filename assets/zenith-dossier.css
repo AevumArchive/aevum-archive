@@ -1,0 +1,75 @@
+@font-face {
+  font-family: "Cinzel";
+  src: url("/aevum-archive/assets/fonts/cinzel/Cinzel-Variable.ttf") format("truetype");
+  font-weight: 400 900;
+  font-display: swap;
+}
+
+body.npc-dossier-page.npc-dossier-zenith.theme-npcs.page-detail {
+  --npc-accent: #c4ac83;
+  --npc-paper: #111214;
+  --npc-ink: #eee8dc;
+  --npc-display: "Cinzel", Georgia, serif;
+  background: radial-gradient(ellipse at 72% 8%, #262423, transparent 50rem), #0b0b0e !important;
+}
+body.npc-dossier-page.npc-dossier-zenith .npc-dossier .npc-dossier-hero {
+  display: block;
+  border-color: #7d6c54;
+  border-radius: 0;
+  background:
+    radial-gradient(ellipse at 12% 8%, #363331, transparent 64%),
+    repeating-linear-gradient(124deg, #ffffff04 0 1px, transparent 1px 8px),
+    linear-gradient(148deg, #1c1d1f, #101113 62%, #17191d);
+}
+body.npc-dossier-page.npc-dossier-zenith .npc-dossier .npc-dossier-identity {
+  padding-block: clamp(42px, 9vw, 124px);
+}
+body.npc-dossier-page.npc-dossier-zenith .npc-dossier .npc-dossier-identity h1 {
+  font-size: clamp(3rem, 8.5vw, 8.2rem);
+  font-weight: 900;
+  letter-spacing: .015em;
+  text-transform: uppercase;
+  text-shadow: 0 4px #0a0a0b;
+}
+.zenith-surname {
+  display: block;
+  margin-top: .38em;
+  color: var(--npc-label);
+  font-size: .34em;
+  font-weight: 750;
+  letter-spacing: .14em;
+  text-shadow: none;
+}
+.npc-dossier-zenith .npc-dossier-identity .lede { margin: 24px 0 0; }
+.npc-dossier-zenith .npc-dossier-index { background: #151517; }
+.npc-dossier-zenith .lede a,
+.zenith-chapter a {
+  color: var(--npc-label);
+  text-underline-offset: 4px;
+}
+.zenith-chapter {
+  display: grid;
+  grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+  align-items: start;
+  gap: 18px clamp(24px, 5vw, 76px);
+}
+body.npc-dossier-page.npc-dossier-zenith .npc-dossier .zenith-chapter > h2 {
+  margin: 0;
+  font-size: clamp(1.75rem, 3.4vw, 3.3rem);
+  font-weight: 750;
+  overflow-wrap: anywhere;
+}
+.zenith-chapter p {
+  max-width: 58ch;
+  margin: 0;
+  color: #d5c9bd;
+  font: 400 1.06rem/1.85 Georgia, serif;
+}
+body.npc-dossier-page.npc-dossier-zenith .npc-dossier > .zenith-kagegane {
+  padding: clamp(24px, 5vw, 66px);
+  border: 1px solid var(--npc-line);
+  background: linear-gradient(125deg, #282a2d, #111215 62%);
+}
+@media (max-width: 760px) {
+  .zenith-chapter { grid-template-columns: minmax(0, 1fr); }
+}

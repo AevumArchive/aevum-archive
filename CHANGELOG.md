@@ -2,6 +2,7 @@
 
 ## 2026-11-11
 
+- Added Kenka Kurogane’s surname and Zenith Kurogane’s dossier with the Tengoku clan and Kagegane.
 - Set Kenka’s name and The Unseen Katana heading in heavy Cinzel, with the name sized to fit its panel.
 - Redesigned ACE and Haze’s military dossiers and added their new portraits.
 - Matched Kenka’s NPC directory card to his red-and-gold dossier.
