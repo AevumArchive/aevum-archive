@@ -12,7 +12,9 @@
   const shelfNames = new Map(tabs.map(tab => [tab.hash.slice(1), tab.querySelector('strong').textContent]));
   const shelfFromHash = () => tabs.find(tab => tab.hash === location.hash)?.hash ?? tabs[0].hash;
   let activeShelf = shelfFromHash();
-  const normalize = text => text.normalize('NFKD').replace(/\p{M}/gu, '').toLocaleLowerCase().trim();
+  const normalize = text => text.normalize('NFKD').replace(/\p{M}/gu, '')
+    .replace(/\b(?:[a-z]\.){2,}[a-z]?/gi, initials => initials.replaceAll('.', ''))
+    .toLocaleLowerCase().trim();
   const entries = [...directory.querySelectorAll('.npc-card')].map(card => {
     const section = card.closest('section').id;
     const affiliation = card.closest('[data-npc-affiliation]')?.dataset.npcAffiliation ?? '';

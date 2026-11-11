@@ -2,6 +2,7 @@
 
 ## 2026-11-11
 
+- Standardized Q.U.I.L. and S.E.M.P.A.I. across the Archive and gave both AI profiles monospace headings.
 - Moved Jon Snow to Lost / Unknown.
 - Added Thomas Meyer, Jon Snow and Tony Arasaka to Retired, Solaire to Fallen, and QUIL and SEMPAI to the NPC register.
 - Removed full-artwork links from NPC profiles and embedded both of Jiro’s earlier portraits in his gallery.

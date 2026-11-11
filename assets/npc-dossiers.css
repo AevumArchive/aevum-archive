@@ -21,6 +21,7 @@ body.npc-dossier-poison { --npc-accent: #86cbeb; }
 body.npc-dossier-uwu { --npc-accent: #df9b85; }
 body.npc-dossier-chax { --npc-accent: #cb8c98; }
 body.npc-dossier-willy { --npc-accent: #a95b69; --npc-paper: #080609; }
+body.npc-dossier-ai { --npc-display: Consolas, "Courier New", monospace; }
 
 body.npc-dossier-page.theme-npcs.page-detail {
   background: radial-gradient(ellipse at 85% 6%, var(--npc-faint), transparent 42rem),
@@ -109,6 +110,14 @@ body.npc-dossier-page.npc-dossier-deadshot .npc-dossier .npc-dossier-identity h1
 body.npc-dossier-page:is(.npc-dossier-library-entity,.npc-dossier-jarvis) .npc-dossier-identity h1 {
   font-size: clamp(3rem, 5.7vw, 6.25rem);
 }
+body.npc-dossier-ai .npc-dossier-identity { container-type: inline-size; }
+body.npc-dossier-page.npc-dossier-ai .npc-dossier .npc-dossier-identity h1 {
+  font-size: min(5rem, 12.5cqi);
+  font-weight: 700;
+  letter-spacing: .02em;
+  white-space: nowrap;
+}
+.npc-dossier-ai .npc-dossier-visual .character-body h3 { font-family: var(--npc-display); }
 .npc-dossier .npc-dossier-identity > .eyebrow {
   color: var(--npc-label);
   font: 600 .69rem/1.7 Verdana, sans-serif;

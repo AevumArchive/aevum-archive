@@ -50,7 +50,7 @@ class ArchiveGalleriesTest(unittest.TestCase):
                      "Izumi", "Bomir", "UWU", "Jiro", "Ichiro", "Keanu", "Timeo", "Arisu", "Nox", "Nyx", "Rapax",
                      "Poison", "Yori", "Kimiko", "Peter", "Hans", "Fritz", "J.A.R.V.I.S.", "John", "Deadshot",
                      "Uwubama", "Library Entity", "Haze", "ACE", "Gandred", "Colonel Garrison", "Seraph", "Kenka Kurogane", "Zenith Kurogane",
-                     "Asakura Kurogane", "Kiyoko Kurogane", "Kenji", "Daiki", "QUIL", "SEMPAI", "Chax", "Malrik", "Bobby", "???"):
+                     "Asakura Kurogane", "Kiyoko Kurogane", "Kenji", "Daiki", "Q.U.I.L.", "S.E.M.P.A.I.", "Chax", "Malrik", "Bobby", "???"):
             with self.subTest(name=name):
                 self.assertIn(name, visible_text)
         # Only the progressively enhanced search UI starts hidden, never a record.
