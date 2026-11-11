@@ -5,6 +5,13 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Yuji Mai";
+  src: url("/aevum-archive/assets/fonts/yuji-mai/YujiMai-Kenka.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
 body.npc-dossier-page.npc-dossier-kenka.theme-npcs.page-detail {
   --npc-accent: #e3b582;
   --npc-ink: #f4e6d9;
@@ -32,8 +39,9 @@ body.npc-dossier-page.npc-dossier-kenka .npc-dossier .npc-dossier-hero {
 body.npc-dossier-page.npc-dossier-kenka .npc-dossier .npc-dossier-hero::before {
   border-color: #e6b17d80;
 }
-.npc-dossier-kenka .npc-dossier-identity h1 {
-  letter-spacing: -.055em;
+body.npc-dossier-page.npc-dossier-kenka .npc-dossier-identity h1 {
+  font-family: "Yuji Mai", var(--npc-display);
+  letter-spacing: 0;
 }
 .npc-dossier-kenka .kenka-portrait {
   border-inline-start: 1px solid var(--npc-line);
@@ -98,8 +106,8 @@ body.npc-dossier-page.npc-dossier-kenka .npc-dossier > #unseen-katana {
 .kenka-feat-copy h2 {
   margin: 0;
   color: var(--npc-ink);
-  font: 400 clamp(2.1rem, 5vw, 5.4rem)/1.12 var(--npc-display);
-  letter-spacing: -.045em;
+  font: 400 clamp(2.1rem, 5vw, 5.4rem)/1.17 "Yuji Mai", var(--npc-display);
+  letter-spacing: 0;
   text-wrap: balance;
 }
 .kenka-feat-copy p,

@@ -2,6 +2,7 @@
 
 ## 2026-11-11
 
+- Set Kenka’s name and The Unseen Katana heading in Yuji Mai.
 - Redesigned ACE and Haze’s military dossiers and added their new portraits.
 - Matched Kenka’s NPC directory card to his red-and-gold dossier.
 - Added an ink-wash maple backdrop around Kenka’s dossier.
