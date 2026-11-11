@@ -39,11 +39,15 @@ body.npc-dossier-page.npc-dossier-kenka .npc-dossier .npc-dossier-hero {
 body.npc-dossier-page.npc-dossier-kenka .npc-dossier .npc-dossier-hero::before {
   border-color: #e6b17d80;
 }
+body.npc-dossier-kenka .npc-dossier-identity { container-type: inline-size; }
 body.npc-dossier-page.npc-dossier-kenka .npc-dossier-identity h1 {
   color: #fae4c3;
   font-family: "Cinzel", var(--npc-display);
+  font-size: min(8.8rem, 22cqi);
   font-weight: 900;
   letter-spacing: .035em;
+  overflow-wrap: normal;
+  white-space: nowrap;
   text-transform: uppercase;
   text-shadow: 0 1px #dfb37b, 0 4px #180d0e, 0 8px 26px #12090ab3;
 }
