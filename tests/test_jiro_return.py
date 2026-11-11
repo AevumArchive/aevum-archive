@@ -35,7 +35,7 @@ class JiroReturnTest(unittest.TestCase):
         self.assertIn("cost Faaram the ability itself", detail)
         self.assertIn("Jiro survived the Aizen event with severe injuries", detail)
         self.assertEqual(detail.count('src="/aevum-archive/assets/images/jiro-awakened.png"'), 1)
-        self.assertIn('href="/aevum-archive/assets/images/jiro-returned.webp"', detail)
+        self.assertIn('src="/aevum-archive/assets/images/jiro-returned.webp"', detail)
         self.assertIn("Both earlier portraits predate the loss of his left arm", detail)
         for phrase in ("left arm", "massive hole in his chest", "condition was critical", "survival was uncertain"):
             self.assertIn(phrase, detail)

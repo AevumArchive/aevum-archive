@@ -2,6 +2,7 @@
 
 ## 2026-11-11
 
+- Removed full-artwork links from NPC profiles and embedded both of Jiro’s earlier portraits in his gallery.
 - Restored the rotating orbit on the NPC discovery count.
 - Restored the prominent discovered-NPC count and opened the NPC register on all shelves by default.
 - Added a compact NPC register with shelf views, direct links to each shelf, and search across the whole directory.

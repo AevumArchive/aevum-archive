@@ -61,20 +61,12 @@ body.npc-dossier-page.npc-dossier-military .npc-dossier .npc-dossier-identity h1
   color: var(--npc-ink);
   font: 400 1.05rem/1.55 Georgia, serif;
 }
-.military-alterra-link,
-.military-portrait a {
+.military-alterra-link {
   color: var(--npc-label);
   font: 500 .76rem/1.55 Verdana, sans-serif;
   text-underline-offset: 4px;
 }
 .npc-dossier-military .military-portrait { border-inline-start: 1px solid var(--npc-line); }
-.military-portrait figcaption { position: absolute; inset: auto 14px 14px auto; }
-.military-portrait a {
-  display: inline-block;
-  padding: 7px 10px;
-  border: 1px solid var(--npc-line);
-  background: #100d0deb;
-}
 
 .npc-dossier-military .npc-dossier-index { background: var(--npc-paper); }
 .npc-dossier-military .npc-dossier-index a { color: var(--npc-label); }

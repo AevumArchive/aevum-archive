@@ -121,7 +121,8 @@ body.route-npcs-jiro #family-sword { padding-inline: clamp(24px, 4vw, 60px); bor
 .jiro-chronicle p { margin: 0; max-width: 70ch; color: var(--jiro-muted); font-size: 1.05rem; line-height: 1.8; }
 .jiro-unresolved { display: grid; grid-template-columns: .85fr 1.15fr; gap: 64px; padding-inline: clamp(24px, 4vw, 60px); border: 1px dashed rgb(160 161 164 / .28); background: repeating-linear-gradient(130deg, transparent 0 160px, rgb(137 138 141 / .025) 161px 162px, transparent 163px 320px), #0b0c0f; }
 .jiro-unresolved .jiro-section-heading { margin-bottom: 0; }
-.jiro-gallery { display: grid; grid-template-columns: minmax(0, 360px) minmax(0, 1fr); gap: clamp(32px, 6vw, 88px); align-items: center; }
+.jiro-gallery { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: clamp(24px, 4vw, 60px); align-items: center; }
+.jiro-gallery-portraits { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; max-width: 580px; }
 .jiro-gallery figure { position: relative; margin: 0; padding: 14px; background: linear-gradient(145deg, rgb(111 112 115 / .1), transparent); }
 .jiro-gallery figure::before, .jiro-gallery figure::after { content: ""; position: absolute; width: 56px; height: 56px; pointer-events: none; }
 .jiro-gallery figure::before { left: 0; top: 0; border-top: 1px solid #7d7e81; border-left: 1px solid #7d7e81; }
@@ -179,7 +180,6 @@ body.route-npcs-jiro #family-sword { padding-inline: clamp(24px, 4vw, 60px); bor
   .jiro-chronicle li::after { left: 14px; top: 72px; }
   .jiro-chronicle p { grid-column: 2; }
   .jiro-gallery { grid-template-columns: 1fr; gap: 32px; }
-  .jiro-gallery figure { max-width: 360px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .jiro-soul-section::before, .jiro-soul-section::after { animation: none; }
