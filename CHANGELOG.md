@@ -2,6 +2,7 @@
 
 ## 2026-11-11
 
+- Moved Jon Snow to Lost / Unknown.
 - Added Thomas Meyer, Jon Snow and Tony Arasaka to Retired, Solaire to Fallen, and QUIL and SEMPAI to the NPC register.
 - Removed full-artwork links from NPC profiles and embedded both of Jiro’s earlier portraits in his gallery.
 - Restored the rotating orbit on the NPC discovery count.

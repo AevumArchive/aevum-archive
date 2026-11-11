@@ -68,7 +68,7 @@ class CharacterRecordsTest(unittest.TestCase):
         self.assertIn('data-status="active" data-name="Faaram Tempest"', hall)
         self.assertIn('Active <span>5</span>', hall)
         self.assertIn('Sealed <span>4</span>', hall)
-        self.assertIn('Lost / Unknown <span>4</span>', hall)
+        self.assertIn('Lost / Unknown <span>5</span>', hall)
         self.assertIn('Faaram Tempest, Lythariel, William and Jango', shelf)
         self.assertIn('status-card active" href="/aevum-archive/characters/faaram.html"', old_road)
 
