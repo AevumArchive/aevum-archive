@@ -33,7 +33,7 @@ class CharacterRecordsTest(unittest.TestCase):
 
         self.assertIn("<dt>Status</dt><dd>FALLEN</dd>", detail)
         self.assertIn('data-status="fallen" data-name="Guts"', hall)
-        self.assertIn("Fallen <span>7</span>", hall)
+        self.assertIn("Fallen <span>8</span>", hall)
         self.assertIn("Four current names", shelf)
         self.assertNotIn('href="/aevum-archive/characters/guts.html"', shelf)
         self.assertNotIn('href="/aevum-archive/characters/guts.html"', playthrough)

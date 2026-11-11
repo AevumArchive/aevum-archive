@@ -31,7 +31,7 @@ class NpcDirectoryTest(unittest.TestCase):
         self.parsed.feed(self.page)
 
     def test_all_entries_remain_public_without_script_and_have_no_portrait_elements(self):
-        self.assertEqual(len(self.parsed.cards), 48)
+        self.assertEqual(len(self.parsed.cards), 50)
         for tag, attrs in self.parsed.cards:
             self.assertNotIn('hidden', attrs)
             self.assertNotIn('style', attrs)
@@ -61,9 +61,9 @@ class NpcDirectoryTest(unittest.TestCase):
             self.assertIn(shelf, self.parsed.ids)
             self.assertIn(f'href="#{shelf}"', self.page)
         self.assertEqual(len(self.parsed.ids), len(set(self.parsed.ids)))
-        self.assertIn('<strong>Known Figures</strong><small>10 records</small>', self.page)
+        self.assertIn('<strong>Known Figures</strong><small>12 records</small>', self.page)
         self.assertIn('<strong>All NPCs</strong><small>7 shelves</small>', self.page)
-        self.assertRegex(self.page, r'<strong>45</strong>\s*<span>NPCs discovered</span>')
+        self.assertRegex(self.page, r'<strong>47</strong>\s*<span>NPCs discovered</span>')
         self.assertNotIn('broken loyalty', self.page)
 
     def test_tengoku_has_all_six_profiles_once_in_its_own_shelf(self):

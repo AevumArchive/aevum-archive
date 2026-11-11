@@ -58,6 +58,7 @@ class CharacterDossiersTest(unittest.TestCase):
             for name in (
                 'all.html', 'index.html', 'bonds.html', 'faaram.html', 'faaram-tempest-origin.html', 'kazz.html',
                 'miles.html', 'josef.html', 'johann.html', 'jackson.html',
+                'thomas-meyer.html', 'jon-snow.html', 'solaire.html', 'tony-arasaka.html',
             )
         }
         self.assertEqual(profiles, expected | excluded)
