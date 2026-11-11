@@ -20,8 +20,8 @@ class DirectoryParser(HTMLParser):
             self.cards.append((tag, attrs))
         if tag == 'img':
             self.images.append(attrs['src'])
-        if tag == 'option':
-            self.shelves.append(attrs.get('value'))
+        if tag == 'a' and attrs.get('href', '').startswith('#'):
+            self.shelves.append(attrs['href'][1:])
 
 
 class NpcDirectoryTest(unittest.TestCase):
@@ -54,15 +54,15 @@ class NpcDirectoryTest(unittest.TestCase):
         self.assertNotIn('url(', new_styles)
 
     def test_shelves_and_count_are_consistent(self):
-        expected = ['all', 'current-npcs', 'sovereigns', 'divine-alliance', 'servants',
+        expected = ['current-npcs', 'sovereigns', 'divine-alliance', 'servants',
                     'tengoku-clan', 'known-figures', 'contained-records']
         self.assertEqual(self.parsed.shelves, expected)
-        for shelf in expected[1:]:
+        for shelf in expected:
             self.assertIn(shelf, self.parsed.ids)
             self.assertIn(f'href="#{shelf}"', self.page)
         self.assertEqual(len(self.parsed.ids), len(set(self.parsed.ids)))
-        self.assertIn('10 recovered records', self.page)
-        self.assertIn('48 entries across 7 shelves', self.page)
+        self.assertIn('<strong>Known Figures</strong><small>10 records</small>', self.page)
+        self.assertIn('<strong>45</strong> known records', self.page)
         self.assertNotIn('broken loyalty', self.page)
 
     def test_tengoku_has_all_six_profiles_once_in_its_own_shelf(self):

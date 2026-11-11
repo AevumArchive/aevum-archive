@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="/aevum-archive/assets/global-header.css?v=20260902-header4">
   <link rel="stylesheet" href="/aevum-archive/assets/npc-effects.css?v=20260916-2">
   <link rel="stylesheet" href="/aevum-archive/assets/npc-index.css?v=20260918-2">
-  <link rel="stylesheet" href="/aevum-archive/assets/npc-directory.css?v=20261111-daiki">
+  <link rel="stylesheet" href="/aevum-archive/assets/npc-directory.css?v=20261111-register">
   <link rel="stylesheet" href="/aevum-archive/assets/halloween.css?v=20261030-allhallows1">
   <script src="/aevum-archive/assets/halloween.js?v=20261030-allhallows1"></script>
 </head>
@@ -26,47 +26,30 @@
 </header>
 <main class="page npc-directory">
 <section class="npc-directory-hero" aria-labelledby="npc-directory-title">
-  <div class="npc-directory-copy">
-    <p class="directory-kicker">The living ledger <span>NPC Archive / Open Index</span></p>
-    <h1 id="npc-directory-title">Names beyond<br>the <em>party.</em></h1>
-    <p class="directory-intro">Some walk beside you. Others change the world.<br>Sovereigns, servants, allies and anomalies—each with a place in the story.</p>
-    <div class="directory-actions"><a class="directory-button" href="#current-npcs">Follow the current path <span aria-hidden="true">↗</span></a><a href="#sovereigns">Meet the exceptional <span aria-hidden="true">↓</span></a></div>
+  <p class="directory-kicker">NPC Archive</p>
+  <h1 id="npc-directory-title">Names beyond the <em>party.</em></h1>
+  <div class="directory-search-row">
+    <form class="npc-directory-tools" data-npc-tools role="search" aria-label="Search NPC records" hidden>
+      <label for="npc-search">Search NPCs</label>
+      <input id="npc-search" name="q" type="search" placeholder="Name, allegiance, power level…" autocomplete="off">
+      <button type="reset" hidden>Clear search</button>
+    </form>
+    <p class="directory-summary"><strong>45</strong> known records</p>
   </div>
-  <aside class="npc-directory-register" aria-label="NPC registry summary">
-    <div class="directory-register-head"><span>Witnessed presences</span><span aria-hidden="true">◇</span></div>
-    <div class="directory-register-count"><strong>45</strong><span>known<br>records</span></div>
-    <div class="directory-register-orbit" aria-hidden="true"><i></i><i></i><b>✧</b></div>
-    <p>Power does not tell the whole story.<br>Every name leaves a mark.</p>
-    <div class="directory-register-foot"><span><b>07</b> archive shelves</span><span><b>03</b> unopened presences</span></div>
-  </aside>
 </section>
 
 <nav class="npc-ledger-nav" aria-label="NPC ledger sections">
-  <a href="#current-npcs"><span>01</span><strong>Current Path</strong><small>6 opened · 3 sealed</small></a>
-  <a href="#sovereigns"><span>02</span><strong>Major Presences</strong><small>2 exceptional records</small></a>
-  <a href="#divine-alliance"><span>03</span><strong>Götterfamilie</strong><small>2 divine records</small></a>
-  <a href="#servants"><span>04</span><strong>Servants &amp; Bonds</strong><small>15 records</small></a>
-  <a href="#tengoku-clan"><span>05</span><strong>Tengoku Clan</strong><small>6 clan records</small></a>
-  <a href="#known-figures"><span>06</span><strong>Known Figures</strong><small>10 recovered records</small></a>
-  <a href="#contained-records"><span>07</span><strong>Restricted</strong><small>4 contained records</small></a>
+  <a href="#current-npcs"><strong>Current Path</strong><small>6 opened · 3 sealed</small></a>
+  <a href="#sovereigns"><strong>Major Presences</strong><small>2 records</small></a>
+  <a href="#divine-alliance"><strong>Götterfamilie</strong><small>2 records</small></a>
+  <a href="#servants"><strong>Servants &amp; Bonds</strong><small>15 records</small></a>
+  <a href="#tengoku-clan"><strong>Tengoku Clan</strong><small>6 records</small></a>
+  <a href="#known-figures"><strong>Known Figures</strong><small>10 records</small></a>
+  <a href="#contained-records"><strong>Restricted</strong><small>4 records</small></a>
 </nav>
 
-<form class="npc-directory-tools" data-npc-tools role="search" aria-label="Search NPC records" hidden>
-  <label class="directory-search" for="npc-search"><span>Find a presence</span><input id="npc-search" name="q" type="search" placeholder="Name, allegiance, power level…" autocomplete="off" aria-controls="npc-search-results"></label>
-  <label for="npc-shelf"><span>Archive shelf</span><select id="npc-shelf" name="shelf" aria-controls="npc-search-results">
-    <option value="all">All shelves</option>
-    <option value="current-npcs">Current Path</option>
-    <option value="sovereigns">Major Presences</option>
-    <option value="divine-alliance">Götterfamilie</option>
-    <option value="servants">Servants &amp; Bonds</option>
-    <option value="tengoku-clan">Tengoku Clan</option>
-    <option value="known-figures">Known Figures</option>
-    <option value="contained-records">Restricted</option>
-  </select></label>
-  <button type="reset">Clear filters <span aria-hidden="true">↺</span></button>
-  <p id="npc-search-results" role="status" aria-live="polite" aria-atomic="true">48 entries across 7 shelves</p>
-</form>
-<div class="npc-directory-empty" data-npc-empty hidden><span aria-hidden="true">◇</span><h2>No matching presence.</h2><p>Try another name, affiliation or power level, or clear the filters.</p><button type="button" data-npc-clear>Show all records</button></div>
+<p id="npc-search-results" role="status" aria-live="polite" aria-atomic="true"></p>
+<div class="npc-directory-empty" data-npc-empty hidden><h2>No matching NPCs</h2><p>Try another name, affiliation or power level.</p><button type="button" data-npc-clear>Clear search</button></div>
 
 <section class="section" id="current-npcs">
   <div class="section-head"><div><p class="eyebrow">Current playthrough</p><h2>Figures on the road.</h2></div><p>Opened names from the active fantasy-medieval shelf.</p></div>
@@ -231,6 +214,6 @@
 <footer class="footer"><span>&#10022; Aevum Archive &mdash; witnessed knowledge only.</span><span>Unwritten pages remain sealed until discovered.</span></footer>
   </main>
 <script src="/aevum-archive/assets/master-ui.js?v=20260821-2" defer></script>
-<script src="/aevum-archive/assets/npc-directory.js?v=20261111-servants" defer></script>
+<script src="/aevum-archive/assets/npc-directory.js?v=20261111-register" defer></script>
 </body>
 </html>
