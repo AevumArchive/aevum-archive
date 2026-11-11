@@ -68,19 +68,39 @@ body.npc-dossier-page.npc-dossier-tengoku .npc-dossier .npc-dossier-identity h1 
   text-shadow: none;
 }
 .tengoku-fact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 28px;
   max-width: 32rem;
   margin: 28px 0 0;
   padding-block: 15px;
   border-block: 1px solid var(--npc-line);
 }
 .tengoku-fact dt,
+.tengoku-family-links dt,
 .tengoku-detail-grid dt {
   margin-bottom: 6px;
   color: var(--npc-label);
   font: 500 .75rem/1.6 Verdana, sans-serif;
 }
 .tengoku-fact dd,
+.tengoku-family-links dd,
 .tengoku-detail-grid dd { margin: 0; }
+.tengoku-family-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr));
+  gap: 12px;
+  margin: 20px 0 0;
+}
+.tengoku-family-links > div {
+  padding: 16px 20px;
+  border: 1px solid var(--npc-line);
+  background: linear-gradient(145deg, var(--npc-faint), transparent), var(--npc-paper);
+}
+.tengoku-family-links a {
+  color: var(--npc-ink);
+  text-underline-offset: 4px;
+}
 .npc-dossier-tengoku .npc-dossier a {
   color: var(--npc-label);
   text-underline-offset: 4px;

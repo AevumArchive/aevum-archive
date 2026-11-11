@@ -2,6 +2,7 @@
 
 ## 2026-11-11
 
+- Added Family tabs and linked relatives to all four Kurogane profiles. Marked each Tengoku NPC’s Power Level as unknown in the profiles and directory.
 - Restyled the Servants & Bonds shelf around Faaram’s early and later bonds and OBAMA’s retinue. Matched the Tengoku Clan navigation tile to the other shelves.
 - Updated Kiyoko’s portrait, renamed her blindfold fabric to Stillweave, and added profile backdrops for Kiyoko, Asakura and Zenith. Removed the full artwork links from the Tengoku portraits.
 - Grouped the four Kurogane NPCs in the searchable Tengoku Clan shelf with portrait-free clan cards.
