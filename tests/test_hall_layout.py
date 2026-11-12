@@ -25,18 +25,20 @@ class HallLayoutTest(unittest.TestCase):
         page = (ROOT / "characters/all.html").read_text(encoding="utf-8")
         parsed = HallParser()
         parsed.feed(page)
-        self.assertEqual(len(parsed.cards), 25)
+        self.assertEqual(len(parsed.cards), 26)
         self.assertEqual(Counter(card["data-status"] for card in parsed.cards),
-                         {"active": 5, "sealed": 4, "fallen": 8, "lost": 5, "retired": 3})
+                         {"active": 5, "sealed": 4, "fallen": 8, "lost": 5, "retired": 4})
         statuses = {card["data-name"]: card["data-status"] for card in parsed.cards}
         for name in ("Thomas Meyer", "Tony Arasaka"):
             self.assertEqual(statuses[name], "retired")
         self.assertEqual(statuses["Jon Snow"], "lost")
         self.assertEqual(statuses["Solaire"], "fallen")
+        self.assertEqual(statuses["Guts"], "fallen")
+        self.assertEqual(statuses["Guts (Royal Bodyguard)"], "retired")
         for card in parsed.cards:
             self.assertIn("status-card", card["class"])
             self.assertTrue((ROOT / card["href"].removeprefix('/aevum-archive/')).is_file())
-        self.assertEqual(page.count('class="hall-card-overlay"'), 25)
+        self.assertEqual(page.count('class="hall-card-overlay"'), 26)
         self.assertNotIn('assets/images/', page)
 
     def test_environment_art_is_removed_and_heading_uses_the_full_width(self):

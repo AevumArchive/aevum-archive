@@ -1,5 +1,9 @@
 # Archive changelog
 
+## 2026-11-12
+
+- Added the retired royal bodyguard Guts as a separate character record.
+
 ## 2026-11-11
 
 - Matched J.A.R.V.I.S.’s headings to the monospace typography of Q.U.I.L. and S.E.M.P.A.I.
