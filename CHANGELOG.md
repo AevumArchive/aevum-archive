@@ -2,6 +2,7 @@
 
 ## 2026-11-12
 
+- Linked Faaram Tempest and the retired Guts as best friends in their profiles.
 - Added the retired royal bodyguard Guts as a separate character record.
 
 ## 2026-11-11
