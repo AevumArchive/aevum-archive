@@ -2,6 +2,7 @@
 
 ## 2026-11-13
 
+- Marked Astera Zenith as Peak Reached and recorded the destruction of Faaram’s Soul Mark.
 - Clarified that the Faceless was an independent entity that possessed the earlier Faaram.
 - Extended Threads of Fate across connected profiles and added The Faceless to the Restricted Archive.
 

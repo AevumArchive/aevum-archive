@@ -151,7 +151,7 @@ class FaaramTempestTest(unittest.TestCase):
         for phrase in ("Programming", "Engineering remains part of Aevum's broader progression", "TemmieTown", "S.E.M.P.A.I.",
                        "knows the location of The Library", "Götterfamilie", "hierarchy remain unrevealed", "Gray Orb", "Nocturne",
                        "Runic Piercer", "Lost", "Overlord's Grace", "8th recorded bearer", "not a relic or a separate World Item",
-                       "Reclaiming His Place · COMPLETE", "Hollow Star did not transfer cleanly", "Astera's destination remain unresolved"):
+                       "Reclaiming His Place · COMPLETE", "Hollow Star did not transfer cleanly", "Astera’s destination remain unresolved"):
             with self.subTest(phrase=phrase):
                 self.assertIn(phrase, self.text)
         self.assertNotIn("God Family", self.text)

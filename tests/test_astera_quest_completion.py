@@ -22,7 +22,7 @@ class AsteraQuestCompletionTest(unittest.TestCase):
         self.assertIn('<dt>Main Quests</dt><dd>The Umbral Meridian · Beyond the Mark — COMPLETE</dd>', astera)
         self.assertIn('<dd>Hollow Star · COMPLETE</dd>', astera)
         self.assertIn('<dd>STABILIZED · Left Eye Fully Awakened</dd>', astera)
-        self.assertIn('Faaram\'s Soul Mark at completion</span><strong>Active then · later state unresolved</strong>', astera)
+        self.assertIn('Faaram\'s Soul Mark at completion</span><strong>Active then · now destroyed</strong>', astera)
         self.assertIn('Astera did not learn who caused the severance', astera)
         self.assertIn('it is not yet her home', astera)
         self.assertNotIn('PARTIAL INTEGRATION', astera)
@@ -35,6 +35,9 @@ class AsteraQuestCompletionTest(unittest.TestCase):
         self.assertIn('After she fully integrated the Hollow Star', faaram)
         self.assertIn('The Umbral Meridian · Beyond the Mark', playthrough)
         self.assertIn('Second Sight stabilized', playthrough)
+        self.assertIn('The Soul Mark on Astera’s soul has been destroyed.', faaram)
+        self.assertIn('Faaram’s Mark on her soul has been destroyed.', playthrough)
+        self.assertIn('Former soul binding · Destroyed', page("codex/bindings.html"))
         self.assertNotIn('visibility-state partial">Partial</span><h3>The Umbral Meridian', playthrough)
 
 

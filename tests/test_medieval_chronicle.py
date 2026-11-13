@@ -62,7 +62,7 @@ class MedievalChronicleTest(unittest.TestCase):
                      'Rath initiated the conflict at Ardent Gate; Avalon answered in defense.',
                      'Lost / Unknown after Faaram’s soul extraction', 'whose present fate remains unknown',
                      'World Anchor — Part I is accessible', 'refusing every offensive use of her craft',
-                     'Second Sight stabilized', "The Mark's current state is unknown.",
+                     'Second Sight stabilized', 'Faaram’s Mark on her soul has been destroyed.',
                      'The soul incident and Astera’s fate remain unresolved.', 'Maps remain the visual authority'):
             self.assertIn(fact, self.page)
         self.assertIn('visibility-state partial">Partial</span><h3>Silent Fault', self.page)

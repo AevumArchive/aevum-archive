@@ -36,7 +36,8 @@ class AsteraDossierTest(unittest.TestCase):
                      '<dd>STABILIZED · Left Eye Fully Awakened</dd>',
                      'Her current whereabouts are unknown; no death is confirmed.'):
             self.assertIn(fact, hero)
-        self.assertNotIn("Power Level", hero)
+        self.assertIn('<span>Power Level</span><strong aria-label="Unknown">???</strong>', hero)
+        self.assertIn('<span class="astral-peak">Peak Reached</span>', hero)
         self.assertEqual(self.page.count('src="/aevum-archive/assets/images/astera-dark-astral-complete.webp"'), 1)
         self.assertNotIn('class="record-hero"', self.page)
         self.assertIn("align-self: start", self.styles)
@@ -51,7 +52,7 @@ class AsteraDossierTest(unittest.TestCase):
 
     def test_discoveries_artwork_and_unresolved_boundaries_survive(self):
         for phrase in ("major but incomplete portion", "Neither is confirmed to hold her entire soul.",
-                       "The Mark's present state is unresolved.", "The Silent Gate", "The Hall of Second Sight",
+                       "Nothing of the binding remains on Astera’s soul.", "The Silent Gate", "The Hall of Second Sight",
                        "And still I remain.", "The Umbral Meridian", "Beyond the Mark", "it is not yet her home",
                        "A Name Unknown to the World... Until Now.", "+250,000 Points", "Tenrei",
                        "not a battle", "Duality", "zero-slot Signature Trait", "Historical / unrealized vision",

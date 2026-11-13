@@ -147,3 +147,121 @@ body.route-characters-astera-zenith .astera-dossier > .section::before { content
 @media (prefers-reduced-motion: reduce) {
   .astera-dossier *, .astera-dossier *::before, .astera-dossier *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
+.astera-dossier .astral-hero {
+  border-color: #ba8fe980;
+  background: radial-gradient(ellipse at 12% 10%, #4d256a80, transparent 65%), #100a19;
+  box-shadow: 0 0 60px #6b39a12b;
+}
+.astera-dossier .astral-identity h1 em {
+  color: #f2d4ff;
+  text-shadow: 0 0 34px #c17dff70;
+}
+.astral-portrait-aura {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 54% 22%, #cd90ff35, transparent 55%);
+  animation: astral-aura 8s ease-in-out infinite alternate;
+}
+.astral-power {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 14px;
+  margin: 24px 0;
+  padding: 15px clamp(12px, 2.4vw, 23px);
+  border: 1px solid #a276c5;
+  background: radial-gradient(ellipse at 13% 50%, #502774, transparent 65%), #1a0f28;
+}
+.astral-power-orbit {
+  display: grid;
+  place-items: center;
+  width: clamp(30px, 5vw, 52px);
+  aspect-ratio: 1;
+  border: 1px dashed #d7a8f5;
+  border-radius: 50%;
+  color: #f8dfff;
+  text-shadow: 0 0 12px #d285ff;
+  animation: astral-orbit 18s linear infinite;
+}
+.astral-power > div > span, .astral-peak {
+  color: #e6c2f7;
+  font: 700 .7rem/1.5 Verdana, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+.astral-power strong {
+  display: block;
+  color: #faeaff;
+  font: 400 clamp(2.5rem, 5vw, 4.7rem)/1 Georgia, serif;
+  text-shadow: 0 0 22px #ca7cfb90;
+}
+.astral-peak {
+  padding: 6px 10px;
+  border: 1px solid #d3a5ee7d;
+  text-align: center;
+}
+.astera-dossier .astral-shatter {
+  --astral-shard-distance: clamp(18px, 3vw, 42px);
+  background: radial-gradient(ellipse at center, #3a1a58, transparent 70%);
+}
+.astera-dossier .astral-shatter::before,
+.astera-dossier .astral-shatter::after { content: none; }
+.astral-shatter .astral-ring-shard {
+  --angle: 0deg;
+  inset: auto;
+  width: min(51%, 212px);
+  aspect-ratio: 1;
+  border: 2px solid transparent;
+  border-top-color: #e1a6ff;
+  border-radius: 50%;
+  box-shadow: none;
+  opacity: .7;
+  transform: rotate(var(--angle)) translateY(calc(-1 * var(--astral-shard-distance)));
+}
+.astral-ring-shard:nth-of-type(3) { --angle: 90deg; }
+.astral-ring-shard:nth-of-type(4) { --angle: 180deg; }
+.astral-ring-shard:nth-of-type(5) { --angle: 270deg; }
+.astral-free-star {
+  position: relative;
+  color: #fff1ff;
+  font-size: clamp(4rem, 10vw, 7rem);
+  text-shadow: 0 0 26px #d886ff, 0 0 64px #ad62f0;
+}
+.astral-shockwave {
+  position: absolute;
+  width: min(58%, 240px);
+  aspect-ratio: 1;
+  border: 1px solid #efb8ff;
+  border-radius: 50%;
+  opacity: 0;
+}
+.astral-shatter.is-shattering .astral-ring-shard { animation: astral-break 1.3s ease-out both; }
+.astral-shatter.is-shattering .astral-shockwave { animation: astral-wave 1.25s .15s ease-out both; }
+.astera-dossier .soul-mark-copy h2 em { color: #e3adff; }
+.astera-dossier .soul-mark-copy .astral-mark-verdict {
+  color: #f4d6ff;
+  font: 400 clamp(1.12rem, 2vw, 1.4rem)/1.55 Georgia, serif;
+}
+.astera-dossier .soul-mark-copy dd strong { color: #e7b7ff; }
+@keyframes astral-orbit { to { transform: rotate(1turn); } }
+@keyframes astral-aura { from { opacity: .22; } to { opacity: .8; } }
+@keyframes astral-break {
+  0%, 20% { opacity: 1; transform: rotate(var(--angle)); }
+  100% { opacity: .7; transform: rotate(var(--angle)) translateY(calc(-1 * var(--astral-shard-distance))); }
+}
+@keyframes astral-wave {
+  from { opacity: .55; transform: scale(.5); }
+  to { opacity: 0; transform: scale(1.55); }
+}
+@media (max-width: 430px) {
+  .astral-power { grid-template-columns: auto 1fr; gap: 8px 12px; }
+  .astral-peak { grid-column: 1 / -1; justify-self: start; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .astral-power-orbit, .astral-portrait-aura,
+  .astral-shatter.is-shattering .astral-ring-shard,
+  .astral-shatter.is-shattering .astral-shockwave { animation: none; }
+}
