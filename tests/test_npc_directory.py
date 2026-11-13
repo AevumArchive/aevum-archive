@@ -69,6 +69,7 @@ class NpcDirectoryTest(unittest.TestCase):
         faceless = 'href="/aevum-archive/npcs/the-faceless.html"'
         self.assertIn(faceless, restricted)
         self.assertEqual(self.page.count(faceless), 1)
+        self.assertIn("An entity that possessed the earlier Faaram", restricted)
         self.assertNotIn('broken loyalty', self.page)
 
     def test_tengoku_has_all_six_profiles_once_in_its_own_shelf(self):

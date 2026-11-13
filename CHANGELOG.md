@@ -2,6 +2,7 @@
 
 ## 2026-11-13
 
+- Clarified that the Faceless was an independent entity that possessed the earlier Faaram.
 - Extended Threads of Fate across connected profiles and added The Faceless to the Restricted Archive.
 
 - Added Threads of Fate to Faaram Tempest’s profile.
