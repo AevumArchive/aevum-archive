@@ -162,6 +162,10 @@ body.route-characters-astera-zenith .astera-dossier > .section::before { content
   z-index: 0;
   pointer-events: none;
   overflow: hidden;
+  background:
+    radial-gradient(circle at 17px 37px, #f2e0ff8c 0 .7px, transparent 1.45px) 0 0 / 89px 113px,
+    radial-gradient(circle at 41px 63px, #c79af287 0 .85px, transparent 1.6px) 12px 5px / 137px 167px,
+    radial-gradient(circle at 13px 29px, #bca7e059 0 .55px, transparent 1.2px) 6px 18px / 59px 79px;
 }
 .astera-dossier { position: relative; z-index: 1; }
 .astral-sky i {
@@ -185,6 +189,12 @@ body.route-characters-astera-zenith .astera-dossier > .section::before { content
 .astral-sky i:nth-child(10) { left: 52%; top: 12%; animation-delay: -4s; }
 .astral-sky i:nth-child(11) { right: 16%; top: 10%; animation-delay: -5s; }
 .astral-sky i:nth-child(12) { left: 40%; top: 95%; animation-delay: -6s; }
+.astral-sky i:nth-child(13) { right: 2%; top: 13%; animation-delay: -4s; }
+.astral-sky i:nth-child(14) { left: 1%; top: 31%; animation-delay: -6s; }
+.astral-sky i:nth-child(15) { right: 1%; top: 36%; animation-delay: -1s; }
+.astral-sky i:nth-child(16) { left: 2%; top: 55%; animation-delay: -3s; }
+.astral-sky i:nth-child(17) { right: 2%; top: 59%; animation-delay: -2s; }
+.astral-sky i:nth-child(18) { right: 1%; top: 80%; animation-delay: -4s; }
 
 .astral-power {
   position: relative;
