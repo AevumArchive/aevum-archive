@@ -175,8 +175,13 @@ body.npc-dossier-page .npc-dossier .npc-dossier-visual :is(figcaption,.willy-por
   max-width: calc(100% - 32px);
   overflow-wrap: anywhere;
 }
-.npc-dossier .npc-dossier-hero > .bobby-void-stage { min-height: 560px; align-self: stretch; }
+body.npc-dossier-bobby .npc-dossier .npc-dossier-hero > .bobby-void-stage {
+  min-height: 560px;
+  align-self: stretch;
+}
 .npc-dossier .npc-dossier-hero > .bobby-void-stage::before { max-width: 76%; }
+.npc-dossier .bobby-sigil { width: min(60%, 230px); }
+.npc-dossier .bobby-trace { color: #a6a3ad; }
 body.npc-dossier-page .npc-dossier .npc-dossier-symbol-hero > .npc-dossier-visual {
   align-self: stretch;
   min-height: 490px;
@@ -346,7 +351,7 @@ body.npc-dossier-page .npc-dossier .npc-dossier-chapter > h2 {
   body.npc-dossier-page .npc-dossier .npc-dossier-visual { border-top: 1px solid var(--npc-line); }
   body.npc-dossier-page .npc-dossier .npc-dossier-symbol-hero > .npc-dossier-visual { min-height: 320px; }
   .npc-dossier .npc-dossier-symbol-hero .npc-dossier-visual .portrait-slot { min-height: 170px; }
-  .npc-dossier .npc-dossier-hero > .bobby-void-stage { min-height: 340px; }
+  body.npc-dossier-bobby .npc-dossier .npc-dossier-hero > .bobby-void-stage { min-height: 340px; }
   .npc-dossier .peter-bond { grid-template-columns: minmax(0, 1fr); }
   .npc-dossier .peter-bond-copy { min-width: 0; overflow-wrap: anywhere; }
 }
