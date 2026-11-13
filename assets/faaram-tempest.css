@@ -51,6 +51,111 @@ body:is(.route-characters-faaram, .route-characters-faaram-origin) main.tempest-
 .tempest-section-head h2 { margin: 0; font: 400 clamp(2.8rem, 5.4vw, 5.5rem)/1.1 Georgia, serif; letter-spacing: -.045em; text-wrap: balance; }
 .tempest-section-head h2 em { color: #cab0ea; font-style: italic; }
 .tempest-section-head > p:last-child:not(.tempest-kicker) { max-width: 66ch; margin: 25px 0 0; }
+.tempest-threads .tempest-section-head { max-width: none; margin-bottom: 26px; text-align: center; }
+.tempest-thread-map {
+  --thread-line: #8065a1;
+  --thread-length: 22px;
+  padding: clamp(16px, 3.5vw, 46px);
+  border: 1px solid var(--tempest-line);
+  background: radial-gradient(ellipse at 50% 0, #2c193e, transparent 65%), #0e0b15;
+}
+.tempest-thread-root {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: fit-content;
+  margin-inline: auto;
+  padding: 10px 18px;
+  border: 1px solid var(--thread-line);
+  background: #171020;
+  color: #f0ddff;
+  font: 400 clamp(1.15rem, 2.5vw, 1.65rem)/1.3 Georgia, serif;
+}
+.tempest-thread-root span { color: var(--tempest-violet); text-shadow: 0 0 16px #bc86f1; }
+.tempest-thread-branches {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  position: relative;
+  margin: 0;
+  padding: calc(2 * var(--thread-length)) 0 0;
+  list-style: none;
+}
+.tempest-thread-branches::before, .tempest-thread-branches::after, .tempest-thread-branches li::before {
+  content: "";
+  position: absolute;
+  background: var(--thread-line);
+  pointer-events: none;
+}
+.tempest-thread-branches::before { top: 0; left: 50%; width: 1px; height: var(--thread-length); }
+.tempest-thread-branches::after {
+  top: var(--thread-length);
+  inset-inline: calc((100% - 36px) / 8);
+  height: 1px;
+}
+.tempest-thread-branches li { position: relative; }
+.tempest-thread-branches li::before { bottom: 100%; left: 50%; width: 1px; height: var(--thread-length); }
+.tempest-thread-branches a {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+  height: 100%;
+  padding: clamp(14px, 2vw, 24px);
+  border: 1px solid #745c90;
+  background: #15101e;
+  color: var(--tempest-muted);
+  text-decoration: none;
+  line-height: 1.55;
+  transition: border-color 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
+}
+.tempest-thread-branches strong {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  color: var(--tempest-ink);
+  font: 400 1.65rem/1.1 Georgia, serif;
+}
+.tempest-thread-branches strong span { color: var(--tempest-violet); font-size: 1rem; }
+.tempest-thread-branches a:is(:hover, :focus-visible) {
+  border-color: #c8a2f4;
+  background: #211630;
+  box-shadow: 0 0 22px #af7de628;
+}
+.tempest-thread-branches li:has(a:is(:hover, :focus-visible))::before {
+  background: #ddbbff;
+  box-shadow: 0 0 8px #bb87f5;
+}
+@media (max-width: 900px) {
+  .tempest-thread-root { margin-inline: 0; }
+  .tempest-thread-branches {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 16px 0 0 16px;
+  }
+  .tempest-thread-branches::before, .tempest-thread-branches::after { display: none; }
+  .tempest-thread-branches li { --thread-rise: 12px; }
+  .tempest-thread-branches li:first-child { --thread-rise: 16px; }
+  .tempest-thread-branches li::before {
+    left: -16px;
+    top: calc(-1 * var(--thread-rise));
+    bottom: 0;
+    width: 16px;
+    height: auto;
+    border-left: 1px solid var(--thread-line);
+    background: linear-gradient(var(--thread-line), var(--thread-line)) no-repeat left center / 100% 1px;
+    background-position-y: calc(50% + var(--thread-rise) / 2);
+  }
+  .tempest-thread-branches li:last-child::before {
+    bottom: 50%;
+    background-position-y: bottom;
+  }
+  .tempest-thread-branches li:has(a:is(:hover, :focus-visible))::before {
+    background-color: transparent;
+    box-shadow: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tempest-thread-branches a { transition: none; }
+}
 .tempest-progression { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 0; padding: 0; list-style: none; border: 1px solid var(--tempest-line); }
 .tempest-progression li { padding: 32px; border-right: 1px solid var(--tempest-line); background: #100d17; }
 .tempest-progression li:last-child { border-right: 0; background: radial-gradient(ellipse at 100% 0, rgb(180 134 213 / .18), transparent 90%), #18101f; }

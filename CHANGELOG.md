@@ -2,6 +2,7 @@
 
 ## 2026-11-13
 
+- Added Threads of Fate to Faaram Tempest’s profile.
 - Opened the Expedition Journal for Traces of the Old World.
 - Sealed Jango’s record and updated the current company.
 - Announced Traces of the Old World with a countdown through 31 December 2026.
