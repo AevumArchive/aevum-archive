@@ -50,6 +50,16 @@ class HomeAtriumTest(unittest.TestCase):
         self.assertNotRegex(self.page, r'<[^>]+\shidden(?:[=\s>])')
         self.assertIn('New to Aevum?', self.page)
 
+    def test_monolith_announcement_and_world_event_share_the_same_window(self):
+        events = (ROOT / 'world-events/index.html').read_text(encoding='utf-8')
+        for page in (self.page, events):
+            self.assertIn('Traces of the Old World', page)
+            self.assertIn('data-event-start="2026-11-13T00:00:00+01:00"', page)
+            self.assertIn('data-event-end="2027-01-01T00:00:00+01:00"', page)
+            self.assertIn('datetime="2026-12-31">31 Dec 2026', page)
+            self.assertIn('role="timer" aria-live="off"', page)
+        self.assertIn('/aevum-archive/world-events/#traces-of-the-old-world', self.parsed.links)
+
     def test_current_facts_and_ledger_records_survive(self):
         self.assertIn('A record of lives once lived,<br><em>and those still to unfold.</em>', self.page)
         self.assertIn('Pick up the thread', self.page)

@@ -20,9 +20,9 @@ class CharacterRecordsTest(unittest.TestCase):
 
         self.assertIn("<dt>Status</dt><dd>ACTIVE</dd>", detail)
         self.assertIn('data-status="active" data-name="OBAMA"', hall)
-        self.assertIn("Active <span>5</span>", hall)
-        self.assertIn("Sealed <span>4</span>", hall)
-        self.assertIn("Four current names", shelf)
+        self.assertIn("Active <span>4</span>", hall)
+        self.assertIn("Sealed <span>5</span>", hall)
+        self.assertIn("Three current names", shelf)
         self.assertIn('status-card active golden-status" href="/aevum-archive/characters/obama.html"', old_road)
 
     def test_guts_is_fallen_not_on_the_active_shelf(self) -> None:
@@ -34,7 +34,7 @@ class CharacterRecordsTest(unittest.TestCase):
         self.assertIn("<dt>Status</dt><dd>FALLEN</dd>", detail)
         self.assertIn('data-status="fallen" data-name="Guts"', hall)
         self.assertIn("Fallen <span>8</span>", hall)
-        self.assertIn("Four current names", shelf)
+        self.assertIn("Three current names", shelf)
         self.assertNotIn('href="/aevum-archive/characters/guts.html"', shelf)
         self.assertNotIn('href="/aevum-archive/characters/guts.html"', playthrough)
 
@@ -66,10 +66,10 @@ class CharacterRecordsTest(unittest.TestCase):
         self.assertIn('<dt>Status</dt><dd>ACTIVE</dd>', faaram)
         self.assertIn('data-status="lost" data-name="Astera Zenith"', hall)
         self.assertIn('data-status="active" data-name="Faaram Tempest"', hall)
-        self.assertIn('Active <span>5</span>', hall)
-        self.assertIn('Sealed <span>4</span>', hall)
+        self.assertIn('Active <span>4</span>', hall)
+        self.assertIn('Sealed <span>5</span>', hall)
         self.assertIn('Lost / Unknown <span>5</span>', hall)
-        self.assertIn('Faaram Tempest, Lythariel, William and Jango', shelf)
+        self.assertIn('Faaram Tempest, Lythariel and William', shelf)
         self.assertIn('status-card active" href="/aevum-archive/characters/faaram.html"', old_road)
 
     def test_faaram_origin_timeline_has_a_separate_lost_record(self) -> None:
@@ -168,7 +168,7 @@ class CharacterRecordsTest(unittest.TestCase):
         self.assertIn("align-self: start", dossier_styles)
         self.assertIn("<dt>Current Status</dt><dd>SEALED</dd>", beru)
         self.assertIn('data-status="sealed" data-name="Beru"', hall)
-        self.assertIn('Sealed <span>4</span>', hall)
+        self.assertIn('Sealed <span>5</span>', hall)
         self.assertNotIn('data-filter="unknown"', hall)
         self.assertNotIn('href="/aevum-archive/characters/beru.html"', shelf)
         self.assertNotIn('href="/aevum-archive/characters/obama.html"', shelf)
@@ -177,7 +177,7 @@ class CharacterRecordsTest(unittest.TestCase):
         shelf = page("characters/index.html")
         hall = page("characters/all.html")
         self.assertIn("Current playthrough", shelf)
-        self.assertIn("Four current names", shelf)
+        self.assertIn("Three current names", shelf)
         self.assertNotIn('href="/aevum-archive/characters/obama.html"', shelf)
         self.assertIn('data-status="active" data-name="OBAMA"', hall)
 

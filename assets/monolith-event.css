@@ -1,0 +1,88 @@
+@font-face {
+  font-family: "Monolith Display";
+  src: url("/aevum-archive/assets/fonts/cinzel/Cinzel-Variable.ttf") format("truetype");
+  font-weight: 400 900;
+  font-display: swap;
+}
+
+.monolith-event {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 16px;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: clamp(22px, 4.6vw, 66px);
+  border: 1px solid #7d77ad;
+  background: radial-gradient(ellipse at 83% 58%, #322557, transparent 47%), linear-gradient(120deg, #111421, #0b0e1b);
+  color: #eeeafa;
+}
+.home-atrium > .monolith-event { margin-top: 22px; }
+.wing-main > .monolith-event { margin-block: 24px 44px; }
+.monolith-copy { position: relative; z-index: 1; }
+.monolith-copy h2 {
+  margin: 10px 0;
+  color: #f4eaff;
+  font: 600 clamp(2rem, 5.1vw, 5.3rem)/1.05 "Monolith Display", Georgia, serif;
+  text-wrap: balance;
+}
+.monolith-copy p { max-width: 49ch; margin: 12px 0; color: #ded7ed; font: 400 1.05rem/1.6 Georgia, serif; }
+.monolith-copy .monolith-label, .monolith-copy .monolith-deadline {
+  color: #d8c4fa;
+  font: 600 .72rem/1.5 Verdana, sans-serif;
+  letter-spacing: .11em;
+}
+.monolith-label { text-transform: uppercase; }
+.monolith-clock {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 20px 0 12px;
+  color: #f4eaff;
+  font: 600 clamp(1.35rem, 3vw, 2.65rem)/1.2 Georgia, serif;
+  font-variant-numeric: tabular-nums;
+}
+.monolith-clock span { padding: 6px 11px; border: 1px solid #7b659c; background: #100b1e; }
+.monolith-clock span:empty { display: none; }
+.monolith-copy .monolith-link { display: inline-block; margin-top: 12px; color: #f1dfff; text-underline-offset: 4px; }
+.monolith-art {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 315px;
+  background: repeating-radial-gradient(circle, transparent 0 32px, #978ab82c 33px 34px, transparent 35px 48px);
+}
+.monolith-art i {
+  width: min(68%, 174px);
+  height: 100%;
+  position: absolute;
+  filter: drop-shadow(0 0 24px #9e78fd77);
+}
+.monolith-art i::before, .monolith-art i::after {
+  content: "";
+  position: absolute;
+  inset: 2% 0 51%;
+  background: linear-gradient(100deg, #787993 0 30%, #393d58 31% 60%, #191e37 61%);
+  clip-path: polygon(20% 10%, 57% 0, 83% 13%, 84% 44%, 100% 51%, 92% 79%, 66% 96%, 44% 80%, 18% 93%, 10% 66%, 0 50%, 10% 23%);
+}
+.monolith-art i::after {
+  inset: 52% 3% 0;
+  clip-path: polygon(13% 12%, 36% 2%, 48% 22%, 74% 0, 91% 20%, 92% 56%, 100% 71%, 78% 89%, 52% 100%, 35% 86%, 19% 86%, 8% 56%, 0 34%);
+}
+.monolith-art b {
+  position: absolute;
+  color: #fff3ff;
+  font-size: 2.2rem;
+  text-shadow: 0 0 12px #c8a6ff, 0 0 36px #ad70ff;
+  animation: monolith-glow 4s ease-in-out infinite alternate;
+}
+@keyframes monolith-glow { to { opacity: .63; transform: scale(.85); } }
+@media (max-width: 680px) {
+  .monolith-event { grid-template-columns: minmax(0, 1fr); }
+  .monolith-art { min-height: 150px; grid-row: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .monolith-art b { animation: none; }
+}

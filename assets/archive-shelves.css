@@ -32,7 +32,7 @@ body.shelf-page .shelf-main h1, body.shelf-page .shelf-main h2, body.shelf-page 
 .shelf-section-head { display: grid; grid-template-columns: 1.25fr .75fr; align-items: end; gap: 40px; margin-bottom: 35px; }
 .shelf-page .shelf-section-head h2 { margin: 15px 0 0; font: 400 clamp(2.2rem, 3.8vw, 4rem)/1.12 Georgia, serif; letter-spacing: -.04em; }
 .shelf-section-head > p { max-width: 46ch; margin: 0; color: #b6a7c1; font-size: 1rem; line-height: 1.8; }
-.current-company-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+.current-company-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
 .current-record { --record-color: #c5a0ef; --record-aura: #69429129; position: relative; display: grid; grid-template-rows: auto 150px 1fr auto; min-width: 0; padding: 24px; border: 1px solid var(--shelf-line); border-top: 2px solid var(--record-color); border-radius: 5px; background: radial-gradient(ellipse at 50% 16%, var(--record-aura), transparent 65%), #100d17; color: var(--shelf-ink); text-decoration: none; transition: transform 250ms ease, border-color 250ms ease, box-shadow 250ms ease; }
 .record-lythariel { --record-color: #aed6b0; --record-aura: #62966b26; }
 .record-william { --record-color: #e3bf84; --record-aura: #b47e2b26; }

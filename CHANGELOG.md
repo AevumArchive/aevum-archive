@@ -1,5 +1,10 @@
 # Archive changelog
 
+## 2026-11-13
+
+- Sealed Jango’s record and updated the current company.
+- Announced Traces of the Old World with a countdown through 31 December 2026.
+
 ## 2026-11-12
 
 - Linked Faaram Tempest and the retired Guts as best friends in their profiles.
