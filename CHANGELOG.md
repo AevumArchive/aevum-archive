@@ -2,6 +2,7 @@
 
 ## 2026-11-14
 
+- Restored Astera’s portrait without a color overlay, reduced background motion, and added a replayable Soul Mark severance.
 - Replaced Astera’s hero portrait with an eclipse and added a drifting sky and a stronger Soul Mark shatter.
 
 ## 2026-11-13

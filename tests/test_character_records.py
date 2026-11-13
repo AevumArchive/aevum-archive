@@ -115,7 +115,7 @@ class CharacterRecordsTest(unittest.TestCase):
                     continue
                 if name == "astera-zenith":
                     self.assertIn('class="astral-hero"', detail)
-                    self.assertIn('class="astral-eclipse"', detail)
+                    self.assertIn('class="astral-portrait"', detail)
                     self.assertNotIn('class="card portrait-card', detail)
                     continue
                 self.assertIn('class="record-hero"', detail)
@@ -155,16 +155,16 @@ class CharacterRecordsTest(unittest.TestCase):
         self.assertIn("route-characters-jonathan .record-hero {\n    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr)", styles)
         self.assertIn("background-size: cover, contain, cover", styles)
 
-    def test_astera_eclipse_and_beru_is_sealed(self) -> None:
+    def test_astera_portrait_fits_and_beru_is_sealed(self) -> None:
         astera = page("characters/astera-zenith.html")
         beru = page("characters/beru.html")
         hall = page("characters/all.html")
         shelf = page("characters/index.html")
         styles = page("assets/archive-record-refresh.css")
 
-        self.assertIn("astera-dossier.css?v=20261114-eclipse", astera)
+        self.assertIn("astera-dossier.css?v=20261114-severance", astera)
         dossier_styles = page("assets/astera-dossier.css")
-        self.assertIn(".astral-eclipse", dossier_styles)
+        self.assertIn(".astral-portrait > img { display: block; width: 100%; height: auto; }", dossier_styles)
         self.assertIn("<dt>Current Status</dt><dd>SEALED</dd>", beru)
         self.assertIn('data-status="sealed" data-name="Beru"', hall)
         self.assertIn('Sealed <span>5</span>', hall)

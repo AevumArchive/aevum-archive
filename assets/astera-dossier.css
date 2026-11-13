@@ -148,76 +148,34 @@ body.route-characters-astera-zenith .astera-dossier > .section::before { content
   color: #f2d4ff;
   text-shadow: 0 0 34px #c17dff70;
 }
+
+.astral-portrait { margin: 0; min-width: 0; align-self: start; }
+.astral-portrait > img { display: block; width: 100%; height: auto; }
 .astral-sky {
   position: fixed;
   inset: 0;
   z-index: 0;
-  overflow: hidden;
   pointer-events: none;
+  background:
+    radial-gradient(circle at 21px 46px, #dec5ff80 0 1px, transparent 1.7px) 0 0 / 181px 199px,
+    radial-gradient(circle at 83px 89px, #a989dc65 0 1px, transparent 1.7px) 0 0 / 233px 157px;
 }
 .astera-dossier { position: relative; z-index: 1; }
-.astral-sky::before, .astral-sky::after {
-  content: "";
-  position: absolute;
-  inset: -80px;
-  background:
-    radial-gradient(circle at 22px 36px, #dec5ff9c 0 1px, transparent 2px) 0 0 / 149px 173px,
-    radial-gradient(circle at 53px 83px, #a989dc88 0 1px, transparent 2px) 0 0 / 197px 131px;
-  animation: astral-drift 42s linear infinite alternate;
-}
-.astral-sky::after {
-  opacity: .35;
-  transform: rotate(9deg);
-  animation-duration: 65s;
-  animation-direction: alternate-reverse;
-}
 .astral-sky i {
   position: absolute;
-  top: 11%;
-  right: 7%;
-  width: 108px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, #f7dfff);
-  opacity: 0;
-  animation: astral-meteor 19s 4s ease-in infinite;
-}
-.astral-eclipse {
-  --eclipse-center: 36%;
-  position: relative;
-  display: grid;
-  place-items: center;
-  align-self: stretch;
-  isolation: isolate;
-  overflow: hidden;
-  min-height: clamp(290px, 42vw, 580px);
-  background: radial-gradient(ellipse at 50% 50%, #61388955, transparent 67%), #100b1b;
-}
-.astral-eclipse::before, .astral-eclipse i, .astral-eclipse b {
-  position: absolute;
-  top: var(--eclipse-center);
-  left: 50%;
-  translate: -50% -50%;
-}
-.astral-eclipse::before, .astral-eclipse i {
-  width: min(78%, 440px);
-  aspect-ratio: 1;
-  border: 1px solid #cfadf54a;
+  width: 3px;
+  height: 3px;
   border-radius: 50%;
+  background: #f1d9ff;
+  opacity: .18;
+  animation: astral-twinkle 7s ease-in-out infinite alternate;
 }
-.astral-eclipse::before { content: ""; transform: rotate(-28deg) scaleY(.48); }
-.astral-eclipse i { border-style: dashed; animation: astral-orbit 48s linear infinite; }
-.astral-eclipse b {
-  width: min(50%, 280px);
-  aspect-ratio: 1;
-  border: 1px solid #edd2ff;
-  border-radius: 50%;
-  background: radial-gradient(circle at 70% 78%, #21152f, #090711 65%);
-  box-shadow: -8px -7px 28px #e5b2ffa0, 0 0 72px #9962f095;
-  animation: astral-corona 8s ease-in-out infinite alternate;
-}
-@media (max-width: 900px) {
-  .astral-eclipse { --eclipse-center: 50%; }
-}
+.astral-sky i:nth-child(1) { left: 1.2%; top: 23%; }
+.astral-sky i:nth-child(2) { right: 1.4%; top: 42%; animation-delay: -2s; }
+.astral-sky i:nth-child(3) { left: 1.5%; top: 69%; animation-delay: -4s; }
+.astral-sky i:nth-child(4) { right: 1%; top: 84%; animation-delay: -5s; }
+.astral-sky i:nth-child(5) { left: 34%; top: 10%; animation-delay: -3s; }
+
 .astral-power {
   position: relative;
   display: grid;
@@ -257,62 +215,49 @@ body.route-characters-astera-zenith .astera-dossier > .section::before { content
   border: 1px solid #d3a5ee7d;
   text-align: center;
 }
+
 .astera-dossier .astral-shatter {
-  --astral-shard-distance: clamp(18px, 3vw, 42px);
-  background: radial-gradient(ellipse at center, #3a1a58, transparent 70%);
+  background: radial-gradient(ellipse at center, #32204c, transparent 70%);
 }
 .astera-dossier .astral-shatter::before,
 .astera-dossier .astral-shatter::after { content: none; }
-.astral-shatter .astral-ring-shard {
-  --angle: 0deg;
-  inset: auto;
-  width: min(51%, 212px);
-  aspect-ratio: 1;
-  border: 2px solid transparent;
-  border-top-color: #e1a6ff;
-  border-radius: 50%;
-  box-shadow: none;
-  opacity: .7;
-  transform: rotate(var(--angle)) translateY(calc(-1 * var(--astral-shard-distance)));
+.astral-seal { display: block; width: min(100%, 430px); }
+.astral-seal-band { fill: #2a1b3b; stroke: #b498ce; stroke-width: 1.4; }
+.astral-seal-trace { stroke: #8668a6; stroke-width: 1.1; }
+.astral-seal-half {
+  --break-x: -31px;
+  --break-y: -19px;
+  --break-angle: -12deg;
+  transform-origin: 50% 50%;
+  transform: translate(var(--break-x), var(--break-y)) rotate(var(--break-angle));
+  opacity: .52;
 }
-.astral-ring-shard:nth-of-type(3) { --angle: 90deg; }
-.astral-ring-shard:nth-of-type(4) { --angle: 180deg; }
-.astral-ring-shard:nth-of-type(5) { --angle: 270deg; }
-.astral-free-star {
-  position: relative;
-  color: #fff1ff;
-  font-size: clamp(4rem, 10vw, 7rem);
-  text-shadow: 0 0 26px #d886ff, 0 0 64px #ad62f0;
-}
-.astral-shockwave {
-  position: absolute;
-  width: min(58%, 240px);
-  aspect-ratio: 1;
-  border: 1px solid #efb8ff;
-  border-radius: 50%;
+.astral-seal-right { --break-x: 31px; --break-y: 19px; --break-angle: 12deg; }
+.astral-seal-cut {
+  stroke: #efc9ff;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 1;
   opacity: 0;
 }
-.astral-debris { position: absolute; inset: 0; display: grid; place-items: center; }
-.astral-debris i {
-  position: absolute;
-  width: 9px;
-  height: 18px;
-  opacity: 0;
-  background: #f1ceff;
-  clip-path: polygon(48% 0, 100% 65%, 18% 100%, 0 54%);
-  --flight: 0deg;
+.astral-released-star {
+  fill: #fff0ff;
+  transform-origin: 50% 50%;
 }
-.astral-debris i:nth-child(2) { --flight: 45deg; }
-.astral-debris i:nth-child(3) { --flight: 90deg; }
-.astral-debris i:nth-child(4) { --flight: 135deg; }
-.astral-debris i:nth-child(5) { --flight: 180deg; }
-.astral-debris i:nth-child(6) { --flight: 225deg; }
-.astral-debris i:nth-child(7) { --flight: 270deg; }
-.astral-debris i:nth-child(8) { --flight: 315deg; }
-.astral-shatter.is-shattering .astral-ring-shard { animation: astral-break 1.3s ease-out both; }
-.astral-shatter.is-shattering .astral-shockwave { animation: astral-wave 1.25s .31s ease-out both; }
-.astral-shatter.is-shattering .astral-debris i { animation: astral-scatter .95s .32s ease-out both; }
-.astral-shatter.is-shattering .astral-free-star { animation: astral-release 1.5s ease-out both; }
+.astral-replay {
+  position: absolute;
+  bottom: 18px;
+  padding: 6px 12px;
+  border: 1px solid #8463a4;
+  background: #1a1025;
+  color: #f1d8ff;
+  font: 500 .76rem/1.5 Verdana, sans-serif;
+  cursor: pointer;
+}
+.astral-replay:focus-visible { outline: 2px solid #ead3ff; outline-offset: 3px; }
+.astral-shatter.is-shattering .astral-seal-half { animation: astral-sever 1.65s both; }
+.astral-shatter.is-shattering .astral-seal-cut { animation: astral-cut 1.05s .24s both; }
+.astral-shatter.is-shattering .astral-released-star { animation: astral-unbind 1.65s both; }
 .astera-dossier .soul-mark-copy h2 em { color: #e3adff; }
 .astera-dossier .soul-mark-copy .astral-mark-verdict {
   color: #f4d6ff;
@@ -320,41 +265,31 @@ body.route-characters-astera-zenith .astera-dossier > .section::before { content
 }
 .astera-dossier .soul-mark-copy dd strong { color: #e7b7ff; }
 @keyframes astral-orbit { to { transform: rotate(1turn); } }
-@keyframes astral-drift { to { translate: 60px 70px; } }
-@keyframes astral-meteor {
-  0%, 9%, 100% { opacity: 0; transform: rotate(-28deg) translateX(0); }
-  11% { opacity: .65; }
-  16%, 99% { opacity: 0; transform: rotate(-28deg) translateX(-260px); }
+
+@keyframes astral-twinkle { to { opacity: .82; } }
+@keyframes astral-sever {
+  0%, 32% { transform: none; opacity: 1; }
+  63% { transform: translate(calc(var(--break-x) * 1.35), calc(var(--break-y) * 1.35)) rotate(var(--break-angle)); opacity: .75; }
+  100% { transform: translate(var(--break-x), var(--break-y)) rotate(var(--break-angle)); opacity: .52; }
 }
-@keyframes astral-corona { to { box-shadow: -10px -8px 44px #e5b2ffbe, 0 0 100px #9962f0bb; } }
-@keyframes astral-break {
-  0%, 20% { opacity: 1; transform: rotate(var(--angle)); }
-  28% { opacity: 1; transform: rotate(calc(var(--angle) + 7deg)) scale(.92); }
-  48% { opacity: .96; transform: rotate(calc(var(--angle) - 12deg)) translateY(calc(-1.4 * var(--astral-shard-distance))); }
-  100% { opacity: .7; transform: rotate(var(--angle)) translateY(calc(-1 * var(--astral-shard-distance))); }
+@keyframes astral-cut {
+  0% { opacity: 1; stroke-dashoffset: 1; }
+  26%, 45% { opacity: 1; stroke-dashoffset: 0; }
+  100% { opacity: 0; stroke-dashoffset: 0; }
 }
-@keyframes astral-scatter {
-  0% { opacity: .95; transform: rotate(var(--flight)) translateY(-48px); }
-  100% { opacity: 0; transform: rotate(var(--flight)) translateY(clamp(-174px, -12vw, -91px)) rotate(110deg) scale(.35); }
-}
-@keyframes astral-release {
-  0%, 19% { opacity: .35; transform: scale(.63); }
-  42% { opacity: 1; transform: scale(1.25); }
-  100% { opacity: 1; transform: scale(1); }
-}
-@keyframes astral-wave {
-  from { opacity: .55; transform: scale(.5); }
-  to { opacity: 0; transform: scale(1.55); }
+@keyframes astral-unbind {
+  0%, 32% { transform: scale(.48); opacity: .24; }
+  65% { transform: scale(1.18); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
 }
 @media (max-width: 430px) {
   .astral-power { grid-template-columns: auto 1fr; gap: 8px 12px; }
   .astral-peak { grid-column: 1 / -1; justify-self: start; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .astral-power-orbit, .astral-sky::before, .astral-sky::after,
-  .astral-sky i, .astral-eclipse i, .astral-eclipse b,
-  .astral-shatter.is-shattering .astral-free-star,
-  .astral-shatter.is-shattering .astral-debris i,
-  .astral-shatter.is-shattering .astral-ring-shard,
-  .astral-shatter.is-shattering .astral-shockwave { animation: none; }
+  .astral-power-orbit, .astral-sky i,
+  .astral-shatter.is-shattering .astral-seal-half,
+  .astral-shatter.is-shattering .astral-seal-cut,
+  .astral-shatter.is-shattering .astral-released-star { animation: none; }
+  .astral-replay { display: none; }
 }

@@ -28,7 +28,7 @@ class AsteraDossierTest(unittest.TestCase):
         cls.page = (ROOT / "characters/astera-zenith.html").read_text(encoding="utf-8")
         cls.styles = (ROOT / "assets/astera-dossier.css").read_text(encoding="utf-8")
 
-    def test_hero_keeps_last_confirmed_state_with_an_eclipse(self):
+    def test_hero_keeps_last_confirmed_state_and_unfiltered_portrait(self):
         hero = re.search(r'<section class="astral-hero".*?</section>', self.page, re.S).group(0)
         for fact in ('<dt>Status</dt><dd>LOST / UNKNOWN</dd>', '<dt>Race</dt><dd>Elf</dd>',
                      '<dt>Path</dt><dd>Star Magic / Dark Astral · COMPLETE</dd>', '<dt>Instructor</dt><dd>Mythic</dd>',
@@ -38,11 +38,11 @@ class AsteraDossierTest(unittest.TestCase):
             self.assertIn(fact, hero)
         self.assertIn('<span>Power Level</span><strong aria-label="Unknown">???</strong>', hero)
         self.assertIn('<span class="astral-peak">Peak Reached</span>', hero)
-        self.assertNotIn("<img", hero)
-        self.assertIn('class="astral-eclipse"', hero)
+        self.assertEqual(hero.count('src="/aevum-archive/assets/images/astera-dark-astral-complete.webp"'), 1)
+        self.assertNotIn('astral-portrait-aura', self.page)
         self.assertNotIn('class="record-hero"', self.page)
         self.assertIn('class="astral-sky"', self.page)
-        self.assertIn("@keyframes astral-scatter", self.styles)
+        self.assertIn("@keyframes astral-sever", self.styles)
 
     def test_all_chapters_resolve_without_duplicate_ids(self):
         parsed = DossierParser()

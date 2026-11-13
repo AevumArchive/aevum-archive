@@ -96,8 +96,8 @@ class CharacterDossiersTest(unittest.TestCase):
         for value in ('id="imposed-reality"', 'class="unique-trait-card"', 'class="trait-future"',
                       '<progress value="0" max="100">', 'willy-watcher.js'):
             self.assertIn(value, obama)
-        for value in ('class="divine-discovery-card"', 'astera-quest-completion', 'soul-mark-ring',
-                      'id="duality"', 'astera-dossier.css?v=20261114-eclipse'):
+        for value in ('class="divine-discovery-card"', 'astera-quest-completion', 'class="astral-seal"',
+                      'id="duality"', 'astera-dossier.css?v=20261114-severance'):
             self.assertIn(value, astera)
         faaram = (ROOT / 'characters/faaram.html').read_text(encoding='utf-8')
         self.assertIn('class="tempest-hero"', faaram)
