@@ -150,7 +150,12 @@ body.route-characters-astera-zenith .astera-dossier > .section::before { content
 }
 
 .astral-portrait { margin: 0; min-width: 0; align-self: start; }
-.astral-portrait > img { display: block; width: 100%; height: auto; }
+.astral-portrait > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  mask-image: linear-gradient(to bottom, #000 calc(100% - clamp(64px, 13vw, 172px)), transparent);
+}
 .astral-sky {
   position: fixed;
   inset: 0;
