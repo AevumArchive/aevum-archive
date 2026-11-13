@@ -59,6 +59,9 @@ class HomeAtriumTest(unittest.TestCase):
             self.assertIn('datetime="2026-12-31">31 Dec 2026', page)
             self.assertIn('role="timer" aria-live="off"', page)
         self.assertIn('/aevum-archive/world-events/#traces-of-the-old-world', self.parsed.links)
+        self.assertIn('class="monolith-strip atrium-width"', self.page)
+        self.assertNotIn('class="monolith-art"', self.page)
+        self.assertIn('class="monolith-art"', events)
 
     def test_current_facts_and_ledger_records_survive(self):
         self.assertIn('A record of lives once lived,<br><em>and those still to unfold.</em>', self.page)

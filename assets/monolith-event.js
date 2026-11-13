@@ -10,12 +10,13 @@
   const tick = () => {
     const now = Date.now();
     if (now >= end) {
-      label.textContent = 'World Event · Ended';
+      if (label) label.textContent = 'World Event · Ended';
+      timer.removeAttribute('aria-label');
       timer.textContent = 'Event ended';
       return false;
     }
     const upcoming = now < start;
-    label.textContent = upcoming ? 'World Event · Upcoming' : 'World Event · Live';
+    if (label) label.textContent = upcoming ? 'World Event · Upcoming' : 'World Event · Live';
     timer.setAttribute('aria-label', upcoming ? 'Time until the event starts' : 'Time remaining');
     const remaining = Math.ceil(((upcoming ? start : end) - now) / 1000);
     const values = [Math.floor(remaining / 86400), Math.floor(remaining / 3600) % 24,

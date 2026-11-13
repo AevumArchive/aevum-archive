@@ -19,7 +19,28 @@
   background: radial-gradient(ellipse at 83% 58%, #322557, transparent 47%), linear-gradient(120deg, #111421, #0b0e1b);
   color: #eeeafa;
 }
-.home-atrium > .monolith-event { margin-top: 22px; }
+.monolith-strip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 4px 18px;
+  padding: 9px 12px;
+  border-block: 1px solid #a084ce30;
+  background: #171121;
+  text-align: center;
+}
+.monolith-strip a { color: #ebd7ff; text-underline-offset: 4px; }
+.monolith-strip a span { margin-inline-start: 3px; color: #c3a5e9; }
+.monolith-strip .monolith-clock {
+  gap: .6em;
+  justify-content: center;
+  margin: 0;
+  color: #e8dbee;
+  font: 600 .8rem/1.5 Verdana, sans-serif;
+  font-variant-numeric: tabular-nums;
+}
+.monolith-strip .monolith-clock span { padding: 0; border: 0; background: none; }
 .wing-main > .monolith-event { margin-block: 24px 44px; }
 .monolith-copy { position: relative; z-index: 1; }
 .monolith-copy h2 {
