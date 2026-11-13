@@ -1,0 +1,120 @@
+@font-face {
+  font-family: "Faceless Display";
+  src: url("/aevum-archive/assets/fonts/cinzel/Cinzel-Variable.ttf") format("truetype");
+  font-weight: 400 900;
+  font-display: swap;
+}
+body.route-npcs-faceless {
+  color: #f0e2e6;
+  background: radial-gradient(ellipse at 55% 4%, #321519, transparent 56rem), #0a080c;
+}
+.faceless-dossier .faceless-breadcrumb { margin-block: 0 18px; font-size: .88rem; }
+.faceless-breadcrumb a, .faceless-dossier a:not(.fate-thread-card) { color: #f2b2bd; text-underline-offset: 4px; }
+.faceless-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, .95fr);
+  min-height: 500px;
+  border: 1px solid #5e333d;
+  background: #140d14;
+}
+.faceless-copy { align-self: center; padding: clamp(24px, 5vw, 76px); }
+.faceless-dossier .eyebrow { color: #e99aa8; }
+.faceless-dossier h1, .faceless-dossier .faceless-fragments h2 {
+  color: #fff0f1;
+  font-family: Georgia, serif;
+  font-weight: 400;
+}
+.faceless-dossier h1 {
+  margin: 16px 0 24px;
+  font: 600 clamp(2.45rem, 7vw, 7.1rem)/.9 "Faceless Display", Georgia, serif;
+  letter-spacing: -.05em;
+  line-height: .9;
+  text-wrap: balance;
+}
+.faceless-dossier h1 span { display: block; margin-bottom: .4em; color: #d997a7; font-size: .38em; letter-spacing: .08em; }
+.faceless-copy p:not(.eyebrow), .faceless-fragments p:not(.eyebrow) { color: #d3bcc5; line-height: 1.65; }
+.faceless-copy .faceless-status {
+  display: inline-block;
+  margin-top: 20px;
+  border-block: 1px solid #724650;
+  padding: 9px 0;
+  color: #f2b2bd;
+  font: 600 .76rem/1.5 Verdana, sans-serif;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.faceless-void {
+  position: relative;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 310px;
+  border-inline-start: 1px solid #5e333d;
+  background:
+    repeating-radial-gradient(circle, #a9686818 0 1px, transparent 2px 26px),
+    radial-gradient(ellipse at center, #3b1925, #08070c 70%);
+}
+.faceless-void i {
+  position: absolute;
+  width: min(70%, 350px);
+  aspect-ratio: 1;
+  border: 1px solid #be687d77;
+  border-radius: 50%;
+  box-shadow: 0 0 26px #c33c5c30, inset 0 0 24px #c33c5c24;
+  transform: rotate(-25deg) scaleY(.72);
+}
+.faceless-void i:nth-child(2) {
+  width: min(59%, 295px);
+  border-style: dashed;
+  border-color: #bd6b7777;
+  animation: faceless-turn 34s linear infinite;
+}
+.faceless-void i:nth-child(3) {
+  width: min(52%, 260px);
+  border-radius: 4%;
+  transform: rotate(45deg);
+}
+.faceless-void::before {
+  content: "";
+  position: absolute;
+  width: min(78%, 400px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: conic-gradient(from 35deg, transparent 10%, #b9526544 24%, transparent 40% 67%, #b9526544 76%, transparent 90%);
+  filter: blur(12px);
+}
+.faceless-void b {
+  width: min(47%, 234px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1px solid #9e4a62;
+  background: #050407;
+  box-shadow: 0 0 30px #b7486760, inset 0 0 22px #5f1c3244;
+  animation: faceless-breathe 6s ease-in-out infinite alternate;
+}
+@keyframes faceless-turn { to { transform: rotate(335deg) scaleY(.72); } }
+@keyframes faceless-breathe { to { box-shadow: 0 0 62px #b7486780, inset 0 0 22px #5f1c3266; } }
+.faceless-fragments {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  margin-block: 28px 0;
+  border: 1px solid #5e333d;
+  background: #5e333d;
+}
+.faceless-fragments article { padding: clamp(24px, 4vw, 50px); background: #170e15; }
+.faceless-fragments h2 { margin: 10px 0; font-size: clamp(1.6rem, 3.6vw, 3.35rem); }
+.faceless-dossier .fate-threads {
+  --fate-line: #99566a;
+  --fate-accent: #ef9bad;
+  --fate-glow: #451b28;
+  --fate-panel: #170e15;
+}
+@media (max-width: 760px) {
+  .faceless-hero, .faceless-fragments { grid-template-columns: minmax(0, 1fr); }
+  .faceless-void { border-inline-start: 0; border-top: 1px solid #5e333d; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .faceless-void i, .faceless-void b { animation: none; }
+}

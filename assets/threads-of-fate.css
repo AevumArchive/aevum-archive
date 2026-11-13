@@ -1,0 +1,93 @@
+.fate-threads {
+  --fate-line: #8065a1;
+  --fate-accent: #cba7f5;
+  --fate-glow: #2c193e;
+  --fate-panel: #15101e;
+  margin-block: clamp(38px, 7vw, 90px);
+  scroll-margin-top: 96px;
+  color: #f2e9f6;
+}
+.fate-threads .fate-title {
+  margin: 0 0 24px;
+  color: #f2e9f6;
+  text-align: center;
+  font: 400 clamp(2rem, 5vw, 4.2rem)/1.1 Georgia, serif;
+}
+.fate-title em { color: var(--fate-accent); }
+.fate-thread-map {
+  padding: clamp(16px, 3.5vw, 46px);
+  border: 1px solid var(--fate-line);
+  background: radial-gradient(ellipse at 50% 0, var(--fate-glow), transparent 70%), #0e0b15;
+}
+.fate-thread-root {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  margin-inline: auto;
+  padding: 9px 16px;
+  border: 1px solid var(--fate-line);
+  background: var(--fate-panel);
+  color: #f2e9f6;
+  font: 400 clamp(1rem, 2.4vw, 1.6rem)/1.3 Georgia, serif;
+}
+.fate-thread-root span { color: var(--fate-accent); text-shadow: 0 0 15px var(--fate-accent); }
+.fate-thread-branches {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 225px), 1fr));
+  gap: 22px 12px;
+  position: relative;
+  margin: 0;
+  padding: 38px 0 0;
+  list-style: none;
+}
+.fate-thread-branches::before, .fate-thread-branches::after, .fate-thread-branches li::before {
+  content: "";
+  position: absolute;
+  background: var(--fate-line);
+  pointer-events: none;
+}
+.fate-thread-branches::before { top: 0; left: 50%; width: 1px; height: 19px; }
+.fate-thread-branches::after { top: 19px; inset-inline: 0; height: 1px; }
+.fate-thread-branches li { position: relative; min-width: 0; }
+.fate-thread-branches li::before { bottom: 100%; left: 50%; width: 1px; height: 19px; }
+.fate-thread-branches:has(li:only-child)::after { display: none; }
+.fate-thread-map .fate-thread-card {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  height: 100%;
+  padding: clamp(12px, 2vw, 20px);
+  border: 1px solid var(--fate-line);
+  background: var(--fate-panel);
+  color: #d9cde1;
+  text-decoration: none;
+  font: 400 1rem/1.5 Georgia, serif;
+}
+.fate-thread-card small {
+  color: var(--fate-accent);
+  font: 600 .69rem/1.5 Verdana, sans-serif;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+.fate-thread-card strong { color: #f2e9f6; font: 400 1.5rem/1.15 Georgia, serif; }
+.fate-thread-card strong span { color: var(--fate-accent); font-size: .9rem; }
+.fate-thread-map a.fate-thread-card:is(:hover, :focus-visible) {
+  border-color: var(--fate-accent);
+  background: var(--fate-glow);
+}
+.fate-thread-map a.fate-thread-card:focus-visible { outline: 2px solid var(--fate-accent); outline-offset: 3px; }
+.fate-thread-branches li:has(a:is(:hover, :focus-visible))::before {
+  background: var(--fate-accent);
+  box-shadow: 0 0 8px var(--fate-accent);
+}
+@media (max-width: 620px) {
+  .fate-thread-root { margin-inline: 0; }
+  .fate-thread-branches {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 14px 0 0 14px;
+    border-inline-start: 1px solid var(--fate-line);
+  }
+  .fate-thread-branches::before, .fate-thread-branches::after { display: none; }
+  .fate-thread-branches li::before { bottom: auto; top: 22px; left: -14px; width: 14px; height: 1px; }
+}

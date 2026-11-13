@@ -2,6 +2,8 @@
 
 ## 2026-11-13
 
+- Extended Threads of Fate across connected profiles and added The Faceless to the Restricted Archive.
+
 - Added Threads of Fate to Faaram Tempest’s profile.
 - Opened the Expedition Journal for Traces of the Old World.
 - Sealed Jango’s record and updated the current company.
