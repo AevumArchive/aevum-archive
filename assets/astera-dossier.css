@@ -156,9 +156,7 @@ body.route-characters-astera-zenith .astera-dossier > .section::before { content
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background:
-    radial-gradient(circle at 21px 46px, #dec5ff80 0 1px, transparent 1.7px) 0 0 / 181px 199px,
-    radial-gradient(circle at 83px 89px, #a989dc65 0 1px, transparent 1.7px) 0 0 / 233px 157px;
+  overflow: hidden;
 }
 .astera-dossier { position: relative; z-index: 1; }
 .astral-sky i {
@@ -170,11 +168,18 @@ body.route-characters-astera-zenith .astera-dossier > .section::before { content
   opacity: .18;
   animation: astral-twinkle 7s ease-in-out infinite alternate;
 }
-.astral-sky i:nth-child(1) { left: 1.2%; top: 23%; }
-.astral-sky i:nth-child(2) { right: 1.4%; top: 42%; animation-delay: -2s; }
-.astral-sky i:nth-child(3) { left: 1.5%; top: 69%; animation-delay: -4s; }
-.astral-sky i:nth-child(4) { right: 1%; top: 84%; animation-delay: -5s; }
-.astral-sky i:nth-child(5) { left: 34%; top: 10%; animation-delay: -3s; }
+.astral-sky i:nth-child(1) { left: 1%; top: 18%; animation-delay: -1s; }
+.astral-sky i:nth-child(2) { right: 2%; top: 25%; animation-delay: -3s; }
+.astral-sky i:nth-child(3) { left: 2%; top: 43%; animation-delay: -4s; }
+.astral-sky i:nth-child(4) { right: 1%; top: 49%; animation-delay: -5s; }
+.astral-sky i:nth-child(5) { left: 1%; top: 63%; animation-delay: -2s; }
+.astral-sky i:nth-child(6) { right: 2%; top: 71%; animation-delay: -6s; }
+.astral-sky i:nth-child(7) { left: 2%; top: 85%; animation-delay: -5s; }
+.astral-sky i:nth-child(8) { right: 1%; top: 92%; animation-delay: -3s; }
+.astral-sky i:nth-child(9) { left: 21%; top: 10%; animation-delay: -2s; }
+.astral-sky i:nth-child(10) { left: 52%; top: 12%; animation-delay: -4s; }
+.astral-sky i:nth-child(11) { right: 16%; top: 10%; animation-delay: -5s; }
+.astral-sky i:nth-child(12) { left: 40%; top: 95%; animation-delay: -6s; }
 
 .astral-power {
   position: relative;
@@ -222,42 +227,16 @@ body.route-characters-astera-zenith .astera-dossier > .section::before { content
 .astera-dossier .astral-shatter::before,
 .astera-dossier .astral-shatter::after { content: none; }
 .astral-seal { display: block; width: min(100%, 430px); }
-.astral-seal-band { fill: #2a1b3b; stroke: #b498ce; stroke-width: 1.4; }
-.astral-seal-trace { stroke: #8668a6; stroke-width: 1.1; }
-.astral-seal-half {
-  --break-x: -31px;
-  --break-y: -19px;
-  --break-angle: -12deg;
-  transform-origin: 50% 50%;
-  transform: translate(var(--break-x), var(--break-y)) rotate(var(--break-angle));
-  opacity: .52;
-}
-.astral-seal-right { --break-x: 31px; --break-y: 19px; --break-angle: 12deg; }
-.astral-seal-cut {
-  stroke: #efc9ff;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-dasharray: 1;
-  opacity: 0;
-}
-.astral-released-star {
-  fill: #fff0ff;
-  transform-origin: 50% 50%;
-}
-.astral-replay {
-  position: absolute;
-  bottom: 18px;
-  padding: 6px 12px;
-  border: 1px solid #8463a4;
-  background: #1a1025;
-  color: #f1d8ff;
-  font: 500 .76rem/1.5 Verdana, sans-serif;
-  cursor: pointer;
-}
-.astral-replay:focus-visible { outline: 2px solid #ead3ff; outline-offset: 3px; }
-.astral-shatter.is-shattering .astral-seal-half { animation: astral-sever 1.65s both; }
-.astral-shatter.is-shattering .astral-seal-cut { animation: astral-cut 1.05s .24s both; }
-.astral-shatter.is-shattering .astral-released-star { animation: astral-unbind 1.65s both; }
+.astral-binding, .astral-wave, .astral-released-star { transform-origin: 50% 50%; }
+.astral-binding { stroke: #cda8f0; stroke-width: 1.5; opacity: 0; }
+.astral-binding circle:nth-child(2) { stroke-dasharray: 3 7; }
+.astral-wave { stroke: #e7bcff; stroke-width: 2; opacity: 0; }
+.astral-fragment { fill: #e4b7ff; opacity: .35; transform: translateY(-29px) scale(.68); transform-box: fill-box; transform-origin: center; }
+.astral-released-star { fill: #fff0ff; }
+.astral-shatter.is-shattering .astral-binding { animation: astral-charge 1.7s both; }
+.astral-shatter.is-shattering .astral-wave { animation: astral-wave .95s .54s ease-out both; }
+.astral-shatter.is-shattering .astral-fragment { animation: astral-fragment 1.16s .54s cubic-bezier(.16,.75,.26,1) both; }
+.astral-shatter.is-shattering .astral-released-star { animation: astral-release 1.7s both; }
 .astera-dossier .soul-mark-copy h2 em { color: #e3adff; }
 .astera-dossier .soul-mark-copy .astral-mark-verdict {
   color: #f4d6ff;
@@ -266,20 +245,27 @@ body.route-characters-astera-zenith .astera-dossier > .section::before { content
 .astera-dossier .soul-mark-copy dd strong { color: #e7b7ff; }
 @keyframes astral-orbit { to { transform: rotate(1turn); } }
 
-@keyframes astral-twinkle { to { opacity: .82; } }
-@keyframes astral-sever {
-  0%, 32% { transform: none; opacity: 1; }
-  63% { transform: translate(calc(var(--break-x) * 1.35), calc(var(--break-y) * 1.35)) rotate(var(--break-angle)); opacity: .75; }
-  100% { transform: translate(var(--break-x), var(--break-y)) rotate(var(--break-angle)); opacity: .52; }
+@keyframes astral-twinkle {
+  from { transform: translate3d(-4px, 7px, 0); opacity: .16; }
+  to { transform: translate3d(12px, -19px, 0); opacity: .8; }
 }
-@keyframes astral-cut {
-  0% { opacity: 1; stroke-dashoffset: 1; }
-  26%, 45% { opacity: 1; stroke-dashoffset: 0; }
-  100% { opacity: 0; stroke-dashoffset: 0; }
+@keyframes astral-charge {
+  0% { opacity: .65; transform: scale(1.04); }
+  31% { opacity: 1; transform: scale(.83) rotate(20deg); }
+  39%, 100% { opacity: 0; transform: scale(1.2) rotate(22deg); }
 }
-@keyframes astral-unbind {
-  0%, 32% { transform: scale(.48); opacity: .24; }
-  65% { transform: scale(1.18); opacity: 1; }
+@keyframes astral-wave {
+  from { opacity: .85; transform: scale(.7); }
+  to { opacity: 0; transform: scale(1.65); }
+}
+@keyframes astral-fragment {
+  0% { opacity: .9; transform: translateY(8px) scale(.65); }
+  34% { opacity: 1; transform: translateY(-47px) rotate(30deg) scale(1.12); }
+  100% { opacity: .35; transform: translateY(-29px) scale(.68); }
+}
+@keyframes astral-release {
+  0%, 30% { transform: scale(.45); opacity: .4; }
+  43% { transform: scale(1.6); opacity: 1; }
   100% { transform: scale(1); opacity: 1; }
 }
 @media (max-width: 430px) {
@@ -288,8 +274,5 @@ body.route-characters-astera-zenith .astera-dossier > .section::before { content
 }
 @media (prefers-reduced-motion: reduce) {
   .astral-power-orbit, .astral-sky i,
-  .astral-shatter.is-shattering .astral-seal-half,
-  .astral-shatter.is-shattering .astral-seal-cut,
-  .astral-shatter.is-shattering .astral-released-star { animation: none; }
-  .astral-replay { display: none; }
+  .astral-shatter.is-shattering svg * { animation: none; }
 }

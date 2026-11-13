@@ -42,7 +42,7 @@ class AsteraDossierTest(unittest.TestCase):
         self.assertNotIn('astral-portrait-aura', self.page)
         self.assertNotIn('class="record-hero"', self.page)
         self.assertIn('class="astral-sky"', self.page)
-        self.assertIn("@keyframes astral-sever", self.styles)
+        self.assertIn("@keyframes astral-fragment", self.styles)
 
     def test_all_chapters_resolve_without_duplicate_ids(self):
         parsed = DossierParser()
