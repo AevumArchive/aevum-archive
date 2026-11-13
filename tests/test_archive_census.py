@@ -11,12 +11,12 @@ ROOT = Path(__file__).resolve().parents[1]
 class ArchiveCensusTest(unittest.TestCase):
     def test_player_count_is_consistent(self) -> None:
         snapshot = json.loads((ROOT / "data/archive-public.json").read_text(encoding="utf-8"))
-        self.assertEqual(snapshot["playerCount"], 4981)
+        self.assertEqual(snapshot["playerCount"], 4997)
 
         for path in ("index.html", "leaderboard/index.html", "codex/power.html"):
             with self.subTest(page=path):
                 html = (ROOT / path).read_text(encoding="utf-8")
-                self.assertIn("data-archive-player-count>4,981<", html)
+                self.assertIn("data-archive-player-count>4,997<", html)
                 self.assertNotIn("data-archive-player-count>1,486<", html)
                 self.assertIn("/assets/archive-sync.js", html)
 

@@ -67,7 +67,7 @@ class HomeAtriumTest(unittest.TestCase):
         self.assertIn('A record of lives once lived,<br><em>and those still to unfold.</em>', self.page)
         self.assertIn('Pick up the thread', self.page)
         self.assertNotIn('and what they left behind', self.page)
-        for fact in ('data-archive-player-count>4,981<', 'Avalon', 'Neris', 'First Roads.',
+        for fact in ('data-archive-player-count>4,997<', 'Avalon', 'Neris', 'First Roads.',
                      'Ichiro — Awake at 3300 PL', 'The One Who Refused the End', 'Jiro — Awakened at 3000 PL',
                      '2500 PL', '26 Soul Deaths escaped', 'his left arm remains permanently injured',
                      'his left hand needs special protection'):
