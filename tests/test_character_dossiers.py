@@ -77,7 +77,7 @@ class CharacterDossiersTest(unittest.TestCase):
     def test_existing_art_is_used_once_and_missing_art_remains_a_sigil(self):
         for name, baseline in BASELINE.items():
             if 'hero_art' not in baseline:
-                continue  # Astera retains her original portrait and discovery illustrations.
+                continue  # Astera uses a custom hero and keeps her discovery illustrations.
             with self.subTest(page=name):
                 source = (ROOT / name).read_text(encoding='utf-8')
                 hero = re.search(r'<section class="record-hero"[\s\S]*?</section>', source).group()
@@ -97,7 +97,7 @@ class CharacterDossiersTest(unittest.TestCase):
                       '<progress value="0" max="100">', 'willy-watcher.js'):
             self.assertIn(value, obama)
         for value in ('class="divine-discovery-card"', 'astera-quest-completion', 'soul-mark-ring',
-                      'id="duality"', 'astera-dossier.css?v=20261113-peak'):
+                      'id="duality"', 'astera-dossier.css?v=20261114-eclipse'):
             self.assertIn(value, astera)
         faaram = (ROOT / 'characters/faaram.html').read_text(encoding='utf-8')
         self.assertIn('class="tempest-hero"', faaram)

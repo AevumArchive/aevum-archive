@@ -30,12 +30,6 @@ body.route-characters-astera-zenith main.astera-dossier { width: min(1440px, cal
 .astral-facts .pill { display: inline-block; margin: 0 6px 6px 0; padding: 6px 9px; font: 400 .7rem/1.5 Verdana, sans-serif; }
 .astral-link { display: inline-flex; align-items: center; gap: 25px; color: #dbc6ec; font: 500 .75rem/1.8 Verdana, sans-serif; text-decoration: none; }
 .astral-link > span { color: var(--astral-gold); font-size: 1.1rem; }
-.astral-portrait { position: relative; align-self: start; margin: 0; min-width: 0; background: #0d0a14; }
-.astral-portrait > img { display: block; width: 100%; height: auto; }
-.astral-portrait::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, #0d0a14, transparent 10%), linear-gradient(0deg, #0d0a14, transparent 15%); }
-.astral-portrait figcaption { position: absolute; z-index: 1; bottom: 27px; right: 27px; left: 27px; text-align: right; }
-.astral-portrait figcaption > span { display: block; color: #e6caef; font: italic 400 1.8rem/1.1 Georgia, serif; }
-.astral-portrait figcaption > small { display: block; margin-top: 9px; color: #c3a9ce; font: 400 .6rem/1.8 Verdana, sans-serif; letter-spacing: .08em; text-transform: uppercase; }
 .astral-chapters { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 30px; align-items: center; padding: 22px; border-bottom: 1px solid var(--astral-line); background: #100c17; }
 .astral-chapters > span { color: #a18bae; font: 500 .6rem/1.7 Verdana, sans-serif; letter-spacing: .1em; text-transform: uppercase; }
 .astral-chapters > div { display: flex; align-items: center; justify-content: space-between; gap: 22px; overflow: auto; scrollbar-width: thin; }
@@ -116,7 +110,6 @@ body.route-characters-astera-zenith .astera-dossier > .section::before { content
   .astral-hero { grid-template-columns: 1fr; }.astral-identity { padding: 35px 28px; }
   .astera-dossier .astral-identity h1 { font-size: clamp(4rem, 12vw, 6.5rem); }
   .astral-intro { max-width: 65ch; }.astral-facts dd { font-size: 1rem; }
-  .astral-portrait::after { background: linear-gradient(0deg, #0d0a14, transparent 14%); }
   .astera-dossier .section-head { grid-template-columns: 1fr; gap: 20px; }
   .astera-dossier .astral-last-sighting { grid-template-columns: 1fr; gap: 25px; }
   .astera-dossier .card.astera-soul-mark { grid-template-columns: 1fr; }.astera-dossier .soul-mark-visual { min-height: 380px; }
@@ -128,7 +121,6 @@ body.route-characters-astera-zenith .astera-dossier > .section::before { content
   .astera-dossier .astral-identity h1 { font-size: clamp(3.6rem, 16vw, 5.5rem); }
   .astral-identity { padding: 30px 23px; }.astral-identity > .astral-kicker { font-size: .55rem; letter-spacing: .07em; }
   .astral-facts { grid-template-columns: 1fr; gap: 15px; }.astral-facts > div { padding-top: 12px; border-top: 1px solid var(--astral-line); }
-  .astral-portrait figcaption { bottom: 20px; right: 20px; left: 20px; }.astral-portrait figcaption > span { font-size: 1.5rem; }.astral-portrait figcaption > small { font-size: .5rem; }
   .astera-dossier .astera-state-grid { grid-template-columns: 1fr; }.astera-dossier .state-card-primary { grid-column: auto; }
   .astera-dossier .astral-last-sighting { padding: 25px; }
   .astera-dossier .zenith-discovery-chain { grid-template-columns: 1fr; }
@@ -156,13 +148,75 @@ body.route-characters-astera-zenith .astera-dossier > .section::before { content
   color: #f2d4ff;
   text-shadow: 0 0 34px #c17dff70;
 }
-.astral-portrait-aura {
-  position: absolute;
-  z-index: 1;
+.astral-sky {
+  position: fixed;
   inset: 0;
+  z-index: 0;
+  overflow: hidden;
   pointer-events: none;
-  background: radial-gradient(ellipse at 54% 22%, #cd90ff35, transparent 55%);
-  animation: astral-aura 8s ease-in-out infinite alternate;
+}
+.astera-dossier { position: relative; z-index: 1; }
+.astral-sky::before, .astral-sky::after {
+  content: "";
+  position: absolute;
+  inset: -80px;
+  background:
+    radial-gradient(circle at 22px 36px, #dec5ff9c 0 1px, transparent 2px) 0 0 / 149px 173px,
+    radial-gradient(circle at 53px 83px, #a989dc88 0 1px, transparent 2px) 0 0 / 197px 131px;
+  animation: astral-drift 42s linear infinite alternate;
+}
+.astral-sky::after {
+  opacity: .35;
+  transform: rotate(9deg);
+  animation-duration: 65s;
+  animation-direction: alternate-reverse;
+}
+.astral-sky i {
+  position: absolute;
+  top: 11%;
+  right: 7%;
+  width: 108px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #f7dfff);
+  opacity: 0;
+  animation: astral-meteor 19s 4s ease-in infinite;
+}
+.astral-eclipse {
+  --eclipse-center: 36%;
+  position: relative;
+  display: grid;
+  place-items: center;
+  align-self: stretch;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: clamp(290px, 42vw, 580px);
+  background: radial-gradient(ellipse at 50% 50%, #61388955, transparent 67%), #100b1b;
+}
+.astral-eclipse::before, .astral-eclipse i, .astral-eclipse b {
+  position: absolute;
+  top: var(--eclipse-center);
+  left: 50%;
+  translate: -50% -50%;
+}
+.astral-eclipse::before, .astral-eclipse i {
+  width: min(78%, 440px);
+  aspect-ratio: 1;
+  border: 1px solid #cfadf54a;
+  border-radius: 50%;
+}
+.astral-eclipse::before { content: ""; transform: rotate(-28deg) scaleY(.48); }
+.astral-eclipse i { border-style: dashed; animation: astral-orbit 48s linear infinite; }
+.astral-eclipse b {
+  width: min(50%, 280px);
+  aspect-ratio: 1;
+  border: 1px solid #edd2ff;
+  border-radius: 50%;
+  background: radial-gradient(circle at 70% 78%, #21152f, #090711 65%);
+  box-shadow: -8px -7px 28px #e5b2ffa0, 0 0 72px #9962f095;
+  animation: astral-corona 8s ease-in-out infinite alternate;
+}
+@media (max-width: 900px) {
+  .astral-eclipse { --eclipse-center: 50%; }
 }
 .astral-power {
   position: relative;
@@ -238,8 +292,27 @@ body.route-characters-astera-zenith .astera-dossier > .section::before { content
   border-radius: 50%;
   opacity: 0;
 }
+.astral-debris { position: absolute; inset: 0; display: grid; place-items: center; }
+.astral-debris i {
+  position: absolute;
+  width: 9px;
+  height: 18px;
+  opacity: 0;
+  background: #f1ceff;
+  clip-path: polygon(48% 0, 100% 65%, 18% 100%, 0 54%);
+  --flight: 0deg;
+}
+.astral-debris i:nth-child(2) { --flight: 45deg; }
+.astral-debris i:nth-child(3) { --flight: 90deg; }
+.astral-debris i:nth-child(4) { --flight: 135deg; }
+.astral-debris i:nth-child(5) { --flight: 180deg; }
+.astral-debris i:nth-child(6) { --flight: 225deg; }
+.astral-debris i:nth-child(7) { --flight: 270deg; }
+.astral-debris i:nth-child(8) { --flight: 315deg; }
 .astral-shatter.is-shattering .astral-ring-shard { animation: astral-break 1.3s ease-out both; }
-.astral-shatter.is-shattering .astral-shockwave { animation: astral-wave 1.25s .15s ease-out both; }
+.astral-shatter.is-shattering .astral-shockwave { animation: astral-wave 1.25s .31s ease-out both; }
+.astral-shatter.is-shattering .astral-debris i { animation: astral-scatter .95s .32s ease-out both; }
+.astral-shatter.is-shattering .astral-free-star { animation: astral-release 1.5s ease-out both; }
 .astera-dossier .soul-mark-copy h2 em { color: #e3adff; }
 .astera-dossier .soul-mark-copy .astral-mark-verdict {
   color: #f4d6ff;
@@ -247,10 +320,27 @@ body.route-characters-astera-zenith .astera-dossier > .section::before { content
 }
 .astera-dossier .soul-mark-copy dd strong { color: #e7b7ff; }
 @keyframes astral-orbit { to { transform: rotate(1turn); } }
-@keyframes astral-aura { from { opacity: .22; } to { opacity: .8; } }
+@keyframes astral-drift { to { translate: 60px 70px; } }
+@keyframes astral-meteor {
+  0%, 9%, 100% { opacity: 0; transform: rotate(-28deg) translateX(0); }
+  11% { opacity: .65; }
+  16%, 99% { opacity: 0; transform: rotate(-28deg) translateX(-260px); }
+}
+@keyframes astral-corona { to { box-shadow: -10px -8px 44px #e5b2ffbe, 0 0 100px #9962f0bb; } }
 @keyframes astral-break {
   0%, 20% { opacity: 1; transform: rotate(var(--angle)); }
+  28% { opacity: 1; transform: rotate(calc(var(--angle) + 7deg)) scale(.92); }
+  48% { opacity: .96; transform: rotate(calc(var(--angle) - 12deg)) translateY(calc(-1.4 * var(--astral-shard-distance))); }
   100% { opacity: .7; transform: rotate(var(--angle)) translateY(calc(-1 * var(--astral-shard-distance))); }
+}
+@keyframes astral-scatter {
+  0% { opacity: .95; transform: rotate(var(--flight)) translateY(-48px); }
+  100% { opacity: 0; transform: rotate(var(--flight)) translateY(clamp(-174px, -12vw, -91px)) rotate(110deg) scale(.35); }
+}
+@keyframes astral-release {
+  0%, 19% { opacity: .35; transform: scale(.63); }
+  42% { opacity: 1; transform: scale(1.25); }
+  100% { opacity: 1; transform: scale(1); }
 }
 @keyframes astral-wave {
   from { opacity: .55; transform: scale(.5); }
@@ -261,7 +351,10 @@ body.route-characters-astera-zenith .astera-dossier > .section::before { content
   .astral-peak { grid-column: 1 / -1; justify-self: start; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .astral-power-orbit, .astral-portrait-aura,
+  .astral-power-orbit, .astral-sky::before, .astral-sky::after,
+  .astral-sky i, .astral-eclipse i, .astral-eclipse b,
+  .astral-shatter.is-shattering .astral-free-star,
+  .astral-shatter.is-shattering .astral-debris i,
   .astral-shatter.is-shattering .astral-ring-shard,
   .astral-shatter.is-shattering .astral-shockwave { animation: none; }
 }

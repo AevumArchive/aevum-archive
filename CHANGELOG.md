@@ -1,5 +1,9 @@
 # Archive changelog
 
+## 2026-11-14
+
+- Replaced Astera’s hero portrait with an eclipse and added a drifting sky and a stronger Soul Mark shatter.
+
 ## 2026-11-13
 
 - Marked Astera Zenith as Peak Reached and recorded the destruction of Faaram’s Soul Mark.

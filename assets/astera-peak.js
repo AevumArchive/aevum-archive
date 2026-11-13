@@ -4,7 +4,7 @@
       window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
   const observer = new IntersectionObserver(([entry]) => {
-    if (!entry.isIntersecting) return;
+    if (entry.intersectionRatio < 0.45) return;
     mark.classList.add('is-shattering');
     observer.disconnect();
   }, { threshold: 0.45 });
