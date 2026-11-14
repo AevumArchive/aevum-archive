@@ -1,0 +1,51 @@
+/* World Items belonging to the Silver Monarch, isolated from the ability stages. */
+.m-relics{padding-bottom:55px}
+.m-relics-intro{position:relative;text-align:center;padding:20px 0 70px}
+.m-relics-intro::before{content:'✧';display:block;font:36px Georgia,serif;color:#ded6ef;margin-bottom:24px}
+.m-relics-intro h2{font-size:clamp(2.8rem,5vw,5.6rem);line-height:1.12;margin:15px 0}
+.m-relics-intro h2 em{font-family:Georgia,serif;color:#bdb3d2}
+.m-relics-intro>p:last-child{max-width:530px;margin:24px auto 0}
+.m-relic{--relic-light:#dfd8c0;position:relative;isolation:isolate;border:1px solid #d9d0b549;background:radial-gradient(ellipse at 15% 15%,#b1a68019,transparent 57%),#0d0d14;margin-bottom:65px;overflow:hidden}
+.m-relic::before{content:'';position:absolute;inset:12px;border:1px solid #d9d0b514;pointer-events:none}
+.m-relic-topline{display:flex;justify-content:space-between;gap:20px;padding:28px 38px;border-bottom:1px solid #d9d0b526;font:10px/1.6 Verdana,sans-serif;letter-spacing:.17em;text-transform:uppercase;color:var(--relic-light)}
+.m-relic-hero{display:grid;grid-template-columns:43% 1fr;gap:5%;align-items:center;padding:38px 50px 40px 20px}
+.m-relic-heading{min-width:0}
+.m-relic h3{font-size:clamp(2.5rem,4.1vw,4.6rem);line-height:1.08;margin:18px 0 26px;color:#f0ecdf}
+.m-relic h3 em{font-family:Georgia,serif;font-weight:400;color:var(--relic-light)}
+.m-relic .m-relic-lead{font-size:1.22rem;color:#e0dae7;max-width:560px}
+.m-relic-visual{position:relative;width:100%;aspect-ratio:1;display:grid;place-items:center;color:var(--relic-light)}
+.m-relic-visual svg{display:block;width:100%;height:100%;overflow:visible}
+.m-covenant-aura{fill:none;stroke:currentColor;stroke-opacity:.15}
+.m-covenant-ward{transform-origin:250px 250px;animation:m-turn 90s linear infinite}
+.m-covenant-thread{stroke:currentColor;stroke-width:1;fill:none;opacity:.35}
+.m-covenant-flow{stroke:#fff4d6;stroke-width:2;stroke-dasharray:3 165;animation:m-covenant-stream 7s linear infinite;fill:none}
+.m-covenant-flow.return-flow{animation-direction:reverse;animation-delay:-3s}
+.m-covenant-heart{animation:m-glow 4s ease-in-out infinite alternate}
+.m-relic-visual-caption{position:absolute;bottom:0;left:0;right:0;text-align:center;font:9px/1.7 Verdana,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--relic-light)}
+.m-relic-effects{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:36px;padding:10px 50px 35px;counter-reset:effect}
+.m-relic-effect{border-top:1px solid #d9d0b533;padding-top:23px;counter-increment:effect}
+.m-relic-effect::before{content:'0' counter(effect);font:11px Monarch,serif;color:var(--relic-light);opacity:.65}
+.m-relic-effect h4{font:500 1.25rem/1.45 Monarch,Georgia,serif;color:var(--relic-light);margin:12px 0}
+.m-relic-effect p{font-size:1rem;margin:0}
+.m-relic-limit{position:relative;margin:0 50px 38px;padding:23px 0 0;border-top:1px solid #d9d0b533}
+.m-relic-limit strong{display:block;font:10px/1.7 Verdana,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--relic-light)}
+.m-relic-limit p{margin:10px 0 0;font-size:.98rem;max-width:1000px}
+.m-treasury{--relic-light:#c6c9f3;border-color:#b5bcf54d;background:radial-gradient(ellipse at 80% 15%,#7684ca22,transparent 55%),#0b0d16}
+.m-treasury .m-relic-hero{grid-template-columns:1fr 43%;padding:38px 20px 40px 50px}
+.m-treasury .m-relic-visual{order:2}
+.m-treasury h3{color:#edf0ff}
+.m-treasury .m-relic-topline,.m-treasury .m-relic-effect,.m-treasury .m-relic-limit{border-color:#b4bdf233}
+.m-vault{position:absolute;inset:10% 20% 15%;border:1px solid #ccd5ff80;border-radius:48% 48% 3px 3px;background:radial-gradient(ellipse at 50% 60%,#909fea25,transparent 70%),linear-gradient(90deg,#b7c5ff09,transparent 50%,#b7c5ff09);box-shadow:0 0 65px #8193dd18}
+.m-vault::before,.m-vault::after{content:'';position:absolute;inset:8%;border:1px solid #b5bff145;border-radius:48% 48% 2px 2px}
+.m-vault::after{inset:-11%;border-color:#b5bff120}
+.m-vault-halo{position:absolute;inset:4%;border:1px dashed #a2afd52b;border-radius:50%;animation:m-turn 100s linear infinite}
+.m-vault-floor{position:absolute;bottom:10%;width:80%;height:12%;border:1px solid #c0cafa55;border-radius:50%;background:radial-gradient(ellipse,#9dafe518,transparent 65%)}
+.m-vault-soul{position:absolute;left:var(--sx);top:var(--sy);width:8px;height:18px;border:1px solid #e2e7ffb0;border-radius:50%;background:#bacbff55;box-shadow:0 0 18px #a7baff60;animation:m-vault-suspend var(--period,6s) ease-in-out infinite alternate;animation-delay:var(--lag,0s)}
+.m-vault-seal{position:absolute;top:13%;font:28px Georgia,serif;color:#eff0ff;text-shadow:0 0 25px #b4bcff}
+.m-treasury-inventory{display:flex;flex-wrap:wrap;gap:10px 22px;list-style:none;margin:0 50px 36px;padding:22px 0;border-block:1px solid #b4bdf226}
+.m-treasury-inventory li{font:11px/1.7 Verdana,sans-serif;color:#c0c6de}
+.m-treasury-inventory li::before{content:'◇';margin-right:9px;color:#9eaedf}
+@keyframes m-covenant-stream{to{stroke-dashoffset:-336}}
+@keyframes m-vault-suspend{to{transform:translateY(-14px);opacity:.35}}
+@media(max-width:1000px){.m-relic-effects{gap:25px;padding-inline:30px}.m-relic-hero,.m-treasury .m-relic-hero{padding-inline:30px;gap:25px}.m-relic-limit,.m-treasury-inventory{margin-inline:30px}}
+@media(max-width:700px){.m-relics-intro{padding-bottom:35px}.m-relic-topline{padding:24px;flex-wrap:wrap;gap:6px}.m-relic-hero,.m-treasury .m-relic-hero{grid-template-columns:1fr;padding:15px 25px 25px;gap:15px}.m-relic-visual{max-width:350px;margin:auto}.m-treasury .m-relic-visual{order:0}.m-relic h3{font-size:clamp(2.3rem,9vw,3.5rem)}.m-relic-effects{grid-template-columns:1fr;padding:0 25px 30px;gap:25px}.m-relic-limit,.m-treasury-inventory{margin-inline:25px}.m-relic-limit{margin-bottom:30px}.m-relic{margin-bottom:35px}.m-relics{padding-inline:0}}
