@@ -15,6 +15,11 @@ class FullCanonSyncTest(unittest.TestCase):
     def test_beru_is_public_and_portrait_is_local(self) -> None:
         detail = page("characters/beru.html")
         self.assertIn("Sunborn Goliath", detail)
+        self.assertIn('<dt>Bloodline Modifier</dt><dd><a href="/aevum-archive/codex/traits.html#empyrean-blooded">Empyrean-Blooded</a>', detail)
+        traits = page("codex/traits.html")
+        empyrean = traits.split('id="empyrean-blooded"', 1)[1].split("</article>", 1)[0]
+        self.assertIn('data-state="known-sealed"', empyrean)
+        self.assertIn('href="/aevum-archive/characters/beru.html">Beru</a>', empyrean)
         self.assertIn("Divine Greatshield", detail)
         self.assertIn("<dt>Power Level</dt><dd>1,450</dd>", detail)
         self.assertIn("<dt>Current Status</dt><dd>SEALED</dd>", detail)
