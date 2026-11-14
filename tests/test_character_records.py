@@ -162,7 +162,7 @@ class CharacterRecordsTest(unittest.TestCase):
         shelf = page("characters/index.html")
         styles = page("assets/archive-record-refresh.css")
 
-        self.assertIn("astera-dossier.css?v=20261114-stars", astera)
+        self.assertIn("astera-dossier.css?v=20261114-starlight", astera)
         dossier_styles = page("assets/astera-dossier.css")
         self.assertRegex(dossier_styles, r"\.astral-portrait > img\s*\{\s*display: block;\s*width: 100%;\s*height: auto;\s*mask-image: linear-gradient\(to bottom,")
         self.assertIn("<dt>Current Status</dt><dd>SEALED</dd>", beru)

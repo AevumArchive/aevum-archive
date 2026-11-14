@@ -165,7 +165,9 @@ body.route-characters-astera-zenith .astera-dossier > .section::before { content
   background:
     radial-gradient(circle at 17px 37px, #f2e0ff8c 0 .7px, transparent 1.45px) 0 0 / 89px 113px,
     radial-gradient(circle at 41px 63px, #c79af287 0 .85px, transparent 1.6px) 12px 5px / 137px 167px,
-    radial-gradient(circle at 13px 29px, #bca7e059 0 .55px, transparent 1.2px) 6px 18px / 59px 79px;
+    radial-gradient(circle at 13px 29px, #bca7e059 0 .55px, transparent 1.2px) 6px 18px / 59px 79px,
+    radial-gradient(ellipse at 3% 40%, #54338a38, transparent 32%),
+    radial-gradient(ellipse at 98% 70%, #63386835, transparent 34%);
 }
 .astera-dossier { position: relative; z-index: 1; }
 .astral-sky i {
@@ -175,8 +177,17 @@ body.route-characters-astera-zenith .astera-dossier > .section::before { content
   border-radius: 50%;
   background: #f1d9ff;
   opacity: .18;
-  animation: astral-twinkle 7s ease-in-out infinite alternate;
+  animation: astral-twinkle 7s ease-in-out infinite;
 }
+.astral-sky i:nth-child(even) { width: 2px; height: 2px; animation-duration: 9s; }
+.astral-sky i:nth-child(3n + 1) {
+  width: 10px;
+  height: 10px;
+  border-radius: 0;
+  background: #fff0ff;
+  clip-path: polygon(50% 0, 59% 40%, 100% 50%, 59% 60%, 50% 100%, 41% 60%, 0 50%, 41% 40%);
+}
+.astral-sky i:nth-child(3n + 2) { background: #bba5ff; }
 .astral-sky i:nth-child(1) { left: 1%; top: 18%; animation-delay: -1s; }
 .astral-sky i:nth-child(2) { right: 2%; top: 25%; animation-delay: -3s; }
 .astral-sky i:nth-child(3) { left: 2%; top: 43%; animation-delay: -4s; }
@@ -195,6 +206,18 @@ body.route-characters-astera-zenith .astera-dossier > .section::before { content
 .astral-sky i:nth-child(16) { left: 2%; top: 55%; animation-delay: -3s; }
 .astral-sky i:nth-child(17) { right: 2%; top: 59%; animation-delay: -2s; }
 .astral-sky i:nth-child(18) { right: 1%; top: 80%; animation-delay: -4s; }
+.astral-sky::after {
+  content: "";
+  position: absolute;
+  top: 4%;
+  right: 14%;
+  width: clamp(42px, 7vw, 100px);
+  height: 2px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, #fff6ff, #d5b4ff60 28%, transparent);
+  opacity: 0;
+  animation: astral-meteor 13s linear -2s infinite;
+}
 
 .astral-power {
   position: relative;
@@ -261,8 +284,14 @@ body.route-characters-astera-zenith .astera-dossier > .section::before { content
 @keyframes astral-orbit { to { transform: rotate(1turn); } }
 
 @keyframes astral-twinkle {
-  from { transform: translate3d(-4px, 7px, 0); opacity: .16; }
-  to { transform: translate3d(12px, -19px, 0); opacity: .8; }
+  0%, 100% { transform: translate3d(-3px, 8px, 0) scale(.55); opacity: .25; }
+  35% { transform: translate3d(4px, -3px, 0) scale(1.15); opacity: .95; }
+  65% { transform: translate3d(9px, -14px, 0) scale(.72); opacity: .45; }
+}
+@keyframes astral-meteor {
+  0%, 70% { opacity: 0; transform: translate3d(0, 0, 0) rotate(-23deg); }
+  72% { opacity: .85; }
+  82%, 100% { opacity: 0; transform: translate3d(-22vw, 9vw, 0) rotate(-23deg); }
 }
 @keyframes astral-charge {
   0% { opacity: .65; transform: scale(1.04); }
@@ -288,6 +317,6 @@ body.route-characters-astera-zenith .astera-dossier > .section::before { content
   .astral-peak { grid-column: 1 / -1; justify-self: start; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .astral-power-orbit, .astral-sky i,
+  .astral-power-orbit, .astral-sky i, .astral-sky::after,
   .astral-shatter.is-shattering svg * { animation: none; }
 }
