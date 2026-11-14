@@ -188,6 +188,10 @@
   padding-block: 9px;
 }
 .expedition-notes dd { margin: 0; max-width: 60ch; }
+.expedition-merchant {
+  color: #f4ce79;
+  font-weight: 800;
+}
 .expedition-notes a { color: #ebd7ff; text-underline-offset: 4px; }
 @media (max-width: 540px) {
   .expedition-entry summary { grid-template-columns: auto minmax(0, 1fr); }
