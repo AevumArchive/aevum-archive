@@ -2,6 +2,8 @@
 
 ## 2026-11-14
 
+- Added Faaram, The Silver Monarch to the Restricted archive, with his arrival in Universe 2, estimated PL 10,000+, twelve abilities and a dedicated animated silver dossier.
+
 - Reworked Astera’s Soul Mark as an automatic burst and animated individual stars behind the page.
 
 - Restored Astera’s portrait without a color overlay, reduced background motion, and added a replayable Soul Mark severance.

@@ -31,7 +31,7 @@ class NpcDirectoryTest(unittest.TestCase):
         self.parsed.feed(self.page)
 
     def test_all_entries_remain_public_without_script_and_have_no_portrait_elements(self):
-        self.assertEqual(len(self.parsed.cards), 51)
+        self.assertEqual(len(self.parsed.cards), 52)
         for tag, attrs in self.parsed.cards:
             self.assertNotIn('hidden', attrs)
             self.assertNotIn('style', attrs)
@@ -63,8 +63,8 @@ class NpcDirectoryTest(unittest.TestCase):
         self.assertEqual(len(self.parsed.ids), len(set(self.parsed.ids)))
         self.assertIn('<strong>Known Figures</strong><small>12 records</small>', self.page)
         self.assertIn('<strong>All NPCs</strong><small>7 shelves</small>', self.page)
-        self.assertRegex(self.page, r'<strong>48</strong>\s*<span>NPCs discovered</span>')
-        self.assertIn('<strong>Restricted</strong><small>5 records</small>', self.page)
+        self.assertRegex(self.page, r'<strong>49</strong>\s*<span>NPCs discovered</span>')
+        self.assertIn('<strong>Restricted</strong><small>6 records</small>', self.page)
         restricted = self.page.split('id="contained-records"', 1)[1].split('</section>', 1)[0]
         faceless = 'href="/aevum-archive/npcs/the-faceless.html"'
         self.assertIn(faceless, restricted)
