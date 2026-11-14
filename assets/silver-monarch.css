@@ -83,7 +83,23 @@ body.silver-monarch{--silver:#e7e9f3;--silver-muted:#abaec1;--silver-line:#b4b6d
 .m-tags li{padding:8px 11px;border:1px solid var(--silver-line);font:11px/1.6 Verdana,sans-serif;color:#beb9d0}
 .m-blackstar{position:relative;isolation:isolate;display:grid;grid-template-columns:53% 1fr;align-items:center;gap:5%;background:#07080e;border-block:1px solid var(--silver-line);overflow:hidden;padding-block:85px}
 .m-star-stage{position:relative;width:100%;aspect-ratio:1;display:grid;place-items:center}
-.m-star-core{position:absolute;width:23%;aspect-ratio:1;border-radius:50%;background:#020205;border:1px solid #eeebff;box-shadow:0 0 12px #e5dcff80,0 0 65px #8975bb70,inset 0 0 8px #cfbdff80;animation:m-collapse 10s ease-in-out infinite;z-index:2}
+.m-star-core {
+  position: absolute;
+  width: 34.5%;
+  aspect-ratio: 1;
+  /* Paint the disk, rim and glow together to avoid seams in a scaled inset shadow. */
+  background: radial-gradient(circle closest-side,
+    #020205 57%,
+    #15121f 63%,
+    #655c80 65.5%,
+    #eeebff 66.5%,
+    #a193cd80 67.5%,
+    #8975bb32 73%,
+    #8975bb12 85%,
+    transparent 100%);
+  animation: m-collapse 10s ease-in-out infinite;
+  z-index: 2;
+}
 .m-star-ring{position:absolute;width:70%;height:70%;border:1px solid #d6c5f650;border-radius:50%;transform:scaleY(.407);box-shadow:0 0 30px #9881c520;animation:m-accretion 10s ease-in-out infinite}
 .m-star-ring:nth-child(2){width:90%;height:90%;opacity:.4;animation-delay:-.6s}
 .m-star-infall {
