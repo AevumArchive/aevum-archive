@@ -84,9 +84,30 @@ body.silver-monarch{--silver:#e7e9f3;--silver-muted:#abaec1;--silver-line:#b4b6d
 .m-blackstar{position:relative;isolation:isolate;display:grid;grid-template-columns:53% 1fr;align-items:center;gap:5%;background:#07080e;border-block:1px solid var(--silver-line);overflow:hidden;padding-block:85px}
 .m-star-stage{position:relative;width:100%;aspect-ratio:1;display:grid;place-items:center}
 .m-star-core{position:absolute;width:23%;aspect-ratio:1;border-radius:50%;background:#020205;border:1px solid #eeebff;box-shadow:0 0 12px #e5dcff80,0 0 65px #8975bb70,inset 0 0 8px #cfbdff80;animation:m-collapse 10s ease-in-out infinite;z-index:2}
-.m-star-ring{position:absolute;width:70%;height:70%;border:1px solid #d6c5f650;border-radius:50%;transform:rotateX(66deg) rotate(-25deg);box-shadow:0 0 30px #9881c520;animation:m-accretion 10s ease-in-out infinite}
+.m-star-ring{position:absolute;width:70%;height:70%;border:1px solid #d6c5f650;border-radius:50%;transform:scaleY(.407);box-shadow:0 0 30px #9881c520;animation:m-accretion 10s ease-in-out infinite}
 .m-star-ring:nth-child(2){width:90%;height:90%;opacity:.4;animation-delay:-.6s}
-.m-star-ray{position:absolute;width:72%;height:1px;transform:rotate(var(--angle));background:linear-gradient(90deg,transparent,#b9a3e655,transparent 45%,transparent 55%,#b9a3e655,transparent);animation:m-infall 10s ease-in-out infinite;animation-delay:var(--delay)}
+.m-star-infall {
+  position: absolute;
+  width: 66%;
+  height: 0;
+  opacity: 0;
+  transform: rotate(var(--angle)) scale(1);
+  animation: m-infall 10s ease-in-out infinite;
+  animation-delay: var(--delay);
+}
+.m-star-infall::before,
+.m-star-infall::after {
+  content: '';
+  position: absolute;
+  top: -1.5px;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #b9a3e6;
+  box-shadow: 0 0 8px #b9a3e680;
+}
+.m-star-infall::before { left: 0; }
+.m-star-infall::after { right: 0; }
 .m-star-stage::after{content:'';position:absolute;width:30%;height:30%;border-radius:50%;border:1px solid #e7d8ff;animation:m-shock 10s ease-out infinite}
 .m-blackstar h2{font-size:clamp(3rem,5.6vw,6rem);line-height:1.1}
 .m-blackstar h2 em{display:block;font:italic 1em Georgia,serif;color:#b7abcd}
@@ -115,8 +136,17 @@ body.route-npcs .npc-directory .npc-compact-grid>.npc-monarch h3{font:500 clamp(
 @keyframes m-glow{to{opacity:.4}}
 @keyframes m-soul-breathe{to{transform:rotate(55deg) scale(.92);opacity:.5}}
 @keyframes m-collapse{0%,15%,100%{transform:scale(.7)}55%{transform:scale(1.2);opacity:1}66%{transform:scale(.15);opacity:1}70%{transform:scale(.05);opacity:.2}80%{transform:scale(.7);opacity:1}}
-@keyframes m-accretion{0%,100%{transform:rotateX(66deg) rotate(-25deg) scale(.9)}55%{transform:rotateX(66deg) rotate(15deg) scale(1.1);opacity:.8}68%{transform:rotateX(66deg) rotate(35deg) scale(.05);opacity:0}80%{opacity:0}}
-@keyframes m-infall{0%,100%{opacity:0;scale:1}40%{opacity:.8}66%{opacity:0;scale:.08}90%{opacity:0}}
+@keyframes m-accretion {
+  0%, 100% { transform: scaleY(.407) scale(.9); }
+  55% { transform: scaleY(.407) scale(1.1); opacity: .8; }
+  68% { transform: scaleY(.407) scale(.05); opacity: 0; }
+  80% { opacity: 0; }
+}
+@keyframes m-infall {
+  0%, 15%, 100% { transform: rotate(var(--angle)) scale(1); opacity: 0; }
+  40% { opacity: .65; }
+  66%, 90% { transform: rotate(var(--angle)) scale(.08); opacity: 0; }
+}
 @keyframes m-shock{0%,65%,100%{transform:scale(.1);opacity:0}70%{opacity:.7}90%{transform:scale(3.5);opacity:0}}
 @keyframes m-card-sheen{0%,55%{left:-85%}100%{left:140%}}
 [data-monarch-motion] *,[data-monarch-motion] *::before,[data-monarch-motion] *::after{animation-play-state:paused}
