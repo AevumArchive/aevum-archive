@@ -2,6 +2,8 @@
 
 ## 2026-11-14
 
+- Updated Zeke’s portrait and redesigned his dossier around the temporal rift. His Power Level is unknown.
+
 - Recorded Beru as Empyrean-Blooded in his profile and the Trait Codex.
 
 - Added a briefing with clues to the first trace in the Traces of the Old World Expedition Journal.
