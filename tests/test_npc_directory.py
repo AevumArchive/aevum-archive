@@ -55,16 +55,16 @@ class NpcDirectoryTest(unittest.TestCase):
 
     def test_shelves_and_count_are_consistent(self):
         expected = ['all-npcs', 'current-npcs', 'sovereigns', 'divine-alliance', 'servants',
-                    'tengoku-clan', 'known-figures', 'contained-records']
+                    'tengoku-clan', 'known-figures', 'contained-records', 'silver-monarch']
         self.assertEqual(self.parsed.shelves, expected)
         for shelf in expected:
             self.assertIn(shelf, self.parsed.ids)
             self.assertIn(f'href="#{shelf}"', self.page)
         self.assertEqual(len(self.parsed.ids), len(set(self.parsed.ids)))
         self.assertIn('<strong>Known Figures</strong><small>12 records</small>', self.page)
-        self.assertIn('<strong>All NPCs</strong><small>7 shelves</small>', self.page)
+        self.assertIn('<strong>All NPCs</strong><small>8 shelves</small>', self.page)
         self.assertRegex(self.page, r'<strong>49</strong>\s*<span>NPCs discovered</span>')
-        self.assertIn('<strong>Restricted</strong><small>6 records</small>', self.page)
+        self.assertIn('<strong>Restricted</strong><small>5 records</small>', self.page)
         restricted = self.page.split('id="contained-records"', 1)[1].split('</section>', 1)[0]
         faceless = 'href="/aevum-archive/npcs/the-faceless.html"'
         self.assertIn(faceless, restricted)

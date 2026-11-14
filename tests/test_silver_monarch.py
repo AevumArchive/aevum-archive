@@ -22,12 +22,18 @@ class SilverMonarchTest(unittest.TestCase):
                            'Faaram’s own stats, resources and Magical Power'):
             self.assertIn(constraint, page)
 
-    def test_only_restricted_directory_shelf_contains_him(self):
+    def test_his_own_shelf_follows_the_restricted_archive(self):
         index = (ROOT / 'npcs/index.html').read_text(encoding='utf-8')
         href = '/aevum-archive/npcs/faaram-silver-monarch.html'
         self.assertEqual(index.count(href), 1)
         restricted = index.split('id="contained-records"')[1].split('</section>')[0]
-        self.assertIn(href, restricted)
+        self.assertNotIn(href, restricted)
+        shelf = index.split('id="silver-monarch"')[1].split('</section>')[0]
+        self.assertIn(href, shelf)
+        self.assertEqual(shelf.count('class="card npc-card'), 1)
+        self.assertLess(index.index('id="contained-records"'), index.index('id="silver-monarch"'))
+        profile = (ROOT / 'npcs/faaram-silver-monarch.html').read_text(encoding='utf-8')
+        self.assertIn('/npcs/#silver-monarch', profile)
         self.assertIn('npcs/bobby.html', restricted)
         for player_list in ('characters/all.html', 'characters/index.html'):
             self.assertNotIn(href, (ROOT / player_list).read_text(encoding='utf-8'))
