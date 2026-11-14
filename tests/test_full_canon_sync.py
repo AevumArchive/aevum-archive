@@ -16,7 +16,7 @@ class FullCanonSyncTest(unittest.TestCase):
         detail = page("characters/beru.html")
         self.assertIn("Sunborn Goliath", detail)
         self.assertIn("Divine Greatshield", detail)
-        self.assertIn("<dt>Power Level</dt><dd>1,050</dd>", detail)
+        self.assertIn("<dt>Power Level</dt><dd>1,450</dd>", detail)
         self.assertIn("<dt>Current Status</dt><dd>SEALED</dd>", detail)
         self.assertNotIn("Approximately 800", detail)
         self.assertIn('data-name="Beru"', page("characters/all.html"))
