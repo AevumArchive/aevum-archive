@@ -2,6 +2,8 @@
 
 ## 2026-11-14
 
+- Added a briefing with clues to the first trace in the Traces of the Old World Expedition Journal.
+
 - Added The Absolute Covenant and Soul Treasury to the Silver Monarch’s record, with animated bond and soul-vault displays and their full effects and limitations.
 
 - Added Faaram, The Silver Monarch to the Restricted archive, with his arrival in Universe 2, estimated PL 10,000+, twelve abilities and a dedicated animated silver dossier.
