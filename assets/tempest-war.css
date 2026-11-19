@@ -1,0 +1,90 @@
+.tempest-war {
+  grid-column: 1 / -1;
+  position: relative;
+  isolation: isolate;
+  margin: 0 0 clamp(20px, 3vw, 38px);
+  border: 1px solid #ba96744d;
+  background: #14100f;
+  scroll-margin-top: 30px;
+}
+
+.tempest-war::after {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border: 1px solid #e0bd8e33;
+  pointer-events: none;
+}
+
+.tempest-war-art {
+  position: relative;
+  overflow: hidden;
+}
+
+.tempest-war-art img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.tempest-war-art::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, #14100f, transparent 24%);
+  pointer-events: none;
+}
+
+.tempest-war figcaption {
+  position: relative;
+  padding: 8px clamp(24px, 4vw, 48px) clamp(25px, 3vw, 40px);
+}
+
+.tempest-war figcaption span {
+  color: #e7bc8f;
+  font: 600 .7rem/1.8 Verdana, sans-serif;
+  letter-spacing: .17em;
+  text-transform: uppercase;
+}
+
+.tempest-dossier .tempest-war figcaption p {
+  margin: 10px 0 0;
+  color: #ded0c5;
+  font: italic 400 clamp(1rem, 1.5vw, 1.35rem)/1.65 Georgia, serif;
+}
+
+.tempest-war-embers {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.tempest-war-embers i {
+  position: absolute;
+  bottom: 3%;
+  left: var(--x);
+  width: 2px;
+  height: 4px;
+  border-radius: 50%;
+  background: #f1b276;
+  box-shadow: 0 0 7px #f18e5799;
+  opacity: 0;
+  animation: tempest-war-ember 11s ease-out infinite;
+  animation-delay: var(--delay);
+}
+
+@keyframes tempest-war-ember {
+  0% { opacity: 0; transform: translate3d(0, 0, 0); }
+  15% { opacity: .75; }
+  75% { opacity: .25; }
+  100% { opacity: 0; transform: translate3d(35px, -220px, 0); }
+}
+
+@media (max-width: 600px) {
+  .tempest-war::after { inset: 6px; }
+  .tempest-war figcaption { padding: 10px 16px 22px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tempest-war-embers { display: none; }
+}

@@ -1,5 +1,9 @@
 # Archive changelog
 
+## 2026-11-19
+
+- Illustrated Faaram Tempest’s origin chronicle with his youth on the battlefield against S’klrdor, framed with drifting embers.
+
 ## 2026-11-14
 
 - Updated Zeke’s portrait and redesigned his dossier around the temporal rift. His Power Level is unknown.
