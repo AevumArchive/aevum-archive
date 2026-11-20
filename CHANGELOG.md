@@ -2,6 +2,8 @@
 
 ## 2026-11-20
 
+- Refined the Sealed and Lost / Unknown frames with engraved chains, faceted glass and matching sigils.
+
 - Restored the blue-violet border ornaments and the open sigil for Lost / Unknown on the rounded Hall cards.
 
 - Rounded every Hall of Names card and redrew Fallen as a memorial slab and Lost / Unknown as an unfinished star chart.

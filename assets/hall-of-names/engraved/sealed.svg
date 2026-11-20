@@ -1,31 +1,47 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 360" fill="none">
   <defs>
-    <g id="link" stroke="#af8ad2">
-      <rect x="-2.4" y="-5" width="4.8" height="10" rx="2.4"/>
-      <path d="M0 4v3" stroke="#705789"/>
+    <linearGradient id="silver" x1="9" y1="12" x2="40" y2="229" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ead1ff"/>
+      <stop offset=".32" stop-color="#b58ad7"/>
+      <stop offset=".72" stop-color="#8e62bd"/>
+      <stop offset="1" stop-color="#684992" stop-opacity="0"/>
+    </linearGradient>
+    <g id="link" stroke="#bc93df" stroke-width=".9">
+      <rect x="-2.6" y="-5.5" width="5.2" height="11" rx="2.6"/>
+      <path d="M0 3.5v4"/>
     </g>
     <g id="binding">
-      <path d="M11 191V54L6 42V28L28 6h25l12 7h35"
-            stroke="#784d9e" stroke-width="1.5"/>
-      <circle cx="24" cy="24" r="17" stroke="#ac80d3"/>
-      <circle cx="24" cy="24" r="12.5" stroke="#6e568f"/>
-      <path d="m24 9 15 15-15 15L9 24Z" stroke="#9c74c4"/>
-      <path d="M24 15v18m-9-9h18" stroke="#77618e"/>
-      <path d="m24 19 5 5-5 5-5-5Z" fill="#c994ed"/>
-      <path d="M17 43v14m0 70v35l-6 14m13-137 4 13 8 5v10"
-            stroke="#6c4c95"/>
-      <use href="#link" x="17" y="61" transform="rotate(-13 17 61)"/>
-      <use href="#link" x="16" y="72" transform="rotate(12 16 72)"/>
-      <use href="#link" x="17" y="83" transform="rotate(-13 17 83)"/>
-      <use href="#link" x="16" y="94" transform="rotate(12 16 94)"/>
-      <path d="M13 113v-4a4 4 0 0 1 8 0v4" stroke="#b78ad8"/>
-      <rect x="11" y="113" width="12" height="12" rx="2" fill="#21152b" stroke="#bd96da"/>
-      <path d="M17 117v4m19-54 3 5-3 5-3-5Z" stroke="#c1a0da"/>
+      <path d="M5 215V24Q5 5 24 5h58M10 188V32Q10 10 32 10h70" stroke="url(#silver)"/>
+      <path d="M12 65Q14 47 30 43M44 23q15-4 26-12M10 127q10 17 10 44t-9 49"
+            stroke="#9a6bc6" opacity=".66"/>
+      <path d="M9 27 14 14Q28 8 41 18l7 9-9 14-12 8-12-9Z"
+            fill="#23162f" stroke="url(#silver)"/>
+      <circle cx="27" cy="28" r="14" stroke="#ba90dc" stroke-opacity=".8"/>
+      <circle cx="27" cy="28" r="10.8" stroke="#8b65ad" stroke-dasharray="1 2.4"/>
+      <path d="m27 18 3 7 7 3-7 3-3 7-3-7-7-3 7-3Z"
+            fill="#d2a4ee" fill-opacity=".28" stroke="#dbb5f3"/>
+      <circle cx="27" cy="28" r="1.6" fill="#f0dafa"/>
+
+      <path d="M28 48q0 5-3 7m12-13q9 11 9 27"
+            stroke="#b78ad4" stroke-opacity=".75"/>
+      <use href="#link" transform="translate(24 59) rotate(23)"/>
+      <use href="#link" transform="translate(21 70) rotate(2)"/>
+      <use href="#link" transform="translate(22 81) rotate(-19)"/>
+      <use href="#link" transform="translate(26 92) rotate(-24)"/>
+      <path d="m46 69 3.5 5.5L46 80l-3.5-5.5Z" stroke="#d0a6ec"/>
+      <path d="M23 110v-4a6 6 0 0 1 12 0v4" stroke="#c99be9"/>
+      <path d="m20 111 9-3 9 3v9l-9 6-9-6Z" fill="#2b1a3b" stroke="#c396e3"/>
+      <path d="M29 114v5m-3-2h6" stroke="#e5bbf9"/>
+      <path d="M29 126q-3 21 7 38M14 154l3 5-3 5-3-5Z" stroke="#a175c6"/>
+      <path d="M27 174q-1 19-10 38" stroke="url(#silver)"/>
     </g>
   </defs>
+
   <use href="#binding"/>
   <use href="#binding" transform="translate(240) scale(-1 1)"/>
-  <path d="M82 9h23m30 0h23m-38-7 12 11-12 11-12-11Z" stroke="#b18ad0"/>
-  <path d="m120 8 5 5-5 5-5-5Z" fill="#bf89e5"/>
-  <path d="M120 24v11" stroke="#7a529c"/>
+  <path d="M75 14h26m38 0h26M93 8h12m30 0h12" stroke="#986bb9"/>
+  <path d="m104 14 16-10 16 10-16 13Z" fill="#22152f" stroke="#d1aae9"/>
+  <path d="m112 14 8-6 8 6-8 8Z" stroke="#ae81c8"/>
+  <path d="M120 27v8m-2 3 2 2 2-2-2-2Z" stroke="#b98add"/>
+  <circle cx="120" cy="14" r="2" fill="#f1dafa"/>
 </svg>
