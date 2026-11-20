@@ -334,18 +334,18 @@ body.route-characters-all .hall-card:is(.is-fallen, .is-dead) {
 }
 
 body.route-characters-all .hall-card.is-lost {
-  --hall-engraving: url("hall-of-names/engraved/lost.svg?v=star-chart");
+  --hall-engraving: url("hall-of-names/engraved/lost.svg?v=edge-fracture");
   --hall-frame-edge: #8196c2;
   --hall-frame-glow: #9d85f065;
   --hall-engraving-light: #98e6ff80;
   --hall-rune-halo: #8059d342;
 }
 
-body.route-characters-all .hall-card:is(.is-fallen, .is-dead, .is-lost) .hall-card-overlay {
+body.route-characters-all .hall-card:is(.is-fallen, .is-dead) .hall-card-overlay {
   z-index: 0 !important;
 }
 
-body.route-characters-all .hall-card:is(.is-fallen, .is-dead, .is-lost) .hall-card-overlay::before {
+body.route-characters-all .hall-card:is(.is-fallen, .is-dead) .hall-card-overlay::before {
   opacity: .38;
 }
 
@@ -427,7 +427,6 @@ body.route-characters-all .hall-card.is-lost .hall-card-media {
 body.route-characters-all .hall-card.is-lost .hall-card-rune {
   color: #b1e5f3;
   border-color: #97c7ef95;
-  background: radial-gradient(circle at 38% 33%, #30375a, #0e0d22 74%);
   text-shadow: 0 0 13px #99dfff70;
 }
 
