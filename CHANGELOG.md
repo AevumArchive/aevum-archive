@@ -1,5 +1,9 @@
 # Archive changelog
 
+## 2026-11-20
+
+- Replaced the Hall of Names card artwork with engraved vector ornaments in the original five status palettes.
+
 ## 2026-11-19
 
 - Illustrated Faaram Tempest’s origin chronicle with his youth on the battlefield against S’klrdor, framed with drifting embers.

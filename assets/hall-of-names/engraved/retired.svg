@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 360" fill="none">
+  <defs>
+    <g id="drape" stroke-linecap="round">
+      <path d="M8 165V37Q8 9 38 9h41M13 150V39Q13 14 38 14h29"
+            stroke="#a27b46"/>
+      <path d="M10 18C32 13 58 20 83 13C68 33 41 29 22 48Q12 64 11 83Z"
+            fill="#513528" stroke="#b78e55"/>
+      <path d="M15 25C35 19 54 27 79 15M14 38c14-9 32-7 47-13M16 53C23 42 39 37 48 34"
+            stroke="#d0a16a" opacity=".55"/>
+      <path d="M17 53q12 12 7 31m-4 1 4-7 4 7v11h-8Z"
+            stroke="#cca666"/>
+      <path d="m8 163 5 8-5 8-5-8Z" fill="#b38a4d"/>
+    </g>
+  </defs>
+  <use href="#drape"/>
+  <use href="#drape" transform="translate(240) scale(-1 1)"/>
+  <path d="M84 10h23m26 0h23" stroke="#b68d53"/>
+  <path d="m120 3 11 9-11 9-11-9Z" stroke="#d7ac64"/>
+  <path d="m120 8 4 4-4 4-4-4Z" fill="#e1bd79"/>
+</svg>

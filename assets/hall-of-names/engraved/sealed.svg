@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 360" fill="none">
+  <defs>
+    <g id="link" stroke="#af8ad2">
+      <rect x="-2.4" y="-5" width="4.8" height="10" rx="2.4"/>
+      <path d="M0 4v3" stroke="#705789"/>
+    </g>
+    <g id="binding">
+      <path d="M11 191V54L6 42V28L28 6h25l12 7h35"
+            stroke="#784d9e" stroke-width="1.5"/>
+      <circle cx="24" cy="24" r="17" stroke="#ac80d3"/>
+      <circle cx="24" cy="24" r="12.5" stroke="#6e568f"/>
+      <path d="m24 9 15 15-15 15L9 24Z" stroke="#9c74c4"/>
+      <path d="M24 15v18m-9-9h18" stroke="#77618e"/>
+      <path d="m24 19 5 5-5 5-5-5Z" fill="#c994ed"/>
+      <path d="M17 43v14m0 70v35l-6 14m13-137 4 13 8 5v10"
+            stroke="#6c4c95"/>
+      <use href="#link" x="17" y="61" transform="rotate(-13 17 61)"/>
+      <use href="#link" x="16" y="72" transform="rotate(12 16 72)"/>
+      <use href="#link" x="17" y="83" transform="rotate(-13 17 83)"/>
+      <use href="#link" x="16" y="94" transform="rotate(12 16 94)"/>
+      <path d="M13 113v-4a4 4 0 0 1 8 0v4" stroke="#b78ad8"/>
+      <rect x="11" y="113" width="12" height="12" rx="2" fill="#21152b" stroke="#bd96da"/>
+      <path d="M17 117v4m19-54 3 5-3 5-3-5Z" stroke="#c1a0da"/>
+    </g>
+  </defs>
+  <use href="#binding"/>
+  <use href="#binding" transform="translate(240) scale(-1 1)"/>
+  <path d="M82 9h23m30 0h23m-38-7 12 11-12 11-12-11Z" stroke="#b18ad0"/>
+  <path d="m120 8 5 5-5 5-5-5Z" fill="#bf89e5"/>
+  <path d="M120 24v11" stroke="#7a529c"/>
+</svg>

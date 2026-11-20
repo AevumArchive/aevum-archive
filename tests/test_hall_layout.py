@@ -50,22 +50,21 @@ class HallLayoutTest(unittest.TestCase):
         self.assertNotIn('class="hall-tapestry', page)
         self.assertNotIn('class="hall-divider"', page)
         self.assertIn('id="hall-title">Hall of Names</h1>', page)
-        self.assertIn('character-status-frames.css?v=20261023-hall-layout', page)
+        self.assertRegex(page, r'character-status-frames\.css\?v=')
         heading = re.search(r'body\.route-characters-all \.hall-heading-row\s*\{([^}]+)\}', styles).group(1)
         self.assertIn('grid-template-columns: minmax(0, 1fr)', heading)
         self.assertNotIn('1fr 220px', styles)
 
-    def test_original_frame_and_motif_files_remain_in_use(self):
+    def test_each_status_uses_a_self_contained_vector_ornament(self):
         styles = (ROOT / "assets/character-status-frames.css").read_text(encoding="utf-8")
-        motifs = {"active": "aether", "sealed": "chains", "fallen": "broken-chains", "lost": "fracture", "retired": "drapery"}
-        for state, motif in motifs.items():
-            for filename in (f"hall-card-{state}-frame-1200x1800.png", f"hall-card-{state}-motif-{motif}-1200x1800.png"):
-                with self.subTest(filename=filename):
-                    self.assertIn(filename, styles)
-                    self.assertTrue((ROOT / 'assets/hall-of-names/v4' / filename).is_file())
-        self.assertIn('background-size: 100% 100%', styles)
-        self.assertIn('inset: -5px', styles)
-        self.assertIn('prefers-reduced-motion: reduce', styles)
+        self.assertNotIn('hall-of-names/v4/', styles)
+        for state in ("active", "sealed", "fallen", "lost", "retired"):
+            with self.subTest(state=state):
+                relative_path = f"hall-of-names/engraved/{state}.svg"
+                self.assertIn(f'url("{relative_path}")', styles)
+                engraving = (ROOT / "assets" / relative_path).read_text(encoding="utf-8")
+                self.assertIn('viewBox="0 0 240 360"', engraving)
+                self.assertNotIn('<image', engraving)
 
 
 if __name__ == "__main__":

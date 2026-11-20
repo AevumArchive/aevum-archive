@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 360" fill="none">
+  <defs>
+    <g id="rift" stroke-linejoin="round">
+      <path d="M7 176l6-22-4-14 10-18-7-17 7-21-4-20 12-17-4-20 18-13 21 2 14-7 23 3"
+            stroke="#9a86ef" stroke-width="1.5"/>
+      <path d="M9 118l4-30-6-19 13-21L7 31l21-10L36 7l39 1"
+            stroke="#6babd8"/>
+      <path d="m15 24 15-12 14 13-11 18-18-5Zm11-6 7 25m-15-3 25-15M15 64l18 9-14 11-7 21 15-8"
+            stroke="#84d1e3" opacity=".7"/>
+      <path d="m9 40 12-9 1 10Zm21-20 7 6-8 7Zm-9 89 5 4-4 8Zm-11 81 4-11 4 7Z"
+            fill="#a0e0f3" opacity=".58"/>
+      <path d="M8 214l5-17m20-65 3-7m16-96 6-3m-30 26 1 6"
+            stroke="#9a86ef" opacity=".8"/>
+    </g>
+  </defs>
+  <use href="#rift"/>
+  <use href="#rift" transform="translate(240) scale(-1 1)" opacity=".85"/>
+  <path d="M102 11h8l10-8 11 8h8m-20 12-10-11m12 10 10-10"
+        stroke="#a19cf1"/>
+  <path d="m121 8-5 6 7-1-4 8" stroke="#a3ddec"/>
+</svg>

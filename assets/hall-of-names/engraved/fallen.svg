@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 360" fill="none">
+  <defs>
+    <g id="iron" stroke-linejoin="bevel">
+      <path d="M7 161v-31l8-16-5-12V66l10-26 20-20 19-7h34"
+            stroke="#975761" stroke-width="1.2"/>
+      <path d="M7 79V36L36 7h46m-69 47 9-22L40 14"
+            stroke="#9c7772" opacity=".78"/>
+      <path d="m27 10 4 13-10 6 4 12-12 7 6 17-8 10m35-67-5 11 11 5-7 9"
+            stroke="#c75160" stroke-width="1.3"/>
+      <path d="m11 9 11 2-12 12Z" fill="#82414d" stroke="#b36066"/>
+      <path d="m14 82 8 13m-8-4-2 12m10 15 4 7m-8 12 3 11"
+            stroke="#a34856" opacity=".7"/>
+      <path d="M10 169 14 176 10 183 6 176Z" stroke="#a36f71"/>
+    </g>
+  </defs>
+  <use href="#iron"/>
+  <use href="#iron" transform="translate(240) scale(-1 1)"/>
+  <path d="M93 10h14m26 0h14" stroke="#8e6770"/>
+  <path d="M120 3l12 10-12 11-12-11Z" stroke="#bb6d72" fill="#251219"/>
+  <path d="m121 4-3 8 5 2-4 8" stroke="#ff8584"/>
+</svg>

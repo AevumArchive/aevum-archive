@@ -1,4 +1,6 @@
-# Hall of Names ornament production spec
+# Hall of Names ornament production spec (legacy raster set)
+
+The Hall now uses transparent, hand-authored vector engravings in `assets/hall-of-names/engraved/`. Each status has a single 240 × 360 vector ornament, with shared inset rails drawn in `assets/character-status-frames.css`. The original brief below describes the previous raster set.
 
 This document is the technical contract for the next Hall of Names status ornaments. The existing character-card HTML must not be rebuilt around the artwork. Every delivered image is a decorative transparent layer placed over the stable card component.
 

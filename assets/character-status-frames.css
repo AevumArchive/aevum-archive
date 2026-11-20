@@ -288,79 +288,58 @@ body.route-characters-all .hall-card-overlay {
   user-select: none;
 }
 
+/* Engraved corners and inset rails share the card's transparent overlay. */
 body.route-characters-all .hall-card-overlay::before,
 body.route-characters-all .hall-card-overlay::after {
   content: "";
   position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100% 100%;
   pointer-events: none;
 }
 
-/* The dedicated frame files are the physical card borders. Extend them over
-   the transparent CSS edge so the artwork, not a generic line, defines the card. */
 body.route-characters-all .hall-card-overlay::before {
-  inset: -5px;
-  width: calc(100% + 10px);
-  height: calc(100% + 10px);
+  inset: 8px;
+  border: 1px solid var(--hall-frame-edge, #be9d73);
+  outline: 1px solid var(--hall-frame-glow, #be9d7338);
+  outline-offset: 3px;
+  box-shadow: inset 0 0 14px var(--hall-frame-glow, #be9d7338);
+  mask-image: linear-gradient(#000 25%, #000a 58%, #0003 86%, #0006);
 }
 
 body.route-characters-all .hall-card-overlay::after {
   inset: 0;
-  width: 100%;
-  height: 100%;
+  background: var(--hall-engraving, none) top center / 100% 100% no-repeat;
+  filter: drop-shadow(0 0 5px var(--hall-frame-glow, #be9d7338));
 }
 
-body.route-characters-all .hall-card.is-active .hall-card-overlay {
-  display: block !important;
+body.route-characters-all .hall-card.is-active {
+  --hall-engraving: url("hall-of-names/engraved/active.svg");
+  --hall-frame-edge: #a89155;
+  --hall-frame-glow: #71bd7c60;
 }
 
-body.route-characters-all .hall-card.is-active .hall-card-overlay::before {
-  background-image: url("/aevum-archive/assets/hall-of-names/v4/hall-card-active-frame-1200x1800.png");
+body.route-characters-all .hall-card.is-sealed {
+  --hall-engraving: url("hall-of-names/engraved/sealed.svg");
+  --hall-frame-edge: #8262a9;
+  --hall-frame-glow: #a575d953;
 }
 
-body.route-characters-all .hall-card.is-active .hall-card-overlay::after {
-  background-image: url("/aevum-archive/assets/hall-of-names/v4/hall-card-active-motif-aether-1200x1800.png");
+body.route-characters-all .hall-card:is(.is-fallen, .is-dead) {
+  --hall-engraving: url("hall-of-names/engraved/fallen.svg");
+  --hall-frame-edge: #7e4e57;
+  --hall-frame-glow: #cb48585c;
 }
 
-body.route-characters-all .hall-card.is-sealed .hall-card-overlay::before {
-  background-image: url("/aevum-archive/assets/hall-of-names/v4/hall-card-sealed-frame-1200x1800.png");
+body.route-characters-all .hall-card.is-lost {
+  --hall-engraving: url("hall-of-names/engraved/lost.svg");
+  --hall-frame-edge: #7084b0;
+  --hall-frame-glow: #9782df60;
 }
 
-body.route-characters-all .hall-card.is-sealed .hall-card-overlay::after {
-  background-image: url("/aevum-archive/assets/hall-of-names/v4/hall-card-sealed-motif-chains-1200x1800.png");
+body.route-characters-all .hall-card.is-retired {
+  --hall-engraving: url("hall-of-names/engraved/retired.svg");
+  --hall-frame-edge: #a5844f;
+  --hall-frame-glow: #c39a5248;
 }
-
-body.route-characters-all .hall-card.is-fallen .hall-card-overlay::before,
-body.route-characters-all .hall-card.is-dead .hall-card-overlay::before {
-  background-image: url("/aevum-archive/assets/hall-of-names/v4/hall-card-fallen-frame-1200x1800.png");
-}
-
-body.route-characters-all .hall-card.is-fallen .hall-card-overlay::after,
-body.route-characters-all .hall-card.is-dead .hall-card-overlay::after {
-  background-image: url("/aevum-archive/assets/hall-of-names/v4/hall-card-fallen-motif-broken-chains-1200x1800.png");
-}
-
-body.route-characters-all .hall-card.is-retired .hall-card-overlay::before {
-  background-image: url("/aevum-archive/assets/hall-of-names/v4/hall-card-retired-frame-1200x1800.png");
-}
-
-body.route-characters-all .hall-card.is-retired .hall-card-overlay::after {
-  background-image: url("/aevum-archive/assets/hall-of-names/v4/hall-card-retired-motif-drapery-1200x1800.png");
-}
-
-body.route-characters-all .hall-card.is-lost .hall-card-overlay::before {
-  background-image: url("/aevum-archive/assets/hall-of-names/v4/hall-card-lost-frame-1200x1800.png");
-}
-
-body.route-characters-all .hall-card.is-lost .hall-card-overlay::after {
-  background-image: url("/aevum-archive/assets/hall-of-names/v4/hall-card-lost-motif-fracture-1200x1800.png");
-}
-
 
 body.route-characters-all .hall-card-media {
   position: relative !important;
@@ -438,7 +417,7 @@ body.route-characters-all .hall-card-copy small {
   display: -webkit-box;
   margin-top: 5px;
   overflow: hidden;
-  color: #a99ca4;
+  color: #c0b3bb;
   font-size: .71rem;
   line-height: 1.4;
   -webkit-box-orient: vertical;
@@ -539,8 +518,15 @@ body.route-characters-all .hall-card-grid.is-list .hall-card {
 body.route-characters-all .hall-card-grid.is-list .hall-card-media { min-height: 132px; }
 body.route-characters-all .hall-card-grid.is-list .hall-card-copy { min-height: 132px; }
 
-body.route-characters-all .hall-card-grid.is-list .hall-card-overlay {
-  display: none !important;
+body.route-characters-all .hall-card-grid.is-list .hall-card-overlay::before {
+  inset: 5px;
+  outline: 0;
+  mask-image: none;
+  opacity: .5;
+}
+
+body.route-characters-all .hall-card-grid.is-list .hall-card-overlay::after {
+  content: none;
 }
 
 body.route-characters-all .hall-empty {
@@ -687,7 +673,7 @@ body.route-characters-all .sr-only {
 @media (prefers-reduced-motion: reduce) {
   body.route-characters-all .hall-card { transition: none; }
 }
-/* Surrounding controls change; the five original state-border layers do not. */
+/* Center the Hall heading and keep controls legible across viewports. */
 body.route-characters-all .hall-heading-row { text-align: center; }
 body.route-characters-all .hall-heading { width: 100%; min-width: 0; }
 body.route-characters-all .hall-quicklinks { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px 26px; margin-top: 23px; }
