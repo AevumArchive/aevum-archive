@@ -2,6 +2,8 @@
 
 ## 2026-11-20
 
+- Added ember highlights to Fallen cards and a blue-violet glow to Lost / Unknown cards in the Hall of Names.
+
 - Replaced the Hall of Names card artwork with engraved vector ornaments in the original five status palettes.
 
 ## 2026-11-19

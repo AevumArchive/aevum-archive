@@ -61,7 +61,7 @@ class HallLayoutTest(unittest.TestCase):
         for state in ("active", "sealed", "fallen", "lost", "retired"):
             with self.subTest(state=state):
                 relative_path = f"hall-of-names/engraved/{state}.svg"
-                self.assertIn(f'url("{relative_path}")', styles)
+                self.assertRegex(styles, rf'url\("{re.escape(relative_path)}(?:\?[^"]+)?"\)')
                 engraving = (ROOT / "assets" / relative_path).read_text(encoding="utf-8")
                 self.assertIn('viewBox="0 0 240 360"', engraving)
                 self.assertNotIn('<image', engraving)
