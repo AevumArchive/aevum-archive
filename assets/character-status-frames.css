@@ -320,7 +320,7 @@ body.route-characters-all .hall-card.is-active {
 }
 
 body.route-characters-all .hall-card.is-sealed {
-  --hall-engraving: url("hall-of-names/engraved/sealed.svg?v=silver-seals");
+  --hall-engraving: url("hall-of-names/engraved/sealed.svg?v=linked-seals");
   --hall-frame-edge: #8969ab;
   --hall-frame-glow: #a575d958;
   --hall-engraving-light: #c59ee64f;
@@ -365,9 +365,11 @@ body.route-characters-all .hall-card:is(.is-fallen, .is-dead, .is-lost, .is-seal
 }
 
 body.route-characters-all .hall-card.is-retired {
-  --hall-engraving: url("hall-of-names/engraved/retired.svg");
-  --hall-frame-edge: #a5844f;
-  --hall-frame-glow: #c39a5248;
+  --hall-engraving: url("hall-of-names/engraved/retired.svg?v=gilded-drape");
+  --hall-frame-edge: #b18b54;
+  --hall-frame-glow: #cd9b5154;
+  --hall-rune-halo: #ba8b4633;
+  --hall-sigil-etch: #c49b5f61;
 }
 
 body.route-characters-all .hall-card-media {
@@ -440,14 +442,20 @@ body.route-characters-all .hall-card.is-sealed .hall-card-rune {
   text-shadow: 0 0 13px #cd9dfa65;
 }
 
-body.route-characters-all .hall-card:is(.is-lost, .is-sealed) .hall-card-rune {
+body.route-characters-all .hall-card.is-retired .hall-card-rune {
+  color: #efd299;
+  border-color: #cfab6c86;
+  text-shadow: 0 0 13px #dbad6e65;
+}
+
+body.route-characters-all .hall-card:is(.is-lost, .is-sealed, .is-retired) .hall-card-rune {
   position: relative;
   background:
     linear-gradient(45deg, transparent 49.5%, var(--hall-sigil-etch) 50%, transparent 50.5%),
     linear-gradient(-45deg, transparent 49.5%, var(--hall-sigil-etch) 50%, transparent 50.5%);
 }
 
-body.route-characters-all .hall-card:is(.is-lost, .is-sealed) .hall-card-rune::after {
+body.route-characters-all .hall-card:is(.is-lost, .is-sealed, .is-retired) .hall-card-rune::after {
   content: "";
   position: absolute;
   inset: -7px;
@@ -456,7 +464,7 @@ body.route-characters-all .hall-card:is(.is-lost, .is-sealed) .hall-card-rune::a
   pointer-events: none;
 }
 
-body.route-characters-all .hall-card:is(.is-fallen, .is-dead, .is-lost, .is-sealed) .hall-card-rune {
+body.route-characters-all .hall-card:is(.is-fallen, .is-dead, .is-lost, .is-sealed, .is-retired) .hall-card-rune {
   box-shadow: inset 0 0 16px var(--hall-rune-halo), 0 0 28px var(--hall-rune-halo);
 }
 

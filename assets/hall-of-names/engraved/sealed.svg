@@ -30,6 +30,8 @@
       <use href="#link" transform="translate(26 92) rotate(-24)"/>
       <path d="m46 69 3.5 5.5L46 80l-3.5-5.5Z" stroke="#d0a6ec"/>
       <path d="M23 110v-4a6 6 0 0 1 12 0v4" stroke="#c99be9"/>
+      <rect x="26.6" y="96" width="4.8" height="10" rx="2.4"
+            fill="#2b1a3b" stroke="#e0b1f5" stroke-width=".95"/>
       <path d="m20 111 9-3 9 3v9l-9 6-9-6Z" fill="#2b1a3b" stroke="#c396e3"/>
       <path d="M29 114v5m-3-2h6" stroke="#e5bbf9"/>
       <path d="M29 126q-3 21 7 38M14 154l3 5-3 5-3-5Z" stroke="#a175c6"/>

@@ -1,20 +1,42 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 360" fill="none">
   <defs>
-    <g id="drape" stroke-linecap="round">
-      <path d="M8 165V37Q8 9 38 9h41M13 150V39Q13 14 38 14h29"
-            stroke="#a27b46"/>
-      <path d="M10 18C32 13 58 20 83 13C68 33 41 29 22 48Q12 64 11 83Z"
-            fill="#513528" stroke="#b78e55"/>
-      <path d="M15 25C35 19 54 27 79 15M14 38c14-9 32-7 47-13M16 53C23 42 39 37 48 34"
-            stroke="#d0a16a" opacity=".55"/>
-      <path d="M17 53q12 12 7 31m-4 1 4-7 4 7v11h-8Z"
-            stroke="#cca666"/>
-      <path d="m8 163 5 8-5 8-5-8Z" fill="#b38a4d"/>
+    <linearGradient id="gold" x1="15" y1="3" x2="46" y2="243" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f2ce85"/>
+      <stop offset=".22" stop-color="#b88c50"/>
+      <stop offset=".57" stop-color="#c29a60"/>
+      <stop offset=".9" stop-color="#755331"/>
+      <stop offset="1" stop-color="#755331" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="velvet" x1="7" y1="13" x2="62" y2="96" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#64412b"/>
+      <stop offset=".42" stop-color="#38261f"/>
+      <stop offset=".68" stop-color="#5b3a29"/>
+      <stop offset="1" stop-color="#24181a"/>
+    </linearGradient>
+    <g id="drapery" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6 232V30Q6 7 29 7h69M12 200V39Q12 13 35 13h50" stroke="url(#gold)"/>
+      <path d="M13 18C29 12 61 18 99 13 84 26 68 38 47 44 33 48 24 60 20 75l-5 11Z"
+            fill="url(#velvet)" stroke="url(#gold)" stroke-width="1.25"/>
+      <path d="M15 23C38 16 62 24 94 16M15 35c24-11 54-8 74-16M17 50c11-12 29-15 52-22M19 62c8-11 19-17 34-21"
+            stroke="#d8ab6d" opacity=".45"/>
+      <path d="M17 78C23 60 33 50 47 47Q72 40 88 25"
+            stroke="#d5a868" stroke-dasharray="1 2.8"/>
+
+      <circle cx="21" cy="21" r="8" fill="#3d291e" stroke="#e2ba79"/>
+      <circle cx="21" cy="21" r="5.2" stroke="#9d7547"/>
+      <path d="m21 17 4 4-4 4-4-4Z" fill="#dcb376"/>
+      <path d="M22 72q18 13 12 29" stroke="#d3a66e"/>
+      <path d="m34 99 3.5 4.5-3.5 4.5-3.5-4.5Z" fill="#9e7044" stroke="#dfb274"/>
+      <path d="m33 108-3 10m4-10v12m1-12 3 10" stroke="#be925d"/>
+      <path d="M9 164q11 6 11 18t-9 20m1-28 5 7-5 7-5-7Z" stroke="url(#gold)"/>
     </g>
   </defs>
-  <use href="#drape"/>
-  <use href="#drape" transform="translate(240) scale(-1 1)"/>
-  <path d="M84 10h23m26 0h23" stroke="#b68d53"/>
-  <path d="m120 3 11 9-11 9-11-9Z" stroke="#d7ac64"/>
-  <path d="m120 8 4 4-4 4-4-4Z" fill="#e1bd79"/>
+
+  <use href="#drapery"/>
+  <use href="#drapery" transform="translate(240) scale(-1 1)"/>
+  <path d="M80 8h26m28 0h26M97 14h12m22 0h12" stroke="#ae824d"/>
+  <path d="m104 12 16-8 16 8-16 14Z" fill="#3e291c" stroke="#dfb573"/>
+  <path d="m112 13 8-5 8 5-8 7Z" stroke="#bc925a"/>
+  <path d="m120 9 1 3 3 1-3 1-1 3-1-3-3-1 3-1Z" fill="#f2ca84"/>
+  <path d="M120 26v7" stroke="#a77c4c"/>
 </svg>

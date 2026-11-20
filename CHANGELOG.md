@@ -2,6 +2,8 @@
 
 ## 2026-11-20
 
+- Enriched the Retired frames with gilded drapery and connected the Sealed padlocks to their chains.
+
 - Refined the Sealed and Lost / Unknown frames with engraved chains, faceted glass and matching sigils.
 
 - Restored the blue-violet border ornaments and the open sigil for Lost / Unknown on the rounded Hall cards.
