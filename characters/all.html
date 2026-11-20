@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="/aevum-archive/assets/ornament-v3.css?v=20260817-1">
   <link rel="stylesheet" href="/aevum-archive/assets/round4-assets.css?v=20260817-3">
   <link rel="stylesheet" href="/aevum-archive/assets/master-ui.css?v=20260821-2">
-  <link rel="stylesheet" href="/aevum-archive/assets/character-status-frames.css?v=20261120-gilded-drape">
+  <link rel="stylesheet" href="/aevum-archive/assets/character-status-frames.css?v=20261120-hall-register">
   <link rel="stylesheet" href="/aevum-archive/assets/global-header.css?v=20260902-header4">
   <link rel="stylesheet" href="/aevum-archive/assets/halloween.css?v=20261030-allhallows1">
   <script src="/aevum-archive/assets/halloween.js?v=20261030-allhallows1"></script>
@@ -40,23 +40,39 @@
 
     <div class="hall-shell">
       <section class="hall-content" aria-labelledby="hall-title">
-        <div class="hall-heading-row">
+        <header class="hall-heading-row">
           <div class="hall-heading">
-            <p class="hall-kicker">Characters / Hall of Names</p>
+            <p class="hall-kicker"><span aria-hidden="true">✧</span> Character archive <span aria-hidden="true">✧</span></p>
             <h1 id="hall-title">Hall of Names</h1>
-            <p>Every hero, every legacy, every fate — recorded in eternal ink.</p>
-            <nav class="hall-quicklinks" aria-label="Character archive shortcuts"><a href="/aevum-archive/characters/">Current company ↗</a><a href="/aevum-archive/characters/bonds.html">Character Bonds ↗</a></nav>
+            <p>Player characters of Aevum, past and present.</p>
+            <nav class="hall-quicklinks" aria-label="Character archive shortcuts">
+              <a href="/aevum-archive/characters/">Current company <span aria-hidden="true">↗</span></a>
+              <a href="/aevum-archive/characters/bonds.html">Character Bonds <span aria-hidden="true">↗</span></a>
+            </nav>
           </div>
-          <label class="hall-search">
-            <span class="sr-only">Search characters</span>
-            <span aria-hidden="true">⌕</span>
-            <input id="hall-search" type="search" placeholder="Search characters..." autocomplete="off">
-          </label>
-        </div>
+        </header>
 
-        <div class="hall-heading-rule" aria-hidden="true"><span>✧</span></div>
-
-        <div class="hall-toolbar" aria-label="Character controls">
+        <div class="hall-toolbar" role="group" aria-label="Character controls">
+          <div class="hall-toolbar-top">
+            <label class="hall-search">
+              <span class="sr-only">Search characters</span>
+              <span class="hall-search-icon" aria-hidden="true"></span>
+              <input id="hall-search" type="search" placeholder="Search characters…" autocomplete="off">
+            </label>
+            <div class="hall-view-controls">
+              <label class="hall-sort"><span class="sr-only">Sort characters</span>
+                <select id="hall-sort">
+                  <option value="name-asc">Name A–Z</option>
+                  <option value="name-desc">Name Z–A</option>
+                  <option value="status" selected>By status</option>
+                </select>
+              </label>
+              <div class="hall-view-toggle" role="group" aria-label="Card layout">
+                <button class="hall-view is-active" type="button" data-view="grid" aria-label="Grid view" title="Grid view" aria-pressed="true"><span aria-hidden="true"></span></button>
+                <button class="hall-view" type="button" data-view="list" aria-label="List view" title="List view" aria-pressed="false"><span aria-hidden="true"></span></button>
+              </div>
+            </div>
+          </div>
           <div class="hall-filters" role="group" aria-label="Filter by status">
             <button class="hall-filter is-active" type="button" data-filter="all" aria-pressed="true">All <span>26</span></button>
             <button class="hall-filter" type="button" data-filter="active" aria-pressed="false">Active <span>4</span></button>
@@ -64,17 +80,6 @@
             <button class="hall-filter" type="button" data-filter="fallen" aria-pressed="false">Fallen <span>8</span></button>
             <button class="hall-filter" type="button" data-filter="lost" aria-pressed="false">Lost / Unknown <span>5</span></button>
             <button class="hall-filter" type="button" data-filter="retired" aria-pressed="false">Retired <span>4</span></button>
-          </div>
-          <div class="hall-view-controls">
-            <label class="hall-sort">Sort:
-              <select id="hall-sort">
-                <option value="name-asc">Name A-Z</option>
-                <option value="name-desc">Name Z-A</option>
-                <option value="status" selected>Status</option>
-              </select>
-            </label>
-            <button class="hall-view is-active" type="button" data-view="grid" aria-label="Grid view" aria-pressed="true">&#9638;</button>
-            <button class="hall-view" type="button" data-view="list" aria-label="List view" aria-pressed="false">&#9776;</button>
           </div>
         </div>
 

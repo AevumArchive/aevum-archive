@@ -2,6 +2,8 @@
 
 ## 2026-11-20
 
+- Refreshed the Hall of Names page with a new title treatment, unified search and filters, and updated pagination.
+
 - Enriched the Retired frames with gilded drapery and connected the Sealed padlocks to their chains.
 
 - Refined the Sealed and Lost / Unknown frames with engraved chains, faceted glass and matching sigils.
