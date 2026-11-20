@@ -324,7 +324,7 @@ body.route-characters-all .hall-card.is-sealed {
 }
 
 body.route-characters-all .hall-card:is(.is-fallen, .is-dead) {
-  --hall-engraving: url("hall-of-names/engraved/fallen.svg?v=broken-crown");
+  --hall-engraving: url("hall-of-names/engraved/fallen.svg?v=rounded");
   --hall-frame-edge: #96616a;
   --hall-frame-glow: #d2475a61;
   --hall-engraving-light: #ff827768;
@@ -527,7 +527,8 @@ body.route-characters-all .hall-card.character-card.status-card.is-sealed {
 
 body.route-characters-all .hall-card.character-card.status-card.is-fallen,
 body.route-characters-all .hall-card.character-card.status-card.is-dead {
-  border-color: transparent !important;
+  border-color: #52323d !important;
+  border-radius: 18px !important;
   background: radial-gradient(circle at 50% 25%, rgba(134, 30, 39, .2), transparent 44%), linear-gradient(180deg, rgba(33, 16, 19, .84), rgba(10, 5, 7, .99)) !important;
 }
 
@@ -570,6 +571,10 @@ body.route-characters-all .hall-card-grid.is-list .hall-card-overlay::before {
   outline: 0;
   mask-image: none;
   opacity: .5;
+}
+
+body.route-characters-all .hall-card-grid.is-list .hall-card:is(.is-fallen, .is-dead) .hall-card-overlay::before {
+  border-radius: 12px;
 }
 
 body.route-characters-all .hall-card-grid.is-list .hall-card:is(.is-fallen, .is-dead) .hall-card-media {

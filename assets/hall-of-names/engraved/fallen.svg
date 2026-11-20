@@ -25,7 +25,8 @@
   </defs>
 
   <!-- Carved sides of an arch, broken apart at the apex. -->
-  <path d="M5 30V5h57m116 0h57v25M5 330v25h72m86 0h72v-25" stroke="#62424c"/>
+  <path d="M5 30V20Q5 5 20 5h42m116 0h42q15 0 15 15v10M5 330v10q0 15 15 15h57m86 0h57q15 0 15-15v-10"
+        stroke="#62424c"/>
   <use href="#pillar"/>
   <use href="#pillar" transform="translate(240) scale(-1 1)"/>
   <path d="M43 353h52l9-5h32l9 5h52" stroke="#734956" opacity=".8"/>

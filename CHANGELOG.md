@@ -2,7 +2,7 @@
 
 ## 2026-11-20
 
-- Redesigned Fallen cards with a split crown, a dark iron arch and glowing cracks.
+- Redesigned Fallen cards with rounded corners, a split crown, a dark iron arch and glowing cracks.
 
 - Added ember highlights to Fallen cards and a blue-violet glow to Lost / Unknown cards in the Hall of Names.
 
