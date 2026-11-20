@@ -324,11 +324,15 @@ body.route-characters-all .hall-card.is-sealed {
 }
 
 body.route-characters-all .hall-card:is(.is-fallen, .is-dead) {
-  --hall-engraving: url("hall-of-names/engraved/fallen.svg?v=glow1");
+  --hall-engraving: url("hall-of-names/engraved/fallen.svg?v=broken-crown");
   --hall-frame-edge: #96616a;
   --hall-frame-glow: #d2475a61;
   --hall-engraving-light: #ff827768;
-  --hall-rune-halo: #b3364e38;
+  --hall-rune-halo: #bc3e5540;
+}
+
+body.route-characters-all .hall-card:is(.is-fallen, .is-dead) .hall-card-overlay::before {
+  content: none;
 }
 
 body.route-characters-all .hall-card.is-lost {
@@ -396,6 +400,29 @@ body.route-characters-all .hall-card.is-active .hall-card-media {
 body.route-characters-all .hall-card.is-active .hall-card-rune {
   color: rgba(119, 202, 136, .74);
   border-color: rgba(105, 194, 124, .32);
+}
+
+body.route-characters-all .hall-card:is(.is-fallen, .is-dead) .hall-card-media {
+  padding-top: 45px;
+  background: radial-gradient(ellipse at 50% 23%, #a0434e29, transparent 57%),
+              linear-gradient(180deg, #150d13, transparent);
+}
+
+body.route-characters-all .hall-card:is(.is-fallen, .is-dead) .hall-card-rune {
+  position: relative;
+  color: #e6ae93;
+  border-color: #d283765c;
+  background: radial-gradient(circle at 50% 75%, #81334642, #100a10 74%);
+  text-shadow: 0 0 15px #e57b7880;
+}
+
+body.route-characters-all .hall-card:is(.is-fallen, .is-dead) .hall-card-rune::after {
+  content: "";
+  position: absolute;
+  inset: -7px;
+  border: 1px solid #bf716433;
+  border-inline-color: transparent;
+  border-radius: 50%;
 }
 
 body.route-characters-all .hall-card.is-lost .hall-card-rune {
@@ -538,10 +565,15 @@ body.route-characters-all .hall-card-grid.is-list .hall-card-media { min-height:
 body.route-characters-all .hall-card-grid.is-list .hall-card-copy { min-height: 132px; }
 
 body.route-characters-all .hall-card-grid.is-list .hall-card-overlay::before {
+  content: "";
   inset: 5px;
   outline: 0;
   mask-image: none;
   opacity: .5;
+}
+
+body.route-characters-all .hall-card-grid.is-list .hall-card:is(.is-fallen, .is-dead) .hall-card-media {
+  padding-top: 16px;
 }
 
 body.route-characters-all .hall-card-grid.is-list .hall-card-overlay::after {
