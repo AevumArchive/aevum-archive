@@ -1,44 +1,33 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 360" fill="none">
   <defs>
-    <linearGradient id="iron" x1="0" y1="18" x2="0" y2="346" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#b69a91"/>
-      <stop offset=".23" stop-color="#75545a"/>
-      <stop offset=".52" stop-color="#66323c"/>
-      <stop offset=".8" stop-color="#34232b"/>
-      <stop offset="1" stop-color="#74515b"/>
+    <linearGradient id="stone" x2="0%" y2="100%">
+      <stop stop-color="#231619"/>
+      <stop offset=".48" stop-color="#3e1a22"/>
+      <stop offset="1" stop-color="#1a0d13"/>
     </linearGradient>
-    <linearGradient id="stone" x1="0" x2="56" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#3b2b31"/>
-      <stop offset="1" stop-color="#161015"/>
+    <linearGradient id="edge" x2="0%" y2="100%">
+      <stop stop-color="#aa776d"/>
+      <stop offset=".48" stop-color="#7e424c"/>
+      <stop offset="1" stop-color="#462632"/>
     </linearGradient>
-    <g id="pillar">
-      <path d="M5 338V128C5 75 37 30 104 16L109 24C54 38 25 79 24 128V167L18 178V312L23 330H17L11 320V182L15 169V127C15 82 40 48 78 31C34 50 9 86 9 128V338Z"
-            fill="url(#stone)" stroke="url(#iron)" stroke-width="1.1"/>
-      <path d="M28 161V128C28 88 48 57 84 40M12 190V316M5 330l11 8h14m5 5h18"
-            stroke="url(#iron)" opacity=".68"/>
-      <path d="m17 89 7 1-3 8 8 3-5 10m10-59 8 3-4 7 8 3"
-            stroke="#e66b62" stroke-width="1.2" stroke-linejoin="bevel"/>
-      <path d="m9 155 11 5-5 12m-8 96 7 8-4 8"
-            stroke="#b65a5e" stroke-width=".9"/>
-      <path d="M38 78l2 4-3 2Zm-4 43 2 2-2 4Zm4 30 1.6 3-3 1Z" fill="#dc7666" opacity=".56"/>
+    <g id="ember">
+      <path d="M31 109c-4-4 2-8 1-12 4 5 4 9-1 12Z" fill="#df8170"/>
+      <path d="M31 104v13m-6 0h12m-9 4h6m-3 4v20" stroke="#a76359"/>
+      <path d="m31 149 2.5 4-2.5 4-2.5-4Z" fill="#824550"/>
     </g>
   </defs>
 
-  <!-- Carved sides of an arch, broken apart at the apex. -->
-  <path d="M5 30V20Q5 5 20 5h42m116 0h42q15 0 15 15v10M5 330v10q0 15 15 15h57m86 0h57q15 0 15-15v-10"
-        stroke="#62424c"/>
-  <use href="#pillar"/>
-  <use href="#pillar" transform="translate(240) scale(-1 1)"/>
-  <path d="M43 353h52l9-5h32l9 5h52" stroke="#734956" opacity=".8"/>
-  <path d="m120 346 4 4-4 4-4-4Z" fill="#aa605f"/>
+  <!-- A carved memorial slab with a shallow, red-lit bevel. -->
+  <path d="m74 31 46-13 46 13 12 24v107l-15 25-43 15-43-15-15-25V55Z"
+        fill="url(#stone)" stroke="url(#edge)" stroke-width="1.4"/>
+  <path d="m81 39 39-12 39 12 10 19v101l-13 20-36 13-36-13-13-20V58Z"
+        stroke="url(#edge)" opacity=".72"/>
+  <path d="M120 35v16m-6-8h12m-6 124v15m-7-8h14"
+        stroke="#b57870" stroke-linecap="round"/>
+  <path d="M107 34h-9m35 0h9m-35 150h-9m35 0h9" stroke="#87514f"/>
 
-  <!-- Split crown and a few chips suspended in the opening. -->
-  <g stroke-linejoin="bevel">
-    <path d="m86 42 19 9-1-23 12 13 7-3-7 13 2 13-21 2Z" fill="#2d171d" stroke="#c5706e"/>
-    <path d="m126 38 9-13 2 24 18-12-7 26-23 2-3-12 7-10Z" fill="#3f1a20" stroke="#d17b74"/>
-    <path d="m93 46 12 9-1-27m51 9-18 15-2-27m-12 13-7 13 2 13m8-26 3 5-7 10 3 12"
-          stroke="#ff9a84" stroke-opacity=".76"/>
-    <path d="m97 70 22-2m7 1 22-2" stroke="#ad6266"/>
-    <path d="m117 76 6-2-2 7Zm4 10 3 3-5 2Zm35-31 4-3-1 6Z" fill="#e98774" opacity=".75"/>
-  </g>
+  <use href="#ember"/>
+  <use href="#ember" transform="translate(240) scale(-1 1)"/>
+  <path d="M78 213h24l9 5h18l9-5h24" stroke="#80434b"/>
+  <circle cx="120" cy="218" r="2" fill="#c37970"/>
 </svg>

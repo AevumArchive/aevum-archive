@@ -227,6 +227,7 @@ body.route-characters-all .hall-card-grid {
 }
 
 body.route-characters-all .hall-card.character-card.status-card {
+  --hall-card-radius: 18px;
   position: relative !important;
   isolation: isolate;
   overflow: hidden !important;
@@ -237,8 +238,8 @@ body.route-characters-all .hall-card.character-card.status-card {
   padding: 0 !important;
   display: flex;
   flex-direction: column;
-  border: 1px solid transparent !important;
-  border-radius: 2px !important;
+  border: 1px solid color-mix(in srgb, var(--hall-frame-edge, #be9d73) 44%, #120e19) !important;
+  border-radius: var(--hall-card-radius) !important;
   outline: 0 !important;
   color: #f2e9e6 !important;
   background:
@@ -299,6 +300,7 @@ body.route-characters-all .hall-card-overlay::after {
 body.route-characters-all .hall-card-overlay::before {
   inset: 8px;
   border: 1px solid var(--hall-frame-edge, #be9d73);
+  border-radius: calc(var(--hall-card-radius) - 8px);
   outline: 1px solid var(--hall-frame-glow, #be9d7338);
   outline-offset: 3px;
   box-shadow: inset 0 0 14px var(--hall-frame-glow, #be9d7338);
@@ -306,7 +308,7 @@ body.route-characters-all .hall-card-overlay::before {
 }
 
 body.route-characters-all .hall-card-overlay::after {
-  inset: 0;
+  inset: 4px;
   background: var(--hall-engraving, none) top center / 100% 100% no-repeat;
   filter: drop-shadow(0 0 5px var(--hall-frame-glow, #be9d7338));
 }
@@ -324,23 +326,27 @@ body.route-characters-all .hall-card.is-sealed {
 }
 
 body.route-characters-all .hall-card:is(.is-fallen, .is-dead) {
-  --hall-engraving: url("hall-of-names/engraved/fallen.svg?v=rounded");
+  --hall-engraving: url("hall-of-names/engraved/fallen.svg?v=memorial");
   --hall-frame-edge: #96616a;
   --hall-frame-glow: #d2475a61;
   --hall-engraving-light: #ff827768;
   --hall-rune-halo: #bc3e5540;
 }
 
-body.route-characters-all .hall-card:is(.is-fallen, .is-dead) .hall-card-overlay::before {
-  content: none;
-}
-
 body.route-characters-all .hall-card.is-lost {
-  --hall-engraving: url("hall-of-names/engraved/lost.svg?v=glow1");
+  --hall-engraving: url("hall-of-names/engraved/lost.svg?v=star-chart");
   --hall-frame-edge: #8196c2;
   --hall-frame-glow: #9d85f065;
   --hall-engraving-light: #98e6ff80;
   --hall-rune-halo: #8059d342;
+}
+
+body.route-characters-all .hall-card:is(.is-fallen, .is-dead, .is-lost) .hall-card-overlay {
+  z-index: 0 !important;
+}
+
+body.route-characters-all .hall-card:is(.is-fallen, .is-dead, .is-lost) .hall-card-overlay::before {
+  opacity: .38;
 }
 
 body.route-characters-all .hall-card:is(.is-fallen, .is-dead, .is-lost) .hall-card-overlay::after {
@@ -403,31 +409,25 @@ body.route-characters-all .hall-card.is-active .hall-card-rune {
 }
 
 body.route-characters-all .hall-card:is(.is-fallen, .is-dead) .hall-card-media {
-  padding-top: 45px;
-  background: radial-gradient(ellipse at 50% 23%, #a0434e29, transparent 57%),
-              linear-gradient(180deg, #150d13, transparent);
+  background: radial-gradient(ellipse at 50% 46%, #ac394830, transparent 62%);
 }
 
 body.route-characters-all .hall-card:is(.is-fallen, .is-dead) .hall-card-rune {
-  position: relative;
   color: #e6ae93;
-  border-color: #d283765c;
-  background: radial-gradient(circle at 50% 75%, #81334642, #100a10 74%);
+  border-color: #d283767f;
+  border-radius: 15px 15px 27px 27px;
+  background: linear-gradient(150deg, #3c2026, #180e16 65%);
   text-shadow: 0 0 15px #e57b7880;
 }
 
-body.route-characters-all .hall-card:is(.is-fallen, .is-dead) .hall-card-rune::after {
-  content: "";
-  position: absolute;
-  inset: -7px;
-  border: 1px solid #bf716433;
-  border-inline-color: transparent;
-  border-radius: 50%;
+body.route-characters-all .hall-card.is-lost .hall-card-media {
+  background: radial-gradient(circle at 50% 50%, #7b67b324, transparent 57%);
 }
 
 body.route-characters-all .hall-card.is-lost .hall-card-rune {
-  color: rgba(136, 221, 229, .78);
-  border-color: rgba(104, 202, 215, .44);
+  color: #b1e5f3;
+  border-color: #97c7ef95;
+  background: radial-gradient(circle at 38% 33%, #30375a, #0e0d22 74%);
   text-shadow: 0 0 13px #99dfff70;
 }
 
@@ -516,33 +516,26 @@ body.route-characters-all .hall-card:focus-visible {
 }
 
 body.route-characters-all .hall-card.character-card.status-card.is-active {
-  border-color: transparent !important;
   background: radial-gradient(circle at 50% 28%, rgba(45, 105, 68, .16), transparent 42%), linear-gradient(180deg, rgba(23, 28, 28, .78), rgba(6, 9, 9, .98)) !important;
 }
 
 body.route-characters-all .hall-card.character-card.status-card.is-sealed {
-  border-color: transparent !important;
   background: radial-gradient(circle at 50% 26%, rgba(116, 66, 150, .2), transparent 43%), linear-gradient(180deg, rgba(28, 19, 35, .82), rgba(8, 6, 12, .98)) !important;
 }
 
 body.route-characters-all .hall-card.character-card.status-card.is-fallen,
 body.route-characters-all .hall-card.character-card.status-card.is-dead {
-  border-color: #52323d !important;
-  border-radius: 18px !important;
   background: radial-gradient(circle at 50% 25%, rgba(134, 30, 39, .2), transparent 44%), linear-gradient(180deg, rgba(33, 16, 19, .84), rgba(10, 5, 7, .99)) !important;
 }
 
 body.route-characters-all .hall-card.character-card.status-card.is-retired {
-  border-color: transparent !important;
   background: radial-gradient(circle at 50% 24%, rgba(141, 96, 39, .18), transparent 43%), linear-gradient(180deg, rgba(31, 25, 20, .82), rgba(9, 7, 6, .98)) !important;
 }
 
 body.route-characters-all .hall-card.character-card.status-card.is-lost {
-  border-color: transparent !important;
   background: radial-gradient(circle at 50% 26%, rgba(75, 91, 150, .22), transparent 44%), linear-gradient(145deg, rgba(15, 24, 31, .88), rgba(13, 8, 23, .98)) !important;
 }
 body.route-characters-all .hall-card.character-card.status-card.is-unknown {
-  border-color: transparent !important;
   background: radial-gradient(circle at 50% 25%, rgba(174, 120, 57, .2), transparent 44%), linear-gradient(145deg, rgba(29, 23, 22, .88), rgba(11, 9, 13, .98)) !important;
 }
 
@@ -566,19 +559,11 @@ body.route-characters-all .hall-card-grid.is-list .hall-card-media { min-height:
 body.route-characters-all .hall-card-grid.is-list .hall-card-copy { min-height: 132px; }
 
 body.route-characters-all .hall-card-grid.is-list .hall-card-overlay::before {
-  content: "";
   inset: 5px;
+  border-radius: calc(var(--hall-card-radius) - 5px);
   outline: 0;
   mask-image: none;
   opacity: .5;
-}
-
-body.route-characters-all .hall-card-grid.is-list .hall-card:is(.is-fallen, .is-dead) .hall-card-overlay::before {
-  border-radius: 12px;
-}
-
-body.route-characters-all .hall-card-grid.is-list .hall-card:is(.is-fallen, .is-dead) .hall-card-media {
-  padding-top: 16px;
 }
 
 body.route-characters-all .hall-card-grid.is-list .hall-card-overlay::after {
