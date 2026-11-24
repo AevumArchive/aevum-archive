@@ -417,34 +417,98 @@ body.route-npcs .npc-directory .npc-feature-ledger,
 body.route-npcs .npc-directory .npc-divine-ledger { margin-top: 28px; }
 body.route-npcs .npc-directory #silver-monarch .npc-compact-grid { grid-template-columns: 1fr; }
 
-body.route-npcs .npc-directory #sovereigns .npc-compact-grid .npc-feature-kaede {
+body.route-npcs .npc-directory #contained-records .npc-feature-kaede {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(64px, .45fr);
+  grid-template-rows: 1fr auto;
+  align-items: center;
+  gap: 14px 22px;
+  min-height: 225px;
+  padding: clamp(20px, 2.5vw, 34px);
+  overflow: hidden;
+  border: 1px solid #a389b78c;
+  border-radius: 12px;
+  background: radial-gradient(ellipse at 82% 41%, #463150, transparent 51%),
+              linear-gradient(145deg, #1b1422, #100e16 68%);
+  box-shadow: inset 0 0 22px #a781c20d;
+}
+
+body.route-npcs .npc-directory #contained-records .npc-feature-kaede::before {
+  inset: 7px;
+  width: auto;
+  border: 1px solid #c7a4da30;
+  border-radius: 6px;
+  background: none;
+  pointer-events: none;
+}
+
+body.route-npcs .npc-directory #contained-records .npc-feature-kaede:hover {
+  border-color: #d3afe9;
+}
+
+body.route-npcs .npc-directory .kaede-card-copy { min-width: 0; }
+
+body.route-npcs .npc-directory .kaede-card-copy h3 {
+  margin: 0 0 12px;
+  color: #f2e6f5;
+  font: 400 clamp(2rem, 3vw, 3.25rem)/1 Georgia, serif;
+}
+
+body.route-npcs .npc-directory .kaede-card-quote {
+  margin: 0 0 15px;
+  padding-left: 10px;
+  border-left: 1px solid #b995cb8f;
+  color: #e0cfe7;
+  font: italic clamp(.94rem, 1.2vw, 1.1rem)/1.55 Georgia, serif;
+}
+
+body.route-npcs .npc-directory .kaede-card-quote span { color: #c4a9da; }
+
+body.route-npcs .npc-directory .kaede-card-copy .meta-row {
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin: 0;
+}
+
+.kaede-card-book {
+  position: relative;
+  display: grid;
+  place-items: center;
+  justify-self: center;
+  width: clamp(56px, 8vw, 100px);
+  aspect-ratio: 7 / 9;
+  transform: rotate(12deg);
+  border: 1px solid #c5a1d89a;
+  border-left: 5px solid #66516f;
+  border-radius: 3px 6px 6px 3px;
+  color: #e1bffc;
+  background: radial-gradient(ellipse at 55% 50%, #372440, #120d18 65%);
+  box-shadow: inset 0 0 0 5px #1a1220, inset 0 0 0 6px #b28cc451,
+              0 4px 0 #a089ac6b, 0 13px 26px #09060db5;
+  font: 1.65rem/1 Georgia, serif;
+  text-shadow: 0 0 14px #cb88ff;
+}
+
+.kaede-card-book::after {
+  content: "";
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 15%;
+  width: 6px;
+  height: 10px;
+  background: #9c6aad;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 75%, 0 100%);
+}
+
+.kaede-card-open {
   grid-column: 1 / -1;
-  min-height: 205px;
-  padding-right: 34%;
-  border-color: #b4a2c34f;
-  background: radial-gradient(ellipse at 82% 25%, #67557b38, transparent 54%), #14121a;
-}
-
-body.route-npcs .npc-directory #sovereigns .npc-feature-kaede::before {
-  inset: 12% 8% 18% auto;
-  width: min(24%, 200px);
-  height: auto;
-  border: 1px solid #baa6cf55;
-  background: repeating-linear-gradient(165deg, transparent 0 12px, #b8a3cb2c 12px 13px);
-  transform: skew(-14deg);
-  mask-image: linear-gradient(90deg, transparent, #000 38%, #000 72%, transparent);
-}
-
-body.route-npcs .npc-directory #sovereigns .npc-feature-kaede .realm-symbol {
-  color: #dbc9ed;
-  border-color: #bba2cf71;
-}
-
-@media (max-width: 650px) {
-  body.route-npcs .npc-directory #sovereigns .npc-compact-grid .npc-feature-kaede {
-    padding-right: 20px;
-  }
-  body.route-npcs .npc-directory #sovereigns .npc-feature-kaede::before { opacity: .25; }
+  justify-self: end;
+  color: #d8bdeb;
+  font: 600 .69rem/1.5 system-ui, sans-serif;
+  letter-spacing: .11em;
+  text-transform: uppercase;
 }
 
 @media (max-width: 1120px) {

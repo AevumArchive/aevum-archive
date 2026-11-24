@@ -65,9 +65,13 @@ class NpcDirectoryTest(unittest.TestCase):
         self.assertIn('<strong>All NPCs</strong><small>8 shelves</small>', self.page)
         self.assertRegex(self.page, r'<strong>50</strong>\s*<span>NPCs discovered</span>')
         major_shelf = self.page.split('id="sovereigns"', 1)[1].split('</section>', 1)[0]
-        self.assertIn('href="/aevum-archive/npcs/kaede.html"', major_shelf)
-        self.assertIn('<strong>Restricted</strong><small>5 records</small>', self.page)
+        kaede = 'href="/aevum-archive/npcs/kaede.html"'
+        self.assertNotIn(kaede, major_shelf)
+        self.assertIn('<strong>Major Presences</strong><small>2 records</small>', self.page)
+        self.assertIn('<strong>Restricted</strong><small>6 records</small>', self.page)
         restricted = self.page.split('id="contained-records"', 1)[1].split('</section>', 1)[0]
+        self.assertIn(kaede, restricted)
+        self.assertEqual(self.page.count(kaede), 1)
         faceless = 'href="/aevum-archive/npcs/the-faceless.html"'
         self.assertIn(faceless, restricted)
         self.assertEqual(self.page.count(faceless), 1)

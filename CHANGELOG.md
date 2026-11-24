@@ -2,6 +2,8 @@
 
 ## 2026-11-24
 
+- Moved Kaede to the Restricted Archive and redesigned her card around her journal.
+
 - Added Kaede to Exceptional Presences with her portrait, Continuity Scar, Echo Recall, Afterimage, Déjà Vu and The Same Book.
 
 ## 2026-11-20
