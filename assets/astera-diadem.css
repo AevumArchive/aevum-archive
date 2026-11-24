@@ -1,0 +1,268 @@
+/* Starglass and moonlight for Astera's relic record. */
+.astera-diadem {
+  --diadem-silver: #e5eaff;
+  --diadem-line: #a8a7ed44;
+  position: relative;
+  margin-top: clamp(50px, 7vw, 108px);
+  scroll-margin-top: 24px;
+  border: 1px solid var(--diadem-line);
+  border-radius: 9px;
+  overflow: hidden;
+  background: #0c0b16;
+  box-shadow: 0 24px 84px #05040c80;
+}
+
+.diadem-showcase {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  background:
+    radial-gradient(ellipse at 77% 45%, #26224d, transparent 62%),
+    linear-gradient(150deg, #171124, #0a0913 72%);
+}
+
+.diadem-intro {
+  padding: clamp(28px, 5vw, 82px);
+}
+
+.diadem-intro .eyebrow > span {
+  margin-inline-end: 6px;
+  color: #e4d9ff;
+}
+
+.astera-dossier .diadem-intro h2 {
+  margin: 18px 0 22px;
+  font: 400 clamp(2.7rem, 5.4vw, 5.75rem)/1.02 Georgia, serif;
+  letter-spacing: -.04em;
+}
+
+.diadem-intro h2 em {
+  display: block;
+  color: var(--diadem-silver);
+  text-shadow: 0 0 33px #a3a7ff55;
+}
+
+.astera-dossier .diadem-inscription {
+  max-width: 33ch;
+  margin: 0;
+  color: #d6c9e7;
+  font: italic clamp(1.1rem, 1.75vw, 1.44rem)/1.6 Georgia, serif;
+}
+
+.diadem-details {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: clamp(22px, 4vw, 56px);
+  row-gap: 16px;
+  margin: 30px 0 0;
+  padding-top: 20px;
+  border-top: 1px solid var(--diadem-line);
+}
+
+.diadem-details dt, .diadem-stats dt, .diadem-phases small {
+  color: #c5bcdd;
+  font: 500 .68rem/1.55 system-ui, sans-serif;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.diadem-details dd { margin: 5px 0 0; color: var(--diadem-silver); }
+
+.diadem-visual {
+  position: relative;
+  isolation: isolate;
+  width: min(95%, 600px);
+  aspect-ratio: 6 / 5;
+  justify-self: center;
+}
+
+.diadem-chart {
+  position: absolute;
+  inset: 4% 9%;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 18% 25%, #d2c6f5 0 1px, transparent 2px),
+    radial-gradient(circle at 84% 32%, #e1e8ff 0 1px, transparent 2px),
+    radial-gradient(circle at 23% 73%, #bdacf4 0 1px, transparent 2px),
+    radial-gradient(circle at 76% 78%, #e1e8ff 0 1px, transparent 2px),
+    radial-gradient(circle at 56% 16%, #d2c6f5 0 1px, transparent 2px),
+    radial-gradient(circle at 44% 92%, #9f98dc 0 1px, transparent 2px),
+    repeating-radial-gradient(circle closest-side, transparent 0 21%, #b6b8fb28 21.2% 21.6%, transparent 21.8% 25%),
+    radial-gradient(circle closest-side, #706caf55, transparent 100%);
+}
+
+.diadem-chart::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background:
+    repeating-conic-gradient(from 1deg, #b6b8fb77 0deg .55deg, transparent .55deg 7.5deg);
+  mask-image: radial-gradient(circle closest-side, transparent 96%, black 96.5% 99%, transparent 99.4%);
+}
+
+.diadem-orbit {
+  position: absolute;
+  inset: 8% 14% auto;
+  aspect-ratio: 1;
+  transform: rotate(-17deg) scaleY(.37);
+}
+
+.diadem-orbit > div {
+  position: absolute;
+  inset: 0;
+  animation: diadem-revolve 13s linear infinite paused;
+}
+
+.diadem-orbit > div::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid #b8b8f37d;
+  border-radius: 50%;
+  background: conic-gradient(from 45deg, transparent 54%, #a6a7ed4d 80%, #f3efff 100%);
+  mask-image: radial-gradient(closest-side, transparent 98.5%, black 99%);
+}
+
+.diadem-orbit > div::after {
+  content: "";
+  position: absolute;
+  top: 14.65%;
+  left: 85.35%;
+  width: 9%;
+  height: 15%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(ellipse, #fff 0 12%, #d9deff 20%, #a69df5aa 42%, transparent 72%);
+}
+
+.diadem-orbit-front { z-index: 2; clip-path: inset(50% -16px -18px); }
+.diadem-orbit:not(.diadem-orbit-front) { clip-path: inset(-18px -16px 50%); }
+.diadem-visual.is-in-view .diadem-orbit > div,
+.diadem-visual.is-in-view .diadem-crown { animation-play-state: running; }
+
+.diadem-crown {
+  position: absolute;
+  z-index: 1;
+  inset: 25% 23% 27%;
+  filter: drop-shadow(0 0 11px #a7a9f4a0);
+  animation: diadem-float 7s ease-in-out infinite paused;
+}
+
+.diadem-crown::before {
+  content: "";
+  position: absolute;
+  inset: 37% 0 15%;
+  border-radius: 50%;
+  border: 1px solid #b4b8f188;
+  border-bottom: 3px double #eef0ff;
+  box-shadow: 0 5px 19px #b0a6fc5c;
+}
+
+.diadem-shard {
+  position: absolute;
+  inset: auto auto var(--seat, 20%) var(--offset, 42%);
+  width: var(--blade-width, 16%);
+  height: var(--blade-height, 80%);
+  clip-path: polygon(50% 0, 96% 47%, 51% 100%, 4% 50%);
+  transform: rotate(var(--cant, 0deg));
+  background:
+    linear-gradient(143deg, transparent 52%, #cbd6ff80 53%, transparent 55%),
+    linear-gradient(34deg, #16122b 0 19%, transparent 35%, #bbadf4aa 70%, #f0eaff 90%),
+    linear-gradient(90deg, #8b85c9, #d8d7ff 49%, #56519b 51%, #211c47 87%, #c5d7fe);
+}
+
+.diadem-shard:nth-child(1) { --offset: 3%; --seat: 34%; --blade-width: 11%; --blade-height: 31%; --cant: -47deg; }
+.diadem-shard:nth-child(2) { --offset: 15%; --seat: 26%; --blade-width: 12%; --blade-height: 43%; --cant: -35deg; }
+.diadem-shard:nth-child(3) { --offset: 28%; --seat: 21%; --blade-width: 13%; --blade-height: 58%; --cant: -21deg; }
+.diadem-shard:nth-child(5) { --offset: 59%; --seat: 21%; --blade-width: 13%; --blade-height: 58%; --cant: 21deg; }
+.diadem-shard:nth-child(6) { --offset: 73%; --seat: 26%; --blade-width: 12%; --blade-height: 43%; --cant: 35deg; }
+.diadem-shard:nth-child(7) { --offset: 86%; --seat: 34%; --blade-width: 11%; --blade-height: 31%; --cant: 47deg; }
+
+@keyframes diadem-revolve { to { transform: rotate(1turn); } }
+@keyframes diadem-float { 50% { transform: translateY(-3.5%); } }
+
+.diadem-modes {
+  display: grid;
+  grid-template-columns: minmax(0, .88fr) minmax(0, 1.12fr);
+  border-top: 1px solid var(--diadem-line);
+}
+
+.diadem-mode { padding: clamp(26px, 4vw, 56px); }
+.diadem-worn { background: radial-gradient(ellipse at 0 0, #201a32, transparent 86%); }
+.diadem-shrine {
+  border-left: 1px solid var(--diadem-line);
+  background: radial-gradient(ellipse at 100% 0, #1d1e3e, transparent 88%);
+}
+
+.astera-dossier .diadem-mode h3 {
+  margin: 0 0 16px;
+  font: 400 clamp(1.85rem, 3.3vw, 3.1rem)/1.12 Georgia, serif;
+  letter-spacing: -.025em;
+}
+
+.diadem-mode h3 > span { color: #c9c4ff; }
+.diadem-mode > p { margin: 0; }
+
+.diadem-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 26px 0 15px;
+}
+
+.diadem-stats > div {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 7px;
+  padding: clamp(12px, 2.2vw, 24px);
+  border: 1px solid var(--diadem-line);
+  background: linear-gradient(145deg, #aaa7ef22, #aaa7ef08 72%);
+}
+
+.diadem-stats dd {
+  margin: 0;
+  color: var(--diadem-silver);
+  font: 400 clamp(1.9rem, 4vw, 4rem)/1 Georgia, serif;
+  font-variant-numeric: lining-nums;
+  text-shadow: 0 0 20px #abaaff61;
+}
+
+.astera-dossier .diadem-radius {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 12px 0 0;
+  color: #d6cbe8;
+  font-size: .95rem;
+}
+
+.diadem-radius strong { color: #e5d7ff; font: 400 1.7rem/1.15 Georgia, serif; }
+
+.diadem-stones { margin: 25px 0 0; }
+.diadem-stones > div { padding: 18px 0; border-top: 1px solid var(--diadem-line); }
+.diadem-stones > div:last-child { padding-bottom: 0; }
+.diadem-stones dt { color: var(--diadem-silver); font: 400 1.35rem/1.3 Georgia, serif; }
+.diadem-stones dd { margin: 5px 0 0; color: #c0b2cb; font-size: 1.02rem; line-height: 1.7; }
+.astera-dossier .diadem-stones p { margin: 0; font-size: inherit; line-height: inherit; }
+
+.diadem-phases { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: 12px; }
+.diadem-phases > span { padding: 9px 12px; border-left: 1px solid; }
+.diadem-phases small { display: block; color: inherit; }
+.diadem-phases > span:first-child { color: #edd6aa; background: #c7a25f13; }
+.diadem-phases > span:last-child { color: #d4d2ff; background: #958ded18; }
+
+@media (max-width: 760px) {
+  .diadem-showcase, .diadem-modes { grid-template-columns: minmax(0, 1fr); }
+  .diadem-visual { width: min(90%, 390px); }
+  .diadem-shrine { border-left: 0; border-top: 1px solid var(--diadem-line); }
+}
+
+@media (max-width: 370px) {
+  .diadem-mode, .diadem-intro { padding-inline: 20px; }
+  .diadem-phases { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .diadem-crown, .diadem-orbit > div { animation: none; }
+}

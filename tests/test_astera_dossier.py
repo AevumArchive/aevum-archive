@@ -49,7 +49,20 @@ class AsteraDossierTest(unittest.TestCase):
         parsed.feed(self.page)
         self.assertEqual(len(parsed.ids), len(set(parsed.ids)))
         self.assertTrue(set(parsed.fragments).issubset(set(parsed.ids)))
-        self.assertEqual(len(re.findall(r'<a href="#', self.page.split('class="astral-chapters"')[1].split('</nav>')[0])), 7)
+        chapters = self.page.split('class="astral-chapters"')[1].split('</nav>')[0]
+        self.assertEqual(len(re.findall(r'<a href="#', chapters)), 8)
+        self.assertIn('href="#diadem-of-the-silent-orbit"', chapters)
+
+    def test_diadem_keeps_worn_and_shrine_effects_distinct(self):
+        worn, shrine = re.findall(r'<article class="diadem-mode .*?</article>', self.page, re.S)
+        for phrase in ('Power Level 2,500', 'Magical Power</dt><dd>+529',
+                       'Elemental Power</dt><dd>+380', '+11%</strong> effect radius'):
+            self.assertIn(phrase, worn)
+        for phrase in ('250 blocks', 'Bedrock than on Obsidian', 'Moonstone',
+                       'Day</small> Spell range', 'Night</small> Magical Power',
+                       'Echo Stone', 'lingers briefly after leaving the shrine'):
+            self.assertIn(phrase, shrine)
+        self.assertIn('Minimum Power Level</dt><dd>500', self.page)
 
     def test_discoveries_artwork_and_unresolved_boundaries_survive(self):
         for phrase in ("major but incomplete portion", "Neither is confirmed to hold her entire soul.",

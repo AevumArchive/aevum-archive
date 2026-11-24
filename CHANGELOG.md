@@ -1,5 +1,9 @@
 # Archive changelog
 
+## 2026-11-25
+
+- Added Astera Zenith’s Diadem of the Silent Orbit, its worn bonuses, and its pedestal and stone effects.
+
 ## 2026-11-24
 
 - Reworked Kaede’s profile around her black journal and rewrote her opening description.
