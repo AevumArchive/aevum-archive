@@ -56,7 +56,8 @@ class AsteraDossierTest(unittest.TestCase):
     def test_diadem_keeps_worn_and_shrine_effects_distinct(self):
         worn, shrine = re.findall(r'<article class="diadem-mode .*?</article>', self.page, re.S)
         for phrase in ('Power Level 2,500', 'Magical Power</dt><dd>+529',
-                       'Elemental Power</dt><dd>+380', '+11%</strong> effect radius'):
+                       'Elemental Power</dt><dd>+380', '+11%</strong> effect radius',
+                       'current Power Level is unknown', 'both stats are also unknown'):
             self.assertIn(phrase, worn)
         for phrase in ('250 blocks', 'Bedrock than on Obsidian', 'Moonstone',
                        'Day</small> Spell range', 'Night</small> Magical Power',

@@ -228,6 +228,11 @@
   text-shadow: 0 0 20px #abaaff61;
 }
 
+.astera-dossier .diadem-stat-note {
+  color: #bdb1cc;
+  line-height: 1.55;
+}
+
 .astera-dossier .diadem-radius {
   display: flex;
   align-items: baseline;

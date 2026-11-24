@@ -2,7 +2,7 @@
 
 ## 2026-11-25
 
-- Added Astera Zenith’s Diadem of the Silent Orbit, its worn bonuses, and its pedestal and stone effects.
+- Added Astera Zenith’s Diadem of the Silent Orbit, example worn bonuses at Power Level 2,500, and pedestal and stone effects. Astera’s current worn power bonuses are unknown.
 
 ## 2026-11-24
 
