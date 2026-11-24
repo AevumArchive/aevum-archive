@@ -6,7 +6,10 @@
 }
 
 body.route-npcs-kaede {
-  background: radial-gradient(ellipse at 12% 12%, #252030, transparent 48rem), #0c0c10;
+  background:
+    radial-gradient(ellipse at 9% 10%, #2a2233, transparent 46rem),
+    radial-gradient(ellipse at 94% 75%, #1c1727, transparent 36rem),
+    #0c0c10;
 }
 
 body.route-npcs-kaede main.kaede-record {
@@ -39,11 +42,27 @@ body.route-npcs-kaede main.kaede-record {
 }
 
 .kaede-hero {
+  position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   overflow: hidden;
   border: 1px solid var(--kaede-line);
-  background: #131119;
+  border-radius: 15px 15px 0 0;
+  background:
+    repeating-linear-gradient(118deg, #c8b3d404 0 1px, transparent 1px 5px),
+    radial-gradient(ellipse at 0 0, #302739, transparent 66%),
+    #131119;
+  box-shadow: 0 20px 64px #07060b66;
+}
+
+.kaede-hero::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: 10px;
+  border: 1px solid #d8c7e63f;
+  border-radius: 8px 8px 0 0;
+  pointer-events: none;
 }
 
 .kaede-intro {
@@ -63,6 +82,7 @@ body.route-npcs-kaede main.kaede-record {
   font-size: clamp(4rem, 9vw, 8.25rem);
   letter-spacing: -.055em;
   line-height: 1;
+  text-shadow: 0 3px #0c0a10, 0 0 40px #c3a9df35;
 }
 
 .kaede-lead {
@@ -111,14 +131,22 @@ body.route-npcs-kaede main.kaede-record {
 .kaede-facts dd { margin: 2px 0 0; }
 .kaede-facts a, .kaede-contents a { color: var(--kaede-ink); text-underline-offset: 4px; }
 
-.kaede-dialogue { margin: 26px 0 0; padding-left: 14px; border-left: 1px solid #a68ab9; }
+.kaede-dialogue {
+  margin: 26px 0 0;
+  padding: 12px 14px;
+  border-left: 1px solid #a68ab9;
+  background: linear-gradient(90deg, #bd9ad013, transparent 95%);
+}
 .kaede-dialogue p { margin: 0; color: var(--kaede-muted); font-style: italic; }
 .kaede-dialogue span { color: var(--kaede-violet); }
 
 .kaede-contents {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  border-block-end: 1px solid var(--kaede-line);
+  border: 1px solid var(--kaede-line);
+  border-top: 0;
+  border-radius: 0 0 12px 12px;
+  background: #15111bbf;
 }
 
 .kaede-contents a {
@@ -131,7 +159,7 @@ body.route-npcs-kaede main.kaede-record {
 .kaede-contents a:hover { background: #a88dc217; }
 .kaede-contents a + a { border-left: 1px solid var(--kaede-line); }
 
-.kaede-chapter, .kaede-book, .kaede-pair { margin-top: clamp(32px, 6vw, 80px); }
+.kaede-chapter, .kaede-book, .kaede-spread { margin-top: clamp(32px, 6vw, 80px); }
 .kaede-record [id] { scroll-margin-top: 24px; }
 
 .kaede-chapter {
@@ -152,18 +180,50 @@ body.route-npcs-kaede main.kaede-record {
 .kaede-person p:first-child { margin-top: 0; }
 .kaede-person p:last-child { margin-bottom: 0; }
 
-.kaede-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 15px; }
-
-.kaede-leaf {
-  padding: clamp(20px, 3vw, 45px);
+.kaede-spread {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   border: 1px solid var(--kaede-line);
-  border-top-color: #a18bb99c;
-  background: linear-gradient(155deg, #1d1727, #101016 72%);
+  border-radius: 9px;
+  background: #14111b;
+  box-shadow: 0 4px #18141e, 0 5px #9c85ae38, 0 18px 38px #08070d70;
 }
 
-#echo-recall { background: linear-gradient(155deg, #191d29, #101016 72%); }
+.kaede-leaf {
+  --kaede-leaf-tint: #a989c72c;
+  padding: clamp(24px, 4vw, 52px);
+  background:
+    radial-gradient(ellipse at 8% 0%, var(--kaede-leaf-tint), transparent 78%),
+    repeating-linear-gradient(0deg, transparent 0 31px, #d2b9e50b 31px 32px);
+}
+
+.kaede-spread #echo-recall {
+  --kaede-leaf-tint: #7d89b02e;
+  border-left: 1px solid #9984ab4d;
+  box-shadow: inset 12px 0 20px -16px #020106;
+}
+
 .kaede-leaf p:last-child, .kaede-combat p:last-child, .kaede-book p:last-child { margin-bottom: 0; }
 .kaede-passive { align-self: center; }
+
+.kaede-combat {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.kaede-combat::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 34% 1px at center, #ccb8e6a0, transparent),
+    radial-gradient(ellipse 42% 2px at 52% 54%, #a28dc76e, transparent),
+    radial-gradient(ellipse 46% 13% at center, #7b629226, transparent);
+  transform: translateX(-15%) rotate(-12deg);
+  pointer-events: none;
+}
 
 .kaede-book {
   display: grid;
@@ -172,40 +232,118 @@ body.route-npcs-kaede main.kaede-record {
   gap: clamp(20px, 5vw, 70px);
   padding: clamp(22px, 4vw, 60px);
   border: 1px solid var(--kaede-line);
-  background: radial-gradient(ellipse at 22% 44%, #302338, transparent 63%), #131018;
+  border-radius: 12px;
+  background:
+    repeating-linear-gradient(118deg, #c8b3d404 0 1px, transparent 1px 6px),
+    radial-gradient(ellipse at 24% 44%, #33243e, transparent 62%),
+    #131018;
+  box-shadow: inset 0 0 0 6px #0d0b1080;
+}
+
+.kaede-book-stage {
+  display: grid;
+  place-items: center;
+  min-height: clamp(245px, 29vw, 370px);
+  background:
+    radial-gradient(circle closest-side, transparent 97%, #cbb0df29 98% 99%, transparent 100%),
+    radial-gradient(circle closest-side, transparent 79%, #cbb0df25 80% 81%, transparent 82%),
+    radial-gradient(circle closest-side, #c9a9e327, transparent 89%);
+  perspective: 720px;
 }
 
 .kaede-book-art {
+  position: relative;
   display: grid;
   place-items: center;
-  justify-self: center;
-  width: min(55%, 135px);
+  width: clamp(104px, 54%, 172px);
   aspect-ratio: 7 / 9;
   border: 1px solid #b398b77a;
-  border-left: 7px solid #554256;
+  border-left: 10px solid #47364e;
   border-radius: 3px 7px 7px 3px;
-  background: #0f0d14;
+  background:
+    repeating-linear-gradient(24deg, #dac4f00a 0 1px, transparent 1px 4px),
+    linear-gradient(115deg, #2a2031, #15101b 55%, #211729);
   color: #c3a8da;
-  box-shadow: inset 0 0 0 7px #1b1422, inset 0 0 0 8px #9a7d955c, 0 9px 24px #09070caa;
-  transform: rotate(-9deg);
+  box-shadow: inset 0 0 0 8px #1b1422, inset 0 0 0 9px #9a7d9575, 0 18px 26px #09070ccf;
+  transform: rotate(-12deg) rotateY(-15deg);
+  transition: transform .45s ease;
   font-size: clamp(1.15rem, 3vw, 2rem);
 }
 
+.kaede-book-art::before {
+  content: "";
+  position: absolute;
+  inset: 14px 14px 15px;
+  background:
+    linear-gradient(#9f84aa8c, #9f84aa8c) left top / 19px 1px,
+    linear-gradient(#9f84aa8c, #9f84aa8c) left top / 1px 19px,
+    linear-gradient(#9f84aa8c, #9f84aa8c) right top / 19px 1px,
+    linear-gradient(#9f84aa8c, #9f84aa8c) right top / 1px 19px,
+    linear-gradient(#9f84aa8c, #9f84aa8c) left bottom / 19px 1px,
+    linear-gradient(#9f84aa8c, #9f84aa8c) left bottom / 1px 19px,
+    linear-gradient(#9f84aa8c, #9f84aa8c) right bottom / 19px 1px,
+    linear-gradient(#9f84aa8c, #9f84aa8c) right bottom / 1px 19px;
+  background-repeat: no-repeat;
+}
+
+.kaede-book-art::after {
+  content: "";
+  position: absolute;
+  inset: 100% 3px auto 1px;
+  height: 10px;
+  border-radius: 1px 0 5px 3px;
+  background: repeating-linear-gradient(#9b8b9e 0 1px, #4d4054 1px 2px);
+  box-shadow: 0 3px #120d19;
+}
+
+.kaede-book-art span {
+  display: grid;
+  width: 44%;
+  aspect-ratio: 1;
+  place-items: center;
+  border: 1px solid #a487b27c;
+  border-radius: 50%;
+  box-shadow: 0 0 0 5px #b092c426, inset 0 0 20px #b092c41e;
+}
+
 .kaede-book blockquote {
-  margin: 18px 0 0;
+  margin: 24px 0;
+  padding: 14px 18px;
+  border-inline-start: 1px solid #b094c7;
+  background: linear-gradient(90deg, #c9a5df17, transparent);
   color: #e6d2ee;
   font: italic clamp(1.2rem, 2.2vw, 1.7rem)/1.45 Georgia, serif;
 }
 
+.kaede-book blockquote span {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--kaede-violet);
+  font: 600 .68rem/1.4 system-ui, sans-serif;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .kaede-book-stage:hover .kaede-book-art { transform: rotate(-7deg) rotateY(-4deg) translateY(-5px); }
+}
+
 @media (max-width: 690px) {
   body.route-npcs-kaede main.kaede-record { width: calc(100% - 28px); }
-  .kaede-hero, .kaede-chapter, .kaede-pair { grid-template-columns: minmax(0, 1fr); }
+  .kaede-hero, .kaede-chapter, .kaede-spread { grid-template-columns: minmax(0, 1fr); }
   .kaede-portrait { grid-row: 1; aspect-ratio: 1; min-height: 0; overflow: hidden; }
   .kaede-portrait img { object-position: center top; }
   .kaede-portrait::after { background: linear-gradient(0deg, #131119, transparent 25%); }
   .kaede-contents { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .kaede-contents a:nth-child(3) { border-left: 0; }
   .kaede-contents a:nth-child(n+3) { border-top: 1px solid var(--kaede-line); }
+  .kaede-spread #echo-recall {
+    border-top: 1px solid #9984ab4d;
+    border-left: 0;
+    box-shadow: none;
+  }
+  .kaede-combat::before { transform: translate(10%, -25%) rotate(-12deg); }
   .kaede-book { grid-template-columns: minmax(0, 1fr); }
-  .kaede-book-art { width: 68px; justify-self: start; margin: 5px 0 4px 8px; }
+  .kaede-book-stage { min-height: 218px; }
+  .kaede-book-art { width: 110px; }
 }
