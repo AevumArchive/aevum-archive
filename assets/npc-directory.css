@@ -417,6 +417,36 @@ body.route-npcs .npc-directory .npc-feature-ledger,
 body.route-npcs .npc-directory .npc-divine-ledger { margin-top: 28px; }
 body.route-npcs .npc-directory #silver-monarch .npc-compact-grid { grid-template-columns: 1fr; }
 
+body.route-npcs .npc-directory #sovereigns .npc-compact-grid .npc-feature-kaede {
+  grid-column: 1 / -1;
+  min-height: 205px;
+  padding-right: 34%;
+  border-color: #b4a2c34f;
+  background: radial-gradient(ellipse at 82% 25%, #67557b38, transparent 54%), #14121a;
+}
+
+body.route-npcs .npc-directory #sovereigns .npc-feature-kaede::before {
+  inset: 12% 8% 18% auto;
+  width: min(24%, 200px);
+  height: auto;
+  border: 1px solid #baa6cf55;
+  background: repeating-linear-gradient(165deg, transparent 0 12px, #b8a3cb2c 12px 13px);
+  transform: skew(-14deg);
+  mask-image: linear-gradient(90deg, transparent, #000 38%, #000 72%, transparent);
+}
+
+body.route-npcs .npc-directory #sovereigns .npc-feature-kaede .realm-symbol {
+  color: #dbc9ed;
+  border-color: #bba2cf71;
+}
+
+@media (max-width: 650px) {
+  body.route-npcs .npc-directory #sovereigns .npc-compact-grid .npc-feature-kaede {
+    padding-right: 20px;
+  }
+  body.route-npcs .npc-directory #sovereigns .npc-feature-kaede::before { opacity: .25; }
+}
+
 @media (max-width: 1120px) {
   body.route-npcs .npc-directory #servants .npc-compact-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   body.route-npcs .npc-directory .npc-ledger-nav { grid-template-columns: repeat(4, minmax(0, 1fr)); }

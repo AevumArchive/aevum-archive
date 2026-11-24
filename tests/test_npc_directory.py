@@ -31,7 +31,7 @@ class NpcDirectoryTest(unittest.TestCase):
         self.parsed.feed(self.page)
 
     def test_all_entries_remain_public_without_script_and_have_no_portrait_elements(self):
-        self.assertEqual(len(self.parsed.cards), 52)
+        self.assertEqual(len(self.parsed.cards), 53)
         for tag, attrs in self.parsed.cards:
             self.assertNotIn('hidden', attrs)
             self.assertNotIn('style', attrs)
@@ -42,9 +42,9 @@ class NpcDirectoryTest(unittest.TestCase):
         self.assertNotIn('Enski', self.page)
         self.assertNotIn('Tenrei', self.page)
 
-    def test_exactly_five_distinguished_cards_and_two_artwork_exceptions(self):
+    def test_distinguished_cards_keep_two_artwork_exceptions(self):
         for special in ('npc-feature-lilith', 'npc-feature-veyr', 'npc-feature-izumi',
-                        'npc-feature-bomir', 'npc-feature-peter'):
+                        'npc-feature-bomir', 'npc-feature-peter', 'npc-feature-kaede'):
             self.assertEqual(sum(special in attrs['class'].split() for _, attrs in self.parsed.cards), 1)
         old_styles = (ROOT / 'assets/npc-index.css').read_text(encoding='utf-8')
         self.assertEqual(set(re.findall(r'assets/images/([^"\)]+)', old_styles)), {'lilith.png', 'veyr.png'})
@@ -63,7 +63,9 @@ class NpcDirectoryTest(unittest.TestCase):
         self.assertEqual(len(self.parsed.ids), len(set(self.parsed.ids)))
         self.assertIn('<strong>Known Figures</strong><small>12 records</small>', self.page)
         self.assertIn('<strong>All NPCs</strong><small>8 shelves</small>', self.page)
-        self.assertRegex(self.page, r'<strong>49</strong>\s*<span>NPCs discovered</span>')
+        self.assertRegex(self.page, r'<strong>50</strong>\s*<span>NPCs discovered</span>')
+        major_shelf = self.page.split('id="sovereigns"', 1)[1].split('</section>', 1)[0]
+        self.assertIn('href="/aevum-archive/npcs/kaede.html"', major_shelf)
         self.assertIn('<strong>Restricted</strong><small>5 records</small>', self.page)
         restricted = self.page.split('id="contained-records"', 1)[1].split('</section>', 1)[0]
         faceless = 'href="/aevum-archive/npcs/the-faceless.html"'

@@ -1,5 +1,9 @@
 # Archive changelog
 
+## 2026-11-24
+
+- Added Kaede to Exceptional Presences with her portrait, Continuity Scar, Echo Recall, Afterimage, Déjà Vu and The Same Book.
+
 ## 2026-11-20
 
 - Refreshed the Hall of Names page with a new title treatment, unified search and filters, and updated pagination.
