@@ -67,7 +67,11 @@ class AsteraDossierTest(unittest.TestCase):
         house = (ROOT / "lore/noble-houses/house-zenith.html").read_text(encoding="utf-8")
         self.assertIn('<p>Astera stripped several opponents of their positions and banished them from the lands under her authority.</p>', timeline)
         self.assertIn('Unverified accounts</strong> Some exiles are said to have returned', timeline)
-        self.assertRegex(house, r'Unverified accounts</strong>[^<]+reportedly')
+        testimony = re.search(r'<aside class="zenith-testimony".*?</aside>', house, re.S).group(0)
+        self.assertIn('>Unverified Accounts</h3>', testimony)
+        self.assertIn('are said to have returned and been killed', testimony)
+        self.assertNotIn('stripped several opponents', testimony)
+        self.assertIn('stripped several opponents of their positions and banished them', house)
         for record in (timeline, house):
             self.assertIn('reliability of these accounts remain unverified', record)
             self.assertIn('regardless of noble ancestry', record)
@@ -77,6 +81,14 @@ class AsteraDossierTest(unittest.TestCase):
     def test_dev_note_appears_beside_archive_footer_credit(self):
         footer = self.page.split('<footer class="footer">', 1)[1].split('</footer>', 1)[0]
         self.assertRegex(footer, r'witnessed knowledge only\.</span>\s*<span class="astral-dev-note">DEV approved')
+
+    def test_house_and_characters_share_the_council_panorama(self):
+        house = (ROOT / "lore/noble-houses/house-zenith.html").read_text(encoding="utf-8")
+        panorama = "/aevum-archive/assets/images/astera-zenith-council.webp"
+        for record in (self.page, house):
+            self.assertEqual(record.count('src="' + panorama + '"'), 1)
+            self.assertRegex(record, r'<img src="' + re.escape(panorama) + r'"[^>]+width="1912" height="823" loading="lazy" decoding="async">')
+        self.assertIn('characters/astera-zenith.html#zenith-council', house)
 
     def test_diadem_keeps_worn_and_shrine_effects_distinct(self):
         worn, shrine = re.findall(r'<article class="diadem-mode .*?</article>', self.page, re.S)

@@ -2,6 +2,8 @@
 
 ## 2026-11-25
 
+- Expanded the House Zenith dossier and the Zenith Estate record with a formal register, restoration and testimony sections, and the shared Zenith Council illustration.
+
 - Added The Zenith Council panorama between the personality and return chapters of Astera’s dossier.
 
 - Clarified the injury the Faceless left beneath Astera’s eye and the wording of the banishments. Removed the unresolved-records list and added a developer note to her dossier.

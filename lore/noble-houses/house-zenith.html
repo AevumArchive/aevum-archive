@@ -9,15 +9,15 @@
   <link rel="stylesheet" href="/aevum-archive/assets/archive-expansion.css?v=20260817-1">
   <link rel="stylesheet" href="/aevum-archive/assets/master-ui.css?v=20260821-2">
   <link rel="stylesheet" href="/aevum-archive/assets/global-header.css?v=20260902-header4">
-  <link rel="stylesheet" href="/aevum-archive/assets/astera-lore.css?v=20261125-restoration">
   <link rel="stylesheet" href="/aevum-archive/assets/halloween.css?v=20261030-allhallows1">
   <script src="/aevum-archive/assets/halloween.js?v=20261030-allhallows1"></script>
 
   <link rel="preload" href="/aevum-archive/assets/fonts/cinzel/Cinzel-Variable.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="/aevum-archive/assets/archive-wings.css?v=20261102-folio1">
   <link rel="stylesheet" href="/aevum-archive/assets/archive-folio.css?v=20261102-renewal1">
+  <link rel="stylesheet" href="/aevum-archive/assets/house-zenith.css?v=20261125-folio">
 </head>
-<body class="archive-page theme-lore page-detail route-lore-noble-houses-house-zenith grimoire-wing archive-folio">
+<body class="archive-page theme-lore page-detail route-lore-noble-houses-house-zenith grimoire-wing archive-folio zenith-folio">
   <header class="site-header">
   <a class="brand" href="/aevum-archive/">
     <img class="brand-mark home-brand-crest" src="/aevum-archive/assets/archive-mark.svg" alt="" width="64" height="64">
@@ -36,87 +36,195 @@
     <a href="/aevum-archive/downloads/texture-pack.html">Downloads</a>
   </nav>
 </header>
-<main class="page wing-main"><nav class="wing-breadcrumb" aria-label="Breadcrumb"><a href="/aevum-archive/lore/">Lore Atlas</a><span aria-hidden="true">/</span><span aria-current="page">House Zenith.</span></nav>
-<section class="hero compact-hero zenith-house-hero" aria-labelledby="house-zenith-title">
-  <div>
-    <p class="eyebrow">Noble house record</p>
-    <h1 id="house-zenith-title">House Zenith</h1>
-    <p class="lede">An ancient elven house beyond Avalon, House Zenith preserved its silver rites and Star Magic through generations of declining influence. Astera Zenith, the Violet Eclipse, now leads its restoration from the ancestral estate. Her reforms have improved life in the holdings and divided the house over what it should teach.</p>
-    <div class="hero-actions"><a class="button primary" href="/aevum-archive/characters/astera-zenith.html">Astera Zenith</a><a class="button" href="/aevum-archive/lore/locations/zenith-estate.html">Zenith Estate</a><a class="button" href="/aevum-archive/lore/noble-houses/heraldry.html">Heraldry</a></div>
-  </div>
-  <aside class="archive-card zenith-card">
-    <span class="sigil" aria-hidden="true">✦</span>
-    <p class="eyebrow">House mark</p>
-    <h2>The Split Star</h2>
-    <p>Silver and violet against deep night.</p>
-  </aside>
-</section>
-<nav class="folio-section-nav" aria-label="On this record">
-  <a href="#folio-section-1">Known history</a><a href="#folio-section-2">The Split Star</a><a href="#folio-section-3">Leadership</a>
-  <a href="#zenith-estate">Estate</a><a href="#zenith-restoration">Restoration</a><a href="#zenith-dispute">Dispute</a>
-  <a href="#folio-section-4">Second Observatory</a><a href="#folio-section-5">Silent Gate</a><a href="#folio-section-6">Celestial heritage</a>
-  <a href="#sealed-archives">Sealed archives</a><a href="#folio-section-7">Known individuals</a>
+<main class="page wing-main zenith-sheet">
+<nav class="wing-breadcrumb" aria-label="Breadcrumb">
+  <a href="/aevum-archive/lore/">Lore Atlas</a><span aria-hidden="true">/</span><span aria-current="page">House Zenith</span>
 </nav>
-<section class="section grid two" id="folio-section-1"><article class="card"><h2>Known history</h2><p>House Zenith once carried greater influence among elven nobility. Over generations its reach diminished until only smaller lands, a few villages and the old family estate remained. The Second Observatory confirms that the preserved history was incomplete.</p></article><article class="card"><h2>Star-blood</h2><p>The family preserves a rare inheritance known as Star Magic. It is a bloodline art studied through old tradition, but the Silent Gate showed that bloodline and raw power alone do not grant access to every part of that inheritance.</p></article></section>
-<section class="section grid two" id="folio-section-2"><article class="card heraldry-feature"><span class="heraldic-mark">&#10022;</span><h2>The Split Star</h2><p>The opened sign of House Zenith is a divided star carried in silver and violet. It speaks of old celestial blood, measured grace and a lineage that remembers the night sky as inheritance.</p><div class="meta-row"><span class="pill">Silver</span><span class="pill">Violet</span><span class="pill">Star-blood</span></div></article><article class="card"><h2>House customs</h2><p>Members of the house favor silver ornaments and old rites tied to starlight. The estate still preserves records and training alongside its starlight rites.</p></article></section>
-<section class="section zenith-house-chapter" id="folio-section-3" aria-labelledby="house-structure-title">
-  <div>
-    <h2 id="house-structure-title">Current leadership</h2>
-    <p>Astera Zenith returned to the estate and claimed authority over House Zenith. She directs the restoration and the work of recovering, teaching and preserving the house’s magic. How authority passed to her remains undocumented.</p>
-    <p>The dispute concerns members of the house. Its wider political influence remains unconfirmed, and no external house rival has been recorded.</p>
+<header class="zenith-cover">
+  <div class="zenith-cover-copy">
+    <p class="zenith-label">Noble house record</p>
+    <h1>House Zenith</h1>
+    <p class="zenith-lede">An ancient elven house beyond Avalon, House Zenith preserved its silver rites and Star Magic through generations of declining influence. Astera Zenith, the Violet Eclipse, now leads its restoration from the ancestral estate. Her reforms have improved life in the holdings and divided the house over what it should teach.</p>
+    <dl class="zenith-cover-facts">
+      <div><dt>Current head</dt><dd><a href="/aevum-archive/characters/astera-zenith.html">Astera Zenith</a></dd></div>
+      <div><dt>Ancestral seat</dt><dd><a href="/aevum-archive/lore/locations/zenith-estate.html">Zenith Estate</a></dd></div>
+    </dl>
   </div>
-  <dl class="house-ledger zenith-house-ledger">
-    <div class="house-field"><dt>Current head</dt><dd><a href="/aevum-archive/characters/astera-zenith.html">Astera Zenith</a></dd></div>
-    <div class="house-field"><dt>Ancestral seat</dt><dd>Zenith Estate</dd></div>
-    <div class="house-field"><dt>Bloodline</dt><dd>Elven</dd></div>
-    <div class="house-field"><dt>Heritage</dt><dd>Star Magic</dd></div>
-    <div class="house-field"><dt>Heraldry</dt><dd>The Split Star</dd></div>
-    <div class="house-field"><dt>Colors</dt><dd>Silver, violet and deep night tones</dd></div>
-    <div class="house-field"><dt>Current era</dt><dd>Restoration under Astera Zenith</dd></div>
-    <div class="house-field"><dt>Internal conditions</dt><dd>Improved</dd></div>
-    <div class="house-field"><dt>Known opposition</dt><dd><a href="#zenith-dispute">The Zenith Dispute</a></dd></div>
-    <div class="house-field"><dt>Wider influence</dt><dd>Unconfirmed</dd></div>
-    <div class="house-field"><dt>Motto</dt><dd>None formally established</dd></div>
+  <figure class="zenith-armorial">
+    <div class="zenith-armorial-field" aria-hidden="true"><span>&#10022;</span></div>
+    <figcaption><span>The Split Star</span><small>Silver and violet against deep night.</small></figcaption>
+  </figure>
+</header>
+
+<nav class="zenith-index" aria-label="House Zenith chapters">
+  <a href="#house-ledger"><span aria-hidden="true">II</span> House ledger</a>
+  <a href="#folio-section-3"><span aria-hidden="true">III</span> Leadership</a>
+  <a href="#zenith-estate"><span aria-hidden="true">IV</span> Estate</a>
+  <a href="#zenith-restoration"><span aria-hidden="true">V</span> Restoration</a>
+  <a href="#zenith-dispute"><span aria-hidden="true">VI</span> Dispute</a>
+  <a href="#folio-section-1"><span aria-hidden="true">VII</span> History</a>
+  <a href="#folio-section-2"><span aria-hidden="true">VIII</span> Heraldry</a>
+  <a href="#folio-section-6"><span aria-hidden="true">IX</span> Celestial heritage</a>
+  <a href="#folio-section-4"><span aria-hidden="true">X</span> Second Observatory</a>
+  <a href="#folio-section-5"><span aria-hidden="true">XI</span> Silent Gate</a>
+  <a href="#sealed-archives"><span aria-hidden="true">XII</span> Sealed Archives</a>
+  <a href="#folio-section-7"><span aria-hidden="true">XIII</span> Known individuals</a>
+</nav>
+
+<section class="zenith-chapter" id="house-ledger" aria-labelledby="house-ledger-title">
+  <h2 id="house-ledger-title">House Ledger</h2>
+  <dl class="zenith-register">
+    <div><dt>Current head</dt><dd><a href="/aevum-archive/characters/astera-zenith.html">Astera Zenith</a></dd></div>
+    <div><dt>Ancestral seat</dt><dd><a href="/aevum-archive/lore/locations/zenith-estate.html">Zenith Estate</a></dd></div>
+    <div><dt>Bloodline</dt><dd>Elven</dd></div>
+    <div><dt>Heritage</dt><dd>Star Magic</dd></div>
+    <div><dt>Heraldry</dt><dd>The Split Star</dd></div>
+    <div><dt>Colors</dt><dd>Silver, violet and deep night tones</dd></div>
+    <div><dt>Current era</dt><dd>Restoration under Astera Zenith</dd></div>
+    <div><dt>Internal conditions</dt><dd>Improved</dd></div>
+    <div><dt>Known opposition</dt><dd><a href="#zenith-dispute">The Zenith Dispute</a></dd></div>
+    <div><dt>Wider influence</dt><dd>Unconfirmed</dd></div>
+    <div><dt>External rivals</dt><dd>None currently documented</dd></div>
+    <div><dt>Motto</dt><dd>None formally established</dd></div>
   </dl>
 </section>
-<section class="section zenith-house-chapter" id="zenith-estate" aria-labelledby="house-estate-title">
+
+<section class="zenith-chapter zenith-leadership" id="folio-section-3" aria-labelledby="house-structure-title">
+  <div class="zenith-editorial">
+    <div>
+      <h2 id="house-structure-title">Current Leadership</h2>
+      <p class="zenith-byline">Astera Zenith, <em>The Violet Eclipse</em></p>
+      <p class="zenith-label">Head of House Zenith</p>
+    </div>
+    <div>
+      <p>Astera returned to the Zenith Estate following her disappearance and assumed leadership of House Zenith. She considers the estate her own. From there she directs its restoration, the preservation of recovered knowledge and the future of the house’s magical traditions.</p>
+      <p>Her position as head of the house is established. How authority passed to her remains undocumented.</p>
+      <a class="zenith-record-link" href="/aevum-archive/characters/astera-zenith.html">Read Astera’s character dossier <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+  <figure class="zenith-illustration">
+    <img src="/aevum-archive/assets/images/astera-zenith-council.webp" alt="Astera Zenith sits at a candlelit table among members of House Zenith, with her awakened left eye and the wound beneath it visible." width="1912" height="823" loading="lazy" decoding="async">
+    <figcaption><span>Astera Zenith among the members of her ancestral house.</span><a href="/aevum-archive/characters/astera-zenith.html#zenith-council">The Zenith Council artwork</a></figcaption>
+  </figure>
+</section>
+
+<section class="zenith-chapter zenith-editorial" id="zenith-estate" aria-labelledby="house-estate-title">
   <h2 id="house-estate-title">The Zenith Estate</h2>
   <div>
-    <p>The <a href="/aevum-archive/lore/locations/zenith-estate.html">Zenith Estate</a> is Astera’s ancestral home and the seat from which she governs. The house’s surviving holdings are small, with a few associated villages beyond Avalon. The restoration has reached the estate and its settlements.</p>
+    <p>The Zenith Estate is Astera’s ancestral home and the seat from which she governs. It is the principal surviving holding of House Zenith. A few associated villages lie beyond Avalon, and the restoration has reached both the estate and these settlements.</p>
+    <a class="zenith-record-link" href="/aevum-archive/lore/locations/zenith-estate.html">Open the Zenith Estate location record <span aria-hidden="true">↗</span></a>
   </div>
 </section>
-<section class="section zenith-house-chapter" id="zenith-restoration" aria-labelledby="house-restoration-title">
-  <h2 id="house-restoration-title">The Zenith Restoration</h2>
-  <div>
-    <p>Repairs brought neglected parts of the estate back into use. Residents received better living conditions and improved medical and magical care. The house increased its support and protection for the surrounding settlements.</p>
-    <p>Astera opened selected archives once reserved for senior members. Talented students can now receive magical instruction regardless of noble ancestry, and neglected kinds of Star Magic are again being studied.</p>
+
+<section class="zenith-chapter" id="zenith-restoration" aria-labelledby="house-restoration-title">
+  <div class="zenith-editorial">
+    <h2 id="house-restoration-title">The Zenith Restoration</h2>
+    <p>Astera’s reforms have brought neglected buildings back into use, improved daily life in the holdings and broadened access to the house’s magical inheritance.</p>
   </div>
+  <dl class="zenith-reforms">
+    <div><dt>Estate Restoration</dt><dd>Neglected parts of the ancestral estate have been repaired and restored to use.</dd></div>
+    <div><dt>Public Welfare</dt><dd>Living conditions and access to medical and magical care have improved for people associated with the house.</dd></div>
+    <div><dt>Settlement Protection</dt><dd>The surrounding settlements receive greater support and protection from House Zenith.</dd></div>
+    <div><dt>Magical Education</dt><dd>Talented individuals may receive magical instruction regardless of noble ancestry.</dd></div>
+    <div><dt>Archive Access</dt><dd>Selected archives previously reserved for senior members have been opened.</dd></div>
+    <div><dt>Star Magic Research</dt><dd>Previously neglected forms of Star Magic have returned to active study.</dd></div>
+  </dl>
 </section>
-<section class="section zenith-house-chapter" id="zenith-dispute" aria-labelledby="house-dispute-title">
+
+<section class="zenith-chapter zenith-editorial" id="zenith-dispute" aria-labelledby="house-dispute-title">
   <h2 id="house-dispute-title">The Zenith Dispute</h2>
   <div>
     <p>Some members held to the house’s light-oriented interpretation of Star Magic. They questioned Astera’s embrace of the Hollow Star and the direction of her reforms, giving rise to a lasting internal dispute.</p>
-    <p class="zenith-house-testimony"><strong>Unverified accounts</strong> Astera reportedly removed opponents from office and banished others. Some of the exiles are said to have returned and been killed by Astera. Their names reportedly disappeared from the record. The identities, circumstances and reliability of these accounts remain unverified.</p>
+    <p>Accounts record that Astera stripped several opponents of their positions and banished them from the lands under her authority.</p>
+    <aside class="zenith-testimony" aria-labelledby="zenith-testimony-title">
+      <h3 id="zenith-testimony-title">Unverified Accounts</h3>
+      <p>Some of the exiles are said to have returned and been killed by Astera. Their names reportedly disappeared from the record. The identities, circumstances and reliability of these accounts remain unverified.</p>
+    </aside>
   </div>
 </section>
 
-<section class="section" id="folio-section-4"><div class="section-head"><div><p class="eyebrow">Newly recovered house lore</p><h2>The Second Observatory.</h2></div><p>Astera opened a Zenith-linked complex whose existence no longer appeared in the house's normal known history. Modern members are not assumed to have known it survived.</p></div><ol class="zenith-discovery-chain" aria-label="Recovered path into the Second Observatory"><li><span>01</span><strong>Three Veilstones</strong><small>Perception · Control · Resonance</small></li><li><span>02</span><strong>The Veilgate</strong><small>Opened the Second Observatory</small></li><li><span>03</span><strong>The Silent Gate</strong><small>Rejected bloodline and power alone</small></li><li><span>04</span><strong>The Hall of Second Sight</strong><small>Long inner corridor and trial path</small></li><li><span>05</span><strong>The Hollow Star</strong><small>Ancient construct · creator unknown</small></li></ol></section>
+<section class="zenith-chapter zenith-editorial" id="folio-section-1" aria-labelledby="house-history-title">
+  <h2 id="house-history-title">Known history</h2>
+  <div>
+    <p>House Zenith once carried greater influence among elven nobility. Over generations its reach diminished until only smaller lands, a few villages and the old family estate remained. The Second Observatory confirms that the preserved history was incomplete.</p>
+    <p>Conditions in the holdings have improved under Astera. The house’s present influence beyond them remains unconfirmed.</p>
+  </div>
+</section>
 
-<section class="section grid two" id="folio-section-5"><article class="card"><p class="eyebrow">Access beyond blood</p><h2>The Silent Gate</h2><p>The gate did not accept Astera merely because she carried House Zenith blood. Raw power was also insufficient. Her resonance, current state and connection to her staff were relevant, showing that the deeper inheritance is more complex than hereditary Star Magic alone.</p></article><article class="card"><p class="eyebrow">Key / vessel significance</p><h2>Astera's staff</h2><p>The staff reacted to hidden Zenith material, the Veilgate, the Observatory and Astera's Dark-Astral resonance. The Hollow Star recognized a staff-linked fragment as incomplete or unfinished. Its original creator and complete purpose remain unrecovered.</p></article></section>
+<section class="zenith-chapter zenith-editorial" id="folio-section-2" aria-labelledby="house-heraldry-title">
+  <div>
+    <p class="zenith-inscription">Heraldry</p>
+    <h2 id="house-heraldry-title">The Split Star</h2>
+    <ul class="zenith-swatches" aria-label="House colors">
+      <li><span class="zenith-swatch-silver" aria-hidden="true"></span>Silver</li>
+      <li><span class="zenith-swatch-violet" aria-hidden="true"></span>Violet</li>
+      <li><span class="zenith-swatch-night" aria-hidden="true"></span>Deep night</li>
+    </ul>
+  </div>
+  <div>
+    <p>The opened sign of House Zenith is a divided star carried in silver and violet. It speaks of old celestial blood, measured grace and a lineage that remembers the night sky as inheritance.</p>
+    <h3>House customs</h3>
+    <p>Members of the house favor silver ornaments and old rites tied to starlight. The estate still preserves records and training alongside its starlight rites.</p>
+    <a class="zenith-record-link" href="/aevum-archive/lore/noble-houses/heraldry.html">Read the heraldry record <span aria-hidden="true">↗</span></a>
+  </div>
+</section>
 
-<section class="section grid two" id="folio-section-6"><article class="card"><p class="eyebrow">Discovery, not conclusion</p><h2>A Divided Celestial Heritage</h2><p>The Hollow Star and Dark-Astral resonance imply that the family's older celestial legacy was not limited to the luminous understanding of Star Magic preserved today. This does not establish that House Zenith created the Hollow Star, worshipped the Void or fully understood the traditions now resurfacing.</p></article><article class="card"><p class="eyebrow">Recovered ancient account</p><h2>Stars beside darkness</h2><p>An ancient unidentified presence encountered by Astera conveyed an account in which stars and darkness were not always treated as absolute opposites. It described later fear and light-centered teachings burying darkness-aligned sanctuaries, names and knowledge.</p><p>This remains recovered testimony from an unidentified source—not an omniscient history of House Zenith.</p></article></section>
-<section class="section zenith-house-chapter" id="sealed-archives" aria-labelledby="house-archives-title">
+<section class="zenith-chapter zenith-editorial" id="folio-section-6" aria-labelledby="house-heritage-title">
+  <h2 id="house-heritage-title">A Divided Celestial Heritage</h2>
+  <div>
+    <h3>Star-blood</h3>
+    <p>The family preserves a rare inheritance known as Star Magic. It is a bloodline art studied through old tradition, but the Silent Gate showed that bloodline and raw power alone do not grant access to every part of that inheritance.</p>
+    <p>Astera has mastered the <a href="/aevum-archive/characters/astera-zenith.html#dark-astral-mastery">Dark Astral Path</a>. Evidence from the Second Observatory and the Hollow Star suggests that the older celestial legacy extended beyond the luminous Star Magic taught by the modern house. How much of the older tradition House Zenith understood, whether it created the Hollow Star and whether it ever worshipped the Void remain unconfirmed.</p>
+    <h3>Stars beside darkness</h3>
+    <p>An ancient unidentified presence encountered by Astera conveyed an account in which stars and darkness were not always treated as absolute opposites. It described later fear and light-centered teachings burying darkness-aligned sanctuaries, names and knowledge.</p>
+    <p>This remains recovered testimony from an unidentified source—not an omniscient history of House Zenith.</p>
+  </div>
+</section>
+
+<section class="zenith-chapter" id="folio-section-4" aria-labelledby="house-observatory-title">
+  <div class="zenith-editorial">
+    <h2 id="house-observatory-title">The Second Observatory.</h2>
+    <p>Astera opened a Zenith-linked complex whose existence no longer appeared in the house's normal known history. Modern members are not assumed to have known it survived.</p>
+  </div>
+  <ol class="zenith-sequence" role="list" aria-label="Recovered path into the Second Observatory">
+    <li><strong>Three Veilstones</strong><small>Perception · Control · Resonance</small></li>
+    <li><strong>The Veilgate</strong><small>Opened the Second Observatory</small></li>
+    <li><strong>The Silent Gate</strong><small>Rejected bloodline and power alone</small></li>
+    <li><strong>The Hall of Second Sight</strong><small>Long inner corridor and trial path</small></li>
+    <li><strong>The Hollow Star</strong><small>Ancient construct · creator unknown</small></li>
+  </ol>
+</section>
+
+<section class="zenith-chapter zenith-editorial" id="folio-section-5" aria-labelledby="house-gate-title">
+  <h2 id="house-gate-title">The Silent Gate</h2>
+  <div>
+    <p>The gate did not accept Astera merely because she carried House Zenith blood. Raw power was also insufficient. Her resonance, current state and connection to her staff were relevant, showing that the deeper inheritance is more complex than hereditary Star Magic alone.</p>
+    <h3>Astera's staff</h3>
+    <p>The staff reacted to hidden Zenith material, the Veilgate, the Observatory and Astera's Dark-Astral resonance. The Hollow Star recognized a staff-linked fragment as incomplete or unfinished. Its original creator and complete purpose remain unrecovered.</p>
+  </div>
+</section>
+
+<section class="zenith-chapter zenith-editorial zenith-archive-leaf" id="sealed-archives" aria-labelledby="house-archives-title">
   <h2 id="house-archives-title">The Sealed Archives</h2>
   <div>
     <p>Restoration uncovered sealed records from the house’s past. Some appear to preserve traces of an older understanding of darkness-aligned Star Magic. Astera is studying them alongside what she found in the Second Observatory.</p>
-    <p>Who removed these teachings from the commonly preserved history, why they were removed and what the recovered folios contain remain open questions.</p>
+    <p>Who removed these teachings from the commonly preserved history, why they were removed and what the recovered folios contain remain open questions. The extent of that forgotten inheritance is still unknown.</p>
   </div>
 </section>
-<section class="section zenith-house-chapter" id="folio-section-7" aria-labelledby="house-people-title">
+
+<section class="zenith-chapter zenith-editorial" id="folio-section-7" aria-labelledby="house-people-title">
   <h2 id="house-people-title">Known individuals</h2>
-  <div class="zenith-house-people">
-    <article><h3><a href="/aevum-archive/characters/astera-zenith.html">Astera Zenith</a></h3><p>Once the heir who left the estate to learn beyond its halls, Astera returned as the Violet Eclipse. She now leads House Zenith.</p></article>
-    <article><h3><a href="/aevum-archive/characters/jango.html">Jango</a></h3><p>Jango was discovered in one of the villages tied to House Zenith lands. His talent for the blade brought him into the estate, where his path grew beside Astera's. His connection to the estate is through training and friendship.</p></article>
+  <div class="zenith-people">
+    <article>
+      <h3><a href="/aevum-archive/characters/astera-zenith.html">Astera Zenith</a></h3>
+      <p>Once the heir who left the estate to learn beyond its halls, Astera returned as the Violet Eclipse. She now leads House Zenith.</p>
+      <p>A master of the Dark Astral Path, she directs the estate’s restoration and the house’s study of its recovered traditions.</p>
+    </article>
+    <article>
+      <h3><a href="/aevum-archive/characters/jango.html">Jango</a></h3>
+      <p>Jango was discovered in one of the villages tied to House Zenith lands. His talent for the blade brought him into the estate, where his path grew beside Astera's. His connection to the estate is through training and friendship.</p>
+      <p>He has no confirmed blood relation to the house.</p>
+    </article>
   </div>
 </section>
 <footer class="footer">

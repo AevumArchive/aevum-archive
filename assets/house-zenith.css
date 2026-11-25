@@ -1,0 +1,366 @@
+/* The public folios for House Zenith and its ancestral seat. */
+body.grimoire-wing.zenith-folio {
+  --zenith-ink: #ede7f0;
+  --zenith-muted: #c0b2cb;
+  --zenith-silver: #c7c2d0;
+  --zenith-accent: #d1b5e7;
+  --zenith-paper: #191421;
+  --zenith-rule: #514359;
+  --zenith-testimony: #d4b3c2;
+  background: radial-gradient(ellipse at 85% 0, #21192c, transparent 55rem), #100d16 !important;
+  color: var(--zenith-ink);
+}
+
+.zenith-folio .zenith-sheet a:focus-visible {
+  outline-color: var(--zenith-accent);
+  outline-offset: 4px;
+}
+
+.zenith-sheet .zenith-cover {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(250px, .78fr);
+  align-items: center;
+  gap: 30px clamp(30px, 6.5vw, 104px);
+  margin-top: 24px;
+  padding: clamp(26px, 5vw, 76px);
+  border: 1px solid var(--zenith-rule);
+  background:
+    repeating-linear-gradient(118deg, transparent 0 5px, #e7d2f305 5px 6px),
+    linear-gradient(125deg, #1d1726, #15111b 73%);
+}
+
+.zenith-sheet .zenith-cover-copy { min-width: 0; }
+.zenith-sheet :is(.zenith-label, .zenith-inscription) {
+  margin: 0;
+  color: var(--zenith-accent);
+  font: 500 .72rem/1.6 var(--wing-label);
+  text-transform: uppercase;
+  letter-spacing: .09em;
+}
+
+.zenith-sheet .zenith-inscription { font-family: "Archive Display", Georgia, serif; }
+
+.zenith-sheet .zenith-cover h1 {
+  margin: 15px 0 23px;
+  color: var(--zenith-ink);
+  font: 500 clamp(2.65rem, 6.4vw, 6.25rem)/1.035 "Archive Display", Georgia, serif;
+  letter-spacing: -.035em;
+  text-shadow: none;
+  text-wrap: balance;
+}
+
+.zenith-sheet .zenith-lede, .zenith-sheet .zenith-chapter p {
+  max-width: 67ch;
+  color: var(--zenith-muted);
+  font: 400 clamp(1rem, 1.25vw, 1.14rem)/1.8 Georgia, serif;
+}
+
+.zenith-sheet .zenith-lede { margin: 0; }
+.zenith-sheet .zenith-cover-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px clamp(24px, 5vw, 66px);
+  margin: 28px 0 0;
+  padding-top: 19px;
+  border-top: 1px solid var(--zenith-rule);
+}
+
+.zenith-sheet :is(.zenith-cover-facts, .zenith-register, .zenith-seat-entry) dt {
+  color: var(--zenith-accent);
+  font: 500 .72rem/1.5 var(--wing-label);
+}
+
+.zenith-sheet :is(.zenith-cover-facts, .zenith-register, .zenith-seat-entry) dd {
+  margin: 5px 0 0;
+  color: var(--zenith-ink);
+  font: 400 1.05rem/1.5 Georgia, serif;
+}
+
+.zenith-sheet a { color: var(--zenith-accent); }
+.zenith-sheet a:hover { color: var(--zenith-ink); }
+
+.zenith-sheet .zenith-armorial {
+  margin: 0;
+  padding: 11px;
+  border: 1px solid var(--zenith-rule);
+  background: #110e16;
+}
+
+.zenith-sheet .zenith-armorial-field {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+  min-height: clamp(190px, 23vw, 345px);
+  overflow: hidden;
+  border: 1px solid #826c9366;
+  background:
+    radial-gradient(ellipse at center, #32243e 8%, transparent 75%),
+    repeating-linear-gradient(125deg, #cbb5dc06 0 1px, transparent 1px 5px),
+    #1b1424;
+}
+
+.zenith-sheet .zenith-armorial-field::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 60%;
+  max-width: 232px;
+  aspect-ratio: 1;
+  border: 1px solid #a992b269;
+  outline: 1px solid #a992b22d;
+  outline-offset: 7px;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.zenith-sheet .zenith-armorial-field span {
+  color: var(--zenith-silver);
+  font: 400 clamp(5rem, 12vw, 10.4rem)/1 Georgia, serif;
+  text-shadow: 0 3px #17111f;
+}
+
+.zenith-sheet .zenith-armorial figcaption {
+  padding: 17px 5px 8px;
+  text-align: center;
+}
+
+.zenith-sheet .zenith-armorial figcaption span {
+  color: var(--zenith-silver);
+  font: 550 .96rem/1.45 "Archive Display", Georgia, serif;
+}
+
+.zenith-sheet .zenith-armorial figcaption small {
+  display: block;
+  margin-top: 3px;
+  color: var(--zenith-muted);
+  font: italic .89rem/1.5 Georgia, serif;
+}
+
+.zenith-sheet .zenith-index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px clamp(12px, 2.4vw, 34px);
+  padding: 13px clamp(2px, 1.5vw, 20px);
+  border-bottom: 1px solid var(--zenith-rule);
+}
+
+.zenith-sheet .zenith-index a {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 7px;
+  padding-block: 6px;
+  color: var(--zenith-muted);
+  font: 500 .76rem/1.55 var(--wing-label);
+  text-decoration: none;
+}
+
+.zenith-sheet .zenith-index a:hover { color: var(--zenith-ink); text-decoration: underline; }
+.zenith-sheet .zenith-index a > span { color: var(--zenith-accent); font-family: "Archive Display", Georgia, serif; }
+
+.zenith-sheet .zenith-chapter {
+  margin-top: clamp(45px, 6vw, 86px);
+  padding-top: clamp(24px, 3.3vw, 46px);
+  border-top: 1px solid var(--zenith-rule);
+  scroll-margin-top: 30px;
+}
+
+.zenith-sheet .zenith-chapter h2 {
+  margin: 0;
+  color: var(--zenith-ink);
+  font: 400 clamp(1.95rem, 3.9vw, 3.55rem)/1.12 Georgia, serif;
+  letter-spacing: -.035em;
+  text-wrap: balance;
+}
+
+.zenith-sheet .zenith-chapter h3 {
+  margin: 26px 0 7px;
+  color: var(--zenith-silver);
+  font: 400 1.36rem/1.3 Georgia, serif;
+}
+
+.zenith-sheet .zenith-chapter p { margin: 0 0 13px; }
+.zenith-sheet .zenith-chapter p:last-child { margin-bottom: 0; }
+.zenith-sheet .zenith-chapter .zenith-inscription {
+  margin: 0 0 7px;
+  color: var(--zenith-accent);
+  font: 500 .72rem/1.6 "Archive Display", Georgia, serif;
+}
+
+.zenith-sheet .zenith-editorial {
+  display: grid;
+  grid-template-columns: minmax(0, .79fr) minmax(0, 1.21fr);
+  gap: 18px clamp(24px, 5vw, 84px);
+  align-items: start;
+}
+
+.zenith-sheet .zenith-editorial h3:first-child { margin-top: 0; }
+
+.zenith-sheet .zenith-register, .zenith-sheet .zenith-reforms {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 23px 0 0;
+  gap: 1px;
+  border: 1px solid var(--zenith-rule);
+  background: var(--zenith-rule);
+}
+
+.zenith-sheet :is(.zenith-register, .zenith-reforms) > div {
+  min-width: 0;
+  padding: clamp(15px, 2.3vw, 26px);
+  background: var(--zenith-paper);
+}
+
+.zenith-sheet .zenith-leadership .zenith-byline {
+  margin: 14px 0 4px;
+  color: var(--zenith-silver);
+  font-size: 1.26rem;
+}
+
+.zenith-sheet .zenith-leadership .zenith-label {
+  color: var(--zenith-accent);
+  font: 500 .72rem/1.55 var(--wing-label);
+}
+
+.zenith-sheet .zenith-record-link {
+  display: inline-block;
+  width: fit-content;
+  max-width: 100%;
+  margin-top: 5px;
+  color: var(--zenith-accent);
+  font: 500 .81rem/1.55 var(--wing-label);
+}
+
+.zenith-sheet .zenith-illustration {
+  margin: clamp(22px, 4vw, 52px) 0 0;
+  border: 1px solid #8a7798;
+}
+
+.zenith-sheet .zenith-illustration img { display: block; width: 100%; height: auto; }
+.zenith-sheet .zenith-illustration figcaption {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 6px 20px;
+  padding: 11px clamp(12px, 2vw, 22px);
+  border-top: 1px solid var(--zenith-rule);
+  background: var(--zenith-paper);
+  color: var(--zenith-silver);
+  font: italic .94rem/1.6 Georgia, serif;
+}
+
+.zenith-sheet .zenith-illustration figcaption a { font: 500 .72rem/1.55 var(--wing-label); }
+
+.zenith-sheet .zenith-reforms dt { color: var(--zenith-ink); font: 400 1.27rem/1.35 Georgia, serif; }
+.zenith-sheet .zenith-reforms dd { margin: 8px 0 0; color: var(--zenith-muted); font: 400 1rem/1.7 Georgia, serif; }
+
+.zenith-sheet .zenith-testimony {
+  margin-top: 22px;
+  padding: 16px clamp(14px, 2.4vw, 25px);
+  border-inline-start: 2px solid #b18b99;
+  background: #211721;
+}
+
+.zenith-sheet .zenith-testimony h3 {
+  margin: 0 0 8px;
+  color: var(--zenith-testimony);
+  font: 600 .73rem/1.55 var(--wing-label);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.zenith-sheet .zenith-testimony p { color: #dfcbd5; }
+
+.zenith-sheet .zenith-swatches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 17px;
+  padding: 0;
+  margin: 22px 0 0;
+  list-style: none;
+  color: var(--zenith-muted);
+  font: 500 .71rem/1.6 var(--wing-label);
+}
+
+.zenith-sheet .zenith-swatches li { display: flex; align-items: center; gap: 7px; }
+.zenith-sheet .zenith-swatches li > span { width: 12px; height: 12px; border: 1px solid #aa94b277; }
+.zenith-sheet .zenith-swatch-silver { background: #c7c2d0; }
+.zenith-sheet .zenith-swatch-violet { background: #63447f; }
+.zenith-sheet .zenith-swatch-night { background: #14101b; }
+
+.zenith-sheet .zenith-sequence {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  margin: 26px 0 0;
+  padding: 0;
+  border-block: 1px solid var(--zenith-rule);
+  counter-reset: stations;
+  list-style: none;
+}
+
+.zenith-sheet .zenith-sequence li {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  min-width: 0;
+  padding: 16px clamp(10px, 1.9vw, 24px);
+  counter-increment: stations;
+}
+
+.zenith-sheet .zenith-sequence li + li { border-inline-start: 1px solid var(--zenith-rule); }
+.zenith-sheet .zenith-sequence li::before {
+  content: counter(stations, upper-roman);
+  color: var(--zenith-accent);
+  font: 500 .79rem/1.6 "Archive Display", Georgia, serif;
+}
+
+.zenith-sheet .zenith-sequence strong { color: var(--zenith-ink); font: 400 1.12rem/1.3 Georgia, serif; }
+.zenith-sheet .zenith-sequence small { color: var(--zenith-muted); font: 400 .79rem/1.5 var(--wing-label); }
+
+.zenith-sheet .zenith-archive-leaf {
+  padding: clamp(22px, 4vw, 55px);
+  border: 1px solid var(--zenith-rule);
+  background:
+    repeating-linear-gradient(0deg, transparent 0 30px, #b9a4c70b 30px 31px),
+    var(--zenith-paper);
+}
+
+.zenith-sheet .zenith-people {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px 30px;
+}
+
+.zenith-sheet .zenith-people h3 { margin-top: 0; }
+
+.zenith-sheet .zenith-cover-actions { display: flex; flex-wrap: wrap; gap: 9px 25px; margin-top: 18px; }
+
+.zenith-sheet .zenith-seat-entry {
+  padding: clamp(18px, 3vw, 32px);
+  border: 1px solid #826b9066;
+  background: #141019;
+}
+
+.zenith-sheet .zenith-seat-entry dl { margin: 10px 0 0; }
+.zenith-sheet .zenith-seat-entry dl > div { padding: 10px 0; border-top: 1px solid var(--zenith-rule); }
+.zenith-sheet .zenith-seat-entry dl > div:last-child { padding-bottom: 0; }
+
+@media (max-width: 880px) {
+  .zenith-sheet .zenith-cover { grid-template-columns: minmax(0, 1.3fr) minmax(180px, .85fr); gap: 24px; }
+  .zenith-sheet :is(.zenith-register, .zenith-reforms) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 700px) {
+  .zenith-sheet :is(.zenith-cover, .zenith-editorial, .zenith-people) { grid-template-columns: minmax(0, 1fr); }
+  .zenith-sheet .zenith-armorial { width: min(100%, 355px); }
+  .zenith-sheet .zenith-sequence { grid-template-columns: minmax(0, 1fr); }
+  .zenith-sheet .zenith-sequence li { grid-template-columns: 30px minmax(0, 1fr); gap: 4px 8px; }
+  .zenith-sheet .zenith-sequence li::before { grid-row: span 2; }
+  .zenith-sheet .zenith-sequence li + li { border-inline-start: 0; border-top: 1px solid var(--zenith-rule); }
+}
+
+@media (max-width: 430px) {
+  .zenith-sheet .zenith-cover { padding: 20px; }
+  .zenith-sheet .zenith-reforms { grid-template-columns: minmax(0, 1fr); }
+}
