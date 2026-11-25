@@ -63,8 +63,9 @@ class EntryShelvesTest(unittest.TestCase):
         self.assertIn("Three current names", page)
         self.assertIn("Wyrm Sovereign", page)
         self.assertIn("2500 PL", page)
-        self.assertIn("Astera's whereabouts remain unknown; Beru and Jango are sealed.", page)
-        for outsider in ("guts", "astera-zenith", "beru", "obama", "jango"):
+        self.assertIn('href="/aevum-archive/characters/astera-zenith.html">Astera Zenith</a> has returned to lead House Zenith.', page)
+        self.assertIn("Beru and Jango remain sealed", page)
+        for outsider in ("guts", "beru", "obama", "jango"):
             self.assertNotIn(f'href="/aevum-archive/characters/{outsider}.html"', page)
 
     def test_chronology_preserves_eras_dates_and_closed_states(self):

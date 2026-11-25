@@ -65,7 +65,7 @@ class LoreHubTest(unittest.TestCase):
     def test_uncertainty_and_sealed_knowledge_remain_explicit(self):
         for fact in ("her possible death is unconfirmed", "reported finding UWU apparently near death",
                      "Its exact effect remains unknown", "Partly sealed dimension", "Unopened shelf",
-                     "Lost / Unknown · After the soul incident", "What has not been revealed remains unwritten"):
+                     "Active · The Violet Eclipse", "What has not been revealed remains unwritten"):
             self.assertIn(fact, self.text)
         self.assertNotIn("Enski", self.source)
         self.assertNotIn("Tenrei", self.source)

@@ -1,4 +1,4 @@
-"""Astera's visual refresh must preserve her uncertain fate and witnessed discoveries."""
+"""The Violet Eclipse record preserves earlier discoveries and current canon."""
 
 from html.parser import HTMLParser
 from pathlib import Path
@@ -28,17 +28,17 @@ class AsteraDossierTest(unittest.TestCase):
         cls.page = (ROOT / "characters/astera-zenith.html").read_text(encoding="utf-8")
         cls.styles = (ROOT / "assets/astera-dossier.css").read_text(encoding="utf-8")
 
-    def test_hero_keeps_last_confirmed_state_and_unfiltered_portrait(self):
+    def test_hero_shows_current_canon_and_keeps_unfiltered_portrait(self):
         hero = re.search(r'<section class="astral-hero".*?</section>', self.page, re.S).group(0)
-        for fact in ('<dt>Status</dt><dd>LOST / UNKNOWN</dd>', '<dt>Race</dt><dd>Elf</dd>',
-                     '<dt>Path</dt><dd>Star Magic / Dark Astral · COMPLETE</dd>', '<dt>Instructor</dt><dd>Mythic</dd>',
-                     '<dt>Known Bond</dt><dd>Jango</dd>', '<dd>Hollow Star · COMPLETE</dd>',
-                     '<dd>STABILIZED · Left Eye Fully Awakened</dd>',
-                     'Her current whereabouts are unknown; no death is confirmed.'):
+        for fact in ('<span class="astral-status">Active / Alive</span>', '<dt>Race</dt><dd>Elf</dd>',
+                     'Head of House Zenith', 'Dark Astral · Mastered', '<dt>Instructor</dt><dd>Mythic</dd>',
+                     '>Zenith Estate</a>', '>Jango</a>', 'Duality · Unresolved', 'Diadem of the Silent Orbit'):
             self.assertIn(fact, hero)
         self.assertIn('<span>Power Level</span><strong aria-label="Unknown">???</strong>', hero)
-        self.assertIn('<span class="astral-peak">Peak Reached</span>', hero)
+        self.assertIn('<title>Astera Zenith, The Violet Eclipse - Aevum Archive</title>', self.page)
+        self.assertNotIn('Lost / Unknown', hero)
         self.assertEqual(hero.count('src="/aevum-archive/assets/images/astera-dark-astral-complete.webp"'), 1)
+        self.assertIn('luminous injury beneath her awakened left eye', hero)
         self.assertNotIn('astral-portrait-aura', self.page)
         self.assertNotIn('class="record-hero"', self.page)
         self.assertIn('class="astral-sky"', self.page)
@@ -50,8 +50,25 @@ class AsteraDossierTest(unittest.TestCase):
         self.assertEqual(len(parsed.ids), len(set(parsed.ids)))
         self.assertTrue(set(parsed.fragments).issubset(set(parsed.ids)))
         chapters = self.page.split('class="astral-chapters"')[1].split('</nav>')[0]
-        self.assertEqual(len(re.findall(r'<a href="#', chapters)), 8)
+        self.assertEqual(len(re.findall(r'<a href="#', chapters)), 15)
         self.assertIn('href="#diadem-of-the-silent-orbit"', chapters)
+        self.assertIn('last-sighting', parsed.ids)
+        self.assertIn('last-sighting-title', parsed.ids)
+
+    def test_return_and_house_folios_keep_testimony_qualified(self):
+        timeline = self.page.split('<ol class="astral-timeline"', 1)[1].split('</ol>', 1)[0]
+        self.assertEqual(re.findall(r'<h3(?: [^>]*)?>([^<]+)</h3>', timeline), [
+            'The Unrecorded Return', 'The Claim of Zenith', 'The Zenith Restoration',
+            'The Zenith Dispute', 'The Sealed Archives',
+        ])
+        house = (ROOT / "lore/noble-houses/house-zenith.html").read_text(encoding="utf-8")
+        for record in (timeline, house):
+            self.assertRegex(record, r'Unverified accounts</strong>[^<]+reportedly')
+            self.assertIn('reliability of these accounts remain unverified', record)
+            self.assertIn('regardless of noble ancestry', record)
+        self.assertIn('<dt>Heraldry</dt><dd>The Split Star</dd>', house)
+        self.assertIn('<dt>Wider influence</dt><dd>Unconfirmed</dd>', house)
+        self.assertIn('id="unresolved-records"', self.page)
 
     def test_diadem_keeps_worn_and_shrine_effects_distinct(self):
         worn, shrine = re.findall(r'<article class="diadem-mode .*?</article>', self.page, re.S)
@@ -71,7 +88,7 @@ class AsteraDossierTest(unittest.TestCase):
                        "And still I remain.", "The Umbral Meridian", "Beyond the Mark", "it is not yet her home",
                        "A Name Unknown to the World... Until Now.", "+250,000 Points", "Tenrei",
                        "not a battle", "Duality", "zero-slot Signature Trait", "Historical / unrealized vision",
-                       "Completed path", "Magical Understanding and Cleansing Breath"):
+                       "Mastered path", "Magical Understanding and Cleansing Breath"):
             with self.subTest(phrase=phrase):
                 self.assertIn(phrase, self.page)
         self.assertIn('astera-umbral-meridian-quest-complete.png', self.page)

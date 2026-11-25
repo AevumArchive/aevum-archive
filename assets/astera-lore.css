@@ -231,3 +231,56 @@
   .divine-discovery-card { grid-template-columns: minmax(0, 1fr); }
   .divine-discovery-mark { width: 100px; font-size: 4.5rem; }
 }
+
+/* House Zenith during the restoration. */
+.route-lore-noble-houses-house-zenith .zenith-house-hero {
+  background: radial-gradient(ellipse at 90% 28%, #2c233b, transparent 57%), #15111d;
+  border-color: #665375;
+}
+
+.route-lore-noble-houses-house-zenith .zenith-house-chapter {
+  display: grid;
+  grid-template-columns: minmax(0, .72fr) minmax(0, 1.28fr);
+  gap: clamp(20px, 4.6vw, 68px);
+  align-items: start;
+  border-top: 1px solid var(--wing-line);
+  padding-block: clamp(24px, 4vw, 50px) 0;
+}
+
+.route-lore-noble-houses-house-zenith .zenith-house-chapter h2 {
+  margin: 0;
+  font: 400 clamp(1.8rem, 3.5vw, 3.2rem)/1.15 Georgia, serif;
+  letter-spacing: -.025em;
+}
+
+.zenith-house-chapter p { max-width: 67ch; line-height: 1.75; }
+.zenith-house-chapter > div > p:first-child { margin-top: 0; }
+.zenith-house-chapter > div > p:last-child { margin-bottom: 0; }
+
+.route-lore-noble-houses-house-zenith .zenith-house-ledger {
+  display: grid;
+  margin: 0;
+  padding: clamp(18px, 3vw, 32px);
+  border: 1px solid #524260;
+  background: #191421;
+  column-gap: 20px;
+}
+
+.zenith-house-ledger .house-field { padding: 10px 0; border-bottom: 1px solid #40334b; border-radius: 0; }
+.zenith-house-ledger dt { color: #c8b4dc; font: 500 .73rem/1.5 Verdana, sans-serif; }
+.zenith-house-ledger dd { margin: 0; color: #eee5f0; }
+.zenith-house-testimony { padding-inline-start: 16px; border-inline-start: 1px solid #a78394; color: #d8bdca; }
+.zenith-house-testimony strong { display: block; margin-bottom: 5px; color: #e1bfcf; font: 600 .76rem/1.5 Verdana, sans-serif; }
+.zenith-house-people { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.zenith-house-people h3 { margin: 0 0 10px; }
+
+@media (max-width: 760px) {
+  .route-lore-noble-houses-house-zenith .zenith-house-chapter,
+  .zenith-house-people { grid-template-columns: minmax(0, 1fr); }
+  .route-lore-noble-houses-house-zenith .folio-section-nav { display: flex; gap: 0 16px; }
+  .route-lore-noble-houses-house-zenith .folio-section-nav a { padding-block: 8px; }
+}
+
+@media (min-width: 480px) {
+  .route-lore-noble-houses-house-zenith .zenith-house-ledger { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}

@@ -1,27 +1,38 @@
-/* Astera Zenith — astral violet, vanished starlight and the gold of Divine discovery. */
-body.route-characters-astera-zenith { --astral-line: rgb(189 157 222 / .25); --astral-ink: #f1e9f6; --astral-violet: #cbb0ef; --astral-gold: #e4c895; background: radial-gradient(ellipse at 85% 0, #362437, transparent 65rem), radial-gradient(ellipse at 0 40%, #20132d, transparent 65rem), #09080e !important; color: var(--astral-ink); }
+/* Astera Zenith — silver, violet, and the restoration of Zenith and the gold of Divine discovery. */
+body.route-characters-astera-zenith { --astral-line: #44364f; --astral-ink: #ede7f0; --astral-violet: #cab7de; --astral-silver: #c7c2d0; background: radial-gradient(ellipse at 86% 0, #211827, transparent 55rem), #0b0910 !important; color: var(--astral-ink); }
 body.route-characters-astera-zenith::before, body.route-characters-astera-zenith::after, body.route-characters-astera-zenith main.page::before, body.route-characters-astera-zenith main.page::after { content: none !important; }
 body.route-characters-astera-zenith main.astera-dossier { width: min(1440px, calc(100% - 64px)); max-width: 1440px; padding-top: 24px; }
 .astera-dossier *, .astera-dossier *::before, .astera-dossier *::after { box-sizing: border-box; }
 .astera-dossier h1, .astera-dossier h2, .astera-dossier h3 { color: var(--astral-ink); text-shadow: none; }
 .astera-dossier p { color: #c0b2cb; font-size: 1.05rem; line-height: 1.85; text-wrap: pretty; }
 .astera-dossier a { text-underline-offset: 5px; }
-.astera-dossier a:focus-visible { outline: 2px solid var(--astral-gold); outline-offset: 6px; }
+.astera-dossier a:focus-visible { outline: 2px solid var(--astral-violet); outline-offset: 6px; }
 .astera-dossier .eyebrow, .astera-dossier .astral-kicker { color: var(--astral-violet); font: 500 .7rem/1.8 Verdana, sans-serif; text-transform: uppercase; letter-spacing: .1em; }
-.astral-hero { position: relative; isolation: isolate; display: grid; grid-template-columns: minmax(0, .98fr) minmax(0, 1.02fr); align-items: start; border: 1px solid var(--astral-line); background: radial-gradient(ellipse at 5% 0, #62487922, transparent 65%), #0d0a14; }
+.astral-hero { position: relative; isolation: isolate; display: grid; grid-template-columns: minmax(0, .98fr) minmax(0, 1.02fr); align-items: center; border: 1px solid var(--astral-line); background: #120f19; }
 .astral-hero::before { content: ""; position: absolute; z-index: 2; inset: 14px; border-top: 1px solid #e7cdff29; border-left: 1px solid #e7cdff29; pointer-events: none; mask-image: linear-gradient(135deg, #000, transparent 30%); }
-.astral-identity { min-width: 0; padding: clamp(32px, 3.7vw, 58px); }
-.astral-identity > .astral-kicker { display: flex; align-items: center; gap: 12px; margin: 0 0 25px; font-size: .64rem; }
-.astral-kicker > span { color: #dfc5ff; font: 400 1.6rem/1 Georgia, serif; text-shadow: 0 0 20px #c392f2; }
-.astera-dossier .astral-identity h1 { margin: 0; font: 400 clamp(4rem, 7.1vw, 7.4rem)/.99 Georgia, serif; letter-spacing: -.045em; }
-.astral-identity h1 > span, .astral-identity h1 > em { display: block; }
-.astral-identity h1 > em { margin-top: 8px; color: #d4b9ec; font-weight: 400; }
-.astera-dossier .astral-epithet { color: #e1c59f; font: italic 1.3rem/1.5 Georgia, serif; margin: 24px 0 20px; }
+.astral-identity {
+  min-width: 0;
+  padding: clamp(32px, 4vw, 66px);
+  background:
+    radial-gradient(circle at 8rem 10rem, transparent 7.9rem, #aa87d122 8rem, transparent 8.08rem),
+    radial-gradient(ellipse at 14% 9%, #241b31, transparent 74%);
+}
+.astral-heading > .astral-kicker { margin: 0 0 22px; }
+body.route-characters-astera-zenith .astera-dossier .astral-hero .astral-identity h1 {
+  margin: 0;
+  font: 400 clamp(3.75rem, 6.3vw, 7rem)/.99 Georgia, serif;
+  letter-spacing: -.045em;
+}
+.astral-identity h1 > em { color: #d6c0e6; font-weight: 400; }
+.astera-dossier .astral-epithet {
+  margin: 23px 0 7px;
+  color: #ddd2e7;
+  font: 550 clamp(1.05rem, 1.7vw, 1.44rem)/1.35 "Dossier Display", Georgia, serif;
+  letter-spacing: .075em;
+}
+.astera-dossier .astral-office { margin: 0 0 14px; font-size: .99rem; }
+.astral-office a { color: var(--astral-silver); }
 .astral-intro { max-width: 45ch; margin: 0; }
-.astral-status { display: grid; gap: 12px; margin: 27px 0; padding: 20px 0; border-block: 1px solid var(--astral-line); }
-.astral-status > span { color: #ebd0cc; font: 500 .8rem/1.6 Verdana, sans-serif; letter-spacing: .1em; text-transform: uppercase; }
-.astral-status > span::before { content: "◇"; margin-right: 12px; color: #d5abc5; }
-.astera-dossier .astral-status p { max-width: 43ch; margin: 0; color: #b6a4c3; font-size: .88rem; line-height: 1.7; }
 .astral-facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 24px; margin: 0 0 27px; }
 .astral-facts > div { min-width: 0; }
 .astral-facts dt { margin: 0 0 6px; color: #b7a1cb; font: 500 .68rem/1.6 Verdana, sans-serif; letter-spacing: .045em; text-transform: uppercase; }
@@ -29,12 +40,12 @@ body.route-characters-astera-zenith main.astera-dossier { width: min(1440px, cal
 .astral-facts > div:last-child { grid-column: 1 / -1; }
 .astral-facts .pill { display: inline-block; margin: 0 6px 6px 0; padding: 6px 9px; font: 400 .7rem/1.5 Verdana, sans-serif; }
 .astral-link { display: inline-flex; align-items: center; gap: 25px; color: #dbc6ec; font: 500 .75rem/1.8 Verdana, sans-serif; text-decoration: none; }
-.astral-link > span { color: var(--astral-gold); font-size: 1.1rem; }
-.astral-chapters { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 30px; align-items: center; padding: 22px; border-bottom: 1px solid var(--astral-line); background: #100c17; }
-.astral-chapters > span { color: #a18bae; font: 500 .6rem/1.7 Verdana, sans-serif; letter-spacing: .1em; text-transform: uppercase; }
-.astral-chapters > div { display: flex; align-items: center; justify-content: space-between; gap: 22px; overflow: auto; scrollbar-width: thin; }
-.astral-chapters a { flex-shrink: 0; padding-block: 4px; color: #cdb5e0; font: 400 .65rem/1.8 Verdana, sans-serif; text-decoration: none; text-transform: uppercase; }
-.astral-chapters a:hover { color: #fff0df; }
+.astral-link > span { color: var(--astral-silver); font-size: 1.1rem; }
+.astral-chapters { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 28px; align-items: start; padding: 18px 22px; border-bottom: 1px solid var(--astral-line); background: #100c17; }
+.astral-chapters > span { color: #b4a3c2; padding-block: 6px; font: 500 .65rem/1.7 Verdana, sans-serif; letter-spacing: .1em; text-transform: uppercase; }
+.astral-chapters > div { display: flex; flex-wrap: wrap; gap: 3px 18px; }
+.astral-chapters a { padding: 5px 0; color: #d1bedf; font: 400 .73rem/1.7 Verdana, sans-serif; text-decoration: none; }
+.astral-chapters a:hover { color: #f4e7ff; text-decoration: underline; }
 body.route-characters-astera-zenith .astera-dossier > .section { position: relative; padding-top: 40px; margin-top: 80px; border-top: 1px solid var(--astral-line); scroll-margin-top: 30px; }
 body.route-characters-astera-zenith .astera-dossier > .section::before { content: none !important; }
 .astera-dossier .section-head { display: grid; grid-template-columns: 1fr .85fr; gap: 45px; align-items: end; margin-bottom: 32px; }
@@ -45,11 +56,6 @@ body.route-characters-astera-zenith .astera-dossier > .section::before { content
 .astera-dossier .card h2 { margin: 17px 0; font: 400 clamp(2rem, 3vw, 3.2rem)/1.12 Georgia, serif; letter-spacing: -.035em; }
 .astera-dossier .card h3 { font: 400 clamp(1.7rem, 2.7vw, 2.7rem)/1.15 Georgia, serif; }
 .astera-dossier .small-button { display: inline-block; padding: 11px 17px; border-radius: 3px; border-color: var(--astral-line); background: #22172e; color: #ddc6ec; font: 500 .73rem/1.7 Verdana, sans-serif; }
-.astera-dossier .astral-last-sighting { display: grid; grid-template-columns: .85fr 1.15fr; gap: 55px; align-items: start; padding: 35px; border: 1px solid rgb(196 143 171 / .35); background: radial-gradient(ellipse at 0 0, #622f4933, transparent 70%), #130d19; }
-.astera-dossier .astral-last-sighting h2 { margin: 25px 0; font: 400 clamp(2.3rem, 3.5vw, 3.5rem)/1.12 Georgia, serif; letter-spacing: -.035em; }
-.astral-last-sighting h2 em { color: #d5abc3; font-weight: 400; }
-.astral-last-sighting > p { margin: 0; font-size: 1.1rem; line-height: 1.9; }
-.astral-unknown-label { display: inline-block; padding: 7px 10px; border: 1px dashed #c18baf66; color: #d0a9c4; font: 400 .64rem/1.7 Verdana, sans-serif; text-transform: uppercase; letter-spacing: .07em; }
 .astera-dossier .astera-state-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
 .astera-dossier .astera-state-grid .state-card-primary { padding: clamp(26px, 3vw, 42px); background: radial-gradient(ellipse at 90% 10%, #8052ba44, transparent 65%), #191021; }
 .astera-dossier .state-glyph { top: 30px; right: 20px; transform: none; opacity: .12; font-size: 6.5rem; }
@@ -99,7 +105,7 @@ body.route-characters-astera-zenith .astera-dossier > .section::before { content
 .astera-dossier .footer { margin-top: 80px; }
 @keyframes asteraDivineOrbit { to { transform: rotate(360deg); } }
 @media (max-width: 1150px) {
-  .astral-identity { padding: 30px; }.astral-identity > .astral-kicker { font-size: .57rem; }
+  .astral-identity { padding: 30px; }
   .astral-facts { gap: 15px 18px; }.astral-facts dd { font-size: .88rem; }
   .astral-chapters { grid-template-columns: 1fr; padding-inline: 18px; }.astral-chapters > span { display: none; }
   .astera-dossier .astera-state-grid { grid-template-columns: 1fr 1fr; }.astera-dossier .state-card-primary { grid-column: 1 / -1; }
@@ -108,21 +114,18 @@ body.route-characters-astera-zenith .astera-dossier > .section::before { content
 @media (max-width: 900px) {
   body.route-characters-astera-zenith main.astera-dossier { width: calc(100% - 36px); padding-top: 0; }
   .astral-hero { grid-template-columns: 1fr; }.astral-identity { padding: 35px 28px; }
-  .astera-dossier .astral-identity h1 { font-size: clamp(4rem, 12vw, 6.5rem); }
   .astral-intro { max-width: 65ch; }.astral-facts dd { font-size: 1rem; }
   .astera-dossier .section-head { grid-template-columns: 1fr; gap: 20px; }
-  .astera-dossier .astral-last-sighting { grid-template-columns: 1fr; gap: 25px; }
   .astera-dossier .card.astera-soul-mark { grid-template-columns: 1fr; }.astera-dossier .soul-mark-visual { min-height: 380px; }
   .astera-dossier .soul-mark-copy { border-left: 0; border-top: 1px solid var(--astral-line); }
   .astera-dossier .divine-discovery-card { grid-template-columns: 1fr; gap: 35px; }.astera-dossier .divine-discovery-mark { width: 125px; font-size: 5rem; justify-self: start; margin: 15px; }
   .astera-dossier .grid.two { grid-template-columns: 1fr; }
 }
 @media (max-width: 600px) {
-  .astera-dossier .astral-identity h1 { font-size: clamp(3.6rem, 16vw, 5.5rem); }
-  .astral-identity { padding: 30px 23px; }.astral-identity > .astral-kicker { font-size: .55rem; letter-spacing: .07em; }
-  .astral-facts { grid-template-columns: 1fr; gap: 15px; }.astral-facts > div { padding-top: 12px; border-top: 1px solid var(--astral-line); }
+  .astral-identity { padding: 30px 23px; }
+  .astral-chapters > div { gap: 4px 14px; }
+  .astral-facts { gap: 12px 14px; }.astral-facts > div { padding-top: 12px; border-top: 1px solid var(--astral-line); }
   .astera-dossier .astera-state-grid { grid-template-columns: 1fr; }.astera-dossier .state-card-primary { grid-column: auto; }
-  .astera-dossier .astral-last-sighting { padding: 25px; }
   .astera-dossier .zenith-discovery-chain { grid-template-columns: 1fr; }
   .astera-dossier .zenith-discovery-chain li { min-height: 0; padding: 22px; border-right: 0; border-top: 1px solid var(--astral-line); }
   .astera-dossier .zenith-discovery-chain li:first-child { border-top: 0; }
@@ -139,16 +142,6 @@ body.route-characters-astera-zenith .astera-dossier > .section::before { content
 @media (prefers-reduced-motion: reduce) {
   .astera-dossier *, .astera-dossier *::before, .astera-dossier *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
-.astera-dossier .astral-hero {
-  border-color: #ba8fe980;
-  background: radial-gradient(ellipse at 12% 10%, #4d256a80, transparent 65%), #100a19;
-  box-shadow: 0 0 60px #6b39a12b;
-}
-.astera-dossier .astral-identity h1 em {
-  color: #f2d4ff;
-  text-shadow: 0 0 34px #c17dff70;
-}
-
 .astral-portrait { margin: 0; min-width: 0; align-self: start; }
 .astral-portrait > img {
   display: block;
@@ -161,63 +154,11 @@ body.route-characters-astera-zenith .astera-dossier > .section::before { content
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  overflow: hidden;
   background:
-    radial-gradient(circle at 17px 37px, #f2e0ff8c 0 .7px, transparent 1.45px) 0 0 / 89px 113px,
-    radial-gradient(circle at 41px 63px, #c79af287 0 .85px, transparent 1.6px) 12px 5px / 137px 167px,
-    radial-gradient(circle at 13px 29px, #bca7e059 0 .55px, transparent 1.2px) 6px 18px / 59px 79px,
-    radial-gradient(ellipse at 3% 40%, #54338a38, transparent 32%),
-    radial-gradient(ellipse at 98% 70%, #63386835, transparent 34%);
+    radial-gradient(circle at 17px 37px, #f2e0ff55 0 .7px, transparent 1.45px) 0 0 / 113px 157px,
+    radial-gradient(circle at 41px 63px, #c79af248 0 .85px, transparent 1.6px) 12px 5px / 163px 181px;
 }
 .astera-dossier { position: relative; z-index: 1; }
-.astral-sky i {
-  position: absolute;
-  width: 3px;
-  height: 3px;
-  border-radius: 50%;
-  background: #f1d9ff;
-  opacity: .18;
-  animation: astral-twinkle 7s ease-in-out infinite;
-}
-.astral-sky i:nth-child(even) { width: 2px; height: 2px; animation-duration: 9s; }
-.astral-sky i:nth-child(3n + 1) {
-  width: 10px;
-  height: 10px;
-  border-radius: 0;
-  background: #fff0ff;
-  clip-path: polygon(50% 0, 59% 40%, 100% 50%, 59% 60%, 50% 100%, 41% 60%, 0 50%, 41% 40%);
-}
-.astral-sky i:nth-child(3n + 2) { background: #bba5ff; }
-.astral-sky i:nth-child(1) { left: 1%; top: 18%; animation-delay: -1s; }
-.astral-sky i:nth-child(2) { right: 2%; top: 25%; animation-delay: -3s; }
-.astral-sky i:nth-child(3) { left: 2%; top: 43%; animation-delay: -4s; }
-.astral-sky i:nth-child(4) { right: 1%; top: 49%; animation-delay: -5s; }
-.astral-sky i:nth-child(5) { left: 1%; top: 63%; animation-delay: -2s; }
-.astral-sky i:nth-child(6) { right: 2%; top: 71%; animation-delay: -6s; }
-.astral-sky i:nth-child(7) { left: 2%; top: 85%; animation-delay: -5s; }
-.astral-sky i:nth-child(8) { right: 1%; top: 92%; animation-delay: -3s; }
-.astral-sky i:nth-child(9) { left: 21%; top: 10%; animation-delay: -2s; }
-.astral-sky i:nth-child(10) { left: 52%; top: 12%; animation-delay: -4s; }
-.astral-sky i:nth-child(11) { right: 16%; top: 10%; animation-delay: -5s; }
-.astral-sky i:nth-child(12) { left: 40%; top: 95%; animation-delay: -6s; }
-.astral-sky i:nth-child(13) { right: 2%; top: 13%; animation-delay: -4s; }
-.astral-sky i:nth-child(14) { left: 1%; top: 31%; animation-delay: -6s; }
-.astral-sky i:nth-child(15) { right: 1%; top: 36%; animation-delay: -1s; }
-.astral-sky i:nth-child(16) { left: 2%; top: 55%; animation-delay: -3s; }
-.astral-sky i:nth-child(17) { right: 2%; top: 59%; animation-delay: -2s; }
-.astral-sky i:nth-child(18) { right: 1%; top: 80%; animation-delay: -4s; }
-.astral-sky::after {
-  content: "";
-  position: absolute;
-  top: 4%;
-  right: 14%;
-  width: clamp(42px, 7vw, 100px);
-  height: 2px;
-  border-radius: 50%;
-  background: linear-gradient(90deg, #fff6ff, #d5b4ff60 28%, transparent);
-  opacity: 0;
-  animation: astral-meteor 13s linear -2s infinite;
-}
 
 .astral-power {
   position: relative;
@@ -226,23 +167,21 @@ body.route-characters-astera-zenith .astera-dossier > .section::before { content
   align-items: center;
   gap: 14px;
   margin: 24px 0;
-  padding: 15px clamp(12px, 2.4vw, 23px);
-  border: 1px solid #a276c5;
-  background: radial-gradient(ellipse at 13% 50%, #502774, transparent 65%), #1a0f28;
+  padding: 12px clamp(12px, 2.4vw, 23px);
+  border-block: 1px solid var(--astral-line);
+  background: #191421;
 }
 .astral-power-orbit {
   display: grid;
   place-items: center;
   width: clamp(30px, 5vw, 52px);
   aspect-ratio: 1;
-  border: 1px dashed #d7a8f5;
+  border: 1px solid #aa87d166;
   border-radius: 50%;
   color: #f8dfff;
-  text-shadow: 0 0 12px #d285ff;
-  animation: astral-orbit 18s linear infinite;
 }
-.astral-power > div > span, .astral-peak {
-  color: #e6c2f7;
+.astral-power > div > span, .astral-status {
+  color: var(--astral-silver);
   font: 700 .7rem/1.5 Verdana, sans-serif;
   text-transform: uppercase;
   letter-spacing: .08em;
@@ -251,12 +190,19 @@ body.route-characters-astera-zenith .astera-dossier > .section::before { content
   display: block;
   color: #faeaff;
   font: 400 clamp(2.5rem, 5vw, 4.7rem)/1 Georgia, serif;
-  text-shadow: 0 0 22px #ca7cfb90;
 }
-.astral-peak {
-  padding: 6px 10px;
-  border: 1px solid #d3a5ee7d;
-  text-align: center;
+.astral-power .astral-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #c8ddcf;
+}
+.astral-power .astral-status::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
 }
 
 .astera-dossier .astral-shatter {
@@ -281,18 +227,6 @@ body.route-characters-astera-zenith .astera-dossier > .section::before { content
   font: 400 clamp(1.12rem, 2vw, 1.4rem)/1.55 Georgia, serif;
 }
 .astera-dossier .soul-mark-copy dd strong { color: #e7b7ff; }
-@keyframes astral-orbit { to { transform: rotate(1turn); } }
-
-@keyframes astral-twinkle {
-  0%, 100% { transform: translate3d(-3px, 8px, 0) scale(.55); opacity: .25; }
-  35% { transform: translate3d(4px, -3px, 0) scale(1.15); opacity: .95; }
-  65% { transform: translate3d(9px, -14px, 0) scale(.72); opacity: .45; }
-}
-@keyframes astral-meteor {
-  0%, 70% { opacity: 0; transform: translate3d(0, 0, 0) rotate(-23deg); }
-  72% { opacity: .85; }
-  82%, 100% { opacity: 0; transform: translate3d(-22vw, 9vw, 0) rotate(-23deg); }
-}
 @keyframes astral-charge {
   0% { opacity: .65; transform: scale(1.04); }
   31% { opacity: 1; transform: scale(.83) rotate(20deg); }
@@ -312,11 +246,213 @@ body.route-characters-astera-zenith .astera-dossier > .section::before { content
   43% { transform: scale(1.6); opacity: 1; }
   100% { transform: scale(1); opacity: 1; }
 }
+
+.astera-dossier :is(.astral-editorial, .astral-return, .astral-mastery) h2 {
+  margin: 0;
+  font: 400 clamp(2rem, 4vw, 3.35rem)/1.12 Georgia, serif;
+  letter-spacing: -.035em;
+}
+
+.astral-editorial {
+  display: grid;
+  grid-template-columns: minmax(0, .78fr) minmax(0, 1.22fr);
+  align-items: start;
+  gap: 20px clamp(30px, 6vw, 100px);
+}
+
+.astral-prose p { max-width: 67ch; }
+.astral-prose p:first-child { margin-top: 0; }
+.astral-prose p:last-child { margin-bottom: 0; }
+.astera-dossier .astral-subheading { color: var(--astral-silver); font-family: Georgia, serif; font-style: italic; }
+
+.astral-personality { grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr); }
+.astral-personality-ledger {
+  width: 100%;
+  align-self: center;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.astral-personality-ledger caption {
+  padding: 0 0 12px;
+  color: var(--astral-silver);
+  text-align: left;
+  font: 550 .78rem/1.5 "Dossier Display", Georgia, serif;
+  letter-spacing: .06em;
+}
+
+.astral-personality-ledger th, .astral-personality-ledger td {
+  padding: 12px 10px;
+  border-block: 1px solid var(--astral-line);
+  text-align: left;
+  overflow-wrap: break-word;
+}
+
+.astral-personality-ledger th { color: var(--astral-violet); font: 600 .74rem/1.5 Verdana, sans-serif; }
+.astral-personality-ledger td { color: #c0b2cb; font-size: .94rem; line-height: 1.55; }
+.astral-personality-ledger td:last-child { color: var(--astral-ink); background: #191421; }
+
+.astral-timeline {
+  counter-reset: chapter;
+  max-width: 1100px;
+  margin: 34px auto 0;
+  padding: 0;
+  list-style: none;
+}
+
+.astral-timeline > li {
+  position: relative;
+  counter-increment: chapter;
+  margin-inline-start: 46px;
+  padding: 0 0 clamp(26px, 4.5vw, 60px) clamp(20px, 4vw, 53px);
+  border-inline-start: 1px solid var(--chapter-rule, var(--astral-line));
+  scroll-margin-top: 36px;
+}
+
+.astral-timeline > li::before {
+  content: counter(chapter, upper-roman);
+  position: absolute;
+  top: 0;
+  right: calc(100% + 12px);
+  color: var(--chapter-tint, var(--astral-silver));
+  font: 500 .9rem/2 "Dossier Display", Georgia, serif;
+}
+
+.astral-timeline > li::after {
+  content: "";
+  position: absolute;
+  left: -3px;
+  top: 13px;
+  width: 5px;
+  height: 5px;
+  background: var(--chapter-tint, var(--astral-silver));
+  transform: rotate(45deg);
+}
+
+.astral-timeline > li:last-child { padding-bottom: 0; }
+.astral-timeline > .astral-timeline-gap { border-inline-start-style: dashed; }
+.astera-dossier .astral-timeline h3 { margin: 0; font: 400 clamp(1.55rem, 3vw, 2.35rem)/1.18 Georgia, serif; }
+.astral-timeline p { max-width: 72ch; margin: 12px 0 0; }
+.astral-timeline-restoration { --chapter-tint: #ddcad9; }
+.astral-timeline-dispute { --chapter-tint: #d7aebf; --chapter-rule: #876472; }
+.astral-timeline-folio article { padding: 16px 0; border-block: 1px solid var(--astral-line); }
+.astera-dossier .astral-testimony {
+  margin-top: 17px;
+  padding-inline-start: 17px;
+  border-inline-start: 1px solid #876472;
+  color: #d9c1cd;
+  font-size: 1rem;
+}
+
+.astral-testimony strong {
+  display: block;
+  margin-bottom: 5px;
+  color: #e6bfce;
+  font: 600 .69rem/1.5 Verdana, sans-serif;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.astera-dossier .astral-house {
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
+  align-items: center;
+  padding: clamp(22px, 4vw, 62px);
+  border: 1px solid var(--astral-line);
+  background: #191421;
+}
+
+.astral-house-ledger { margin: 0; }
+.astral-house-ledger > div {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  gap: 10px;
+  align-items: baseline;
+  padding-block: 12px;
+  border-top: 1px solid var(--astral-line);
+}
+
+.astral-house-ledger > div:last-child { border-bottom: 1px solid var(--astral-line); }
+.astral-house-ledger dt, .mastery-milestones dt, .astral-awakened-quests dt {
+  color: var(--astral-violet);
+  font: 500 .73rem/1.55 Verdana, sans-serif;
+}
+
+.astral-house-ledger dd { margin: 0; color: var(--astral-silver); }
+
+.astera-dossier .astral-mastery {
+  display: grid;
+  grid-template-columns: minmax(0, .46fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(20px, 6vw, 85px);
+  padding: clamp(24px, 5vw, 72px);
+  border: 1px solid var(--astral-line);
+  background: radial-gradient(ellipse at 16% 44%, #2c203e, transparent 58%), #120f19;
+}
+
+.mastery-orbit {
+  position: relative;
+  width: min(100%, 290px);
+  aspect-ratio: 1;
+  justify-self: center;
+  border: 1px solid #aa87d15a;
+  border-radius: 50%;
+  background: radial-gradient(circle, #100d18 0 38%, transparent 39%);
+}
+
+.mastery-orbit::before {
+  content: "";
+  position: absolute;
+  inset: 21%;
+  border: 1px solid #a683c4;
+  border-radius: 50%;
+  box-shadow: -6px 0 15px #ab81ca40;
+}
+
+.mastery-orbit::after {
+  content: "";
+  position: absolute;
+  inset: 20% 2%;
+  border: 1px solid #bfa6dc65;
+  border-radius: 50%;
+  transform: rotate(-33deg) scaleY(.46);
+}
+
+.mastery-milestones {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin: 22px 0 0;
+}
+
+.mastery-milestones > div { border-top: 1px solid var(--astral-line); padding-top: 10px; }
+.mastery-milestones dd, .astral-awakened-quests dd { margin: 4px 0 0; }
+.astral-unresolved ul { margin: 0; padding-inline-start: 21px; color: #c0b2cb; line-height: 1.75; }
+.astral-unresolved li + li { margin-top: 7px; }
+
+@media (max-width: 900px) {
+  .astral-portrait { max-width: 680px; justify-self: center; }
+  .astral-editorial, .astera-dossier .astral-house { grid-template-columns: minmax(0, 1fr); }
+  .astral-personality-ledger { margin-top: 12px; }
+  .mastery-milestones { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 650px) {
+  body.route-characters-astera-zenith .astera-dossier > .section { margin-top: 54px; }
+  .astral-identity { display: contents; }
+  .astral-heading {
+    padding: 32px 23px 6px;
+    background: radial-gradient(ellipse at 0 0, #282035, transparent 75%);
+  }
+  .astral-profile { padding: 0 23px 28px; }
+  .astral-portrait { grid-row: 2; }
+  .astral-portrait > img { width: min(100%, 420px); }
+  .astera-dossier .astral-mastery { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  .mastery-orbit { width: min(46%, 155px); }
+  .astral-timeline > li { margin-inline-start: 31px; }
+  .astral-timeline > li::before { right: calc(100% + 8px); font-size: .76rem; }
+}
+
 @media (max-width: 430px) {
   .astral-power { grid-template-columns: auto 1fr; gap: 8px 12px; }
-  .astral-peak { grid-column: 1 / -1; justify-self: start; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .astral-power-orbit, .astral-sky i, .astral-sky::after,
-  .astral-shatter.is-shattering svg * { animation: none; }
+  .astral-power .astral-status { grid-column: 1 / -1; }
 }

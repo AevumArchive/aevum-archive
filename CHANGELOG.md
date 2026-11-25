@@ -2,6 +2,8 @@
 
 ## 2026-11-25
 
+- Recorded Astera’s return as the Violet Eclipse, her Dark Astral Mastery and her leadership of House Zenith. Rebuilt her dossier and updated the house folio and related archive records.
+
 - Added Astera Zenith’s Diadem of the Silent Orbit, example worn bonuses at Power Level 2,500, and pedestal and stone effects. Astera’s current worn power bonuses are unknown.
 
 ## 2026-11-24

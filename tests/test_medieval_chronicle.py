@@ -60,10 +60,10 @@ class MedievalChronicleTest(unittest.TestCase):
     def test_campaign_states_and_uncertain_outcomes_are_unchanged(self):
         for fact in ('ACTIVE', 'Post-Convergence', 'Avalon–Rath War',
                      'Rath initiated the conflict at Ardent Gate; Avalon answered in defense.',
-                     'Lost / Unknown after Faaram’s soul extraction', 'whose present fate remains unknown',
+                     'Master of the Dark Astral Path and head of House Zenith', 'whose present fate remains unknown',
                      'World Anchor — Part I is accessible', 'refusing every offensive use of her craft',
                      'Second Sight stabilized', 'Faaram’s Mark on her soul has been destroyed.',
-                     'The soul incident and Astera’s fate remain unresolved.', 'Maps remain the visual authority'):
+                     'Astera has returned. The aftermath of the soul extraction remains unresolved.', 'Maps remain the visual authority'):
             self.assertIn(fact, self.page)
         self.assertIn('visibility-state partial">Partial</span><h3>Silent Fault', self.page)
         self.assertIn('visibility-state">Complete</span><h3>The Umbral Meridian · Beyond the Mark', self.page)

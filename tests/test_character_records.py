@@ -20,7 +20,7 @@ class CharacterRecordsTest(unittest.TestCase):
 
         self.assertIn("<dt>Status</dt><dd>ACTIVE</dd>", detail)
         self.assertIn('data-status="active" data-name="OBAMA"', hall)
-        self.assertIn("Active <span>4</span>", hall)
+        self.assertIn("Active <span>5</span>", hall)
         self.assertIn("Sealed <span>5</span>", hall)
         self.assertIn("Three current names", shelf)
         self.assertIn('status-card active golden-status" href="/aevum-archive/characters/obama.html"', old_road)
@@ -54,21 +54,21 @@ class CharacterRecordsTest(unittest.TestCase):
                 self.assertIn('<dt>Reincarnation of</dt><dd><a href="/aevum-archive/characters/tony.html#incarnations">Tony</a>', detail)
                 self.assertIn('class="dossier-portrait dossier-seal"', detail)
 
-    def test_astera_is_lost_and_faaram_is_active(self) -> None:
+    def test_astera_and_faaram_are_active(self) -> None:
         astera = page("characters/astera-zenith.html")
         faaram = page("characters/faaram.html")
         hall = page("characters/all.html")
         shelf = page("characters/index.html")
         old_road = page("playthroughs/aizen-ended-road.html")
 
-        self.assertIn('<dt>Status</dt><dd>LOST / UNKNOWN</dd>', astera)
-        self.assertIn('Her current whereabouts are unknown; no death is confirmed.', astera)
+        self.assertIn('<span class="astral-status">Active / Alive</span>', astera)
+        self.assertIn('Astera returned to the Zenith Estate', astera)
         self.assertIn('<dt>Status</dt><dd>ACTIVE</dd>', faaram)
-        self.assertIn('data-status="lost" data-name="Astera Zenith"', hall)
+        self.assertIn('data-status="active" data-name="Astera Zenith"', hall)
         self.assertIn('data-status="active" data-name="Faaram Tempest"', hall)
-        self.assertIn('Active <span>4</span>', hall)
+        self.assertIn('Active <span>5</span>', hall)
         self.assertIn('Sealed <span>5</span>', hall)
-        self.assertIn('Lost / Unknown <span>5</span>', hall)
+        self.assertIn('Lost / Unknown <span>4</span>', hall)
         self.assertIn('Faaram Tempest, Lythariel and William', shelf)
         self.assertIn('status-card active" href="/aevum-archive/characters/faaram.html"', old_road)
 
@@ -162,7 +162,7 @@ class CharacterRecordsTest(unittest.TestCase):
         shelf = page("characters/index.html")
         styles = page("assets/archive-record-refresh.css")
 
-        self.assertIn("astera-dossier.css?v=20261114-starlight", astera)
+        self.assertIn("astera-dossier.css?v=20261125-eclipse", astera)
         dossier_styles = page("assets/astera-dossier.css")
         self.assertRegex(dossier_styles, r"\.astral-portrait > img\s*\{\s*display: block;\s*width: 100%;\s*height: auto;\s*mask-image: linear-gradient\(to bottom,")
         self.assertIn("<dt>Current Status</dt><dd>SEALED</dd>", beru)

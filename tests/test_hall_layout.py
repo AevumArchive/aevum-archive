@@ -27,7 +27,7 @@ class HallLayoutTest(unittest.TestCase):
         parsed.feed(page)
         self.assertEqual(len(parsed.cards), 26)
         self.assertEqual(Counter(card["data-status"] for card in parsed.cards),
-                         {"active": 4, "sealed": 5, "fallen": 8, "lost": 5, "retired": 4})
+                         {"active": 5, "sealed": 5, "fallen": 8, "lost": 4, "retired": 4})
         statuses = {card["data-name"]: card["data-status"] for card in parsed.cards}
         for name in ("Thomas Meyer", "Tony Arasaka"):
             self.assertEqual(statuses[name], "retired")
