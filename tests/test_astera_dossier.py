@@ -38,7 +38,9 @@ class AsteraDossierTest(unittest.TestCase):
         self.assertIn('<title>Astera Zenith, The Violet Eclipse - Aevum Archive</title>', self.page)
         self.assertNotIn('Lost / Unknown', hero)
         self.assertEqual(hero.count('src="/aevum-archive/assets/images/astera-dark-astral-complete.webp"'), 1)
-        self.assertIn('luminous injury beneath her awakened left eye', hero)
+        self.assertIn('wound beneath her awakened left eye', hero)
+        self.assertNotRegex(self.page, r'luminous (?:violet )?injury')
+        self.assertIn('>The Faceless</a> left the wound beneath it while trying to tear the Hollow Star from her.', self.page)
         self.assertNotIn('astral-portrait-aura', self.page)
         self.assertNotIn('class="record-hero"', self.page)
         self.assertIn('class="astral-sky"', self.page)
@@ -50,10 +52,11 @@ class AsteraDossierTest(unittest.TestCase):
         self.assertEqual(len(parsed.ids), len(set(parsed.ids)))
         self.assertTrue(set(parsed.fragments).issubset(set(parsed.ids)))
         chapters = self.page.split('class="astral-chapters"')[1].split('</nav>')[0]
-        self.assertEqual(len(re.findall(r'<a href="#', chapters)), 15)
+        self.assertEqual(len(re.findall(r'<a href="#', chapters)), 14)
         self.assertIn('href="#diadem-of-the-silent-orbit"', chapters)
         self.assertIn('last-sighting', parsed.ids)
         self.assertIn('last-sighting-title', parsed.ids)
+        self.assertNotIn('unresolved-records', parsed.ids)
 
     def test_return_and_house_folios_keep_testimony_qualified(self):
         timeline = self.page.split('<ol class="astral-timeline"', 1)[1].split('</ol>', 1)[0]
@@ -62,13 +65,18 @@ class AsteraDossierTest(unittest.TestCase):
             'The Zenith Dispute', 'The Sealed Archives',
         ])
         house = (ROOT / "lore/noble-houses/house-zenith.html").read_text(encoding="utf-8")
+        self.assertIn('<p>Astera stripped several opponents of their positions and banished them from the lands under her authority.</p>', timeline)
+        self.assertIn('Unverified accounts</strong> Some exiles are said to have returned', timeline)
+        self.assertRegex(house, r'Unverified accounts</strong>[^<]+reportedly')
         for record in (timeline, house):
-            self.assertRegex(record, r'Unverified accounts</strong>[^<]+reportedly')
             self.assertIn('reliability of these accounts remain unverified', record)
             self.assertIn('regardless of noble ancestry', record)
         self.assertIn('<dt>Heraldry</dt><dd>The Split Star</dd>', house)
         self.assertIn('<dt>Wider influence</dt><dd>Unconfirmed</dd>', house)
-        self.assertIn('id="unresolved-records"', self.page)
+
+    def test_dev_note_appears_beside_archive_footer_credit(self):
+        footer = self.page.split('<footer class="footer">', 1)[1].split('</footer>', 1)[0]
+        self.assertRegex(footer, r'witnessed knowledge only\.</span>\s*<span class="astral-dev-note">DEV approved')
 
     def test_diadem_keeps_worn_and_shrine_effects_distinct(self):
         worn, shrine = re.findall(r'<article class="diadem-mode .*?</article>', self.page, re.S)

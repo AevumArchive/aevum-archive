@@ -103,6 +103,8 @@ body.route-characters-astera-zenith .astera-dossier > .section::before { content
 .astera-dossier .astera-duality-current .duality-card .eyebrow { margin: 22px 0 0; }
 .astera-dossier .astera-duality-current .is-current { border-color: #c6a1ec88; background: radial-gradient(ellipse at 100% 0, #75509a33, transparent 65%), #150f20; }
 .astera-dossier .footer { margin-top: 80px; }
+.astral-footer-credit { display: flex; flex-wrap: wrap; gap: 2px 16px; }
+.astral-dev-note { color: var(--astral-violet); }
 @keyframes asteraDivineOrbit { to { transform: rotate(360deg); } }
 @media (max-width: 1150px) {
   .astral-identity { padding: 30px; }
@@ -426,8 +428,6 @@ body.route-characters-astera-zenith .astera-dossier > .section::before { content
 
 .mastery-milestones > div { border-top: 1px solid var(--astral-line); padding-top: 10px; }
 .mastery-milestones dd, .astral-awakened-quests dd { margin: 4px 0 0; }
-.astral-unresolved ul { margin: 0; padding-inline-start: 21px; color: #c0b2cb; line-height: 1.75; }
-.astral-unresolved li + li { margin-top: 7px; }
 
 @media (max-width: 900px) {
   .astral-portrait { max-width: 680px; justify-self: center; }

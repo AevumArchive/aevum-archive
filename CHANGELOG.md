@@ -2,6 +2,8 @@
 
 ## 2026-11-25
 
+- Clarified the injury the Faceless left beneath Astera’s eye and the wording of the banishments. Removed the unresolved-records list and added a developer note to her dossier.
+
 - Recorded Astera’s return as the Violet Eclipse, her Dark Astral Mastery and her leadership of House Zenith. Rebuilt her dossier and updated the house folio and related archive records.
 
 - Added Astera Zenith’s Diadem of the Silent Orbit, example worn bonuses at Power Level 2,500, and pedestal and stone effects. Astera’s current worn power bonuses are unknown.
