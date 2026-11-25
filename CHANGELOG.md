@@ -2,6 +2,8 @@
 
 ## 2026-11-25
 
+- Added The Zenith Council panorama between the personality and return chapters of Astera’s dossier.
+
 - Clarified the injury the Faceless left beneath Astera’s eye and the wording of the banishments. Removed the unresolved-records list and added a developer note to her dossier.
 
 - Recorded Astera’s return as the Violet Eclipse, her Dark Astral Mastery and her leadership of House Zenith. Rebuilt her dossier and updated the house folio and related archive records.

@@ -249,7 +249,7 @@ body.route-characters-astera-zenith .astera-dossier > .section::before { content
   100% { transform: scale(1); opacity: 1; }
 }
 
-.astera-dossier :is(.astral-editorial, .astral-return, .astral-mastery) h2 {
+.astera-dossier :is(.astral-editorial, .astral-council, .astral-return, .astral-mastery) h2 {
   margin: 0;
   font: 400 clamp(2rem, 4vw, 3.35rem)/1.12 Georgia, serif;
   letter-spacing: -.035em;
@@ -293,6 +293,43 @@ body.route-characters-astera-zenith .astera-dossier > .section::before { content
 .astral-personality-ledger th { color: var(--astral-violet); font: 600 .74rem/1.5 Verdana, sans-serif; }
 .astral-personality-ledger td { color: #c0b2cb; font-size: .94rem; line-height: 1.55; }
 .astral-personality-ledger td:last-child { color: var(--astral-ink); background: #191421; }
+
+.astera-dossier .astral-council figure {
+  margin: clamp(23px, 3.5vw, 44px) 0 0;
+  border: 1px solid #a697b472;
+}
+
+.astera-dossier .astral-council img { display: block; width: 100%; height: auto; }
+
+.astera-dossier .astral-council figcaption {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 5px 18px;
+  padding: 11px clamp(12px, 2vw, 22px);
+  border-top: 1px solid var(--astral-line);
+  background: #120f19;
+  color: var(--astral-silver);
+  font: italic .91rem/1.6 Georgia, serif;
+}
+
+.astera-dossier .astral-council figcaption a {
+  color: var(--astral-violet);
+  font: 500 .73rem/1.6 Verdana, sans-serif;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.astera-dossier .astral-council-copy {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px clamp(24px, 4vw, 60px);
+  max-width: 110ch;
+  margin-top: clamp(18px, 3vw, 32px);
+}
+
+.astera-dossier .astral-council-copy p { margin: 0; }
 
 .astral-timeline {
   counter-reset: chapter;
@@ -446,6 +483,7 @@ body.route-characters-astera-zenith .astera-dossier > .section::before { content
   .astral-profile { padding: 0 23px 28px; }
   .astral-portrait { grid-row: 2; }
   .astral-portrait > img { width: min(100%, 420px); }
+  .astera-dossier .astral-council-copy { grid-template-columns: minmax(0, 1fr); }
   .astera-dossier .astral-mastery { grid-template-columns: minmax(0, 1fr); gap: 18px; }
   .mastery-orbit { width: min(46%, 155px); }
   .astral-timeline > li { margin-inline-start: 31px; }

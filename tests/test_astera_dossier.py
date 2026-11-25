@@ -52,7 +52,7 @@ class AsteraDossierTest(unittest.TestCase):
         self.assertEqual(len(parsed.ids), len(set(parsed.ids)))
         self.assertTrue(set(parsed.fragments).issubset(set(parsed.ids)))
         chapters = self.page.split('class="astral-chapters"')[1].split('</nav>')[0]
-        self.assertEqual(len(re.findall(r'<a href="#', chapters)), 14)
+        self.assertEqual(len(re.findall(r'<a href="#', chapters)), 15)
         self.assertIn('href="#diadem-of-the-silent-orbit"', chapters)
         self.assertIn('last-sighting', parsed.ids)
         self.assertIn('last-sighting-title', parsed.ids)
