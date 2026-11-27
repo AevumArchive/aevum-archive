@@ -210,7 +210,7 @@ body.npc-dossier-death .death-dossier .death-stage {
 .death-dossier :is(.fate-thread-card strong, .fate-thread-root, .fate-title) { color: var(--npc-ink); }
 .death-dossier .footer { color: #adadad; }
 
-/* A single short swing on the directory, using its own simplified dial. */
+/* The directory uses a simplified dial and a slightly quicker swing. */
 body.route-npcs .npc-directory #sovereigns .npc-compact-grid .npc-feature-death {
   display: grid;
   grid-column: 1 / -1;
@@ -256,7 +256,6 @@ body.route-npcs #sovereigns .npc-feature-death .death-card-copy h3 {
 .npc-directory .death-card-clock .death-pendulum {
   --death-pivot: 70px 86px;
   animation-duration: 4.8s;
-  animation-iteration-count: 1;
 }
 
 /* The Character Bonds tile uses the same dial in miniature. */

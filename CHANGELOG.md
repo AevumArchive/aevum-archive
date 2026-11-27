@@ -2,6 +2,8 @@
 
 ## 2026-11-27
 
+- Fixed the pendulum on Death’s directory card so it keeps swinging while in view.
+
 - Gave Death’s dossier and directory card a neutral grayscale palette and emphasized his primordial nature and standing among the Four Horsemen.
 
 - Recolored Death’s NPC directory card in graphite, slate blue and silver.
