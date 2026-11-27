@@ -11,8 +11,8 @@
   <script src="/aevum-archive/assets/halloween.js?v=20261030-allhallows1"></script>
   <link rel="stylesheet" href="/aevum-archive/assets/npc-dossiers.css?v=20261114-bobby">
   <link rel="stylesheet" href="/aevum-archive/assets/threads-of-fate.css?v=20261113-threads">
-  <link rel="stylesheet" href="/aevum-archive/assets/death-dossier.css?v=20261127">
-  <script src="/aevum-archive/assets/death-dossier.js?v=20261127" defer></script>
+  <link rel="stylesheet" href="/aevum-archive/assets/death-dossier.css?v=20261127-silver">
+  <script src="/aevum-archive/assets/death-dossier.js?v=20261127-silver" defer></script>
 </head>
 <body class="archive-page theme-npcs page-detail npc-dossier-page npc-dossier-death">
   <header class="site-header">
@@ -58,19 +58,31 @@
         <svg class="death-clock" viewBox="0 0 440 470" aria-hidden="true" focusable="false">
           <defs>
             <radialGradient id="death-dial">
-              <stop stop-color="#2b2e27"/>
-              <stop offset=".77" stop-color="#191c17"/>
-              <stop offset="1" stop-color="#10120f"/>
+              <stop stop-color="#252921"/>
+              <stop offset=".72" stop-color="#151812"/>
+              <stop offset="1" stop-color="#090b09"/>
             </radialGradient>
             <linearGradient id="death-metal" x2=".26" y2="1">
-              <stop stop-color="#b8bbae"/>
-              <stop offset=".37" stop-color="#777765"/>
-              <stop offset=".73" stop-color="#4d5043"/>
-              <stop offset="1" stop-color="#8d8f80"/>
+              <stop stop-color="#e6e7d9"/>
+              <stop offset=".29" stop-color="#8e9184"/>
+              <stop offset=".66" stop-color="#464b3e"/>
+              <stop offset="1" stop-color="#a6a795"/>
+            </linearGradient>
+            <linearGradient id="death-case" x2="0" y2="1">
+              <stop stop-color="#bfc1ad" stop-opacity=".68"/>
+              <stop offset=".55" stop-color="#949a84" stop-opacity=".28"/>
+              <stop offset="1" stop-color="#949a84" stop-opacity="0"/>
             </linearGradient>
           </defs>
-          <path d="M220 21V7M212 13h16M65 179H43m354 0h-22M220 447v11"
-                fill="none" stroke="#747968" stroke-opacity=".43"/>
+          <g fill="none" stroke="url(#death-case)">
+            <path d="M29 458V174C29 92 96 45 220 8c124 37 191 84 191 166v284"/>
+            <path d="M40 444V178C40 101 108 54 220 20c112 34 180 81 180 158v266" stroke-opacity=".65"/>
+            <path d="M52 434V183C52 110 118 66 220 32c102 34 168 78 168 151v251" stroke-opacity=".4"/>
+          </g>
+          <path d="M8 179h54m316 0h54M220 440v20M198 457h44"
+                fill="none" stroke="#a1a490" stroke-opacity=".38"/>
+          <path d="M183 419a119 119 0 0 0 74 0m-62 13a128 128 0 0 0 50 0"
+                fill="none" stroke="#a7ad94" stroke-opacity=".28"/>
           <g class="death-pendulum">
             <path d="M220 299v102" stroke="#373a30" stroke-width="8"/>
             <path d="M220 299v102" stroke="url(#death-metal)" stroke-width="4"/>
@@ -79,15 +91,19 @@
             <circle cx="220" cy="413" r="17" fill="none" stroke="#272a22" stroke-opacity=".44"/>
             <path d="M215 413h10m-5-5v10" stroke="#d1cfc0" stroke-opacity=".47"/>
           </g>
-          <circle cx="220" cy="179" r="146" fill="#131510" stroke="#4f5347" stroke-width="3"/>
-          <circle cx="220" cy="179" r="140" fill="url(#death-dial)" stroke="url(#death-metal)" stroke-width="3"/>
-          <circle cx="220" cy="179" r="133" fill="none" stroke="#8e9180" stroke-opacity=".29"/>
+          <circle cx="220" cy="179" r="153" fill="#0c0e0b" stroke="#51584a" stroke-width="1"/>
+          <circle cx="220" cy="179" r="149" fill="#151912" stroke="url(#death-metal)" stroke-width="6"/>
+          <circle cx="220" cy="179" r="141" fill="url(#death-dial)" stroke="#b2b6a5" stroke-opacity=".52"/>
+          <circle cx="220" cy="179" r="135" fill="none" stroke="#8e9180" stroke-opacity=".29"/>
           <circle cx="220" cy="179" r="128" fill="none" stroke="#a0a393" stroke-opacity=".51"
                   pathLength="120" stroke-dasharray=".5 1.5" transform="rotate(-90 220 179)"/>
           <circle cx="220" cy="179" r="128" fill="none" stroke="#ceccbb" stroke-opacity=".59"
                   pathLength="120" stroke-dasharray=".85 9.15" stroke-width="5" transform="rotate(-90 220 179)"/>
           <circle cx="220" cy="179" r="88" fill="none" stroke="#8e9180" stroke-opacity=".26"/>
-          <circle cx="220" cy="179" r="81" fill="none" stroke="#8e9180" stroke-opacity=".16"/>
+          <circle cx="220" cy="179" r="81" fill="none" stroke="#8e9180" stroke-opacity=".28"
+                  pathLength="120" stroke-dasharray=".45 1.55"/>
+          <path d="M220 110v138m-69-69h138" fill="none" stroke="#959985" stroke-opacity=".12"/>
+          <circle cx="220" cy="179" r="58" fill="none" stroke="#959985" stroke-opacity=".12"/>
           <g class="death-numerals" text-anchor="middle" dominant-baseline="middle">
               <text x="220" y="74">XII</text>
               <text x="273" y="88">I</text>
@@ -108,7 +124,6 @@
             <circle cx="220" cy="179" r="8" fill="url(#death-metal)"/>
           </g>
         </svg>
-        <button class="death-motion-control" type="button" data-death-pause hidden>Pause motion</button>
       </div>
 
       <dl class="death-record-strip">
@@ -122,7 +137,7 @@
 
     <nav class="npc-dossier-index" aria-label="Death dossier chapters">
       <span>Within the record</span>
-      <div><a href="#since-the-beginning">Origin</a><a href="#death-and-mortality">Nature</a><a href="#pale-horseman">Horsemen</a><a href="#former-master">Former Master</a><a href="#power">Power</a><a href="#unknowns">Unknowns</a><a href="#threads-of-fate">Connections</a></div>
+      <div><a href="#since-the-beginning">Origin</a><a href="#death-and-mortality">Nature</a><a href="#pale-horseman">Horsemen</a><a href="#former-master">Former Master</a><a href="#power">Power</a><a href="#threads-of-fate">Connections</a></div>
     </nav>
 
     <section class="death-chapter" id="since-the-beginning" aria-labelledby="death-origin-title">
@@ -135,16 +150,16 @@
 
     <section class="death-chapter" id="death-and-mortality" aria-labelledby="death-nature-title">
       <h2 id="death-nature-title">Death and Mortality</h2>
-      <p>Death embodies both the end of life and the mortality that attends it. The Archive records this as his nature. Its records of necromancy, soul manipulation and physical destruction describe separate practices or events. The ways his primordial power manifests are largely undocumented.</p>
+      <p>Death embodies both the end of life and the mortality that attends it. The ways his primordial power manifests are largely undocumented.</p>
     </section>
 
     <section class="death-chapter death-horsemen" id="pale-horseman" aria-labelledby="death-horsemen-title">
       <h2 id="death-horsemen-title">The Pale Horseman</h2>
-      <p>Death is the oldest and strongest of the Four Horsemen of the Apocalypse. The other three names are preserved in tradition. Their activities, whereabouts and involvement in Aevum remain undocumented.</p>
+      <p>Death is the oldest and strongest of the Four Horsemen of the Apocalypse. Tradition preserves the names of the other three. Their activities and whereabouts remain unknown.</p>
       <ul aria-label="Four Horsemen of the Apocalypse" role="list">
-        <li><span>War</span><small>Undocumented in Aevum</small></li>
-        <li><span>Famine</span><small>Undocumented in Aevum</small></li>
-        <li><span>Pestilence</span><small>Undocumented in Aevum</small></li>
+        <li><span>War</span><small>Whereabouts unknown</small></li>
+        <li><span>Famine</span><small>Whereabouts unknown</small></li>
+        <li><span>Pestilence</span><small>Whereabouts unknown</small></li>
         <li class="death-horseman-record"><span>Death</span><small>The Pale Horseman</small></li>
       </ul>
     </section>
@@ -153,7 +168,8 @@
       <h2 id="death-master-title">The Former Master</h2>
       <div>
         <p><a href="/aevum-archive/characters/obama.html">OBAMA</a> began as a human. He became Death’s student before rising into a Chaos Higherbeing. Their relationship belongs to that earlier period, before OBAMA’s current Path of the New Order.</p>
-        <p><a href="/aevum-archive/npcs/peter.html">Peter</a> was placed with OBAMA through Death. Over time, OBAMA’s loyalty to Peter became stronger than his obedience to his former master. The teachings Death passed on, the details of their arrangement and how it ended remain undocumented.</p>
+        <p>Death placed <a href="/aevum-archive/npcs/peter.html">Peter</a> with OBAMA. Peter went on to become OBAMA’s right hand. In time, OBAMA’s loyalty to Peter outweighed his obedience to Death.</p>
+        <p>What Death taught OBAMA and how their arrangement ended remain undocumented.</p>
       </div>
     </section>
 
@@ -166,18 +182,6 @@
           <div><dt>Upper Limit</dt><dd>Unknown</dd></div>
         </dl>
       </div>
-    </section>
-
-    <section class="death-chapter death-unknowns" id="unknowns" aria-labelledby="death-unknowns-title">
-      <h2 id="death-unknowns-title">Unknowns</h2>
-      <ul>
-        <li>His exact age and origin</li>
-        <li>Whether Death or God existed first</li>
-        <li>His current status and whereabouts</li>
-        <li>The full extent of his primordial capabilities</li>
-        <li>The details of his former arrangement with OBAMA</li>
-        <li>The whereabouts of War, Famine and Pestilence</li>
-      </ul>
     </section>
 
     <section class="fate-threads" id="threads-of-fate" aria-labelledby="threads-title">
@@ -193,7 +197,7 @@
           <li><a class="fate-thread-card" href="/aevum-archive/npcs/peter.html">
             <small>Historical Connection</small>
             <strong>Peter <span aria-hidden="true">↗</span></strong>
-            <span>Death placed Peter with OBAMA. In time, OBAMA’s loyalty to Peter outweighed his obedience to Death.</span>
+            <span>Death placed Peter with OBAMA. Peter later became OBAMA’s right hand.</span>
           </a></li>
         </ul>
       </div>

@@ -104,6 +104,10 @@ class NpcDirectoryTest(unittest.TestCase):
         self.assertTrue(set(parsed.shelves).issubset(parsed.ids))
         self.assertIn('<dt>Power Level</dt><dd>Unknown</dd>', dossier)
         self.assertIn('<svg class="death-clock"', dossier)
+        self.assertIn('Peter went on to become OBAMA’s right hand.', dossier)
+        self.assertNotIn('in Aevum', dossier)
+        self.assertNotIn('unknowns', parsed.ids)
+        self.assertNotIn('data-death-pause', dossier)
         for role, path in [('Former Student', 'characters/obama.html'),
                            ('Historical Connection', 'npcs/peter.html')]:
             self.assertRegex(dossier, rf'href="/aevum-archive/{re.escape(path)}">\s*<small>{role}</small>')

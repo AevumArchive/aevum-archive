@@ -2,6 +2,8 @@
 
 ## 2026-11-27
 
+- Refined Death’s clock and clarified the history of Peter becoming OBAMA’s right hand. Removed the extra Unknowns section.
+
 - Added Death, the Pale Horseman, to Major Presences with a symbolic clock and historical connections to OBAMA and Peter.
 
 ## 2026-11-25
