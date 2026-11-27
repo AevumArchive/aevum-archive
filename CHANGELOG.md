@@ -1,5 +1,9 @@
 # Archive changelog
 
+## 2026-11-27
+
+- Added Death, the Pale Horseman, to Major Presences with a symbolic clock and historical connections to OBAMA and Peter.
+
 ## 2026-11-25
 
 - Expanded the House Zenith dossier and the Zenith Estate record with a formal register, restoration and testimony sections, and the shared Zenith Council illustration.

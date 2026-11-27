@@ -18,7 +18,8 @@
   const entries = [...directory.querySelectorAll('.npc-card')].map(card => {
     const section = card.closest('section').id;
     const affiliation = card.closest('[data-npc-affiliation]')?.dataset.npcAffiliation ?? '';
-    return { card, section, text: normalize(`${card.textContent} ${shelfNames.get(section)} ${affiliation}`) };
+    const aliases = card.dataset.npcAliases ?? '';
+    return { card, section, text: normalize(`${card.textContent} ${shelfNames.get(section)} ${affiliation} ${aliases}`) };
   });
   const render = () => {
     const terms = normalize(search.value).split(/\s+/).filter(Boolean);

@@ -31,7 +31,7 @@ class NpcDirectoryTest(unittest.TestCase):
         self.parsed.feed(self.page)
 
     def test_all_entries_remain_public_without_script_and_have_no_portrait_elements(self):
-        self.assertEqual(len(self.parsed.cards), 53)
+        self.assertEqual(len(self.parsed.cards), 54)
         for tag, attrs in self.parsed.cards:
             self.assertNotIn('hidden', attrs)
             self.assertNotIn('style', attrs)
@@ -44,7 +44,7 @@ class NpcDirectoryTest(unittest.TestCase):
 
     def test_distinguished_cards_keep_two_artwork_exceptions(self):
         for special in ('npc-feature-lilith', 'npc-feature-veyr', 'npc-feature-izumi',
-                        'npc-feature-bomir', 'npc-feature-peter', 'npc-feature-kaede'):
+                        'npc-feature-bomir', 'npc-feature-peter', 'npc-feature-kaede', 'npc-feature-death'):
             self.assertEqual(sum(special in attrs['class'].split() for _, attrs in self.parsed.cards), 1)
         old_styles = (ROOT / 'assets/npc-index.css').read_text(encoding='utf-8')
         self.assertEqual(set(re.findall(r'assets/images/([^"\)]+)', old_styles)), {'lilith.png', 'veyr.png'})
@@ -63,11 +63,15 @@ class NpcDirectoryTest(unittest.TestCase):
         self.assertEqual(len(self.parsed.ids), len(set(self.parsed.ids)))
         self.assertIn('<strong>Known Figures</strong><small>12 records</small>', self.page)
         self.assertIn('<strong>All NPCs</strong><small>8 shelves</small>', self.page)
-        self.assertRegex(self.page, r'<strong>50</strong>\s*<span>NPCs discovered</span>')
+        self.assertRegex(self.page, r'<strong>51</strong>\s*<span>NPCs discovered</span>')
         major_shelf = self.page.split('id="sovereigns"', 1)[1].split('</section>', 1)[0]
         kaede = 'href="/aevum-archive/npcs/kaede.html"'
         self.assertNotIn(kaede, major_shelf)
-        self.assertIn('<strong>Major Presences</strong><small>2 records</small>', self.page)
+        self.assertIn('<strong>Major Presences</strong><small>3 records</small>', self.page)
+        self.assertIn('<span class="npc-count">03 major records</span>', major_shelf)
+        death = 'href="/aevum-archive/npcs/death.html"'
+        self.assertIn(death, major_shelf)
+        self.assertEqual(self.page.count(death), 1)
         self.assertIn('<strong>Restricted</strong><small>6 records</small>', self.page)
         restricted = self.page.split('id="contained-records"', 1)[1].split('</section>', 1)[0]
         self.assertIn(kaede, restricted)
@@ -90,6 +94,23 @@ class NpcDirectoryTest(unittest.TestCase):
             self.assertEqual(sum(attrs.get('href') == href for _, attrs in self.parsed.cards), 1)
             self.assertTrue(any(attrs.get('href') == href and f'tengoku-card--{name}' in attrs['class'].split()
                                 for _, attrs in clan.cards))
+
+    def test_death_has_a_symbolic_dossier_and_historical_links(self):
+        dossier = (ROOT / 'npcs/death.html').read_text(encoding='utf-8')
+        parsed = DirectoryParser()
+        parsed.feed(dossier)
+        self.assertEqual(parsed.images, ['/aevum-archive/assets/archive-mark.svg'])
+        self.assertEqual(len(set(parsed.ids)), len(parsed.ids))
+        self.assertTrue(set(parsed.shelves).issubset(parsed.ids))
+        self.assertIn('<dt>Power Level</dt><dd>Unknown</dd>', dossier)
+        self.assertIn('<svg class="death-clock"', dossier)
+        for role, path in [('Former Student', 'characters/obama.html'),
+                           ('Historical Connection', 'npcs/peter.html')]:
+            self.assertRegex(dossier, rf'href="/aevum-archive/{re.escape(path)}">\s*<small>{role}</small>')
+            related = (ROOT / path).read_text(encoding='utf-8')
+            self.assertIn('href="/aevum-archive/npcs/death.html#threads-of-fate"', related)
+        bonds = (ROOT / 'characters/bonds.html').read_text(encoding='utf-8')
+        self.assertIn('class="tree-node death-bond" href="/aevum-archive/npcs/death.html"', bonds)
 
     def test_servants_are_grouped_under_their_existing_affiliations(self):
         shelf = self.page.split('id="servants"', 1)[1].split('</section>', 1)[0]

@@ -19,6 +19,8 @@
   <link rel="stylesheet" href="/aevum-archive/assets/halloween.css?v=20261030-allhallows1">
   <script src="/aevum-archive/assets/halloween.js?v=20261030-allhallows1"></script>
 <link rel="stylesheet" href="/aevum-archive/assets/silver-monarch.css?v=20261114-monarch1">
+  <link rel="stylesheet" href="/aevum-archive/assets/death-dossier.css?v=20261127">
+  <script src="/aevum-archive/assets/death-dossier.js?v=20261127" defer></script>
 </head>
 <body class="archive-page theme-npcs page-index route-npcs">
   <header class="site-header">
@@ -38,7 +40,7 @@
   </div>
   <aside class="directory-summary" aria-label="NPC archive count">
     <div class="directory-register-head"><span>Witnessed presences</span><span aria-hidden="true">◇</span></div>
-    <div class="directory-register-count"><strong>50</strong>
+    <div class="directory-register-count"><strong>51</strong>
       <span>NPCs discovered</span>
     </div>
     <div class="directory-register-orbit" aria-hidden="true"><i></i><i></i><b>✧</b></div>
@@ -48,7 +50,7 @@
 <nav class="npc-ledger-nav" aria-label="NPC ledger sections">
   <a href="#all-npcs"><strong>All NPCs</strong><small>8 shelves</small></a>
   <a href="#current-npcs"><strong>Current Path</strong><small>6 opened · 3 sealed</small></a>
-  <a href="#sovereigns"><strong>Major Presences</strong><small>2 records</small></a>
+  <a href="#sovereigns"><strong>Major Presences</strong><small>3 records</small></a>
   <a href="#divine-alliance"><strong>Götterfamilie</strong><small>2 records</small></a>
   <a href="#servants"><strong>Servants &amp; Bonds</strong><small>15 records</small></a>
   <a href="#tengoku-clan"><strong>Tengoku Clan</strong><small>6 records</small></a>
@@ -86,10 +88,30 @@
 <section class="section" id="sovereigns">
   <div class="section-head"><div><p class="eyebrow">Sovereigns and anomalies</p><h2>Powers outside ordinary ledgers.</h2></div><p>Opened records whose authority or nature places them beyond common affiliations.</p></div>
   <div class="npc-ledger-group npc-feature-ledger">
-    <div class="npc-group-head"><div><span class="npc-count">02 major records</span><h3>Exceptional presences</h3></div><p>Sovereignty and anomaly do not fit neatly beneath ordinary names.</p></div>
+    <div class="npc-group-head"><div><span class="npc-count">03 major records</span><h3>Exceptional presences</h3></div><p>Records of sovereigns, anomalies and primordial entities.</p></div>
     <div class="npc-compact-grid">
       <a class="card npc-card npc-feature npc-feature-lilith" href="/aevum-archive/npcs/lilith.html"><span class="realm-symbol">♛</span><h3>Lilith · Sovereign</h3><p>The ruler of The Bridge, witnessed in Demon Form while two further manifestations remain veiled.</p><div class="meta-row"><span class="pill">Sovereign Record</span><span class="pill">The Bridge</span></div></a>
       <a class="card npc-card npc-feature npc-feature-veyr" href="/aevum-archive/npcs/veyr.html"><span class="realm-symbol">◇</span><h3>Veyr · The Misplaced</h3><p>A person-shaped error offering riddles and indirect clues around the damaged World Anchor.</p><div class="meta-row"><span class="pill">Anomaly Record</span><span class="pill">World Anchor</span></div></a>
+      <a class="card npc-card npc-feature npc-feature-death" href="/aevum-archive/npcs/death.html" data-npc-aliases="The Angel of Death Four Horsemen of the Apocalypse" data-death-motion>
+        <div class="death-card-copy">
+          <h3>Death</h3>
+          <span class="death-card-title">The Pale Horseman</span>
+          <p>An ancient primordial entity embodying death and mortality, and the former master of OBAMA.</p>
+          <div class="meta-row"><span class="pill">Primordial Entity</span><span class="pill">Four Horsemen</span><span class="pill">Power Level Unknown</span></div>
+        </div>
+        <svg class="death-card-clock" viewBox="0 0 140 150" aria-hidden="true" focusable="false">
+          <g class="death-pendulum" stroke="currentColor">
+            <path d="M70 86v32" fill="none" stroke-width="2"/>
+            <circle cx="70" cy="126" r="9" fill="#535747"/>
+          </g>
+          <circle cx="70" cy="57" r="44" fill="#1c2018" stroke="currentColor" stroke-opacity=".6"/>
+          <circle cx="70" cy="57" r="39" fill="none" stroke="currentColor" stroke-opacity=".32"/>
+          <circle cx="70" cy="57" r="36" pathLength="60" stroke-dasharray=".25 4.75" fill="none" stroke="currentColor" stroke-opacity=".68" transform="rotate(-90 70 57)"/>
+          <text x="70" y="34" text-anchor="middle" fill="currentColor" font-size="8" font-family="Georgia">XII</text>
+          <path d="M54 62l16-5 14-23" fill="none" stroke="currentColor" stroke-width="2"/>
+          <circle cx="70" cy="57" r="3" fill="currentColor"/>
+        </svg>
+      </a>
     </div>
   </div>
 </section>
@@ -243,6 +265,6 @@
 <footer class="footer"><span>&#10022; Aevum Archive &mdash; witnessed knowledge only.</span><span>Unwritten pages remain sealed until discovered.</span></footer>
   </main>
 <script src="/aevum-archive/assets/master-ui.js?v=20260821-2" defer></script>
-<script src="/aevum-archive/assets/npc-directory.js?v=20261111-ai" defer></script>
+<script src="/aevum-archive/assets/npc-directory.js?v=20261127-death" defer></script>
 </body>
 </html>
