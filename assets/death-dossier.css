@@ -219,37 +219,39 @@ body.route-npcs .npc-directory #sovereigns .npc-compact-grid .npc-feature-death 
   gap: 12px clamp(18px, 4vw, 55px);
   min-height: 230px;
   padding: clamp(20px, 3vw, 40px);
-  border: 1px solid #54594b;
-  background: linear-gradient(115deg, #171a14, #10120f 72%);
-  color: #d9dbd0;
+  border: 1px solid #4e596d;
+  background:
+    radial-gradient(ellipse at 83% 52%, #293449, transparent 51%),
+    linear-gradient(115deg, #191c24, #101219 72%);
+  color: #dbe0e9;
   box-shadow: none;
 }
 
 body.route-npcs .npc-directory #sovereigns .npc-compact-grid .npc-feature-death::before,
 body.route-npcs .npc-directory #sovereigns .npc-compact-grid .npc-feature-death::after { content: none; }
-body.route-npcs .npc-directory #sovereigns .npc-feature-death:is(:hover, :focus-visible) { border-color: #afb3a4; }
+body.route-npcs .npc-directory #sovereigns .npc-feature-death:is(:hover, :focus-visible) { border-color: #acbcd4; }
 .npc-directory .death-card-copy { grid-area: copy; min-width: 0; }
 body.route-npcs #sovereigns .npc-feature-death .death-card-copy h3 {
-  color: #dddcd2;
+  color: #edf0f6;
   font: 400 clamp(2.25rem, 4vw, 3.5rem)/1 Georgia, serif;
 }
 
 .npc-directory .death-card-title {
   display: block;
   margin: 7px 0 12px;
-  color: #c3c6b7;
+  color: #bdc9dc;
   font: 500 .94rem/1.35 "Death Inscription", Georgia, serif;
 }
 
-.npc-directory .death-card-copy p { margin: 0 0 13px; color: #b6b9ac; font: 400 1rem/1.65 Georgia, serif; }
-.npc-directory .death-card-copy .pill { color: #d0d2c4; border-color: #4b5045; background: #20241b; }
+.npc-directory .death-card-copy p { margin: 0 0 13px; color: #c2c8d4; font: 400 1rem/1.65 Georgia, serif; }
+.npc-directory .death-card-copy .pill { color: #d5deec; border-color: #47536a; background: #202734; }
 .npc-directory .death-card-clock {
   grid-area: watch;
   display: block;
   justify-self: center;
   width: min(100%, 175px);
   height: auto;
-  color: #a6aa98;
+  color: #c1cdde;
 }
 .npc-directory .death-card-clock .death-pendulum {
   --death-pivot: 70px 86px;

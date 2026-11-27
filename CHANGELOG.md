@@ -2,6 +2,8 @@
 
 ## 2026-11-27
 
+- Recolored Death’s NPC directory card in graphite, slate blue and silver.
+
 - Shortened Death’s opening and removed repeated lore across his origin, nature and power chapters.
 
 - Refined Death’s clock and clarified the history of Peter becoming OBAMA’s right hand. Removed the extra Unknowns section.
