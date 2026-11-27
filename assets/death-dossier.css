@@ -6,28 +6,28 @@
 }
 
 body.npc-dossier-page.npc-dossier-death.theme-npcs.page-detail {
-  --npc-paper: #111310;
-  --npc-ink: #dddcd2;
-  --npc-accent: #b8bbaf;
-  --npc-label: #b8bbaf;
-  --npc-line: #45493e;
-  --npc-faint: #272923;
+  --npc-paper: #141414;
+  --npc-ink: #e7e7e7;
+  --npc-accent: #bbbbbb;
+  --npc-label: #bbbbbb;
+  --npc-line: #4a4a4a;
+  --npc-faint: #292929;
   --npc-display: Georgia, serif;
-  --death-muted: #b2b4a8;
+  --death-muted: #b9b9b9;
   background:
-    radial-gradient(ellipse at 82% 6%, #20271e, transparent 46rem),
-    radial-gradient(ellipse at 0 54%, #151913, transparent 35rem),
-    #090a09 !important;
+    radial-gradient(ellipse at 82% 6%, #242424, transparent 46rem),
+    radial-gradient(ellipse at 0 54%, #171717, transparent 35rem),
+    #0a0a0a !important;
   color: var(--npc-ink);
 }
 
 body.npc-dossier-death .death-dossier .death-hero {
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   background:
-    radial-gradient(ellipse at 9% 8%, #2a3026, transparent 62%),
-    repeating-linear-gradient(115deg, transparent 0 5px, #c7cbb005 5px 6px),
-    #121511;
-  border-color: #62695a;
+    radial-gradient(ellipse at 9% 8%, #2e2e2e, transparent 62%),
+    repeating-linear-gradient(115deg, transparent 0 5px, #dddddd07 5px 6px),
+    #151515;
+  border-color: #676767;
   border-radius: 0;
   box-shadow: none;
 }
@@ -41,7 +41,7 @@ body.npc-dossier-death .death-dossier .death-identity h1 {
 
 .death-dossier .death-epithet {
   margin: 0;
-  color: #dfe2d2;
+  color: #dedede;
   font: 500 clamp(1.25rem, 2.2vw, 2rem)/1.3 "Death Inscription", Georgia, serif;
 }
 
@@ -83,8 +83,8 @@ body.npc-dossier-death .death-dossier .death-identity .lede {
   z-index: 2;
   grid-column: 1 / -1;
   order: 3;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  background: #131511;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  background: #171717;
   border-top: 1px solid var(--npc-line);
 }
 
@@ -95,10 +95,10 @@ body.npc-dossier-death .death-dossier .death-identity .lede {
 }
 
 .death-dossier .death-record-strip > div:first-child { border-inline-start: 0; }
-.death-dossier a { color: #caccc0; text-underline-offset: 4px; }
-.death-dossier .npc-dossier-index { background: #10120f; }
-.death-dossier .npc-dossier-index a { color: #c3c5b8; }
-.death-dossier .npc-dossier-index > span { color: #a8ab9b; }
+.death-dossier a { color: #d0d0d0; text-underline-offset: 4px; }
+.death-dossier .npc-dossier-index { background: #111111; }
+.death-dossier .npc-dossier-index a { color: #c8c8c8; }
+.death-dossier .npc-dossier-index > span { color: #ababab; }
 
 body.npc-dossier-death .death-dossier .death-stage {
   display: grid;
@@ -110,9 +110,9 @@ body.npc-dossier-death .death-dossier .death-stage {
   overflow: hidden;
   border-inline-start: 1px solid var(--npc-line);
   background:
-    linear-gradient(160deg, #03050300 32%, #bfcdb50b 50%, #03050300 66%),
-    repeating-linear-gradient(115deg, transparent 0 5px, #c5c6ae07 5px 6px),
-    radial-gradient(ellipse at 50% 35%, #384335, #10150f 58%, #080a08 89%);
+    linear-gradient(160deg, #08080800 32%, #dedede0b 50%, #08080800 66%),
+    repeating-linear-gradient(115deg, transparent 0 5px, #d3d3d307 5px 6px),
+    radial-gradient(ellipse at 50% 35%, #414141, #151515 58%, #090909 89%);
 }
 
 .death-stage .death-clock {
@@ -122,14 +122,14 @@ body.npc-dossier-death .death-dossier .death-stage {
   height: auto;
   filter: drop-shadow(0 14px 18px #0008);
 }
-.death-stage .death-numerals { fill: #ced2bf; opacity: .82; font: 400 16px Georgia, serif; }
+.death-stage .death-numerals { fill: #d7d7d7; opacity: .82; font: 400 16px Georgia, serif; }
 .death-stage .death-haze {
   position: absolute;
   inset: 0 -23%;
   pointer-events: none;
   background:
-    radial-gradient(ellipse at 66% 75%, #d4d8bc1b, transparent 35%),
-    radial-gradient(ellipse at 32% 29%, #b4bda72b, transparent 27%);
+    radial-gradient(ellipse at 66% 75%, #d6d6d621, transparent 35%),
+    radial-gradient(ellipse at 32% 29%, #c3c3c32b, transparent 27%);
   animation: death-drift 42s ease-in-out infinite alternate paused;
 }
 
@@ -175,8 +175,8 @@ body.npc-dossier-death .death-dossier .death-stage {
   padding: clamp(22px, 4vw, 58px);
   border: 1px solid var(--npc-line);
   background:
-    radial-gradient(ellipse at 96% 93%, #252e23, transparent 68%),
-    #121610;
+    radial-gradient(ellipse at 96% 93%, #2a2a2a, transparent 68%),
+    #161616;
 }
 
 .death-horsemen ul {
@@ -186,29 +186,29 @@ body.npc-dossier-death .death-dossier .death-stage {
   margin: 0;
   padding: 0;
   border: 1px solid var(--npc-line);
-  background: #0c100c;
+  background: #101010;
   list-style: none;
 }
 
-.death-horsemen li { padding: clamp(15px, 2.8vw, 30px); color: #a7aa9e; }
+.death-horsemen li { padding: clamp(15px, 2.8vw, 30px); color: #b5b5b5; }
 .death-horsemen li + li { border-inline-start: 1px solid var(--npc-line); }
 .death-horsemen li span { display: block; font: 400 clamp(1.2rem, 2.2vw, 2rem)/1.15 Georgia, serif; }
 .death-horsemen li small { display: block; margin-top: 8px; font: 500 .69rem/1.55 Verdana, sans-serif; }
 .death-horsemen li.death-horseman-record {
-  background: linear-gradient(135deg, #2c352a, #161c15);
-  color: #e4e7d8;
-  box-shadow: inset 0 2px #899380;
+  background: linear-gradient(135deg, #333333, #1b1b1b);
+  color: #ededed;
+  box-shadow: inset 0 2px #999999;
 }
 .death-dossier .fate-threads {
-  --fate-line: #5b6053;
-  --fate-accent: #c4c8b7;
-  --fate-panel: #161813;
-  --fate-glow: #262a21;
+  --fate-line: #636363;
+  --fate-accent: #c8c8c8;
+  --fate-panel: #191919;
+  --fate-glow: #292929;
 }
-.death-dossier .fate-thread-map { background: #10120f; }
-.death-dossier .fate-thread-map .fate-thread-card { color: #c6c8bd; }
-.death-dossier .fate-thread-card strong, .death-dossier .fate-title { color: var(--npc-ink); }
-.death-dossier .footer { color: #a4a699; }
+.death-dossier .fate-thread-map { background: #111111; }
+.death-dossier .fate-thread-map .fate-thread-card { color: #cccccc; }
+.death-dossier :is(.fate-thread-card strong, .fate-thread-root, .fate-title) { color: var(--npc-ink); }
+.death-dossier .footer { color: #adadad; }
 
 /* A single short swing on the directory, using its own simplified dial. */
 body.route-npcs .npc-directory #sovereigns .npc-compact-grid .npc-feature-death {
@@ -219,39 +219,39 @@ body.route-npcs .npc-directory #sovereigns .npc-compact-grid .npc-feature-death 
   gap: 12px clamp(18px, 4vw, 55px);
   min-height: 230px;
   padding: clamp(20px, 3vw, 40px);
-  border: 1px solid #4e596d;
+  border: 1px solid #5d5d5d;
   background:
-    radial-gradient(ellipse at 83% 52%, #293449, transparent 51%),
-    linear-gradient(115deg, #191c24, #101219 72%);
-  color: #dbe0e9;
+    radial-gradient(ellipse at 83% 52%, #343434, transparent 51%),
+    linear-gradient(115deg, #1d1d1d, #121212 72%);
+  color: #e1e1e1;
   box-shadow: none;
 }
 
 body.route-npcs .npc-directory #sovereigns .npc-compact-grid .npc-feature-death::before,
 body.route-npcs .npc-directory #sovereigns .npc-compact-grid .npc-feature-death::after { content: none; }
-body.route-npcs .npc-directory #sovereigns .npc-feature-death:is(:hover, :focus-visible) { border-color: #acbcd4; }
+body.route-npcs .npc-directory #sovereigns .npc-feature-death:is(:hover, :focus-visible) { border-color: #bcbcbc; }
 .npc-directory .death-card-copy { grid-area: copy; min-width: 0; }
 body.route-npcs #sovereigns .npc-feature-death .death-card-copy h3 {
-  color: #edf0f6;
+  color: #efefef;
   font: 400 clamp(2.25rem, 4vw, 3.5rem)/1 Georgia, serif;
 }
 
 .npc-directory .death-card-title {
   display: block;
   margin: 7px 0 12px;
-  color: #bdc9dc;
+  color: #cdcdcd;
   font: 500 .94rem/1.35 "Death Inscription", Georgia, serif;
 }
 
-.npc-directory .death-card-copy p { margin: 0 0 13px; color: #c2c8d4; font: 400 1rem/1.65 Georgia, serif; }
-.npc-directory .death-card-copy .pill { color: #d5deec; border-color: #47536a; background: #202734; }
+.npc-directory .death-card-copy p { margin: 0 0 13px; color: #c8c8c8; font: 400 1rem/1.65 Georgia, serif; }
+.npc-directory .death-card-copy .pill { color: #dedede; border-color: #545454; background: #262626; }
 .npc-directory .death-card-clock {
   grid-area: watch;
   display: block;
   justify-self: center;
   width: min(100%, 175px);
   height: auto;
-  color: #c1cdde;
+  color: #d5d5d5;
 }
 .npc-directory .death-card-clock .death-pendulum {
   --death-pivot: 70px 86px;
@@ -280,9 +280,6 @@ body.route-npcs #sovereigns .npc-feature-death .death-card-copy h3 {
     border-top: 1px solid var(--npc-line);
   }
   .death-stage .death-clock { width: min(94%, 390px); }
-  .death-dossier .death-record-strip { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .death-dossier .death-record-strip > div:nth-child(4) { border-inline-start: 0; }
-  .death-dossier .death-record-strip > div:nth-child(n+4) { border-top: 1px solid var(--npc-line); }
 }
 
 @media (max-width: 620px) {
@@ -293,7 +290,6 @@ body.route-npcs #sovereigns .npc-feature-death .death-card-copy h3 {
   .death-dossier .death-record-strip > div:nth-child(odd),
   .death-horsemen li:nth-child(odd) { border-inline-start: 0; }
   .death-dossier .death-record-strip > div:nth-child(even) { border-inline-start: 1px solid var(--npc-line); }
-  .death-dossier .death-record-strip > div:last-child { grid-column: 1 / -1; }
 }
 
 @media (max-width: 490px) {

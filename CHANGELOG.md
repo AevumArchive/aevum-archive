@@ -2,6 +2,8 @@
 
 ## 2026-11-27
 
+- Gave Death’s dossier and directory card a neutral grayscale palette and emphasized his primordial nature and standing among the Four Horsemen.
+
 - Recolored Death’s NPC directory card in graphite, slate blue and silver.
 
 - Shortened Death’s opening and removed repeated lore across his origin, nature and power chapters.
