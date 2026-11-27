@@ -11,7 +11,7 @@ body.route-npcs main.npc-directory { width: min(1440px, calc(100% - 64px)); max-
   grid-template-columns: minmax(0, 1fr) clamp(235px, 25vw, 385px);
   align-items: center;
   gap: clamp(20px, 5vw, 78px);
-  padding: clamp(26px, 4vw, 50px) 0 24px;
+  padding: clamp(24px, 3vw, 40px) 0 22px;
   border-bottom: 1px solid var(--directory-line);
 }
 .directory-kicker {
@@ -195,17 +195,40 @@ body.route-npcs .npc-directory .npc-ledger-nav a[aria-current="location"] {
 .npc-directory-empty { margin-top: 26px; padding: 38px 22px; border: 1px dashed var(--directory-line); text-align: center; background: #1c122133; }
 .npc-directory-empty h2 { color: #e8dbee; font: 400 2rem/1.2 Georgia, serif; }
 .npc-directory-empty p { color: var(--directory-muted); line-height: 1.65; }
-body.route-npcs main.npc-directory > .section { margin-top: 24px; padding-top: 22px; scroll-margin-top: 24px; }
+body.route-npcs main.npc-directory > .section { margin-top: 24px; padding-top: 18px; scroll-margin-top: 24px; }
 body.route-npcs main.npc-directory > .section .npc-ledger-group { animation: none; }
-body.route-npcs .npc-directory .section-head { grid-template-columns: minmax(0, 1.1fr) minmax(0, .75fr); gap: 40px; margin-bottom: 28px; }
-body.route-npcs .npc-directory .section-head h2 { max-width: 18ch; color: #eee3f2; font: 400 clamp(2.4rem, 4.1vw, 4rem)/1.12 Georgia, serif; letter-spacing: -.035em; }
-.npc-directory .section-head .eyebrow { color: #c9a4df; font: 500 .64rem/1.8 Verdana, sans-serif; letter-spacing: .14em; }
-body.route-npcs .npc-directory .section-head > p { color: var(--directory-muted); font-size: 1rem; line-height: 1.8; }
+.npc-directory .npc-shelf-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 5px clamp(11px, 1.4vw, 21px);
+  margin-bottom: 16px;
+}
+.npc-directory .npc-shelf-header h2 {
+  margin: 0;
+  color: #eee3f2;
+  font: 400 clamp(2rem, 3.7vw, 3.4rem)/1.12 Georgia, serif;
+  letter-spacing: -.035em;
+}
+.npc-directory .npc-shelf-header .npc-count {
+  color: var(--directory-accent);
+  font: 500 .69rem/1.5 Verdana, sans-serif;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+.npc-directory .npc-shelf-header > p {
+  margin: 0 0 0 auto;
+  color: var(--directory-muted);
+  font: 400 .96rem/1.65 Georgia, serif;
+}
+.npc-directory .npc-shelf-subheader { margin-bottom: 12px; }
+.npc-directory .npc-shelf-subheader h3 {
+  margin: 0;
+  color: #ded0e5;
+  font: 400 clamp(1.28rem, 2vw, 1.72rem)/1.2 Georgia, serif;
+}
 body.route-npcs .npc-directory .npc-ledger-group:not(.npc-feature-ledger):not(.npc-divine-ledger) { padding: 22px 0 0; border: 0; border-radius: 0; background: none; box-shadow: none; }
-body.route-npcs .npc-directory #current-npcs .section-head { margin-bottom: 16px; }
-body.route-npcs .npc-directory #current-npcs .section-head + .npc-ledger-group { margin-top: 0; padding-top: 12px; }
-body.route-npcs .npc-directory .npc-group-head { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 26px; }
-body.route-npcs .npc-directory .npc-group-head h3 { font-weight: 400; }
+body.route-npcs .npc-directory .npc-shelf-header + .npc-ledger-group:not(.npc-feature-ledger):not(.npc-divine-ledger) { margin: 0; padding: 0; }
 .npc-directory .npc-count { color: #ad8ec1; font-size: .61rem; font-weight: 400; }
 body.route-npcs .npc-directory .npc-compact-grid > .npc-card:not(.npc-feature):not(.npc-divine-card):not(.npc-feature-peter) { min-height: 225px; padding: 25px; border-radius: 5px; gap: 13px 17px; }
 body.route-npcs .npc-directory .npc-compact-grid > .npc-card:not(.npc-feature):not(.npc-divine-card):not(.npc-feature-peter) h3 { font: 400 clamp(1.4rem, 1.8vw, 1.7rem)/1.17 Georgia, serif; }
@@ -414,7 +437,7 @@ body.route-npcs .npc-directory .tengoku-card:is(:hover, :focus-visible) {
 }
 /* Preserve Lilith/Veyr artwork, Izumi/Bomir's empty circles and Peter's white-to-crimson gradient. */
 body.route-npcs .npc-directory .npc-feature-ledger,
-body.route-npcs .npc-directory .npc-divine-ledger { margin-top: 28px; }
+body.route-npcs .npc-directory .npc-divine-ledger { margin-top: 0; }
 body.route-npcs .npc-directory #silver-monarch .npc-compact-grid { grid-template-columns: 1fr; }
 
 body.route-npcs .npc-directory #contained-records .npc-feature-kaede {
@@ -519,7 +542,6 @@ body.route-npcs .npc-directory .kaede-card-copy .meta-row {
   .tengoku-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .npc-directory-hero { grid-template-columns: minmax(0, 1fr); }
   .directory-summary { max-width: 385px; }
-  body.route-npcs .npc-directory .section-head { grid-template-columns: 1fr; gap: 20px; }
 }
 @media (max-width: 1000px) {
   body.route-npcs .npc-directory #sovereigns .npc-compact-grid,
@@ -529,7 +551,7 @@ body.route-npcs .npc-directory .kaede-card-copy .meta-row {
   body.route-npcs main.npc-directory { width: calc(100% - 36px); padding-top: 12px; }
   .directory-kicker { font-size: .58rem; letter-spacing: .1em; }
   body.route-npcs .npc-directory .npc-ledger-nav { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  body.route-npcs .npc-directory .npc-group-head { grid-template-columns: 1fr; gap: 14px; }
+  .npc-directory .npc-shelf-header > p { flex-basis: 100%; margin-left: 0; }
   body.route-npcs .npc-directory #servants .npc-compact-grid { grid-template-columns: 1fr; }
   body.route-npcs .npc-directory #sovereigns .npc-compact-grid .npc-feature { padding-right: 25%; }
   body.route-npcs .npc-directory #divine-alliance .npc-divine-card { padding-right: 20%; }
@@ -541,6 +563,9 @@ body.route-npcs .npc-directory .kaede-card-copy .meta-row {
   .npc-directory .npc-ledger-nav strong { font-size: .875rem; }
 }
 @media (max-width: 480px) {
+  .directory-summary { padding-block: 16px; }
+  .directory-register-head { padding-bottom: 9px; }
+  .directory-register-count { margin-top: 13px; }
   .directory-register-orbit { top: 47px; right: -175px; }
   .npc-directory-tools { flex-wrap: wrap; }
   .npc-directory-tools label { flex-basis: 100%; }

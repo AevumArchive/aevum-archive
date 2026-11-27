@@ -68,7 +68,8 @@ class NpcDirectoryTest(unittest.TestCase):
         kaede = 'href="/aevum-archive/npcs/kaede.html"'
         self.assertNotIn(kaede, major_shelf)
         self.assertIn('<strong>Major Presences</strong><small>3 records</small>', self.page)
-        self.assertIn('<span class="npc-count">03 major records</span>', major_shelf)
+        self.assertIn('<h2 id="sovereigns-title">Major Presences</h2>', major_shelf)
+        self.assertIn('<span class="npc-count">3 records</span>', major_shelf)
         death = 'href="/aevum-archive/npcs/death.html"'
         self.assertIn(death, major_shelf)
         self.assertEqual(self.page.count(death), 1)

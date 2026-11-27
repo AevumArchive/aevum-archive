@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="/aevum-archive/assets/global-header.css?v=20260902-header4">
   <link rel="stylesheet" href="/aevum-archive/assets/npc-effects.css?v=20260916-2">
   <link rel="stylesheet" href="/aevum-archive/assets/npc-index.css?v=20260918-2">
-  <link rel="stylesheet" href="/aevum-archive/assets/npc-directory.css?v=20261124-kaede-restricted">
+  <link rel="stylesheet" href="/aevum-archive/assets/npc-directory.css?v=20261127-shelves">
   <link rel="stylesheet" href="/aevum-archive/assets/halloween.css?v=20261030-allhallows1">
   <script src="/aevum-archive/assets/halloween.js?v=20261030-allhallows1"></script>
 <link rel="stylesheet" href="/aevum-archive/assets/silver-monarch.css?v=20261114-monarch1">
@@ -62,10 +62,12 @@
 <p id="npc-search-results" role="status" aria-live="polite" aria-atomic="true"></p>
 <div class="npc-directory-empty" data-npc-empty hidden><h2>No matching NPCs</h2><p>Try another name, affiliation or power level.</p><button type="button" data-npc-clear>Clear search</button></div>
 
-<section class="section" id="current-npcs">
-  <div class="section-head"><div><p class="eyebrow">Current playthrough</p><h2>Figures on the road.</h2></div><p>Opened names from the active fantasy-medieval shelf.</p></div>
+<section class="section" id="current-npcs" aria-labelledby="current-npcs-title">
+  <header class="npc-shelf-header">
+    <h2 id="current-npcs-title">Current Path</h2>
+    <span class="npc-count">6 opened</span>
+  </header>
   <div class="npc-ledger-group">
-    <div class="npc-group-head"><div><span class="npc-count">06 opened</span><h3>Current records</h3></div><p>People whose actions already intersect the present path.</p></div>
     <div class="npc-compact-grid">
       <article class="card npc-card current-npc"><span class="realm-symbol">✦</span><h3>Thalanil</h3><p>An elven figure tied to hidden places, bloodline warnings and careful tests around Astera Zenith.</p><div class="meta-row"><span class="pill">Astera</span><span class="pill">Bloodline</span></div></article>
       <article class="card npc-card current-npc"><span class="realm-symbol">☾</span><h3>Rhys</h3><p>A quiet elven resident beneath the village veil, watched for reasons not yet fully opened.</p><div class="meta-row"><span class="pill">Veiled Hamlet</span><span class="pill">Opened</span></div></article>
@@ -76,7 +78,10 @@
     </div>
   </div>
   <div class="npc-ledger-group">
-    <div class="npc-group-head"><div><span class="npc-count">03 sealed</span><h3>Unopened presences</h3></div><p>Reserved positions with no invented identity, allegiance or history.</p></div>
+    <header class="npc-shelf-header npc-shelf-subheader">
+      <h3>Unopened presences</h3>
+      <span class="npc-count">3 sealed</span>
+    </header>
     <div class="npc-compact-grid npc-lock-grid">
       <article class="card npc-card npc-lock-card"><span class="realm-symbol">?</span><p class="eyebrow">Sealed I</p><h3>Identity withheld</h3><p>A witnessed presence without enough safe detail to open.</p></article>
       <article class="card npc-card npc-lock-card"><span class="realm-symbol">?</span><p class="eyebrow">Sealed II</p><h3>Record forming</h3><p>A second record waits for the current path to reveal its role.</p></article>
@@ -85,10 +90,12 @@
   </div>
 </section>
 
-<section class="section" id="sovereigns">
-  <div class="section-head"><div><p class="eyebrow">Sovereigns and anomalies</p><h2>Powers outside ordinary ledgers.</h2></div><p>Opened records whose authority or nature places them beyond common affiliations.</p></div>
+<section class="section" id="sovereigns" aria-labelledby="sovereigns-title">
+  <header class="npc-shelf-header">
+    <h2 id="sovereigns-title">Major Presences</h2>
+    <span class="npc-count">3 records</span>
+  </header>
   <div class="npc-ledger-group npc-feature-ledger">
-    <div class="npc-group-head"><div><span class="npc-count">03 major records</span><h3>Exceptional presences</h3></div><p>Records of sovereigns, anomalies and primordial entities.</p></div>
     <div class="npc-compact-grid">
       <a class="card npc-card npc-feature npc-feature-lilith" href="/aevum-archive/npcs/lilith.html"><span class="realm-symbol">♛</span><h3>Lilith · Sovereign</h3><p>The ruler of The Bridge, witnessed in Demon Form while two further manifestations remain veiled.</p><div class="meta-row"><span class="pill">Sovereign Record</span><span class="pill">The Bridge</span></div></a>
       <a class="card npc-card npc-feature npc-feature-veyr" href="/aevum-archive/npcs/veyr.html"><span class="realm-symbol">◇</span><h3>Veyr · The Misplaced</h3><p>A person-shaped error offering riddles and indirect clues around the damaged World Anchor.</p><div class="meta-row"><span class="pill">Anomaly Record</span><span class="pill">World Anchor</span></div></a>
@@ -116,10 +123,13 @@
   </div>
 </section>
 
-<section class="section" id="divine-alliance">
-  <div class="section-head"><div><p class="eyebrow">The divine alliance</p><h2>Beyond mortal measure.</h2></div><p>The Götterfamilie is an alliance of divine-level entities—not a biological family.</p></div>
+<section class="section" id="divine-alliance" aria-labelledby="divine-alliance-title">
+  <header class="npc-shelf-header">
+    <h2 id="divine-alliance-title">Götterfamilie</h2>
+    <span class="npc-count">2 records</span>
+    <p>An alliance of divine-level entities.</p>
+  </header>
   <div class="npc-ledger-group npc-divine-ledger">
-    <div class="npc-group-head"><div><span class="npc-count">02 divine records</span><h3>Götterfamilie</h3></div><p>Two witnessed members whose true ceilings remain outside the Archive's measure.</p></div>
     <div class="npc-compact-grid">
       <a class="card npc-card npc-divine-card npc-feature-izumi" href="/aevum-archive/npcs/izumi.html"><span class="realm-symbol">◌</span><h3>Izumi · The Veiled Divine</h3><p>A controlled divine presence whose restricted and trusted forms reveal only part of what she is.</p><div class="meta-row"><span class="pill">Divine Level</span><span class="pill">Upper Limit Unknown</span></div></a>
       <a class="card npc-card npc-divine-card npc-feature-bomir" href="/aevum-archive/npcs/bomir.html"><span class="realm-symbol">◉</span><h3>Bomir · The Ancient Divine</h3><p>A godlike member of the alliance whose age, origin and full scale remain subjects of speculation.</p><div class="meta-row"><span class="pill">Götterfamilie</span><span class="pill">Age Unknown</span></div></a>
@@ -212,10 +222,12 @@
   </div>
 </section>
 
-<section class="section" id="known-figures">
-  <div class="section-head"><div><p class="eyebrow">Recovered records</p><h2>Other known figures and systems.</h2></div><p>Names that shaped cities, facilities and timelines without belonging to the servant ledger.</p></div>
+<section class="section" id="known-figures" aria-labelledby="known-figures-title">
+  <header class="npc-shelf-header">
+    <h2 id="known-figures-title">Known Figures</h2>
+    <span class="npc-count">12 records</span>
+  </header>
   <div class="npc-ledger-group">
-    <div class="npc-group-head"><div><span class="npc-count">12 records</span><h3>People and systems</h3></div><p>Military figures, independent travelers and systems tied to recovered records.</p></div>
     <div class="npc-compact-grid">
       <a class="card npc-card tactical-slot" href="/aevum-archive/npcs/jarvis.html"><span class="realm-symbol">⚙</span><h3>J.A.R.V.I.S.</h3><p>Tony's trusted AI across Vault 8, his facilities and a resilient cloud continuity.</p><div class="meta-row"><span class="pill">Tony</span><span class="pill">Vault 8</span></div></a>
       <a class="card npc-card tactical-slot" href="/aevum-archive/npcs/quil.html"><span class="realm-symbol" aria-hidden="true">◇</span><h3>Q.U.I.L.</h3><p>OBAMA’s AI during the Temmie Town era, supporting Obama Cares and his spaceflight project.</p><div class="meta-row"><span class="pill">Artificial Intelligence</span><span class="pill">OBAMA</span></div></a>
@@ -232,10 +244,12 @@
     </div>
   </div>
 </section>
-<section class="section" id="contained-records">
-  <div class="section-head"><div><p class="eyebrow">Containment ledger</p><h2>Threats and sealed names.</h2></div><p>Unresolved anomalies, imprisoned threats and records the Archive keeps under seal.</p></div>
+<section class="section" id="contained-records" aria-labelledby="contained-records-title">
+  <header class="npc-shelf-header">
+    <h2 id="contained-records-title">Restricted Archive</h2>
+    <span class="npc-count">6 records</span>
+  </header>
   <div class="npc-ledger-group">
-    <div class="npc-group-head"><div><span class="npc-count">06 records</span><h3>Restricted archive</h3></div><p>Contained threats, sealed identities and historical records.</p></div>
     <div class="npc-compact-grid">
       <a class="card npc-card npc-threat-chax" href="/aevum-archive/npcs/the-faceless.html"><span class="realm-symbol" aria-hidden="true">◉</span><h3>The Faceless</h3><p>An entity that possessed the earlier Faaram to make itself fully real.</p><div class="meta-row"><span class="pill">Entity</span><span class="pill">Host destroyed</span></div></a>
       <a class="card npc-card npc-threat-chax" href="/aevum-archive/npcs/chax.html"><span class="realm-symbol">☠</span><h3>Chax</h3><p>An extreme threat repeatedly imprisoned after even Higher Beings failed to end him permanently.</p><div class="meta-row"><span class="pill">Imprisoned</span><span class="pill">Sirius Galaxy</span></div></a>
@@ -255,7 +269,10 @@
   </div>
 </section>
 <section class="section" id="silver-monarch" aria-labelledby="silver-monarch-shelf-title">
-  <div class="section-head"><div><p class="eyebrow">07 / Universe 2</p><h2 id="silver-monarch-shelf-title">The Silver Monarch</h2></div></div>
+  <header class="npc-shelf-header">
+    <h2 id="silver-monarch-shelf-title">The Silver Monarch</h2>
+    <span class="npc-count">Universe 2</span>
+  </header>
   <div class="npc-ledger-group">
     <div class="npc-compact-grid">
       <a class="card npc-card npc-monarch" href="/aevum-archive/npcs/faaram-silver-monarch.html"><svg class="m-card-border" viewBox="0 0 100 100" preserveAspectRatio="none" fill="none" aria-hidden="true"><rect x="1" y="1" width="98" height="98" rx="1" stroke="currentColor" stroke-width=".35"/></svg><span class="m-card-crown" aria-hidden="true"><svg class="m-crest" viewBox="0 0 120 120" fill="none" aria-hidden="true"><circle class="m-orbit" cx="60" cy="60" r="56" stroke="currentColor" stroke-opacity=".35" stroke-dasharray="60 12 2 12"/><circle class="m-counter-orbit" cx="60" cy="60" r="45" stroke="currentColor" stroke-opacity=".6" stroke-dasharray="85 56"/><path d="M31 44L43 60L60 28L77 60L89 44L80 78H40Z" fill="currentColor" fill-opacity=".12" stroke="currentColor"/><path d="M40 85H80M44 91H76M60 41V69M51 65L60 74L69 65" stroke="currentColor"/><circle cx="60" cy="17" r="2" fill="currentColor"/></svg></span><span class="m-card-kicker">Universe 2 / Sovereign presence</span><h3>Faaram<span>The Silver Monarch</span></h3><p>The Faaram who never died.</p><div class="m-card-foot"><span>Estimated PL <b>10,000+</b></span><span aria-hidden="true">↗</span></div></a>
