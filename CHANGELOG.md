@@ -1,5 +1,9 @@
 # Archive changelog
 
+## 2026-11-28
+
+- Marked Kazz as Active / Alive in his dossier and moved his Hall of Names entry to Active.
+
 ## 2026-11-27
 
 - Simplified NPC shelf headings and tightened the directory layout around the existing cards and discovery counter.

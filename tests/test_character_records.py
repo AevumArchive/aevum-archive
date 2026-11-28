@@ -20,7 +20,7 @@ class CharacterRecordsTest(unittest.TestCase):
 
         self.assertIn("<dt>Status</dt><dd>ACTIVE</dd>", detail)
         self.assertIn('data-status="active" data-name="OBAMA"', hall)
-        self.assertIn("Active <span>5</span>", hall)
+        self.assertIn("Active <span>6</span>", hall)
         self.assertIn("Sealed <span>5</span>", hall)
         self.assertIn("Three current names", shelf)
         self.assertIn('status-card active golden-status" href="/aevum-archive/characters/obama.html"', old_road)
@@ -66,9 +66,9 @@ class CharacterRecordsTest(unittest.TestCase):
         self.assertIn('<dt>Status</dt><dd>ACTIVE</dd>', faaram)
         self.assertIn('data-status="active" data-name="Astera Zenith"', hall)
         self.assertIn('data-status="active" data-name="Faaram Tempest"', hall)
-        self.assertIn('Active <span>5</span>', hall)
+        self.assertIn('Active <span>6</span>', hall)
         self.assertIn('Sealed <span>5</span>', hall)
-        self.assertIn('Lost / Unknown <span>4</span>', hall)
+        self.assertIn('Lost / Unknown <span>3</span>', hall)
         self.assertIn('Faaram Tempest, Lythariel and William', shelf)
         self.assertIn('status-card active" href="/aevum-archive/characters/faaram.html"', old_road)
 
@@ -90,14 +90,15 @@ class CharacterRecordsTest(unittest.TestCase):
         self.assertEqual(origin_trait, active_trait)
         self.assertNotIn('data-weapon="Icewhisper"', origin)
 
-    def test_kazz_is_lost_with_an_enduring_soul(self) -> None:
+    def test_kazz_is_active_with_an_enduring_soul(self) -> None:
         hall = page("characters/all.html")
         detail = page("characters/kazz.html")
         href = 'href="/aevum-archive/characters/kazz.html"'
-        self.assertIn(f'data-status="lost" data-name="Kazz" {href}', hall)
+        self.assertIn(f'data-status="active" data-name="Kazz" {href}', hall)
+        self.assertIn('<span class="dossier-status">ACTIVE / ALIVE</span>', detail)
         self.assertNotIn(href, page("characters/index.html"))
         self.assertIn("<dt>Whereabouts</dt><dd>Spirit Realm</dd>", detail)
-        self.assertIn("<dt>Body</dt><dd>Killed by the Faceless</dd>", detail)
+        self.assertIn("<dt>Past bodily death</dt><dd>Killed by the Faceless</dd>", detail)
         self.assertIn("<dt>Soul</dt><dd>Enduring</dd>", detail)
         self.assertIn("Estimated Power Level</span><strong>≈ 4,000", detail)
 
